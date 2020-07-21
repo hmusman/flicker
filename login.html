@@ -502,7 +502,7 @@ input:hover,
 
                             <div class="register_form">
 
-                                <form action="https://flickerfone.com/register" class="register-form outer-top-xs" role="form" method="post" accept-charset="utf-8">
+                                <form action="" class="register-form outer-top-xs" role="form" method="post" accept-charset="utf-8">
 <input type="hidden" name="token" value="be0da27be2172cf486c64fb550024f86" />                                        
                                 <div class="row">
 
@@ -677,7 +677,7 @@ input:hover,
 
                                 </div>
 
-                                <button type="submit" class="btn-upper btn subbtn checkout-page-button">Sign Up</button>
+                                <button onclick="checkPass()" type="submit" class="btn-upper btn subbtn checkout-page-button">Sign Up</button>
                                 </form>                            </div>
 
 
@@ -1007,7 +1007,7 @@ input:hover,
                       </ul>
                     <p style="font-size: 13px;
               ">We do NOT accept products that have been reported lost or stolen.
-                   <br/><a href="https://flickerfone.com/page/learnmore" style="color:#028f63;">Learn More</a></p>
+                   <br/><a href="LearnMore.html" style="color:#028f63;">Learn More</a></p>
                   </div>
                 </div>
                 </div>
@@ -1254,3 +1254,38 @@ $(document).ready(function(){
 
 </script>
 <script src="../www.google.com/recaptcha/api.js"></script>
+
+
+<script>
+
+
+
+
+function checkPass(){
+
+  var pass = document.getElementById("password").value;
+  var cpass = document.getElementById("password_confirm").value;
+
+
+  if(pass != cpass) { 
+         alert(' OOPs Password did not match: Please try again...');
+         return false;
+      }
+      else{
+        return true;
+      }
+}
+
+
+
+
+
+
+
+
+
+       
+
+
+
+</script>

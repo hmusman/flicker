@@ -1083,11 +1083,13 @@ h2{
 }
 h1 { font-size: 28px; }
 h4,
-modal-title {  font-weight: bold;
-
-  font-size: 28px;
-  /* font-weight: bold; */
-  margin-top: 10px;
+modal-title { 
+  
+    
+      font-size: 24px;
+     
+      margin-top: 18px;
+      font-weight: 600;
 }
 
 .no-borders { border: 0px; }
