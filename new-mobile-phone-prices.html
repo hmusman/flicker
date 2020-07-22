@@ -59,27 +59,70 @@
 
 
 </head>
+
+
+
 <style>
+ div[class=" hover01 div_box div_box_in"]{
+  height: 434px;
+ }
+  
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+  #myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 22%;
+    z-index: 10;
+    overflow: scroll;
+  }
+  
+  #myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: #eee;
+  }
+  </style>
 
+<style>
+  .img-hover-zoom {
+  /* [1.1] Set it as per your need */
+   overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+ }
+ 
+ /* [2] Transition property for smooth transformation of images */
+ .img-hover-zoom img {
+   transition: transform .5s ease;
+ }
+ 
+ /* [3] Finally, transforming the image when container gets hovered */
+ .img-hover-zoom:hover img {
+   transform: scale(1.2);
+ }
+  </style>
 
-
-div[class=" hover01 div_box div_box_in"]{
-  height: 418px !important;
-}
-
-
-
-
-
-
-
-
-
-
+<style>
   @media (max-width: 550px){
-    div[class=" hover01 div_box div_box_in"] {
-    height: 346px !important;
-}
+
 #logo{
   height: 35px !important;
     width: 184px !important;
@@ -89,11 +132,9 @@ div[class=" hover01 div_box div_box_in"]{
 
 }
 
-
-
 .srchstyle{
-    margin-right: 42px !important;
-    width: 17% !important;
+  margin-right: 24px !important;
+    width: 23% !important;
   }
 
   ul[class="menu mt-2"] > li{
@@ -101,14 +142,39 @@ background-color: transparent !important;
   }
 
 
-div[class="slider-selection"]{
-  display: none !important;
-}
 
 
 
+
+
+
+  
+/* 
+
+  @font-face{
+  font-family: Libre_Baskerville;
+  src: url('Roboto') !important; 
+} */
+
+  /* @font-face{
+  font-family: Wensley-Regular;
+  src: url('elements-wensley-modern-serif-font-family-QK3LWN-2018-06-27') !important; 
+} */
+
+
+/* @font-face{
+  font-family: Rain-Day;
+  src: url('elements-rainday-font-T6JH6N-2018-06-11') !important; 
+} */
+
+/* #qasimFont{
+  font-family: Wensley-Regular !important;
+} */
+
+/* #qasimFont2{
+  font-family: Libre_Baskerville !important;
+} */
 </style>
-
 <body>
 <!-- <div id="loading" style="background:#fff;position: fixed;z-index:1000;right:45%;top:40%;padding: 2%;">
     <h3 align="center" style="color:#000">Loading</h3>
@@ -116,12 +182,10 @@ div[class="slider-selection"]{
 </div> -->
 
 
-
 <div class="navbar-brand" style="position: relative;z-index: 10000">
   <a href="index.html">
-  <img style="   height: 68px;
-  width: 289px;
-  margin-top: 4px;" src="images/logo-cropped-removebg-preview.png" onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
+  <img style="   height: 68px;width: 289px; margin-top: 4px;" src="images/logo-cropped-removebg-preview.png"
+   onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
   </a>
   
   
@@ -150,30 +214,254 @@ div[class="slider-selection"]{
 
 
 
-
-
-
-
-
                 <span class="srchstyle"  id="menuoptions">
                   <form action="https://flickerfone.com/new" id="qsearch">
                     <div class="search">
                  
-                       <input type="text" name="q" id="qv" class="searchTerm" placeholder="Search our Store">
+                       <input type="text" id="myInput"   onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store">
+                       
                        <button type="submit" class="searchButton">
                          <i class="fa fa-search"></i>
                       </button>
                  
+
                     </div>
                     </form>
-                
+                    <ul id="myUL" style=" position:absolute  ;  z-index: 20; ;display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
+
+
+<div>
+  <button onclick="hideagain();" style="background-color: white;
+  color: black;
+  padding: 7px;
+  width: 39px;
+  
+  font-weight: 600;
+  border-style: none;">X</button>
+</div>
+
+
+
+
+                      <li>
+
+
+<div class="row">
+  <div class="col-md-12">
+   
+    <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px;">
+
+     <center> <image src="images/LiveSrchImages/images.png" /></center>
+      <a href="#">Redmi Note 8
+        <h6>PKR 30,000</h6>
+      </a>
+    
+      </div>
+  </div>
+</div>
+
+                       
+                      </li>
+
+
+
+                      
+                      <li>
+
+
+                        <div class="row">
+                          <div class="col-md-12">
+                           
+                            <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;    margin-right: 115px;">
+                        
+                             <center> <image src="images/LiveSrchImages/download.png" /></center>
+                              <a href="#">Redmi Note 9 Pro
+                                <h6>PKR 44,999</h6>
+                              </a>
+                              </div>
+                          </div>
+                        </div>
+                        
+                                               
+                                              </li>
+                        
+
+
+
+
+
+
+
+
+
+
+
+    
+                                              <li>
+
+
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                   
+                                                    <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px;">
+                                                
+                                                     <center> <image src="images/LiveSrchImages/AppleBlack.jpg" style="height: 130px; width: 130px; "  /></center>
+                                                      <a href="#">Apple iphone x 64 GB   
+                                                        <h6>PKR 144,999</h6>
+                                                      </a>
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                                
+                                                                       
+                                                                      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+                                              <li>
+
+
+                                                <div class="row">
+                                                  <div class="col-md-12">
+                                                   
+                                                    <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px; ">
+                                                
+                                                     <center> <image src="images/LiveSrchImages/AlcatelGreen.jpg" style="height: 130px; width: 130px; " /></center>
+                                                      <a href="#">Alcatel jabi=ong Green 4 GB  
+
+                                                        <h6>PKR 19,000</h6>
+                                                      </a>
+                                                      </div>
+                                                  </div>
+                                                </div>
+                                                
+                                                                       
+                                                                      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                      <li>
+
+
+                                                                        <div class="row">
+                                                                          <div class="col-md-12">
+                                                                           
+                                                                            <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px; ">
+                                                                        
+                                                                             <center> <image src="images/LiveSrchImages/AppleVivo16Gb.jpg" style="height: 130px; width: 130px; " /></center>
+                                                                              <a href="#">Apple VIVO Y15 Gold 16 GB    
+                                                                                <h6>PKR 25,999</h6>
+                                                                              </a>
+                                                                              </div>
+                                                                          </div>
+                                                                        </div>
+                                                                        
+                                                                                               
+                                                                                              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                              <li>
+
+
+                                                                                                <div class="row">
+                                                                                                  <div class="col-md-12">
+                                                                                                   
+                                                                                                    <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;   margin-right: 115px; ">
+                                                                                                
+                                                                                                     <center> <image src="images/LiveSrchImages/HTCPlayBlack.jpg" style="height: 130px; width: 130px; " /></center>
+                                                                                                      <a href="#">HTC Play 2 Black 4 GB  
+                                                                                                        <h6>PKR 25,800</h6>  </a>
+                                                                                                      </div>
+                                                                                                  </div>
+                                                                                                </div>
+                                                                                                
+                                                                                                                       
+                                                                                                                      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row" style="padding-right: 167px;">
+  
+  <div class="col-md-12" style="background-color: rgb(30, 219, 46);"> <li><a href="#">Agnes</a></li></div>
+  </div> -->
+
+
+    
+                    
+                     
+                     
+                    
+                    
+                     
+                     
+                    </ul>
               </span>
 
 
+              
+             
+
               <span   id="menuoptions" style="margin-right: 42px !important;">
                
-                <ul class="menu mt-2" style="     margin-top: 7px; ">
-                  <li class="backcolor lis"><a href="index.html">Home</a></li>
+                <ul id="qasimFont2" class="menu mt-2" style="     margin-top: 7px; ">
+                  <li    class="backcolor lis"><a href="index.html">Home</a></li>
                   <li class="backcolor1"><a href="buy-used-mobile-phones.html">Buy</a></li>
                   <li class="backcolor1"><a href="new-mobile-phone-prices.html">New</a></li>
                   <li class="backcolor1"><a href="login.html">Sell</a></li>
@@ -205,8 +493,6 @@ div[class="slider-selection"]{
       
       <!-- //nav -->
     </div>
-
-
 <section>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -2092,3 +2378,49 @@ $(document).ready(function(){
 
 </script>
 <script src="../www.google.com/recaptcha/api.js"></script>
+
+
+<script>
+  function myFunction() {
+      shoediv();
+  
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  
+      
+  }
+  </script>
+  
+  
+  
+  <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+
+          // document.getElementById('imgset').style.marginLeft = '338px';
+
+      }
+  
+     
+  
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+          // document.getElementById('imgset').style.marginLeft = '0px';
+      }
+  </script>
+  
+  
+  
