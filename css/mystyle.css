@@ -67,10 +67,10 @@ div[class="slider-handle max-slider-handle round"],
          width:18%;
     margin-left:10px;
         }
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+/* .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
     color: #fff;
     background-color: #028f63;
-}
+} */
 .btn:active{
     color:white;}
 .icons_img{
@@ -605,14 +605,14 @@ hr {
 .buy_sell_top{
 
 }
-.nav-tabs>li>a{
+/* .nav-tabs>li>a{
     background-color:#f5f5f5;
     color:grey;
 }
 .nav-tabs>li.active>a{
     background-color: #2a0430;
     color: white;
-}
+} */
 .tab-content>.active{
      background-color:white;
     padding: 1%;
@@ -624,12 +624,12 @@ hr {
     color: white;
 
 }
-.nav_list{
+/* .nav_list{
     color:white;
 }
 nav ul li a {
   color: #d9d8dc;
-}
+} */
 h2{
   text-align:center;
   padding: 20px;
@@ -1110,7 +1110,7 @@ modal-title {
     padding:2%;
 }
 
-.panel.with-nav-tabs .panel-heading{
+/* .panel.with-nav-tabs .panel-heading{
     padding: 5px 5px 0 5px;
 }
 .panel.with-nav-tabs .nav-tabs{
@@ -1118,10 +1118,10 @@ modal-title {
 }
 .panel.with-nav-tabs .nav-justified{
     margin-bottom: -1px;
-}
+} */
 /********************************************************************/
 /*** PANEL DEFAULT ***/
-.with-nav-tabs.panel-default .nav-tabs > li > a,
+/* .with-nav-tabs.panel-default .nav-tabs > li > a,
 .with-nav-tabs.panel-default .nav-tabs > li > a:hover,
 .with-nav-tabs.panel-default .nav-tabs > li > a:focus {
     color: #777;
@@ -1159,7 +1159,7 @@ modal-title {
 .with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
     color: #fff;
     background-color: #555;
-}
+} */
 .div_boximg{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     padding: 36px;
@@ -1168,7 +1168,7 @@ modal-title {
 }
 
  .backcolor{
-        background-color: #2a0430;
+        background-color: transparent;
             /* padding: 3px; */
     right: 0px;
     margin: 0;
@@ -1205,7 +1205,7 @@ modal-title {
     color: white;
 }
       .backcolor1{
-        background-color: #FAFAFA;
+        background-color: transparent;
             /* padding: 12px; */
     right: 0px;
     margin: 0;
@@ -1438,10 +1438,10 @@ color:red
     margin-top: 10px;
   }
 }
-.navbar-brand{
+/* .navbar-brand{
   height: 31px;
   padding:0px;
-}
+} */
 .img_buy{
    
   height: 24.5%;
@@ -1515,6 +1515,7 @@ webkit-transition: width 0.2s; /* For Safari 3.1 to 6.0 */
 .img_sell:hover{
   padding-left: 30px;
 }
+
 @media screen (max-device-width: 1200px) {
     .img_sell{
      webkit-transition: padding-left 0.2s;
@@ -1768,9 +1769,9 @@ width: 40%;
     .buy_sell_top{
 
     }
-    .navbar-brand{
+    /* .navbar-brand{
         width: 20%;
-    }
+    } */
     #mainlogo{
     width: 100%;
     }
@@ -1853,7 +1854,7 @@ width: 40%;
     float: left;
     }
 .productimg{
-    with:50%;
+    width:50%;
     margin-left:20%;
 }
 
@@ -1863,9 +1864,117 @@ width: 40%;
 
 
 
+/* 
+//////////////////////////////////////// for all page extract from home/////////////////////////////////////////// */
 
 
 
+
+
+
+
+
+#myInput {
+	background-image: url('/css/searchicon.png');
+	background-position: 10px 12px;
+	background-repeat: no-repeat;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 12px;
+}
+
+#myUL {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	z-index: 10;
+	overflow: scroll;
+}
+
+#myUL li a {
+	border: 1px solid #ddd;
+	margin-top: -1px;
+	/* Prevent double borders */
+	background-color: #f6f6f6;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px;
+	color: black;
+	display: block
+}
+
+#myUL li a:hover:not(.header) {
+	background-color: #eee;
+}
+
+.img-hover-zoom {
+	/* [1.1] Set it as per your need */
+	overflow: hidden;
+	/* [1.2] Hide the overflowing of child elements */
+}
+
+
+/* [2] Transition property for smooth transformation of images */
+
+.img-hover-zoom img {
+	transition: transform .5s ease;
+}
+
+
+/* [3] Finally, transforming the image when container gets hovered */
+
+.img-hover-zoom:hover img {
+	transform: scale(1.2);
+}
+
+@media (max-width: 550px) {
+	#logo {
+		height: 35px !important;
+		width: 184px !important;
+	}
+}
+
+.srchstyle {
+	margin-right: 24px !important;
+	width: 23% !important;
+}
+
+ul[class="menu mt-2"]>li {
+	background-color: transparent !important;
+}
+
+
+/* 
+
+  @font-face{
+  font-family: Libre_Baskerville;
+  src: url('Roboto') !important; 
+} */
+
+
+/* @font-face{
+  font-family: Wensley-Regular;
+  src: url('elements-wensley-modern-serif-font-family-QK3LWN-2018-06-27') !important; 
+} */
+
+
+/* @font-face{
+  font-family: Rain-Day;
+  src: url('elements-rainday-font-T6JH6N-2018-06-11') !important; 
+} */
+
+
+/* #qasimFont{
+  font-family: Wensley-Regular !important;
+} */
+
+
+/* #qasimFont2{
+  font-family: Libre_Baskerville !important;
+} */
 
 
 
