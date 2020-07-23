@@ -320,3 +320,20 @@ div[class="slider-selection"]{
 }
 
 
+
+
+ul[id="myUL"]{
+    background-color: ghostwhite !important;
+}
+
+ul[id="myUL"] > li:hover a{
+   color: #275c33 !important;
+font-weight: 500 !important;
+font-style: oblique !important;
+}
+
+
+
+ul[id="myUL"] > li:hover  center{
+    background-color: #ebeae2 !important;
+ }
