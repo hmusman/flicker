@@ -37,6 +37,9 @@
       <link rel="stylesheet" href="css/Notiser.css">
 
 
+      <link href="css/Qasim.css" rel="stylesheet" type="text/css" media="all">
+      <script type="text/javascript" src="js/Qasim.js"></script>
+
   <link rel="stylesheet" href="index.html">
         <link rel="stylesheet" href="index.html">
         <link rel="stylesheet" href="index.html">
@@ -59,132 +62,6 @@
 
         <link rel="stylesheet" href="./style.css">
 </head>
-<style>
-
-
-  @media (max-width: 550px){
-
-#logo{
-  height: 35px !important;
-    width: 184px !important;
-  }
-
-
-
-}
-
-
-
-.srchstyle{
-    margin-right: 42px !important;
-    width: 17% !important;
-  }
-
-  ul[class="menu mt-2"] > li{
-background-color: transparent !important;
-  }
-
-
-div[class="slider-selection"]{
-  display: none !important;
-}
-
-
-
-</style>
-
-
-
-
-
-
-
-<style>
- 
-.visuhide {
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
-.star__container:hover .star__item, .star__radio:checked ~ .star__item {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
-
-.star__container:not(:hover) > .star__radio:nth-of-type(1):checked ~ .star__item:nth-of-type(1) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(2):checked ~ .star__item:nth-of-type(2) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(3):checked ~ .star__item:nth-of-type(3) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(4):checked ~ .star__item:nth-of-type(4) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(5):checked ~ .star__item:nth-of-type(5) ~ .star__item, .star__item, .star__item:hover ~ .star__item {
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-}
-
-.star__radio:nth-of-type(1):checked ~ .star__item:nth-of-type(1)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(2):checked ~ .star__item:nth-of-type(2)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(3):checked ~ .star__item:nth-of-type(3)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(4):checked ~ .star__item:nth-of-type(4)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(5):checked ~ .star__item:nth-of-type(5)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__container {
-  /* display: flex; */
-  margin: auto;
-  border-radius: .25em;
-
-  transition: box-shadow .3s ease;
-}
-.star__container:focus-within {
-  
-}
-.star__item {
-  display: inline-flex;
-  width: 1.25em;
-  height: 1.5em;
-}
-.star__item::before {
-  content: "⭐️";
-  display: inline-block;
-  margin: auto;
-  font-size: 17px;
-  vertical-align: top;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform-origin: 50% 33.3%;
-          transform-origin: 50% 33.3%;
-  transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
-  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-}
-
-</style>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -199,97 +76,6 @@ div[class="slider-selection"]{
       <img style="width: 100px;height: 100px;" src="images/loader.gif" />
 </div> -->
 
-
-
-
-<div class="navbar-brand" style="position: relative;z-index: 10000">
-  <a href="index.html">
-  <img style="   height: 68px;
-  width: 289px;
-  margin-top: 4px;" src="images/logo-cropped-removebg-preview.png" onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
-  </a>
-  
-  
-  
-  </div>
-
- <div class="headder-top d-md-flex header_bottom">
-      <!-- nav -->
-      <nav class="mainnav"  align="right">
-
-        <span  id="menuoptions">
-                    <li style="list-style: none"><i class="fa fa-user"></i>
-            <a href="login.html" align="right" class="" >REGISTER / LOGIN</a>
-          </li>
-                    <!--
-          <li style="color: #2a0430;border-bottom: 2px solid #2a0430;padding: 4px;">
-          <a href="https://flickerfone.com/cart" >
-            <i class="fa fa-shopping-cart" style="font-size:15px;color: #2a0430;" ></i>
-          <span class="count cart-total-items">0</span> items </a>
-          </li>
-          -->
-                </span>
-
-
-
-
-
-
-
-
-
-
-
-                <span class="srchstyle"  id="menuoptions">
-                  <form action="https://flickerfone.com/new" id="qsearch">
-                    <div class="search">
-                 
-                       <input type="text" name="q" id="qv" class="searchTerm" placeholder="Search our Store">
-                       <button type="submit" class="searchButton">
-                         <i class="fa fa-search"></i>
-                      </button>
-                 
-                    </div>
-                    </form>
-                
-              </span>
-
-
-              <span   id="menuoptions" style="margin-right: 42px !important;">
-               
-                <ul class="menu mt-2" style="     margin-top: 7px; ">
-                  <li class="backcolor lis"><a href="index.html">Home</a></li>
-                  <li class="backcolor1"><a href="buy-used-mobile-phones.html">Buy</a></li>
-                  <li class="backcolor1"><a href="new-mobile-phone-prices.html">New</a></li>
-                  <li class="backcolor1"><a href="login.html">Sell</a></li>
-                  <li class="backcolor1"><a href="pricecalculator.html">Price Calulator</a></li>
-               
-                 
-               
-                       </ul>
-            </span>
-
-
-              <!-- <ul class="menu mt-2">
-                <li class="backcolor lis"><a href="buy-used-mobile-phones.html">Buy</a></li>
-                <li class="backcolor1"><a href="new-mobile-phone-prices.html">New</a></li>
-                <li class="backcolor1"><a href="login.html">Sell</a></li>
-                <li class="backcolor1"><a href="pricecalculator.html">Price Calulator</a></li>
-             
-               
-             
-                     </ul> -->
-
-
-
-
-
-      </nav>
-
-
-      
-      <!-- //nav -->
-    </div>
 
 
 
@@ -1630,6 +1416,8 @@ function colorfilter(id,view){
 
 </section>
 
+
+
 <footer>
 
 
@@ -1647,14 +1435,14 @@ function colorfilter(id,view){
   
             <li style="font-size:16px; padding:2px; margin-bottom: 2px">
               <i class="fa fa-phone" aria-hidden="true"></i>
-              1800 429 3553
-                
+             
+              <a href="tel:+ 1800 429 3553"> 1800 429 3553</a>
                 <!-- <span style="padding-left:18px;">6am - 5pm PT Everyday</span> -->
               </li> 
              <li style="font-size:16px; padding:2px; margin-bottom: 2px">
                <i class="fa fa-envelope" aria-hidden="true"></i> 
-           info@flickerflon.com
-           
+          
+           <a href="mailto: info@flickerflon.com"> info@flickerflon.com</a>
   </li>
   
   <li style="font-size:16px; padding:2px; margin-bottom: 2px">
@@ -1668,14 +1456,16 @@ function colorfilter(id,view){
   
           <div class="col-lg-3 col-md-3 col-sm-3" style="border-right:1px solid #234a2f;height: 160px;">
             <ol style="list-style: none;">
-                <li><a href="https://flickerfone.com/page/about" class="lia"><h4>About Us</h4></a></li>
+                <li><a href="" class="lia"><h4>Related Products</h4></a></li>
          <li style="padding: 8px; 
          margin-top: 16px;
-     "><a href="https://flickerfone.com/page/privacy" class="lia" >Home</a></li>
-                  <li style="padding: 8px;"> <a href="https://flickerfone.com/page/advertise" class="lia">Register</a></li>
+     "><a href="productDetail1.html" class="lia" >Apple iphone x Black</a></li>
+                  <li style="padding: 8px;"> <a href="productDetail2.html" class="lia">Alcatel jabi Green 4 GB</a></li>
             
-              <li style="padding: 8px;"><a href="https://flickerfone.com/page/privacy" class="lia">Login</a></li>
-            
+              <li style="padding: 8px;"><a href="productDetail3.html" class="lia">Apple VIVO Y15 Gold 16 GB</a></li>
+              
+              <li style="padding: 8px;"><a href="productDetail4.html" class="lia">HTC Play 2 Black 4 GB</a></li>
+             
     <!-- <div class="dropdown">
       <a href="#" class="dropbtn lia">Sitemap Pages</a>
       <div class="dropdown-content">
@@ -1704,11 +1494,11 @@ function colorfilter(id,view){
               <li><a href="https://flickerfone.com/page/about" class="lia"><h4>Services</h4></a></li>
        <li style="padding: 8px; 
        margin-top: 16px;
-   "><a href="https://flickerfone.com/page/privacy" class="lia" >New Phone</a></li>
-                <li style="padding: 8px;"> <a href="https://flickerfone.com/page/advertise" class="lia">Sell Phone</a></li>
+   "><a href="new-mobile-phone-prices.html" class="lia" >New Phone</a></li>
+                <li style="padding: 8px;"> <a href="login.html" class="lia">Sell Phone</a></li>
           
-            <li style="padding: 8px;"><a href="https://flickerfone.com/page/privacy" class="lia">Buy New</a></li>
-            <li style="padding: 8px;"><a href="https://flickerfone.com/page/advertise" class="lia">Price Calculator</a></li>
+            <li style="padding: 8px;"><a href="buy-used-mobile-phones.html" class="lia">Buy New</a></li>
+            <li style="padding: 8px;"><a href="pricecalculator.html" class="lia">Price Calculator</a></li>
     
   <!-- <div class="dropdown">
     <a href="#" class="dropbtn lia">Sitemap Pages</a>
@@ -1783,7 +1573,8 @@ function colorfilter(id,view){
         </div>
   
     </footer>
-
+  
+  
 
   <!-- copy right -->
 </body>

@@ -37,6 +37,9 @@
       <link rel="stylesheet" href="css/Notiser.css">
 
 
+      <link href="css/Qasim.css" rel="stylesheet" type="text/css" media="all">
+      <script type="text/javascript" src="js/Qasim.js"></script>
+
   <link rel="stylesheet" href="index.html">
         <link rel="stylesheet" href="index.html">
         <link rel="stylesheet" href="index.html">
@@ -59,132 +62,6 @@
 
         <link rel="stylesheet" href="./style.css">
 </head>
-<style>
-
-
-  @media (max-width: 550px){
-
-#logo{
-  height: 35px !important;
-    width: 184px !important;
-  }
-
-
-
-}
-
-
-
-.srchstyle{
-    margin-right: 42px !important;
-    width: 17% !important;
-  }
-
-  ul[class="menu mt-2"] > li{
-background-color: transparent !important;
-  }
-
-
-div[class="slider-selection"]{
-  display: none !important;
-}
-
-
-
-</style>
-
-
-
-
-
-
-
-<style>
- 
-.visuhide {
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
-.star__container:hover .star__item, .star__radio:checked ~ .star__item {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
-
-.star__container:not(:hover) > .star__radio:nth-of-type(1):checked ~ .star__item:nth-of-type(1) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(2):checked ~ .star__item:nth-of-type(2) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(3):checked ~ .star__item:nth-of-type(3) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(4):checked ~ .star__item:nth-of-type(4) ~ .star__item, .star__container:not(:hover) > .star__radio:nth-of-type(5):checked ~ .star__item:nth-of-type(5) ~ .star__item, .star__item, .star__item:hover ~ .star__item {
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-}
-
-.star__radio:nth-of-type(1):checked ~ .star__item:nth-of-type(1)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(2):checked ~ .star__item:nth-of-type(2)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(3):checked ~ .star__item:nth-of-type(3)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(4):checked ~ .star__item:nth-of-type(4)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__radio:nth-of-type(5):checked ~ .star__item:nth-of-type(5)::before {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  transition-timing-function: cubic-bezier(0.5, 1.5, 0.25, 1);
-}
-.star__container {
-  /* display: flex; */
-  margin: auto;
-  border-radius: .25em;
-
-  transition: box-shadow .3s ease;
-}
-.star__container:focus-within {
-  
-}
-.star__item {
-  display: inline-flex;
-  width: 1.25em;
-  height: 1.5em;
-}
-.star__item::before {
-  content: "⭐️";
-  display: inline-block;
-  margin: auto;
-  font-size: 17px;
-  vertical-align: top;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform-origin: 50% 33.3%;
-          transform-origin: 50% 33.3%;
-  transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out;
-  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-}
-
-</style>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -200,96 +77,298 @@ div[class="slider-selection"]{
 </div> -->
 
 
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div class="navbar-brand" href="#" style="position: relative;z-index: 10000;     margin-top: -32px;
+    margin-left: -46px;">
+        <a href="index.html">
+          <img style="      height: 64px;
+          width: 289px;
+          margin-top: 16px;" src="images/logo-cropped-removebg-preview.png"
+           onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
+          </a>
+          
+        </div>
+   
+   
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 7px;     margin-left: 94px; font-weight: bold; ">
+        <li    class="backcolor lis"><a href="index.html">Home</a></li>
+        <li class="backcolor1"><a href="buy-used-mobile-phones.html">Buy</a></li>
+        <li class="backcolor1"><a href="new-mobile-phone-prices.html">New</a></li>
+        <li class="backcolor1"><a href="login.html">Sell</a></li>
+        <li class="backcolor1"><a href="pricecalculator.html">Price Calulator</a></li>
+      
+      </ul>
 
 
-<div class="navbar-brand" style="position: relative;z-index: 10000">
-  <a href="index.html">
-  <img style="   height: 68px;
-  width: 289px;
-  margin-top: 4px;" src="images/logo-cropped-removebg-preview.png" onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
-  </a>
-  
-  
-  
-  </div>
-
- <div class="headder-top d-md-flex header_bottom">
-      <!-- nav -->
-      <nav class="mainnav"  align="right">
-
-        <span  id="menuoptions">
-                    <li style="list-style: none"><i class="fa fa-user"></i>
-            <a href="login.html" align="right" class="" >REGISTER / LOGIN</a>
-          </li>
-                    <!--
-          <li style="color: #2a0430;border-bottom: 2px solid #2a0430;padding: 4px;">
-          <a href="https://flickerfone.com/cart" >
-            <i class="fa fa-shopping-cart" style="font-size:15px;color: #2a0430;" ></i>
-          <span class="count cart-total-items">0</span> items </a>
-          </li>
-          -->
-                </span>
-
-
-
-
-
-
-
-
-
-
-
-                <span class="srchstyle"  id="menuoptions">
-                  <form action="https://flickerfone.com/new" id="qsearch">
-                    <div class="search">
-                 
-                       <input type="text" name="q" id="qv" class="searchTerm" placeholder="Search our Store">
-                       <button type="submit" class="searchButton">
-                         <i class="fa fa-search"></i>
-                      </button>
-                 
-                    </div>
-                    </form>
-                
-              </span>
-
-
-              <span   id="menuoptions" style="margin-right: 42px !important;">
-               
-                <ul class="menu mt-2" style="     margin-top: 7px; ">
-                  <li class="backcolor lis"><a href="index.html">Home</a></li>
-                  <li class="backcolor1"><a href="buy-used-mobile-phones.html">Buy</a></li>
-                  <li class="backcolor1"><a href="new-mobile-phone-prices.html">New</a></li>
-                  <li class="backcolor1"><a href="login.html">Sell</a></li>
-                  <li class="backcolor1"><a href="pricecalculator.html">Price Calulator</a></li>
-               
-                 
-               
-                       </ul>
-            </span>
-
-
-              <!-- <ul class="menu mt-2">
-                <li class="backcolor lis"><a href="buy-used-mobile-phones.html">Buy</a></li>
-                <li class="backcolor1"><a href="new-mobile-phone-prices.html">New</a></li>
-                <li class="backcolor1"><a href="login.html">Sell</a></li>
-                <li class="backcolor1"><a href="pricecalculator.html">Price Calulator</a></li>
-             
-               
-             
-                     </ul> -->
-
-
-
-
-
-      </nav>
 
 
       
-      <!-- //nav -->
+      <ul class="nav navbar-nav navbar-right">
+        <li id="srching">
+          
+          <span class="srchstyle"  id="menuoptions">
+            <form action="https://flickerfone.com/new" id="qsearch">
+              <div class="search">
+           
+                 <input type="text" id="myInput"   onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store">
+                 
+                 <button type="submit" class="searchButton">
+                   <i class="fa fa-search"></i>
+                </button>
+           
+
+              </div>
+              </form>
+              <ul id="myUL" style=" position:absolute  ;  z-index: 20; ;display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
+
+
+<div>
+<button id="srchbtnid" onclick="hideagain();" style="background-color: white;
+color: black;
+padding: 7px;
+
+font-weight: 600;
+border-style: none;">X</button>
+</div>
+
+
+
+
+                <li>
+
+
+<div class="row">
+<div class="col-md-12">
+
+<div id="setwidth" style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px;">
+
+<center> <image src="images/LiveSrchImages/images.png" /></center>
+<a href="#">Redmi Note 8
+  <h6>PKR 30,000</h6>
+</a>
+
+</div>
+</div>
+</div>
+
+                 
+                </li>
+
+
+
+                
+                <li>
+
+
+                  <div class="row">
+                    <div class="col-md-12">
+                     
+                      <div id="stwid" style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;    margin-right: 115px;">
+                  
+                       <center> <image src="images/LiveSrchImages/download.png" /></center>
+                        <a href="#">Redmi Note 9 Pro
+                          <h6>PKR 44,999</h6>
+                        </a>
+                        </div>
+                    </div>
+                  </div>
+                  
+                                         
+                                        </li>
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+                                        <li>
+
+
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                             
+                                              <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px;">
+                                          
+                                               <center> <image src="images/LiveSrchImages/AppleBlack.jpg" style="height: 130px; width: 130px; "  /></center>
+                                                <a href="#">Apple iphone x 64 GB   
+                                                  <h6>PKR 144,999</h6>
+                                                </a>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          
+                                                                 
+                                                                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        <li>
+
+
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                             
+                                              <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px; ">
+                                          
+                                               <center> <image src="images/LiveSrchImages/AlcatelGreen.jpg" style="height: 130px; width: 130px; " /></center>
+                                                <a href="#">Alcatel jabi=ong Green 4 GB  
+
+                                                  <h6>PKR 19,000</h6>
+                                                </a>
+                                                </div>
+                                            </div>
+                                          </div>
+                                          
+                                                                 
+                                                                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                <li>
+
+
+                                                                  <div class="row">
+                                                                    <div class="col-md-12">
+                                                                     
+                                                                      <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px; ">
+                                                                  
+                                                                       <center> <image src="images/LiveSrchImages/AppleVivo16Gb.jpg" style="height: 130px; width: 130px; " /></center>
+                                                                        <a href="#">Apple VIVO Y15 Gold 16 GB    
+                                                                          <h6>PKR 25,999</h6>
+                                                                        </a>
+                                                                        </div>
+                                                                    </div>
+                                                                  </div>
+                                                                  
+                                                                                         
+                                                                                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                        <li>
+
+
+                                                                                          <div class="row">
+                                                                                            <div class="col-md-12">
+                                                                                             
+                                                                                              <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;   margin-right: 115px; ">
+                                                                                          
+                                                                                               <center> <image src="images/LiveSrchImages/HTCPlayBlack.jpg" style="height: 130px; width: 130px; " /></center>
+                                                                                                <a href="#">HTC Play 2 Black 4 GB  
+                                                                                                  <h6>PKR 25,800</h6>  </a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                          
+                                                                                                                 
+                                                                                                                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row" style="padding-right: 167px;">
+
+<div class="col-md-12" style="background-color: rgb(30, 219, 46);"> <li><a href="#">Agnes</a></li></div>
+</div> -->
+
+
+
+              
+               
+               
+              
+              
+               
+               
+              </ul>
+        </span>
+        </li>
+       
+            <li style="list-style: none;     height: 26px;    margin-top: 13px;  border-bottom: 2px white solid;"><i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>
+    <a href="login.html" align="right" id="reegster" class="" style="    margin-right: -12px;font-weight: bold;    margin-top: -35px; margin-left: 5px;" >REGISTER / LOGIN</a>
+  </li>
+          
+       
+      </ul>
     </div>
+  </div>
+</nav>
 
 
 
@@ -1630,6 +1709,8 @@ function colorfilter(id,view){
 
 </section>
 
+
+
 <footer>
 
 
@@ -1647,14 +1728,14 @@ function colorfilter(id,view){
   
             <li style="font-size:16px; padding:2px; margin-bottom: 2px">
               <i class="fa fa-phone" aria-hidden="true"></i>
-              1800 429 3553
-                
+             
+              <a href="tel:+ 1800 429 3553"> 1800 429 3553</a>
                 <!-- <span style="padding-left:18px;">6am - 5pm PT Everyday</span> -->
               </li> 
              <li style="font-size:16px; padding:2px; margin-bottom: 2px">
                <i class="fa fa-envelope" aria-hidden="true"></i> 
-           info@flickerflon.com
-           
+          
+           <a href="mailto: info@flickerflon.com"> info@flickerflon.com</a>
   </li>
   
   <li style="font-size:16px; padding:2px; margin-bottom: 2px">
@@ -1668,14 +1749,16 @@ function colorfilter(id,view){
   
           <div class="col-lg-3 col-md-3 col-sm-3" style="border-right:1px solid #234a2f;height: 160px;">
             <ol style="list-style: none;">
-                <li><a href="https://flickerfone.com/page/about" class="lia"><h4>About Us</h4></a></li>
+                <li><a href="" class="lia"><h4>Related Products</h4></a></li>
          <li style="padding: 8px; 
          margin-top: 16px;
-     "><a href="https://flickerfone.com/page/privacy" class="lia" >Home</a></li>
-                  <li style="padding: 8px;"> <a href="https://flickerfone.com/page/advertise" class="lia">Register</a></li>
+     "><a href="productDetail1.html" class="lia" >Apple iphone x Black</a></li>
+                  <li style="padding: 8px;"> <a href="productDetail2.html" class="lia">Alcatel jabi Green 4 GB</a></li>
             
-              <li style="padding: 8px;"><a href="https://flickerfone.com/page/privacy" class="lia">Login</a></li>
-            
+              <li style="padding: 8px;"><a href="productDetail3.html" class="lia">Apple VIVO Y15 Gold 16 GB</a></li>
+              
+              <li style="padding: 8px;"><a href="productDetail4.html" class="lia">HTC Play 2 Black 4 GB</a></li>
+             
     <!-- <div class="dropdown">
       <a href="#" class="dropbtn lia">Sitemap Pages</a>
       <div class="dropdown-content">
@@ -1704,11 +1787,11 @@ function colorfilter(id,view){
               <li><a href="https://flickerfone.com/page/about" class="lia"><h4>Services</h4></a></li>
        <li style="padding: 8px; 
        margin-top: 16px;
-   "><a href="https://flickerfone.com/page/privacy" class="lia" >New Phone</a></li>
-                <li style="padding: 8px;"> <a href="https://flickerfone.com/page/advertise" class="lia">Sell Phone</a></li>
+   "><a href="new-mobile-phone-prices.html" class="lia" >New Phone</a></li>
+                <li style="padding: 8px;"> <a href="login.html" class="lia">Sell Phone</a></li>
           
-            <li style="padding: 8px;"><a href="https://flickerfone.com/page/privacy" class="lia">Buy New</a></li>
-            <li style="padding: 8px;"><a href="https://flickerfone.com/page/advertise" class="lia">Price Calculator</a></li>
+            <li style="padding: 8px;"><a href="buy-used-mobile-phones.html" class="lia">Buy New</a></li>
+            <li style="padding: 8px;"><a href="pricecalculator.html" class="lia">Price Calculator</a></li>
     
   <!-- <div class="dropdown">
     <a href="#" class="dropbtn lia">Sitemap Pages</a>
@@ -1783,8 +1866,8 @@ function colorfilter(id,view){
         </div>
   
     </footer>
-
-
+  
+  
   <!-- copy right -->
 </body>
 
