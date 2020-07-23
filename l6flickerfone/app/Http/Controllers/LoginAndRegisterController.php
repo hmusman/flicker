@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Role;
 use App\User;
+use DB;
 class LoginAndRegisterController extends Controller
 {
     public function index()
@@ -136,4 +137,5 @@ class LoginAndRegisterController extends Controller
     	$request->session()->put('user','');
     	return redirect('/Login');
     }
+
 }

@@ -1,5 +1,5 @@
 <div class="navbar-brand" style="position: relative;z-index: 10000">
-    <a href="index.html">
+    <a href="/">
       <img style="   height: 68px;width: 289px; margin-top: 4px;" src="{{ asset('storage/images/logo-cropped-removebg-preview.png') }}"
    onClick="location.href='/'" style="top: 0px;left: 0px;" id="logo" />
     </a>
@@ -21,15 +21,33 @@
           -->
     </span>
     <span class="srchstyle"  id="menuoptions">
-        <form action="https://flickerfone.com/new" id="qsearch">
+        <form action="" id="qsearch">
           <div class="search">
-            <input type="text" id="myInput"   onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store">
+            <input type="text" id="myInput"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store">
               <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
               </button>
           </div>
           </form>
-          <ul id="myUL" style="  display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
+          <style type="text/css">
+              ul[id="myUL"]{
+                    background-color: ghostwhite !important;
+                }
+
+                ul[id="myUL"] > li:hover a{
+                   color: #275c33 !important;
+                font-weight: 500 !important;
+                font-style: oblique !important;
+                }
+
+
+
+                ul[id="myUL"] > li:hover  center{
+                    background-color: #ebeae2 !important;
+                 }
+
+          </style>
+          <ul id="myUL" style="display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
             <div>
               <button onclick="hideagain();" style="background-color: white;color: black;padding: 7px;width: 39px;font-weight: 600;border-style: none;">X</button>
             </div>

@@ -379,7 +379,29 @@
         document.getElementById('myUL').style.display = 'none';
         document.getElementById('imgset').style.marginLeft = '0px';
     }
+
+
+
+    $(document).ready(function(){
+        function fetch_products(query)
+        {
+          $.ajax({
+              url:"{{ route('live_search.action') }}",
+              type:"GET",
+              data:{query:query},
+              dataType:"json",
+              success:function(data)
+              {
+                document.getElementById('myUL').style.display = 'block';
+                $('#myUL').html(data.product_data);
+              }
+          });
+        }
+
+        $('#myInput').keyup(function(){
+            var query = $(this).val();
+            fetch_products(query);
+        });
+    });
+
 </script>
-
-
-

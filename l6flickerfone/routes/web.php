@@ -2,6 +2,7 @@
 
 Route::view('/', 'index');
 Route::get('Login', 'LoginAndRegisterController@index');
+Route::get('live_search/action', 'ProductController@liveSearch')->name('live_search.action');
 Route::get('Logout', 'LoginAndRegisterController@logout');
 Route::post('LoginSession', 'LoginAndRegisterController@login');
 Route::post('Register/Buyer', 'LoginAndRegisterController@buyer');
