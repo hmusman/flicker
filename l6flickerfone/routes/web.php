@@ -13,6 +13,12 @@ Route::view('ReviewDetail','review_detail');
 Route::view('NewMobilePhonePrices','new_mobile_phone_prices');
 Route::view('PriceCalculator','price_calculator');
 
+Route::prefix('Admin')->group(function(){
+	Route::get('/','AdminController@index');
+	Route::resource('/Product','ProductController');
+	Route::resource('/Category','CategoryController');
+});
+
 
 Route::group(['middleware'=>['LoginSessionCheck']],function(){
 	Route::view('BuyUsedMobilePhones','buy_used_mobile_phone');

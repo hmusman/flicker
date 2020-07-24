@@ -67,7 +67,7 @@
                                                     @php $image = 'storage/'.$product->image  @endphp
                                                     <tr>
                                                        <td>{{ $i }}</td>
-                                                       <td>{{ $product->category_id }}</td>
+                                                       <td>{{ $product->category->title }}</td>
                                                        <td><img src="{{ asset($image) }}" style="width: 100px; height: 100px;"></td>
                                                        <td>{{ $product->code }}</td>
                                                        <td>{{ $product->name }}</td>
