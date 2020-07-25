@@ -17,7 +17,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h4 class="page-title mb-1">Add FlickerFone Category</h4>
+                            <h4 class="page-title mb-1">Add FlickerFone Brand</h4>
                         </div>
                         <div class="col-md-4">
                             <div class="float-right d-none d-md-block">
@@ -36,35 +36,25 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-12">
-                            <form action="{{ route('Category.store') }}" method="post">
+                            <form action="{{ route('Brand.store') }}" method="post">
                                 @csrf
                                 <div class="card">
                                     <div class="card-body">
 
-                                        <h4 class="header-title">Add New Category</h4>
+                                        <h4 class="header-title">Add New Brand</h4>
                                         @if(Session::has('msg'))
                                             <div class="alert alert-warning col-md-4">{{ Session::get('msg') }}</div>
                                         @endif
+
                                         <div class="form-group row">
-                                            <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" name="title" type="text" value="{{ old('title') }}" placeholder="Enter Title" id="example-text-input">
-                                                @error('title')
+                                                <input class="form-control" name="name" type="text" value="{{ old('name') }}" placeholder="Enter Title" id="example-text-input">
+                                                @error('name')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
                                             
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-md-2 col-form-label">Description</label>
-                                            <div class="col-md-10">
-                                                <textarea name="description" id="textarea" class="form-control" maxlength="100" rows="3" placeholder="Please Type Description...">{{ old('description') }}</textarea>
-                                                 @error('description')
-                                                    <p class="text-danger">{{ $message }}</p>
-                                                @enderror
-
-                                            </div>
                                         </div>
 
                                         <div class="card">

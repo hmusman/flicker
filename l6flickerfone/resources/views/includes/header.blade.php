@@ -40,14 +40,21 @@
                 font-style: oblique !important;
                 }
 
+                @media (max-width: 550px){
 
+                  #myUL{
+                  width: 100% !important;
+                  }
+
+
+                }
 
                 ul[id="myUL"] > li:hover  center{
                     background-color: #ebeae2 !important;
                  }
 
           </style>
-          <ul id="myUL" style="display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
+          <ul id="myUL" style="position:absolute;display: none ; width: 22.4%; height: 500px; background-color: rgb(214, 203, 203);">
             <div>
               <button onclick="hideagain();" style="background-color: white;color: black;padding: 7px;width: 39px;font-weight: 600;border-style: none;">X</button>
             </div>
@@ -151,16 +158,16 @@
           <a href="/">Home</a>
         </li>
         <li class="backcolor1">
-          <a href="BuyUsedMobilePhones">Buy</a>
+          <a href="/BuyUsedMobilePhones">Buy</a>
         </li>
         <li class="backcolor1">
-          <a href="NewMobilePhonePrices">New</a>
+          <a href="/NewMobilePhonePrices">New</a>
         </li>
         <li class="backcolor1">
           <a href="/Login">Sell</a>
         </li>
         <li class="backcolor1">
-          <a href="PriceCalculator">Price Calulator</a>
+          <a href="/PriceCalculator">Price Calulator</a>
         </li>
       </ul>
     </span>

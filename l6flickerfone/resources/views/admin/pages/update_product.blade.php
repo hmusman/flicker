@@ -58,6 +58,22 @@
                                                 </select>
                                             </div>
                                         </div>
+
+                                        <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
+                                            <div class="col-md-10">
+                                                <select class="form-control" name="brand">
+                                                    <option selected="" disabled="">Select Brand</option>
+                                                    @foreach($brands as $brand)
+                                                         <option <?php if(old('brand')==$brand->id){ echo "selected=''"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('brand')
+                                                    <p class="text-danger mt-3">{{ $message }}</p>
+                                                @enderror
+                                            </div>
+                                        </div>
+
                                         <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Code</label>
                                             <div class="col-md-10">
@@ -108,17 +124,58 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-md-2 col-form-label"> Picture</label>
+                                         <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label"> Image 1</label>
                                             <div class="col-md-10"> 
                                                 <div class="fallback">
-                                                    <input type="hidden" name="oldImage" value="{{ $product->image }}">
-                                                    <input name="image" type="file">
-                                                    @error('image')
+                                                    <input name="image1" type="file">
+                                                    <input type="hidden" name="oldImage1" value="{{ $product->image }}">
+                                                     @php $image1 = 'storage/'.$product->image  @endphp
+                                                    <img src='{{ asset($image1) }}' style="width: 100px; height: 100px;">
+                                                    @error('image1')
                                                         <p class="text-danger mt-3">{{ $message }}</p>
                                                     @enderror
 
-                                                    @error('invalidImage')
+                                                    @error('invalidImage1')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label"> Image 2</label>
+                                            <div class="col-md-10"> 
+                                                <div class="fallback">
+                                                    <input name="image2" type="file">
+                                                    <input type="hidden" name="oldImage2" value="{{ $product->dimage }}">
+                                                    @php $image2 = 'storage/'.$product->dimage  @endphp
+                                                    <img src='{{ asset($image2) }}' style="width: 100px; height: 100px;">
+                                                    @error('image2')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+
+                                                    @error('invalidImage2')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label"> Image 3</label>
+                                            <div class="col-md-10"> 
+                                                <div class="fallback">
+                                                    <input name="image3" type="file">
+                                                    <input type="hidden" name="oldImage3" value="{{ $product->dimage1 }}">
+                                                    @php $image3 = 'storage/'.$product->dimage1  @endphp
+                                                    <img src='{{ asset($image3) }}' style="width: 100px; height: 100px;">
+                                                    @error('image3')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+
+                                                    @error('invalidImage3')
                                                         <p class="text-danger mt-3">{{ $message }}</p>
                                                     @enderror
                                                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2020 at 01:46 PM
+-- Generation Time: Jul 25, 2020 at 01:31 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -45,6 +45,26 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'adminname', 'admin@gmail.com', NULL, '$2y$10$BqEyjt82j94dXvXrlhWDUOWT7pb/nXX/LIuedSSzEj9NbPup3yuYy', NULL, '2020-07-22 18:05:30', '2020-07-22 14:15:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brands`
+--
+
+CREATE TABLE `brands` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'samsung', '2020-07-25 05:12:43', '2020-07-25 05:12:43');
 
 -- --------------------------------------------------------
 
@@ -105,7 +125,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2020_07_22_102410_create_roles_table', 1),
-(5, '2020_07_24_064351_create_categories_table', 2);
+(5, '2020_07_24_064351_create_categories_table', 2),
+(6, '2020_07_25_081518_create_brands_table', 3);
 
 -- --------------------------------------------------------
 
@@ -144,10 +165,11 @@ CREATE TABLE `sma_products` (
   `name` varchar(255) NOT NULL,
   `unit` int(11) DEFAULT NULL,
   `cost` decimal(25,4) DEFAULT NULL,
-  `price` decimal(25,4) NOT NULL,
+  `price` decimal(25,0) NOT NULL,
   `alert_quantity` decimal(15,4) DEFAULT 20.0000,
   `image` varchar(255) DEFAULT 'no_image.png',
   `category_id` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL,
   `subcategory_id` int(11) DEFAULT NULL,
   `cf1` varchar(255) DEFAULT NULL,
   `cf2` varchar(255) DEFAULT NULL,
@@ -208,8 +230,9 @@ CREATE TABLE `sma_products` (
 -- Dumping data for table `sma_products`
 --
 
-INSERT INTO `sma_products` (`id`, `code`, `name`, `unit`, `cost`, `price`, `alert_quantity`, `image`, `category_id`, `subcategory_id`, `cf1`, `cf2`, `cf3`, `cf4`, `cf5`, `cf6`, `quantity`, `tax_rate`, `track_quantity`, `details`, `warehouse`, `barcode_symbology`, `file`, `description`, `tax_method`, `type`, `supplier1`, `supplier1price`, `supplier2`, `supplier2price`, `supplier3`, `supplier3price`, `supplier4`, `supplier4price`, `supplier5`, `supplier5price`, `promotion`, `promo_price`, `start_date`, `end_date`, `supplier1_part_no`, `supplier2_part_no`, `supplier3_part_no`, `supplier4_part_no`, `supplier5_part_no`, `sale_unit`, `purchase_unit`, `brand`, `slug`, `featured`, `weight`, `hsn_code`, `views`, `hide`, `second_name`, `added_by`, `dimage`, `dimage1`, `upload_type`, `bd`, `video`, `created_at`, `updated_at`) VALUES
-(1, '432', 'infinix hot 8 lite', NULL, NULL, '12000.0000', '20.0000', 'admin/images/product/91Pphjg7hung5xzg2x32nIu98SRakdhX12HeBbbu.png', 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, NULL, 1, NULL, NULL, 'code128', NULL, 'this is new brand', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, NULL, NULL, 0, NULL, NULL, '2020-07-24 06:06:35', '2020-07-24 06:43:21');
+INSERT INTO `sma_products` (`id`, `code`, `name`, `unit`, `cost`, `price`, `alert_quantity`, `image`, `category_id`, `brand_id`, `subcategory_id`, `cf1`, `cf2`, `cf3`, `cf4`, `cf5`, `cf6`, `quantity`, `tax_rate`, `track_quantity`, `details`, `warehouse`, `barcode_symbology`, `file`, `description`, `tax_method`, `type`, `supplier1`, `supplier1price`, `supplier2`, `supplier2price`, `supplier3`, `supplier3price`, `supplier4`, `supplier4price`, `supplier5`, `supplier5price`, `promotion`, `promo_price`, `start_date`, `end_date`, `supplier1_part_no`, `supplier2_part_no`, `supplier3_part_no`, `supplier4_part_no`, `supplier5_part_no`, `sale_unit`, `purchase_unit`, `brand`, `slug`, `featured`, `weight`, `hsn_code`, `views`, `hide`, `second_name`, `added_by`, `dimage`, `dimage1`, `upload_type`, `bd`, `video`, `created_at`, `updated_at`) VALUES
+(1, '432', 'infinix hot 8 lite', NULL, NULL, '12000', '20.0000', 'admin/images/product/GY2BAMpVfrM8lKxdC2YCxW0SE5bUGYe873Nom2ad.jpeg', 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, NULL, 1, NULL, NULL, 'code128', NULL, 'this is new brand', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/MrrmzpZQxLWUEDJqe0PhlVBtgMBIa4V1wMRbWNQq.jpeg', 'admin/images/product/pxHUbSoFjklgnPsMvfsqMpRyw4FIgbAs5HzVURTi.jpeg', 0, NULL, NULL, '2020-07-24 06:06:35', '2020-07-25 06:03:08'),
+(5, '4325', 'infinix hot 7 lite', NULL, NULL, '19500', '20.0000', 'admin/images/product/90pDmI0n824qs0negNz4SGzAJLTDPNas7s2iOVGX.png', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, 1, NULL, NULL, 'code128', NULL, 'this is description of infinix hot 7 lite mobile', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/SlQbN9VmrMtgbamAFtVvq0gBrVTXrduQdxr78SNf.jpeg', 'admin/images/product/1APrugUTJUw496DhuLU782tTAOKogSNOseFdQY3E.jpeg', 0, NULL, NULL, '2020-07-25 02:14:55', '2020-07-25 06:03:32');
 
 -- --------------------------------------------------------
 
@@ -248,6 +271,12 @@ INSERT INTO `users` (`id`, `role_name`, `username`, `name`, `email`, `company`, 
 -- Indexes for table `admins`
 --
 ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `brands`
+--
+ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -303,6 +332,12 @@ ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `brands`
+--
+ALTER TABLE `brands`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -318,7 +353,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -330,13 +365,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sma_products`
 --
 ALTER TABLE `sma_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

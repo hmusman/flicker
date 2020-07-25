@@ -36,6 +36,11 @@ class CategoryController extends Controller
         
         else
         {
+             if(Category::where('title',$request->title)->count() >0)
+            {
+                $request->session()->flash('msg','Category is already exist');
+                return back()->withInput();
+            }
             $category = new  Category();
             $category->title = $request->title;
             $category->description = $request->description;

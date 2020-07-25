@@ -138,4 +138,9 @@ class LoginAndRegisterController extends Controller
     	return redirect('/Login');
     }
 
+    public function show($id)
+    {
+        return "thsi";
+    }
+
 }

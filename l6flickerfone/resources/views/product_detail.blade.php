@@ -12,15 +12,37 @@
 @section('content')
 	
 	<a id="button"></a>
+	<!-- <button class="btn-xs button3 buydetailsbtn" style="position: absolute;right: 10%;" data-toggle="modal" data-target="#myModal"><i class="fa fa-phone"></i> Contact</button> -->
+	<div class="modal fade" id="myModal" tabindex="1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+
+		 <div class="modal-dialog">
+		    <!-- Modal Content: begins -->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title">Contact Details</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">×</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	Item: {{ ucwords($product->name) }}<br>
+		       	Name: Owner Owner<br>
+		        Phone Number : <b>03001234567</b>
+		      </div>
+
+		    </div>
+
+		 </div>
+
+	</div>
 	<section class="" style="">
 	    <div class="container">
 	      <div class="row">
 	         <div class="col-sm-12 ">
 		        <div align="left" class="" style="padding:1%;">
 		             <ul style="color:black;">
-		            <li style="padding-right: 1%;"><a href="https://flickerfone.com/">Home</a></li>/
-		            <li style="padding-right: 1%;"><a href="https://flickerfone.com/buy">Apple</a></li>/
-		            <li style="padding-right: 1%;"><a href="#">iphone x</a></li>
+		            <li style="padding-right: 1%;"><a href="/">Home</a></li>/
+		            <li style="padding-right: 1%;"><a href="">{{ ucwords($product->name) }}</a></li>
 		            </ul>
 		        </div>
 
@@ -28,8 +50,8 @@
 
 	        <div class="col-sm-5">
 		        <div class="img-zoom-container" onmousenter="showme(this)">
-		  
-		            <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset('storage/images/CEthq6vU4h.jpg') }}"  srcset="{{ asset('storage/images/CEthq6vU4h.jpg') }}" width="426" height="426"></p></span>
+		  			@php $image1 = 'storage/'.$product->image; $image2 = 'storage/'.$product->dimage; $image3 = 'storage/'.$product->dimage1;  @endphp
+		            <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($image1) }}"  srcset="{{ asset($image1) }}" width="426" height="426"></p></span>
 		          
 		            <span id="myhide" style="float: right;
 		              position: absolute;
@@ -42,8 +64,8 @@
 		        	<div id="slider1">
 		          		<div class="thumbelina-but horiz left disabled"><i class="glyphicon glyphicon-circle-arrow-left"></i></div>
 		                <div style="position:absolute;overflow:hidden;width:100%;height:100%;"><ul class="thumbelina" style="left: 0px;">
-			              <li style="display: inline-block;"><img class="cloudzoom-gallery img-thumbnail" src="{{ asset('storage/images/CEthq6vU4h - Copy.jpg') }}" data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('storage/images/CEthq6vU4h - Copy.jpg') }}'  " style="max-width:90px;max-height:100px;"></li>
-			              <li style="display: inline-block;"><img class="cloudzoom-gallery img-thumbnail" src="{{ asset('storage/images/CEthq6vU4h - Copy.jpg') }}" data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('storage/images/CEthq6vU4h - Copy.jpg') }}'  " style="max-width:90px;max-height:100px;"></li>
+			              <li style="display: inline-block;"><img class="cloudzoom-gallery img-thumbnail" src="{{ asset($image2) }}" data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($image2) }}'  " style="max-width:90px;max-height:100px;"></li>
+			              <li style="display: inline-block;"><img class="cloudzoom-gallery img-thumbnail" src="{{ asset($image3) }}" data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($image3) }}'  " style="max-width:90px;max-height:100px;"></li>
 		  
 		              		</ul>
 		          		</div>
@@ -55,9 +77,9 @@
 	           
 	        </div>
 	        <div class="col-sm-6">
-	           <h3>Apple iphone x Black 64 GB </h3>
-	           <p style="font-size: 16px;font-weight:700;padding: 10px;">dlkbjoidfv</p>
-	           <b class="buyprice" style="font-size: 23px;display:block;margin-top: 20px;">PKR  50,000<button class="btn-xs button3 buydetailsbtn" style="position: absolute;right: 10%;" data-toggle="modal" data-target="#myModal"><i class="fa fa-phone"></i> Contact</button></b>
+	           <h3>{{ ucwords($product->name) }}</h3>
+	           <!-- <p style="font-size: 16px;font-weight:700;padding: 10px;">dlkbjoidfv</p> -->
+	           <b class="buyprice" style="font-size: 23px;display:block;margin-top: 20px;">PKR  {{ number_format($product->price) }}<button class="btn-xs button3 buydetailsbtn" style="position: absolute;right: 10%;" data-toggle="modal" data-target="#myModal"><i class="fa fa-phone"></i> Contact</button></b>
 	           <div style="margin:15px;">
 	            <table class="table-bordered">
 	            <tbody><tr>

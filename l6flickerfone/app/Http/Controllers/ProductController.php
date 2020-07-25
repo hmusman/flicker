@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Product;
 use App\Category;
+use App\Brand;
+
 class ProductController extends Controller
 {
    
@@ -18,7 +20,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.pages.add_product',compact('categories'));
+        $brands = Brand::all();
+        return view('admin.pages.add_product',compact(['categories','brands']));
     }
 
     
@@ -26,12 +29,15 @@ class ProductController extends Controller
     {
         $validations = Validator::make($request->all(),[
             'category'=>'required',
+            'brand'=>'required',
             'code'=>'bail | required | numeric',
             'name'=>'bail | required | alpha_dash',
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
             'description'=>'required',
-            'image'=>'required'
+            'image1'=>'required',
+            'image2'=>'required',
+            'image3'=>'required'
         ]);
 
         if($validations->fails())
@@ -40,54 +46,63 @@ class ProductController extends Controller
         }
         else
         {
-            $ext = $request->file('image')->extension();
-            if ($ext=='png' || $ext=='jpg' || $ext=='jpeg')
-            {
-                if(Product::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
-                {
-                    $request->session()->flash('warningMsg',"Product is already exist");
-                     return back()->withInput();
-                }
-                else
-                {
-                    $filename= $request->file('image')->store('admin/images/product','public');
-                    $product = new Product();
-                    $name = str_replace('_',' ',$request->name);
-                    $product->code= $request->code;
-                    $product->name = $name;
-                    $product->price = $request->price;
-                    $product->quantity = $request->quantity;
-                    $product->image = $filename;
-                    $product->description = $request->description;
-                    $product->category_id = $request->category; 
-                    if ($product->save())
-                    {
-                        $request->session()->flash('msg',"Product has been added successfully");
-                        return redirect()->route('Product.index');
-                    }
-                }
-                
+            $ext1 = $request->file('image1')->extension();
+            $ext2 = $request->file('image2')->extension();
+            $ext3 = $request->file('image3')->extension();
 
+            if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg') 
+            { $filename1= $request->file('image1')->store('admin/images/product','public'); }
+            else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+
+            if ($ext2=='png' || $ext2=='jpg' || $ext2=='jpeg') 
+            { $filename2= $request->file('image2')->store('admin/images/product','public'); }
+            else{ return back()->withErrors(['invalidImage2'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+
+            if ($ext3=='png' || $ext3=='jpg' || $ext3=='jpeg') 
+            { $filename3= $request->file('image3')->store('admin/images/product','public'); }
+            else{ return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+
+            if(Product::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
+            {
+                $request->session()->flash('warningMsg',"Product is already exist");
+                 return back()->withInput();
             }
             else
             {
-
-                 return back()->withErrors(['invalidImage'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                $product = new Product();
+                $name = str_replace('_',' ',$request->name);
+                $product->brand_id = $request->brand;
+                $product->code= $request->code;
+                $product->name = $name;
+                $product->price = $request->price;
+                $product->quantity = $request->quantity;
+                $product->image = $filename1;
+                $product->dimage = $filename2;
+                $product->dimage1 = $filename3;
+                $product->description = $request->description;
+                $product->category_id = $request->category; 
+                if ($product->save())
+                {
+                    $request->session()->flash('msg',"Product has been added successfully");
+                    return redirect()->route('Product.index');
+                }
             }
         }
     }
 
     public function show($id)
     {
-        //
+        $product = Product::where('id',$id)->first();
+        return view('product_detail',compact('product'));
     }
 
    
     public function edit($id)
     {
         $categories = Category::all();
-        $product = Product::find($id)->first();
-        return view('admin.pages.update_product',compact(['categories','product']));
+        $product = Product::where('id',$id)->first();
+        $brands = Brand::all();
+        return view('admin.pages.update_product',compact(['brands','categories','product']));
     }
 
     
@@ -95,6 +110,7 @@ class ProductController extends Controller
     {
         $validations = Validator::make($request->all(),[
             'category'=>'required',
+            'brand'=>'required',
             'code'=>'bail | required | numeric',
             'name'=>'bail | required | alpha_dash',
             'price'=>'bail | required | numeric',
@@ -108,32 +124,70 @@ class ProductController extends Controller
         }
         else
         {
-            $filename = "";
-            if($request->hasFile('image'))
+            if($request->hasFile('image1'))
             {
-                $ext = $request->file('image')->extension();
-                if ($ext=='png' || $ext=='jpg' || $ext=='jpeg')
+                $ext1 = $request->file('image1')->extension();
+                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
                 {
-                    $filename= $request->file('image')->store('admin/images/product','public');
+                    $filename1= $request->file('image1')->store('admin/images/product','public');
                 }
                 else
                 {
 
-                     return back()->withErrors(['invalidImage'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                     return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
                 }
             }
             else
             {
-                $filename = $request->oldImage;
+                $filename1 = $request->oldImage1;
+            }
+
+            if($request->hasFile('image2'))
+            {
+                $ext2 = $request->file('image2')->extension();
+                if ($ext2=='png' || $ext2=='jpg' || $ext2=='jpeg')
+                {
+                    $filename2= $request->file('image2')->store('admin/images/product','public');
+                }
+                else
+                {
+
+                     return back()->withErrors(['invalidImage2'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                }
+            }
+            else
+            {
+                $filename2 = $request->oldImage2;
+            }
+
+            if($request->hasFile('image3'))
+            {
+                $ext3 = $request->file('image3')->extension();
+                if ($ext3=='png' || $ext3=='jpg' || $ext3=='jpeg')
+                {
+                    $filename3= $request->file('image3')->store('admin/images/product','public');
+                }
+                else
+                {
+
+                     return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                }
+            }
+            else
+            {
+                $filename3 = $request->oldImage3;
             }
 
             $product = Product::find($id);
             $name = str_replace('_',' ',$request->name);
+            $product->brand_id = $request->brand;
             $product->code= $request->code;
             $product->name = $name;
             $product->price = $request->price;
             $product->quantity = $request->quantity;
-            $product->image = $filename;
+            $product->image = $filename1;
+            $product->dimage = $filename2;
+            $product->dimage1 = $filename3;
             $product->description = $request->description;
             $product->category_id = $request->category; 
             if ($product->save())
@@ -155,6 +209,7 @@ class ProductController extends Controller
         }
     }
 
+   
     public function liveSearch(Request $request)
     {
         if ($request->ajax())
@@ -176,15 +231,16 @@ class ProductController extends Controller
             {
                 foreach ($data as $row)
                 {
+                    $image = 'storage/'.$row->image;
                     $output.='
                         <li style="width:80% !important; margin-left:10%!important; margin-right:10% !important;margin-bottom:2% !important; margin-top:2% !important;">
                           <div class="row">
                             <div class="col-md-12">
                               <div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px;">
                                 <center>
-                                  <image src="'.asset('storage/images/LiveSrchImages/images.png').'" />
+                                  <image src="'.asset($image).'"  style="margin-top:3px; width:130px; height:130px;" />
                                 </center>
-                                <a href="#" style="text-align: center;">'. $row->name .'
+                                <a href="/ProductDetail/'.$row->id.'" style="text-align: center;">'. $row->name .'
                     
                                   <h6>PKR '.$row->price.'</h6>
                                 </a>

@@ -59,8 +59,27 @@
                                                          <option <?php if(old('category')==$category->id){ echo "selected=''"; } ?>  value="{{ $category->id }}">{{ ucfirst($category->title) }}</option>
                                                     @endforeach
                                                 </select>
+                                                @error('category')
+                                                    <p class="text-danger mt-3">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
+
+                                        <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
+                                            <div class="col-md-10">
+                                                <select class="form-control" name="brand">
+                                                    <option selected="" disabled="">Select Brand</option>
+                                                    @foreach($brands as $brand)
+                                                         <option <?php if(old('brand')==$brand->id){ echo "selected=''"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @error('brand')
+                                                    <p class="text-danger mt-3">{{ $message }}</p>
+                                                @enderror
+                                            </div>
+                                        </div>
+
                                         <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Code</label>
                                             <div class="col-md-10">
@@ -112,15 +131,47 @@
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="example-text-input" class="col-md-2 col-form-label"> Picture</label>
+                                            <label for="example-text-input" class="col-md-2 col-form-label"> Image 1</label>
                                             <div class="col-md-10"> 
                                                 <div class="fallback">
-                                                    <input name="image" type="file">
-                                                    @error('image')
+                                                    <input name="image1" type="file">
+                                                    @error('image1')
                                                         <p class="text-danger mt-3">{{ $message }}</p>
                                                     @enderror
 
-                                                    @error('invalidImage')
+                                                    @error('invalidImage1')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label"> Image 2</label>
+                                            <div class="col-md-10"> 
+                                                <div class="fallback">
+                                                    <input name="image2" type="file">
+                                                    @error('image2')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+
+                                                    @error('invalidImage2')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label"> Image 3</label>
+                                            <div class="col-md-10"> 
+                                                <div class="fallback">
+                                                    <input name="image3" type="file">
+                                                    @error('image3')
+                                                        <p class="text-danger mt-3">{{ $message }}</p>
+                                                    @enderror
+
+                                                    @error('invalidImage3')
                                                         <p class="text-danger mt-3">{{ $message }}</p>
                                                     @enderror
                                                 </div>
