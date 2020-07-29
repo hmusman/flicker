@@ -101,6 +101,16 @@
                                         </div>
 
                                         <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Color</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="example-text-input">
+                                                @error('color')
+                                                    <p class="text-danger mt-3">{{ $message }}</p>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Price</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="number" value="{{ old('price') }}" name="price" placeholder="Enter Price" id="example-text-input">

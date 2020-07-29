@@ -104,14 +104,8 @@
 
               <h4>Find by Colour</h4><br>
               <b>
-              <div class="row" style="margin-left:5px;">
-                  @foreach($colors as $color)
-                    <div class="col-md-3 btnbrand" onClick="colorProduct('{{$color->color}}');" style="cursor: pointer; text-align: center;">{{ $color->color }}</div>
-
-                  @endforeach
-                </div> 
-             <!-- <table class="make_color table table-responsive table-stripped" style="display: block;">
-        <tr><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('1',this)" align="center">Black</td><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('6',this)" align="center">Blue</td><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('2',this)" align="center">Gold</td><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('12',this)" align="center">Green</td> </tr></table> -->
+             <table class="make_color table table-responsive table-stripped" style="display: block;">
+        <tr><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('1',this)" align="center">Black</td><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('6',this)" align="center">Blue</td><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('2',this)" align="center">Gold</td><td class="btnbrand " style="border: 1px solid #bbb;cursor: pointer;" onclick="colorfilter('12',this)" align="center">Green</td> </tr></table>
             </b>
           </div>
 
@@ -119,35 +113,27 @@
                 <h4>Find by Make</h4>
                 <br>
                 <b>
+            <table class="table table-responsive table-stripped"  style="display: block;">
 
-                  <div class="row" style="margin-left:5px;">
-                    @foreach($brands as $brand)
-                      <div class="col-md-3 btnbrand" onClick="brandProduct({{$brand->id}});" style="cursor: pointer; text-align: center;">{{ $brand->name }}</div>
-
-                    @endforeach
-                  </div>
-                <!-- <table class="table table-responsive table-stripped"  style="display: block;">
-
-                  <tr class='table_make'><td class='btnbrand' onClick="brand('1')">Alcatel</td><td class='btnbrand' onClick="brand('2')">Apple</td><td class='btnbrand' onClick="brand('3')">BlackBerry</td><td class='btnbrand'style='border-right:none;' onClick="brand('4')">Calme</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('5')">Club Mobile</td><td class='btnbrand' onClick="brand('6')">Danny</td><td class='btnbrand' onClick="brand('8')">G'Five</td><td class='btnbrand'style='border-right:none;' onClick="brand('7')">General</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('9')">GRight</td><td class='btnbrand' onClick="brand('10')">Haier</td><td class='btnbrand' onClick="brand('11')">Honor</td><td class='btnbrand'style='border-right:none;' onClick="brand('12')">HTC</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('13')">Huawei</td><td class='btnbrand' onClick="brand('14')">iMate</td><td class='btnbrand' onClick="brand('15')">iNew</td><td class='btnbrand'style='border-right:none;' onClick="brand('16')">Infinix</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('17')">Lenovo</td><td class='btnbrand' onClick="brand('18')">LG</td><td class='btnbrand' onClick="brand('23')">Megagate</td><td class='btnbrand'style='border-right:none;' onClick="brand('19')">Meizu</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('20')">Microsoft</td><td class='btnbrand' onClick="brand('21')">Mobilink Jazz</td><td class='btnbrand' onClick="brand('22')">Motorola</td><td class='btnbrand'style='border-right:none;' onClick="brand('24')">Nokia</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('25')">OnePlus</td><td class='btnbrand' onClick="brand('26')">OPhone</td><td class='btnbrand' onClick="brand('27')">OPPO</td><td class='btnbrand'style='border-right:none;' onClick="brand('28')">QMobile</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('29')">Realme</td><td class='btnbrand' onClick="brand('30')">Rivo</td><td class='btnbrand' onClick="brand('31')">Samsung</td><td class='btnbrand'style='border-right:none;' onClick="brand('32')">Sony</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('33')">Sony Ericsson</td><td class='btnbrand' onClick="brand('34')">Tecno</td><td class='btnbrand' onClick="brand('35')">Telenor</td><td class='btnbrand'style='border-right:none;' onClick="brand('36')">Vivo</td>
-                    </tr>
-                   <tr class='table_make'><td class='btnbrand' onClick="brand('37')">VOICE</td><td class='btnbrand' onClick="brand('38')">Xiaomi</td><td class='btnbrand' onClick="brand('39')">Zong</td>    -->       
-                <!-- </table> -->
+                <tr class='table_make'><td class='btnbrand' onClick="brand('1')">Alcatel</td><td class='btnbrand' onClick="brand('2')">Apple</td><td class='btnbrand' onClick="brand('3')">BlackBerry</td><td class='btnbrand'style='border-right:none;' onClick="brand('4')">Calme</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('5')">Club Mobile</td><td class='btnbrand' onClick="brand('6')">Danny</td><td class='btnbrand' onClick="brand('8')">G'Five</td><td class='btnbrand'style='border-right:none;' onClick="brand('7')">General</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('9')">GRight</td><td class='btnbrand' onClick="brand('10')">Haier</td><td class='btnbrand' onClick="brand('11')">Honor</td><td class='btnbrand'style='border-right:none;' onClick="brand('12')">HTC</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('13')">Huawei</td><td class='btnbrand' onClick="brand('14')">iMate</td><td class='btnbrand' onClick="brand('15')">iNew</td><td class='btnbrand'style='border-right:none;' onClick="brand('16')">Infinix</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('17')">Lenovo</td><td class='btnbrand' onClick="brand('18')">LG</td><td class='btnbrand' onClick="brand('23')">Megagate</td><td class='btnbrand'style='border-right:none;' onClick="brand('19')">Meizu</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('20')">Microsoft</td><td class='btnbrand' onClick="brand('21')">Mobilink Jazz</td><td class='btnbrand' onClick="brand('22')">Motorola</td><td class='btnbrand'style='border-right:none;' onClick="brand('24')">Nokia</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('25')">OnePlus</td><td class='btnbrand' onClick="brand('26')">OPhone</td><td class='btnbrand' onClick="brand('27')">OPPO</td><td class='btnbrand'style='border-right:none;' onClick="brand('28')">QMobile</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('29')">Realme</td><td class='btnbrand' onClick="brand('30')">Rivo</td><td class='btnbrand' onClick="brand('31')">Samsung</td><td class='btnbrand'style='border-right:none;' onClick="brand('32')">Sony</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('33')">Sony Ericsson</td><td class='btnbrand' onClick="brand('34')">Tecno</td><td class='btnbrand' onClick="brand('35')">Telenor</td><td class='btnbrand'style='border-right:none;' onClick="brand('36')">Vivo</td>
+                  </tr>
+                 <tr class='table_make'><td class='btnbrand' onClick="brand('37')">VOICE</td><td class='btnbrand' onClick="brand('38')">Xiaomi</td><td class='btnbrand' onClick="brand('39')">Zong</td>            </table>
             </b>
         </div>
 		<div class="col-sm-12 div_smart" style="color: #6d6b6b;background: #fafafa;">
@@ -198,81 +184,13 @@ Sort ::
 </div>
 </div>
 <br>
-
-<div id="mypro"></div>
-<div class="products" id="products">
-    @foreach($products as $row)
-      @php $image = 'storage/'.$row->image; @endphp
-      <div class="row buyleft">
-          <a href="ProductDetail/{{$row->id}}"></a>
-          <div class="col-xs-12 mainboxbuy"><a href="ProductDetail/{{ $row->id }}">
-            <div class="col-sm-3" align="center">
-                <img class="img-responsive img-thumbnail" src="{{asset($image)}}" style="width: 150px; height: 150px;" >
-            </div>
-            </a>
-            <div class="col-sm-9">
-              <a style="color: black !important;" href="ProductDetail/{{$row->id}}">
-                <h3 id="buytextmain" style="font-size:20px;">{{ucwords($row->name)}}</h3>
-
-                <p>dlkbjoidfv</p>
-                <div class="clearfix"></div>
-              </a>
-              <div class="row buymargintop"><a style="color: black !important;" href="ProductDetail/{{ $row->id }}">
-                <div class="col-sm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <p class="buyprice">PKR  {{$row->price}}</p>
-                <table class="table-bordered"><tbody><tr><td style="padding:5px;color:#444;background:#e0e0e1;">Fair</td><td style="padding:5px;background:#028f63;color:#fff;">Good</td><td style="padding:5px;color:#444;background:#e0e0e1;">Excellent</td></tr></tbody></table></div>
-                </a>
-                <div class=" col-sm-8 col-md-8 col-lg-8">
-                  <a  style="color: black !important;" href="ProductDetail/{{ $row->id }}">
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td><b>Negotiable: </b> </td>
-                          <td><b>Yes</b></td>
-                        </tr>
-                        <tr>
-                          <td>From:</td>
-                          <td>Gujrat</td>
-                        </tr>
-                        <tr>
-                          <td>Brand:</td>
-                          <td>Apple</td>
-                        </tr>
-                        <tr>
-                          <td>Model:</td>
-                          <td>iphone x</td>
-                        </tr>
-                        <tr>
-                          <td>Network:</td>
-                          <td>unlocked</td>
-                        </tr>
-                        <tr>
-                          <td>PTA Approved:</td>
-                          <td>Yes</td>
-                        </tr>
-                        <tr>
-                          <td>Posted Date:</td>
-                          <td>2020-04-12 09:15:51</td>
-                        </tr>
-                    </tbody>
-                  </table>
-                    </a><a href="ProductDetail/{{ $row->id }}">
-                    <button class="btn-xs button3 buydetailsbtn">Contact / Details</button>
-                    </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    @endforeach
+<div class="products"></div>
 
 
-</div>
-    
 <div class="clearfix"></div>
    
-  <div class="products">
-     
+    <div class="products">
+      {{ $outpout }}
   </div>
 
     <div class="col-sm-12" style="align-items: center;" >
@@ -326,83 +244,45 @@ nsort="";
 varient = "";
 search = "";
 
-function colorProduct(color){
-    $.ajax({
-      url:"{{ route('colorsearch') }}",
-      type:"GET",
-      dataType:"json",
-      data:{color:color},
-      success:function(data)
-      {
-        $('#products').html(data.priceData);
-        if(data.total <= productend)
-        {
-          $('.loadmore').hide();
-        }
-        else
-        {
-          $('.loadmore').show();
-        }
-      }
-    });
-}
-
-function  brandProduct(id){
-    $.ajax({
-      url:"{{ route('brandsearch') }}",
-      type:"GET",
-      dataType:"json",
-      data:{brand:id},
-      success:function(data)
-      {
-        $('#products').html(data.priceData);
-        if(data.total <= productend)
-        {
-          $('.loadmore').hide();
-        }
-        else
-        {
-          $('.loadmore').show();
-        }
-      }
-    });
-}
-
 var slider = new Slider('#ex2', {
   //tooltip: 'always'
 }).on('slideStop', function(data){
   productmin = data[0];
-  productmax = data[1];   
-  pricesearch(productmin,productmax);
+  productmax = data[1];
+  var chk = 0;
+  var num = $('#ex2').attr('data-search');
+  var purl = "{{ ROUTE('pricesearch') }}";
+  purl+= "/"+productmin+"/"+productmax;
+  window.location = purl;
+  // for(var i=0; i<num; i++)
+  // {
+  //   $.ajax({
+  //     url:purl,
+  //     type:"GET",
+  //     dataType:"json",
+  //     success:function(data)
+  //     {
+  //       $('.products').html(data.priceData);
+  //       // alert(data.total);
+  //       // if(data.total <= productend)
+  //       // {
+  //       //   $('.loadmore').hide();
+  //       // }
+  //       // else
+  //       // {
+  //       //   $('.loadmore').show();
+  //       // }
+  //     }
+  //   });
+  // }
  
+     
 });
-
-
-function pricesearch(productmin,productmax)
-{
-  $.ajax({
-    url:"{{ route('pricesearch') }}",
-    type:"GET",
-    dataType:"json",
-    data:{minprice:productmin,maxprice:productmax},
-    success:function(data)
-    {
-      $('#products').html(data.priceData);
-      if(data.total <= productend)
-      {
-        $('.loadmore').hide();
-      }
-      else
-      {
-        $('.loadmore').show();
-      }
-    }
-  });
-}
 
 slider.on('slide', function(data){
     $(".pmin").val(data[0]);
     $(".pmax").val(data[1]);
+    // alert('code me heree....');
 });
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -471,6 +351,9 @@ $(".dropdown-toggle").dropdown();
   $(".pmin").on('change',function(){
     let vm =  $(".pmin").val();
     let vmx =  $(".pmax").val();
+    alert('heree..');
+    console.log(vm);
+
    $("#ex2").attr("data-slider-value","["+vm+","+vmx+"]");
    $("#ex2").attr("data-slider-min",vm);
    $("#ex2").attr("data-slider-max",vmx);
@@ -507,29 +390,6 @@ $('#city').amsifySuggestags({
       suggestions: ['18 Hazari','Abbotabad','Abdul Hakim','adda bun bosan','Alipur','arif wala','Attock','Baddin','Badin','Bagh','Bahawal Nagar','Bahawalpur','Balakot','Bannu','Basir pur','Bukkur','Burewala','Chakwal','Chaman','Channab Nagar','Charsadda','Chicha watni','Chistian','Dadu','Daska','Dera Ghazi Khan','Dera Ismail Khan','Dinga','Faisalabad','faisalabad','Fort Abbass','Ghotki','Gujjar Khan','Gujranwala','Gujrat','Gwadar','Hafizabad','Hangoo','Haripur','Hasilpur','Hyderabad','Islamabad','Jacobabad','Jaffarabad','Jalalpur Bhattian','jalalpur jattan','Jamshoro','Jauharabad','Jhang','Kahuta','kalllar Kahar','Karachi','Kasur','Khairpur','Khanpur','Kharian','Khuzdar','Khuzdar','Kot Addu','Lahore','LalaMusa','Larkana','Lasbela','Layyah','Mansehra','Mardan','Mehrab Kot','Mehrab Pur','Mianwali','Mirpur AJK','Mirpur Khas','Multan','Muridkey','Muzzafar Garh','Nankana Sahib','NAROWAL','Nasirabad','Nawabshah','Nowshera','Okara','Pak Pattan','Pattoki','Peshawar','Petaro','Quetta','Rahim Yar Khan','Rajan Pur','Rawalpindi','Sahiwal','Sangla hil','Sargodha','shahdara','Shahkot','Sheikhupura','Shikarpur','Sialkot','Sibi','Sukkur','Swabi','Talagang','Taunsa','Taxila','Turbat','Vehari','Wah Cantt','Wah Cantt','Wah Cantt','Wazirabad','Zhob'],
     whiteList: true
   });
-  
-  $('.amsify-suggestags-input').change(function(){
-      var city = $(this).val().toLowerCase();
-       $.ajax({
-          url:"{{ route('citysearch') }}",
-          type:"GET",
-          dataType:"json",
-          data:{city:city},
-          success:function(data)
-          {
-            $('#products').html(data.priceData);
-            if(data.total <= productend)
-            {
-              $('.loadmore').hide();
-            }
-            else
-            {
-              $('.loadmore').show();
-            }
-          }
-      });
-  });
-  
 //Document ready End
   });
 

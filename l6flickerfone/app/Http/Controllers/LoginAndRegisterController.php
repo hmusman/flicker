@@ -16,6 +16,11 @@ class LoginAndRegisterController extends Controller
     	return view('login')->with(compact('roles'));
     }
 
+    public function adminIndex()
+    {
+        return view('admin_login');
+    }
+
     public function buyer(Request $request)
     {
     	$buyer_validation  = Validator::make($request->all(),[
@@ -132,6 +137,38 @@ class LoginAndRegisterController extends Controller
     	}
     }
 
+     public function adminLogin(Request $request)
+    {
+        $validation = Validator::make($request->all(),[
+            'login_email'=>'bail | required | email',
+            'login_password'=>'bail | required'
+        ]);
+
+        if ($validation->fails())
+        {
+            return back()->withErrors($validation)->withInput();
+        }
+        else
+        {
+            $user =  DB::table('admins')->select('*')->where([['email','=',$request->login_email],['password','=',$request->login_password]])->first();
+            if ($user)
+            {
+                $request->session()->put('admin',$user->email);
+                return redirect('Admin');
+            }
+            else
+            {
+                return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->with($request->only('email'));
+            }
+
+        }
+    }
+
+    public function adminLogout(Request $request)
+    {
+        $request->session()->put('admin','');
+        return redirect('/AdminLogin');
+    }
     public function logout(Request $request)
     {
     	$request->session()->put('user','');

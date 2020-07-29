@@ -27,6 +27,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middlewareGroups = [
+        'AdminLoginSessionCheck'=>[ \App\Http\Middleware\AdminLoginSessionCheck::class],
         'LoginSessionCheck'=>[ \App\Http\Middleware\LoginSessionCheck::class],
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,

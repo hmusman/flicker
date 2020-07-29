@@ -35,16 +35,16 @@
                 </a>
               </li>
               <li style="padding: 8px; margin-top: 16px;">
-                <a href="ProductDetail" class="lia" >Apple iphone x Black</a>
+                <a href="" class="lia" >Apple iphone x Black</a>
               </li>
               <li style="padding: 8px;">
-                <a href="ProductDetail" class="lia">Alcatel jabi Green 4 GB</a>
+                <a href="" class="lia">Alcatel jabi Green 4 GB</a>
               </li>
               <li style="padding: 8px;">
-                <a href="ProductDetail" class="lia">Apple VIVO Y15 Gold 16 GB</a>
+                <a href="" class="lia">Apple VIVO Y15 Gold 16 GB</a>
               </li>
               <li style="padding: 8px;">
-                <a href="ProductDetail" class="lia">HTC Play 2 Black 4 GB</a>
+                <a href="" class="lia">HTC Play 2 Black 4 GB</a>
               </li>
               <!-- <div class="dropdown"><a href="#" class="dropbtn lia">Sitemap Pages</a><div class="dropdown-content"><ul><li><a href="#"><strong>Home</strong></a></li><li><a href="#"><strong>About</strong></a></li><ul><li><a href="#">Login/ Register</a></li><li><a href="#">About Us</a></li><li><a href="#">Contact Us</a></li><li><a href="#">Privacy Policy </a></li></ul><li><a href="#">Advertise With Us </a></li></ul></ul></div></div> -->
             </li>

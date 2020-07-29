@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Product;
 use App\Category;
 use App\Brand;
-
+use Session;
 class ProductController extends Controller
 {
    
@@ -17,6 +17,14 @@ class ProductController extends Controller
         return view('admin.pages.products',compact('products'));
     }
 
+    public function frontEndProducts()
+    {
+        $products = Product::all();
+        $brands = Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct()->get();
+        $colors = Product::select('color')->distinct()->get();
+        return view('buy_used_mobile_phone',compact(['products','brands','colors']));
+    }
+    
     public function create()
     {
         $categories = Category::all();
@@ -32,6 +40,7 @@ class ProductController extends Controller
             'brand'=>'required',
             'code'=>'bail | required | numeric',
             'name'=>'bail | required | alpha_dash',
+            'color'=>'required',
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
             'description'=>'required',
@@ -74,6 +83,7 @@ class ProductController extends Controller
                 $product->brand_id = $request->brand;
                 $product->code= $request->code;
                 $product->name = $name;
+                $product->color = $request->color;
                 $product->price = $request->price;
                 $product->quantity = $request->quantity;
                 $product->image = $filename1;
@@ -113,6 +123,7 @@ class ProductController extends Controller
             'brand'=>'required',
             'code'=>'bail | required | numeric',
             'name'=>'bail | required | alpha_dash',
+            'color'=>'required',
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
             'description'=>'required'
@@ -183,6 +194,7 @@ class ProductController extends Controller
             $product->brand_id = $request->brand;
             $product->code= $request->code;
             $product->name = $name;
+            $product->color = $request->color;
             $product->price = $request->price;
             $product->quantity = $request->quantity;
             $product->image = $filename1;
@@ -257,5 +269,368 @@ class ProductController extends Controller
             echo json_encode($records);
         }
 
-    }
+    }// livesearch
+
+   
+    public function priceSearch(Request $request)
+    {
+        $output = "";
+        if($request->ajax())
+        { 
+            $min = $request->minprice;
+            $max = $request->maxprice;
+            $data = Product::whereBetween('price',[$min,$max])->distinct()->get();
+            $k =0;
+            $count = $data->count();
+            // $output.='check :'.$request->chck."min :".$min." max :".$max;
+            if($count>0)
+            {
+                $i=0;
+                foreach($data as $row)
+                {
+                    $image = 'storage/'.$row->image;
+                    $output .= '<div class="row buyleft">
+                            <a href="ProductDetail/'.$row->id.'"></a>
+                            <div class="col-xs-12 mainboxbuy"><a href="ProductDetail/'.$row->id.'">
+                              <div class="col-sm-3" align="center">
+                                  <img class="img-responsive img-thumbnail" src="'.asset($image).'">
+                              </div>
+                              </a>
+                              <div class="col-sm-9">
+                                <a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <h3 id="buytextmain" style="font-size:20px;">'.ucwords($row->name).'</h3>
+
+                                  <p>dlkbjoidfv</p>
+                                  <div class="clearfix"></div>
+                                </a>
+                                <div class="row buymargintop"><a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <div class="col-sm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                  <p class="buyprice">PKR  '.$row->price.'</p>
+                                  <table class="table-bordered"><tbody><tr><td style="padding:5px;color:#444;background:#e0e0e1;">Fair</td><td style="padding:5px;background:#028f63;color:#fff;">Good</td><td style="padding:5px;color:#444;background:#e0e0e1;">Excellent</td></tr></tbody></table></div>
+                                  </a>
+                                  <div class=" col-sm-8 col-md-8 col-lg-8">
+                                    <a  style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                      <table>
+                                        <tbody>
+                                          <tr>
+                                            <td><b>Negotiable: </b> </td>
+                                            <td><b>Yes</b></td>
+                                          </tr>
+                                          <tr>
+                                            <td>From:</td>
+                                            <td>Gujrat</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Brand:</td>
+                                            <td>Apple</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Model:</td>
+                                            <td>iphone x</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Network:</td>
+                                            <td>unlocked</td>
+                                          </tr>
+                                          <tr>
+                                            <td>PTA Approved:</td>
+                                            <td>Yes</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Posted Date:</td>
+                                            <td>2020-04-12 09:15:51</td>
+                                          </tr>
+                                      </tbody>
+                                    </table>
+                                      </a><a href="ProductDetail/'.$row->id.'">
+                                      <button class="btn-xs button3 buydetailsbtn">Contact / Details</button>
+                                      </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>';
+                }
+                
+                
+            }
+            else
+            {
+                $output.="No Product is Available";
+            }
+          return json_encode(array('priceData'=> $output,'total'=>$count));  
+        }
+        
+
+    }// priceSearch
+
+     public function brandSearch(Request $request)
+    {
+        $output = "";
+        if($request->ajax())
+        { 
+            $data = Product::where('brand_id',$request->brand)->get();
+            $k =0;
+            $count = $data->count();
+            // $output.='check :'.$request->chck."min :".$min." max :".$max;
+            if($count>0)
+            {
+                $i=0;
+                foreach($data as $row)
+                {
+                    $image = 'storage/'.$row->image;
+                    $output .= '<div class="row buyleft">
+                            <a href="ProductDetail/'.$row->id.'"></a>
+                            <div class="col-xs-12 mainboxbuy"><a href="ProductDetail/'.$row->id.'">
+                              <div class="col-sm-3" align="center">
+                                  <img class="img-responsive img-thumbnail" src="'.asset($image).'">
+                              </div>
+                              </a>
+                              <div class="col-sm-9">
+                                <a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <h3 id="buytextmain" style="font-size:20px;">'.ucwords($row->name).'</h3>
+
+                                  <p>dlkbjoidfv</p>
+                                  <div class="clearfix"></div>
+                                </a>
+                                <div class="row buymargintop"><a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <div class="col-sm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                  <p class="buyprice">PKR  '.$row->price.'</p>
+                                  <table class="table-bordered"><tbody><tr><td style="padding:5px;color:#444;background:#e0e0e1;">Fair</td><td style="padding:5px;background:#028f63;color:#fff;">Good</td><td style="padding:5px;color:#444;background:#e0e0e1;">Excellent</td></tr></tbody></table></div>
+                                  </a>
+                                  <div class=" col-sm-8 col-md-8 col-lg-8">
+                                    <a  style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                      <table>
+                                        <tbody>
+                                          <tr>
+                                            <td><b>Negotiable: </b> </td>
+                                            <td><b>Yes</b></td>
+                                          </tr>
+                                          <tr>
+                                            <td>From:</td>
+                                            <td>Gujrat</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Brand:</td>
+                                            <td>Apple</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Model:</td>
+                                            <td>iphone x</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Network:</td>
+                                            <td>unlocked</td>
+                                          </tr>
+                                          <tr>
+                                            <td>PTA Approved:</td>
+                                            <td>Yes</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Posted Date:</td>
+                                            <td>2020-04-12 09:15:51</td>
+                                          </tr>
+                                      </tbody>
+                                    </table>
+                                      </a><a href="ProductDetail/'.$row->id.'">
+                                      <button class="btn-xs button3 buydetailsbtn">Contact / Details</button>
+                                      </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>';
+                }
+                
+                
+            }
+            else
+            {
+                $output.="No Product is Available";
+            }
+          return json_encode(array('priceData'=> $output,'total'=>$count));  
+        }
+        
+
+    }// brnadSearch
+
+    public function colorSearch(Request $request)
+    {
+        $output = "";
+        if($request->ajax())
+        { 
+            $data = Product::where('color',$request->color)->get();
+            $k =0;
+            $count = $data->count();
+            // $output.='check :'.$request->chck."min :".$min." max :".$max;
+            if($count>0)
+            {
+                $i=0;
+                foreach($data as $row)
+                {
+                    $image = 'storage/'.$row->image;
+                    $output .= '<div class="row buyleft">
+                            <a href="ProductDetail/'.$row->id.'"></a>
+                            <div class="col-xs-12 mainboxbuy"><a href="ProductDetail/'.$row->id.'">
+                              <div class="col-sm-3" align="center">
+                                  <img class="img-responsive img-thumbnail" src="'.asset($image).'">
+                              </div>
+                              </a>
+                              <div class="col-sm-9">
+                                <a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <h3 id="buytextmain" style="font-size:20px;">'.ucwords($row->name).'</h3>
+
+                                  <p>dlkbjoidfv</p>
+                                  <div class="clearfix"></div>
+                                </a>
+                                <div class="row buymargintop"><a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <div class="col-sm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                  <p class="buyprice">PKR  '.$row->price.'</p>
+                                  <table class="table-bordered"><tbody><tr><td style="padding:5px;color:#444;background:#e0e0e1;">Fair</td><td style="padding:5px;background:#028f63;color:#fff;">Good</td><td style="padding:5px;color:#444;background:#e0e0e1;">Excellent</td></tr></tbody></table></div>
+                                  </a>
+                                  <div class=" col-sm-8 col-md-8 col-lg-8">
+                                    <a  style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                      <table>
+                                        <tbody>
+                                          <tr>
+                                            <td><b>Negotiable: </b> </td>
+                                            <td><b>Yes</b></td>
+                                          </tr>
+                                          <tr>
+                                            <td>From:</td>
+                                            <td>Gujrat</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Brand:</td>
+                                            <td>Apple</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Model:</td>
+                                            <td>iphone x</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Network:</td>
+                                            <td>unlocked</td>
+                                          </tr>
+                                          <tr>
+                                            <td>PTA Approved:</td>
+                                            <td>Yes</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Posted Date:</td>
+                                            <td>2020-04-12 09:15:51</td>
+                                          </tr>
+                                      </tbody>
+                                    </table>
+                                      </a><a href="ProductDetail/'.$row->id.'">
+                                      <button class="btn-xs button3 buydetailsbtn">Contact / Details</button>
+                                      </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>';
+                }
+                
+                
+            }
+            else
+            {
+                $output.="No Product is Available";
+            }
+          return json_encode(array('priceData'=> $output,'total'=>$count));  
+        }
+        
+
+    }// colorSearch
+
+    public function citySearch(Request $request)
+    {
+        $output = "";
+        if($request->ajax())
+        { 
+            $data = Product::where('city',$request->city)->get();
+            $k =0;
+            $count = $data->count();
+            // $output.='check :'.$request->chck."min :".$min." max :".$max;
+            if($count>0)
+            {
+                $i=0;
+                foreach($data as $row)
+                {
+                    $image = 'storage/'.$row->image;
+                    $output .= '<div class="row buyleft">
+                            <a href="ProductDetail/'.$row->id.'"></a>
+                            <div class="col-xs-12 mainboxbuy"><a href="ProductDetail/'.$row->id.'">
+                              <div class="col-sm-3" align="center">
+                                  <img class="img-responsive img-thumbnail" src="'.asset($image).'">
+                              </div>
+                              </a>
+                              <div class="col-sm-9">
+                                <a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <h3 id="buytextmain" style="font-size:20px;">'.ucwords($row->name).'</h3>
+
+                                  <p>dlkbjoidfv</p>
+                                  <div class="clearfix"></div>
+                                </a>
+                                <div class="row buymargintop"><a style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                  <div class="col-sm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                  <p class="buyprice">PKR  '.$row->price.'</p>
+                                  <table class="table-bordered"><tbody><tr><td style="padding:5px;color:#444;background:#e0e0e1;">Fair</td><td style="padding:5px;background:#028f63;color:#fff;">Good</td><td style="padding:5px;color:#444;background:#e0e0e1;">Excellent</td></tr></tbody></table></div>
+                                  </a>
+                                  <div class=" col-sm-8 col-md-8 col-lg-8">
+                                    <a  style="color: black !important;" href="ProductDetail/'.$row->id.'">
+                                      <table>
+                                        <tbody>
+                                          <tr>
+                                            <td><b>Negotiable: </b> </td>
+                                            <td><b>Yes</b></td>
+                                          </tr>
+                                          <tr>
+                                            <td>From:</td>
+                                            <td>Gujrat</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Brand:</td>
+                                            <td>Apple</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Model:</td>
+                                            <td>iphone x</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Network:</td>
+                                            <td>unlocked</td>
+                                          </tr>
+                                          <tr>
+                                            <td>PTA Approved:</td>
+                                            <td>Yes</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Posted Date:</td>
+                                            <td>2020-04-12 09:15:51</td>
+                                          </tr>
+                                      </tbody>
+                                    </table>
+                                      </a><a href="ProductDetail/'.$row->id.'">
+                                      <button class="btn-xs button3 buydetailsbtn">Contact / Details</button>
+                                      </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>';
+                }
+                
+                
+            }
+            else
+            {
+                $output.="No Product is Available";
+            }
+          return json_encode(array('priceData'=> $output,'total'=>$count));  
+        }
+        
+
+    }// citySearch
 }

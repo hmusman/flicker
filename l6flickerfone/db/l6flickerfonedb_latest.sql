@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2020 at 01:31 PM
+-- Generation Time: Jul 29, 2020 at 01:36 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'adminname', 'admin@gmail.com', NULL, '$2y$10$BqEyjt82j94dXvXrlhWDUOWT7pb/nXX/LIuedSSzEj9NbPup3yuYy', NULL, '2020-07-22 18:05:30', '2020-07-22 14:15:42');
+(2, 'adminname', 'admin@gmail.com', NULL, 'asdfghjkl;', NULL, '2020-07-22 18:05:30', '2020-07-22 14:15:42');
 
 -- --------------------------------------------------------
 
@@ -163,6 +163,7 @@ CREATE TABLE `sma_products` (
   `id` int(11) NOT NULL,
   `code` varchar(50) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `color` varchar(100) NOT NULL,
   `unit` int(11) DEFAULT NULL,
   `cost` decimal(25,4) DEFAULT NULL,
   `price` decimal(25,0) NOT NULL,
@@ -170,6 +171,7 @@ CREATE TABLE `sma_products` (
   `image` varchar(255) DEFAULT 'no_image.png',
   `category_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL,
+  `city` varchar(100) DEFAULT NULL,
   `subcategory_id` int(11) DEFAULT NULL,
   `cf1` varchar(255) DEFAULT NULL,
   `cf2` varchar(255) DEFAULT NULL,
@@ -230,9 +232,9 @@ CREATE TABLE `sma_products` (
 -- Dumping data for table `sma_products`
 --
 
-INSERT INTO `sma_products` (`id`, `code`, `name`, `unit`, `cost`, `price`, `alert_quantity`, `image`, `category_id`, `brand_id`, `subcategory_id`, `cf1`, `cf2`, `cf3`, `cf4`, `cf5`, `cf6`, `quantity`, `tax_rate`, `track_quantity`, `details`, `warehouse`, `barcode_symbology`, `file`, `description`, `tax_method`, `type`, `supplier1`, `supplier1price`, `supplier2`, `supplier2price`, `supplier3`, `supplier3price`, `supplier4`, `supplier4price`, `supplier5`, `supplier5price`, `promotion`, `promo_price`, `start_date`, `end_date`, `supplier1_part_no`, `supplier2_part_no`, `supplier3_part_no`, `supplier4_part_no`, `supplier5_part_no`, `sale_unit`, `purchase_unit`, `brand`, `slug`, `featured`, `weight`, `hsn_code`, `views`, `hide`, `second_name`, `added_by`, `dimage`, `dimage1`, `upload_type`, `bd`, `video`, `created_at`, `updated_at`) VALUES
-(1, '432', 'infinix hot 8 lite', NULL, NULL, '12000', '20.0000', 'admin/images/product/GY2BAMpVfrM8lKxdC2YCxW0SE5bUGYe873Nom2ad.jpeg', 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, NULL, 1, NULL, NULL, 'code128', NULL, 'this is new brand', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/MrrmzpZQxLWUEDJqe0PhlVBtgMBIa4V1wMRbWNQq.jpeg', 'admin/images/product/pxHUbSoFjklgnPsMvfsqMpRyw4FIgbAs5HzVURTi.jpeg', 0, NULL, NULL, '2020-07-24 06:06:35', '2020-07-25 06:03:08'),
-(5, '4325', 'infinix hot 7 lite', NULL, NULL, '19500', '20.0000', 'admin/images/product/90pDmI0n824qs0negNz4SGzAJLTDPNas7s2iOVGX.png', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, 1, NULL, NULL, 'code128', NULL, 'this is description of infinix hot 7 lite mobile', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/SlQbN9VmrMtgbamAFtVvq0gBrVTXrduQdxr78SNf.jpeg', 'admin/images/product/1APrugUTJUw496DhuLU782tTAOKogSNOseFdQY3E.jpeg', 0, NULL, NULL, '2020-07-25 02:14:55', '2020-07-25 06:03:32');
+INSERT INTO `sma_products` (`id`, `code`, `name`, `color`, `unit`, `cost`, `price`, `alert_quantity`, `image`, `category_id`, `brand_id`, `city`, `subcategory_id`, `cf1`, `cf2`, `cf3`, `cf4`, `cf5`, `cf6`, `quantity`, `tax_rate`, `track_quantity`, `details`, `warehouse`, `barcode_symbology`, `file`, `description`, `tax_method`, `type`, `supplier1`, `supplier1price`, `supplier2`, `supplier2price`, `supplier3`, `supplier3price`, `supplier4`, `supplier4price`, `supplier5`, `supplier5price`, `promotion`, `promo_price`, `start_date`, `end_date`, `supplier1_part_no`, `supplier2_part_no`, `supplier3_part_no`, `supplier4_part_no`, `supplier5_part_no`, `sale_unit`, `purchase_unit`, `brand`, `slug`, `featured`, `weight`, `hsn_code`, `views`, `hide`, `second_name`, `added_by`, `dimage`, `dimage1`, `upload_type`, `bd`, `video`, `created_at`, `updated_at`) VALUES
+(1, '432', 'infinix hot 8 lite', 'blue', NULL, NULL, '12000', '20.0000', 'admin/images/product/GY2BAMpVfrM8lKxdC2YCxW0SE5bUGYe873Nom2ad.jpeg', 3, 1, 'lahore', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, NULL, 1, NULL, NULL, 'code128', NULL, 'this is new brand', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/MrrmzpZQxLWUEDJqe0PhlVBtgMBIa4V1wMRbWNQq.jpeg', 'admin/images/product/pxHUbSoFjklgnPsMvfsqMpRyw4FIgbAs5HzVURTi.jpeg', 0, NULL, NULL, '2020-07-24 06:06:35', '2020-07-29 02:59:27'),
+(5, '4325', 'infinix hot 7 lite', 'golden', NULL, NULL, '19500', '20.0000', 'admin/images/product/90pDmI0n824qs0negNz4SGzAJLTDPNas7s2iOVGX.png', 1, 1, 'faisalabad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, 1, NULL, NULL, 'code128', NULL, 'this is description of infinix hot 7 lite mobile', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/SlQbN9VmrMtgbamAFtVvq0gBrVTXrduQdxr78SNf.jpeg', 'admin/images/product/1APrugUTJUw496DhuLU782tTAOKogSNOseFdQY3E.jpeg', 0, NULL, NULL, '2020-07-25 02:14:55', '2020-07-29 03:37:54');
 
 -- --------------------------------------------------------
 
@@ -335,7 +337,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
