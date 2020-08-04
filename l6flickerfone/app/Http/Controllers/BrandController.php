@@ -76,9 +76,9 @@ class BrandController extends Controller
         
         else
         {
-            $brand = Brand::where('id',$id);
-            $brand->name = $request->title;
-            if ($category->save())
+            $brand = Brand::find($id);
+            $brand->name = $request->name;
+            if ($brand->save())
             {
                 $request->session()->flash('msg','Brand has been updated successfully');
                 return redirect()->route('Brand.index');

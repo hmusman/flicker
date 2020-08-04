@@ -1,3 +1,4 @@
+
 @extends('admin.layouts.master_layout')
 @section('title', 'Dashboard')
 @section('extra-links')
@@ -17,7 +18,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h4 class="page-title mb-1">Update FlickerFone Brand</h4>
+                            <h4 class="page-title mb-1">Add FlickerFone Page</h4>
                         </div>
                         <div class="col-md-4">
                             <div class="float-right d-none d-md-block">
@@ -36,51 +37,43 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-12">
-                            <form action="{{ route('Brand.update',$brand->id) }}" method="post">
-                                @csrf
-                                @method('put')
-                                <div class="card">
-                                    <div class="card-body">
+                   
+                      
+                      
+                      
+                            <div class="card">
+                                <div class="card-body">
 
-                                        <h4 class="header-title">Update Brand</h4>
-                                   
+                                    <h4 class="header-title">Add New Page</h4>
+                                    @if(Session::has('warningMsg'))
+                                        <div class="alert alert-warning col-md-4">{{ Session::get('warningMsg') }}</div>
+                                    @endif
+                                    
+                                    <form action="{{ route('Page.store') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                            
+
                                         <div class="form-group row">
-                                            <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" name="name" type="text" value="{{ $brand->name }}" placeholder="Enter Name" id="example-text-input">
+                                                <input class="form-control" type="text" value="{{ old('name') }}" name="name" placeholder="Enter Name" id="example-text-input">
                                                 @error('name')
-                                                    <p class="text-danger">{{ $message }}</p>
+                                                    <p class="text-danger mt-3">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            
                                         </div>
 
                                         <div class="card">
                                             <div class="card-body row">
-        
                                                 <div class="text-center mt-4">
-                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Update</button>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Save</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </form>
 
-
-
-                                        <!-- <div class="form-group row">
-                                            <label class="col-md-2 col-form-label">Select</label>
-                                            <div class="col-md-10">
-                                                <select class="form-control">
-                                                    <option>Select</option>
-                                                    <option>Large select</option>
-                                                    <option>Small select</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                                      
-                                    </div>
                                 </div>
-                            </form>
-                            
+                            </div>
                         </div>
                     </div>
                     <!-- end row -->
@@ -99,10 +92,15 @@
 <script src="{{url('public/Green/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
 <script src="{{url('public/Green/assets/libs/jquery-knob/jquery.knob.min.js')}}"></script> 
+<!-- ckeditor -->
+<script src="{{asset('Green/assets/libs/ckeditor4/ckeditor.js')}}"></script>
 
 <!-- Jq vector map -->
 <script src="{{url('public/Green/assets/libs/jqvmap/jquery.vmap.min.js')}}"></script>
 <script src="{{url('public/Green/assets/libs/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 
 <script src="{{url('public/Green/assets/js/pages/dashboard.init.js')}}"></script>
+<script type="text/javascript">
+    CKEDITOR.replace('content');
+</script>
 @endsection

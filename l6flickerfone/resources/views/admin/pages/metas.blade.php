@@ -17,7 +17,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h4 class="page-title mb-1">FlickerFone Brand</h4>
+                            <h4 class="page-title mb-1">FlickerFone Metas</h4>
                         </div>
                         <div class="col-md-4">
                             <div class="float-right d-none d-md-block">
@@ -39,32 +39,41 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="header-title">Brands</h4>
+                                    <h4 class="header-title">Metas</h4>
                                     @if(Session::has('msg'))
                                         <div class="alert alert-success col-md-4">{{ Session::get('msg') }}</div>
                                     @endif
+
+                                    @if(Session::has('warningMsg'))
+                                        <div class="alert alert-warning col-md-4">{{ Session::get('warningMsg') }}</div>
+                                    @endif
+                                    
 
                                     <table class="table table-striped">
                                        <thead>
                                            <tr>
                                                <th>#</th>
-                                               <th>Name</th>
+                                               <th>Page</th>
+                                               <th>Title</th>
                                                <th>Action</th>
                                            </tr>
                                        </thead>
                                        <tbody>
                                             @php $i=1 @endphp
-                                            @if($brands->count() > 0)
-                                                 @foreach($brands as $brand)
+                                            @if($metas->count() > 0)
+                                                 @foreach($metas as $meta)
+                                                    
                                                     <tr>
                                                        <td>{{ $i }}</td>
-                                                       <td>{{ ucfirst($brand->name) }}</td>
+                                                       <td>{{ $meta->page->name}}</td>
+                                                       <td>{{ ucfirst($meta->title) }}</td>
+                                                      
                                                        <td>
                                                            <table>
                                                                <tr>
-                                                                   <td><a href="{{ route('Brand.edit',$brand->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
+                                                                   <td><a href="{{ route('Meta.edit',$meta->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
                                                                    <td>
-                                                                       <form method="post" action="{{ route('Brand.destroy',$brand->id) }}">
+                                                                       <form method="post" action="{{ route('Meta.destroy',$meta->id) }}">
                                                                             @csrf
                                                                             @method('delete')
                                                                            <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
@@ -78,8 +87,7 @@
                                                 @endforeach
                                             @else
                                                 <tr>
-                                                   <td colspan="3" class="text-center">No Brand Is Available</td>
-                                                   
+                                                   <td colspan="8" class="text-center">No Meta Is Available</td>
                                                 </tr>
                                             @endif
                                            
