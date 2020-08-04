@@ -45,12 +45,12 @@ div[class="slider-handle max-slider-handle round"],
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #028f63;
+  background: #1c85e8;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a0430;
+  background:#002245;
 }
 @media (max-width: 767px){
     .video{
@@ -328,7 +328,7 @@ position: absolute;
     font-size:20px;
 }
 ul li a{
-    color:black;
+    color:#002143c2;
 }
 .team{
     background-color:#F8F8F8;
@@ -796,15 +796,15 @@ h2{
     transition-timing-function: linear;
 }
 .sell_btn:hover{
-    background-color: #2a0430;
+    background-color: #268bea;
     color: white;
 }
 .subbtn{
-    background-color: #028f63;
+    background-color: #268bea;
     color: white;
 }
 .subbtn:hover{
-    background-color: #2a0430;
+    background-color: #268bea;
     color: white;
 }
 .bann_img{
@@ -1175,9 +1175,7 @@ modal-title {
     margin-left: -5px;
     color: white;
   }
-  .lia{
-    color: white;
-  }
+  
     .lia:hover{
     color: white;
   }
@@ -1422,7 +1420,7 @@ color:red
 }
 
 .btn:hover {
-  background-color: #36693b;
+  background-color: #268bea;
 
   color: #fff;
 }
@@ -1600,9 +1598,7 @@ height: 20%;
   opacity: 1;
   visibility: visible;
 }
-a {
-  color: #ffff;
-}
+
 
 a:hover {
   color: #ffffff;
