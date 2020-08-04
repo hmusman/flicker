@@ -22,7 +22,11 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h4 class="page-title mb-1">FlickerFone Users</h4>
+                    <h4 class="page-title mb-1">Starter page</h4>
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                    <li class="breadcrumb-item active">Starter</li>
+                    </ol>
                 </div>
                 <div class="col-md-4">
                     <div class="float-right d-none d-md-block">
@@ -53,63 +57,41 @@
                     <div class="card">
                         <div class="card-body">
 							<h4 class="header-title">All Users</h4>
-                            @if(Session::has('msg'))
-                                <div class="alert alert-success col-md-4">{{ Session::get('msg') }}</div>
-                            @endif
 							<table id="datatable" class="mt-3 table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Type</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Company</th>
-                                        <th>Shop</th>
-                                        <th>City</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-
-                                    </tr>
+                                <tr>
+                                    <th>So#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Actions</th>
+                                </tr>
                                 </thead>
-
                                 <tbody>
-                                    <?php $count = 0; ?>
-                                    @if(count($users) > 0)
+                                <?php $count = 0; ?>
+                                @if(count($users) > 0)
                                     @foreach($users as $user)
                                     <tr>
                                         <td>{{$count += 1}}</td>
-                                        <td>{{ $user->role_name }}</td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
-                                        <td>{{$user->company}}</td>
-                                        <td>{{$user->shop}}</td>
-                                        <td>{{$user->city}}</td>
                                         <td>
-                                            @if($user->status!=0)
-                                                <button class="btn btn-success blocked" data-id = "{{ $user->id }}">Active</button>
-                                            @else
-                                                <button class="btn btn-danger active" id="active" data-id = "{{ $user->id }}">Blocked</button>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            <table>
-                                               <tr>
-                                                   <td><a href="{{ route('User.edit',$user->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
-                                                   <td>
-                                                       <form method="post" action="{{ route('User.destroy',$user->id) }}">
-                                                            @csrf
-                                                            @method('delete')
-                                                           <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
-                                                       </form>
-                                                   </td>
-                                               </tr>
-                                            </table>
+                                            <div class="btn-group" role="group">
+                                                <a href="#" type="button" class="btn btn-outline-secondary btn-sm view" data-placement="top" title="View" data-original-title="View"  data-toggle="modal" data-target=".bs-example-modal-center" data-uname="{{$user->name}}" data-email="{{$user->email}}">
+                                                    <i class="mdi mdi-eye"></i>
+                                                </a>
+                                                <a href="#" type="button" class="btn btn-outline-secondary btn-sm edit" data-placement="top" title="" data-original-title="Edit">
+                                                    <i class="mdi mdi-pencil"></i>
+                                                </a>
+                                                <a href="#" type="button" class="btn btn-outline-secondary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                                    <i class="mdi mdi-trash-can"></i>
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                     @endforeach
-                                    @else
+                                @else
                                     <tr><td colspan="4" align="center">No Record Found</td></tr>
-                                    @endif
+                                @endif
                                 </tbody>
                             </table>
                         </div>
@@ -172,36 +154,7 @@
         $useremail = $(this).attr('data-email');
         $('.modal-title').html('User Detail');
         $('.user-detail').html('<h4>'+$username+'</h4><br><p>'+$useremail+'</p>')
-    });
-
-    $('.active').click(function(){
-        var id = $(this).data('id');
-        // alert(id);
-        $.ajax({
-            url:"{{route('User.Active')}}",
-            type:"get",
-            data:{'id':id},
-            success:function(data){
-                alert(data);
-            },
-            error:function(e){
-                alert('error');
-            }
-        })
-    });
-
-     $('.blocked').click(function(){
-        var id = $(this).data('id');
-        $.ajax({
-            url:"",
-            type:"GET",
-            data:{ id:id },
-            success:function(data)
-            {
-                // location.reload();
-            }
-        });
-    });
+    })
      
 </script>
 @endpush

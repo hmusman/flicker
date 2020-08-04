@@ -182,7 +182,19 @@
                             </li> -->
                             <li class="menu-title">Pages</li>
                            
-                           <li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>User</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('User.create') }}">Add User</a></li>
+                                    <li><a href="{{ route('User.index') }}">View Users</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
                                     <span> Brand</span>
@@ -215,6 +227,30 @@
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{ route('Product.create') }}">Add Product</a></li>
                                     <li><a href="{{ route('Product.index') }}">View Products</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>MetaTag</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('Meta.create') }}">Add Meta</a></li>
+                                    <li><a href="{{ route('Meta.index') }}">View Metas</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Page</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('Page.create') }}">Add Page</a></li>
+                                    <li><a href="{{ route('Page.index') }}">View Pages</a></li>
                                     <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
                                 </ul>
                             </li>

@@ -93,6 +93,7 @@
                             	@error('success')
                             		<p class="alert alert-success">{{ $message }}</p>
                             	@enderror
+                           
                             <div class="register_form">
                             	
                                 <form action="/Register/Buyer" class="register-form outer-top-xs" role="form" method="post" accept-charset="utf-8">
@@ -294,7 +295,8 @@
                                     </div>
 
                                 	<button type="submit" class="btn-upper btn subbtn checkout-page-button">Sign Up</button>
-                                </form>                            </div>
+                                </form>                            
+                            </div>
 
 
                             <div class="create-new-account business_form" style="display: none;">
@@ -493,7 +495,8 @@
                                     
 
                                 	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" >Sign Up</button>
-                                </form>                            </div>
+                                </form>                            
+                            </div>
 
 
                         </div>

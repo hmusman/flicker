@@ -17,7 +17,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h4 class="page-title mb-1">FlickerFone Brand</h4>
+                            <h4 class="page-title mb-1">FlickerFone Pages</h4>
                         </div>
                         <div class="col-md-4">
                             <div class="float-right d-none d-md-block">
@@ -39,10 +39,15 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="header-title">Brands</h4>
+                                    <h4 class="header-title">Pages</h4>
                                     @if(Session::has('msg'))
                                         <div class="alert alert-success col-md-4">{{ Session::get('msg') }}</div>
                                     @endif
+
+                                    @if(Session::has('warningMsg'))
+                                        <div class="alert alert-warning col-md-4">{{ Session::get('warningMsg') }}</div>
+                                    @endif
+                                    
 
                                     <table class="table table-striped">
                                        <thead>
@@ -54,17 +59,18 @@
                                        </thead>
                                        <tbody>
                                             @php $i=1 @endphp
-                                            @if($brands->count() > 0)
-                                                 @foreach($brands as $brand)
+                                            @if($pages->count() > 0)
+                                                 @foreach($pages as $page)
+                                                    
                                                     <tr>
                                                        <td>{{ $i }}</td>
-                                                       <td>{{ ucfirst($brand->name) }}</td>
+                                                       <td>{{ $page->name}}</td>
                                                        <td>
                                                            <table>
                                                                <tr>
-                                                                   <td><a href="{{ route('Brand.edit',$brand->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
+                                                                   <td><a href="{{ route('Page.edit',$page->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
                                                                    <td>
-                                                                       <form method="post" action="{{ route('Brand.destroy',$brand->id) }}">
+                                                                       <form method="post" action="{{ route('Page.destroy',$page->id) }}">
                                                                             @csrf
                                                                             @method('delete')
                                                                            <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
@@ -78,7 +84,7 @@
                                                 @endforeach
                                             @else
                                                 <tr>
-                                                   <td colspan="3" class="text-center">No Brand Is Available</td>
+                                                   <td colspan="8" class="text-center">No Page Is Available</td>
                                                    
                                                 </tr>
                                             @endif

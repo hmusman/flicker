@@ -59,8 +59,8 @@
                                                  @foreach($categories as $category)
                                                     <tr>
                                                        <td>{{ $i }}</td>
-                                                       <td>{{ $category->title }}</td>
-                                                       <td>{{ $category->description }}</td>
+                                                       <td>{{ ucfirst($category->title) }}</td>
+                                                       <td>{{ ucfirst($category->description) }}</td>
                                                        <td>
                                                            <table>
                                                                <tr>

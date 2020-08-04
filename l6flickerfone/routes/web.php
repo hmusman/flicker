@@ -29,6 +29,11 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::resource('/Product','ProductController');
 	Route::resource('/Category','CategoryController');
 	Route::resource('/Brand','BrandController');
+	Route::resource('/Meta','MetaController');
+	Route::resource('/Page','PageController');
+	Route::resource('/User','UserController');
+	Route::get('User/Active','UserController@active')->name('User.Active');
+	// Route::get('/User/Block','UserController@block')->name('User.Block');
 });
 
 
