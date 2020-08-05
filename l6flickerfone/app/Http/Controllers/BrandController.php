@@ -58,7 +58,7 @@ class BrandController extends Controller
    
     public function edit($id)
     {
-        $brand = Brand::find($id)->first();
+        $brand = Brand::where('id',$id)->first();
         return view('admin.pages.update_brand',compact('brand'));
     }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2020 at 02:52 PM
+-- Generation Time: Aug 05, 2020 at 11:59 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -64,7 +64,8 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'samsung', '2020-07-25 05:12:43', '2020-07-30 22:01:00');
+(1, 'samsung', '2020-07-25 05:12:43', '2020-08-05 00:36:06'),
+(3, 'infinix', '2020-08-05 00:35:13', '2020-08-05 00:35:13');
 
 -- --------------------------------------------------------
 
@@ -86,8 +87,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `title`, `description`, `img`, `created_at`, `updated_at`) VALUES
-(1, 'mobile', 'this is description', NULL, '2020-07-24 02:34:43', '2020-07-24 03:00:36'),
-(3, 'laptop', 'this is description of laptop', NULL, '2020-07-24 03:01:02', '2020-07-24 03:01:02');
+(1, 'mobile', 'this is description', NULL, '2020-07-24 02:34:43', '2020-08-05 00:37:17'),
+(3, 'laptop', 'this is description of laptop', NULL, '2020-07-24 03:01:02', '2020-07-24 03:01:02'),
+(6, 'tablet', 'this is description of tablets', NULL, '2020-08-05 00:36:33', '2020-08-05 00:36:33');
 
 -- --------------------------------------------------------
 
@@ -281,7 +283,8 @@ CREATE TABLE `sma_products` (
 
 INSERT INTO `sma_products` (`id`, `code`, `name`, `color`, `unit`, `cost`, `price`, `alert_quantity`, `image`, `category_id`, `brand_id`, `city`, `subcategory_id`, `cf1`, `cf2`, `cf3`, `cf4`, `cf5`, `cf6`, `quantity`, `tax_rate`, `track_quantity`, `details`, `warehouse`, `barcode_symbology`, `file`, `description`, `tax_method`, `type`, `supplier1`, `supplier1price`, `supplier2`, `supplier2price`, `supplier3`, `supplier3price`, `supplier4`, `supplier4price`, `supplier5`, `supplier5price`, `promotion`, `promo_price`, `start_date`, `end_date`, `supplier1_part_no`, `supplier2_part_no`, `supplier3_part_no`, `supplier4_part_no`, `supplier5_part_no`, `sale_unit`, `purchase_unit`, `brand`, `slug`, `featured`, `weight`, `hsn_code`, `views`, `hide`, `second_name`, `added_by`, `dimage`, `dimage1`, `upload_type`, `bd`, `video`, `created_at`, `updated_at`) VALUES
 (1, '432', 'infinix hot 8 lite', 'blue', NULL, NULL, '12000', '20.0000', 'admin/images/product/GY2BAMpVfrM8lKxdC2YCxW0SE5bUGYe873Nom2ad.jpeg', 3, 1, 'lahore', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, NULL, 1, NULL, NULL, 'code128', NULL, 'this is new brand', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/MrrmzpZQxLWUEDJqe0PhlVBtgMBIa4V1wMRbWNQq.jpeg', 'admin/images/product/pxHUbSoFjklgnPsMvfsqMpRyw4FIgbAs5HzVURTi.jpeg', 0, NULL, NULL, '2020-07-24 06:06:35', '2020-07-29 02:59:27'),
-(5, '4325', 'infinix hot 7 lite', 'golden', NULL, NULL, '19500', '20.0000', 'admin/images/product/90pDmI0n824qs0negNz4SGzAJLTDPNas7s2iOVGX.png', 1, 1, 'faisalabad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, 1, NULL, NULL, 'code128', NULL, 'this is description of infinix hot 7 lite mobile', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/SlQbN9VmrMtgbamAFtVvq0gBrVTXrduQdxr78SNf.jpeg', 'admin/images/product/1APrugUTJUw496DhuLU782tTAOKogSNOseFdQY3E.jpeg', 0, NULL, NULL, '2020-07-25 02:14:55', '2020-07-29 03:37:54');
+(5, '4325', 'infinix hot 7 lite', 'golden', NULL, NULL, '19500', '20.0000', 'admin/images/product/90pDmI0n824qs0negNz4SGzAJLTDPNas7s2iOVGX.png', 1, 1, 'faisalabad', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, 1, NULL, NULL, 'code128', NULL, 'this is description of infinix hot 7 lite mobile', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/SlQbN9VmrMtgbamAFtVvq0gBrVTXrduQdxr78SNf.jpeg', 'admin/images/product/1APrugUTJUw496DhuLU782tTAOKogSNOseFdQY3E.jpeg', 0, NULL, NULL, '2020-07-25 02:14:55', '2020-07-29 03:37:54'),
+(7, '43232', 'testpro', 'yellow', NULL, NULL, '45000', '20.0000', 'admin/images/product/jrgghZYYRQaDvR2ndv5dxNADVRxCy8Ma6EiAOFoP.jpeg', 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, 1, NULL, NULL, 'code128', NULL, 'this is description', 0, 'standard', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 'admin/images/product/qfy3elSte7pW3dNzcR1k5nYmSdc7rS0WhZYWgQ8U.jpeg', 'admin/images/product/RqnxRzSTIGolfo1RlN6pfZdSYU5NSDWZxL14VMAY.jpeg', 0, NULL, NULL, '2020-08-05 00:39:09', '2020-08-05 00:39:09');
 
 -- --------------------------------------------------------
 
@@ -311,9 +314,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_name`, `username`, `name`, `email`, `company`, `shop`, `phone`, `city`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(8, 'seller', 'test', 'test', 'test@gmail.com', NULL, 'test', '03013435656', '18 Hazari', 'asdfghjkl;', 0, NULL, '2020-07-22 23:46:32', '2020-07-22 23:46:32'),
-(11, 'buyer', 'newBuyer', 'newbuyyer', 'newbuyer@gmail.com', 'newcommpany', '', '03017161638', '18 Hazari', 'asdfghjkl;', 0, NULL, '2020-08-04 04:27:15', '2020-08-04 06:18:08'),
-(12, 'seller', 'newselller', 'newSellerName', 'newseller@gmail.com', NULL, 'newsellershop', '03013435656', 'Baddin', 'asdfghjkl;', 0, NULL, '2020-08-04 04:28:57', '2020-08-04 04:28:57');
+(8, 'seller', 'test', 'test', 'test@gmail.com', NULL, 'test', '03013435656', '18 Hazari', 'asdfghjkl;', 0, NULL, '2020-07-22 23:46:32', '2020-08-05 00:16:27'),
+(11, 'buyer', 'newBuyer', 'newbuyyer', 'newbuyer@gmail.com', 'newcommpany', '', '03017161638', '18 Hazari', 'asdfghjkl;', 1, NULL, '2020-08-04 04:27:15', '2020-08-05 00:16:37'),
+(12, 'seller', 'newselller', 'newSellerName', 'newseller@gmail.com', NULL, 'newsellershop', '03013435656', 'Baddin', 'asdfghjkl;', 0, NULL, '2020-08-04 04:28:57', '2020-08-05 00:16:45'),
+(20, 'seller', 'demoseller', 'sellername', 'demo@gmail.com', NULL, 'test', '03017161638', 'Bahawal Nagar', 'asdfghjkl;', 1, NULL, '2020-08-05 04:50:48', '2020-08-05 04:51:07');
 
 --
 -- Indexes for dumped tables
@@ -399,13 +403,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -429,7 +433,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -441,13 +445,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sma_products`
 --
 ALTER TABLE `sma_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

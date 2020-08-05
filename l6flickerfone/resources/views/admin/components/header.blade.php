@@ -7,8 +7,9 @@
         <title>@yield('title')</title>
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('Green/assets/images/favicon.ico')}}">
-
+        <!-- <link rel="shortcut icon" href="{{asset('Green/assets/images/favicon.ico')}}"> -->
+        <link rel="shortcut icon" href="storage/images/logo-cropped-removebg-preview.png">
+        <link rel="shortcut icon" href="{{ asset('storage/images/logo-cropped-removebg-preview.png') }}">
         <!-- datepicker -->
         <link href="{{asset('Green/assets/libs/air-datepicker/css/datepicker.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- jvectormap -->
@@ -39,23 +40,23 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <a href="/Admin" class="logo logo-dark" style="background: #2fa97c;">
                                 <span class="logo-sm">
-                                    <img src="{{asset('Green/assets/images/logo-sm-dark.png')}}" alt="" height="22">
+                                    <img src="{{asset('storage/images/logo-cropped-removebg-preview.png')}}" alt=""  height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{asset('Green/assets/images/logo-dark.png')}}" alt="" height="20">
+                                    <img src="{{asset('storage/images/logo-cropped-removebg-preview.png')}}" alt=""  height="33">
                                 </span>
                             </a>
 
-                            <a href="index.html" class="logo logo-light">
+                           <!--  <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="{{asset('Green/assets/images/logo-sm-light.png')}}" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
                                     <img src="{{asset('Green/assets/images/logo-light.png')}}" alt="" height="20">
                                 </span>
-                            </a>
+                            </a> -->
                         </div>
 
                         <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
@@ -93,54 +94,14 @@
                                 </form>
                             </div>
                         </div>
-            
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item waves-effect" id="page-header-flag-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="" src="{{asset('Green/assets/images/flags/us.jpg')}}" alt="Header Language" height="14">
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-        
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="{{asset('Green/assets/images/flags/spain.jpg')}}" alt="user-image" class="mr-2" height="12"><span class="align-middle">Spanish</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="{{asset('Green/assets/images/flags/germany.jpg')}}" alt="user-image" class="mr-2" height="12"><span class="align-middle">German</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="{{asset('Green/assets/images/flags/italy.jpg')}}" alt="user-image" class="mr-2" height="12"><span class="align-middle">Italian</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="{{asset('Green/assets/images/flags/russia.jpg')}}" alt="user-image" class="mr-2" height="12"><span class="align-middle">Russian</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                                <i class="mdi mdi-tune"></i>
-                            </button>
-                        </div>
 
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="{{asset('Green/assets/images/users/avatar-1.jpg')}}" alt="Header Avatar">
+                                <img class="rounded-circle header-profile-user" src="{{asset('storage/admin/images/admin.jpg')}}" alt="Header Avatar">
                                 <span class="d-none d-sm-inline-block ml-1"></span>
                                 <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-face-profile font-size-16 align-middle mr-1"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-credit-card-outline font-size-16 align-middle mr-1"></i> Billing</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-settings font-size-16 align-middle mr-1"></i> Settings</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock font-size-16 align-middle mr-1"></i> Lock screen</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/Admin/Logout"><i class="mdi mdi-logout font-size-16 align-middle mr-1"></i> Logout</a>
                             </div>
@@ -163,23 +124,11 @@
                             <li class="menu-title">Menu</li>
 
                             <li>
-                                <a href="/admin" class="waves-effect">
+                                <a href="/Admin" class="waves-effect">
                                     <div class="d-inline-block icons-sm mr-1"><i class="fas fa-tachometer-alt"></i></div>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
-                           <!--  <li>
-                                <a href="" class="waves-effect">
-                                    <div class="d-inline-block icons-sm mr-1"><i class="fas fa-users"></i></div>
-                                    <span>Users</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="waves-effect">
-                                    <div class="d-inline-block icons-sm mr-1"><i class="fas fa-user-tie"></i></div>
-                                    <span>Admins</span>
-                                </a>
-                            </li> -->
                             <li class="menu-title">Pages</li>
                            
                             <li>

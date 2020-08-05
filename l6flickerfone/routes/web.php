@@ -32,8 +32,8 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::resource('/Meta','MetaController');
 	Route::resource('/Page','PageController');
 	Route::resource('/User','UserController');
-	Route::get('User/Active','UserController@active')->name('User.Active');
-	// Route::get('/User/Block','UserController@block')->name('User.Block');
+	Route::get('User/Active/{id?}','UserController@active')->name('User.Active');
+	Route::get('/User/Block/{id?}','UserController@block')->name('User.Block');
 });
 
 
