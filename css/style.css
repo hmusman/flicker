@@ -778,7 +778,7 @@ background: #2a0430;}
 /*--footer-copyright-- */
 .bottom-footer p {
     font-size: 14px;
-    color: white;
+  
     letter-spacing: 2px;
 }
 .bottom-footer p a {
@@ -792,8 +792,8 @@ a.move-top span {
     color: #fff;
 }
 .bottom-footer{
-    background-image: linear-gradient(to bottom right, #028f63, #122912);
-	color: whitesmoke;
+   background-color: #f2f6fd;
+	color: #268bea;
 	padding:2%;
 }
 /*--//footer-copyright-- */

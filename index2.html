@@ -11,6 +11,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="">
+
+
+
+
+
+
+
+
+
+
+
+
   <script>
     addEventListener("load", function () {
       setTimeout(hideURLbar, 0);
@@ -65,8 +77,164 @@
 </head>
 
 
+<style>
+  
+#setwidth, #stwid, #stcol{
+ 
+  background-color: #eef2fd;
+}
+
+  #myUL {
+   
+    width: 30% ;
+    margin-left: 127px ;
+    margin-top: -8px !important;
+  }
 
 
+
+
+
+
+
+
+  #myInput {
+
+
+    width: 35% ;
+  }
+ nav[class="navbar navbar-default"]{
+  background-color: #ffffff !important;
+ }
+
+
+ /* .navbar-default .navbar-nav > li > a {
+  color: #1782e7 !important;
+} */
+
+i[class="fa fa-user"]{
+  color: #1782e7 !important;
+}
+
+
+
+
+
+li[class="backcolor1"] > a{
+  color: #9faab3 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 550px){
+
+  #myUL {
+    width: 78% !important;
+    margin-left: 34px !important;
+
+  }
+#reegster{
+  margin-top: -32px !important;
+}
+  .fa-user:before {
+    
+    margin-left: 18px !important;
+  }
+
+
+img[src="images/new_size.jpg"]{
+  display: none !important;
+}
+#price2{
+  padding: 10px 9px 10px 9px !important;
+}
+#mobpara{
+  font-size: 13px !important;
+}
+#pricespce{
+  margin-top: -216px;
+}
+#TopheaderBgimg{
+  background-size: contain !important;
+    background-repeat: no-repeat !important;
+    height: 270px !important;
+}
+
+
+.srchHome{
+  margin-top: 204px !important;
+    margin-left: 8px !important;
+    height: 61px !important;
+    width: 335px !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.srchHome{
+  margin-top: 384px;
+    margin-left: 97px;
+height: 61px;
+    width: 415px;
+    border-radius: 29px;
+    outline: none;
+    border: 1px white solid;
+    
+    box-shadow: 0 16.8px 17.2px rgba(0, 0, 0, 0.034);
+
+
+}
+
+
+
+
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #435d77;
+  opacity: 1; /* Firefox */
+  margin-left: 10px;
+  padding: 21px;
+    font-size: 16px;
+}
+
+
+
+a:hover{
+  color: #002143 !important;
+}
+
+</style>
 
 <body>
 <!-- <div id="loading" style="background:#fff;position: fixed;z-index:1000;right:45%;top:40%;padding: 2%;">
@@ -86,7 +254,10 @@
 
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+    
+
+
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span>
@@ -94,21 +265,27 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<div class="navbar-brand" href="#" style="position: relative;z-index: 10000;margin-top: -32px; margin-left: -46px;">
+			<!-- <div class="navbar-brand" href="#" style="position: relative;z-index: 10000;margin-top: -32px; margin-left: -46px;">
 				<a href="index.html">
-					<img style="      height: 64px;
-          width: 289px;
-          margin-top: 16px;" src="images/logo-cropped-removebg-preview.png"
+					<img style="height: 64px; width: 289px; margin-top: 16px;" src="images/logo-cropped-removebg-preview.png"
            onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
 				</a>
-			</div>
-		</div>
+			</div> -->
+    </div>
+    
+
+
+
+
+
+
+
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 7px;     margin-left: 94px; font-weight: bold; ">
-				<li    class="backcolor lis">
+			<ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 7px; font-weight: bold; ">
+				<!-- <li    class="backcolor lis">
 					<a href="index.html">Home</a>
-				</li>
+				</li> -->
 				<li class="backcolor1">
 					<a href="buy-used-mobile-phones.html">Buy</a>
 				</li>
@@ -121,120 +298,31 @@
 				<li class="backcolor1">
 					<a href="pricecalculator.html">Price Calulator</a>
 				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li id="srching">
-					<span class="srchstyle"  id="menuoptions">
-						<form action="https://flickerfone.com/new" id="qsearch">
-							<div class="search">
-								<input type="text" id="myInput"   onkeyup="myFunction()"  title="Type in a name" name="q"  class="" placeholder="Search our Store">
-									<button type="submit" class="searchButton">
-										<i class="fa fa-search"></i>
-									</button>
-								</div>
-							</form>
-							<ul id="myUL" style=" position:absolute  ;  z-index: 20; ;display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
-								<div>
-									<button id="srchbtnid" onclick="hideagain();" style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
-								</div>
-								<li>
-									<div class="row">
-										<div class="col-md-12">
-											<div id="setwidth" style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px;">
-												<center>
-													<image src="images/LiveSrchImages/images.png" />
-												</center>
-												<a href="#">Redmi Note 8
-  
-													<h6>PKR 30,000</h6>
-												</a>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="row">
-										<div class="col-md-12">
-											<div id="stwid" style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;    margin-right: 115px;">
-												<center>
-													<image src="images/LiveSrchImages/download.png" />
-												</center>
-												<a href="#">Redmi Note 9 Pro
-                          
-													<h6>PKR 44,999</h6>
-												</a>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="row">
-										<div class="col-md-12">
-											<div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px;">
-												<center>
-													<image src="images/LiveSrchImages/AppleBlack.jpg" style="height: 130px; width: 130px; "  />
-												</center>
-												<a href="#">Apple iphone x 64 GB   
-                                                  
-													<h6>PKR 144,999</h6>
-												</a>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="row">
-										<div class="col-md-12">
-											<div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px; ">
-												<center>
-													<image src="images/LiveSrchImages/AlcatelGreen.jpg" style="height: 130px; width: 130px; " />
-												</center>
-												<a href="#">Alcatel jabi=ong Green 4 GB  
+      </ul>
+      
 
-                                                  
-													<h6>PKR 19,000</h6>
-												</a>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="row">
-										<div class="col-md-12">
-											<div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;     margin-right: 115px; ">
-												<center>
-													<image src="images/LiveSrchImages/AppleVivo16Gb.jpg" style="height: 130px; width: 130px; " />
-												</center>
-												<a href="#">Apple VIVO Y15 Gold 16 GB    
-                                                                          
-													<h6>PKR 25,999</h6>
-												</a>
-											</div>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="row">
-										<div class="col-md-12">
-											<div style="height: 200px; width:100%; border: 3px rgb(121, 123, 124) solid;   margin-right: 115px; ">
-												<center>
-													<image src="images/LiveSrchImages/HTCPlayBlack.jpg" style="height: 130px; width: 130px; " />
-												</center>
-												<a href="#">HTC Play 2 Black 4 GB  
-                                                                                                  
-													<h6>PKR 25,800</h6>
-												</a>
-											</div>
-										</div>
-									</div>
-								</li>
-								<!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
-							</ul>
-						</span>
-					</li>
-					<li style="list-style: none;     height: 26px;    margin-top: 13px;  border-bottom: 2px white solid;">
-						<i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>
-						<a href="login.html" align="right" id="reegster" class="" style="    margin-right: -12px;font-weight: bold;    margin-top: -35px; margin-left: 5px;" >REGISTER / LOGIN</a>
+
+
+      <div class="navbar-brand" href="#" style="position: relative;z-index: 10000;margin-top: -32px; margin-left: -46px;">
+				<a href="index.html">
+					<img style="height: 43px;
+          width: 199px;
+          margin-top: 26px;
+          margin-left: 250px;" src="images/logo-cropped-removebg-preview.png"
+           onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
+				</a>
+			</div> 
+
+
+
+
+
+
+			<ul class="nav navbar-nav navbar-right">
+			
+					<li style="list-style: none;     height: 26px;    margin-top: 13px;  ">
+						<i class="fa fa-user" style="margin-top: 10px ; color: #1782e7; "></i>
+						<a href="login.html" align="right" id="reegster" class="" style=" margin-right: -12px;font-weight: bold;margin-top: -35px; margin-left: 5px; color: #1782e7;" >LOGIN</a>
 					</li>
 				</ul>
 			</div>
@@ -251,65 +339,440 @@
           <div class="notify right-notify"></div>
         </div> -->
 
- <div class="main-top" id="home">
-    <div class="slider-img " style="z-index: 5;" >
-        <div class="" align="center">
-           <i><p class="slider_heading"><span style="color:#8aba5e;">CELLFONES </span> <span style="color:#B3B2AD">RE-BORN</span></p></i>
-              
-
-          <img src="images/homepage11.png"  id="imgset" alt="news image" class=" img-fluid img-responsive img_banner">
-        
-      <a href="login.html">
-              <img src="images/sellarrow.png" class="img_sell img_sell1 img_sell2">
-      </a>
-       <a href="buy-used-mobile-phones.html">
-
-                <img src="images/buyarrow.png" class="img_buy img_buy1 img_buy2 img_buy3">
-
-    </a>
-
-
-      </div>
-    </div>
-
-  </div>
-
 
   <!--//team -->
   <!-- matter -->
 
 
 
+<section>
 
 
 
+  <div class="row">
+    <div class="col-md-12">
+
+     <div id="TopheaderBgimg" style="background: url('images/new_size.jpg');     background-repeat: no-repeat;height: 599px;">
 
 
 
+<span>
+  <input  class="srchHome" type="search"  id="myInput"   onkeyup="myFunction()"   name="q"  placeholder="Enter Your Favourite Cell" style="color: #435d77;" />
+
+ <a href="#"> <span style="background-color: #1c85e8;
+  color: white;
+  padding: 14px;
+  border-radius: 32px;    margin-left: -126px;
+">Get Search</span></a>
+</span>
 
 
+<ul id="myUL" style=" position:absolute  ;  z-index: 20; ;display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
+  <div>
+    <button id="srchbtnid" onclick="hideagain();" style=" box-shadow: inset 0 0 10px #a2aad4;
+    width: 28px;background-color: white;color: #002143;padding: 7px;font-weight: 600;border-style: none;">X</button>
+  </div>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="setwidth" style="height: 200px; width:100%;        margin-right: 115px;">
+          <center>
+            <image src="images/LiveSrchImages/images.png" />
+          </center>
+          <a href="#">Redmi Note 8
 
-  <section>
-    <div class="pricecalculatorbackground pcback">
-        <div class="pc">
-            <h1 align="center">Price Calculator</h1>
-            <div class="pq">
-              <h3>Get an estimate for your device</h3>
-            <a href="pricecalculator.html">
-              <button class="btn pc-btn">Try it Now!</button>
-            </a>
-            </div>
+            <h6>PKR 30,000</h6>
+          </a>
         </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stwid" style="height: 200px; width:100%;       margin-right: 115px;">
+          <center>
+            <image src="images/LiveSrchImages/download.png" />
+          </center>
+          <a href="#">Redmi Note 9 Pro
+            
+            <h6>PKR 44,999</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:118%;      margin-right: 115px;">
+          <center>
+            <image src="images/LiveSrchImages/AppleBlack.jpg" style="height: 130px; width: 130px; "  />
+          </center>
+          <a href="#">Apple iphone x 64 GB   
+                                    
+            <h6>PKR 144,999</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:100%;      margin-right: 115px; ">
+          <center>
+            <image src="images/LiveSrchImages/AlcatelGreen.jpg" style="height: 130px; width: 130px; " />
+          </center>
+          <a href="#">Alcatel jabi=ong Green 4 GB  
+
+                                    
+            <h6>PKR 19,000</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:100%;       margin-right: 115px; ">
+          <center>
+            <image src="images/LiveSrchImages/AppleVivo16Gb.jpg" style="height: 130px; width: 130px; " />
+          </center>
+          <a href="#">Apple VIVO Y15 Gold 16 GB    
+                                                            
+            <h6>PKR 25,999</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:113%;      margin-right: 115px; ">
+          <center>
+            <image src="images/LiveSrchImages/HTCPlayBlack.jpg" style="height: 130px; width: 130px; " />
+          </center>
+          <a href="#">HTC Play 2 Black 4 GB  
+                                                                                    
+            <h6>PKR 25,800</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
+</ul>
+
+
+     </div>
+
+  
+  </div>
+</div>
+
+ 
+</section>
+
+
+
+
+
+
+<section style="background-color: #002143;">
+
+<div class="container">
+
+
+  <div class="row" style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="col-md-6">
+<img src="images/image_2020_08_04T09_24_06_342Z.png" />
+<p style="    color: white;
+font-weight: bold;
+font-size: 19px;word-spacing: 2px;
+    line-height: 35px;">
+  Best Mobile Phone Information Site
+</p>
+<p style="    color: #1a7edd;
+font-weight: bold;
+font-size: 19px;word-spacing: 2px;
+    line-height: 35px;">
+  You Save Thousands
+</p>
+
+
+<p style="      color: #bbbec2; font-size:15px;text-align: justify; ">
+  Flickerfone is one of the best mobile phone information site for buying and selling the mobile phones with latest features and multiple varieties at best prices in Pakistan. Flickerphone features brands ranging from iPhone, Samsung, Huawei, Infinix, OPPO, VIVO and many more on its intelligible platform.
+  Flickerfone is a best mobile phone information site with competitive pricing, vast range of mobile phones and providing an efficient mobiles information for new mobile phone and buying/selling service to customers.
+</p>
+    </div>
+      
+
+    <div class="col-md-6" id="pricespce" >
+
+
+
+
+
+<center>
+<div style="background-color: white;width: 70%;    ">
+
+  <div style="height: 100%; width: 60%; float: left; background-color: white;     padding: 17px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;">
+
+
+<p id="mobpara" style=" color: #3b5571;
+font-size: 17px;font-weight: bold;text-align: left;    line-height: 29px;">Price Calculator</p>
+
+<p id="mobpara" style=" color: #a3b1be;    line-height: 33px;
+font-size: 13px;font-weight: bold;text-align: left;">By Flicker</p>
+
+
+  </div>
+
+  <div style="height: 100%; width: 40%; float: left; background-color: white;    padding: 38px 5px 38px 2px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+ 
+   <a href="#" ><span id="price2" style="background-color: #1c85e8;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 32px;">Estimate</span></a>
+  
+
+
+</div>
+</center>
+
+
+
+
+<center>
+  <a href="#">
+  <div style="background-color: #66788d;width: 70%; margin-top: 111px !important;   ">
+  
+    <div style="height: 100%; width: 60%; float: left; background-color: #66788d;     padding: 14px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;">
+  
+  
+  <p id="mobpara" style=" color: black;
+  font-size: 17px;font-weight: bold;text-align: left; color: #f7f8f9; ;    line-height: 29px;">Buy with Flicker</p>
+  
+
+  
+  
+    </div>
+  
+    <div style="height: 100%; width: 40%; float: left; background-color: #66788d;    padding: 19px 5px 38px 2px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+   
+   
+    
+  
+  
+  </div>
+</a>
+  </center>
+  
+  
+
+
+
+
+
+
+
+
+
+  <center>
+   <a href="#" > <div style="background-color: white ;width: 70%; margin-top: 184px !important;   ">
+    
+      <div style="height: 100%; width: 60%; float: left; background-color: white;     padding: 14px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;">
+    
+    
+    <p id="mobpara" style="   font-size: 17px;font-weight: bold;text-align: left; color: #3b5571; ;    line-height: 29px;">New Phone</p>
+    
+  
+    
+    
+      </div>
+    
+      <div style="height: 100%; width: 40%; float: left; background-color: white;    padding: 19px 5px 38px 2px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+     
+     
+      
+    
+    
+    </div>
+  </a>
+    </center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<center>
+  <a href="#">
+  <div style="background-color: #1c85e8;width: 70%; margin-top: 256px !important;   ">
+  
+    <div style="height: 100%; width: 60%; float: left; background-color: #1c85e8;     padding: 14px;border-top-left-radius: 20px;border-bottom-left-radius: 20px;">
+  
+  
+  <p id="mobpara" style=" color: black;
+  font-size: 17px;font-weight: bold;text-align: left; color: #f7f8f9; ;    line-height: 29px;">Sell with Flicker</p>
+  
+
+  
+  
+    </div>
+  
+    <div style="height: 100%; width: 40%; float: left; background-color: #1c85e8;    padding: 19px 5px 38px 2px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;">
+   
+   
+    
+  
+  
+  </div>
+</a>
+  </center>
+  
+    </div>
+  </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<br/>
+<br/>
+
+
+<section>
+  <div class="row" style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="container">
+    <div class="col-md-4">
+      <center><p style="    font-size: 35px;
+        font-weight: bold;">
+      How it works
+      </p></center> 
+    </div>
+ 
+
+
+
+    <div class="col-md-8">
+
+      <div style="padding-bottom: 120px;">
+      <div style="width: 10%;  float: left;"><span style="    background-color: #268bea;
+        color: white;
+       
+        border-radius: 50%;
+      
+        font-size: 22px;
+    font-weight: bold;
+    padding: 10px 16px 10px 16px;
+        font-weight: bold;">1</span></div>
+      <div style="width: 90%; float: left ; "><span style="font-size: 16px ; font-weight: bold;" > Safely sell your Mobile</span>
+      
+      
+      <p style="color: #a1afbd;">Tell us about your Phone. and we will make you a cash offer.Safely sale to us without ever having strangers in your home.</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div style="padding-bottom: 120px;">
+      <div style="width: 10%;  float: left;"><span style="    background-color: #268bea;
+        color: white;
+      
+        border-radius: 50%;
+      
+        font-size: 22px;
+    font-weight: bold;
+    padding: 10px 16px 10px 16px;
+        font-weight: bold;">2</span></div>
+      <div style="width: 90%; float: left ; "><span style="font-size: 16px ; font-weight: bold;" >Get Financing with Ease</span>
+      
+      
+      <p style="color: #a1afbd;">After sell you Mobile Phone you can get your finance any time from any medium </p>
+      </div>
+    </div>
+
+
+
+
+
+    <div style="padding-bottom: 120px;">
+      <div style="width: 10%;  float: left;"><span style="    background-color: #268bea;
+        color: white;
+       
+        border-radius: 50%;
+      
+        font-size: 22px;
+    font-weight: bold;
+    padding: 10px 16px 10px 16px;
+        font-weight: bold;">3</span></div>
+      <div style="width: 90%; float: left ; "><span style="font-size: 16px ; font-weight: bold;" >Save Finance and move New</span>
+      
+      
+      <p style="color: #a1afbd;">Flicker provide you a facility to save your finance securelly and Provide you a facility that you can Buy your new Desire Phone by adding your savings.  </p>
+      </div>
+    </div>
+
+
+
+
+
+
 
 
     </div>
 
-  </section>
+
+</div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
   <!--//contact -->
   <!-- footer -->
 
 
-  <section class="team py-lg-4 py-md-3 py-sm-3 py-3" style="padding:4px;">
+  <!-- <section class="team py-lg-4 py-md-3 py-sm-3 py-3" style="padding:4px;">
   <div class="col-sm-12 col-md-12">
       <div class=" text-center">
         <p class="how_works">HOW IT WORKS</p>
@@ -343,8 +806,16 @@
         </div>
       </div>
     </div>
-  </section>
-<section>
+  </section> -->
+
+
+
+
+
+
+
+<!-- 
+  <section>
 	<div align="center">
 		<br>
 <h3><b>BEST MOBILE PHONE INFORMATION SITE</b></h3>
@@ -362,12 +833,10 @@
 
     <br>
     <br>
-	<!-- <p align="left">Flickerfone is one of the best mobile phone information site for buying and selling the mobile phones with latest features and multiple varieties at best prices in Pakistan. Flickerphone features brands ranging from iPhone, Samsung, Huawei, Infinix, OPPO, VIVO and many more on its intelligible platform. Flickerfone is a best mobile phone information site with competitive pricing, vast range of mobile phones and providing an efficient mobiles information for new mobile phone and buying/selling service to customers. Flickerfone is considered to be among the best information site in Pakistan. Our aim is to keep our customers updated and in the loop so whether it’s a query of getting mobile information or mobile phone software update, we will go beyond our excellence to create an ultimate guide experience when using our mobile phone information site platform. 
-</p>
-		<br> -->
+
 		</div>
 	</section>
-	
+	 -->
 
 
 <footer>
@@ -376,7 +845,7 @@
 <div class="bottom-footer py-md-4 py-3">
       <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3" style="border-right:1px solid #234a2f;height: 160px;">
+        <div class="col-lg-3 col-md-3 col-sm-3" style="height: 160px;">
         <ol id="footerol" style="list-style: none;">
           <li>
             <a href="index.html">
@@ -406,7 +875,7 @@
 
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-3" style="border-right:1px solid #234a2f;height: 160px;">
+        <div class="col-lg-3 col-md-3 col-sm-3" style="height: 160px;">
           <ol style="list-style: none;">
               <li><a href="" class="lia"><h4>Related Products</h4></a></li>
        <li style="padding: 8px; 
@@ -441,7 +910,7 @@
 
 
 
-        <div class="col-lg-3 col-md-3 col-sm-3"  style="border-right:1px solid #234a2f;" >
+        <div class="col-lg-3 col-md-3 col-sm-3"  style="" >
           <ol style="list-style: none;">
             <li><a href="https://flickerfone.com/page/about" class="lia"><h4>Services</h4></a></li>
      <li style="padding: 8px; 
@@ -482,7 +951,7 @@
               <div class="form-group">
   
                   <div class="input-group">
-                    <input class="form-control" placeholder="Email Sign up for Special Offers" type="email" name="email">
+                    <input class="form-control" placeholder="Email Sign up " type="email" name="email">
                      <span class="input-group-btn">
                       <button class="btn subbtn" name="send_email" type="submit">Subscribe</button>
                     </span>
@@ -518,7 +987,7 @@
             </ul>
           <p style="font-size: 13px;
     ">We do NOT accept products that have been reported lost or stolen.
-         <br/><a href="LearnMore.html" style="color:#028f63;">Learn More</a></p>
+         <br/><a href="LearnMore.html" style="color:#268bea;">Learn More</a></p>
         </div>
       </div>
       </div>
