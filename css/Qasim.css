@@ -125,13 +125,16 @@ color: #1782e7 !important;
 
 
 #setwidth{
-width: 121% !important;
+width: 150% !important;
+/* width: 150% !important; */
+
 }
 
 
 
+
 #stwid{
-width: 106% !important;
+width: 132% !important;
 }
 
 
@@ -143,7 +146,7 @@ width: 106% !important;
 
 @media (min-width:500px){
 #srchbtnid{
-  margin-left: 285px !important;
+  margin-left: 380px !important;
 }
 
 }
@@ -323,7 +326,7 @@ ul[id="myUL"]{
 }
 
 ul[id="myUL"] > li:hover a{
-   color: #275c33 !important;
+   color: #1c85e8 !important;
 font-weight: 500 !important;
 font-style: oblique !important;
 }
@@ -331,7 +334,8 @@ font-style: oblique !important;
 
 
 ul[id="myUL"] > li:hover  center{
-    background-color: #ebeae2 !important;
+    background-color: #dfe3fc !important;
+    box-shadow:         inset 0 0 10px #656877;
  }
 
 

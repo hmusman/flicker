@@ -79,7 +79,30 @@
 
 <style>
   
+#setwidth, #stwid, #stcol{
+ 
+  background-color: #eef2fd;
+}
 
+  #myUL {
+   
+    width: 30% !important;
+    margin-left: 127px !important;
+    margin-top: -8px !important;
+  }
+
+
+
+
+
+
+
+
+  #myInput {
+
+
+    width: 35% !important;
+  }
  nav[class="navbar navbar-default"]{
   background-color: #ffffff !important;
  }
@@ -312,7 +335,7 @@ a:hover{
 
 
 <span>
-  <input class="srchHome" type="search" placeholder="Enter Your Favourite Cell" style="color: #435d77;" />
+  <input  class="srchHome" type="search"  id="myInput"   onkeyup="myFunction()"   name="q"  placeholder="Enter Your Favourite Cell" style="color: #435d77;" />
 
  <a href="#"> <span style="background-color: #1c85e8;
   color: white;
@@ -320,6 +343,107 @@ a:hover{
   border-radius: 32px;    margin-left: -126px;
 ">Get Search</span></a>
 </span>
+
+
+<ul id="myUL" style=" position:absolute  ;  z-index: 20; ;display: none ;  height: 500px; background-color: rgb(214, 203, 203);">
+  <div>
+    <button id="srchbtnid" onclick="hideagain();" style=" box-shadow: inset 0 0 10px #a2aad4;
+    width: 28px;background-color: white;color: #002143;padding: 7px;font-weight: 600;border-style: none;">X</button>
+  </div>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="setwidth" style="height: 200px; width:100%;        margin-right: 115px;">
+          <center>
+            <image src="images/LiveSrchImages/images.png" />
+          </center>
+          <a href="#">Redmi Note 8
+
+            <h6>PKR 30,000</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stwid" style="height: 200px; width:100%;       margin-right: 115px;">
+          <center>
+            <image src="images/LiveSrchImages/download.png" />
+          </center>
+          <a href="#">Redmi Note 9 Pro
+            
+            <h6>PKR 44,999</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:118%;      margin-right: 115px;">
+          <center>
+            <image src="images/LiveSrchImages/AppleBlack.jpg" style="height: 130px; width: 130px; "  />
+          </center>
+          <a href="#">Apple iphone x 64 GB   
+                                    
+            <h6>PKR 144,999</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:100%;      margin-right: 115px; ">
+          <center>
+            <image src="images/LiveSrchImages/AlcatelGreen.jpg" style="height: 130px; width: 130px; " />
+          </center>
+          <a href="#">Alcatel jabi=ong Green 4 GB  
+
+                                    
+            <h6>PKR 19,000</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:100%;       margin-right: 115px; ">
+          <center>
+            <image src="images/LiveSrchImages/AppleVivo16Gb.jpg" style="height: 130px; width: 130px; " />
+          </center>
+          <a href="#">Apple VIVO Y15 Gold 16 GB    
+                                                            
+            <h6>PKR 25,999</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="stcol" style="height: 200px; width:113%;      margin-right: 115px; ">
+          <center>
+            <image src="images/LiveSrchImages/HTCPlayBlack.jpg" style="height: 130px; width: 130px; " />
+          </center>
+          <a href="#">HTC Play 2 Black 4 GB  
+                                                                                    
+            <h6>PKR 25,800</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
+</ul>
+
 
      </div>
 
