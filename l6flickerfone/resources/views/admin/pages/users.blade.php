@@ -25,20 +25,7 @@
                     <h4 class="page-title mb-1">FlickerFone Users</h4>
                 </div>
                 <div class="col-md-4">
-                    <div class="float-right d-none d-md-block">
-                        <div class="dropdown">
-                            <button class="btn btn-light btn-rounded dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="mdi mdi-settings-outline mr-1"></i> Settings
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -86,9 +73,9 @@
                                         <td>{{$user->city}}</td>
                                         <td>
                                             @if($user->status!=0)
-                                                <button class="btn btn-success blocked" data-id = "{{ $user->id }}">Active</button>
+                                                 <a href="{{ route('User.Block',$user->id) }}" class="btn btn-success">Active</a>
                                             @else
-                                                <button class="btn btn-danger active" id="active" data-id = "{{ $user->id }}">Blocked</button>
+                                                 <a href="{{ route('User.Active',$user->id) }}" class="btn btn-danger">Blocked</a>
                                             @endif
                                         </td>
                                         <td>

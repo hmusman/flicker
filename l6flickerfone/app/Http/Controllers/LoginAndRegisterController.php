@@ -123,7 +123,7 @@ class LoginAndRegisterController extends Controller
     	}
     	else
     	{
-    		$user =  User::select('*')->where([['email','=',$request->login_email],['password','=',$request->login_password]])->first();
+    		$user =  User::select('*')->where([['email','=',$request->login_email],['password','=',$request->login_password],['status','=',1]])->first();
     		if ($user)
     		{
     			$request->session()->put('user',$user->email);

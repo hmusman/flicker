@@ -61,7 +61,7 @@ class CategoryController extends Controller
    
     public function edit($id)
     {
-        $category = Category::find($id)->first();
+        $category = Category::where('id',$id)->first();
         return view('admin.pages.update_category',compact('category'));
     }
 

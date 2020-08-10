@@ -192,15 +192,17 @@ class UserController extends Controller
         }
     }
 
-    public function active(Request $request)
+    public function active($id)
     {
-        return $request->id;
-        // $id = $request->id;
-        // // dd($id);
-        // // print_r($id);
-        // $user = User::where('id',$id)->update(['status'=>1]);
-        // $arr = array('dataarr'=>"thid id");
-        // return json_encode($arr);
+        $user = User::where('id',$id)->update(['status'=>1]);
+       return redirect()->route('User.index');
+        
+    }
+
+     public function block($id)
+    {
+        $user = User::where('id',$id)->update(['status'=>0]);
+       return redirect()->route('User.index');
         
     }
 }
