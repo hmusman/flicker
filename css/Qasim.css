@@ -69,7 +69,7 @@ height: 35px !important;
 .srchstyle{
 margin-right: 40px !important;
   width: 100% !important;
-  margin-top: 9px !important;
+  margin-top: -5px !important;
 }
 
 ul[class="menu mt-2"] > li{
@@ -79,7 +79,13 @@ background-color: transparent !important;
 
 
 
-
+#topbar{
+  background-color: #0071e3;
+ 
+  padding: 5px 19px 5px 19px;
+  margin-right: 21px;
+  border-radius: 25px;
+}
 
 
 
@@ -117,7 +123,7 @@ font-family: Libre_Baskerville !important;
 }
 
 .navbar-default .navbar-nav > li > a:hover{
-color: #1782e7 !important;
+color: #f7f8f8 !important;
 }
 
 
@@ -340,3 +346,13 @@ ul[id="myUL"] > li:hover  center{
 
 
 
+div[class="navbar navbar-default"]{
+  background-color: black !important;
+}
+
+
+
+.dropbtn{
+  background-color: #4c4a57;
+  padding: 3px 20px 3px 20px;
+}

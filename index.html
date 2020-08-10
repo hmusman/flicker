@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,13 +60,113 @@
         <link href="css/thumbelina.css" rel="stylesheet">
         <link href="css/amsify.suggestags.css" rel="stylesheet">
         <link href="css/quick-look-table-2.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+        <script type="text/javascript" src="js/killercarousel.js"></script>
 
 
 </head>
 
 
+<style>
+ 
+div[class="kc-horizon"]{
+  perspective: 500px !important ;
 
+}
+
+  .kc-wrap {
+  background-color: #4c4a57;;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -ms-touch-action: none;
+      overflow: hidden;
+      position: relative;
+      background-position: center;
+      width: 100%;
+      padding-bottom: 35%;
+  }
+
+  .kc-item {
+      position: absolute;
+      width: 188px;
+      height: 250px;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      visibility: hidden;
+      border: 4px solid white;
+  }
+
+  .kc-shadow-bottom {
+      position: absolute !important;
+      top: 100% !important;
+      width: 100% !important;
+      height: 10% !important;
+      background-image: url(images/shadow-bottom.png);
+      left: 0px !important;
+  }
+
+  .kc-shadow-left,
+  .kc-shadow-right {
+      position: absolute !important;
+      top: 0% !important;
+      width: 10% !important;
+      height: 100% !important;
+      left: -10% !important;
+      background-image: url(images/shadow-left.png);
+  }
+
+  .kc-shadow-right {
+      left: 100% !important;
+      background-image: url(images/shadow-right.png);
+  }
+
+  .kc-reflection {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 0px;
+  }
+
+  .kc-nav-wrap {
+      display: inline-block;
+      position: absolute;
+      z-index: 1000;
+  }
+
+  #nav-buts {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+  }
+
+  .nav-but-left,
+  .nav-but-right {
+      font-family: arial;
+      width: 32px;
+    
+      border: 2px solid #ccc;
+      background-color: #444;
+      border-radius: 5px;
+      text-align: center;
+      float: left;
+      color: #fff;
+      font-size: 25px;
+      margin-right: 10px;
+    
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+  }
+
+  .nav-but-left:hover,
+  .nav-but-right:hover {
+      background-color: #666;
+  }
+</style>
 
 
 <body>
@@ -84,7 +185,7 @@
 </div> -->
 
 
-<nav class="navbar navbar-default" role="navigation">
+<nav  class="navbar navbar-default" role="navigation" style="    height: 63px;">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -98,38 +199,131 @@
 				<a href="index.html">
 					<img style="      height: 64px;
           width: 289px;
-          margin-top: 16px;" src="images/logo-cropped-removebg-preview.png"
+          margin-top: 16px;" src="images/wewewecropped (1).png"
            onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
 				</a>
 			</div>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 7px;     margin-left: 94px; font-weight: bold; ">
+			<ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 16px;     margin-left: 94px; font-weight: bold; ">
 				<li    class="backcolor lis">
-					<a href="index.html">Home</a>
+					<a id="topbar" href="index.html">Home</a>
+				</li>
+				<li  class="backcolor1">
+					<a  id="topbar" href="buy-used-mobile-phones.html">Buy</a>
 				</li>
 				<li class="backcolor1">
-					<a href="buy-used-mobile-phones.html">Buy</a>
+					<a id="topbar" href="new-mobile-phone-prices.html">New</a>
 				</li>
 				<li class="backcolor1">
-					<a href="new-mobile-phone-prices.html">New</a>
+					<a id="topbar" href="login.html">Sell</a>
 				</li>
 				<li class="backcolor1">
-					<a href="login.html">Sell</a>
+					<a  id="topbar" href="pricecalculator.html">Price Calulator</a>
 				</li>
-				<li class="backcolor1">
-					<a href="pricecalculator.html">Price Calulator</a>
-				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+	
+					<li style="list-style: none;     height: 26px;    margin-top: 13px;  border-bottom: 2px white solid;">
+						<i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>
+						<a href="login.html" align="right" id="reegster" class="" style="    margin-right: -12px;font-weight: bold;    margin-top: -35px; margin-left: 5px;" >REGISTER / LOGIN</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+</nav>
+
+<nav  style=" background-color: #9e9da2 !important;   height: 35px;" class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-brand" href="#" style="position: relative;z-index: 10000;margin-top: -32px; margin-left: -46px;">
+				<a href="index.html">
+					<img style=" display: none;     height: 64px;
+          width: 289px;
+          margin-top: 16px;" src="images/wewewecropped (1).png"
+           onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
+				</a>
+			</div>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+     
+			<ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 4px;     margin-left: 94px; font-weight: bold; ">
+      
+        <li    class="dropdown backcolor lis">
+          <div class="dropdown">
+            <button class="dropbtn">Apple</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </li>
+        
+
+
+
+        <li    class="dropdown backcolor lis">
+          <div class="dropdown">
+            <button class="dropbtn">Sumsung</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </li>
+			
+        <li    class="dropdown backcolor lis">
+          <div class="dropdown">
+            <button class="dropbtn">Huawei</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </li>
+        <li    class="dropdown backcolor lis">
+          <div class="dropdown">
+            <button class="dropbtn">Oppo</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </li>
+        <li    class="dropdown backcolor lis">
+          <div class="dropdown">
+            <button class="dropbtn">Vivo</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li id="srching">
 					<span class="srchstyle"  id="menuoptions">
 						<form action="https://flickerfone.com/new" id="qsearch">
 							<div class="search">
-								<input type="text" id="myInput"   onkeyup="myFunction()"  title="Type in a name" name="q"  class="" placeholder="Search our Store">
-									<button type="submit" class="searchButton">
-										<i class="fa fa-search"></i>
+                <input type="search" id="myInput"   onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store" 
+                style="height: 23px;   margin-top: 7px; background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px;">
+	
+									
 									</button>
 								</div>
 							</form>
@@ -232,10 +426,10 @@
 							</ul>
 						</span>
 					</li>
-					<li style="list-style: none;     height: 26px;    margin-top: 13px;  border-bottom: 2px white solid;">
+					<!-- <li style="list-style: none;     height: 26px;    margin-top: 13px;  border-bottom: 2px white solid;">
 						<i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>
-						<a href="login.html" align="right" id="reegster" class="" style="    margin-right: -12px;font-weight: bold;    margin-top: -35px; margin-left: 5px;" >REGISTER / LOGIN</a>
-					</li>
+						<a href="login.html" align="right" id="reegster" class="" style="    margin-right: -12px;font-weight: bold;    margin-top: -35px; margin-left: 5px;" ></a>
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -247,37 +441,145 @@
 
 
 
-     <!-- <div class="col-sm-3" style="position:absolute;float: right;right: 0;">
-          <div class="notify right-notify"></div>
-        </div> -->
+  <div class="kc-wrap">
+      <!-- Carousel items follow start -->
+      <div id="nav-buts">
+          <!-- <div class="nav-but-left">«</div>
+          <div class="nav-but-right">»</div> -->
 
- <div class="main-top" id="home">
-    <div class="slider-img " style="z-index: 5;" >
-        <div class="" align="center">
-           <i><p class="slider_heading"><span style="color:#8aba5e;">CELLFONES </span> <span style="color:#B3B2AD">RE-BORN</span></p></i>
-              
+          <div class="nav-but-left">&#171;</div>
+          <div class="nav-but-right">&#187;</div>
+      </div>
 
-          <img src="images/homepage11.png"  id="imgset" alt="news image" class=" img-fluid img-responsive img_banner">
+      <!-- Carousel items follow end -->
+      <div class="kc-horizon">
         
-      <a href="login.html">
-              <img src="images/sellarrow.png" class="img_sell img_sell1 img_sell2">
-      </a>
-       <a href="buy-used-mobile-phones.html">
+          <div class="kc-item">
+              <img src="images/image5.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
 
-                <img src="images/buyarrow.png" class="img_buy img_buy1 img_buy2 img_buy3">
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
 
-    </a>
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png">
+          </div>
+
+
+
+
+          <div class="kc-item">
+              <img src="images/image6.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png"><img class="cc-decoration kc-shadow-right" src="images/shadow-right.png">
+
+          </div>
+
+
+
+
+
+          <!-- <div class="kc-item">
+              <img src="images/image7.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png" style="background-image: none;">
+
+          </div> -->
+
+
+          <!-- <div class="kc-item">
+              <img src="images/image8.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png" style="background-image: none;">
+
+          </div> -->
+
+
+
+
+
+
+
+
+
+
+
+          <div class="kc-item kc-front-item">
+              <img src="images/image9.jpg">
+
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png" style="background-image: none;">
+
+          </div>
+
+
+
+
+          
+          <!-- <div class="kc-item">
+              <img src="images/image10.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png" style="background-image: none;">
+
+          </div> -->
+        
+        
+        
+        
+        
+        
+          <!-- <div class="kc-item">
+              <img src="images/image11.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png" style="background-image: none;">
+
+          </div> -->
+
+
+          <div class="kc-item">
+              <img src="images/image12.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png" style="background-image: none;">
+
+          </div>
+
+
+
+          <div class="kc-item">
+              <img src="images/image13.jpg">
+              <img class="cc-decoration kc-shadow-bottom" src="images/shadow-bottom.png" style="background-image: none;">
+
+
+              <img class="cc-decoration kc-shadow-left" src="images/shadow-left.png" style="background-image: none;">
+
+              <img class="cc-decoration kc-shadow-right" src="images/shadow-right.png" style="background-image: none;">
+
+          </div>
+
+
 
 
       </div>
-    </div>
-
   </div>
-
-
-  <!--//team -->
-  <!-- matter -->
-
 
 
 
@@ -536,7 +838,7 @@
 
 </html>
 
-  <script src="js/jquery-2.1.3.min.js"></script>
+  <!-- <script src="js/jquery-2.1.3.min.js"></script> -->
  <script src="js/bs.js"></script>
 
  <script type="text/javascript" src="js/jquery.steps.js"></script>
