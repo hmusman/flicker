@@ -65,6 +65,11 @@
         <script type="text/javascript" src="js/killercarousel.js"></script>
 
 
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+
 </head>
 
 
@@ -166,9 +171,99 @@ div[class="kc-horizon"]{
   .nav-but-right:hover {
       background-color: #666;
   }
+
+
+  .dropdown-content > a{
+    font-size: 11px;
+    color: #ffff !important;
+  }
+
+
+  
+  .dropdown-content > a:hover{
+    
+    color: #403e48 !important;
+  }
+ 
+
+
+
+  div[class="dropdown-content"]{
+    
+    background-color: #9e9da2 !important;
+  }
 </style>
 
 
+<style>
+  
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]::before {
+color: #6263637a !important;
+}
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]::before {
+color: #6263637a !important;
+}
+
+ul[class="slick-dots"]{
+  display: block !important;
+}
+
+/* 
+.slick-dotted.slick-slider{
+  margin-bottom: -10px !important;
+} */
+
+
+
+@media (min-width: 500px){
+  .content {
+    width: 100% !important;
+}
+
+}
+
+
+
+
+button[class="slick-next slick-arrow"], button[class="slick-prev slick-arrow"] {
+  display: none !important;
+}
+
+
+</style>
+
+
+<style>
+  
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]::before {
+color: #6263637a !important;
+}
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]::before {
+color: #6263637a !important;
+}
+
+/* ul[class="slick-dots"]{
+  display: none !important;
+} */
+
+
+.slick-dotted.slick-slider{
+  margin-bottom: -10px !important;
+}
+
+
+
+a[class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"]{
+  background-color: #101115;
+    padding: 5px 19px 5px 19px;
+    margin-right: 21px;
+    border-radius: 25px;
+    /* margin-bottom: 10px; */
+    margin: 5px 0px 10px 10px;
+}
+
+
+</style>
 <body>
 <!-- <div id="loading" style="background:#fff;position: fixed;z-index:1000;right:45%;top:40%;padding: 2%;">
     <h3 align="center" style="color:#000">Loading</h3>
@@ -199,7 +294,7 @@ div[class="kc-horizon"]{
 				<a href="index.html">
 					<img style="      height: 64px;
           width: 289px;
-          margin-top: 16px;" src="images/wewewecropped (1).png"
+          margin-top: 16px;" src="images/logoNewFlickers.png"
            onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
 				</a>
 			</div>
@@ -234,7 +329,8 @@ div[class="kc-horizon"]{
 		</div>
 </nav>
 
-<nav  style=" background-color: #9e9da2 !important;   height: 35px;" class="navbar navbar-default" role="navigation">
+<nav  style=" background-color: #9e9da2 !important;   height: 35px;   border-top: 2px #4c4a575c solid !important;
+border-bottom: 2px #4c4a575c solid !important; " class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -248,7 +344,7 @@ div[class="kc-horizon"]{
 				<a href="index.html">
 					<img style=" display: none;     height: 64px;
           width: 289px;
-          margin-top: 16px;" src="images/wewewecropped (1).png"
+          margin-top: 16px;" src="images/logoNewFlick.jpg"
            onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
 				</a>
 			</div>
@@ -257,60 +353,107 @@ div[class="kc-horizon"]{
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
      
-			<ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 4px;     margin-left: 94px; font-weight: bold; ">
+			<ul class="nav navbar-nav" id="qasimFont2" style="     margin-top: 4px;     margin-left: 79px; font-weight: bold; ">
       
-        <li    class="dropdown backcolor lis">
+        <li   >
           <div class="dropdown">
-            <button class="dropbtn">Apple</button>
+            <div class="dropbtn">Accessory</div>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="#">iPhone SE</a>
+              <a href="#">iPhone 11 Pro</a>
+              <a href="#">iPhone 11 Pro Max</a>
+              <a href="#">iPhone 11</a>
+              <a href="#">iPhone XS</a>
+              <a href="#">iPhone XS Max</a>
+              <a href="#">iPhone XR</a>
+              <a href="#">iPhone X</a>
             </div>
           </div>
         </li>
         
-
+        
 
 
         <li    class="dropdown backcolor lis">
           <div class="dropdown">
-            <button class="dropbtn">Sumsung</button>
+            <div class="dropbtn">Sumsung</div>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="#">Galaxy Note 20 Ultra 5G</a>
+              <a href="#">Galaxy Note 20</a>
+              <a href="#">Galaxy M01 Core</a>
+              <a href="#">Galaxy M01s</a>
+              <a href="#">Galaxy M31s</a>
+              <a href="#">Galaxy M01</a>
+
+              <a href="#"> Galaxy A21s</a>
+              <a href="#">Galaxy J2 Core 2020</a>
+              <a href="#">Galaxy M11</a>
+
+              <a href="#">Galaxy A31</a>
+              <a href="#">Galaxy M21</a>
+              <a href="#">Galaxy S20+</a>
+              <a href="#">Galaxy S20 Ultra</a>
+              <!-- <a href="#">Galaxy Z Flip</a>
+              <a href="#">Galaxy S20</a> -->
+
+            
+
+              
             </div>
           </div>
         </li>
 			
         <li    class="dropdown backcolor lis">
           <div class="dropdown">
-            <button class="dropbtn">Huawei</button>
+            <div class="dropbtn">Huawei</div>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="#">Huawei Maimang 9</a>
+              <a href="#">Huawei Enjoy 20 Pro</a>
+              <a href="#">Huawei Enjoy Z 5G</a>
+              <a href="#">Huawei Y8p</a>
+              <a href="#">Huawei P40 Lite 5G</a>
+              <a href="#">HHuawei Y8s</a>
+
+              <a href="#">Huawei Nova 7 SE 5G</a>
+              <a href="#">Huawei Nova 7 5G</a>
+
+              
             </div>
           </div>
         </li>
         <li    class="dropdown backcolor lis">
           <div class="dropdown">
-            <button class="dropbtn">Oppo</button>
+            <div class="dropbtn">Oppo</div>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="#">Oppo A92</a>
+              <a href="#">Oppo F11 Pro</a>
+              <a href="#">Oppo Reno 3 Pro</a>
+
+              <a href="#">Oppo Find X2 Pro</a>
+              <a href="#">Oppo Reno 3</a>
+              <a href="#">Oppo F15</a>
+
+              <a href="#">Oppo Reno 2</a>
+              <a href="#">Oppo Reno 2F</a>
+            
             </div>
           </div>
         </li>
         <li    class="dropdown backcolor lis">
           <div class="dropdown">
-            <button class="dropbtn">Vivo</button>
+            <div class="dropbtn">Vivo</div>
             <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
+              <a href="#">Vivo V17</a>
+              <a href="#">Vivo Y30</a>
+              <a href="#">Vivo Y11</a>
+
+              <a href="#">Vivo Y15</a>
+              <a href="#">Vivo Y93</a>
+              <a href="#">Vivo Y90</a>
+
+              <a href="#">Vivo S1</a>
+              <a href="#">Vivo Y19</a>
+            
             </div>
           </div>
         </li>
@@ -320,8 +463,8 @@ div[class="kc-horizon"]{
 					<span class="srchstyle"  id="menuoptions">
 						<form action="https://flickerfone.com/new" id="qsearch">
 							<div class="search">
-                <input type="search" id="myInput"   onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store" 
-                style="height: 23px;   margin-top: 7px; background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px;">
+                <input type="search" id="myInput" autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store" 
+                style="   height: 35px;margin-top: 3px;background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px; ">
 	
 									
 									</button>
@@ -434,10 +577,6 @@ div[class="kc-horizon"]{
 			</div>
 		</div>
 </nav>
-
-
-
-
 
 
 
@@ -583,14 +722,6 @@ div[class="kc-horizon"]{
 
 
 
-
-
-
-
-
-
-
-
   <section>
     <div class="pricecalculatorbackground pcback">
         <div class="pc">
@@ -611,65 +742,232 @@ div[class="kc-horizon"]{
   <!-- footer -->
 
 
-  <section class="team py-lg-4 py-md-3 py-sm-3 py-3" style="padding:4px;">
-  <div class="col-sm-12 col-md-12">
-      <div class=" text-center">
-        <p class="how_works">HOW IT WORKS</p>
-      </div>
-      </div>
-    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+  <section  style="padding-top: 70px; padding-bottom:70px ;background-color: #f4f4f4;">
+ 
 
-      <div class="row">
-        <div class="col-lg-4 col-md-4 text-center my-3 hover01">
-         <figure> <img src="images/icons-3.png" alt="news image"  style=" "></figure>
-          <div class="team-icons text-center mt-md-4 mt-3" style="padding:9%;">
-          <h5>Dummy Text will be here.Dummy Text will be here.Dummy Text will be here.</h5>
+  
+
+    <div class="row" style="">
+      <div class="col-md-3 col-lg-3 col-sm-3" >
+        <div class="autoplay" data-dots="true">
+       
+          <div class="item">
+            <div style="        background-image: linear-gradient(to bottom right, #4c4a57, #0071e3);">
+              <div class="thumb"> <img alt="featured project" src="images/Slick/f2VIRiRPCx.png"
+                  class="img-responsive img-fullwidth">
+                <!-- <h4 class="text-white mt-0 mb-0"><span class="price">Java Script Developer</span></h4> -->
+              </div>
+            
+              <h5 style="font-weight: bold; padding: 10px; color: #f4f4f4;">Get your Draem Phone</h5>
+                <p style="text-align: justify;padding: 0px 15px 0px 15px; color: #ffffff;"> Flicker provide you a facility to save your finance securelly and Provide you a facility that you can Buy your new Desire Phone by adding your savings.
+
+                </p>
+                <a class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"
+                href="FreeCourses.html" target="_blank">view details</a>
+           
+            </div>
           </div>
-
-        </div>
-        <div class="col-lg-4 col-md-4 text-center my-3 hover01">
-          <figure><img src="images/icons-2.png" alt="news image"  style="border-radius:20%"></figure>
-          <div class="team-icons text-center mt-md-4 mt-3" style="padding:9%;">
-            <h5>Dummy Text will be here.Dummy Text will be here.Dummy Text will be here.</h5>
+          <div class="item">
+            <div style="       background-image: linear-gradient(to bottom right, #4c4a57, #0071e3);">
+              <div class="thumb"> <img alt="featured project" src="images/Slick/LeuMYjKKVQ.png"
+                  class="img-responsive img-fullwidth">
+                <!-- <h4 class="text-white mt-0 mb-0"><span class="price">Java Script Developer</span></h4> -->
+              </div>
+            
+              <h5 style="font-weight: bold;padding: 10px;color: #f4f4f4;">Safely sell your Mobile</h5>
+                <p style="text-align: justify;padding: 0px 15px 0px 15px; color: #ffffff;"> Tell us about your Phone. and we will make you a cash offer.Safely sale to us without ever having strangers in your home.</p>
+                <a class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"
+                href="FreeCourses.html" target="_blank">view details</a>
+           
+            </div>
           </div>
+          <div class="item">
+            <div style="        background-image: linear-gradient(to bottom right, #4c4a57, #0071e3);">
+              <div class="thumb"> <img alt="featured project" src="images/Slick/0TwifdSUZ4.png"
+                  class="img-responsive img-fullwidth">
+                <!-- <h4 class="text-white mt-0 mb-0"><span class="price">Java Script Developer</span></h4> -->
+              </div>
+            
+              <h5 style="font-weight: bold;padding: 10px;color: #f4f4f4;">Get Financing with Ease</h5>
+                <p style="text-align: justify;padding: 0px 15px 0px 15px; color: #ffffff;"> After sell you Mobile Phone you can get your finance any time from any medium
 
-        </div>
-        <div class="col-lg-4 col-md-4  text-center my-3 hover01">
-
-          <figure><img src="images/icons-1.png" alt="news image"  style="border-radius:50%;"></figure>
-
-          <div class="team-icons text-center mt-md-4 mt-3" style="padding:9%;">
-    		<h5>Dummy Text will be here.Dummy Text will be here.Dummy Text will be here.</h5>
+                </p>
+                <a class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"
+                href="FreeCourses.html" target="_blank">view details</a>
+           
+            </div>
           </div>
-
+        
         </div>
       </div>
-    </div>
-  </section>
-<section>
-	<div align="center">
-		<br>
-<h3><b>BEST MOBILE PHONE INFORMATION SITE</b></h3>
-    <br>
-    <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-       <p style="    font-family: inherit;
-       font-size: 17px;
-       text-align: center;
-       letter-spacing: inherit;"> Flickerfone is one of the best mobile phone information site for buying and selling the mobile phones with latest features and multiple varieties at best prices in Pakistan. Flickerphone features brands ranging from iPhone, Samsung, Huawei, Infinix, OPPO, VIVO and many more on its intelligible platform. Flickerfone is a best mobile phone information site with competitive pricing, vast range of mobile phones and providing an efficient mobiles information for new mobile phone and buying/selling service to customers. Flickerfone is considered to be among the best information site in Pakistan. Our aim is to keep our customers updated and in the loop so whether it’s a query of getting mobile information or mobile phone software update, we will go beyond our excellence to create an ultimate guide experience when using our mobile phone information site platform.</p> 
-      </div>
+      <div class="col-md-9 col-lg-9 col-sm-9" style="width: 72% !important;    box-shadow: inset 0 0 10px #000000;">
       
-    </div></div>
 
-    <br>
-    <br>
-	<!-- <p align="left">Flickerfone is one of the best mobile phone information site for buying and selling the mobile phones with latest features and multiple varieties at best prices in Pakistan. Flickerphone features brands ranging from iPhone, Samsung, Huawei, Infinix, OPPO, VIVO and many more on its intelligible platform. Flickerfone is a best mobile phone information site with competitive pricing, vast range of mobile phones and providing an efficient mobiles information for new mobile phone and buying/selling service to customers. Flickerfone is considered to be among the best information site in Pakistan. Our aim is to keep our customers updated and in the loop so whether it’s a query of getting mobile information or mobile phone software update, we will go beyond our excellence to create an ultimate guide experience when using our mobile phone information site platform. 
+       <center><h3 style="    margin-top: 50px;">BEST MOBILE PHONE INFORMATION SITE</h3></center>
+       <hr style="background-color: rgb(56, 35, 236); width: 10%; height: 3px; margin-top: 10px;" />
+<p style="    font-size: 18px;
+    color: #848486fa;;font-size: 18px;
+    padding: 0px 60px 0px 38px;
+    margin-top: 50px;
+    line-height: 2.5rem; text-align: justify; ">
+  Flickerfone is one of the best mobile phone information site for buying and selling the mobile phones with latest features and multiple varieties at best prices in Pakistan. Flickerphone features brands ranging from iPhone, Samsung, Huawei, Infinix, OPPO, VIVO and many more on its intelligible platform. Flickerfone is a best mobile phone information site with competitive pricing, vast range of mobile phones and providing an efficient mobiles information for new mobile phone and buying/selling service to customers. Flickerfone is considered to be among the best information site in Pakistan. Our aim is to keep our customers updated and in the loop so whether it’s a query of getting mobile information or mobile phone software update, we will go beyond our excellence to create an ultimate guide experience when using our mobile phone information site platform.
 </p>
-		<br> -->
-		</div>
-	</section>
-	
+          <!-- <div><img src="images/Slick/blog2.jpg" style="height: 295px; width: 253px;" ></div>
+          <div><img src="images/Slick/blog3.png"  style="height: 295px; width: 253px;"></div>
+  
+          <div><img src="images/Slick/blog4.jpg" style="height: 295px; width: 250px;"></div>
+          <div><img src="images/Slick/blog5.jpg" style="height: 295px; width: 250px;"></div>
+
+          <div><img src="images/Slick/blog1.jpg" style="height: 295px; width: 250px;"></div>
+          <div><img src="images/Slick/blog2.jpg" style="height: 295px; width: 250px;"></div> -->
+        </div>
+  
+  
+      
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+  
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section  style="padding-top: 100px; padding-bottom: 70px;background-color: white;">
+ 
+
+  
+
+    <div class="row" style="">
+    
+      <div class="col-md-12 col-lg-12 col-sm-12">
+      
+        <div class="autoplayFeatures">
+         
+
+          <figure>
+            <img src="images/Slick/blog1.jpg" alt="Trulli" style="width: 100%;">
+            <figcaption> <center> <a href="#" >Samsung Galaxy S10 Lite</a> <br/>
+              Welcome to the Pro-grade camera</center>
+            </figcaption>
+          </figure>
+
+
+        
+
+          <figure>
+            <img src="images/Slick/blog2.jpg" alt="Trulli" style="width:100%">
+            <figcaption> <center> <a href="#" >Huawei Y9s</a><br/>
+              48MP triple camera</center>
+            </figcaption>
+          </figure>
+
+
+          <figure>
+            <img src="images/Slick/blog3.png" alt="Trulli" style="width:100%">
+            <figcaption> <center><a href="#" >Samsung Galaxy A51</a><br/>
+              48MP quad camera set-up</center> 
+            </figcaption>
+          </figure>
+
+
+          <figure>
+            <img src="images/Slick/blog4.jpg" alt="Trulli" style="width:100%">
+            <figcaption> <center> <a href="#" >Vivo V17 Pro</a><br/>
+              Moments Come Alive</center>
+            </figcaption>
+          </figure>
+
+
+          <figure>
+            <img src="images/Slick/blog5.jpg" alt="Trulli" style="width:100%">
+            <figcaption> <center> <a href="#" >Samsung Galaxy S10 Lite</a><br/>
+              Welcome to the Pro-grade camera</center>
+            </figcaption>
+          </figure>
+
+
+
+          <figure>
+            <img src="images/Slick/blog1.jpg" alt="Trulli" style="width:100%">
+            <figcaption> <center><a href="#" >Samsung Galaxy S10 Lite</a><br/>
+              Welcome to the Pro-grade camera</center> 
+            </figcaption>
+          </figure>
+
+
+
+
+            <!-- <img src="images/Slick/blog1.jpg" style="height: 295px; width: 250px;" > -->
+          
+          
+          </div>
+          <!-- <div><img src="images/Slick/blog2.jpg" style="height: 295px; width: 253px;" ></div>
+          <div><img src="images/Slick/blog3.png"  style="height: 295px; width: 253px;"></div>
+  
+          <div><img src="images/Slick/blog4.jpg" style="height: 295px; width: 250px;"></div>
+          <div><img src="images/Slick/blog5.jpg" style="height: 295px; width: 250px;"></div>
+
+          <div><img src="images/Slick/blog1.jpg" style="height: 295px; width: 250px;"></div>
+          <div><img src="images/Slick/blog2.jpg" style="height: 295px; width: 250px;"></div> -->
+        </div>
+  
+  
+      
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+
+
+  
+  </section>
+
+
+
+
+
+
 
 
 <footer>
@@ -678,11 +976,11 @@ div[class="kc-horizon"]{
 <div class="bottom-footer py-md-4 py-3">
       <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3" style="border-right:1px solid #234a2f;height: 160px;">
+        <div class="col-lg-3 col-md-3 col-sm-3" style="height: 160px;">
         <ol id="footerol" style="list-style: none;">
           <li>
             <a href="index.html">
-              <img style="     margin-left: -19px;  height: 56px;width: 252px; margin-top: 4px;" src="images/logo-cropped-removebg-preview.png"
+              <img style="     margin-left: -19px;  height: 56px;width: 252px; margin-top: 4px;" src="images/logoNewFlickers.png"
                onClick="location.href='index.html'" style="top: 0px;left: 0px;" id="logo" />
               </a>
           </li><br>
@@ -708,7 +1006,7 @@ div[class="kc-horizon"]{
 
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-3" style="border-right:1px solid #234a2f;height: 160px;">
+        <div class="col-lg-3 col-md-3 col-sm-3" style="height: 160px;">
           <ol style="list-style: none;">
               <li><a href="" class="lia"><h4>Related Products</h4></a></li>
        <li style="padding: 8px; 
@@ -743,7 +1041,7 @@ div[class="kc-horizon"]{
 
 
 
-        <div class="col-lg-3 col-md-3 col-sm-3"  style="border-right:1px solid #234a2f;" >
+        <div class="col-lg-3 col-md-3 col-sm-3"  style="" >
           <ol style="list-style: none;">
             <li><a href="https://flickerfone.com/page/about" class="lia"><h4>Services</h4></a></li>
      <li style="padding: 8px; 
@@ -820,7 +1118,7 @@ div[class="kc-horizon"]{
             </ul>
           <p style="font-size: 13px;
     ">We do NOT accept products that have been reported lost or stolen.
-         <br/><a href="LearnMore.html" style="color:#028f63;">Learn More</a></p>
+         <br/><a href="LearnMore.html" style="color: #0071e3;">Learn More</a></p>
         </div>
       </div>
       </div>
@@ -890,142 +1188,70 @@ div[class="kc-horizon"]{
 
 
 
-
-<script type="text/javascript" src="js/slick.min.js"></script>
+  
+<script type="text/javascript" src="slick/slick.min.js"></script>
+        
+<script type="text/javascript" src="slick/jquery3.2.1.js"></script>
+  
+<script type="text/javascript" src="slick/slick.js"></script>
+ 
 
 <script>
+ 
+  jQuery.noConflict();
+   
+  (function( $ ) {
+      // Your jQuery code here, using the $
+  })( jQuery );
+   
+  </script>
+
+
+<script>
+   $(document).ready(function(){
+        $('.autoplay').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+
+
+  dots: true,
+ 
+  // variableWidth: true
+});
+});
+
+
+
 $(document).ready(function(){
-  $('.select2').select2({
-    width: 'resolve',
-    theme: "classic"
+        $('.autoplayBlog').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+
+
+  dots: true,
+ 
+  // variableWidth: true
 });
-
-    $('.customer-logos').slick({
-        slidesToShow: 7,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: false,
-        dots: false,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 4
-            }
-        }, {
-            breakpoint: 520,
-            settings: {
-                slidesToShow: 3
-            }
-        }]
-    });
-});
-</script>
- <script type="text/javascript">
-     $(".lazy").slick({
-        lazyLoad: 'ondemand', // ondemand progressive anticipated
-        infinite: true
-      });
-  </script>
-  <script type="text/javascript">
-    $('#theCarousel').carousel({
-  interval: 2000
-})
-
-$('.multi-item-carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-
-  if (next.next().length>0) {
-    next.next().children(':first-child').clone().appendTo($(this));
-  }
-  else {
-    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-  }
-});
-
-
-  </script>
-  <script type="text/javascript">
-  $(document).on('ready', function() {
-
-      $(".regular").slick({
-        dots: false,
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        autoplay: true,
-        autoplaySpeed: 2000,
-
-          pauseOnHover: true,
-
-        responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-
-  ]
-
-
-      });
-
-      var $loading = $('#loading').hide();
-                   //Attach the event handler to any element
-     $(document)
-       .ajaxStart(function () {
-          //ajax request went so show the loading image
-           $loading.show();
-       })
-     .ajaxStop(function () {
-         //got response so hide the loading image
-          $loading.hide();
-      });
-    });
-
-
-var btn = $('#button');
-
-$(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
-});
-
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
 });
 
 
 $(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
+        $('.autoplayFeatures').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  // autoplay: true,
+  autoplaySpeed: 3000,
+
+
+  dots: true,
+ 
+  // variableWidth: true
+});
 });
 
-
 </script>
-<script src="../www.google.com/recaptcha/api.js"></script>
 

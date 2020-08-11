@@ -353,6 +353,15 @@ div[class="navbar navbar-default"]{
 
 
 .dropbtn{
-  background-color: #4c4a57;
-  padding: 3px 20px 3px 20px;
+  /* background-color: #9e9da2; */
+  border-right: 2px #4c4a575c solid !important;
+  border-left:2px #4c4a575c solid !important;
+  background-color: #9e9da2;
+    padding: 3px 53px 3px 53px;
+
+
+    height: 33px;
+    margin-top: -5px;
+    border-bottom: 3px #4c4a575c solid !important;
+
 }

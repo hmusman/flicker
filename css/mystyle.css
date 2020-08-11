@@ -45,7 +45,7 @@ div[class="slider-handle max-slider-handle round"],
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #1c85e859;
+  background: #9e9da2;
 }
 
 /* Handle on hover */
@@ -328,7 +328,7 @@ position: absolute;
     font-size:20px;
 }
 ul li a{
-    color:#002143c2;
+  color: #dbdbdb;
 }
 .team{
     background-color:#F8F8F8;
@@ -800,7 +800,7 @@ h2{
     color: white;
 }
 .subbtn{
-    background-color: #268bea;
+    background-color: #0071e3;
     color: white;
 }
 .subbtn:hover{
@@ -1877,8 +1877,22 @@ width: 40%;
 	width: 100%;
 	font-size: 16px;
 	padding: 12px 20px 12px 40px;
-	border: 1px solid #ddd;
-	margin-bottom: 12px;
+	
+  margin-bottom: 12px;
+  
+
+
+
+
+
+  border: 2px solid #9e9da2;
+ 
+  border-top: 2px solid #807f87;
+  border-right: 2px solid #807f87;
+  border-bottom: 2px solid #807f87;
+}
+
+
 }
 
 #myUL {
@@ -1934,7 +1948,7 @@ width: 40%;
 }
 
 .srchstyle {
-  margin-right: 162px !important;
+  margin-right: 83px !important;
 	
 }
 
