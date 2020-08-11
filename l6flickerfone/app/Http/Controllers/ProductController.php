@@ -58,7 +58,7 @@ class ProductController extends Controller
             $ext1 = $request->file('image1')->extension();
             $ext2 = $request->file('image2')->extension();
             $ext3 = $request->file('image3')->extension();
-
+            $ext4 = $request->file('video')->extension();
             if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg') 
             { $filename1= $request->file('image1')->store('admin/images/product','public'); }
             else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
@@ -86,11 +86,49 @@ class ProductController extends Controller
                 $product->color = $request->color;
                 $product->price = $request->price;
                 $product->quantity = $request->quantity;
+                $product->launch_announced = $request->announced;
+                $product->launch_status = $request->status;
+                $product->body_dimensions = $request->dimension;
+                $product->body_weight = $request->weight;
+                $product->body_build = $request->build;
+                $product->body_sim = $request->sim;
+                $product->display_type = $request->type;
+                $product->display_size = $request->size;
+                $product->display_resolution = $request->resolution;
+                $product->display_protection = $request->protection;
+                $product->platform_os = $request->os;
+                $product->platform_chipset = $request->chipset;
+                $product->platform_cpu = $request->cpu;
+                $product->platform_gpu = $request->gpu;
+                $product->memory_card_slot = $request->card_slot;
+                $product->memory_ram = $request->ram;
+                $product->memory_storage = $request->storage;
+                $product->main_type = $request->main_type;
+                $product->main_type_value = $request->main_type_value;
+                $product->main_feature = $request->main_feature;
+                $product->main_video = $request->main_video;
+                $product->selfie_single = $request->selfie_single;
+                $product->selfie_feature = $request->selfie_feature;
+                $product->selfie_video = $request->selfie_video;
+                $product->sound_loudspeaker = $request->loudspeaker;
+                $product->sound_jack = $request->jack;
+                $product->sound_mic= $request->mic;
+                $product->comms_wlan = $request->wlan;
+                $product->comms_bluetooth = $request->bluetooth;
+                $product->comms_gps = $request->gps;
+                $product->comms_nfc = $request->nfc;
+                $product->comms_radio = $request->radio;
+                $product->comms_usb = $request->usb;
+                $product->feature_sensor = $request->sensor;
+                $product->battery_status = $request->battery_type;
+                $product->battery_talk_time = $request->talk_time;
+                $product->battery_music = $request->music;
                 $product->image = $filename1;
                 $product->dimage = $filename2;
                 $product->dimage1 = $filename3;
                 $product->description = $request->description;
-                $product->category_id = $request->category; 
+                $product->category_id = $request->category;
+                $product->video_link = $request->video_link;  
                 if ($product->save())
                 {
                     $request->session()->flash('msg',"Product has been added successfully");
@@ -278,11 +316,49 @@ class ProductController extends Controller
             $product->color = $request->color;
             $product->price = $request->price;
             $product->quantity = $request->quantity;
+            $product->launch_announced = $request->announced;
+            $product->launch_status = $request->status;
+            $product->body_dimensions = $request->dimension;
+            $product->body_weight = $request->weight;
+            $product->body_build = $request->build;
+            $product->body_sim = $request->sim;
+            $product->display_type = $request->type;
+            $product->display_size = $request->size;
+            $product->display_resolution = $request->resolution;
+            $product->display_protection = $request->protection;
+            $product->platform_os = $request->os;
+            $product->platform_chipset = $request->chipset;
+            $product->platform_cpu = $request->cpu;
+            $product->platform_gpu = $request->gpu;
+            $product->memory_card_slot = $request->card_slot;
+            $product->memory_ram = $request->ram;
+            $product->memory_storage = $request->storage;
+            $product->main_type = $request->main_type;
+            $product->main_type_value = $request->main_type_value;
+            $product->main_feature = $request->main_feature;
+            $product->main_video = $request->main_video;
+            $product->selfie_single = $request->selfie_single;
+            $product->selfie_feature = $request->selfie_feature;
+            $product->selfie_video = $request->selfie_video;
+            $product->sound_loudspeaker = $request->loudspeaker;
+            $product->sound_jack = $request->jack;
+            $product->sound_mic= $request->mic;
+            $product->comms_wlan = $request->wlan;
+            $product->comms_bluetooth = $request->bluetooth;
+            $product->comms_gps = $request->gps;
+            $product->comms_nfc = $request->nfc;
+            $product->comms_radio = $request->radio;
+            $product->comms_usb = $request->usb;
+            $product->feature_sensor = $request->sensor;
+            $product->battery_status = $request->battery_type;
+            $product->battery_talk_time = $request->talk_time;
+            $product->battery_music = $request->music;
             $product->image = $filename1;
             $product->dimage = $filename2;
             $product->dimage1 = $filename3;
             $product->description = $request->description;
-            $product->category_id = $request->category; 
+            $product->category_id = $request->category;
+            $product->video_link = $request->video_link; 
             if ($product->save())
             {
                 $request->session()->flash('msg',"Product has been updated successfully");

@@ -204,6 +204,539 @@
     	</div>
   	</section>
 
+  	<section>
+  		<div class="container mt-10 mb-10">
+  				
+  			<table class="MsoTableMediumGrid1Accent4" border="1" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+					 <td class="Network" width="102">
+					  <p class="Networktext" align="center">
+					   <strong><span class="Networktext">Network</span></strong>
+					  </p>
+					 </td>
+					 <td class="Technology" width="114">
+					  <p class="Technologytext">
+					   <strong><span class="Technologytext">Technology</span></strong>
+					  </p>
+					 </td>
+					 <td class="GSMHSPALTE" width="468">
+					  <p class="GSMHSPALTEtext">
+					   <strong><u>GSM / HSPA / LTE</u></strong>
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Launch" width="102" rowspan="2">
+					  <p class="Launchtext" align="center">
+					   <strong>Launch</strong>
+					  </p>
+					 </td>
+					 <td class="Announced" width="114">
+					  <p class="Announcedtext">
+					   <strong>Announced</strong>
+					  </p>
+					 </td>
+					 <td class="Date" width="468">
+					  <p class="Datetext">
+					   {{ date('Y',strtotime($product->launch_announced)) }},
+					  {{ date('F',strtotime($product->launch_announced)) }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Status" width="114">
+					  <p class="Statustext">
+					   <strong>Status</strong>
+					  </p>
+					 </td>
+					 <td class="Statusdate" width="468">
+					  <p class="Statusdatetext">
+					  {{ $product->launch_status }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Body" width="102" rowspan="4">
+					  <p class="Bodytext" align="center">
+					   <strong>Body</strong>
+					  </p>
+					 </td>
+					 <td class="Dimensions" width="114">
+					  <p class="Dimensionstext">
+					   <strong>Dimensions</strong>
+					  </p>
+					 </td>
+					 <td class="Dimensize" width="468">
+					  <p class="Dimensizetext">
+					  {{ $product->body_dimensions}}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Weight" width="114">
+					  <p class="Weighttext">
+					   <strong>Weight</strong>
+					  </p>
+					 </td>
+					 <td class="Weightgrams" width="468">
+					  <p class="Weightgramstext">
+					  {{ $product->body_weight}}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Build" width="114">
+					  <p class="Buildtext">
+					   <strong>Build</strong>
+					  </p>
+					 </td>
+					 <td class="Buildtype" width="468">
+					  <p class="Buildtypetext">
+					   {{ $product->body_build }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="SIM" width="114">
+					  <p class="SIMtext">
+					   <strong>SIM</strong>
+					  </p>
+					 </td>
+					 <td class="SIMtype" width="468">
+					  <p class="SIMtypetext">
+					   {{ $product->body_sim }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Display" width="102" rowspan="4">
+					  <p class="Displaytext" align="center">
+					   <strong>Display</strong>
+					  </p>
+					 </td>
+					 <td class="Type" width="114">
+					  <p class="Typetext">
+					   <strong>Type</strong>
+					  </p>
+					 </td>
+					 <td class="LCDtype" width="468">
+					  <p class="LCDtypetext">
+					  {{ $product->display_type}}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Size" width="114">
+					  <p class="Sizetext">
+					   <strong>Size</strong>
+					  </p>
+					 </td>
+					 <td class="Screensize" width="468">
+					  <p class="Screensizetext">
+					  <!--  4.7 inches, 60.9 cm<sup><span xss="removed">2</span></sup><span xss="removed"> (~65.6% screen-to-body ratio)</span> -->
+					  {{ $product->display_size }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Resolution" width="114">
+					  <p class="Resolutiontext">
+					   <strong>Resolution</strong>
+					  </p>
+					 </td>
+					 <td class="Resolutiontype" width="468">
+					  <p class="Resolutiontypetext">
+					   {{ $product->display_resolution }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Protection" width="114">
+					  <p class="Protectiontext">
+					   <strong>Protection</strong>
+					  </p>
+					 </td>
+					 <td class="Protectiontype" width="468">
+					  <p class="Protectiontypetext Portectiontypetext">
+					   {{ $product->display_protection }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Platform" width="102" rowspan="4">
+					  <p class="Platformtext" align="center">
+					   <strong>Platform</strong>
+					  </p>
+					 </td>
+					 <td class="OS" width="114">
+					  <p class="OStext">
+					   <strong>OS</strong>
+					  </p>
+					 </td>
+					 <td class="Operatingsystem" width="468">
+					  <p class="Operatingsystemtext">
+					   {{ $product->platform_os }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Chipset" width="114">
+					  <p class="Chipsettext">
+					   <strong>Chipset</strong>
+					  </p>
+					 </td>
+					 <td class="Processortype" width="468">
+					  <p class="Processortypetext">
+					   {{ $product->platform_chipset }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="CPU" width="114">
+					  <p class="CPUtext">
+					   <strong>CPU</strong>
+					  </p>
+					 </td>
+					 <td class="Processorsize" width="468">
+					  <p class="Processorsizetext">
+					   {{ $product->platform_cpu }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="GPU" width="114">
+					  <p class="GPUtext">
+					   <strong>GPU</strong>
+					  </p>
+					 </td>
+					 <td class="Graphicprocessor" width="468">
+					  <p class="Graphicprocessortext">
+					   {{ $product->platform_gpu }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Memory" width="102" rowspan="2">
+					  <p class="Memorytext" align="center">
+					   <strong>Memory</strong>
+					  </p>
+					 </td>
+					 <td class="Cardslot" width="114">
+					  <p class="Cardslottext">
+					   <strong>Card slot</strong>
+					  </p>
+					 </td>
+					 <td class="Memorycard" width="468">
+					  <p class="Memorycardtext">
+					  {{ $product->memory_card_slot }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Internal" width="114">
+					  <p class="Internaltext">
+					   <strong>Internal</strong>
+					  </p>
+					 </td>
+					 <td class="ROMRAM" width="468">
+					  <p class="ROMRAMtext ROAMRAMtext">
+					   {{ $product->memory_storage }}, {{ $product->memory_ram }} RAM
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="MainCamera" width="102" rowspan="3">
+					  <p class="MainCameratext" align="center">
+					   <strong>Main Camera</strong>
+					  </p>
+					 </td>
+					 <td class="Dual" width="114">
+					  <p class="Dualtext">
+					   <strong>{{ ucfirst($product->main_type) }}</strong>
+					  </p>
+					 </td>
+					 <td class="Cameraprofile" width="468">
+					  <p class="Cameraprofiletext">
+					  {{ $product->main_type_value }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="MainCameraFeatures" width="114">
+					  <p class="MainCameraFeaturestext">
+					   <strong>Features</strong>
+					  </p>
+					 </td>
+					 <td class="Camerafeatures" width="468">
+					  <p class="Camerafeaturestext">
+					  {{ $product->main_feature }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="MainCameraVideo" width="114">
+					  <p class="MainCameraVideotext">
+					   <strong>Video</strong>
+					  </p>
+					 </td>
+					 <td class="MainCameraVideoquality" width="468">
+					  <p class="MainCameraVideoqualitytext">
+					  {{ $product->main_video }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="SelfieCamera" width="102" rowspan="3">
+					  <p class="SelfieCameratext" align="center">
+					   <strong>Selfie Camera</strong>
+					  </p>
+					 </td>
+					 <td class="Single" width="114">
+					  <p class="Singletext">
+					   <strong>Single</strong>
+					  </p>
+					 </td>
+					 <td class="Cameramegapixels" width="468">
+					  <p class="Cameramegapixelstype Camerapixelstype">
+					   {{ $product->selfie_single }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="SelfieCameraFeatures" width="114">
+					  <p class="SelfieCameraFeaturestext">
+					   <strong>Features</strong>
+					  </p>
+					 </td>
+					 <td class="Flash" width="468">
+					  <p class="Flashtext">
+					  {{ $product->selfie_feature }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="SelfieCameraVideo" width="114">
+					  <p class="SelfieCameraVideotext">
+					   <strong>Video</strong>
+					  </p>
+					 </td>
+					 <td class="SelfieCameraVideoquality" width="468">
+					  <p class="SelfieCameraVideoqualitytext">
+					  {{ $product->selfie_video }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Sound" width="102" rowspan="3">
+					  <p class="Soundtext" align="center">
+					   <strong>Sound</strong>
+					  </p>
+					 </td>
+					 <td class="Loudspeaker" width="114">
+					  <p class="Loudspeakertext">
+					   <strong>Loudspeaker</strong>
+					  </p>
+					 </td>
+					 <td class="Loudspeakerstatus" width="468">
+					  <p class="Loudspeakerstatustext">
+					  {{ $product->sound_loudspeaker }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="mmjack" width="114">
+					  <p class="mmjacktext">
+					   <strong>3.5mm jack</strong>
+					  </p>
+					 </td>
+					 <td class="Headphonejack" width="468">
+					  <p class="Headphonejacktext">
+					   {{ $product->sound_jack }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Emptycol2" width="114">
+					  <p class="Emptycol2text">
+					   <strong>Mic</strong>
+					  </p>
+					 </td>
+					 <td class="Noisecancellation" width="468">
+					  <p class="Noisecancellationtext">
+					   {{ $product->sound_mic }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="COMMS" width="102" rowspan="6">
+					  <p class="COMMStext" align="center">
+					   <strong>COMMS</strong>
+					  </p>
+					 </td>
+					 <td class="WLAN" width="114">
+					  <p class="WLANtext">
+					   <strong>WLAN</strong>
+					  </p>
+					 </td>
+					 <td class="WIFI" width="468">
+					  <p class="WIFItext">
+					  {{ $product->comms_wlan }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Bluetooth" width="114">
+					  <p class="Bluetoothtext">
+					   <strong>Bluetooth</strong>
+					  </p>
+					 </td>
+					 <td class="Bluetoothtype" width="468">
+					  <p class="Bluetoothtypetext">
+					  {{ $product->comms_bluetooth }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="GPS" width="114">
+					  <p class="GPStext">
+					   <strong>GPS</strong>
+					  </p>
+					 </td>
+					 <td class="GPSdetails" width="468">
+					  <p class="GPSdetailstext">
+					   {{ $product->comms_gps }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="GPS" width="114">
+					  <p class="GPStext">
+					   <strong>NFC</strong>
+					  </p>
+					 </td>
+					 <td class="GPSdetails" width="468">
+					  <p class="GPSdetailstext">
+					   {{ $product->comms_nfc }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Radio" width="114">
+					  <p class="Radiotext">
+					   <strong>Radio</strong>
+					  </p>
+					 </td>
+					 <td class="FM" width="468">
+					  <p class="FMtext">
+					   {{ $product->comms_radio }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="USB" width="114">
+					  <p class="USBtext">
+					   <strong>USB</strong>
+					  </p>
+					 </td>
+					 <td class="USBtype" width="468">
+					  <p class="USBtypetext">
+					  {{ $product->comms_usb }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Features" width="102">
+					  <p class="Featurestext" align="center">
+					   <strong>Features</strong>
+					  </p>
+					 </td>
+					 <td class="Sensors" width="114">
+					  <p class="Sensorstext">
+					   <strong>Sensors</strong>
+					  </p>
+					 </td>
+					 <td class="Sensortype" width="468">
+					  <p class="Sensortypetext">
+					   {{ $product->feature_sensor }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Battery" width="102" rowspan="2">
+					  <p class="Batterytext" align="center">
+					   <strong>Battery</strong>
+					  </p>
+					 </td>
+					 <td class="Emptycol21" width="114">
+					  <p class="Emptycol21text">
+					   <strong> </strong>
+					  </p>
+					 </td>
+					 <td class="Batterypower" width="468">
+					  <p class="Batterypowertext">
+					  {{ $product->battery_status }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="Charging" width="114">
+					  <p class="Chargingtext">
+					   <strong>
+					Talk Time
+					   <br>
+					Music Play
+					   </strong>
+					  </p>
+					 </td>
+					 <td class="Chargingstatus" width="468">
+					  <p class="Chargingstatustext">
+					   
+					 {{ $product->battery_talk_time }}
+					   <br>
+					  {{ $product->battery_music }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="MISC" width="102">
+					  <p class="MISCtext" align="center">
+					   <strong>MISC</strong>
+					  </p>
+					 </td>
+					 <td class="Colors" width="114">
+					  <p class="Colorstext">
+					   <strong>Colors</strong>
+					  </p>
+					 </td>
+					 <td class="Colorcode" width="468">
+					  <p class="Colorcodetext">
+					   {{ $product->colors }}
+					  </p>
+					 </td>
+					</tr>
+					<tr xss="removed">
+					 <td class="MISC" width="102">
+					  <p class="MISCtext2" align="center">
+					   <strong> </strong>
+					  </p>
+					 </td>
+					 <td class="Price" width="114">
+					  <p class="Pricetext">
+					   <strong>Price</strong>
+					  </p>
+					 </td>
+					 <td class="PKR" width="468">
+					  <p class="PKRtext">
+					  {{ $product->price }} PKR
+					  </p>
+					 </td>
+					</tr>
+				</tbody>
+			</table>
+
+  		</div>
+  	</section>
 
 	<script type="text/javascript" src="{{ asset('js/bootstrap-slider.min.js') }} "></script>
 	<script type="text/javascript">
