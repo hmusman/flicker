@@ -1633,7 +1633,7 @@ a:hover {
 }
 .dropbtn {
 
-  color: white;
+  color: #001829;
 
 
   border: none;
@@ -1883,13 +1883,13 @@ width: 40%;
 
 
 
+border-color: white !important;
 
-
-  border: 2px solid #9e9da2;
+  /* border: 2px solid #9e9da2;
  
   border-top: 2px solid #807f87;
   border-right: 2px solid #807f87;
-  border-bottom: 2px solid #807f87;
+  border-bottom: 2px solid #807f87; */
 }
 
 
@@ -1948,7 +1948,10 @@ width: 40%;
 }
 
 .srchstyle {
-  margin-right: 83px !important;
+  /* margin-right: 83px !important; */
+
+  /* margin-right: 166px !important; */
+   
 	
 }
 

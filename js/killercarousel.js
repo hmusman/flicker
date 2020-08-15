@@ -13,10 +13,11 @@ $(function() {
     $('.kc-wrap').KillerCarousel({
         // Width of carousel.
         width: 800,
+        top: 250,
         // Item spacing in 3d (CSS3 3d) mode.
-        spacing3d: 250,
+        spacing3d: 140,
         // Item spacing in 2d (no CSS3 3d) mode. 
-        spacing2d: 250,
+        spacing2d: 140,
         // Path to images for shadows etc.
         imagePath: "/sites/starplugins/js/killercarousel/",
         showShadow: true,

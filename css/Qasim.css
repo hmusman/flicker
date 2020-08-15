@@ -229,7 +229,7 @@ height: 248px !important;
 
 
 .srchstyle{
-    margin-right: 42px !important;
+  /* margin-right: 92px !important */
     
   }
 
@@ -354,14 +354,14 @@ div[class="navbar navbar-default"]{
 
 .dropbtn{
   /* background-color: #9e9da2; */
-  border-right: 2px #4c4a575c solid !important;
-  border-left:2px #4c4a575c solid !important;
-  background-color: #9e9da2;
+  border-right: 1px #4c4a575c solid !important;
+  border-left:1px #4c4a575c solid !important;
+  background-color: #ffff;
     padding: 3px 53px 3px 53px;
 
-
+color: #520000;
     height: 33px;
     margin-top: -5px;
-    border-bottom: 3px #4c4a575c solid !important;
+    border-bottom: 1px #4c4a575c solid !important
 
 }
