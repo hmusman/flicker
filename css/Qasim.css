@@ -353,15 +353,24 @@ div[class="navbar navbar-default"]{
 
 
 .dropbtn{
-  /* background-color: #9e9da2; */
-  border-right: 1px #4c4a575c solid !important;
-  border-left:1px #4c4a575c solid !important;
-  background-color: #ffff;
-    padding: 3px 53px 3px 53px;
+ 
 
-color: #520000;
-    height: 33px;
-    margin-top: -5px;
-    border-bottom: 1px #4c4a575c solid !important
+
+
+    border-right: 1px #4c4a575c solid !important;
+    border-left: 1px #4c4a575c solid !important;
+    background-color: #ffff;
+    padding: 3px 30px 3px 30px;
+    color: #520000;
+    height: 28px;
+  
+    margin-top: 2px;
+    border-bottom: 1px #4c4a575c solid !important;
+    text-shadow: 0px 0px 1px #a69595;
+
+
+    font-size: 12px !important;
+
+
 
 }

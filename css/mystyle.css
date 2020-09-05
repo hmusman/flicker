@@ -1868,6 +1868,11 @@ width: 40%;
 
 
 
+ul[class="dropdown-menu fade-up show"] > li{
+  display: block !important;
+}
+
+
 
 
 #myInput {
@@ -1905,10 +1910,10 @@ border-color: white !important;
 }
 
 #myUL li a {
-	border: 1px solid #ddd;
+	/* border: 1px solid #ddd; */
 	margin-top: -1px;
 	/* Prevent double borders */
-	background-color: #f6f6f6;
+	background-color: white;
 	padding: 12px;
 	text-decoration: none;
 	font-size: 18px;
@@ -1917,7 +1922,7 @@ border-color: white !important;
 }
 
 #myUL li a:hover:not(.header) {
-	background-color: #eee;
+	background-color: white !important;
 }
 
 .img-hover-zoom {
