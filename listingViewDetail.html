@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+
+<!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="Slider/engine1/style.css" />
+<script type="text/javascript" src="Slider/engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+
+  </head>
+  <script src="js/jquery-2.1.3.min.js" ></script>
+  <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+  <link href="css/mystyle.css" rel='stylesheet' type='text/css' media="all">
+
+  <link rel="stylesheet" href="js/ScrollJS2//style.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  
+  <style>
+ 
+    
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 50%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+    
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+   
+    }
+    
+    #myUL li a {
+      
+      margin-top: -1px; /* Prevent double borders */
+      
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+    display: block;
+    font-weight: 600;
+    }
+    
+    /* #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    } */
+    </style>
+
+
+<style>
+  /* /////////////////////////////slick css//////////////////////////////////// */
+  
+button[class="slick-next slick-arrow"], button[class="slick-prev slick-arrow"] {
+  display: block !important;
+}
+
+
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]::before {
+color: #6263637a !important;
+display: none !important;
+}
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]::before {
+color: #6263637a !important;
+}
+
+div[class="autoplay slick-initialized slick-slider slick-dotted"] >  ul[class="slick-dots"]{
+  position: absolute;
+    top: 151px;
+
+    height: 220px !important;
+    width: 87%;
+    margin-left: 20px;
+    border-bottom: 1px black solid;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+ display: none !important;
+}
+.slick-dotted.slick-slider{
+  margin-bottom: -10px !important;
+}
+
+
+
+a[class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"]{
+  background-color: #101115;
+    padding: 5px 19px 5px 19px;
+    margin-right: 21px;
+    border-radius: 25px;
+    /* margin-bottom: 10px; */
+    margin: 5px 0px 10px 10px;
+}
+
+div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
+  background-image: url('images/headerimg/ic_keyboard_arrow_left_black_18dp.png');
+  border-radius: 50%;
+  height: 38px;
+    background-repeat: no-repeat;
+    width: 100px;
+}
+div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
+  background-image: url('images/headerimg/ic_keyboard_arrow_right_black_18dp.png');
+  border-radius: 50%;
+  height: 38px;
+    background-repeat: no-repeat;
+    width: 58px;
+}
+
+button[id="slick-slide-control10"]::before{
+ 
+  height: 38px;
+    background-repeat: no-repeat;
+    width: 26px;
+
+    content: url('images/headerimg/kissclipart-boton-1-png-clipart-number-numerical-digit-212c2ed0123fbde4 (1).png') !important;
+}
+
+
+
+button[id="slick-slide-control11"]::before{
+ 
+ height: 38px;
+   background-repeat: no-repeat;
+   width: 26px;
+
+   content: url('images/headerimg/1200px-Circle-two.svg.png') !important;
+}
+
+
+
+
+button[id="slick-slide-control12"]::before{
+ 
+ height: 38px;
+   background-repeat: no-repeat;
+   width: 26px;
+
+   content: url('images/headerimg/number-icon-number-3-png-clip-art-thumbnail.png') !important;
+}
+
+
+
+button[id="slick-slide-control13"]::before{
+ 
+ height: 38px;
+   background-repeat: no-repeat;
+   width: 26px;
+
+   content: url('images/headerimg/40ca6917113d43b16b4a77ad328c6ecb.png') !important;
+}
+
+
+
+button[id="slick-slide-control14"]::before{
+ 
+ height: 38px;
+   background-repeat: no-repeat;
+   width: 26px;
+
+   content: url('images/headerimg/ab868e89a77a0aa7e22a91cd4a773d02.png') !important;
+}
+
+
+
+
+/* .slick-dots li button:before{
+  content: none !important;
+} */
+
+#slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
+  margin-left: 23px !important;
+    top: 81px;
+    height: 67px !important;
+    width: 22px !important;
+    background-color: #5f5b54;
+
+
+
+    background-image: url(images/headerimg/ic_keyboard_arrow_left_white_18dp.png) !important;
+    background-position: center !important;
+  
+    background-repeat: no-repeat;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+
+#slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
+  right: 21px !important;
+    top: 81px !important;
+    height: 67px !important;
+    width: 22px !important;
+    background-color: #5f5b54;
+
+
+    background-image: url(images/headerimg/ic_keyboard_arrow_right_white_18dp.png) !important;
+    background-position: center !important;
+  
+    background-repeat: no-repeat;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.slick-prev {
+    left: 0px !important;
+    z-index: 10 !important;
+}
+
+
+ul[class="dropdown-menu fade-up"] >  li {
+    display: block !important;
+}
+
+#bloghr::after{
+  background: #e3e6e5!important;
+  background: #1c1e1e!important;
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 60%;
+    height: 2px !important;
+    content: '' !important;
+    text-align: center;
+    margin-left: 67px;
+    margin-top: 24px !important;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<style>
+.dropdown-toggle::after {
+content: none !important;
+}
+
+.navbar-nav > a{
+  background-color: #0071e3 !important;
+    padding: 5px 19px 5px 19px !important;
+    margin-right: 21px !important;
+    border-radius: 25px !important;   
+    color: white !important;
+ 
+}
+
+ul[class="dropdown-menu fade-up"] > li::after{
+  background: #e3e6e5!important;
+  display: block;
+    position: absolute;
+   
+    left: 0;
+   width: 90%;
+    height: 1px !important;
+    content: '' !important;
+    text-align: center;
+    margin-left: 8px;
+}
+
+
+.col-md-4{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+/* @media (min-width:500px){
+  
+ #seconNav{
+   background-color: red !important;
+ }
+  } */
+  @media (min-width:500px){
+  
+    #seconNav{
+   background-color: rgb(238, 237, 237) !important;
+ }
+
+
+  }
+
+
+  @media (max-width: 550px){
+#navbarNavAltMarkup1{
+  background-color: #e6e6e6 !important;
+    z-index: 12 !important;
+    margin-left: -12px !important;
+    width: 100% !important;
+}
+
+input[id="myInput"]{
+  width: 333px !important;
+}
+
+#prcCal{
+  margin-left: -1px !important;
+}
+ul[id="myUL"]{
+  width: 87% !important;
+}
+
+
+ul[class="dropdown-menu fade-up show"] > li{
+  display: block !important;
+}
+
+    #reglogin{
+      right: 81px !important;
+    font-size: 13px !important;
+      right: 91px !important;
+    font-size: 10px !important;
+    border-bottom: none !important;
+    
+    bottom: 21px !important;
+
+      
+    border-bottom: none !important;
+ }
+#logoFlickerflone{
+  height: 48px !important;
+    width: 181px !important;
+    margin-left: -17px !important;
+    font-size: 58px;
+   
+
+}
+
+  }
+
+</style>
+
+
+
+
+
+
+
+
+<style type="text/css">
+
+  /* ============ only desktop view ============ */
+  @media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+    .navbar .nav-item:hover .nav-link{ color:  rgba(0,0,0,.5) }
+    .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+    .navbar .dropdown-menu.fade-up{ top:180%;  }
+    .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+  }	
+  /* ============ desktop view .end// ============ */
+  
+  
+  </style>
+
+
+<!-- 
+slider -->
+<style>
+
+
+.ws_bullets{
+  z-index: 1 !important;
+}
+
+
+div[class="ws-title"]{
+  margin: 0px 0px 100px 111px !important;
+  z-index: 1 !important;
+}
+
+
+div[class="ws-title"] > span{
+  
+/* background: #f8f7f7 !important;
+
+    color: black !important;
+    padding: 10px 20px 10px 20px !important;
+    border-radius: 5px !important;
+    box-shadow: 0px 0px 5px black !important;
+    cursor: pointer !important; */
+
+    display: none !important;
+}
+
+
+#shopBtn:hover{
+  cursor: pointer !important;
+}
+
+
+#wowslider-container1 {
+   
+    position: inherit !important;
+
+}
+
+#wowslider-container1 .ws-title div{
+  background-color: transparent !important;
+  color: black !important;
+  padding-top: -100px !important;
+}
+
+
+
+#shopBtn{
+ box-shadow: 1px 1px 5px #362e30 !important;
+
+}
+
+
+#wowslider-container1 a.ws_next {
+  
+    right: 0.2em !important;
+}
+</style>
+
+
+
+<style>
+  
+/* 
+  /////////////////////////   filter /////////////// */
+
+.form-control {
+       background-color: #f7f7f7 !important;
+    border: 1px solid #f7f7f7 !important;
+}
+
+#sel1:focus{
+  outline: none !important;
+}
+</style>
+
+
+
+
+
+
+
+
+
+<style>
+
+  
+  @media (max-width: 550px){
+
+#finfbymodl{
+  border-bottom: 1px black solid !important;
+}
+
+
+#borderatmob{
+  border-left: none !important;
+}
+
+
+img[src="images/ic_search_white_18dp.png"]{
+  width: 30px !important;
+    height: 33px !important;
+   
+    margin-left: -14px !important;
+}
+
+
+}
+
+
+
+img[src="images/logo Black-01.jpg"]{
+  height: 65px !important;
+    /* top: -1px; */
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+</style>
+
+
+
+<style>
+  .js .toggle-boxqasim .contentqasim {
+    display: none;
+  }
+
+  .toggle-boxqasim {
+    border: 1px solid #999;
+  }
+
+  .toggleqasim {
+    cursor: pointer;
+  }
+
+  .headerqasim {
+    margin: 0;
+    padding: 10px;
+    background: white;
+    color: black;
+  }
+
+  .contentqasim {
+    padding: 5px
+  }
+</style>
+
+
+<body>
+
+
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topNav"  >
+    <a class="navbar-brand" href="#"><img id="logoFlickerflone" src="images/logo Black-01.jpg"></a>
+    <button style="background-color: white !important;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup, #navbarNavAltMarkup1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Buy</a>
+        <a class="nav-item nav-link" href="#">Sell</a>
+        <a class="nav-item nav-link " href="#">New</a> -->
+
+
+
+
+
+
+        <span id="reglogin" style="    position: absolute;
+        right: 46px;
+        bottom: 25px;color: white !important; border-bottom: 1px white solid  "  href="login.html" align="right"    >
+          <i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
+
+
+
+
+
+ 
+    
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </nav>
+  
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important;
+  height: 35px;
+  border-top: 1px #4c4a575c solid !important;
+  border-bottom: 1px #4c4a575c solid !important;">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
+    
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li> -->
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             </a>
+       
+        </li>
+       
+     
+
+
+        <li class="nav-item dropdown" >
+          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
+          style="padding: 8px 30px 6px 30px !important;   ;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
+            <ul class="dropdown-menu fade-up">
+              <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>GOOGLE</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>HUAWIE</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>VIVO</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>OPPO</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>NOKIA</center></a></li>
+            
+            </ul>
+        </li>
+
+
+
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
+          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> TABLETS / PC </a>
+            <ul class="dropdown-menu fade-up">
+            <li><a class="dropdown-item" href="#"> <center>LENOVO</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>HP </center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>DELL</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>ACER</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>ASUS</center></a></li>
+            
+            </ul>
+        </li>
+
+
+
+
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
+          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> WEAREABLES  </a>
+            <ul class="dropdown-menu fade-up">
+              <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Samsung Gear 2</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>FitBit Flex</center></a></li>
+           
+            <li><a class="dropdown-item" href="#"> <center>Google Glass</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>GoQii</center></a></li>
+
+            <li><a class="dropdown-item" href="#"> <center>Get Active Slim</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>LECHAL GPS Shoes</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Fin Ring</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Spotnsave Wristband</center></a></li>
+           
+            
+            
+            </ul>
+        </li>
+
+
+
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
+          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
+            <ul class="dropdown-menu fade-up">
+            <li><a class="dropdown-item" href="#"> <center>Charger Cables & Docks</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Mobile Covers & Cases</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Power Banks</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Other Accessories</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Phone Stands</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Screen Protectors</center></a></li>
+
+            <li><a class="dropdown-item" href="#"> <center>Monopod & Selfie Sticks</a></li>
+            <li><a class="dropdown-item" href="#"> <center>Phone Rings</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>VR Glasses</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Battery Packs</center></a></li>
+            
+            
+            </ul>
+        </li>
+
+        
+
+
+
+
+
+<li>
+  <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store" 
+  style="background-position: right !important;outline: none;    width: 388px;margin-left: 3px;border: 1px #f8f7f7 solid;  height: 1px;  margin-top: 6px;background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px; ">
+
+
+
+
+  <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 29%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+    <!-- <div>
+      <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
+    </div> -->
+
+    <div>
+     <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 269px;
+      background-color: #f8f7f7;
+      color: black;
+   
+      font-weight: 600;
+      border-style: none;">X</button></p>
+    </div>
+
+
+
+    <li>
+      <div class="row">
+        <div class="col-md-2">
+          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+            <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg" style="  padding-left: 12px;  height: 91px;  ">
+             </div>
+        </div>
+        <div class="col-md-10">
+          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+            <a href="#">Apple iPhone 12 Pro Max         
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+
+
+
+    <li>
+      <div class="row">
+        <div class="col-md-2">
+          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+            <img src="images/LiveSrchImages/852D3B1A-4511-EA95-7918-A7FAAAF29DE0.jpg" style="     padding-left: 3px; height: 97px;  ">
+             </div>
+        </div>
+        <div class="col-md-10">
+          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+            <a href="#">Redmi Note 9 Pro      
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+
+
+
+    <li>
+      <div class="row">
+        <div class="col-md-2">
+          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+            <img src="images/LiveSrchImages/303612.png" style=" 
+            padding-left: 6px;
+            height: 106px;
+         ">
+             </div>
+        </div>
+        <div class="col-md-10">
+          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+            <a href="#">Apple iphone x 64 GB     
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+
+
+
+    <li>
+      <div class="row">
+        <div class="col-md-2">
+          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+            <img src="images/LiveSrchImages/alcatel-3x-2019.jpg" style="     padding-left: 12px;
+            height: 98px;
+            margin-top: 5px; ">
+             </div>
+        </div>
+        <div class="col-md-10">
+          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+            <a href="#">Alcatel jabi=ong Green 4 GB     
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+
+
+    <li>
+      <div class="row">
+        <div class="col-md-2">
+          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+            <img src="images/LiveSrchImages/12-Gold-1-600x600.jpg" style="  padding-left: 0px; height: 110px;  ">
+             </div>
+        </div>
+        <div class="col-md-10">
+          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+            <a href="#">Apple VIVO Y15 Gold 16 GB      
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+
+
+
+    <li>
+      <div class="row" style="margin-top: 9px;">
+        <div class="col-md-2">
+          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+            <img src="images/LiveSrchImages/1560367_6.jpg" style="     padding-left: 12px;
+            height: 92px;
+            width: 104px;
+            margin-left: 0px;  ">
+             </div>
+        </div>
+        <div class="col-md-10">
+          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+            <a href="#">HTC Play 2 Black 4 GB      
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+
+
+
+    <li>
+      <div class="row">
+        <div class="col-md-2">
+          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+            <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg" style="  padding-left: 12px;  height: 91px;  ">
+             </div>
+        </div>
+        <div class="col-md-10">
+          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+            <a href="#">HTC Play 2 Black 4 GB      
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+
+  
+    <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
+  </ul>
+  
+
+  
+</li>
+
+
+
+
+<li class="nav-item dropdown">
+  <a class="nav-link  dropdown-toggle" id="prcCal" href="#" data-toggle="dropdown" 
+  style="padding: 4px 40px 6px 40px !important;
+  border-right: 1px #4c4a575c solid !important;
+  border-left: 1px #4c4a575c solid !important;
+  font-weight: bold;
+  background-color: #0071e3;
+  color: white;
+  height: 35px;
+  margin-top: 4px;
+    margin-left: 28px;
+"> Price Calculator  </a>
+   
+</li>
+
+
+
+        
+      </ul>
+    </div>
+  </nav>
+
+
+
+  
+
+
+
+
+
+
+
+
+<div class="row" style="height: 400px;     background-image: linear-gradient(to top , #252525, #233444);">
+  <div class="col-md-12">
+
+<p style="text-align: center;    text-align: center;
+font-size: 23px;
+margin-top: 30px;">Find Used Mobile Phones In Pakistan</p>
+
+
+
+
+
+<div  style="     width: 100% ;    
+width: 100%;
+margin-top: 90px;">
+
+  <div  style=" float: left;  height: 100%; width: 10% ;">&nbsp;&nbsp;&nbsp;</div>
+  <div  style="   float: left;height: 100%; width: 80% ;background-color: #f7f7f7;">
+  
+  
+  
+  <div class="row">
+    <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div>
+    <div class="col-md-8" style="padding-right: 0px !important;">
+    
+    
+      <div id="borderatmob"  style=" float: left;  height: 100%; width: 45% ;padding-top: 11px;     border-left: 1px black solid;
+      border-right: 1px black solid;">
+      
+        <div class="form-group">
+       
+          <select class="form-control" id="sel1" style="font-weight: bold !important;">
+            <option style="font-weight: bold !important;">All Cities</option>
+            <option>Multan</option>
+            <option>Lahore</option>
+            <option>Quetta</option>
+            <option>Peshawar</option>
+            <option>Sahiwal</option>
+            <option>Chiniot</option>
+          </select>
+        </div>
+      
+      </div>
+      <div  style=" float: left;  height: 100%; width: 45% ;padding-top: 11px;        border-right: 1px black solid;">
+      
+        <div class="form-group">
+       
+          <select class="form-control" id="sel1" style="font-weight: bold !important;">
+            <option style="font-weight: bold !important;">Price Range</option>
+            <option>Less than 20,000</option>
+            <option>Between 20,000 and 30, 000</option>
+            <option>More than 30,000</option>
+           
+          </select>
+        </div>
+      
+      </div>
+      <div  style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;" src="images/ic_search_white_18dp.png"></div>
+    
+    
+    </div>
+  </div>
+  
+  </div>
+  <div  style="   float: left;height: 100%; width: 10% ;"></div>
+</div>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+ 
+
+<br/>
+
+
+
+<div class="row">
+  <div class="col-md-3" >
+
+<p style="background-color: #0071e3; padding: 10px; margin-bottom: 0px;text-align: center; font-weight: 500;">SHOW RESULTS BY:</p>
+
+
+
+  <div class="toggle-boxqasim">
+    <h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+      margin-left: 6px; " class="toggleqasim headerqasim">MOBILES CONDITION
+    </h6>
+  
+    <div class="contentqasim">
+  
+      <ul>
+        <div style="width: 87%; height: 30px;  ">
+          <div style="width: 80%; float: left;">
+  
+            <label for="Apple" style="color: #101115;"> Apple</label>
+          </div>
+          <div style="width: 20%; float: left;">
+            <input type="checkbox" id="Apple" name="vehicle1" value="Bike">
+          </div>
+  
+  
+        </div>
+
+
+
+
+
+
+
+
+
+          <div style="width: 87%; height: 30px;  ">
+            <div style="width: 80%; float: left;">
+          
+              <label for="iPhone" style="color: #101115;"> iPhone 11</label>
+            </div>
+            <div style="width: 20%; float: left;">
+              <input type="checkbox" id="iPhone" name="vehicle1" value="Bike">
+            </div>
+          
+          
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div style="width: 87%; height: 30px;  ">
+              <div style="width: 80%; float: left;">
+            
+                <label for="Oppo" style="color: #101115;"> Oppo</label>
+              </div>
+              <div style="width: 20%; float: left;">
+                <input type="checkbox" id="Oppo" name="vehicle1" value="Bike">
+              </div>
+            
+            
+            </div>
+
+
+
+
+
+
+
+
+
+              <div style="width: 87%; height: 30px;  ">
+                <div style="width: 80%; float: left;">
+              
+                  <label for="Huawei" style="color: #101115;"> Huawei</label>
+                </div>
+                <div style="width: 20%; float: left;">
+                  <input type="checkbox" id="Huawei" name="vehicle1" value="Bike">
+                </div>
+              
+              
+              </div>
+
+
+
+
+
+
+                <div style="width: 87%; height: 30px;  ">
+                  <div style="width: 80%; float: left;">
+                
+                    <label for="Infinix" style="color: #101115;"> Infinix</label>
+                  </div>
+                  <div style="width: 20%; float: left;">
+                    <input type="checkbox" id="Infinix" name="vehicle1" value="Bike">
+                  </div>
+                
+                
+                </div>
+  
+  
+  
+  
+  
+  
+        <div style="width: 87%; height: 30px;  ">
+          <div style="width: 80%; float: left;">
+  
+            <label for="Good" style="color: #101115;"> Good</label>
+          </div>
+          <div style="width: 20%; float: left;">
+            <input type="checkbox" id="Good" name="vehicle1" value="Bike">
+          </div>
+  
+  
+        </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        <div style="width: 87%; height: 30px;  ">
+          <div style="width: 80%; float: left;">
+  
+            <label for="Fair" style="color: #101115;"> Fair</label>
+          </div>
+          <div style="width: 20%; float: left;">
+            <input type="checkbox" id="Fair" name="vehicle1" value="Bike">
+          </div>
+  
+  
+        </div>
+  
+  
+  
+  
+  
+  
+  
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div class="toggle-boxqasim">
+<h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+    margin-left: 6px; " class="toggleqasim headerqasim">SEARCH FILTERS
+</h6>
+    <div class="contentqasim"><strong>Product Features:</strong><br />
+      <ul>
+        <li style="color: black; display: block;">
+        
+        
+        <input type="search" name="srch" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g Samsung in Lahore" style="    background-position: left;
+background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-repeat;   width: 90%;
+    margin-left: -25px;" /><a  style="background-color: #0071e3; color: white;  padding: 4.8px; text-decoration: none; " href="#">Go</a>
+        
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<div class="toggle-boxqasim">
+<h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+    margin-left: 6px; " class="toggleqasim headerqasim">PRICE RANGE
+</h6>
+
+  <div class="contentqasim"><strong>Product Features:</strong><br />
+    <ul>
+      <li style="color: black;     width: 100%;
+    margin-left: -24px;  ">
+
+<div style="width: 100%; ">
+<div style="width: 45%; float: left; ">
+<input type="text" placeholder="From" />
+</div>
+<div style="width: 45%; float: left; ">
+<input type="text" placeholder="To" style="width: 100%;" /></div>
+<div style="width: 10%;float: left;  ">
+
+<p style="    background-color: #0071e3;
+    color: white;
+    padding: 3px 3px 3px 5px;
+    width: 117%;">Go</p>
+</div>
+</div>
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="toggle-boxqasim">
+<h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+    margin-left: 6px; " class="toggleqasim headerqasim">CITY
+</h6>
+
+  <div class="contentqasim">
+  
+<ul>
+    <div style="width: 87%; height: 30px;  ">
+      <div style="width: 80%; float: left;">
+      <input type="checkbox" id="lahore" name="vehicle1" value="Bike">
+      <label for="lahore" style="color: #101115;"> Lahore</label>
+      </div>
+        <div style="width: 20%; float: left;">
+        <p style="    background-color: #fafafa;
+    padding: 0px 1px 0px 1px;
+    border-radius: 12px;
+    text-align: center;
+    color: black;
+    border: 1px #d9d3d3 solid;">2850</p>
+        </div>
+    
+    
+    
+    
+    
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div style="width: 87%;height: 30px;">
+    <div style="width: 80%; float: left;">
+      <input type="checkbox" id="Islamabad" name="vehicle1" value="Bike">
+      <label for="Islamabad" style="color: #101115;"> Islamabad</label>
+    </div>
+    <div style="width: 20%; float: left;">
+      <p style="    background-color: #fafafa;
+      padding: 0px 1px 0px 1px;
+      border-radius: 12px;
+      text-align: center;
+      color: black;
+      border: 1px #d9d3d3 solid;">2850</p>
+    </div>
+  
+  
+  
+  
+  
+  </div>
+
+
+
+
+
+
+<div style="width: 87%;height: 30px;">
+  <div style="width: 80%; float: left;">
+    <input type="checkbox" id="Peshawar" name="vehicle1" value="Bike">
+    <label for="Peshawar" style="color: #101115;"> Peshawar</label>
+  </div>
+  <div style="width: 20%; float: left;">
+    <p style="    background-color: #fafafa;
+      padding: 0px 1px 0px 1px;
+      border-radius: 12px;
+      text-align: center;
+      color: black;
+      border: 1px #d9d3d3 solid;">2850</p>
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+<div style="width: 87%;height: 30px;margin-bottom: 45px;">
+  <div style="width: 80%; float: left;">
+    <input type="checkbox" id="Quetta" name="vehicle1" value="Bike">
+    <label for="Quetta" style="color: #101115;"> Quetta</label>
+  </div>
+  <div style="width: 20%; float: left;">
+    <p style="    background-color: #fafafa;
+      padding: 0px 1px 0px 1px;
+      border-radius: 12px;
+      text-align: center;
+      color: black;
+      border: 1px #d9d3d3 solid;">1500</p>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div id="showmorecity" style="display: none;">
+
+
+<div  style="width: 87%;height: 30px;  " >
+  <div style="width: 80%; float: left;">
+    <input type="checkbox" id="Quetta" name="vehicle1" value="Bike">
+    <label for="Quetta" style="color: #101115;"> Multan</label>
+  </div>
+  <div style="width: 20%; float: left;">
+    <p style="    background-color: #fafafa;
+      padding: 0px 1px 0px 1px;
+      border-radius: 12px;
+      text-align: center;
+      color: black;
+      border: 1px #d9d3d3 solid;">1500</p>
+  </div>
+
+
+</div>
+
+
+
+<div style="width: 87%;height: 30px; " >
+  <div style="width: 80%; float: left;">
+    <input type="checkbox" id="Quetta" name="vehicle1" value="Bike">
+    <label for="Quetta" style="color: #101115;"> Sahiwal</label>
+  </div>
+  <div style="width: 20%; float: left;">
+    <p style="    background-color: #fafafa;
+      padding: 0px 1px 0px 1px;
+      border-radius: 12px;
+      text-align: center;
+      color: black;
+      border: 1px #d9d3d3 solid;">1500</p>
+  </div>
+
+
+</div>
+
+
+
+<div style="width: 87%;height: 30px; ">
+  <div style="width: 80%; float: left;">
+    <input type="checkbox" id="Quetta" name="vehicle1" value="Bike">
+    <label for="Quetta" style="color: #101115;"> Karachi</label>
+  </div>
+  <div style="width: 20%; float: left;">
+    <p style="    background-color: #fafafa;
+      padding: 0px 1px 0px 1px;
+      border-radius: 12px;
+      text-align: center;
+      color: black;
+      border: 1px #d9d3d3 solid;">1500</p>
+  </div>
+
+
+</div>
+
+
+
+
+<div style="width: 87%;height: 30px;margin-bottom: 45px;"  >
+  <div style="width: 80%; float: left;">
+    <input type="checkbox" id="Quetta" name="vehicle1" value="Bike">
+    <label for="Quetta" style="color: #101115;"> DG Khan</label>
+  </div>
+  <div style="width: 20%; float: left;">
+    <p style="    background-color: #fafafa;
+      padding: 0px 1px 0px 1px;
+      border-radius: 12px;
+      text-align: center;
+      color: black;
+      border: 1px #d9d3d3 solid;">1500</p>
+  </div>
+
+
+</div>
+
+
+</div>
+<a href="javascript:void(0)" style="color: blue;" onclick="document.getElementById('showmorecity').style.display= 'block'">more choices</a>
+ 
+
+
+</ul>
+  </div>
+</div>
+
+
+<div class="toggle-boxqasim">
+  <h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+    margin-left: 6px; " class="toggleqasim headerqasim">MOBILES CONDITION
+  </h6>
+
+  <div class="contentqasim">
+
+    <ul>
+      <div style="width: 87%; height: 30px;  ">
+        <div style="width: 80%; float: left;">
+        
+          <label for="Excellent" style="color: #101115;"> Excellent</label>
+        </div>
+        <div style="width: 20%; float: left;">
+        <input type="checkbox" id="Excellent" name="vehicle1" value="Bike">
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+  <div style="width: 87%; height: 30px;  ">
+    <div style="width: 80%; float: left;">
+  
+      <label for="Good1" style="color: #101115;"> Good</label>
+    </div>
+    <div style="width: 20%; float: left;">
+      <input type="checkbox" id="Good1" name="vehicle1" value="Bike">
+    </div>
+  
+  
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="width: 87%; height: 30px;  ">
+      <div style="width: 80%; float: left;">
+    
+        <label for="Fairyy" style="color: #101115;"> Fair</label>
+      </div>
+      <div style="width: 20%; float: left;">
+        <input type="checkbox" id="Fairyy" name="vehicle1" value="Bike">
+      </div>
+    
+    
+    </div>
+
+
+
+
+
+
+
+    </ul>
+  </div>
+</div>
+
+
+  </div>
+    <div class="col-md-9">
+    
+    
+    
+    <div class="row" style="border: 1px black solid;">
+
+
+<div class="col-md-3">
+  <p style="    color: #a8a1a1;
+  
+    padding: 12px 0px 0px 12px;">Sort by:</p>
+</div>
+
+
+      <div class="col-md-9">
+    <div class="form-group" style="padding-top: 9px;">
+    
+      <select class="form-control" id="sel1" style="    background-color: #ffffff !important;
+    border: 1px solid #ffffff !important;">
+        <option style="font-weight: bold !important;"> Update Date: Recent First</option>
+        <option style="font-weight: bold !important;">Update Date: Recent Last</option>
+        <option style="font-weight: bold !important;">Price: Low to High</option>
+          <option style="font-weight: bold !important;">Price: High to Low</option>
+    
+      </select>
+    </div>
+      </div>
+    </div>
+
+
+
+
+
+
+<p style="  color: #898889;;">1-48 of 126,978 Results</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="width: 100%;" style="border-bottom: 1px gray solid;">
+  <div style="width: 30%; float: left;">
+  
+  
+  
+        <div class="autoplayFeatures">
+        
+
+            <img src="images/Slick/blog1.jpg" alt="Trulli" style="width: 100%;">
+
+        
+        
+        
+        
+   
+            <img src="images/Slick/blog2.jpg" alt="Trulli" style="width:100%">
+        
+     
+        
+        
+        
+        
+   
+        
+        
+        
+          <!-- <img src="images/Slick/blog1.jpg" style="height: 295px; width: 250px;" > -->
+        
+        
+        </div>
+  
+  </div>
+  <div style="width: 70%; float: left;border-bottom: 1px #d8d5d5 solid;" >
+  
+  
+  <p style="color: black">Xiaomi Redmid9 64 Go Smartphone 13MP</p>
+  <p style="color: #969494;">&#x2713;Collisimo&#x2713;2-4 Jours&#x2713;Guarntie 2 ans&#x2713; FR Plug</p>
+  
+
+
+
+<div class="row">
+  <div class="col-md-6"><font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font> </div>
+  <div class="col-md-6"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+ <p style="    position: relative;
+    top: 43px;
+    left: 25px;
+    font-weight: 600; color: blue;
+">  PKR</p>
+<p style="    color: blue;
+    font-size: 48px;
+    padding: 20px;
+    font-weight: 700;"> 810.00</p>
+  </div>
+
+
+  <div class="col-md-6">
+
+    <div style="width: 50%; float: left; color: black;">
+    <p>City:</p>
+        <p>PTA STATUS:</p>
+            <p>Date Posted:</p>
+    </div>
+      <div style="width: 50%; float: left; color: black;">
+      
+        <p>Lahore</p>
+        <p>Approved</p>
+        <p>9 Sep, 2019</p>
+      
+      </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+
+
+
+<p style="    background-color: blue;
+    width: 180px;
+    padding: 9px;
+    text-align: center;
+    font-weight: 700;
+    font-size: larger;">Contact</p>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="width: 100%;" style="border-bottom: 1px gray solid;">
+  <div style="width: 30%; float: left;">
+
+
+
+    <div class="autoplayFeatures">
+
+
+      <img src="images/Slick/blog1.jpg" alt="Trulli" style="width: 100%;">
+
+
+
+
+
+
+      <img src="images/Slick/blog2.jpg" alt="Trulli" style="width:100%">
+
+
+
+
+
+
+
+
+
+
+      <!-- <img src="images/Slick/blog1.jpg" style="height: 295px; width: 250px;" > -->
+
+
+    </div>
+
+  </div>
+  <div style="width: 70%; float: left;border-bottom: 1px #d8d5d5 solid;">
+
+
+    <p style="color: black">Xiaomi Redmid9 64 Go Smartphone 13MP</p>
+    <p style="color: #969494;">&#x2713;Collisimo&#x2713;2-4 Jours&#x2713;Guarntie 2 ans&#x2713; FR Plug</p>
+
+
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font>
+        <font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font>
+        <font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p style="    position: relative;
+    top: 43px;
+    left: 25px;
+    font-weight: 600; color: blue;
+"> PKR</p>
+        <p style="    color: blue;
+    font-size: 48px;
+    padding: 20px;
+    font-weight: 700;"> 810.00</p>
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div style="width: 50%; float: left; color: black;">
+          <p>City:</p>
+          <p>PTA STATUS:</p>
+          <p>Date Posted:</p>
+        </div>
+        <div style="width: 50%; float: left; color: black;">
+
+          <p>Lahore</p>
+          <p>Approved</p>
+          <p>9 Sep, 2019</p>
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+    <p style="    background-color: blue;
+    width: 180px;
+    padding: 9px;
+    text-align: center;
+    font-weight: 700;
+    font-size: larger;">Contact</p>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="width: 100%;" style="border-bottom: 1px gray solid;">
+  <div style="width: 30%; float: left;">
+
+
+
+    <div class="autoplayFeatures">
+
+
+      <img src="images/Slick/blog1.jpg" alt="Trulli" style="width: 100%;">
+
+
+
+
+
+
+      <img src="images/Slick/blog2.jpg" alt="Trulli" style="width:100%">
+
+
+
+
+
+
+
+
+
+
+      <!-- <img src="images/Slick/blog1.jpg" style="height: 295px; width: 250px;" > -->
+
+
+    </div>
+
+  </div>
+  <div style="width: 70%; float: left;border-bottom: 1px #d8d5d5 solid;">
+
+
+    <p style="color: black">Xiaomi Redmid9 64 Go Smartphone 13MP</p>
+    <p style="color: #969494;">&#x2713;Collisimo&#x2713;2-4 Jours&#x2713;Guarntie 2 ans&#x2713; FR Plug</p>
+
+
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font>
+        <font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font>
+        <font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p style="    position: relative;
+    top: 43px;
+    left: 25px;
+    font-weight: 600; color: blue;
+"> PKR</p>
+        <p style="    color: blue;
+    font-size: 48px;
+    padding: 20px;
+    font-weight: 700;"> 810.00</p>
+      </div>
+
+
+      <div class="col-md-6">
+
+        <div style="width: 50%; float: left; color: black;">
+          <p>City:</p>
+          <p>PTA STATUS:</p>
+          <p>Date Posted:</p>
+        </div>
+        <div style="width: 50%; float: left; color: black;">
+
+          <p>Lahore</p>
+          <p>Approved</p>
+          <p>9 Sep, 2019</p>
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+    <p style="    background-color: blue;
+    width: 180px;
+    padding: 9px;
+    text-align: center;
+    font-weight: 700;
+    font-size: larger;">Contact</p>
+
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer style=" background-color: #dcdcdc;">
+
+
+  <div class="row">
+    <div class="col-md-5" style="    padding: 26px 10px 5px 26px !important;">
+   <p style="" ><a href="#" style="text-decoration: none;color: #4f4a4b !important; font-weight: bold;"> ABOUT US</a> &nbsp;&nbsp;&nbsp;   <a href="#" style="text-decoration: none;color: #4f4a4b !important;font-weight: bold;"> CONTACT US</a>  &nbsp;&nbsp;&nbsp;      <a href="#" style="text-decoration: none;color: #4f4a4b !important;font-weight: bold;">SUPPORT</a></p>
+   
+ 
+ <p style="color:#4f4a4b !important ;font-weight: 600;     font-size: 13px;">
+   Online prices and selection generally match the prevailing ones in market, but may vary.<br/>
+   Prices are subject to change.&copy; 2020 Flickerfone. All rights reserved.<br/>
+   FLICKERFONE.COM and, the FLICKERFONE logo are trademarks of Shallbe Group. 
+ </p>
+ 
+ 
+ 
+ 
+ </div>
+ 
+ 
+ <div class="col-md-1"></div>
+ 
+ 
+    <div class="col-md-6" style="    padding: 42px 22px 5px 26px !important;" >
+   
+   
+     <p style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     font-size: 13px;   text-align: right; ">
+       We do not flood your inbox, join our social network instead. <a href="#fcb"><img style="    height: 15px; width: 17px;" src="images/headerimg/download-removebg-preview.png" /> </a>   <a href="#twiter"><img style="    height: 20px; width: 20px;" src="images/headerimg/twitter-1722376-1466162-removebg-preview.png"></a><br/>
+       
+     </p>
+ 
+ 
+     <p style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     margin-right: 42px;    font-size: 13px;    text-align: right; ">
+      IN SUPPORT OF <font style="    font-size: 33px;color: #c6ccd2;"> &empty;</font> <font style="margin-left: -35px;     "> SPAM </font>CONTRACT 
+       
+     </p>
+   
+   </div>
+ 
+ 
+  </div>
+   
+     </footer>
+ 
+
+
+</body>
+
+
+<!-- 
+<script src="js/jquery-slim.min.js" ></script>
+<script src="js/popper.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script> -->
+
+
+<script>
+  function myFunction() {
+      shoediv();
+  
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  
+      
+  }
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+      }
+  
+  
+  
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+      }
+  </script>
+  
+  
+  
+  
+<script>
+
+
+
+
+
+
+
+$(document).ready(function(){
+       $('.autoplayFeatures').slick({
+ slidesToShow: 1,
+ slidesToScroll: 1,
+  autoplay: true,
+ autoplaySpeed: 3000,
+
+
+ dots: true,
+ responsive: [
+     {
+       breakpoint: 500,
+       settings: {
+       slidesToShow: 1,
+       slidesToScroll: 1,
+       }
+     }
+   ]  
+ // variableWidth: true
+});
+});
+
+
+
+
+
+
+
+
+
+
+
+$(function(){
+   $('#shopBtn').attr('href','#scrollTo');
+});
+
+
+
+</script>
+
+  
+<script type="text/javascript" src="slick/slick.min.js"></script>
+        
+<script type="text/javascript" src="slick/jquery3.2.1.js"></script>
+  
+<script type="text/javascript" src="slick/slick.js"></script>
+ 
+
+
+
+
+
+<script type="text/javascript" src="Slider/engine1/wowslider.js"></script>
+  <script type="text/javascript" src="Slider/engine1/script.js"></script>
+
+
+ 
+  
+  
+
+  <script  src="js/ScrollJS2/script.js"></script>
+
+
+
+
+<script>
+  (function ($) {
+
+    $(function () {
+
+      $('html').toggleClass('no-js js');
+
+      $('.toggle-boxqasim .toggleqasim').click(function (e) {
+        e.preventDefault();
+
+        $(this).next('.contentqasim').slideToggle();
+      });
+
+    });
+
+  })(jQuery);
+
+
+
+
+
+
+
+
+</script>
+
+  
+</html>
