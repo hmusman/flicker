@@ -8,7 +8,7 @@
         <center>
           
           
-          <p style="text-decoration: none; color: black !important;">{{ $row->name }} x {{ $row->storage }}</p>
+          <p style="text-decoration: none; color: black !important;">{{ ucwords($row->name) }} x {{ $row->storage }}</p>
           
           <div onclick="ColorStorageProduct('{{ $row->product_id }}','{{ $row->color }}','{{ $row->storage }}');">
           <a    href="#getEstimatedmobile" style="text-decoration: none;">   <figcaption  id=""  style="background-color: #4a88c2;
