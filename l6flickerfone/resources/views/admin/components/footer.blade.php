@@ -84,6 +84,13 @@
         
 
         <script src="{{asset('Green/assets/js/app.js')}}"></script>
-
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.mytabs').click(function(){
+                    $('.mytabs').removeClass('active');
+                    $(this).addClass('active');
+                });
+            });
+        </script>
     </body>
 </html>

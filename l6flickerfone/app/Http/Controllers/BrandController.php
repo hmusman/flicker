@@ -96,4 +96,17 @@ class BrandController extends Controller
        }
        
     }
+
+    public function PriceEstimateCalculator()
+    {
+        $brands = Brand::all();
+        return view('price_calculator',compact('brands'));
+    }
+
+    public function BrandProducts(Request $request)
+    {
+        $brand = Brand::where('id',$request->id)->first();
+        $products = $brand->products;
+        return view('partials.brand_products',compact('products'));
+    }
 }

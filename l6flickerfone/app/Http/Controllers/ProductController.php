@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Validator;
 use App\Product;
 use App\Category;
 use App\Brand;
+use App\ColorVariation;
 use Session;
+use DB;
 class ProductController extends Controller
 {
    
@@ -35,6 +37,7 @@ class ProductController extends Controller
     
     public function store(Request $request)
     {
+        
         $validations = Validator::make($request->all(),[
             'category'=>'required',
             'brand'=>'required',
@@ -58,7 +61,7 @@ class ProductController extends Controller
             $ext1 = $request->file('image1')->extension();
             $ext2 = $request->file('image2')->extension();
             $ext3 = $request->file('image3')->extension();
-            $ext4 = $request->file('video')->extension();
+            // $ext4 = $request->file('video')->extension();
             if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg') 
             { $filename1= $request->file('image1')->store('admin/images/product','public'); }
             else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
@@ -78,65 +81,97 @@ class ProductController extends Controller
             }
             else
             {
-                $product = new Product();
-                $name = str_replace('_',' ',$request->name);
-                $product->brand_id = $request->brand;
-                $product->code= $request->code;
-                $product->name = $name;
-                $product->color = $request->color;
-                $product->price = $request->price;
-                $product->quantity = $request->quantity;
-                $product->launch_announced = $request->announced;
-                $product->launch_status = $request->status;
-                $product->body_dimensions = $request->dimension;
-                $product->body_weight = $request->weight;
-                $product->body_build = $request->build;
-                $product->body_sim = $request->sim;
-                $product->display_type = $request->type;
-                $product->display_size = $request->size;
-                $product->display_resolution = $request->resolution;
-                $product->display_protection = $request->protection;
-                $product->platform_os = $request->os;
-                $product->platform_chipset = $request->chipset;
-                $product->platform_cpu = $request->cpu;
-                $product->platform_gpu = $request->gpu;
-                $product->memory_card_slot = $request->card_slot;
-                $product->memory_ram = $request->ram;
-                $product->memory_storage = $request->storage;
-                $product->main_type = $request->main_type;
-                $product->main_type_value = $request->main_type_value;
-                $product->main_feature = $request->main_feature;
-                $product->main_video = $request->main_video;
-                $product->selfie_single = $request->selfie_single;
-                $product->selfie_feature = $request->selfie_feature;
-                $product->selfie_video = $request->selfie_video;
-                $product->sound_loudspeaker = $request->loudspeaker;
-                $product->sound_jack = $request->jack;
-                $product->sound_mic= $request->mic;
-                $product->comms_wlan = $request->wlan;
-                $product->comms_bluetooth = $request->bluetooth;
-                $product->comms_gps = $request->gps;
-                $product->comms_nfc = $request->nfc;
-                $product->comms_radio = $request->radio;
-                $product->comms_usb = $request->usb;
-                $product->feature_sensor = $request->sensor;
-                $product->battery_status = $request->battery_type;
-                $product->battery_talk_time = $request->talk_time;
-                $product->battery_music = $request->music;
-                $product->image = $filename1;
-                $product->dimage = $filename2;
-                $product->dimage1 = $filename3;
-                $product->description = $request->description;
-                $product->category_id = $request->category;
-                $product->video_link = $request->video_link;  
-                if ($product->save())
+                $product = Product::create([
+                'brand_id' => $request->brand,
+                'code'=> $request->code,
+                'name'=>str_replace('_',' ',$request->name),
+                'color' => $request->color,
+                'price' => $request->price,
+                'quantity' => $request->quantity,
+                'launch_announced' => $request->announced,
+                'launch_status' => $request->status,
+                'body_dimensions' => $request->dimension,
+                'body_weight' => $request->weight,
+                'body_build' => $request->build,
+                'body_sim' => $request->sim,
+                'display_type' => $request->type,
+                'display_size' => $request->size,
+                'display_resolution' => $request->resolution,
+                'display_protection' => $request->protection,
+                'platform_os' => $request->os,
+                'platform_chipset' => $request->chipset,
+                'platform_cpu' => $request->cpu,
+                'platform_gpu' => $request->gpu,
+                'memory_card_slot' => $request->card_slot,
+                'memory_ram' => $request->ram,
+                'memory_storage' => $request->storage,
+                'main_type' => $request->main_type,
+                'main_type_value' => $request->main_type_value,
+                'main_feature' => $request->main_feature,
+                'main_video' => $request->main_video,
+                'selfie_single' => $request->selfie_single,
+                'selfie_feature' => $request->selfie_feature,
+                'selfie_video' => $request->selfie_video,
+                'sound_loudspeaker' => $request->loudspeaker,
+                'sound_jack' => $request->jack,
+                'sound_mic'=> $request->mic,
+                "comms_wlan" => $request->wlan,
+                'comms_bluetooth' => $request->bluetooth,
+                'comms_gps' => $request->gps,
+                'comms_nfc' => $request->nfc,
+                'comms_radio' => $request->radio,
+                'comms_usb' => $request->usb,
+                'feature_sensor' => $request->sensor,
+                'battery_status' => $request->battery_type,
+                'battery_talk_time' => $request->talk_time,
+                'battery_music' => $request->music,
+                'image'=> $filename1,
+                'dimage' => $filename2,
+                'dimage1' => $filename3,
+                'description' => $request->description,
+                'category_id' => $request->category,
+                "video_link" => $request->video_link,  
+                'os' => $request->brief_os,
+                "processor" => $request->brief_processor,
+                'memory' => $request->brief_memory,
+                'storage' => $request->brief_storage,
+                'camera' => $request->brief_camera,
+                'size' => $request->brief_size,
+                'resolution' => $request->brief_resolution,
+                'connectivity' => $request->brief_connectivity,
+                'battery' => $request->brief_battery,
+                'height' => $request->brief_height,
+                'width' => $request->brief_width,
+                'depth' => $request->brief_depth,
+                'brief_weight' => $request->brief_weight
+                ]);
+               
+                if ($product)
                 {
+                    for($i=0; $i<count($request->variation_color); $i++)
+                    {
+                        if($request->variation_color[$i] !='')
+                        {
+                            for($j=0; $j<count($request->variation_storage[$i]); $j++)
+                            {
+                                $variation = new ColorVariation();
+                                $variation->product_id = $product->id;
+                                $variation->color = $request->variation_color[$i];
+                                $variation->storage = $request->variation_storage[$i][$j];
+                                $variation->price = $request->variation_price[$i][$j];
+                                $variation->save();
+                            }
+
+                        }
+                    }
+
                     $request->session()->flash('msg',"Product has been added successfully");
                     return redirect()->route('Product.index');
                 }
             }
         }
     }
+
 
     public function show($id)
     {
@@ -235,7 +270,7 @@ class ProductController extends Controller
     }
 
     
-    public function update(Request $request, $id)
+   public function update(Request $request, $id)
     {
         $validations = Validator::make($request->all(),[
             'category'=>'required',
@@ -358,9 +393,39 @@ class ProductController extends Controller
             $product->dimage1 = $filename3;
             $product->description = $request->description;
             $product->category_id = $request->category;
-            $product->video_link = $request->video_link; 
+            $product->video_link = $request->video_link;
+            $product->os = $request->brief_os;
+            $product->processor = $request->brief_processor;
+            $product->memory = $request->brief_memory;
+            $product->storage = $request->brief_storage;
+            $product->camera = $request->brief_camera;
+            $product->size = $request->brief_size;
+            $product->resolution = $request->brief_resolution;
+            $product->connectivity = $request->brief_connectivity;
+            $product->battery = $request->brief_battery;
+            $product->height = $request->brief_height;
+            $product->width = $request->brief_width;
+            $product->depth = $request->brief_depth;
+            $product->brief_weight = $request->brief_weight; 
             if ($product->save())
             {
+                ColorVariation::where('product_id',$id)->delete();
+                for($i=0; $i<count($request->variation_color); $i++)
+                {
+                    if($request->variation_color[$i] !='')
+                    {
+                        for($j=0; $j<count($request->variation_storage[$i]); $j++)
+                        {
+                            $variation = new ColorVariation();
+                            $variation->product_id = $product->id;
+                            $variation->color = $request->variation_color[$i];
+                            $variation->storage = $request->variation_storage[$i][$j];
+                            $variation->price = $request->variation_price[$i][$j];
+                            $variation->save();
+                        }
+
+                    }
+                }
                 $request->session()->flash('msg',"Product has been updated successfully");
                 return redirect()->route('Product.index');
             }
@@ -482,4 +547,60 @@ class ProductController extends Controller
         
 
     }// citySearch
+
+
+    public function adviceComparison()
+    {
+        return view('advice_comarison');
+    }
+
+     public function oldAdviceComparison()
+    {
+        return view('advice_comarison_old');
+    }
+
+    public function adviceComparisonAll(Request $request)
+    {
+        $query = $request->get('query');
+        $hide = $request->get('hideFun');
+        $product_list = Product::where('name','like','%'.$query.'%')->get();
+        $total = $product_list->count();
+        return view('partials.comparison_list',compact(['product_list','total','hide']));
+    }
+
+    public function singleCompareProductDetail(Request $request,$id)
+    {
+        $product = Product::where('id',$id)->first();
+        return view('partials.single_compare_product_detail',compact(['product']));
+    }
+
+    public function colorFilterStorage(Request $request)
+    {
+        $storage = ColorVariation::where([['product_id',$request->id],['color',$request->color]])->get();
+        return view('partials.color_storage',compact('storage'));
+    }
+
+    public function StorageFilterPrice(Request $request)
+    {
+         $storage = ColorVariation::where([['product_id',$request->id],['color',$request->color],['storage',$request->storage]])->first();
+         return $storage->price;
+    }
+
+    public function BrandProductDetail(Request $request)
+    {
+        $product = Product::where('id',$request->id)->first();
+        return view('partials.brand_product_detail',compact(('product')));
+    }
+
+    public function BrandProductColorItem(Request $request)
+    {
+        $products = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->select('sma_products.id','sma_products.name','sma_products.image','variations.product_id','variations.color','variations.storage','variations.price')->get();
+        return view('partials.brand_single_color_product',compact('products'));
+    }
+
+    public function BrandProductEstimate(Request $request)
+    {
+        $csproduct = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->where('variations.storage',$request->storage)->select('sma_products.id','sma_products.name','sma_products.image','variations.color','variations.storage','variations.price')->first();
+        return view('partials.brand_product_estimate',compact('csproduct'));
+    }
 }
