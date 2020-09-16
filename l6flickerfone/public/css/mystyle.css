@@ -145,8 +145,8 @@ div[class="slider-handle max-slider-handle round"],
 }
 .pricecalculatorbackground{
     height: 450px;
-    background: url('../images/') no-repeat center center;
-    background-image: url('../images/pc.jpg');
+    background: url('../storage/images/images/') no-repeat center center;
+    background-image: url('../storage/images/pc.jpg');
     -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;

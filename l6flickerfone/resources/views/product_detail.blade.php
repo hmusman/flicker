@@ -809,15 +809,14 @@ img[src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).pn
 
 <li class="nav-item dropdown">
   <a class="nav-link  dropdown-toggle" id="prcCal" href="#" data-toggle="dropdown" 
-  style="padding: 4px 40px 6px 40px !important;
-  border-right: 1px #4c4a575c solid !important;
-  border-left: 1px #4c4a575c solid !important;
-  font-weight: bold;
-  background-color: #0071e3;
-  color: white;
-  height: 35px;
-  margin-top: 4px;
-    margin-left: 28px;
+  style="padding: 4px 6px 6px 13px !important;
+    border-right: 1px #4c4a575c solid !important;
+    border-left: 1px #4c4a575c solid !important;
+    font-weight: bold;
+    background-color: #0071e3;
+    color: white;
+    height: 35px;
+    margin-top: 4px;
 "> Price Calculator  </a>
    
 </li>

@@ -40,6 +40,10 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::resource('/Brand','BrandController');
 	Route::resource('/Meta','MetaController');
 	Route::resource('/Page','PageController');
+	Route::resource('IndexBuyNewSellSection','BuyNewSellController');
+	Route::resource('BlogSlider','BlogSliderController');
+	Route::post('BlogInActive','BlogSliderController@BlogInActive')->name('BlogInActive');
+	Route::post('BlogActive','BlogSliderController@BlogActive')->name('BlogActive');
 	Route::resource('/User','UserController');
 	Route::get('User/Active/{id?}','UserController@active')->name('User.Active');
 	Route::get('/User/Block/{id?}','UserController@block')->name('User.Block');

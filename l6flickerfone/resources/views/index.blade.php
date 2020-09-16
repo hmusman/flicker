@@ -935,15 +935,14 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
 <li class="nav-item dropdown">
   <a class="nav-link  dropdown-toggle" id="prcCal" href="#" data-toggle="dropdown" 
-  style="padding: 4px 40px 6px 40px !important;
-  border-right: 1px #4c4a575c solid !important;
-  border-left: 1px #4c4a575c solid !important;
-  font-weight: bold;
-  background-color: #0071e3;
-  color: white;
-  height: 35px;
-  margin-top: 4px;
-    margin-left: 28px;
+  style="padding: 4px 6px 6px 13px !important;
+    border-right: 1px #4c4a575c solid !important;
+    border-left: 1px #4c4a575c solid !important;
+    font-weight: bold;
+    background-color: #0071e3;
+    color: white;
+    height: 35px;
+    margin-top: 4px;
 "> Price Calculator  </a>
    
 </li>
@@ -961,103 +960,38 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
 
 
+@if($buynewsell->count()>0)
+  
+  <section>
+    <div class="row">
+      @foreach($buynewsell as $row)
+        @php $img = 'storage/'.$row->img @endphp
+        <div class="col-md-4" style="background-color: #0b0c0c; border-right: 2px white solid;   height: 400px;" >
 
-<section>
-  <div class="row">
+            <div style="height: 60%; width: 100%;">
+            
+           <center> <img src="{{ asset($img) }}"  style="height: 216px;width: 136px;padding-top: 16px;" />  </center>
+            </div>
+            <div style="height: 30%; width: 100%;">
+              <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
+              {{ ucfirst($row->detail) }}
+            </p></div>
+            <a href="#Buy" style="text-decoration: none;" >
+            <div style="height: 10%; width: 100%; background-color: #0071e3; ">
+            <center style="    color: white;
+              font-size: 23px;">{{ ucwords($row->title) }}</center>
+              </div>  </a>
+          
+          
+          
+          </div>
 
-
-
-    <div class="col-md-4" style="background-color: #0b0c0c; border-right: 2px white solid;   height: 400px;" >
-
-    <div style="height: 60%; width: 100%;">
-    
-   <center> <img src="{{ asset('storage/images/headerimg/M6fc32bff4a57196104b04b3f741654ce1598033653545.png') }}"  style="height: 216px;width: 136px;padding-top: 16px;" />  </center>
+      @endforeach
     </div>
-    <div style="height: 30%; width: 100%;">
-      <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
-      Search through our listings and buy used phones in Pakistan conveniently with our product grading system.
-    </p></div>
-    <a href="#Buy" style="text-decoration: none;" >
-    <div style="height: 10%; width: 100%; background-color: #0071e3; ">
-    <center style="    color: white;
-      font-size: 23px;">Buy</center>
-      </div>  </a>
-  
-  
-  
-  </div>
-    
-  
+  </section>  
 
+@endif
 
-
-
-
-
-
-  <div class="col-md-4" style="background-color: #424242; border-right: 2px white solid;   height: 400px;" >
-
-    <div style="height: 60%; width: 100%;">
-    
-   <center> <img src="{{ asset('storage/images/headerimg/Mb84a2f8b3bcf9483a96c33dd67472b071598033616752.png') }}"  style="  height: 226px;
-    width: 192px;
-   
-    margin-top: -10px;" />  </center>
-    </div>
-    <div style="height: 30%; width: 100%;">
-      <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
-        Need information on your favorite mobile phone? Have a look at our comprehensive description, image galleries & comparison of your desired product.
-    </p></div>
-
-    <a href="#New" style="text-decoration: none;" >
-    <div style="height: 10%; width: 100%; background-color: #0071e3; "><center style="    color: white;
-      font-size: 23px;">New</center></div>  
-  </a>
-  
-  
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="col-md-4" style="background-color: #bdbdbd;    height: 400px;" >
-
-    <div style="height: 60%; width: 100%;">
-    
-   <center> <img src="{{ asset('storage/images/headerimg/M376cf24c179fe40a0cf2eddd40027a581598033369508.png') }}"  style="height: 216px;width: 184px;padding-top: 16px;" />  </center>
-    </div>
-    <div style="height: 30%; width: 100%;">
-      <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
-        Want to sell your product? No worries, we got you covered. Just fill out our simple and easy to use form and get your product listed to find a potential buyer.
-    </p></div>
-
-
-    <a href="#Sell" style="text-decoration: none;" >
-    <div style="height: 10%; width: 100%; background-color: #0071e3; "><center style="    color: white;
-      font-size: 23px;">Sell</center></div>  
-  
-  </a>
-  
-  </div>
-  </div>
-
-
-
-
-
-
-</section>
 
 
 
@@ -1109,133 +1043,30 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
   <div class="row" style="">
     <div class="col-md-3 col-lg-3 col-sm-3" id="slickBtnFortopBlog" style=" ">
+      @if($blogslider->count()>0)
+        <div class="autoplay" data-dots="true">
+          @foreach($blogslider as $row)
+            @php $img = 'storage/'.$row->img @endphp
+            <div class="item" style="">
+              <div id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
+                <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset($img) }}"
+                    class="img-responsive img-fullwidth" style=" width: 107% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
+                 
+                </div>
+              
+                <br/>
 
-
-
-
-      
-      <div class="autoplay" data-dots="true">
-     
-        <div class="item" style="">
-
-
-       
-
-
-          <div id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
-            <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset('storage/images/headerimg//yhVGFepifdwE7kAEo8tQt5.jpg') }}"
-                class="img-responsive img-fullwidth" style=" width: 107% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
+                <p style="color: black !important;    padding: 0px 10px 50px 24px;">
+                  {{ ucfirst($row->detail) }}
+                </p>
              
+              </div>
             </div>
+          @endforeach
           
-<br/>
-
-            <p style="color: black !important;    padding: 0px 10px 50px 24px;">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, placeat architecto molestias incidunt quas rerum repellat iste doloremque asperiores voluptatibus .
-            </p>
-         
-          </div>
-
-
-
         </div>
-
-
-
+      @endif
       
-        <div class="item">
-          <div  id="extlrgwid" style=" padding: 0px 0px 18px 0px;
-          border-radius: 6px;   ;    ">
-            <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset('storage/images/headerimg//yhVGFepifdwE7kAEo8tQt5.jpg') }}"
-                class="img-responsive img-fullwidth" style="   width: 107% !important;  border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
-              <!-- <h4 class="text-white mt-0 mb-0"><span class="price">Java Script Developer</span></h4> -->
-            </div>
-          
-<br/>
-<br/>
-            <p style="color: black !important;    padding: 0px 10px 50px 24px;">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, placeat architecto molestias incidunt quas rerum repellat iste doloremque asperiores voluptatibus .
-            </p>
-         
-          </div>
-        </div>
-
-        <div class="item" style="">
-
-
-       
-
-
-          <div  id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
-            <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset('storage/images/headerimg//yhVGFepifdwE7kAEo8tQt5.jpg') }}"
-                class="img-responsive img-fullwidth" style=" width: 107% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
-             
-            </div>
-          
-<br/>
-
-            <p style="color: black !important;    padding: 0px 10px 50px 24px;">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, placeat architecto molestias incidunt quas rerum repellat iste doloremque asperiores voluptatibus .
-            </p>
-         
-          </div>
-
-
-
-        </div>
-
-
-
-      
-        <div class="item">
-          <div  id="extlrgwid" style=" padding: 0px 0px 18px 0px;
-          border-radius: 6px;   ;    ">
-            <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset('storage/images/headerimg//yhVGFepifdwE7kAEo8tQt5.jpg') }}"
-                class="img-responsive img-fullwidth" style="   width: 107% !important;  border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
-              <!-- <h4 class="text-white mt-0 mb-0"><span class="price">Java Script Developer</span></h4> -->
-            </div>
-          
-<br/>
-<br/>
-            <p style="color: black !important;    padding: 0px 10px 50px 24px;">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, placeat architecto molestias incidunt quas rerum repellat iste doloremque asperiores voluptatibus .
-            </p>
-         
-          </div>
-        </div>
-
-
-        <div class="item" style="">
-
-
-       
-
-
-          <div  id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
-            <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset('storage/images/headerimg//yhVGFepifdwE7kAEo8tQt5.jpg') }}"
-                class="img-responsive img-fullwidth" style=" width: 107% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
-             
-            </div>
-          
-<br/>
-
-            <p style="color: black !important;    padding: 0px 10px 50px 24px;">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, placeat architecto molestias incidunt quas rerum repellat iste doloremque asperiores voluptatibus .
-            </p>
-         
-          </div>
-
-
-
-        </div>
-
-
-
-      
-    
-
-      
-      </div>
     </div>
    
 
@@ -1509,7 +1340,7 @@ margin-top: -24px;" />
 
  </div>
   
-    </footer>
+</footer>
 
 
 </body>
