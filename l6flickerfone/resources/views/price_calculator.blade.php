@@ -440,7 +440,7 @@ select {
     /* .BrandVersions{
         width: 20%;
    
-    } */
+} */
 /* #verionsatMobWidth{
     height: 293px !important;
 } */
@@ -713,202 +713,7 @@ input[type="radio"]:checked + label {
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topNav"  >
-    <a class="navbar-brand" href="#"><img id="logoFlickerflone" src="{{asset('storage/images/logo Black-01.jpg')}}"></a>
-    <button style="background-color: white !important;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup, #navbarNavAltMarkup1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-
-        <span id="reglogin" style="    position: absolute;
-        right: 46px;
-        bottom: 25px;color: white !important; border-bottom: 1px white solid  "  href="login.html" align="right"    >
-          <i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
-
-
-      </div>
-    </div>
-  </nav>
-  
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important;
-  height: 35px;
-  border-top: 1px #4c4a575c solid !important;
-  border-bottom: 1px #4c4a575c solid !important;">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
-    
-      <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li> -->
-       
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             </a>
-       
-        </li>
-       
-     
-
-
-        <li class="nav-item dropdown" >
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;   ;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
-            <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>GOOGLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>HUAWIE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>VIVO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>OPPO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>NOKIA</center></a></li>
-            
-            </ul>
-        </li>
-
-
-
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> TABLETS / PC </a>
-            <ul class="dropdown-menu fade-up">
-            <li><a class="dropdown-item" href="#"> <center>LENOVO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>HP </center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>DELL</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ACER</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ASUS</center></a></li>
-            
-            </ul>
-        </li>
-
-
-
-
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> WEAREABLES  </a>
-            <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Samsung Gear 2</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>FitBit Flex</center></a></li>
-           
-            <li><a class="dropdown-item" href="#"> <center>Google Glass</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>GoQii</center></a></li>
-
-            <li><a class="dropdown-item" href="#"> <center>Get Active Slim</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>LECHAL GPS Shoes</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Fin Ring</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Spotnsave Wristband</center></a></li>
-           
-            
-            
-            </ul>
-        </li>
-
-
-
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
-            <ul class="dropdown-menu fade-up">
-            <li><a class="dropdown-item" href="#"> <center>Charger Cables & Docks</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Mobile Covers & Cases</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Power Banks</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Other Accessories</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Phone Stands</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Screen Protectors</center></a></li>
-
-            <li><a class="dropdown-item" href="#"> <center>Monopod & Selfie Sticks</a></li>
-            <li><a class="dropdown-item" href="#"> <center>Phone Rings</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>VR Glasses</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Battery Packs</center></a></li>
-            
-            
-            </ul>
-        </li>
-
-        
-
-
-
-
-
-<li>
-  <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store" 
-  style="background-position: right !important;outline: none;    width: 388px;margin-left: 3px;border: 1px #f8f7f7 solid;  height: 1px;  margin-top: 6px;background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px; ">
-
-
-
-
-  <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 29%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
-    <!-- <div>
-      <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
-    </div> -->
-
-    <div>
-     <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 269px;
-      background-color: #f8f7f7;
-      color: black;
-   
-      font-weight: 600;
-      border-style: none;">X</button></p>
-    </div>
-
-
-
-    <li>
-      <div class="row">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg" style="  padding-left: 12px;  height: 91px;  ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">Apple iPhone 12 Pro Max         
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-
-  
-    <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
-  </ul>
-  
-
-  
-</li>
-
-
-
-
-<li class="nav-item dropdown">
-  <a class="nav-link  dropdown-toggle" id="prcCal" href="#" data-toggle="dropdown" 
-  style="padding: 4px 6px 6px 13px !important;
-    border-right: 1px #4c4a575c solid !important;
-    border-left: 1px #4c4a575c solid !important;
-    font-weight: bold;
-    background-color: #0071e3;
-    color: white;
-    height: 35px;
-    margin-top: 4px;
-"> Price Calculator  </a>
-   
-</li>
-
-
-
-        
-      </ul>
-    </div>
-  </nav>
+  @include('includes.header')
 
 
 
@@ -960,7 +765,7 @@ input[type="radio"]:checked + label {
   </center>
          
 
-<div id="apple1div" style=" height: 400px; display: none ;background-color: white;margin-top: 15px;">
+<div id="apple1div" style="background-color: white;margin-top: 15px;">
 
 </div>
 
@@ -976,63 +781,15 @@ input[type="radio"]:checked + label {
 
 
 
-<div id="getEstimatedmobile" style="width: 100%; display: none;float: left;margin-bottom:3%;">
+<div id="getEstimatedmobile" style="width: 100%; display: none;margin-bottom:3%;">
 
 
  
 
 </div>
 
-<footer style=" background-color: #dcdcdc;float: left; width: 100%;">
-
-
-  <div class="row">
-    <div class="col-md-5" style="    padding: 26px 10px 5px 26px !important;">
-   <p style="" ><a href="#" style="text-decoration: none;color: #4f4a4b !important; font-weight: bold;"> ABOUT US</a> &nbsp;&nbsp;&nbsp;   <a href="#" style="text-decoration: none;color: #4f4a4b !important;font-weight: bold;"> CONTACT US</a>  &nbsp;&nbsp;&nbsp;      <a href="#" style="text-decoration: none;color: #4f4a4b !important;font-weight: bold;">SUPPORT</a></p>
-   
+@include('includes.footer')
  
- <p style="color:#4f4a4b !important ;font-weight: 600;     font-size: 13px;">
-   Online prices and selection generally match the prevailing ones in market, but may vary.<br/>
-   Prices are subject to change.&copy; 2020 Flickerfone. All rights reserved.<br/>
-   FLICKERFONE.COM and, the FLICKERFONE logo are trademarks of Shallbe Group. 
- </p>
- 
- 
- 
- 
- </div>
- 
- 
- <div class="col-md-1"></div>
- 
- 
-    <div class="col-md-6" style="    padding: 42px 22px 5px 26px !important;" >
-   
-   
-     <p style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     font-size: 13px;   text-align: right; ">
-       We do not flood your inbox, join our social network instead. <a href="#fcb"><img style="    height: 15px; width: 17px;" src="images/headerimg/download-removebg-preview.png" /> </a>   <a href="#twiter"><img style="    height: 20px; width: 20px;" src="images/headerimg/twitter-1722376-1466162-removebg-preview.png"></a><br/>
-       
-     </p>
- 
- 
-     <p style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     margin-right: 42px;    font-size: 13px;    text-align: right; ">
-      IN SUPPORT OF <font style="    font-size: 33px;color: #c6ccd2;"> &empty;</font> <font style="margin-left: -35px;     "> SPAM </font>CONTRACT 
-       
-     </p>
-   
-   </div>
- 
- 
-  </div>
-   
-     </footer>
- 
-
-
-
-
-
-
 </body>
 
 
@@ -1055,6 +812,8 @@ input[type="radio"]:checked + label {
       data:{id:id},
       success:function(data)
       {
+        document.getElementById("apple1div").style.display = 'none';
+        document.getElementById("getEstimatedmobile").style.display = 'none';
         $('#verionsatMobWidth').html(data);
       }
     });
@@ -1116,6 +875,49 @@ input[type="radio"]:checked + label {
     });
   }
   
+
+  // function estimate_fun()
+  // {
+  //   var t =0;
+  //   if($('.minor').is(":checked")){
+  //     t+=parseInt($(".minor:checked").val());
+  //   }
+    
+  //   if($('.major').is(":checked"))
+  //   {
+  //     t+=parseInt($(".major:checked").val());
+  //   }
+
+  //   if($('.screen').is(":checked"))
+  //   {
+  //     t+=parseInt($(".screen:checked").val());
+  //   }
+
+  //   if($('.device').is(":checked"))
+  //   {
+  //     t+=parseInt($(".device:checked").val());
+  //   }
+
+  //   if($('.accessory').is(":checked"))
+  //   {
+  //     t+=parseInt($(".accessory:checked").val());
+  //   }
+
+  //   if($('.battery option:selected').val()<6)
+  //   {
+      
+  //     t+=parseInt($("#device_battery_status").val());
+     
+  //   }
+  //   var price = $('#estimated_advice_price').val();
+  //   if($('.minor').is(":checked") && $('.major').is(":checked") && $('.screen').is(":checked") && $('.device').is(":checked") && $('.accessory').is(":checked"))
+  //   {
+  //     if($('.battery').children("option:selected").val() >0)
+  //     {
+  //       $('#estimate_price').html(price - t);        
+  //     }
+  //   }
+  // }
 
   function myFunction() {
       shoediv();
@@ -1439,10 +1241,6 @@ function apple1aftercolors(){
 }
 
 
-// https://twitter.com/uixmat
-
-
-// https://twitter.com/uixmat
 
 
 

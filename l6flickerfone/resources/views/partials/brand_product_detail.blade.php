@@ -1,4 +1,17 @@
 
+@if($product->variation_colors->count()>3)
+  <style type="text/css">
+    #apple1div{ height: 550px !important; }
+  </style>
+
+@endif
+
+@if($product->variation_colors->count()>6)
+  <style type="text/css">
+    #apple1div{ height: 750px !important; }
+  </style>
+@endif
+
 @if($product->variation_colors->count()>0)
   <p style="color: black; margin-left: 10px;">Select Color</p>
   <font style="color: black !important;"> &nbsp;&nbsp;&nbsp;White</font><img style="height: 13px; margin-left: 10px; filter: invert(0.5);" src="{{ asset('storage/images/IphoneDetails/ic_mode_edit_black_18dp.png')}}" />
@@ -19,6 +32,7 @@
  <div id="changecolorseletidOnMobilefirst" style="width: 20%; height: 100%;  float: left; "></div>
  @if($product->variation_colors->count()>0)
     <div id="SingleProductBlock" style="width: 60%; float: left;"> 
+
         @foreach($product->variation_colors as $row)
             @php $img = 'storage/'.$product->image @endphp
             <div id="changecolorseletidOnMobile" style="width: 33%; height: 100%; background-color: White;  float: left;  ">

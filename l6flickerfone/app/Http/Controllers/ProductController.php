@@ -143,7 +143,13 @@ class ProductController extends Controller
                 'height' => $request->brief_height,
                 'width' => $request->brief_width,
                 'depth' => $request->brief_depth,
-                'brief_weight' => $request->brief_weight
+                'brief_weight' => $request->brief_weight, 
+                'minor_dent_scratch' => $request->minor_dent,
+                'major_dent_scratch' => $request->major_dent,
+                'original_accessories_available' => $request->original_accessories_available,
+                'screen_is_cracked' => $request->screen_is_cracked,
+                'device_box_available' => $request->device_box_available,
+                'device_battery_status' => $request->device_battery_status,
                 ]);
                
                 if ($product)
@@ -407,6 +413,13 @@ class ProductController extends Controller
             $product->width = $request->brief_width;
             $product->depth = $request->brief_depth;
             $product->brief_weight = $request->brief_weight; 
+            $product->minor_dent_scratch = $request->minor_dent;
+            $product->major_dent_scratch = $request->major_dent;
+            $product->original_accessories_available = $request->original_accessories_available;
+            $product->screen_is_cracked = $request->screen_is_cracked;
+            $product->device_box_available = $request->device_box_available;
+            $product->device_battery_status = $request->device_battery_status;
+
             if ($product->save())
             {
                 ColorVariation::where('product_id',$id)->delete();
@@ -443,8 +456,7 @@ class ProductController extends Controller
         }
     }
 
-   
-    public function liveSearch(Request $request)
+    public function liveSearch_old(Request $request)
     {
         if ($request->ajax())
         {
@@ -483,6 +495,58 @@ class ProductController extends Controller
                           </div>
                         </li>
 
+                    ';
+                }
+            }
+            
+            $records = array('product_data'=>$output);
+            echo json_encode($records);
+        }
+
+    }// livesearch
+
+    public function liveSearch(Request $request)
+    {
+        if ($request->ajax())
+        {
+
+            $query = $request->get('query');
+            if ($query!='')
+            {
+                $data = Product::where('name','like','%'.$query.'%')->get();
+            }
+            $total = $data->count();
+            $output = '
+                <div>
+         <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 269px;
+          background-color: #f8f7f7;
+          color: black;
+       
+          font-weight: 600;
+          border-style: none;">X</button></p>
+        </div>
+            ';
+            if ($total>0)
+            {
+                foreach ($data as $row)
+                {
+                    $image = 'storage/'.$row->image;
+                    $output.='
+                        <li>
+                          <div class="row">
+                            <div class="col-md-2">
+                              <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
+                                <img src="'.asset($image).'" style="  padding-left: 7px;  height: 91px;  ">
+                                 </div>
+                            </div>
+                            <div class="col-md-10">
+                              <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+                                <a href="'.route("ProductDetail",$row->id).'">'. ucwords($row->name) .'         
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
                     ';
                 }
             }
@@ -600,7 +664,88 @@ class ProductController extends Controller
 
     public function BrandProductEstimate(Request $request)
     {
-        $csproduct = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->where('variations.storage',$request->storage)->select('sma_products.id','sma_products.name','sma_products.image','variations.color','variations.storage','variations.price')->first();
+        $csproduct = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->where('variations.storage',$request->storage)->select('sma_products.id','sma_products.minor_dent_scratch','sma_products.major_dent_scratch','sma_products.original_accessories_available','sma_products.device_battery_status','sma_products.device_box_available','sma_products.screen_is_cracked','sma_products.name','sma_products.image','variations.color','variations.storage','variations.price')->first();
         return view('partials.brand_product_estimate',compact('csproduct'));
+    }
+
+    public function ShopPage()
+    {
+        $brands = Brand::all();
+        $products = Product::orderBy('id','desc')->get();
+        return view('shop', compact(['brands','products'])); 
+    }
+
+    public function ShopBrandProducts(Request $request)
+    {
+        $nView = $request->nView;
+        $products =  Product::where('brand_id',$request->id)->take($nView)->get();
+        return view('partials.shop_products_list',compact('products'));
+    }
+
+    public function ShopPriceProducts(Request $request)
+    {
+        $query = $request->id;
+        $nView = $request->nView;
+        if($query=="Less than 20,000")
+        {
+            $products = Product::where('price', '<',20000)->take($nView)->get();
+        }
+
+        else if($query=="Between 20,000 and 30,000")
+        {
+            $products = Product::whereBetween('price',[20000,30000])->take($nView)->get();
+        }
+
+        else if($query=="Between 30,000 and 60,000")
+        {
+             $products = Product::whereBetween('price',[30000,60000])->take($nView)->get();
+        }
+
+
+        else if($query=="Between 60,000 and 1,00000")
+        {
+             $products = Product::whereBetween('price',[60000,100000])->take($nView)->get();
+        }
+
+        else if($query=="More Than 1,00000")
+        {
+            $products = Product::where('price', '>',100000)->take($nView)->get();
+        }
+
+        return view('partials.shop_products_list',compact('products'));
+    }
+
+    public function ShopBrandPriceProducts(Request $request)
+    {
+        $query = $request->price;
+        $id = $request->brand;
+        $nView = $request->nView;
+        if($query=="Less than 20,000")
+        {
+            $products = Product::where('brand_id',$id)->where('price', '<',20000)->take($nView)->get();
+        }
+
+        else if($query=="Between 20,000 and 30,000")
+        {
+            $products = Product::where('brand_id',$id)->whereBetween('price',[20000,30000])->take($nView)->get();
+        }
+
+        else if($query=="Between 30,000 and 60,000")
+        {
+             $products = Product::where('brand_id',$id)->whereBetween('price',[30000,60000])->take($nView)->get();
+        }
+
+
+        else if($query=="Between 60,000 and 1,00000")
+        {
+             $products = Product::where('brand_id',$id)->whereBetween('price',[60000,100000])->take($nView)->get();
+        }
+
+        else if($query=="More Than 1,00000")
+        {
+            $products = Product::where('brand_id',$id)->where('price', '>',100000)->take($nView)->get();
+        }
+
+        return view('partials.shop_products_list',compact('products'));
     }
 }

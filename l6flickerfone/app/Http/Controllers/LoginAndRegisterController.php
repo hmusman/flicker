@@ -25,7 +25,7 @@ class LoginAndRegisterController extends Controller
     {
     	$buyer_validation  = Validator::make($request->all(),[
     		'buyer_username'=>'bail | required | alpha_num',
-    		'buyer_name'=>'bail | required | alpha',
+    		'buyer_name'=>'bail | required',
     		'buyer_email'=>'bail | required | email',
     		'buyer_password'=>'bail | required | min:8 | confirmed',
     		// 'buyer_password_confirm'=>'bail | required | min:8 ',
@@ -71,7 +71,7 @@ class LoginAndRegisterController extends Controller
     {
     	$seller_validation  = Validator::make($request->all(),[
     		'username'=>'bail | required | alpha_num',
-    		'name'=>'bail | required | alpha',
+    		'name'=>'bail | required',
     		'email'=>'bail | required | email',
     		'password'=>'bail | required | min:8 | confirmed',
     		// 'password_confirm'=>'bail | required | min:8 ',
@@ -129,7 +129,9 @@ class LoginAndRegisterController extends Controller
                 if(Hash::check($request->login_password,$user->password))
                 {
                    $request->session()->put('user',$user->email);
-                   return redirect('/BuyUsedMobilePhones');
+                   // return redirect('/BuyUsedMobilePhones');
+                   return redirect('/');
+
                 }
                 else
                 {

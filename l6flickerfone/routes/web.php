@@ -1,7 +1,7 @@
 <?php
 
-Route::get('/', 'FrontEndController@index');
-Route::get('Login', 'LoginAndRegisterController@index');
+Route::get('/', 'FrontEndController@index')->name('home');
+Route::get('Login', 'LoginAndRegisterController@index')->name('Login');
 Route::get('AdminLogin', 'LoginAndRegisterController@adminIndex');
 Route::post('AdminSession', 'LoginAndRegisterController@adminLogin')->name('AdminSession');
 Route::get('Admin/Logout', 'LoginAndRegisterController@adminLogout')->name('AdminLogout');
@@ -15,6 +15,10 @@ Route::get('Logout', 'LoginAndRegisterController@logout');
 Route::post('LoginSession', 'LoginAndRegisterController@login');
 Route::post('Register/Buyer', 'LoginAndRegisterController@buyer');
 Route::post('Register/Seller', 'LoginAndRegisterController@seller');
+Route::get('Shop','ProductController@ShopPage')->name('Shop');
+Route::get('ShopBrandProducts','ProductController@ShopBrandProducts')->name('ShopBrandProducts');
+Route::get('ShopPriceProducts','ProductController@ShopPriceProducts')->name('ShopPriceProducts');
+Route::get('ShopBrandPriceProducts','ProductController@ShopBrandPriceProducts')->name('ShopBrandPriceProducts');
 // Route::view('BuyUsedMobilePhones','buy_used_mobile_phone');
 // Route::view('ProductDetail','product_detail');
 Route::view('ReviewDetail','review_detail');
@@ -53,3 +57,7 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 Route::group(['middleware'=>['LoginSessionCheck']],function(){
 	Route::get('BuyUsedMobilePhones','ProductController@frontEndProducts');
 });
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

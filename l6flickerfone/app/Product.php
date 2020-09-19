@@ -70,7 +70,13 @@ class Product extends Model
                 'height',
                 'width',
                 'depth',
-                'brief_weight'
+                'brief_weight',
+                'minor_dent_scratch',
+                'major_dent_scratch',
+                'original_accessories_available',
+                'screen_is_cracked' ,
+                'device_box_available',
+                'device_battery_status'
 	];
     protected $table = "sma_products";
     

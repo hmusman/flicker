@@ -489,7 +489,69 @@
                                                     </div>
                                                 </div>
 
-                                            </div>
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent Deduction</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="number" value="{{ $product->minor_dent_scratch }}" name="minor_dent" placeholder="Enter Minor Dent Deduction" id="example-text-input">
+                                                        @error('minor_dent')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-4 col-form-label">Major Dent Deduction</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="number" value="{{ $product->major_dent_scratch }}" name="major_dent" placeholder="Enter Major Dent Deduction" id="example-text-input">
+                                                        @error('major_dent')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-4 col-form-label">Original Accessories Available Deduction</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="number" value="{{ $product->original_accessories_available }}" name="original_accessories_available" placeholder="Enter Original Accessories Available Deduction" id="example-text-input">
+                                                        @error('original_accessories_avaliable')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-4 col-form-label">Screen Is Cracked Deduction</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="number" value="{{ $product->screen_is_cracked }}" name="screen_is_cracked" placeholder="Enter Screen Is Cracked Deduction" id="example-text-input">
+                                                        @error('screen_is_cracked')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-4 col-form-label">Device Box Available Deduction</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="number" value="{{ $product->device_box_available }}" name="device_box_available" placeholder="Enter Device Box Available Deduction" id="example-text-input">
+                                                        @error('device_box_available')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-4 col-form-label">Device Battery Status Deduction</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="number" value="{{ $product->device_battery_status }}" name="device_battery_status" placeholder="Enter Device Battery Status Deduction" id="example-text-input">
+                                                        @error('device_battery_status')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- detail -->
 
                                             <div class="tab-pane fade" id="brief">
                                                 <div class="form-group row">

@@ -612,397 +612,40 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 <body>
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
+  @include('includes.header');
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topNav"  >
-    <a class="navbar-brand" href="#"><img  id="logoFlickerflone" src="{{ asset('storage/images/logo Black-01.jpg') }}"></a>
-    <button style="background-color: white !important;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup, #navbarNavAltMarkup1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Buy</a>
-        <a class="nav-item nav-link" href="#">Sell</a>
-        <a class="nav-item nav-link " href="#">New</a> -->
-
-
-
-
-
-
-        <span id="reglogin" style="    position: absolute;
-        right: 46px;
-        bottom: 25px;color: white !important; border-bottom: 1px white solid  "  href="login.html" align="right"    >
-          <i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
-
-
-
-
-
- 
+  @if($buynewsell->count()>0)
     
-
-
-
-
-
-
-
-
-
-      </div>
-    </div>
-  </nav>
-  
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important;
-  height: 35px;
-  border-top: 1px #4c4a575c solid !important;
-  border-bottom: 1px #4c4a575c solid !important;">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
-    
-      <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li> -->
-       
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             </a>
-       
-        </li>
-       
-     
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
-            <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>GOOGLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>HUAWIE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>VIVO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>OPPO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>NOKIA</center></a></li>
-            
-            </ul>
-        </li>
-
-
-
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> TABLETS / PC </a>
-            <ul class="dropdown-menu fade-up">
-            <li><a class="dropdown-item" href="#"> <center>LENOVO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>HP </center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>DELL</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ACER</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ASUS</center></a></li>
-            
-            </ul>
-        </li>
-
-
-
-
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> WEAREABLES  </a>
-            <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Samsung Gear 2</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>FitBit Flex</center></a></li>
-           
-            <li><a class="dropdown-item" href="#"> <center>Google Glass</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>GoQii</center></a></li>
-
-            <li><a class="dropdown-item" href="#"> <center>Get Active Slim</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>LECHAL GPS Shoes</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Fin Ring</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Spotnsave Wristband</center></a></li>
-           
-            
-            
-            </ul>
-        </li>
-
-
-
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
-            <ul class="dropdown-menu fade-up">
-            <li><a class="dropdown-item" href="#"> <center>Charger Cables & Docks</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Mobile Covers & Cases</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Power Banks</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Other Accessories</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Phone Stands</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Screen Protectors</center></a></li>
-
-            <li><a class="dropdown-item" href="#"> <center>Monopod & Selfie Sticks</a></li>
-            <li><a class="dropdown-item" href="#"> <center>Phone Rings</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>VR Glasses</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Battery Packs</center></a></li>
-            
-            
-            </ul>
-        </li>
-
-        
-
-
-
-
-
-<li>
-  <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store" 
-  style="background-position: right !important;outline: none;    width: 388px;margin-left: 3px;border: 1px #f8f7f7 solid;  height: 1px;  margin-top: 6px;background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px; ">
-
-
-
-
-  <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 29%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
-    <!-- <div>
-      <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
-    </div> -->
-
-    <div>
-     <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 269px;
-      background-color: #f8f7f7;
-      color: black;
-   
-      font-weight: 600;
-      border-style: none;">X</button></p>
-    </div>
-
-
-
-    <li>
+    <section>
       <div class="row">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="{{ asset('storage/images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg') }}" style="  padding-left: 12px;  height: 91px;  ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">Apple iPhone 12 Pro Max         
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
+        @foreach($buynewsell as $row)
+          @php $img = 'storage/'.$row->img @endphp
+          <div class="col-md-4" style="background-color: #0b0c0c; border-right: 2px white solid;   height: 400px;" >
 
-
-
-
-    <li>
-      <div class="row">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="{{ asset('storage/images/LiveSrchImages/852D3B1A-4511-EA95-7918-A7FAAAF29DE0.jpg') }}" style="     padding-left: 3px; height: 97px;  ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">Redmi Note 9 Pro      
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-
-
-
-    <li>
-      <div class="row">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="{{ asset('storage/images/LiveSrchImages/303612.png') }}" style=" 
-            padding-left: 6px;
-            height: 106px;
-         ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">Apple iphone x 64 GB     
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-
-
-
-    <li>
-      <div class="row">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="{{ asset('storage/images/LiveSrchImages/alcatel-3x-2019.jpg') }}" style="     padding-left: 12px;
-            height: 98px;
-            margin-top: 5px; ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">Alcatel jabi=ong Green 4 GB     
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-
-
-    <li>
-      <div class="row">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="{{ asset('storage/images/LiveSrchImages/12-Gold-1-600x600.jpg') }}" style="  padding-left: 0px; height: 110px;  ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">Apple VIVO Y15 Gold 16 GB      
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-
-
-
-    <li>
-      <div class="row" style="margin-top: 9px;">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="{{ asset('storage/images/LiveSrchImages/1560367_6.jpg') }}" style="     padding-left: 12px;
-            height: 92px;
-            width: 104px;
-            margin-left: 0px;  ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">HTC Play 2 Black 4 GB      
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-
-
-
-    <li>
-      <div class="row">
-        <div class="col-md-2">
-          <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
-            <img src="{{ asset('storage/images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg') }}" style="  padding-left: 12px;  height: 91px;  ">
-             </div>
-        </div>
-        <div class="col-md-10">
-          <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
-            <a href="#">HTC Play 2 Black 4 GB      
-            </a>
-          </div>
-        </div>
-      </div>
-    </li>
-
-  
-    <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
-  </ul>
-  
-
-  
-</li>
-
-
-
-
-<li class="nav-item dropdown">
-  <a class="nav-link  dropdown-toggle" id="prcCal" href="#" data-toggle="dropdown" 
-  style="padding: 4px 6px 6px 13px !important;
-    border-right: 1px #4c4a575c solid !important;
-    border-left: 1px #4c4a575c solid !important;
-    font-weight: bold;
-    background-color: #0071e3;
-    color: white;
-    height: 35px;
-    margin-top: 4px;
-"> Price Calculator  </a>
-   
-</li>
-
-
-
-        
-      </ul>
-    </div>
-  </nav>
-
-
-
-  
-
-
-
-@if($buynewsell->count()>0)
-  
-  <section>
-    <div class="row">
-      @foreach($buynewsell as $row)
-        @php $img = 'storage/'.$row->img @endphp
-        <div class="col-md-4" style="background-color: #0b0c0c; border-right: 2px white solid;   height: 400px;" >
-
-            <div style="height: 60%; width: 100%;">
+              <div style="height: 60%; width: 100%;">
+              
+             <center> <img src="{{ asset($img) }}"  style="height: 216px;width: 136px;padding-top: 16px;" />  </center>
+              </div>
+              <div style="height: 30%; width: 100%;">
+                <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
+                {{ ucfirst($row->detail) }}
+              </p></div>
+              <a href="#Buy" style="text-decoration: none;" >
+              <div style="height: 10%; width: 100%; background-color: #0071e3; ">
+              <center style="    color: white;
+                font-size: 23px;">{{ ucwords($row->title) }}</center>
+                </div>  </a>
             
-           <center> <img src="{{ asset($img) }}"  style="height: 216px;width: 136px;padding-top: 16px;" />  </center>
+            
+            
             </div>
-            <div style="height: 30%; width: 100%;">
-              <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
-              {{ ucfirst($row->detail) }}
-            </p></div>
-            <a href="#Buy" style="text-decoration: none;" >
-            <div style="height: 10%; width: 100%; background-color: #0071e3; ">
-            <center style="    color: white;
-              font-size: 23px;">{{ ucwords($row->title) }}</center>
-              </div>  </a>
-          
-          
-          
-          </div>
 
-      @endforeach
-    </div>
-  </section>  
+        @endforeach
+      </div>
+    </section>  
 
-@endif
-
-
-
-
-
-
-
-
-
-
-
-
+  @endif
 
   <section>
     <div class="pricecalculatorbackground pcback" >
@@ -1010,7 +653,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
             <h1 align="center">Price Calculator</h1>
             <div class="pq">
               <h3>Get an estimate for your device</h3>
-            <a href="pricecalculator.html">
+            <a href="{{route('PriceEstimateCalculator')}}">
               <button class="btn pc-btn">Try it Now!</button>
             </a>
             </div>
@@ -1021,22 +664,6 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
   </section>
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <section  style="padding-top: 70px; padding-bottom:70px ;background-color: #f4f4f4;     margin-left: 5px;">
  
@@ -1180,72 +807,31 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
       </div>
     </div>
 
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
 
     <hr id="resphrOnmob" style="width: 43%;
     background-color: black;
     margin-top: -35px;" />
   </div>
 
-<p >
- <center style="color: black;
- font-size: 49px;
- margin-top: -59px;
-"> ...</center>
-</p>
+  <p >
+   <center style="color: black;
+   font-size: 49px;
+   margin-top: -59px;
+  "> ...</center>
+  </p>
 
 
 
-<hr style="width: 43%;
-background-color: black;
-margin-top: -24px;" />
+  <hr style="width: 43%;
+  background-color: black;
+  margin-top: -24px;" />
 
 
 
 
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @if($products->count()>0)
 
@@ -1298,49 +884,7 @@ margin-top: -24px;" />
 
 
 
-<footer style=" background-color: #dcdcdc;">
-
-
- <div class="row">
-   <div class="col-md-5" style="    padding: 26px 10px 5px 26px !important;">
-  <p style="" ><a href="#" style="text-decoration: none;color: #4f4a4b !important; font-weight: bold;"> ABOUT US</a> &nbsp;&nbsp;&nbsp;   <a href="#" style="text-decoration: none;color: #4f4a4b !important;font-weight: bold;"> CONTACT US</a>  &nbsp;&nbsp;&nbsp;      <a href="#" style="text-decoration: none;color: #4f4a4b !important;font-weight: bold;">SUPPORT</a></p>
-  
-
-<p style="color:#4f4a4b !important ;font-weight: 600;     font-size: 13px;">
-  Online prices and selection generally match the prevailing ones in market, but may vary.<br/>
-  Prices are subject to change.&copy; 2020 Flickerfone. All rights reserved.<br/>
-  FLICKERFONE.COM and, the FLICKERFONE logo are trademarks of Shallbe Group. 
-</p>
-
-
-
-
-</div>
-
-
-<div class="col-md-1"></div>
-
-
-   <div class="col-md-6" style="    padding: 42px 22px 5px 26px !important;" >
-  
-  
-    <p style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     font-size: 13px;   text-align: right; ">
-      We do not flood your inbox, join our social network instead. <a href="#fcb"><img style="    height: 15px; width: 17px;" src="{{ asset('storage/images/headerimg/download-removebg-preview.png') }}" /> </a>   <a href="#twiter"><img style="    height: 20px; width: 20px;" src="{{ asset('storage/images/headerimg/twitter-1722376-1466162-removebg-preview.png') }}"></a><br/>
-      
-    </p>
-
-
-    <p style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     margin-right: 42px;    font-size: 13px;    text-align: right; ">
-     IN SUPPORT OF <font style="    font-size: 33px;color: #c6ccd2;"> &empty;</font> <font style="margin-left: -35px;     "> SPAM </font>CONTRACT 
-      
-    </p>
-  
-  </div>
-
-
- </div>
-  
-</footer>
+@include('includes.footer')
 
 
 </body>

@@ -3,7 +3,7 @@
     <div class="col-md-2" style=""><img src="{{ asset($img) }}" style="width: 100%;" /></div>
     <div class="col-md-6" style="background-color: white">
     
-    
+          <input type="hidden" id="estimated_advice_price" value="{{ $csproduct->price }}">
           <p style="width: 100%;width: 100%;
           font-size: 20px;
           color: black;
@@ -19,23 +19,80 @@
 
 
 
-          <p style="width: 100%;width: 100%;
+          <p style="width: 100%;width: 100%;    margin-top: 5px;
           font-size: 20px;
           color: black;">Lets Determined the Condition</p>
 
 
 
 
-          <p style="width: 100%;width: 100%;
+          <p style="width: 100%;width: 100%; margin-top: 15px;
           font-size: 16px;
-          color: black;">Does the Device Power On?</p>
+          color: black;">Minor Dent / Scratch?</p>
 
 
           <div>
-            <input id="toggle-on" name="toggle" type="radio">
-          <label for="toggle-on">Yes</label>
-          <input id="toggle-off" name="toggle" type="radio">
-          <label for="toggle-off">No</label>
+            <input id="minor-on" class="minor" name="minor" type="radio" value="{{ $csproduct->minor_dent_scratch }}">
+          <label for="minor-on">Yes</label>
+          <input id="minor-off" class="minor" name="minor" type="radio" value="0">
+          <label for="minor-off">No</label>
+
+          </div>
+
+          <p style="width: 100%;width: 100%;
+          font-size: 16px;
+          color: black;">Major Dent / Scratch?</p>
+
+
+          <div>
+            <input id="major-on" class="major" name="major" type="radio" value="{{ $csproduct->major_dent_scratch }}">
+          <label for="major-on">Yes</label>
+          <input id="major-off" class="major" name="major" type="radio" value="0">
+          <label for="major-off">No</label>
+
+          </div>
+
+
+          <p style="width: 100%;width: 100%;margin-top: 15px;
+          font-size: 16px;
+          color: black;">Original Accessories Available?</p>
+
+
+          <div>
+            <input id="accessory-on" class="accessory" name="accessory" type="radio" value="0">
+          <label for="accessory-on">Yes</label>
+          <input id="accessory-off" class="accessory" name="accessory" type="radio" value="{{ $csproduct->original_accessories_available }}">
+          <label for="accessory-off">No</label>
+
+          </div>
+
+
+          <p style="width: 100%;width: 100%;margin-top: 15px;
+          font-size: 16px;
+          color: black;">Screen is Cracked?</p>
+
+
+          <div>
+            <input id="screen-on" class="screen" name="screen" type="radio" value="{{ $csproduct->screen_is_cracked }}">
+          <label for="screen-on">Yes</label>
+          <input id="screen-off" class="screen" name="screen" type="radio" value="0">
+          <label for="screen-off">No</label>
+
+          </div>
+
+
+          <p style="width: 100%;width: 100%; margin-top: 15px;
+          font-size: 16px;
+          color: black;">Device Box Available?</p>
+
+
+
+
+          <div>
+            <input id="device-on" class="device" name="device" type="radio" value="0">
+          <label for="device-on">Yes</label>
+          <input id="device-off" name="device" class="device" type="radio" value="{{ $csproduct->device_box_available }}">
+          <label for="device-off">No</label>
 
           </div>
 
@@ -43,51 +100,34 @@
 
 
 
-
-          <p style="width: 100%;width: 100%;
+          <p style="width: 100%;width: 100%; margin-top: 15px;
           font-size: 16px;
-          color: black;">Is the device fully Functional all parts of the screen light up correctly?</p>
-
-
-
-
-          <div>
-            <input id="toggle-on1" name="toggle1" type="radio">
-          <label for="toggle-on1">Yes</label>
-          <input id="toggle-off1" name="toggle1" type="radio">
-          <label for="toggle-off1">No</label>
-
-          </div>
-
-
-
-
-
-          <p style="width: 100%;width: 100%;
-          font-size: 16px;
-          color: black;">Are the Front and Back Free of cracks?</p>
+          color: black;">Battery Status?</p>
 
 
 
 
         <div>
-          <input id="toggle-on2" name="toggle1" type="radio">
-        <label for="toggle-on2">Yes</label>
-        <input id="toggle-off2" name="toggle1" type="radio">
-        <label for="toggle-off2">No</label>
+          <input type="hidden" name="" id="device_battery_status" value="{{ $csproduct->device_battery_status }}">
+          <select class="form-control battery">
+            <option disabled="" selected="">Select Status</option>
+            @for($i=1; $i<=10; $i++)
+              <option value="{{ $i }}">{{ $i }}</option>
+            @endfor
+          </select>
 
         </div>
 
-
-
+        <button style="margin-top: 20px;" class="btn btn-primary" onclick="estimate_fun();" type="button">Submit</button>
+<!-- 
         <p style="width: 100%;width: 100%;
         font-size: 16px;
         color: black;">Whats the overall cosmatic condition?</p>
+ -->
 
 
 
-
-      <p style="width: 100%;width: 100%;
+     <!--  <p style="width: 100%;width: 100%;
       font-size: 14px;
       color: rgb(73, 70, 70);">Scratches, scuffs, dents, bends etc.</p>
 
@@ -103,7 +143,7 @@
       <div id="fourboxatmob" style=" margin-right: 10px; height: 100%; width: 22%;float: left;background-color: white;color: blue;border: 1px blue solid;padding: 27px;">Normal signs of use</div>
       <div id="fourboxatmob" style="  width: 22%;float: left; height: 100%;background-color: white;color: blue;border: 1px blue solid;padding: 27px;">Heavy signs of use or damage</div>
 
-      </div>
+      </div> -->
 
 
 
@@ -121,13 +161,14 @@
         padding-top: 17px;
         font-weight: 500;
         font-size: 20px;
-     "><center>oue Estimate</center></div>
+     "><center>Our Estimate</center></div>
         <div style="height: 70%; width: 100%; ">
         
         <p style="color: black; width: 100%;    padding-top: 17px;
        " >
-         <center style="color: black ;font-weight: 500; font-size: 20px;"> Poor Condition</center><br/>
-      <center style="color: blue ;font-weight: 500; font-size: 20px;">  <sup>  PKR</sup><font style="    font-size: 6vw;"> 211</font>  </center>  </p>
+         <center style="color: black ;font-weight: 500; font-size: 20px;" id="grading"></center>
+         <br/>
+      <center style="color: blue ;font-weight: 500; font-size: 20px;">  <sup>  PKR</sup><font style="font-size: 6vw;margin-left: 5px;" id="estimate_price"> 0</font>  </center>  </p>
         
         
         </div>
@@ -150,3 +191,525 @@
 
 
   </div>
+
+  <script type="text/javascript">
+    function estimate_fun()
+    {
+       var estimate_deduction =0;
+       var grading = "";
+       //Anything above or equal to 8
+
+      // Scenario 1
+      if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#device-on').is(":checked") && $('#screen-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 2
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#device-on').is(":checked") && $('#screen-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 3
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 4
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Excellent";
+      } 
+
+      // Scenario 5
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Good";
+      } 
+
+      // Scenario 6
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 7
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 8
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Good";
+      } 
+
+      // Scenario 9
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }  
+
+      // Scenario 10
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 11
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 12
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Good";
+      }
+
+      // Scenario 13
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Good";
+      }
+
+      // Scenario 14
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 15
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Good";
+      }
+
+      // Scenario 16
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 17
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 18
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 19
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 20
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Good";
+      }
+
+      // Scenario 21
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 22
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 23
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 24
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 25
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 26
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=8)
+      {
+        grading = "Excellent";
+      }
+
+
+      // Anything above or equal to 7
+
+      // Scenario 1
+      if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#device-on').is(":checked") && $('#screen-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 2
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#device-on').is(":checked") && $('#screen-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 3
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 4
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Excellent";
+      } 
+
+      // Scenario 5
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Good";
+      } 
+
+      // Scenario 6
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 7
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 8
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Good";
+      } 
+
+      // Scenario 9
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }  
+
+      // Scenario 10
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 11
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 12
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() ==7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 13
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Good";
+      }
+
+      // Scenario 14
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 15
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Good";
+      }
+
+      // Scenario 16
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 17
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 18
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 19
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 20
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() ==7)
+      {
+        grading = "Fair";
+      }
+
+     // Scenario 21
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 22
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 23
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 24
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 25
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 26
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() >=7)
+      {
+        grading = "Excellent";
+      }
+      
+      // Anything below to 6
+
+      // Scenario 1
+      if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#device-on').is(":checked") && $('#screen-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 2
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#device-on').is(":checked") && $('#screen-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 3
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 4
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Good";
+      } 
+
+      // Scenario 5
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 6
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 7
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 8
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 9
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }  
+
+      // Scenario 10
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      } 
+
+      // Scenario 11
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 12
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading="Fair";
+      }
+
+      // Scenario 13
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 14
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 15
+      else if($('#minor-on').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 16
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 17
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 18
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 19
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 20
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 21
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 22
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-off').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 23
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 24
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 25
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-on').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Fair";
+      }
+
+      // Scenario 26
+      else if($('#minor-off').is(":checked") && $('#major-off').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-on').is(":checked") && $('.battery').children("option:selected").val() <=6)
+      {
+        grading = "Excellent";
+      }
+     
+      if($('.minor').is(":checked")){
+        estimate_deduction+=parseInt($(".minor:checked").val());
+      }
+      
+      if($('.major').is(":checked"))
+      {
+        estimate_deduction+=parseInt($(".major:checked").val());
+      }
+
+      if($('.screen').is(":checked"))
+      {
+        estimate_deduction+=parseInt($(".screen:checked").val());
+      }
+
+      if($('.device').is(":checked"))
+      {
+        estimate_deduction+=parseInt($(".device:checked").val());
+      }
+
+      if($('.accessory').is(":checked"))
+      {
+        estimate_deduction+=parseInt($(".accessory:checked").val());
+      }
+
+      if($('.battery option:selected').val()<6)
+      {
+        
+        estimate_deduction+=parseInt($("#device_battery_status").val());
+       
+      }
+      var price = $('#estimated_advice_price').val();
+      if($('.minor').is(":checked") && $('.major').is(":checked") && $('.screen').is(":checked") && $('.device').is(":checked") && $('.accessory').is(":checked"))
+      {
+        if($('.battery').children("option:selected").val() >0)
+        {
+          $('#estimate_price').html(price - estimate_deduction);
+          $('#grading').html(grading);        
+        }
+      }
+    }
+  </script>

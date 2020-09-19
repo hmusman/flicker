@@ -1,6 +1,6 @@
 <div>
   <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES <button
-     class="ButtonSearchOnMob"    id="srchbtnid" onclick="{{ $hide }}();" style="margin-left: 285px;
+     class="ButtonSearchOnMob"    id="srchbtnid" onclick="{{ $hide }}();" style="margin-left: 250px;
     background-color: #f8f7f7;
     color: black;
  
@@ -20,7 +20,7 @@
 	            </div>
 	          </div>
 	          <div class="col-md-10">
-	            <div id="setwidthsecond" style="  ">
+	            <div id="setwidthsecond" style=" width: 80% !important; margin-left: 57px !important; ">
 	              <button type="button" onclick="singleProduct('{{ $product->id }}','{{ $hide }}');">{{ $product->name }}</button>
 	            </div>
 	          </div>
