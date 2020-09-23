@@ -677,7 +677,7 @@ img[src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).pn
 
 
     
-    <a style="position: absolute ;text-decoration: none ;  border: 2px #d0c6c6 solid;padding: 2px 20px 7px 20px;color: white !important; background-color: #42bd41; border-radius: 6px; height: 35px !important;cursor: pointer; " href="{{ route('AdviceComparison') }}">COMPARE</a>
+    <a style="position: absolute ;text-decoration: none ;  border: 2px #d0c6c6 solid;padding: 2px 20px 7px 20px;color: white !important; background-color: #42bd41; border-radius: 6px; height: 35px !important;cursor: pointer; " href="{{ route('AdviceComparison',$product->id) }}">COMPARE</a>
 
    </div>
 
@@ -1140,12 +1140,12 @@ margin-left: 15px;">{{ $product->price }}</font>
                         		@php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
                         		<p style="border-bottom: 1px #efefef solid;">
                         			@foreach($product->variation_colors as $color)
-								  		@php $i++; @endphp
-								  		@if($colorName !=$color->color)
-								  			{{ ucfirst($color->color)}} @if($count>$i) , @endif
-								  		@endif
-										@php $colorName = $color->color; @endphp
-								  	@endforeach
+          								  		@php $i++; @endphp
+          								  		@if($colorName !=$color->color)
+          								  			{{ ucfirst($color->color)}} @if($count>$i) , @endif
+          								  		@endif
+          										@php $colorName = $color->color; @endphp
+          								  	@endforeach
 
                         		</p>
                         	@endif

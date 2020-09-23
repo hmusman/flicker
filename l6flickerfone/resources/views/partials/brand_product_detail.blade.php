@@ -1,4 +1,3 @@
-
 @if($product->variation_colors->count()>3)
   <style type="text/css">
     #apple1div{ height: 550px !important; }

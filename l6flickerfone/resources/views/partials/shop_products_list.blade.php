@@ -11,7 +11,7 @@
 
            <!-- <center> <del style="  color: #252629 !important;">PKR {{ $row->price }}</del></center> -->
            <center> <p style="  color: #db4f45 !important;">PKR {{ $row->price }}</p></center>
-           <center><a href="{{ route('AdviceComparison') }}"> <p style="text-transform: uppercase;  color: #b3b5be !important;">Add to compare</p></a></center>
+           <center><a href="{{ route('AdviceComparison',$row->id) }}"> <p style="text-transform: uppercase;  color: #b3b5be !important;">Add to compare</p></a></center>
 
 
       </div>

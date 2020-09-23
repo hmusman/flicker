@@ -621,6 +621,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
       <div class="row">
         @foreach($buynewsell as $row)
           @php $img = 'storage/'.$row->img @endphp
+          @if($row->title=='buy') @php $url = "Shop" @endphp @else @php $url = "#" @endphp  @endif
           <div class="col-md-4" style="background-color: #0b0c0c; border-right: 2px white solid;   height: 400px;" >
 
               <div style="height: 60%; width: 100%;">
@@ -631,11 +632,31 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
                 <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
                 {{ ucfirst($row->detail) }}
               </p></div>
-              <a href="#Buy" style="text-decoration: none;" >
+
+              @if($row->title=='buy')
+
+                <a href="{{ route('BuyUsedMobilePhones') }}" style="text-decoration: none;" >
+                <div style="height: 10%; width: 100%; background-color: #0071e3; ">
+                <center style="    color: white;
+                  font-size: 23px;">{{ ucwords($row->title) }}</center>
+                  </div>  </a>
+              @elseif($row->title=='sell')
+                  <a href="{{ route('Sell') }}" style="text-decoration: none;" >
+                    <div style="height: 10%; width: 100%; background-color: #0071e3; ">
+                    <center style="    color: white;
+                      font-size: 23px;">{{ ucwords($row->title) }}</center>
+                      </div>  
+                  </a>
+
+              @else
+                <a href="{{ route('Shop') }}" style="text-decoration: none;" >
               <div style="height: 10%; width: 100%; background-color: #0071e3; ">
               <center style="    color: white;
                 font-size: 23px;">{{ ucwords($row->title) }}</center>
                 </div>  </a>
+
+              @endif
+              
             
             
             

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use App\Models\pricecalculatorproduct\PriceCalcultorProduct;
 class BrandController extends Controller
 {
     public function index()
@@ -99,14 +99,14 @@ class BrandController extends Controller
 
     public function PriceEstimateCalculator()
     {
-        $brands = Brand::all();
+        $brands = Brand::join('price_calculator_products','brands.id','=','price_calculator_products.brand_id')->select('brands.name','brands.id')->get();
         return view('price_calculator',compact('brands'));
     }
 
     public function BrandProducts(Request $request)
     {
         $brand = Brand::where('id',$request->id)->first();
-        $products = $brand->products;
+        $products = $brand->price_calculator_products_list;
         return view('partials.brand_products',compact('products'));
     }
 }

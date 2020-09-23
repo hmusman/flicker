@@ -6,10 +6,10 @@ Route::get('AdminLogin', 'LoginAndRegisterController@adminIndex');
 Route::post('AdminSession', 'LoginAndRegisterController@adminLogin')->name('AdminSession');
 Route::get('Admin/Logout', 'LoginAndRegisterController@adminLogout')->name('AdminLogout');
 Route::get('live_search/action', 'ProductController@liveSearch')->name('live_search.action');
-Route::get('AdviceComparison','ProductController@adviceComparison')->name('AdviceComparison');
+Route::get('AdviceComparison/{id}','ProductController@adviceComparison')->name('AdviceComparison');
 Route::get('OldAdviceComparison','ProductController@oldadviceComparison')->name('OldAdviceComparison');
 Route::get('AdviceComparisonAll','ProductController@adviceComparisonAll')->name('AdviceComparisonAll');
-Route::get('SingleCompareProductDetail/{id}','ProductController@singleCompareProductDetail')->name('SingleCompareProductDetail');
+Route::get('SingleCompareProductDetail','ProductController@singleCompareProductDetail')->name('SingleCompareProductDetail');
 Route::get('AdviceComparison3','ProductController@adviceComparison2')->name('AdviceComparison2');
 Route::get('Logout', 'LoginAndRegisterController@logout');
 Route::post('LoginSession', 'LoginAndRegisterController@login');
@@ -19,6 +19,7 @@ Route::get('Shop','ProductController@ShopPage')->name('Shop');
 Route::get('ShopBrandProducts','ProductController@ShopBrandProducts')->name('ShopBrandProducts');
 Route::get('ShopPriceProducts','ProductController@ShopPriceProducts')->name('ShopPriceProducts');
 Route::get('ShopBrandPriceProducts','ProductController@ShopBrandPriceProducts')->name('ShopBrandPriceProducts');
+Route::get('BuyUsedMobilePhones','SellProductController@frontEndProducts')->name('BuyUsedMobilePhones');
 // Route::view('BuyUsedMobilePhones','buy_used_mobile_phone');
 // Route::view('ProductDetail','product_detail');
 Route::view('ReviewDetail','review_detail');
@@ -33,13 +34,14 @@ Route::get('ColorFilterStorage','ProductController@colorFilterStorage')->name('C
 Route::get('StorageFilterPrice','ProductController@StorageFilterPrice')->name('StorageFilterPrice');
 Route::get('PriceEstimateCalculator','BrandController@PriceEstimateCalculator')->name('PriceEstimateCalculator');
 Route::get('BrandProducts','BrandController@BrandProducts')->name('BrandProducts');
-Route::get('BrandProductDetail','ProductController@BrandProductDetail')->name('BrandProductDetail');
-Route::get('BrandProductColorItem','ProductController@BrandProductColorItem')->name('BrandProductColorItem');
-Route::get('BrandProductEstimate','ProductController@BrandProductEstimate')->name('BrandProductEstimate');
+Route::get('BrandProductDetail','pricecalculatorproducts\PriceCalculatorProductController@BrandProductDetail')->name('BrandProductDetail');
+Route::get('BrandProductColorItem','pricecalculatorproducts\PriceCalculatorProductController@BrandProductColorItem')->name('BrandProductColorItem');
+Route::get('BrandProductEstimate','pricecalculatorproducts\PriceCalculatorProductController@BrandProductEstimate')->name('BrandProductEstimate');
 // Route::get('pricesearch/{min?}/{max?}','ProductController@priceSearch')->name('pricesearch');
 Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::get('/','AdminController@index');
 	Route::resource('/Product','ProductController');
+	Route::resource('/PriceCalculatorProduct','pricecalculatorproducts\PriceCalculatorProductController');
 	Route::resource('/Category','CategoryController');
 	Route::resource('/Brand','BrandController');
 	Route::resource('/Meta','MetaController');
@@ -53,9 +55,14 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::get('/User/Block/{id?}','UserController@block')->name('User.Block');
 });
 
+Route::prefix('Sell')->middleware('SellLoginSessionCheck')->group(function(){
+	Route::get('/','SellProductController@create')->name('Sell');
+	Route::post('Product','SellProductController@store')->name('Product.store');
+});
 
 Route::group(['middleware'=>['LoginSessionCheck']],function(){
-	Route::get('BuyUsedMobilePhones','ProductController@frontEndProducts');
+	// Route::get('BuyUsedMobilePhones','SellProductController@frontEndProducts');
+	// Route::view('BuyUsedMobilePhones','buy_used_mobiles');
 });
 
 Auth::routes();

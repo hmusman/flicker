@@ -613,9 +613,10 @@ class ProductController extends Controller
     }// citySearch
 
 
-    public function adviceComparison()
+    public function adviceComparison($id)
     {
-        return view('advice_comarison');
+        $product = Product::where('id',$id)->first();
+        return view('advice_comarison',compact('product'));
     }
 
      public function oldAdviceComparison()
@@ -632,9 +633,9 @@ class ProductController extends Controller
         return view('partials.comparison_list',compact(['product_list','total','hide']));
     }
 
-    public function singleCompareProductDetail(Request $request,$id)
+    public function singleCompareProductDetail(Request $request)
     {
-        $product = Product::where('id',$id)->first();
+        $product = Product::where('id',$request->id)->first();
         return view('partials.single_compare_product_detail',compact(['product']));
     }
 

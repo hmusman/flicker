@@ -471,7 +471,7 @@ div[class="ws-title"] > span{
 
 <!-- Start WOWSlider.com BODY section -->
 <!-- Start WOWSlider.com BODY section -->
-<div id="wowslider-container1">
+<!-- <div id="wowslider-container1">
   <div class="ws_images"><ul>
       <li>
         <a href="#ShopPAge"> <img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now" title="Shop Now" id="wows1_0"/></a>
@@ -528,7 +528,7 @@ div[class="ws-title"] > span{
   </button> -->
 
 
-  </div>	
+  </div>	 -->
  
   <!-- End WOWSlider.com BODY section -->
   
@@ -561,107 +561,62 @@ div[class="ws-title"] > span{
 
 
 
-  <div class="row" style="background-color: #f7f7f7 !important;">
-    <div class="col-md-2" style="color: black;  " >
-    <p style="font-weight: bold !important;"> FILTERS</p> 
-    </div>
+  <div class="container-fluid" style="background-color: #f7f7f7 !important;">
+    <div class="container" style="background-color: #f7f7f7 !important;">
+      <div class="row" style="background-color: #f7f7f7 !important;">
+        <div class="col-md-2" style="color: black; margin-top: 15px; " >
+        <p style="font-weight: bold !important;"> FILTERS</p> 
+        </div>
 
-    <div class="col-md-2" style="color: black;  ">
-      <div class="form-group">
-       
-        <select class="form-control" id="brand" style="font-weight: bold !important;">
-          <option selected="" disabled="" style="font-weight: bold !important;">Brands</option>
-          @if($brands->count()>0)
-            @foreach($brands as $brand)
-              <option value="{{ $brand->id }}">{{ ucwords($brand->name) }}</option>
-            @endforeach
-          @endif
-        </select>
-      </div>
-     </div>
+        <div class="col-md-3" style="color: black; margin-top: 15px; ">
+          <div class="form-group">
+           
+            <select class="form-control" id="brand" style="font-weight: bold !important;">
+              <option selected="" disabled="" style="font-weight: bold !important;">Brands</option>
+              @if($brands->count()>0)
+                @foreach($brands as $brand)
+                  <option value="{{ $brand->id }}">{{ ucwords($brand->name) }}</option>
+                @endforeach
+              @endif
+            </select>
+          </div>
+         </div>
 
-     <div class="col-md-2" style="color: black;  ">
-      <div class="form-group">
-       
-        <select class="form-control" id="price" style="font-weight: bold !important;">
-          <option selected=""  disabled="" style="font-weight: bold !important;">Price</option>
-          <option value="Less than 20,000">Less than 20,000 PKR</option>
-          <option value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
-          <option value="Between 30,000 and 60,000">Between 30,000 and 60,000 PKR</option>
-          <option value="Between 60,000 and 1,00000">Between 60,000 and 1,00000 PKR</option>
-          <option value="More Than 1,00000">More Than 1,00000 PKR</option>
-        </select>
-      </div>
-     </div>
+         <div class="col-md-3" style="color: black; margin-top: 15px; ">
+          <div class="form-group">
+           
+            <select class="form-control" id="price" style="font-weight: bold !important;">
+              <option selected=""  disabled="" style="font-weight: bold !important;">Price</option>
+              <option value="Less than 20,000">Less than 20,000 PKR</option>
+              <option value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
+              <option value="Between 30,000 and 60,000">Between 30,000 and 60,000 PKR</option>
+              <option value="Between 60,000 and 1,00000">Between 60,000 and 1,00000 PKR</option>
+              <option value="More Than 1,00000">More Than 1,00000 PKR</option>
+            </select>
+          </div>
+         </div>
 
-     <!-- <div class="col-md-2" style="color: black;  ">
-      <div class="form-group">
-       
-        <select class="form-control" id="sel1" style="font-weight: bold !important;">
-          <option style="font-weight: bold !important;">COMPARE</option>
-          <option>Compare with Brands</option>
-          <option>Compare with Price</option>
-          <option>Compare with Colors</option>
-        
-        </select>
-      </div>
-     </div> -->
-
-
-
-     <div class="col-md-4" style="color: black;  "></div>
-  </div>
-  
-  
-
-
-
-
-
-  <div class="row" style="background-color: #f7f7f7 !important;">
-    <div class="col-md-8" style="color: black;  ">
-    
-    </div>
-
-    
-
-
-     <div class="col-md-2" style="color: black;  ">
-     
-    
-      <div class="form-group">
-       
-        <select class="form-control" id="view" >
-          <option selected="" disabled="" >Select View</option>
-          <option value="5" style="font-weight: bold !important;">View: 5</option>
-          <option value="10" style="font-weight: bold !important;">View: 10</option>
-          <option value="20" style="font-weight: bold !important;">View: 20</option>
-          <option value="30" style="font-weight: bold !important;">View: 30</option>
-        </select>
-      </div>
-    
-    
-    </div>
-
-      <!-- <div class="col-md-2" style="color: black;  ">
-        <div class="form-group">
+         <div class="col-md-3" style="color: black; margin-top: 15px; ">
          
-          <select class="form-control" id="sel1" style="font-weight: bold !important;">
-            <option style="font-weight: bold !important;">SORT BY</option>
-            <option>Compare with Brands</option>
-            <option>Compare with Price</option>
-            <option>Compare with Colors</option>
-          
-          </select>
-        </div></div> -->
+          <div class="form-group">
+           
+            <select class="form-control" id="view" style="font-weight: bold !important;">
+              <option selected="" disabled="" style="font-weight: bold !important;">Select View</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+          </div>
+        
+        
+        </div>
+
+        <div class="col-md-1" style="color: black;  "></div>
+      </div>
+    </div>
   </div>
   
-
-
-
-
-
-
   <div class="row products" style="    background-color: white;">
 
       @if($products->count()>0)
@@ -677,7 +632,7 @@ div[class="ws-title"] > span{
 
                <!-- <center> <del style="  color: #252629 !important;">PKR {{ $row->price }}</del></center> -->
                <center> <p style="  color: #db4f45 !important;">PKR {{ $row->price }}</p></center>
-               <center><a href="{{ route('AdviceComparison') }}"> <p style="text-transform: uppercase;  color: #b3b5be !important;">Add to compare</p></a></center>
+               <center><a href="{{ route('AdviceComparison',$row->id) }}"> <p style="text-transform: uppercase;  color: #b3b5be !important;">Add to compare</p></a></center>
 
 
           </div>
@@ -727,7 +682,7 @@ div[class="ws-title"] > span{
    
    
      <p style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     font-size: 13px;   text-align: right; ">
-       We do not flood your inbox, join our social network instead. <a href="#fcb"><img style="    height: 15px; width: 17px;" src="images/headerimg/download-removebg-preview.png" /> </a>   <a href="#twiter"><img style="    height: 20px; width: 20px;" src="images/headerimg/twitter-1722376-1466162-removebg-preview.png"></a><br/>
+       We do not flood your inbox, join our social network instead. <a href="#fcb"><img style="    height: 15px; width: 17px;" src="{{ asset('storage/images/headerimg/download-removebg-preview.png') }}" /> </a>   <a href="#twiter"><img style="    height: 20px; width: 20px;" src="{{ asset('storage/images/headerimg/twitter-1722376-1466162-removebg-preview.png') }}"></a><br/>
        
      </p>
  

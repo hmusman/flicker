@@ -337,7 +337,7 @@ button[id="srchbtnid"]{
 	<style type="text/css">label{ color: black;  }</style>
    <div class="container">
         <div class="sign-in-page">
-            <div class="row">
+            <div class="row" style="margin-bottom: 30px;">
                 <div class="col-md-4 col-sm-6 sign-in" style="color: black;">
                     <h4 class="">Sign in</h4>
                     <p class="">Hello, Welcome to your account.</p>
@@ -354,7 +354,7 @@ button[id="srchbtnid"]{
                     </div>
                     <div class="form-group">
                         <label class="info-title">Password</label>
-                        <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="{{ old('login_password') }}">
+                        <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
                     </div>
                    <!--  <div class="radio outer-xs">
                         <label>

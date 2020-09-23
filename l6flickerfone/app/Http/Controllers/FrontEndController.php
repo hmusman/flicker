@@ -16,4 +16,5 @@ class FrontEndController extends Controller
     	$blogslider = BlogSlider::where('status',1)->get();
     	return view('index',compact(['products','buynewsell','blogslider']));
     } 
+
 }

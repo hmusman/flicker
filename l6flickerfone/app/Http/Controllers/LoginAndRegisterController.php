@@ -128,14 +128,14 @@ class LoginAndRegisterController extends Controller
             {
                 if(Hash::check($request->login_password,$user->password))
                 {
-                   $request->session()->put('user',$user->email);
+                   $request->session()->put('user',$user);
                    // return redirect('/BuyUsedMobilePhones');
                    return redirect('/');
 
                 }
                 else
                 {
-                    return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->only('login_email');
+                    return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->withInput($request->only('login_email'));
                 }
             }
             else
@@ -169,7 +169,7 @@ class LoginAndRegisterController extends Controller
                 }
                 else
                 {
-                     return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->with($request->only('email'));
+                     return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->withInput()->only('email');
                 }
             }
         }

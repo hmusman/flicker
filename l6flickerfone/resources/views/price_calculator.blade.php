@@ -606,12 +606,12 @@ select {
     }
 
 #logoFlickerflone{
-  height: 48px !important;
-    width: 181px !important;
-    margin-left: -17px !important;
-    font-size: 58px;
-   
-
+      height: 65px !important;
+    /* width: 181px !important; */
+    /* margin-left: -17px !important; */
+    /* font-size: 58px; */
+    margin-top: -8px;
+    margin-bottom: -8px;
 }
     
     </style>

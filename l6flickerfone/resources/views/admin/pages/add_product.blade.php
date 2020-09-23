@@ -100,7 +100,7 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
+                                                    <label for="example-text-input" class="col-md-2 col-form-label">Brand</label>
                                                     <div class="col-md-10">
                                                         <select class="form-control" name="brand">
                                                             <option selected="" disabled="">Select Brand</option>
@@ -629,12 +629,26 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="col-md-2 col-form-label"></label>
+                                                    <label class="col-md-2 col-form-label">Battery</label>
                                                     <div class="col-md-10 ">
                                                        <input type="text" name="brief_battery" class="form-control" value="{{ old('brief_battery') }}" placeholder="Enter Battery">
                                                     </div>
                                                 </div>
 
+                                                <div class="form-group row">
+                                                    <label class="col-md-2 col-form-label">Other Detail</label>
+                                                    <div class="col-md-10 " style="margin-top: 9px;">
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" class="custom-control-input" id="customYes" name="detail_check" value="1" checked="">
+                                                            <label class="custom-control-label" for="customYes">Yes</label>
+                                                        </div>
+
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" class="custom-control-input" id="customNo" name="detail_check" value="0">
+                                                            <label class="custom-control-label" for="customNo">No</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                             </div><!-- brief -->
 

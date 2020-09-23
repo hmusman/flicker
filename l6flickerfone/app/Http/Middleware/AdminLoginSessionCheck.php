@@ -15,7 +15,7 @@ class AdminLoginSessionCheck
      */
     public function handle($request, Closure $next)
     {
-         if(empty(\Session::get('admin')))
+        if(empty(\Session::get('admin')))
         {
             return redirect('/AdminLogin');
         }
