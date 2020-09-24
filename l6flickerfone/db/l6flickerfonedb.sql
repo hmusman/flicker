@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2020 at 02:47 PM
+-- Generation Time: Sep 24, 2020 at 02:38 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'adminname', 'admin@gmail.com', NULL, '$2y$10$CkviTJNM0vOITsyCG9Qgiudneu6GN652RLXCo6KZZYW9.nHATS.cK', NULL, '2020-07-22 18:05:30', '2020-07-22 14:15:42');
+(2, 'adminname', 'admin@gmail.com', NULL, '$2y$10$/NsFMW/lXzRn7T26I0q2UuXXeNbXeXJqML1rMZwUhRZwYMTd2trDm', NULL, '2020-07-22 18:05:30', '2020-07-22 14:15:42');
 
 -- --------------------------------------------------------
 
@@ -363,9 +363,7 @@ CREATE TABLE `sell_products` (
 --
 
 INSERT INTO `sell_products` (`id`, `user_id`, `category_id`, `brand_id`, `model`, `color`, `price`, `minor_dent_scratch`, `major_dent_scratch`, `original_accessories_available`, `screen_is_cracked`, `device_box_available`, `device_battery_status`, `status`, `device_status`, `pta`, `city`, `phone`, `img1`, `img2`, `img3`, `img4`, `img5`, `img6`, `img7`, `img8`, `img9`, `img10`, `created_at`, `updated_at`) VALUES
-(2, 25, '1', '3', 'infinix new 7 plus', 'green', '25000', 'no', 'no', 'yes', 'no', 'yes', '60', '0', 'Excellent', 'unapproved', 'lahore', '03013435656', 'admin/images/sellproduct/GKVsUOFfErJ3w8qnOXD3B6gXG8gUvvQPl9PNxHx9.png', 'admin/images/sellproduct/LyZRSsrlDOQWHCEq3TDOYTD9PgF5ur0QQSqAxX5O.png', 'admin/images/sellproduct/QBF17GqGPimPXYsFs6F14gJg1dpnuieROBTuaDmo.png', '', '', '', '', '', '', '', '2020-09-23 04:58:54', '2020-09-23 04:58:54'),
-(3, 25, '1', '1', 'samsung new 7 plus', 'blue', '45600', 'yes', 'no', 'no', 'yes', 'yes', '88', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', 'admin/images/sellproduct/6WKJ5qdXhuQiCJi7TvPwq7ZDU7xTwyV4nkH7n8qd.png', 'admin/images/sellproduct/hEZmw1sY4Uy4tMuAGrRw9oCOc4W5XtLebogrtPZf.png', 'admin/images/sellproduct/6zXNtzs8FwVIXYefIQcp6LHFkkBFAFZX3lvyEgCp.png', '', '', '', '', '', '', '', '2020-09-23 06:49:59', '2020-09-23 06:49:59'),
-(4, 25, '1', '1', 'samsung 8', 'grey', '75400', 'yes', 'no', 'no', 'no', 'no', '89', '0', 'Good', 'approved', 'gujrat', '03051449423', 'admin/images/sellproduct/asAb8wzwbxQ8uJKdJ4nhGXA4P94huD2bsyiDgE6R.png', 'admin/images/sellproduct/uOcTjkuyNx6mRPAZFYs74EafeRobho4Oz0czfml9.png', 'admin/images/sellproduct/tAT7L4p5UutMHB6Uoz5eXCgJqTD2T2zKg00fBO8W.png', '', '', '', '', '', '', '', '2020-09-23 06:58:57', '2020-09-23 06:58:57');
+(21, 27, '1', '1', 'samsung new 7 plus', 'green', '666', 'yes', 'yes', 'yes', 'no', 'no', '97', '0', 'Good', 'approved', 'lahore', '03013435656', '1600948859_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1600948860_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1600948860_37oJwzbbAm9SS4ZJ2IJffVg6UVNJhJC0mW71e5OL.png', '', '', '', '', '', '', '', '2020-09-24 07:01:00', '2020-09-24 07:01:00');
 
 -- --------------------------------------------------------
 
@@ -508,7 +506,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_name`, `username`, `name`, `email`, `company`, `shop`, `phone`, `city`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(25, 'buyer', 'muhammadwaseem', 'MuhammadWaseem', 'waseemulfat961@gmail.com', 'devsbeta', NULL, '03013435656', '18 Hazari', '$2y$10$/NsFMW/lXzRn7T26I0q2UuXXeNbXeXJqML1rMZwUhRZwYMTd2trDm', 1, 'dbkv7U6qgb1tTCbyTtIJwC6ANqPzWShAUGK2Ur6gd9aS5edh3NZ7Gi8S4XTD', '2020-09-19 02:15:16', '2020-09-23 07:17:36');
+(25, 'buyer', 'muhammadwaseem', 'MuhammadWaseem', 'waseemulfat961@gmail.com', 'devsbeta', NULL, '03013435656', '18 Hazari', '$2y$10$/NsFMW/lXzRn7T26I0q2UuXXeNbXeXJqML1rMZwUhRZwYMTd2trDm', 0, 'dbkv7U6qgb1tTCbyTtIJwC6ANqPzWShAUGK2Ur6gd9aS5edh3NZ7Gi8S4XTD', '2020-09-19 02:15:16', '2020-09-24 00:23:24'),
+(27, 'buyer', 'usman', 'usman', 'evkpbbrefazqvzlfzs@tsyefn.com', 'dd', NULL, '1234556', 'Baddin', '$2y$10$92tSKJzzOBmqQXtdeyG8AO6CGyWnV1afOijW/Ad02zuAa89PLwfUq', 1, NULL, '2020-09-24 00:20:50', '2020-09-24 00:23:59'),
+(28, 'buyer', 'usman', 'Muhammad Waseem', 'evkpbbrefazqvzlfzs1@tsyefn.com', 'newcommpany', NULL, '03013435656', '18 Hazari', '$2y$10$k0fBa9EBP4OyQ7bUpT4WfuIC7pvydQyXlEv/dVAq5u0woZnXqFb1i', 1, NULL, '2020-09-24 00:21:47', '2020-09-24 00:23:48');
 
 -- --------------------------------------------------------
 
@@ -738,7 +738,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sell_products`
 --
 ALTER TABLE `sell_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `sma_products`
@@ -750,7 +750,7 @@ ALTER TABLE `sma_products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `variations`
