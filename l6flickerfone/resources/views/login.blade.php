@@ -349,7 +349,7 @@ button[id="srchbtnid"]{
                     <form action="/LoginSession" class="register-form outer-top-xs"  method="post" accept-charset="utf-8">
                     	@csrf
                     <div class="form-group">
-                        <label class="info-title">Username/Email</label>
+                        <label class="info-title">Email</label>
                         <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
                     </div>
                     <div class="form-group">

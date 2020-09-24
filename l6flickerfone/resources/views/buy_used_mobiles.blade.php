@@ -1288,16 +1288,16 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       <div style="width: 100%;" id="sellProducts">
           @if($products->count()>0)
             @foreach($products as $row)
-                @php $img1 = 'storage/'.$row->img1 @endphp
-                @php $img2 = 'storage/'.$row->img2 @endphp
-                @php $img3 = 'storage/'.$row->img3 @endphp
+                @php $img1 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img1 @endphp
+                @php $img2 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img2 @endphp
+                @php $img3 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img3 @endphp
                 <div style="width: 100%; margin-top: 30px; float: left;">
                     <div style="width: 30%; float: left;">
                 
                         <div class="autoplayFeatures">
-                            <img src="{{ asset($img1) }}" alt="Trulli" style="width: 100%; height: 312px !important;">
-                            <img src="{{ asset($img2) }}" alt="Trulli" style="width: 100%; height: 312px !important;">
-                            <img src="{{ asset($img3) }}" alt="Trulli" style="width: 100%; height: 312px !important;">
+                            <img src="{{ asset($img1) }}" alt="Trulli" >
+                            <img src="{{ asset($img2) }}" alt="Trulli">
+                            <img src="{{ asset($img3) }}" alt="Trulli">
                         </div>
                       
                       </div>

@@ -169,7 +169,7 @@ class LoginAndRegisterController extends Controller
                 }
                 else
                 {
-                     return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->withInput()->only('email');
+                     return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->withInput($request->only('login_email'));
                 }
             }
         }

@@ -13,8 +13,8 @@
 	@foreach($product_list as $product)
 		@php $img = 'storage/'.$product->image @endphp
 		
-		<li>
-          <div class="row">
+		<li onclick="singleProduct('{{ $product->id }}','{{ $hide }}');" style="cursor: pointer;border:1px solid;width: 98%;margin-left: 1%;margin-bottom: 5px;">
+          <div class="row" style="margin-top: 3px;">
             <div class="col-md-2">
               <div id="setwidthfirst" style="  ">
                 <img src="{{ asset($img) }}"
@@ -23,12 +23,12 @@
             </div>
             <div class="col-md-10">
               <div id="setwidthsecond" style="  ">
-                <a type="button" onclick="singleProduct('{{ $product->id }}','{{ $hide }}');">{{ $product->name }}
+                <a type="button" style="margin-top: 20px;" onclick="singleProduct('{{ $product->id }}','{{ $hide }}');">{{ $product->name }}
                 </a>
               </div>
             </div>
           </div>
-        </li>
+  </li>
 		
 	@endforeach
 
