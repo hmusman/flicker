@@ -614,7 +614,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 <body>
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-  @include('includes.header');
+  @include('includes.header')
   @if($buynewsell->count()>0)
     
     <section>
@@ -832,7 +832,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
     <hr id="resphrOnmob" style="width: 43%;
     background-color: black;
-    margin-top: -35px;" />
+   />
   </div>
 
   <p >
