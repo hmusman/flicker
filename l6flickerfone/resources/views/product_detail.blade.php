@@ -478,8 +478,23 @@ img[src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).pn
 
 
 
-
 }
+
+
+#myimage{
+  border: 2px #afa3a3 solid !important;
+}
+
+
+.colr{
+color: #0071e3;
+font-size: 20px !important;
+}
+
+.TableStyl{
+  color: #8c8585fc !important;
+}
+
 </style>
 
 
@@ -632,7 +647,7 @@ img[src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).pn
 
 @if($product->variation_colors->count()>0)
 
-	<p style="font-weight: bold;">Color <font style="color: red;"> *</font></p>
+	<p style="font-weight: bold;">Color <font style="" class="colr"> *</font></p>
 
 	<div style="height: 100px; width: 100%;">
 		@php $productColor = '' @endphp
@@ -657,7 +672,7 @@ img[src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).pn
 
 
 
-<p style="font-weight: bold;">Storage <font style="color: red;"> *</font></p>
+<p style="font-weight: bold;">Storage <font style="" class="colr"> *</font></p>
 
 
 <div class="row">
@@ -747,12 +762,12 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 	            <div class="row"  style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
 	              <div class="col-md-2">
-	               <font style="font-size: 24px;
+	               <font style="font-size: 20px;
 	              
-	               font-weight: 600; color: red;"> NETWORK</font>
+	               font-weight: 600; " class="colr"> NETWORK</font>
 	              </div>
 	              <div class="col-md-2" style="color: black; font-size: 20px" >Technology</div>
-	              <div class="col-md-8" style="color: black; font-size: 20px">GSM / SDMA /HSPA / EVDO / LTE</div>
+	              <div class="col-md-8 TableStyl" style="color: black; font-size: 20px">GSM / SDMA /HSPA / EVDO / LTE</div>
 	            </div>
 
 
@@ -761,7 +776,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
 	            <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
-	              	<div class="col-md-2"><font style="font-size: 24px;font-weight: 600; color: red;"> LAUNCH</font></div>
+	              	<div class="col-md-2"><font style="font-size: 24px;font-weight: 600; " class="colr"> LAUNCH</font></div>
 	              	<div class="col-md-2" style="color: black; font-size: 20px" >
 	              		@if($product->launch_announced !='')
 		                	<p  style="border-bottom: 1px #efefef solid;     width: 118%;">Announced</p>
@@ -772,11 +787,11 @@ margin-left: 15px;">{{ $product->price }}</font>
 	            	</div>
 	              	<div class="col-md-8" style="color: black; font-size: 20px">
 	                	@if($product->launch_announced !='')
-	                		<p style="border-bottom: 1px #efefef solid;">{{ date('Y',strtotime($product->launch_announced)) }},
+	                		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ date('Y',strtotime($product->launch_announced)) }},
 							{{ date('F',strtotime($product->launch_announced)) }} {{ date('d',strtotime($product->launch_announced)) }} </p>
 	                	@endif
 	                	@if($product->launch_status !='')
-	                 		<p style="margin-top: -10px;">{{ $product->launch_status }} </p>
+	                 		<p class="TableStyl" style="margin-top: -10px;">{{ $product->launch_status }} </p>
 	                 	@endif
 	                 </div>
 	            </div>
@@ -789,14 +804,14 @@ margin-left: 15px;">{{ $product->price }}</font>
 	              <div class="col-md-2">
 	               <font style="font-size: 24px;
 	              
-	               font-weight: 600; color: red;"> BODY</font>
+	               font-weight: 600; " class="colr"> BODY</font>
 	              </div>
 	              <div class="col-md-2" style="color: black; font-size: 20px" >
 	                @if($product->body_dimension !='')
 	                	<p  style="border-bottom: 1px #efefef solid;      width: 118%;">Dimensions</p>
 	                @endif
 	                @if($product->body_weight !='')
-	                	<p class="tblrowbottmstl"> Weight</p>
+	                	<p  class="tblrowbottmstl"> Weight</p>
 	                @endif
 	                @if($product->body_build !='')
 	                	<p class="tblrowbottmstl"> Build</p>
@@ -808,16 +823,16 @@ margin-left: 15px;">{{ $product->price }}</font>
 	              </div>
 	              <div class="col-md-8" style="color: black; font-size: 20px">
 	                @if($product->body_dimension !='')
-	                	<p style="border-bottom: 1px #efefef solid;">{{ $product->body_dimension }}</p>
+	                	<p class="TableStyl"style="border-bottom: 1px #efefef solid;">{{ $product->body_dimension }}</p>
 	                @endif
 	                @if($product->body_weight !='')
-	                	<p class="tblrowbottmstl2">{{ $product->body_weight }}</p>
+	                	<p class="tblrowbottmstl2 TableStyl">{{ $product->body_weight }}</p>
 	                @endif
 	                 @if($product->body_build!='')
-	                	<p class="tblrowbottmstl2">{{ $product->body_build }}</p>
+	                	<p class="tblrowbottmstl2 TableStyl">{{ $product->body_build }}</p>
 	                @endif
 	                 @if($product->body_sim !='')
-	                	<p class="tblrowbottmstl2">{{ $product->body_sim }}</p>
+	                	<p class="tblrowbottmstl2 TableStyl">{{ $product->body_sim }}</p>
 	                @endif
 
 	                </div>
@@ -830,7 +845,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                   <div class="col-md-2">
                    <font style="font-size: 24px;
                   
-                   font-weight: 600; color: red;"> DISPLAY</font>
+                   font-weight: 600; " class="colr"> DISPLAY</font>
                   </div>
                   <div class="col-md-2" style="color: black; font-size: 20px" >
                     	@if($product->display_type !='')
@@ -850,16 +865,16 @@ margin-left: 15px;">{{ $product->price }}</font>
                   </div>
                   <div class="col-md-8" style="color: black; font-size: 20px">
                     	@if($product->display_type !='')
-                    		<p style="border-bottom: 1px #efefef solid;">{{ $product->display_type }}</p>
+                    		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->display_type }}</p>
                     	@endif
                     	@if($product->display_size !='')
-                    		<p class="tblrowbottmstl2">{{ $product->display_size }}</p>
+                    		<p class="tblrowbottmstl2 TableStyl">{{ $product->display_size }}</p>
                     	@endif
                     	@if($product->display_resolution !='')
-                    		<p class="tblrowbottmstl2">{{ $product->display_resolution }}</p>
+                    		<p class="tblrowbottmstl2 TableStyl">{{ $product->display_resolution }}</p>
                     	@endif
                      	@if($product->display_protection !='')
-                    		<p class="tblrowbottmstl2">{{ $product->display_protection }}</p>
+                    		<p class="tblrowbottmstl2 TableStyl">{{ $product->display_protection }}</p>
                     	@endif
                     </div>
                    
@@ -870,7 +885,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;"> PLATEFORM</font>
+                       font-weight: 600; " class="colr"> PLATEFORM</font>
                       </div>
                       <div class="col-md-2" style="color: black; font-size: 20px" >
                         @if($product->platform_os !='')
@@ -891,16 +906,16 @@ margin-left: 15px;">{{ $product->price }}</font>
                       </div>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
 	                        @if($product->platform_os !='')
-	                        	<p style="border-bottom: 1px #efefef solid;">{{ $product->platform_os }}</p>
+	                        	<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->platform_os }}</p>
 	                        @endif
                         	@if($product->platform_chipset !='')
-	                        	<p class="tblrowbottmstl2">{{ $product->platform_chipset }}</p>
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->platform_chipset }}</p>
 	                        @endif
 	                        @if($product->platform_cpu !='')
-	                        	<p class="tblrowbottmstl2">{{ $product->platform_cpu }}</p>
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->platform_cpu }}</p>
 	                        @endif
 	                        @if($product->platform_gpu !='')
-	                        	<p class="tblrowbottmstl2">{{ $product->platform_gpu }}</p>
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->platform_gpu }}</p>
 	                        @endif
                        
                         </div>
@@ -914,7 +929,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;"> MEMORY</font>
+                       font-weight: 600; " class="colr"> MEMORY</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
                         @if($product->memory_card_slot !='')
@@ -931,13 +946,13 @@ margin-left: 15px;">{{ $product->price }}</font>
                         <div class="col-md-8" style="color: black; font-size: 20px">
                         
                          	@if($product->memory_card_slot !='')
-	                        	<p style="border-bottom: 1px #efefef solid;">{{ $product->memory_card_slot }}</p>
+	                        	<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->memory_card_slot }}</p>
 	                        @endif
 	                        @if($product->memory_ram !='')
-	                        	<p class="tblrowbottmstl2">{{ $product->memory_ram }}</p>
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->memory_ram }}</p>
 	                        @endif
 	                        @if($product->memory_storage !='')
-	                        	<p class="tblrowbottmstl2">{{ $product->memory_storage }}</p>
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->memory_storage }}</p>
 	                        @endif
                         
                         </div>
@@ -948,7 +963,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;"> MAIN CAMERA</font>
+                       font-weight: 600; " class="colr"> MAIN CAMERA</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
 	                      	@if($product->main_type !='' && $product->main_type_value !='')
@@ -963,13 +978,13 @@ margin-left: 15px;">{{ $product->price }}</font>
                       	</div>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
                         	@if($product->main_type !='' && $product->main_type_value !='')
-                        		<p style="border-bottom: 1px #efefef solid;">{{ $product->main_type_value }}</p>
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->main_type_value }}</p>
                         	@endif
                         	@if($product->main_feature !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->main_feature }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->main_feature }} </p>
                         	@endif
                         	@if($product->main_video !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->main_video }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->main_video }} </p>
                         	@endif
                         </div>
                     </div>
@@ -978,7 +993,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;"> SELFIE CAMERA</font>
+                       font-weight: 600; " class="colr"> SELFIE CAMERA</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
 	                      	@if($product->selfie_type !='' && $product->selfie_type_value !='')
@@ -993,13 +1008,13 @@ margin-left: 15px;">{{ $product->price }}</font>
                       	</div>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
                         	@if($product->selfie_type !='' && $product->selfie_type_value !='')
-                        		<p style="border-bottom: 1px #efefef solid;">{{ $product->selfie_type_value }}</p>
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->selfie_type_value }}</p>
                         	@endif
                         	@if($product->selfie_feature !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->selfie_feature }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->selfie_feature }} </p>
                         	@endif
                         	@if($product->selfie_video !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->selfie_video }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->selfie_video }} </p>
                         	@endif
                         </div>
                     </div>
@@ -1008,7 +1023,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;"> SOUND</font>
+                       font-weight: 600; " class="colr"> SOUND</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
 	                      	@if($product->sound_loudspeaker !='')
@@ -1023,13 +1038,13 @@ margin-left: 15px;">{{ $product->price }}</font>
                       	</div>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
                         	@if($product->sound_loudspeaker !='')
-                        		<p style="border-bottom: 1px #efefef solid;">{{ $product->sound_loudspeaker }}</p>
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->sound_loudspeaker }}</p>
                         	@endif
                         	@if($product->sound_jack !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->sound_jack }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->sound_jack }} </p>
                         	@endif
                         	@if($product->sound_mic !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->sound_mic }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->sound_mic }} </p>
                         	@endif
                         </div>
                     </div>
@@ -1038,7 +1053,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;">COMMS</font>
+                       font-weight: 600; " class="colr">COMMS</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
 	                      	@if($product->comms_wlan !='')
@@ -1056,16 +1071,16 @@ margin-left: 15px;">{{ $product->price }}</font>
                       	</div>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
                         	@if($product->comms_wlan !='')
-                        		<p style="border-bottom: 1px #efefef solid;">{{ $product->comms_wlan }}</p>
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->comms_wlan }}</p>
                         	@endif
                         	@if($product->bluetooth !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->bluetooth }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->bluetooth }} </p>
                         	@endif
                         	@if($product->comms_gps !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->comms_gps }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->comms_gps }} </p>
                         	@endif
                         	@if($product->comms_nfc !='')
-	                      		 <p class="tblrowbottmst2">{{ $product->comms_nfc }}</p>
+	                      		 <p class="tblrowbottmst2 TableStyl">{{ $product->comms_nfc }}</p>
 	                      	@endif
                         </div>
 
@@ -1075,7 +1090,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;">FEATURES</font>
+                       font-weight: 600; " class="colr">FEATURES</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
 	                      	@if($product->feature_sensor !='')
@@ -1084,7 +1099,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       	</div>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
                         	@if($product->feature_sensor !='')
-                        		<p style="border-bottom: 1px #efefef solid;">{{ $product->feature_sensor }}</p>
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->feature_sensor }}</p>
                         	@endif
                         </div>
 
@@ -1094,7 +1109,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;">BATTERY</font>
+                       font-weight: 600; " class="colr">BATTERY</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
 	                      	@if($product->battery_status !='')
@@ -1109,13 +1124,13 @@ margin-left: 15px;">{{ $product->price }}</font>
                       	</div>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
                         	@if($product->battery_status !='')
-                        		<p style="border-bottom: 1px #efefef solid;">{{ $product->battery_status }}</p>
+                        		<p  class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->battery_status }}</p>
                         	@endif
                         	@if($product->battery_talk_time !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->battery_talk_time }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->battery_talk_time }} </p>
                         	@endif
                         	@if($product->battery_music !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->battery_music }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->battery_music }} </p>
                         	@endif
                         </div>
 
@@ -1125,7 +1140,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       <div class="col-md-2">
                        <font style="font-size: 24px;
                       
-                       font-weight: 600; color: red;">MISC</font>
+                       font-weight: 600; " class="colr">MISC</font>
                       </div>
                       	<div class="col-md-2" style="color: black; font-size: 20px" >
                       		@if($product->variation_colors->count()>0)
@@ -1138,7 +1153,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                       	<div class="col-md-8" style="color: black; font-size: 20px">
                         	@if($product->variation_colors->count()>0)
                         		@php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
-                        		<p style="border-bottom: 1px #efefef solid;">
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">
                         			@foreach($product->variation_colors as $color)
           								  		@php $i++; @endphp
           								  		@if($colorName !=$color->color)
@@ -1150,7 +1165,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                         		</p>
                         	@endif
                         	@if($product->price !='')
-                        		 <p class="tblrowbottmstl2">{{ $product->price }} </p>
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->price }} </p>
                         	@endif
                         	
                         </div>
@@ -1252,7 +1267,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 
             <div   style=" height: 400px;  border: 1px #c4c0c0 solid;   margin-top: 17px;  background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
             
-            <div style="height: 20%; width: 100%; background-color: #e5817a; ">
+            <div style="height: 20%; width: 100%; background-image: linear-gradient(to top right, #e5817a, #f0f0f0); ">
             
               <div  style="  width: 8% ;height: 100%;  float: left; text-align: center;"><p  id="Sresponsive" style="width: 100%;    font-size: 3.2vw;  color: white;   ">S</p> </div>
               <div style="  width: 92% ;height: 100%; background-color: #f0f0f0; float: left;">
@@ -1264,7 +1279,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                   <div id="setSobercatOnMob" style="height: 100%; width: 20%;  float: left; color: black;    font-size: 2vw;    font-weight: 700;">
                     
                     
-                    <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p style="width: 100%;">SoberCat </p></div>
+                    <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p style="width: 100%;  font-weight: 400;">SoberCat </p></div>
                     <div style="height: 100%; width: 8%;  float: left;">
                       <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" />
                     
@@ -1282,7 +1297,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                     20 Aug 2020 
                     <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
                     0Cp  -->
-                    <div style="height: 100%; width: 10%; float: left;"><img   style="width: 96%; height: 32px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
+                    <div style="height: 100%; width: 10%; float: left;"><img   style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
 
                     <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.7vw;">20 Aug 2020</p></div>
 
@@ -1299,7 +1314,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                 <div style="height: 40%; width: 100%; background-color: #ffffff;text-decoration: underline; ">
                   
                 <div style="width: 10%; height: 100%;float: left; text-align: right; ">
-                  <img  style="width: 35%;  height: 21px;   margin-top: 10px;" src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).png')}}" /> 
+                  <img  style="width: 35%;  height: 16px;   margin-top: 10px;" src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).png')}}" /> 
                 </div>
 
 
@@ -1348,7 +1363,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
                 <div style="height: 30%; width: 100%; background-color: #ffffff; ">
-              <p style="    font-size: 2vw;
+              <p style="    font-size: 1.7vw;
               font-weight: 500;">
  Turning off truetons should solve, with true tones on the display looks yellowwish...
               </p>
@@ -1412,7 +1427,7 @@ margin-left: 15px;">{{ $product->price }}</font>
           
                       <div   style=" height: 400px;  border: 1px #c4c0c0 solid;   margin-top: 17px;  background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
                       
-                      <div style="height: 20%; width: 100%; background-color: #e5817a; ">
+                      <div style="height: 20%; width: 100%; background-image: linear-gradient(to top right, #e5817a, #f0f0f0);">
                       
                         <div  style="  width: 8% ;height: 100%;  float: left; text-align: center;"><p  id="Sresponsive" style="width: 100%;    font-size: 3.2vw;  color: white;   ">T</p> </div>
                         <div style="  width: 92% ;height: 100%; background-color: #f0f0f0; float: left;">
@@ -1424,7 +1439,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                             <div id="setSobercatOnMob" style="height: 100%; width: 20%;  float: left; color: black;    font-size: 2vw;    font-weight: 700;">
                               
                               
-                              <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p style="width: 100%;">SoberCat </p></div>
+                              <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p style="width: 100%;  font-weight: 400;">SoberCat </p></div>
                               <div style="height: 100%; width: 8%;  float: left;">
                                 <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" />
                               
@@ -1442,7 +1457,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                               20 Aug 2020 
                               <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
                               0Cp  -->
-                              <div style="height: 100%; width: 10%; float: left;"><img   style="width: 96%; height: 32px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
+                              <div style="height: 100%; width: 10%; float: left;"><img   style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
           
                               <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.7vw;">20 Aug 2020</p></div>
           
@@ -1508,7 +1523,7 @@ margin-left: 15px;">{{ $product->price }}</font>
           
           
                           <div style="height: 30%; width: 100%; background-color: #ffffff; ">
-                        <p style="    font-size: 2vw;
+                        <p style="    font-size: 1.7vw;
                         font-weight: 500;">
            Turning off truetons should solve, with true tones on the display looks yellowwish...
                         </p>

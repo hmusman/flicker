@@ -578,23 +578,7 @@ div[class="slick-slide slick-current slick-active"]{
     margin-left: 23px !important;
   }
 }
-/* @media (max-width: 411px){
-  ul[class="slick-dots"]{
-    margin-top: 9px !important;
-  }
 
-
-  #slickblogimg {
-    width: 336px !important;
-}
-
-div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"] {
-   
-    top: 179px !important;
-  
-    width: 93% !important;
-}
-} */
 </style>
 
 
@@ -612,9 +596,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 <body>
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-  @include('includes.header');
-
-
+  @include('includes.header')
   @if($buynewsell->count()>0)
     
     <section>
@@ -832,7 +814,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
     <hr id="resphrOnmob" style="width: 43%;
     background-color: black;
-    margin-top: -35px;" />
+ " />
   </div>
 
   <p >
@@ -868,7 +850,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 			      		@foreach($products as $product)
 			      			@php $img = 'storage/'.$product->image @endphp
 			      			<figure>
-					            <img src="{{ asset($img) }}" alt="Trulli" style="width: 100%; height: 250px;">
+					            <img src="{{ asset($img) }}" alt="Trulli" style="width: 100%; ">
 					            <figcaption>
 					            
 						            <div class="rightbox" style="height: 75px;margin-top: 19px;">

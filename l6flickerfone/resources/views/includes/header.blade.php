@@ -5,11 +5,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Buy</a>
-        <a class="nav-item nav-link" href="#">Sell</a>
-        <a class="nav-item nav-link " href="#">New</a> -->
-
 
 
         <script type="text/javascript">
@@ -34,25 +29,17 @@
           <i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
 
         @endif
-
-       
-        <!-- <span id="reglogin" onclick="reglogin();" style="cursor: pointer;position: absolute;
-        right: 46px;
-        bottom: 25px;color: white !important; border-bottom: 1px white solid  " align="right"    >
-          <i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
- -->
-
       </div>
     </div>
   </nav>
   
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important;
-  height: 35px;
-  border-top: 1px #4c4a575c solid !important;
-  border-bottom: 1px #4c4a575c solid !important;">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important; height: 35px; border-top: 1px #4c4a575c solid !important; border-bottom: 1px #4c4a575c solid !important;">
+   
+  
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
     
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
@@ -69,7 +56,7 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
+          style="padding: 8px 30px 6px 30px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
             <ul class="dropdown-menu fade-up">
               <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
             <li><a class="dropdown-item" href="#"> <center>GOOGLE</center></a></li>
@@ -101,7 +88,7 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> WEAREABLES  </a>
+          style="padding: 8px 30px 6px 30px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> WEAREABLES  </a>
             <ul class="dropdown-menu fade-up">
               <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
             <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
@@ -186,10 +173,8 @@
         "> Price Calculator  </a>
            
         </li>
-
-
-
-        
-      </ul>
+  </ul>
     </div>
   </nav>
+
+  

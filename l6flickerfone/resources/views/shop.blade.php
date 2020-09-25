@@ -453,6 +453,14 @@ div[class="ws-title"] > span{
 #sel1:focus{
   outline: none !important;
 }
+
+.HoveStylAddComp:hover{
+color: #0071e3 !important;
+}
+
+
+
+
 </style>
 
 <body>
@@ -628,11 +636,11 @@ div[class="ws-title"] > span{
                <center> <p style="
               
                 text-transform: uppercase; font-weight: bold; color: black !important;">{{ ucwords($row->name) }}</p></center>
-               <center> <p style="  margin-top: -17px !important;color: #b3b5be !important;">It is in your Pocket</p></center>
+               <center> <p style="  margin-top: -17px !important;color: #b3b5be;">It is in your Pocket</p></center>
 
                <!-- <center> <del style="  color: #252629 !important;">PKR {{ $row->price }}</del></center> -->
                <center> <p style="  color: #db4f45 !important;">PKR {{ $row->price }}</p></center>
-               <center><a href="{{ route('AdviceComparison',$row->id) }}"> <p style="text-transform: uppercase;  color: #b3b5be !important;">Add to compare</p></a></center>
+               <center><a href="{{ route('AdviceComparison',$row->id) }}"> <p class="HoveStylAddComp" style="text-transform: uppercase;  color: #b3b5be">Add to compare</p></a></center>
 
 
           </div>
