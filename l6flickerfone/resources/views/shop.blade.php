@@ -629,7 +629,7 @@ color: #0071e3 !important;
 
       @if($products->count()>0)
         @foreach($products as $row)
-          @php $img = 'storage/'.$row->image @endphp
+          @php $img = '/storage/admin/images/product/thumbnail/215_'.$row->image @endphp
           <div class="col-md-4" style="border-right: 1px #f2f2f2 solid;border-bottom: 1px #f2f2f2 solid;" >
     
                <center> <img src="{{ asset($img) }}" style="height: 215px;margin-top: 40px;" /></center>
