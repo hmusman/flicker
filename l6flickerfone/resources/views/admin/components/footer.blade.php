@@ -81,7 +81,7 @@
         <!-- datepicker -->
         <script src="{{asset('Green/assets/libs/air-datepicker/js/datepicker.min.js')}}"></script>
         <script src="{{asset('Green/assets/libs/air-datepicker/js/i18n/datepicker.en.js')}}"></script>
-        
+        <script type="text/javascript" src="{{ asset('assets\libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
         <script src="{{asset('Green/assets/js/app.js')}}"></script>
         <script type="text/javascript">
@@ -90,6 +90,25 @@
                     $('.mytabs').removeClass('active');
                     $(this).addClass('active');
                 });
+
+
+                 $('.user_active').click(function(){
+                    
+                    Swal.fire({
+                      title: 'Are you sure?',
+                      text: "You won't be able to revert this!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                      if (result.value) {
+                        alert("ok");
+                      }
+                });
+
+        });
             });
         </script>
     </body>

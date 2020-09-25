@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Category;
 use App\Brand;
+use Image;
 class SellProductController extends Controller
 {
     
@@ -30,7 +31,38 @@ class SellProductController extends Controller
         return view('sell',compact(['categories','brands']));
     }
 
-   
+   private function ResizeImage($img)
+   {
+        $fileNameWithExtension = $img->getClientOriginalName();
+        $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
+        $ext1 = $img->getClientOriginalExtension();
+        $time = time();
+        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $img->storeAs('public/admin/images/sellproduct', $filename1);
+        $img->storeAs('public/admin/images/sellproduct/thumbnail', $filename1);
+        $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
+        Image::make($thumbnailpath)->resize(175,250)->save(public_path('storage/admin/images/sellproduct/thumbnail/175_'.$filename1));
+        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
+        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
+        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        return $filename1;
+   }
+
+   private function ResizeImageOther($img)
+   {
+        $fileNameWithExtension = $img->getClientOriginalName();
+        $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
+        $ext1 = $img->getClientOriginalExtension();
+        $time = time();
+        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $img->storeAs('public/admin/images/sellproduct', $filename1);
+        $img->storeAs('public/admin/images/sellproduct/thumbnail', $filename1);
+        $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
+        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
+        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
+        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        return $filename1;
+   }
     public function store(Request $request)
     {
         $validations =Validator::make($request->all(),[
@@ -46,9 +78,9 @@ class SellProductController extends Controller
             'screen'=>'required',
             'device'=>'required',
             'battery'=>'required',
-            'image1'=>'required',
-            'image2'=>'required',
-            'image3'=>'required',
+            'image1'=>'required|mimes:png,jpg,jpeg',
+            'image2'=>'required|mimes:png,jpg,jpeg',
+            'image3'=>'required|mimes:png,jpg,jpeg',
             'pta'=>'required',
             'city'=>'required'
         ]);
@@ -60,30 +92,12 @@ class SellProductController extends Controller
         {
             if($request->hasFile('image1'))
             {
-                $ext1 = $request->file('image1')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename1= $request->file('image1')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename1 = $this->ResizeImage($request->file('image1'));
             }
             
             if($request->hasFile('image2'))
             {
-                $ext1 = $request->file('image2')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename2= $request->file('image2')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage2'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename2 = $this->ResizeImageOther($request->file('image2'));
             }
             else
             {
@@ -93,16 +107,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image3'))
             {
-                $ext1 = $request->file('image3')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename3= $request->file('image3')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename3 = $this->ResizeImageOther($request->file('image3'));
             }
             else
             {
@@ -112,16 +117,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image4'))
             {
-                $ext1 = $request->file('image4')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename4= $request->file('image4')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage4'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename4 = $this->ResizeImageOther($request->file('image4'));
             }
             else
             {
@@ -131,16 +127,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image5'))
             {
-                $ext1 = $request->file('image5')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename5= $request->file('image5')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage5'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+               $filename5 = $this->ResizeImageOther($request->file('image5'));
             }
             else
             {
@@ -150,16 +137,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image6'))
             {
-                $ext1 = $request->file('image6')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename6= $request->file('image6')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage6'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename6 = $this->ResizeImageOther($request->file('image6'));
             }
             else
             {
@@ -170,16 +148,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image7'))
             {
-                $ext1 = $request->file('image7')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename7= $request->file('image7')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage7'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+               $filename7 = $this->ResizeImageOther($request->file('image7'));
             }
             else
             {
@@ -188,16 +157,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image8'))
             {
-                $ext1 = $request->file('image8')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename8= $request->file('image8')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage8'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename8 = $this->ResizeImageOther($request->file('image8'));
             }
             else
             {
@@ -206,16 +166,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image9'))
             {
-                $ext1 = $request->file('image9')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename9= $request->file('image9')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage9'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename9 = $this->ResizeImageOther($request->file('image9'));
             }
             else
             {
@@ -224,16 +175,7 @@ class SellProductController extends Controller
 
             if($request->hasFile('image10'))
             {
-                $ext1 = $request->file('image10')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename10= $request->file('image10')->store('admin/images/sellproduct','public');
-                }
-                else
-                {
-
-                     return back()->withErrors(['invalidImage10'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                $filename10 = $this->ResizeImageOther($request->file('image10'));
             }
             else
             {
