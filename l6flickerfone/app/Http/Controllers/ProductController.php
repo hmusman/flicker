@@ -10,6 +10,7 @@ use App\Brand;
 use App\ColorVariation;
 use Session;
 use DB;
+use Image;
 class ProductController extends Controller
 {
    
@@ -34,6 +35,38 @@ class ProductController extends Controller
         return view('admin.pages.add_product',compact(['categories','brands']));
     }
 
+    private function ResizeImage($img)
+    {
+        $fileNameWithExtension = $img->getClientOriginalName();
+        $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
+        $ext1 = $img->getClientOriginalExtension();
+        $time = time();
+        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $img->storeAs('public/admin/images/product', $filename1);
+        $img->storeAs('public/admin/images/product/thumbnail', $filename1);
+        $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
+        Image::make($thumbnailpath)->resize(175,250)->save(public_path('storage/admin/images/product/thumbnail/175_'.$filename1));
+        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
+        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
+        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
+        return $filename1;
+    }
+
+    private function ResizeImageOther($img)
+    {
+        $fileNameWithExtension = $img->getClientOriginalName();
+        $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
+        $ext1 = $img->getClientOriginalExtension();
+        $time = time();
+        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $img->storeAs('public/admin/images/product', $filename1);
+        $img->storeAs('public/admin/images/product/thumbnail', $filename1);
+        $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
+        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
+        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
+        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
+        return $filename1;
+    }
     
     public function store(Request $request)
     {
@@ -47,9 +80,9 @@ class ProductController extends Controller
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
             'description'=>'required',
-            'image1'=>'required',
-            'image2'=>'required',
-            'image3'=>'required'
+            'image1'=>'required|mimes:png,jpg,jpeg',
+            'image2'=>'required|mimes:png,jpg,jpeg',
+            'image3'=>'required|mimes:png,jpg,jpeg'
         ]);
 
         if($validations->fails())
@@ -58,21 +91,24 @@ class ProductController extends Controller
         }
         else
         {
-            $ext1 = $request->file('image1')->extension();
-            $ext2 = $request->file('image2')->extension();
-            $ext3 = $request->file('image3')->extension();
-            // $ext4 = $request->file('video')->extension();
-            if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg') 
-            { $filename1= $request->file('image1')->store('admin/images/product','public'); }
-            else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+            // $ext1 = $request->file('image1')->extension();
+            // $ext2 = $request->file('image2')->extension();
+            // $ext3 = $request->file('image3')->extension();
+            // // $ext4 = $request->file('video')->extension();
+            // if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg') 
+            // { $filename1= $request->file('image1')->store('admin/images/product','public'); }
+            // else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
 
-            if ($ext2=='png' || $ext2=='jpg' || $ext2=='jpeg') 
-            { $filename2= $request->file('image2')->store('admin/images/product','public'); }
-            else{ return back()->withErrors(['invalidImage2'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+            // if ($ext2=='png' || $ext2=='jpg' || $ext2=='jpeg') 
+            // { $filename2= $request->file('image2')->store('admin/images/product','public'); }
+            // else{ return back()->withErrors(['invalidImage2'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
 
-            if ($ext3=='png' || $ext3=='jpg' || $ext3=='jpeg') 
-            { $filename3= $request->file('image3')->store('admin/images/product','public'); }
-            else{ return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+            // if ($ext3=='png' || $ext3=='jpg' || $ext3=='jpeg') 
+            // { $filename3= $request->file('image3')->store('admin/images/product','public'); }
+            // else{ return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+            $filename1 = $this->ResizeImage($request->file('image1'));
+            $filename2 = $this->ResizeImageOther($request->file('image2'));
+            $filename3 = $this->ResizeImageOther($request->file('image3'));
 
             if(Product::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
             {
@@ -286,7 +322,10 @@ class ProductController extends Controller
             'color'=>'required',
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
-            'description'=>'required'
+            'description'=>'required',
+            'image1'=>'mimes:png,jpg,jpeg',
+            'image2'=>'mimes:png,jpg,jpeg',
+            'image3'=>'mimes:png,jpg,jpeg'
         ]);
 
         if($validations->fails())
@@ -297,16 +336,17 @@ class ProductController extends Controller
         {
             if($request->hasFile('image1'))
             {
-                $ext1 = $request->file('image1')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename1= $request->file('image1')->store('admin/images/product','public');
-                }
-                else
-                {
+                $filename1 = $this->ResizeImage($request->file('image1'));
+                // $ext1 = $request->file('image1')->extension();
+                // if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
+                // {
+                //     $filename1= $request->file('image1')->store('admin/images/product','public');
+                // }
+                // else
+                // {
 
-                     return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                //      return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                // }
             }
             else
             {
@@ -315,16 +355,17 @@ class ProductController extends Controller
 
             if($request->hasFile('image2'))
             {
-                $ext2 = $request->file('image2')->extension();
-                if ($ext2=='png' || $ext2=='jpg' || $ext2=='jpeg')
-                {
-                    $filename2= $request->file('image2')->store('admin/images/product','public');
-                }
-                else
-                {
+                $filename2 = $this->ResizeImageOther($request->file('image2'));
+                // $ext2 = $request->file('image2')->extension();
+                // if ($ext2=='png' || $ext2=='jpg' || $ext2=='jpeg')
+                // {
+                //     $filename2= $request->file('image2')->store('admin/images/product','public');
+                // }
+                // else
+                // {
 
-                     return back()->withErrors(['invalidImage2'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                //      return back()->withErrors(['invalidImage2'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                // }
             }
             else
             {
@@ -333,16 +374,17 @@ class ProductController extends Controller
 
             if($request->hasFile('image3'))
             {
-                $ext3 = $request->file('image3')->extension();
-                if ($ext3=='png' || $ext3=='jpg' || $ext3=='jpeg')
-                {
-                    $filename3= $request->file('image3')->store('admin/images/product','public');
-                }
-                else
-                {
+                $filename3 = $this->ResizeImageOther($request->file('image3'));
+                // $ext3 = $request->file('image3')->extension();
+                // if ($ext3=='png' || $ext3=='jpg' || $ext3=='jpeg')
+                // {
+                //     $filename3= $request->file('image3')->store('admin/images/product','public');
+                // }
+                // else
+                // {
 
-                     return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                //      return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                // }
             }
             else
             {

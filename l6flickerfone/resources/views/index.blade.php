@@ -229,6 +229,7 @@ button[id="slick-slide-control14"]::before{
 .slick-prev {
     left: 0px !important;
     z-index: 10 !important;
+    margin-left: -30px !important;
 }
 
 
@@ -249,6 +250,7 @@ ul[class="dropdown-menu fade-up"] >  li {
     margin-left: 67px;
     margin-top: 24px !important;
 } */
+.slick-prev .slick-arrow{  }
 </style>
 
 
@@ -578,7 +580,23 @@ div[class="slick-slide slick-current slick-active"]{
     margin-left: 23px !important;
   }
 }
+/* @media (max-width: 411px){
+  ul[class="slick-dots"]{
+    margin-top: 9px !important;
+  }
 
+
+  #slickblogimg {
+    width: 336px !important;
+}
+
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"] {
+   
+    top: 179px !important;
+  
+    width: 93% !important;
+}
+} */
 </style>
 
 
@@ -596,7 +614,7 @@ div[class="slick-slide slick-current slick-active"]{
 <body>
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-  @include('includes.header')
+  @include('includes.header');
   @if($buynewsell->count()>0)
     
     <section>
@@ -814,7 +832,7 @@ div[class="slick-slide slick-current slick-active"]{
 
     <hr id="resphrOnmob" style="width: 43%;
     background-color: black;
- " />
+    margin-top: -35px;" />
   </div>
 
   <p >
@@ -848,9 +866,9 @@ div[class="slick-slide slick-current slick-active"]{
 			    
 			      	<div class="autoplayFeatures">
 			      		@foreach($products as $product)
-			      			@php $img = 'storage/'.$product->image @endphp
+			      			@php $img = 'storage/admin/images/product/thumbnail/175_'.$product->image  @endphp
 			      			<figure>
-					            <img src="{{ asset($img) }}" alt="Trulli" style="width: 100%; ">
+					            <img src="{{ asset($img) }}" class="img-thumbnail" style="height: 214px;" alt="Trulli">
 					            <figcaption>
 					            
 						            <div class="rightbox" style="height: 75px;margin-top: 19px;">

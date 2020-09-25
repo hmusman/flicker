@@ -526,10 +526,15 @@ font-size: 20px !important;
   <div class="col-md-6">
 <div >
     <div class="img-zoom-container" onmousenter="showme(this)" >
-    	@php $img1 = 'storage/'.$product->image @endphp
-    	@php $img2 = 'storage/'.$product->dimage @endphp
-    	@php $img3 = 'storage/'.$product->dimage1 @endphp
-      <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($img1)}}"  srcset="{{ asset($img1)}}" width="426" height="526"></p></span>
+    	@php $img1 = $product->image @endphp
+      @php $img1_400 = '/storage/admin/images/product/thumbnail/400_'.$product->image @endphp
+    	@php $img2 = $product->dimage @endphp
+    	@php $img3 = $product->dimage1 @endphp
+
+      @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
+      @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
+      @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
+      <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($img1_400)}}"  srcset="{{ asset('http://127.0.0.1:8000/storage/admin/images/product/thumbnail/400_'.$product->image)}}"></p></span>
     
       <span id="myhide" style="float: right;
         position: absolute;
@@ -541,7 +546,7 @@ font-size: 20px !important;
 
         width: auto;
         height: 100%; z-index: 12; ">
-        <div style="height: 526px; width: 426px; margin-top: 100px; background-repeat:no-repeat !important ;   "  id="myresult" class="img-zoom-result"  onmouseleave="" ></div></span>
+        <div style="height: 526px; width: 426px; margin-top: 100px; background-repeat:no-repeat !important ;   "  id="myresult" class="img-zoom-result" onmouseleave="" ></div></span>
   
   <!-- <div id="slider1">
     <div class="thumbelina-but horiz left disabled"><i class="glyphicon glyphicon-circle-arrow-left"></i></div>
@@ -578,10 +583,18 @@ font-size: 20px !important;
     
       <div class="autoplayFeatures">
         
+         @if(!empty($img1))
+
+          <figure  >
+            <img class="productImgs" data-id="{{ $product->image }}" class="img-thumbnail" src="{{ asset($img1_100)}}" alt="Trulli" style="width:100%;height: 100px;">
+          </figure>
+
+        @endif
+
         @if(!empty($img2))
 
         	<figure  >
-	          <img class="productImgs" src="{{ asset($img2)}}" alt="Trulli" style="width:100%;height: 100px;">
+	          <img class="productImgs" data-id="{{ $product->dimage }}" class="img-thumbnail" src="{{ asset($img2_100)}}" alt="Trulli" style="width:100%;height: 100px;">
 	        </figure>
 
       	@endif
@@ -592,7 +605,7 @@ font-size: 20px !important;
         @if(!empty($img3))
 
         	<figure  >
-	          <img class="productImgs" src="{{ asset($img3)}}" alt="Trulli" style="width:100%;height: 100px;">
+	          <img class="productImgs" data-id="{{ $product->dimage1 }}" class="img-thumbnail" src="{{ asset($img3_100)}}" alt="Trulli" style="width:100%;height: 100px;">
 	        </figure>
 
       	@endif
@@ -1653,9 +1666,12 @@ margin-left: 15px;">{{ $product->price }}</font>
 	});
 
 	$('.productImgs').click(function(){
-		var imgSrc = $(this).attr('src');
-		document.getElementById("myimage").srcset = imgSrc;
-  		document.getElementById("myresult").style.backgroundImage = 'url("'+imgSrc+'")';
+    var imgSrc="{{ url('storage/admin/images/product/thumbnail/400_') }}";
+    // var imgSrc="/storage/admin/images/product/thumbnail/400_";
+    imgSrc += $(this).data('id');
+		// var imgSrc = $(this).attr('src');
+    document.getElementById("myimage").srcset = imgSrc;
+  	document.getElementById("myresult").style.backgroundImage = 'url("'+imgSrc+'")';
 	});
 
 	$('#colorStorage').change(function(){

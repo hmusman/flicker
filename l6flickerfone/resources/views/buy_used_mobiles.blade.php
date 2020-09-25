@@ -747,7 +747,7 @@ margin-top: 90px;">
         </div>
       
       </div>
-      <div  style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;" src="images/ic_search_white_18dp.png"></div>
+      <div  style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;" src="{{ asset('storage/images/ic_search_white_18dp.png')}}"></div>
     
     
     </div>

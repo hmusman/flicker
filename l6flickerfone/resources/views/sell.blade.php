@@ -1138,8 +1138,6 @@ input[type="radio"]:checked + label {
 <script src="js/jquery-slim.min.js" ></script>
 <script src="js/popper.min.js" ></script>
 <script src="js/bootstrap.min.js" ></script> -->
-
-
   
  <script type="text/javascript">
 
@@ -1160,13 +1158,15 @@ input[type="radio"]:checked + label {
 
       // var DropZonIcon6 = document.getElementById('DropZonIcon6');
       // DropZonIcon6.innerHTML += '<img id="uploadimg6" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+      
+
 
       function filePreview(input,div,num) {
           if (input.files && input.files[0]) {
               var reader = new FileReader();
               reader.onload = function (e) {
                   div.html('');
-                  div.html('<div style="height:100%; width:100%;"><button type="button" onclick="imgInputBtn('+num+')" style="    position: absolute;border: none;outline: none;top: 22px;color:red;">X</button><img src="'+e.target.result+'" width="100%;" height="100%"/></div>');
+                  div.html('<div style="height:100%; width:100%;"><button type="button" onclick="imgInputBtn('+num+')" style="    position: absolute;border: none;outline: none;top: 22px;color:red;">X</button><img src="'+e.target.result+'" class="img-thumbnail" style="height:150px;"/></div>');
               };
               reader.readAsDataURL(input.files[0]);
           }
