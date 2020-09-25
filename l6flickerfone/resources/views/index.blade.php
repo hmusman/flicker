@@ -229,6 +229,7 @@ button[id="slick-slide-control14"]::before{
 .slick-prev {
     left: 0px !important;
     z-index: 10 !important;
+    margin-left: -30px !important;
 }
 
 
@@ -249,6 +250,7 @@ ul[class="dropdown-menu fade-up"] >  li {
     margin-left: 67px;
     margin-top: 24px !important;
 } */
+.slick-prev .slick-arrow{  }
 </style>
 
 
@@ -613,8 +615,6 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
   @include('includes.header');
-
-
   @if($buynewsell->count()>0)
     
     <section>
@@ -866,9 +866,9 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 			    
 			      	<div class="autoplayFeatures">
 			      		@foreach($products as $product)
-			      			@php $img = 'storage/'.$product->image @endphp
+			      			@php $img = 'storage/admin/images/product/thumbnail/175_'.$product->image  @endphp
 			      			<figure>
-					            <img src="{{ asset($img) }}" alt="Trulli" style="width: 100%; height: 250px;">
+					            <img src="{{ asset($img) }}" class="img-thumbnail" style="height: 214px;" alt="Trulli">
 					            <figcaption>
 					            
 						            <div class="rightbox" style="height: 75px;margin-top: 19px;">
