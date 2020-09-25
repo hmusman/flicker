@@ -81,6 +81,9 @@ class SellProductController extends Controller
             'image1'=>'required|mimes:png,jpg,jpeg',
             'image2'=>'required|mimes:png,jpg,jpeg',
             'image3'=>'required|mimes:png,jpg,jpeg',
+            'image4'=>'mimes:png,jpg,jpeg',
+            'image5'=>'mimes:png,jpg,jpeg',
+            'image6'=>'mimes:png,jpg,jpeg',
             'pta'=>'required',
             'city'=>'required'
         ]);
@@ -144,44 +147,6 @@ class SellProductController extends Controller
                 $filename6 ='';
             }
 
-
-
-            if($request->hasFile('image7'))
-            {
-               $filename7 = $this->ResizeImageOther($request->file('image7'));
-            }
-            else
-            {
-                $filename7 ='';
-            }
-
-            if($request->hasFile('image8'))
-            {
-                $filename8 = $this->ResizeImageOther($request->file('image8'));
-            }
-            else
-            {
-                $filename8 ='';
-            }
-
-            if($request->hasFile('image9'))
-            {
-                $filename9 = $this->ResizeImageOther($request->file('image9'));
-            }
-            else
-            {
-                $filename9 ='';
-            }
-
-            if($request->hasFile('image10'))
-            {
-                $filename10 = $this->ResizeImageOther($request->file('image10'));
-            }
-            else
-            {
-                $filename10 ='';
-            }
-
             if(SellProduct::where('user_id',$request->user_id)->where('model',$request->model)->get()->count()>0)
             {
                 $request->session()->flash('warningMsg',"This is product you have already posted");
@@ -212,10 +177,6 @@ class SellProductController extends Controller
             $product->img4 = $filename4;
             $product->img5 = $filename5;
             $product->img6 = $filename6;
-            $product->img7 = $filename7;
-            $product->img8 = $filename8;
-            $product->img9 = $filename9;
-            $product->img10 = $filename10;
             if($product->save())
             {
                 $request->session()->flash('msg',"Your product has been posted");

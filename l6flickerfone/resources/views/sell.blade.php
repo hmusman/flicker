@@ -951,22 +951,6 @@ input[type="radio"]:checked + label {
                               </div>
                           </div> -->
 
-
-
-
-
-
-
-
-<form action="/file-upload" class="dropzone"></form>
-  <div class="fallback">
-  
-  </div>
-</form>
-
-
-
-
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent / Scratch?</label>
                               <div class="col-md-8">
@@ -1008,7 +992,6 @@ input[type="radio"]:checked + label {
                                   <label for="accessory-on" class="myLabel">Yes</label>
                                   <input id="accessory-off" class="accessory" name="accessory" type="radio" value="no">
                                   <label for="accessory-off" class="myLabel">No</label>
-
                                   </div>
                                   @error('accessory')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -1054,8 +1037,8 @@ input[type="radio"]:checked + label {
                               <div class="col-md-8">
                                  <select class="form-control battery" name="battery">
                                     <option disabled="" selected="">Select Status</option>
-                                    @for($i=1; $i<=100; $i++)
-                                      <option value="{{ $i }}">{{ $i }} %</option>
+                                    @for($i=1; $i<=10; $i++)
+                                      <option value="{{ $i*10 }}">{{ $i*10 }} %</option>
                                     @endfor
                                   </select>
                                   @error('battery')
@@ -1070,81 +1053,60 @@ input[type="radio"]:checked + label {
                
 
 
-<div class="card">
-	<div class="card-body row">
+                  <div class="card">
+                  	<div class="card-body row">
 
-		<div class="text-center mt-4 col-md-3" id="SetOnDesktop" >
-			<form action="/file-upload" class="dropzone" id="DropZonIcon1" onclick="myRemoveFun('uploadimg1')">
-				<div class="fallback">
-					<input name="file" type="file" multiple /> </div>
-			</form>
-    </div>
-    <div class="text-center mt-4 col-md-1"></div>
-		<div class="text-center mt-4 col-md-3">
-			<form action="/file-upload" class="dropzone" id="DropZonIcon2" onclick="myRemoveFun('uploadimg2')">
-				<div class="fallback">
-					<input name="file" type="file" multiple /> </div>
-			</form>
-    </div>
-     <div class="text-center mt-4 col-md-1"></div>
-		<div class="text-center mt-4 col-md-3" >
-			<form action="/file-upload" class="dropzone" id="DropZonIcon3" onclick="myRemoveFun('uploadimg3')">
-				<div class="fallback">
-					<input name="file" type="file" multiple /> </div>
-			</form>
-		</div>
-	</div>
-</div>
-
-
-
-
+                  		<div class="text-center mt-4 col-md-3" id="SetOnDesktop" >
+                        <input type="file" name="image1" style="display:none;" id="imgInput1" onchange="fileChangeFun(this,$('#DropZonIcon1'),1);"/> 
+                  			<div class="dropzone" id="DropZonIcon1">
+                  				<div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
+                          <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
+                          </div>
+                  			</div>
+                      </div>
+                      <div class="text-center mt-4 col-md-1"></div>
+                  		<div class="text-center mt-4 col-md-3">
+                        <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
+                  			<div class="dropzone" id="DropZonIcon2">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                       <div class="text-center mt-4 col-md-1"></div>
+                  		<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                  			<div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                  		</div>
+                  	</div>
+                  </div>
 
 
-
-
-
-
-
-
-
-
-
-
-<div class="card">
-	<div class="card-body row">
-		<div class="text-center mt-4 col-md-3 " id="SetOnDesktop">
-			<form action="/file-upload" class="dropzone" id="DropZonIcon4" onclick="myRemoveFun('uploadimg4')">
-				<div class="fallback">
-					<input name="file" type="file" multiple /> </div>
-			</form>
-    </div>
-       <div class="text-center mt-4 col-md-1"></div>
-		<div class="text-center mt-4 col-md-3">
-			<form action="/file-upload" class="dropzone" id="DropZonIcon5" onclick="myRemoveFun('uploadimg5')">
-				<div class="fallback">
-					<input name="file" type="file" multiple /> </div>
-			</form>
-    </div>
-    
-       <div class="text-center mt-4 col-md-1"></div>
-		<div class="text-center mt-4 col-md-3" >
-			<form action="/file-upload" class="dropzone" id="DropZonIcon6" onclick="myRemoveFun('uploadimg6')">
-				<div class="fallback">
-					<input name="file" type="file" multiple /> </div>
-			</form>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-
-
-
+                  <div class="card">
+                  	<div class="card-body row">
+                  		<div class="text-center mt-4 col-md-3 " id="SetOnDesktop">
+                        <input type="file" name="image4" style="display:none;" id="imgInput4" onchange="fileChangeFun(this,$('#DropZonIcon4'),4);"/> 
+                  			<div class="dropzone" id="DropZonIcon4">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(4);" id="imgFullWidthDiv4"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                         <div class="text-center mt-4 col-md-1"></div>
+                  		<div class="text-center mt-4 col-md-3">
+                        <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
+                  			<div class="dropzone" id="DropZonIcon5">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"> <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> <img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                      
+                         <div class="text-center mt-4 col-md-1"></div>
+                  		<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
+                  			<div class="dropzone" id="DropZonIcon6">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"> <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> <img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                  		</div>
+                  	</div>
+                  </div>
 
                   
                   <div class="card">
@@ -1180,6 +1142,57 @@ input[type="radio"]:checked + label {
 
   
  <script type="text/javascript">
+
+      // var DropZonIcon1 = document.getElementById('DropZonIcon1');
+      // DropZonIcon1.innerHTML += '<img id="uploadimg1" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+      // var DropZonIcon2 = document.getElementById('DropZonIcon2');
+      // DropZonIcon2.innerHTML += '<img id="uploadimg2" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+      // var DropZonIcon3 = document.getElementById('DropZonIcon3');
+      // DropZonIcon3.innerHTML += '<img id="uploadimg3" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+      // var DropZonIcon4 = document.getElementById('DropZonIcon4');
+      // DropZonIcon4.innerHTML += '<img id="uploadimg4" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+      // var DropZonIcon5 = document.getElementById('DropZonIcon5');
+      // DropZonIcon5.innerHTML += '<img id="uploadimg5" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+      // var DropZonIcon6 = document.getElementById('DropZonIcon6');
+      // DropZonIcon6.innerHTML += '<img id="uploadimg6" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+      function filePreview(input,div,num) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+              reader.onload = function (e) {
+                  div.html('');
+                  div.html('<div style="height:100%; width:100%;"><button type="button" onclick="imgInputBtn('+num+')" style="    position: absolute;border: none;outline: none;top: 22px;color:red;">X</button><img src="'+e.target.result+'" width="100%;" height="100%"/></div>');
+              };
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+
+      function fileChangeFun(input,div,num)
+      {
+         filePreview(input,div,num);
+      }
+
+      // $('#imgInput1').change(function(){
+      //     filePreview(this,$('#DropZonIcon1'),1);
+      // });
+
+      function imgInputBtn(num)
+      {
+        var vhtml = '<div style="width:100%; height:100%;" onclick="fullWidthInputCall('+num+')" id="imgFullWidthDiv'+num+'"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>';
+        $('#DropZonIcon'+num).html(vhtml);
+      }
+
+      function fullWidthInputCall(num)
+      {
+        $('#imgInput'+num)[0].click();
+      }
+      
+
     function estimate_fun()
     {
        var estimate_deduction =0;
@@ -1796,7 +1809,7 @@ $(document).ready(function(){
  
 
   
-<script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script> -->
 
 
 <!-- <script  src="js/jquery-2.1.3.min.js"></script> -->
@@ -1806,23 +1819,7 @@ $(document).ready(function(){
 
 
 <script>
-var DropZonIcon1 = document.getElementById('DropZonIcon1');
-DropZonIcon1.innerHTML += '<img id="uploadimg1" src="NewZoomerImages/ic_backup_black_48dp.png" />';
 
-var DropZonIcon2 = document.getElementById('DropZonIcon2');
-DropZonIcon2.innerHTML += '<img id="uploadimg2" src="NewZoomerImages/ic_backup_black_48dp.png" />';
-
-var DropZonIcon3 = document.getElementById('DropZonIcon3');
-DropZonIcon3.innerHTML += '<img id="uploadimg3" src="NewZoomerImages/ic_backup_black_48dp.png" />';
-
-var DropZonIcon4 = document.getElementById('DropZonIcon4');
-DropZonIcon4.innerHTML += '<img id="uploadimg4" src="NewZoomerImages/ic_backup_black_48dp.png" />';
-
-var DropZonIcon5 = document.getElementById('DropZonIcon5');
-DropZonIcon5.innerHTML += '<img id="uploadimg5" src="NewZoomerImages/ic_backup_black_48dp.png" />';
-
-var DropZonIcon6 = document.getElementById('DropZonIcon6');
-DropZonIcon6.innerHTML += '<img id="uploadimg6" src="NewZoomerImages/ic_backup_black_48dp.png" />';
 
 
 
