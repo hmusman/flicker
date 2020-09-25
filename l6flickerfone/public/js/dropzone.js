@@ -244,7 +244,7 @@ function (_Emitter) {
          * the event `maxfilesexceeded` will be called. The dropzone element gets the
          * class `dz-max-files-reached` accordingly so you can provide visual feedback.
          */
-        maxFilesize: 256,
+        maxFilesize: 1,
 
         /**
          * The name of the file param that gets transferred.
@@ -440,11 +440,13 @@ function (_Emitter) {
         /**
          * The text used before any files are dropped.
          */
-        dictDefaultMessage: "Drop files here to upload",
+        dictDefaultMessage: "Drop files here to upload  ",
 
         /**
          * The text that replaces the default message text it the browser is not supported.
          */
+
+         
         dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
 
         /**
@@ -518,7 +520,14 @@ function (_Emitter) {
          * Called when dropzone initialized
          * You can add event listeners here
          */
-        init: function init() {},
+        init: function init() {
+          this.on('addedfile', function (file) {
+            if (this.files.length > 1) {
+              this.removeFile(this.files[0]);
+            }
+          });},
+
+     
 
         /**
          * Can be an **object** of additional parameters to transfer to the server, **or** a `Function`
@@ -3828,3 +3837,7 @@ function __guardMethod__(obj, methodName, transform) {
     return undefined;
   }
 }
+
+
+
+

@@ -7,9 +7,14 @@
   </head>
   <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
   <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+
+
+
   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' media="all">
   <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
+
+    <link href="{{ asset('css/dropzone.css') }}" rel='stylesheet' type='text/css' media="all">
 
   
   <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
@@ -17,6 +22,9 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
   
   <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
+  
+
+  
   
   <style>
  
@@ -630,6 +638,34 @@ input[type="radio"]:checked + label {
   color: #E6E6E6;
   border: thin solid white;
 }
+
+
+
+
+
+
+
+
+
+
+@media (min-width:500px){
+  #SetOnDesktop{
+    margin-left: 42px !important;
+  }
+    }
+
+
+
+#DropZonIcon1,
+#DropZonIcon2,
+#DropZonIcon3,
+#DropZonIcon4,
+#DropZonIcon5,
+#DropZonIcon6{
+  height: 195px !important;
+}
+
+
 </style>
 <body>
 
@@ -751,7 +787,11 @@ input[type="radio"]:checked + label {
                               </div>
                           </div>
 
-                          <div class="form-group row">
+
+
+
+
+                          <!-- <div class="form-group row">
                               <label for="example-text-input" class="col-md-2 col-form-label"> Image 1</label>
                               <div class="col-md-3"> 
                                   <div class="fallback">
@@ -909,7 +949,23 @@ input[type="radio"]:checked + label {
                                       @enderror
                                   </div>
                               </div>
-                          </div>
+                          </div> -->
+
+
+
+
+
+
+
+
+<form action="/file-upload" class="dropzone"></form>
+  <div class="fallback">
+  
+  </div>
+</form>
+
+
+
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent / Scratch?</label>
@@ -1011,8 +1067,85 @@ input[type="radio"]:checked + label {
                       </div> <!-- detail -->
                   </div>
 
+               
 
-                  
+
+<div class="card">
+	<div class="card-body row">
+
+		<div class="text-center mt-4 col-md-3" id="SetOnDesktop" >
+			<form action="/file-upload" class="dropzone" id="DropZonIcon1" onclick="myRemoveFun('uploadimg1')">
+				<div class="fallback">
+					<input name="file" type="file" multiple /> </div>
+			</form>
+    </div>
+    <div class="text-center mt-4 col-md-1"></div>
+		<div class="text-center mt-4 col-md-3">
+			<form action="/file-upload" class="dropzone" id="DropZonIcon2" onclick="myRemoveFun('uploadimg2')">
+				<div class="fallback">
+					<input name="file" type="file" multiple /> </div>
+			</form>
+    </div>
+     <div class="text-center mt-4 col-md-1"></div>
+		<div class="text-center mt-4 col-md-3" >
+			<form action="/file-upload" class="dropzone" id="DropZonIcon3" onclick="myRemoveFun('uploadimg3')">
+				<div class="fallback">
+					<input name="file" type="file" multiple /> </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card">
+	<div class="card-body row">
+		<div class="text-center mt-4 col-md-3 " id="SetOnDesktop">
+			<form action="/file-upload" class="dropzone" id="DropZonIcon4" onclick="myRemoveFun('uploadimg4')">
+				<div class="fallback">
+					<input name="file" type="file" multiple /> </div>
+			</form>
+    </div>
+       <div class="text-center mt-4 col-md-1"></div>
+		<div class="text-center mt-4 col-md-3">
+			<form action="/file-upload" class="dropzone" id="DropZonIcon5" onclick="myRemoveFun('uploadimg5')">
+				<div class="fallback">
+					<input name="file" type="file" multiple /> </div>
+			</form>
+    </div>
+    
+       <div class="text-center mt-4 col-md-1"></div>
+		<div class="text-center mt-4 col-md-3" >
+			<form action="/file-upload" class="dropzone" id="DropZonIcon6" onclick="myRemoveFun('uploadimg6')">
+				<div class="fallback">
+					<input name="file" type="file" multiple /> </div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
                   
                   <div class="card">
                       <div class="card-body row">
@@ -1023,9 +1156,14 @@ input[type="radio"]:checked + label {
                   </div>
               </form>
 
+
+
+
+         
+
           </div>
       </div>
-
+  
   </div>
 
 @include('includes.footer')
@@ -1657,10 +1795,102 @@ $(document).ready(function(){
 <script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>
  
 
-
+  
+<script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script>
 
 
 <!-- <script  src="js/jquery-2.1.3.min.js"></script> -->
 
 <script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
+
+
+
+<script>
+var DropZonIcon1 = document.getElementById('DropZonIcon1');
+DropZonIcon1.innerHTML += '<img id="uploadimg1" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+var DropZonIcon2 = document.getElementById('DropZonIcon2');
+DropZonIcon2.innerHTML += '<img id="uploadimg2" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+var DropZonIcon3 = document.getElementById('DropZonIcon3');
+DropZonIcon3.innerHTML += '<img id="uploadimg3" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+var DropZonIcon4 = document.getElementById('DropZonIcon4');
+DropZonIcon4.innerHTML += '<img id="uploadimg4" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+var DropZonIcon5 = document.getElementById('DropZonIcon5');
+DropZonIcon5.innerHTML += '<img id="uploadimg5" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+var DropZonIcon6 = document.getElementById('DropZonIcon6');
+DropZonIcon6.innerHTML += '<img id="uploadimg6" src="NewZoomerImages/ic_backup_black_48dp.png" />';
+
+
+
+
+
+// function removeImg(){
+ 
+//  document.getElementById("uploadimg").style.display="none"
+// }
+
+
+
+// setTimeout(function() { your_func(); }, 5000);
+
+function myRemoveFun(id)
+{
+  setTimeout(
+      function() {
+  document.getElementById(id).style.display="none"
+      }, 5000);
+}
+
+
+// function removeImg1() {
+//   setTimeout(
+//     function() {
+// document.getElementById("uploadimg1").style.display="none"
+//     }, 5000);
+// }
+
+// function removeImg6() {
+//   setTimeout(
+//     function() {
+// document.getElementById("uploadimg6").style.display="none"
+//     }, 5000);
+// }
+
+// function removeImg2() {
+//   setTimeout(
+//     function() {
+// document.getElementById("uploadimg2").style.display="none"
+//     }, 5000);
+// }
+
+
+// function removeImg3() {
+//   setTimeout(
+//     function() {
+// document.getElementById("uploadimg3").style.display="none"
+//     }, 5000);
+// }
+
+
+// function removeImg4() {
+//   setTimeout(
+//     function() {
+// document.getElementById("uploadimg4").style.display="none"
+//     }, 5000);
+// }
+
+
+// function removeImg5() {
+//   setTimeout(
+//     function() {
+// document.getElementById("uploadimg5").style.display="none"
+//     }, 5000);
+// }
+</script>
+ 
+
 </html>
