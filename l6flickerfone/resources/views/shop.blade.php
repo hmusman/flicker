@@ -367,7 +367,7 @@ ul[class="dropdown-menu fade-up show"] > li{
     .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
     .navbar .dropdown-menu.fade-up{ top:180%;  }
     .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-  }	
+
   /* ============ desktop view .end// ============ */
   
   

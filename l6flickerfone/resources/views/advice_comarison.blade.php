@@ -28,9 +28,12 @@
  
   <style>
 
+
   .simweight2{
     height: 100px;
   }
+
+
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
     #myInput {
@@ -346,7 +349,11 @@ height: 37px !important;
 
 .simweight2{
 padding-top: 9px !important;
+
     height: 150px !important;
+=======
+    height: 65px !important;
+
 }
 
 
@@ -389,7 +396,11 @@ padding-top: 9px !important;
  font-weight: 600 !important;
     text-shadow: 0px 0px 0.1px black !important;
     font-size: 10px !important;
+
      height: 150px !important;
+
+     height: 65px !important;
+
  
     text-shadow: 0px 0px 0.1px black !important;
       padding-top: 28px !important;
@@ -1050,7 +1061,11 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
     /* border: 1px solid #ddd; */
     margin-top: -1px;
     /* Prevent double borders */
+
     /* background-color: #f6f6f6; */
+
+   /*  background-color: #f6f6f6; */
+
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -1073,19 +1088,32 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
     /* border: 1px solid #ddd; */
     margin-top: -1px;
     /* Prevent double borders */
+
     /* background-color: #f6f6f6; */
+
+   /*  background-color: #f6f6f6; */
+
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
     color: black;
     display: block
   }
+
   /* #myULone li a:hover:not(.header) {
     background-color: #eee;
   } */
   /* #myULthree li a:hover:not(.header) {
     background-color: #eee;
   } */
+
+  #myULone li a:hover:not(.header) {
+    background-color: #eee;
+  }
+  #myULthree li a:hover:not(.header) {
+  /*   background-color: #eee; */
+  }
+
 
   #setwidthfirst{
   height: 115px;
@@ -1256,11 +1284,13 @@ height: 104px;
 
 
 
+
 /* 
 #searcMobStyle{
   margin-top: 5px;
     margin-bottom: -21px;
 } */
+
 
 
 
@@ -1329,7 +1359,11 @@ height: 104px;
                             <td class="DimnOnMobSubhead" style="display: block;font-weight: 600;"> Dimensions</td>
                             <td class="BodySts1" style="display: block;font-weight: 600;"> Weight</td>
                             <td class="BuildSts1" style="display: block;font-weight: 600;"> Build</td>
+
                             <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height:100px "> SIM</td>
+
+                            <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
+
                         
                         </tr>
                     </table>
@@ -1524,7 +1558,11 @@ height: 104px;
 
                 <div>
                   <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">
+
                     DEVICES <button class="ButtonSearchOnMob" id="srchbtnid" onclick="hideagainone();" style="margin-left: 200px;
+
+                    DEVICES <button class="ButtonSearchOnMob" id="srchbtnid" onclick="hideagainone();" style="margin-left: 305px;
+
       background-color: #f8f7f7;
       color: black;
    
@@ -1534,8 +1572,13 @@ height: 104px;
 
 
 
+
                 <!-- <li>
                   <div class="row" >
+
+                <li>
+                  <div class="row">
+
                     <div class="col-md-2">
                       <div id="setwidthfirst" style="  ">
                         <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg"
@@ -1549,7 +1592,11 @@ height: 104px;
                       </div>
                     </div>
                   </div>
+
                 </li> -->
+
+                </li>
+
 
                 <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
               </ul>
@@ -1716,7 +1763,11 @@ height: 104px;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
+
     border-bottom: 5px #eeeeee solid;
+
+    height: 46px;border-bottom: 5px #eeeeee solid;
+
 " class="simweight2">
        {{ $product->body_sim }}
       </div>
@@ -2296,7 +2347,9 @@ height: 104px;
         
           <div>
             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">
+
               DEVICES <button class="ButtonSearchOnMob" id="srchbtnid" onclick="hideagaintwo();" style="margin-left: 200px;
+
                         background-color: #f8f7f7;
                         color: black;
                      
@@ -2417,7 +2470,9 @@ height: 104px;
             
               <div>
                 <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">
+
                   DEVICES <button class="ButtonSearchOnMob" id="srchbtnid" onclick="hideagainthree();" style="margin-left: 200px;
+
                                     background-color: #f8f7f7;
                                     color: black;
                                  
@@ -2809,10 +2864,12 @@ $(document).ready(function () {
         data:{id:id},
         success:function(data)
         {
+
           if(hideVal=='hideDivone'){ hideDivone();$('#myInputone').val(''); }
           else if(hideVal=='hideDivtwo'){ hideDivtwo();$('#myInputtwo').val(''); }
           else if(hideVal=='hideDivthree'){ hideDivthree();$('#myInputthree').val(''); }
           $('.'+hideVal).html(data);
+
 
         }
 

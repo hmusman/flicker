@@ -25,7 +25,7 @@ class LoginAndRegisterController extends Controller
     {
     	$buyer_validation  = Validator::make($request->all(),[
     		'buyer_username'=>'bail | required | alpha_num',
-    		'buyer_name'=>'bail | required | alpha',
+    		'buyer_name'=>'bail | required',
     		'buyer_email'=>'bail | required | email',
     		'buyer_password'=>'bail | required | min:8 | confirmed',
     		// 'buyer_password_confirm'=>'bail | required | min:8 ',
@@ -53,7 +53,7 @@ class LoginAndRegisterController extends Controller
 		    	$user->name = $request->buyer_name;
 		    	$user->email = $request->buyer_email;
 		    	$user->company = $request->buyer_company;
-		    	$user->password = $request->buyer_password;
+		    	$user->password =Hash::make($request->buyer_password);
 		    	$user->phone = $request->buyer_phone;
 		    	$user->city = $request->buyer_city;
 		    	if($user->save())
@@ -71,7 +71,7 @@ class LoginAndRegisterController extends Controller
     {
     	$seller_validation  = Validator::make($request->all(),[
     		'username'=>'bail | required | alpha_num',
-    		'name'=>'bail | required | alpha',
+    		'name'=>'bail | required',
     		'email'=>'bail | required | email',
     		'password'=>'bail | required | min:8 | confirmed',
     		// 'password_confirm'=>'bail | required | min:8 ',
@@ -98,7 +98,7 @@ class LoginAndRegisterController extends Controller
 		    	$user->name = $request->name;
 		    	$user->email = $request->email;
 		    	$user->shop= $request->shop;
-		    	$user->password = $request->password;
+		    	$user->password =Hash::make($request->password);
 		    	$user->phone = $request->phone;
 		    	$user->city = $request->city;
 		    	if($user->save())
@@ -112,28 +112,36 @@ class LoginAndRegisterController extends Controller
 
     public function login(Request $request)
     {
-    	$validation = Validator::make($request->all(),[
+        $validation = Validator::make($request->all(),[
     		'login_email'=>'bail | required | email',
     		'login_password'=>'bail | required'
     	]);
 
     	if ($validation->fails())
     	{
-    		return back()->withErrors($validation)->withInput();
+    		return back()->withErrors($validation)->only('login_email');
     	}
     	else
     	{
-    		$user =  User::select('*')->where([['email','=',$request->login_email],['password','=',$request->login_password],['status','=',1]])->first();
-    		if ($user)
-    		{
-    			$request->session()->put('user',$user->email);
-    			return redirect('/BuyUsedMobilePhones');
-    		}
-    		else
-    		{
-    			return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->withInput();
-    		}
+            $user =  User::select('*')->where([['email','=',$request->login_email],['status','=',1]])->first();
+            if ($user) 
+            {
+                if(Hash::check($request->login_password,$user->password))
+                {
+                   $request->session()->put('user',$user);
+                   // return redirect('/BuyUsedMobilePhones');
+                   return redirect('/');
 
+                }
+                else
+                {
+                    return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->withInput($request->only('login_email'));
+                }
+            }
+            else
+            {
+                return back()->withErrors(['loginError'=>'You are not active user'])->withInput($request->only('login_email'));
+            }
     	}
     }
 
@@ -150,17 +158,20 @@ class LoginAndRegisterController extends Controller
         }
         else
         {
-            $user =  DB::table('admins')->select('*')->where([['email','=',$request->login_email],['password','=',$request->login_password]])->first();
-            if ($user)
-            {
-                $request->session()->put('admin',$user->email);
-                return redirect('Admin');
-            }
-            else
-            {
-                return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->with($request->only('email'));
-            }
 
+           $user =  DB::table('admins')->select('*')->where([['email','=',$request->login_email]])->first();
+            if ($user) 
+            {
+                if(Hash::check($request->login_password,$user->password))
+                {
+                   $request->session()->put('admin',$user->email);
+                    return redirect('Admin');
+                }
+                else
+                {
+                     return back()->withErrors(['loginError'=>'Sorry Email / Password Is Wrong'])->withInput($request->only('login_email'));
+                }
+            }
         }
     }
 

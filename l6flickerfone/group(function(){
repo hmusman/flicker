@@ -1,0 +1,63 @@
+
+   ErrorException  : file_put_contents(F:\Installation\xampp\htdocs\l6flicker\l6flickerfone\app/Http/Middleware/Route::prefix('Sell')-.php): failed to open stream: No such file or directory
+
+  at F:\Installation\xampp\htdocs\l6flicker\l6flickerfone\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php:133
+    129|      * @return int|bool
+    130|      */
+    131|     public function put($path, $contents, $lock = false)
+    132|     {
+  > 133|         return file_put_contents($path, $contents, $lock ? LOCK_EX : 0);
+    134|     }
+    135| 
+    136|     /**
+    137|      * Write the contents of a file, replacing it atomically if it already exists.
+
+  Exception trace:
+
+  1   file_put_contents("F:\Installation\xampp\htdocs\l6flicker\l6flickerfone\app/Http/Middleware/Route::prefix('Sell')-.php", "<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+
+class Route::prefix('Sell')-
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        return $next($request);
+    }
+}
+")
+      F:\Installation\xampp\htdocs\l6flicker\l6flickerfone\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php:133
+
+  2   Illuminate\Filesystem\Filesystem::put("F:\Installation\xampp\htdocs\l6flicker\l6flickerfone\app/Http/Middleware/Route::prefix('Sell')-.php", "<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+
+class Route::prefix('Sell')-
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        return $next($request);
+    }
+}
+")
+      F:\Installation\xampp\htdocs\l6flicker\l6flickerfone\vendor\laravel\framework\src\Illuminate\Console\GeneratorCommand.php:73
+
+  Please use the argument -v to see more details.

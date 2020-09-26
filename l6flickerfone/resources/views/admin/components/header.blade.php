@@ -26,7 +26,7 @@
 
         <!-- alertifyjs default themes  Css -->
         <link href="{{asset('Green/assets/libs/alertifyjs/build/css/themes/default.min.css')}}" rel="stylesheet" type="text/css" />
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/sweetalert2/sweetalert2.min.css') }}">
 
     </head>
 
@@ -97,7 +97,7 @@
 
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="{{asset('storage/admin/images/admin.jpg')}}" alt="Header Avatar">
+                                <img class="rounded-circle header-profile-user" src="{{asset('storage/admin/admin.jpg')}}" alt="Header Avatar">
                                 <span class="d-none d-sm-inline-block ml-1"></span>
                                 <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
                             </button>
@@ -183,6 +183,18 @@
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Calculator Product</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('PriceCalculatorProduct.create') }}">Add Product</a></li>
+                                    <li><a href="{{ route('PriceCalculatorProduct.index') }}">View Products</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
                                     <span>MetaTag</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
@@ -204,6 +216,29 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>BuyNewSell Section</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                
+                                    <li><a href="{{ route('IndexBuyNewSellSection.index') }}">View</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Blog Slider</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    
+                                    <li><a href="{{ route('BlogSlider.index') }}">View</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
 
 
                             
