@@ -70,7 +70,6 @@ class ProductController extends Controller
     
     public function store(Request $request)
     {
-        
         $validations = Validator::make($request->all(),[
             'category'=>'required',
             'brand'=>'required',
@@ -109,9 +108,10 @@ class ProductController extends Controller
             $filename1 = $this->ResizeImage($request->file('image1'));
             $filename2 = $this->ResizeImageOther($request->file('image2'));
             $filename3 = $this->ResizeImageOther($request->file('image3'));
-
             if(Product::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
             {
+                
+
                 $request->session()->flash('warningMsg',"Product is already exist");
                  return back()->withInput();
             }
@@ -186,6 +186,8 @@ class ProductController extends Controller
                 'screen_is_cracked' => $request->screen_is_cracked,
                 'device_box_available' => $request->device_box_available,
                 'device_battery_status' => $request->device_battery_status,
+                'detail_check'=>$request->detail_check,
+                'other_detail'=>$request->other_detail
                 ]);
                
                 if ($product)
@@ -461,6 +463,8 @@ class ProductController extends Controller
             $product->screen_is_cracked = $request->screen_is_cracked;
             $product->device_box_available = $request->device_box_available;
             $product->device_battery_status = $request->device_battery_status;
+            $product->detail_check = $request->detail_check;
+            $product->other_detail = $request->other_detail;
 
             if ($product->save())
             {

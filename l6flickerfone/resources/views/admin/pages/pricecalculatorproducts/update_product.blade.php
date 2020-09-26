@@ -117,7 +117,7 @@
                                                         <div class="fallback">
                                                             <input name="image1" type="file">
                                                             <input type="hidden" name="oldImage1" value="{{ $product->image }}">
-                                                            @php $image1 = 'storage/'.$product->image  @endphp
+                                                           @php $image1 = 'storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$product->image  @endphp
                                                             <img src='{{ asset($image1) }}' style="width: 100px; height: 100px;">
                                                             @error('image1')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>

@@ -686,7 +686,7 @@ input[type="radio"]:checked + label {
                 <div class="alert alert-success">{{ Session::get('msg') }}</div>
               @endif
 
-              <form action="{{ route('Product.store') }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('Sell.Product.store') }}" method="post" enctype="multipart/form-data">
                   @csrf
 
                   <div class="tab-content">
@@ -1425,7 +1425,7 @@ input[type="radio"]:checked + label {
       }
 
       // Scenario 12
-      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() ==7)
+      else if($('#minor-on').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() ==70)
       {
         grading = "Fair";
       }
@@ -1473,7 +1473,7 @@ input[type="radio"]:checked + label {
       }
 
       // Scenario 20
-      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() ==7)
+      else if($('#minor-off').is(":checked") && $('#major-on').is(":checked") && $('#accessory-on').is(":checked") && $('#screen-off').is(":checked") && $('#device-off').is(":checked") && $('.battery').children("option:selected").val() ==70)
       {
         grading = "Fair";
       }

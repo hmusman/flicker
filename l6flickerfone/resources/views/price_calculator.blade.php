@@ -725,11 +725,11 @@ input[type="radio"]:checked + label {
 
     @if($brands->count()>0)
       @foreach($brands as $brand)
-        @foreach($brand->price_calculator_products_list as $imgRow) @php $img = 'storage/'.$imgRow->image @endphp @endforeach
+        @foreach($brand->price_calculator_products_list as $imgRow) @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/150_'.$imgRow->image @endphp @endforeach
         
         <div id="setBrandatMob" style="width: 15%; float: left;">
             <figure style="padding-top: 80px;">
-                <center> <img src="{{ asset($img) }}" alt="Trulli" style="width:44%;height: 130px;"></center>
+                <center> <img src="{{ asset($img) }}" alt="Trulli" ></center>
                 <a data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
                 <figcaption id="topfigurecap"  style="background-color: #4a88c2;
                  text-align: center;

@@ -10,6 +10,7 @@ use App\Brand;
 use App\PriceColorVariation;
 use Session;
 use DB;
+use Image;
 class PriceCalculatorProductController extends Controller
 {
    
@@ -26,7 +27,22 @@ class PriceCalculatorProductController extends Controller
         return view('admin.pages.pricecalculatorproducts.add_product',compact(['categories','brands']));
     }
 
-    
+    private function ResizeImage($img)
+    {
+        $fileNameWithExtension = $img->getClientOriginalName();
+        $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
+        $ext1 = $img->getClientOriginalExtension();
+        $time = time();
+        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $img->storeAs('public/admin/images/pricecalculatorproduct', $filename1);
+        $img->storeAs('public/admin/images/pricecalculatorproduct/thumbnail', $filename1);
+        $thumbnailpath = public_path('storage/admin/images/pricecalculatorproduct/thumbnail/'.$filename1);
+        Image::make($thumbnailpath)->resize(150,150)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/150_'.$filename1));
+        Image::make($thumbnailpath)->resize(130,130)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/130_'.$filename1));
+        Image::make($thumbnailpath)->resize(100,130)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$filename1));
+        Image::make($thumbnailpath)->resize(190,250)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/190_'.$filename1));
+        return $filename1;
+    }
     public function store(Request $request)
     {
         $validations = Validator::make($request->all(),[
@@ -34,7 +50,7 @@ class PriceCalculatorProductController extends Controller
             'brand'=>'required',
             'code'=>'bail | required | numeric',
             'name'=>'bail | required | alpha_dash',
-            'image1'=>'required',
+            'image1'=>'required|mimes:png,jpg,jpeg',
         ]);
 
         if($validations->fails())
@@ -43,10 +59,11 @@ class PriceCalculatorProductController extends Controller
         }
         else
         {
-            $ext1 = $request->file('image1')->extension();
-            if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg') 
-            { $filename1= $request->file('image1')->store('admin/images/pricecalculatorproduct','public'); }
-            else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
+            $filename1 = $this->ResizeImage($request->file('image1'));
+            // $ext1 = $request->file('image1')->extension();
+            // if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg') 
+            // { $filename1= $request->file('image1')->store('admin/images/pricecalculatorproduct','public'); }
+            // else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
 
             if(PriceCalculatorProduct::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
             {
@@ -128,16 +145,17 @@ class PriceCalculatorProductController extends Controller
         {
             if($request->hasFile('image1'))
             {
-                $ext1 = $request->file('image1')->extension();
-                if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
-                {
-                    $filename1= $request->file('image1')->store('admin/images/pricecalculatorproduct','public');
-                }
-                else
-                {
+                $filename1 = $this->ResizeImage($request->file('image1'));
+                // $ext1 = $request->file('image1')->extension();
+                // if ($ext1=='png' || $ext1=='jpg' || $ext1=='jpeg')
+                // {
+                //     $filename1= $request->file('image1')->store('admin/images/pricecalculatorproduct','public');
+                // }
+                // else
+                // {
 
-                     return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
-                }
+                //      return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput();   
+                // }
             }
             else
             {

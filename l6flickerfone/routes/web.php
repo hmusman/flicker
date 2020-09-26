@@ -41,7 +41,7 @@ Route::get('BrandProductEstimate','pricecalculatorproducts\PriceCalculatorProduc
 // Route::get('pricesearch/{min?}/{max?}','ProductController@priceSearch')->name('pricesearch');
 Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::get('/','AdminController@index');
-	Route::resource('/Product','ProductController');
+	Route::resource('Product','ProductController');
 	Route::resource('/PriceCalculatorProduct','pricecalculatorproducts\PriceCalculatorProductController');
 	Route::resource('/Category','CategoryController');
 	Route::resource('/Brand','BrandController');
@@ -58,7 +58,7 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 
 Route::prefix('Sell')->middleware('SellLoginSessionCheck')->group(function(){
 	Route::get('/','SellProductController@create')->name('Sell');
-	Route::post('Product','SellProductController@store')->name('Product.store');
+	Route::post('Product','SellProductController@store')->name('Sell.Product.store');
 });
 
 Route::group(['middleware'=>['LoginSessionCheck']],function(){

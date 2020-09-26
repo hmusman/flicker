@@ -8,6 +8,7 @@ use App\Brand;
 use App\ColorVariation;
 class Product extends Model
 {
+    protected $table = "sma_products";
 	protected $fillable = [
 		 'brand_id',
                 'code',
@@ -76,9 +77,11 @@ class Product extends Model
                 'original_accessories_available',
                 'screen_is_cracked' ,
                 'device_box_available',
-                'device_battery_status'
+                'device_battery_status',
+                'detail_check',
+                'other_detail'
 	];
-    protected $table = "sma_products";
+    
     
     public function category()
     {

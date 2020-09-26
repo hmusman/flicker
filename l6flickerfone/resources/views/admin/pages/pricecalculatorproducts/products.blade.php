@@ -63,7 +63,7 @@
                                             @php $i=1 @endphp
                                             @if($products->count() > 0)
                                                  @foreach($products as $product)
-                                                    @php $image = 'storage/'.$product->image  @endphp
+                                                    @php $image = 'storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$product->image  @endphp
                                                     <tr>
                                                        <td>{{ $i }}</td>
                                                        <td>{{ ucfirst($product->category->title) }}</td>

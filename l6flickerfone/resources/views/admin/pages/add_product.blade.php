@@ -460,7 +460,7 @@
                                                     <div class="col-md-10"> 
                                                         <div class="fallback">
                                                             <input name="video" type="file">
-                                                            @error('image3')
+                                                            @error('video')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
 
@@ -639,14 +639,24 @@
                                                     <label class="col-md-2 col-form-label">Other Detail</label>
                                                     <div class="col-md-10 " style="margin-top: 9px;">
                                                         <div class="custom-control custom-radio custom-control-inline">
-                                                            <input type="radio" class="custom-control-input" id="customYes" name="detail_check" value="1" checked="">
+                                                            <input type="radio" class="other_detail custom-control-input" id="customYes" name="detail_check" value="1" @if(old('detail_check')==1) checked @endif>
                                                             <label class="custom-control-label" for="customYes">Yes</label>
                                                         </div>
 
                                                         <div class="custom-control custom-radio custom-control-inline">
-                                                            <input type="radio" class="custom-control-input" id="customNo" name="detail_check" value="0">
+                                                            <input type="radio" class="other_detail custom-control-input" id="customNo" name="detail_check" value="0" @if(old('detail_check')==0) checked @endif>
                                                             <label class="custom-control-label" for="customNo">No</label>
                                                         </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row " id="other_detail_div">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label">Other Detail Content</label>
+                                                    <div class="col-md-10">
+                                                        <textarea id="textarea" class="form-control" rows="5" name="other_detail" placeholder="Please Type Detail..."></textarea>
+                                                        @error('other_detail')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
                                                     </div>
                                                 </div>
 
@@ -705,6 +715,18 @@
        // $('.comms').hide();
        // $('.feature').hide();
        // $('.battery').hide();
+        $('#other_detail_div').hide();
+        if($('#customYes').is(":checked")) { $('#other_detail_div').show();}
+        if($('#customNo').is(":checked")) { $('#other_detail_div').hide();}
+
+        $('.other_detail').change(function(){;
+            if($('.other_detail').is(":checked"))
+            {
+                if($(this).val()==1){$('#other_detail_div').show();}
+                if($(this).val()==0){$('#other_detail_div').hide();}
+            }
+            
+       });
        $('#launched').click(function(){
             if($('.launched').is(":hidden")){$('.launched').show();}else{$('.launched').hide();}
        });

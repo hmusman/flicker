@@ -33,7 +33,7 @@
     <div id="SingleProductBlock" style="width: 60%; float: left;"> 
 
         @foreach($product->variation_colors as $row)
-            @php $img = 'storage/'.$product->image @endphp
+            @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$product->image @endphp
             <div id="changecolorseletidOnMobile" style="width: 33%; height: 100%; background-color: White;  float: left;  ">
 
               <figure style="padding-top: 8px;">

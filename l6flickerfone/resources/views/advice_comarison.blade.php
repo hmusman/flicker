@@ -1040,10 +1040,10 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
     width: 50%;
   }
   #myULone li a {
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     margin-top: -1px;
     /* Prevent double borders */
-    background-color: #f6f6f6;
+   /*  background-color: #f6f6f6; */
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -1051,10 +1051,10 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
     display: block
   }
  #myULtwo li a {
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     margin-top: -1px;
     /* Prevent double borders */
-    background-color: #f6f6f6;
+    /* background-color: #f6f6f6; */
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -1063,10 +1063,10 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
   }
 
    #myULthree li a {
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     margin-top: -1px;
     /* Prevent double borders */
-    background-color: #f6f6f6;
+   /*  background-color: #f6f6f6; */
     padding: 12px;
     text-decoration: none;
     font-size: 18px;
@@ -1077,7 +1077,7 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
     background-color: #eee;
   }
   #myULthree li a:hover:not(.header) {
-    background-color: #eee;
+  /*   background-color: #eee; */
   }
 
   #setwidthfirst{
@@ -1499,7 +1499,7 @@ height: 104px;
               </center>
 
               <ul onblur="hideagainone()" id="myULone" class="myUL"
-                style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 149%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+                style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 127%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
                 <!-- <div>
       <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
     </div> -->
@@ -2271,7 +2271,7 @@ height: 104px;
               </center>
   
         <ul onblur="hideagaintwo()" id="myULtwo"
-          style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 144%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+          style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 127%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
           <!-- <div>
                         <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
                       </div> -->
@@ -2392,7 +2392,7 @@ height: 104px;
               </center>
   
             <ul onblur="hideagainthree()" id="myULthree"
-              style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 138%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+              style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 127%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
               <!-- <div>
                                     <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
                                   </div> -->

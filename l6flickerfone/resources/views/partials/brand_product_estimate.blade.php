@@ -1,5 +1,5 @@
  <div class="row">
-    @php $img = 'storage/'.$csproduct->image @endphp
+    @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/190_'.$csproduct->image @endphp
     <div class="col-md-2" style=""><img src="{{ asset($img) }}" style="width: 100%;" /></div>
     <div class="col-md-6" style="background-color: white">
     

@@ -662,7 +662,7 @@
                                                     </div>
                                                 </div>
 
-                                                 <div class="form-group row " id="other_detail_div">
+                                                <div class="form-group row " id="other_detail_div">
                                                     <label for="example-text-input" class="col-md-2 col-form-label">Other Detail Content</label>
                                                     <div class="col-md-10">
                                                         <textarea id="textarea" class="form-control" rows="5" name="other_detail" placeholder="Please Type Detail...">{{ $product->other_detail }}</textarea>
@@ -726,10 +726,8 @@
        // $('.feature').hide();
        // $('.battery').hide();
        $('#other_detail_div').hide();
-       if($('.other_detail').is(":checked"))
-       {
-            if($('.other_detail').val()==1){ $('#other_detail_div').show(); }
-       }
+        if($('#customYes').is(":checked")) { $('#other_detail_div').show();}
+        if($('#customNo').is(":checked")) { $('#other_detail_div').hide();}
 
        $('.other_detail').change(function(){;
             if($('.other_detail').is(":checked"))
