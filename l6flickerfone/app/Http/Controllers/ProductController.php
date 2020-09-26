@@ -482,4 +482,152 @@ class ProductController extends Controller
         
 
     }// citySearch
+<<<<<<< Updated upstream
+=======
+
+
+    public function adviceComparison($id)
+    {
+        $product = Product::where('id',$id)->first();
+        return view('advice_comarison',compact('product'));
+    }
+
+     public function oldAdviceComparison()
+    {
+        return view('advice_comarison_old');
+    }
+
+    public function adviceComparisonAll(Request $request)
+    {
+        $query = $request->get('query');
+        $hide = $request->get('hideFun');
+        $product_list = Product::where('name','like','%'.$query.'%')->get();
+        $total = $product_list->count();
+        return view('partials.comparison_list',compact(['product_list','total','hide']));
+    }
+
+    public function singleCompareProductDetail(Request $request)
+    {
+        $product = Product::where('id',$request->id)->first();
+        return view('partials.single_compare_product_detail',compact(['product']));
+    }
+
+    public function colorFilterStorage(Request $request)
+    {
+        $storage = ColorVariation::where([['product_id',$request->id],['color',$request->color]])->get();
+        return view('partials.color_storage',compact('storage'));
+    }
+
+    public function StorageFilterPrice(Request $request)
+    {
+         $storage = ColorVariation::where([['product_id',$request->id],['color',$request->color],['storage',$request->storage]])->first();
+         return $storage->price;
+    }
+
+    public function BrandProductDetail(Request $request)
+    {
+        $product = Product::where('id',$request->id)->first();
+        return view('partials.brand_product_detail',compact(('product')));
+    }
+
+    public function BrandProductColorItem(Request $request)
+    {
+        $products = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->select('sma_products.id','sma_products.name','sma_products.image','variations.product_id','variations.color','variations.storage','variations.price')->get();
+        return view('partials.brand_single_color_product',compact('products'));
+    }
+
+    public function BrandProductEstimate(Request $request)
+    {
+        $csproduct = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->where('variations.storage',$request->storage)->select('sma_products.id','sma_products.minor_dent_scratch','sma_products.major_dent_scratch','sma_products.original_accessories_available','sma_products.device_battery_status','sma_products.device_box_available','sma_products.screen_is_cracked','sma_products.name','sma_products.image','variations.color','variations.storage','variations.price')->first();
+        return view('partials.brand_product_estimate',compact('csproduct'));
+    }
+
+    public function ShopPage()
+    {
+        $brands = Brand::all();
+        $products = Product::orderBy('id','desc')->get();
+        return view('shop', compact(['brands','products'])); 
+    }
+
+    public function ShopBrandProducts(Request $request)
+    {
+        $nView = $request->nView;
+        $products =  Product::where('brand_id',$request->id)->orderBy('id','desc')->take($nView)->get();
+        return view('partials.shop_products_list',compact('products'));
+    }
+
+    public function ShopViewProducts(Request $request)
+    {
+        $nView = $request->nView;
+        $products =  Product::orderBy('id','desc')->take($nView)->get();
+        return view('partials.shop_products_list',compact('products'));
+    }
+
+    public function ShopPriceProducts(Request $request)
+    {
+        $query = $request->id;
+        $nView = $request->nView;
+        if($query=="Less than 20,000")
+        {
+            $products = Product::where('price', '<',20000)->orderBy('id','desc')->take($nView)->get();
+        }
+
+        else if($query=="Between 20,000 and 30,000")
+        {
+            $products = Product::whereBetween('price',[20000,30000])->orderBy('id','desc')->take($nView)->get();
+        }
+
+        else if($query=="Between 30,000 and 60,000")
+        {
+             $products = Product::whereBetween('price',[30000,60000])->orderBy('id','desc')->take($nView)->get();
+        }
+
+
+        else if($query=="Between 60,000 and 1,00000")
+        {
+             $products = Product::whereBetween('price',[60000,100000])->orderBy('id','desc')->take($nView)->get();
+        }
+
+        else if($query=="More Than 1,00000")
+        {
+            $products = Product::where('price', '>',100000)->orderBy('id','desc')->take($nView)->get();
+        }
+
+        return view('partials.shop_products_list',compact('products'));
+    }
+
+    public function ShopBrandPriceProducts(Request $request)
+    {
+        $query = $request->price;
+        $id = $request->brand;
+        $nView = $request->nView;
+        if($query=="Less than 20,000")
+        {
+            $products = Product::where('brand_id',$id)->where('price', '<',20000)->orderBy('id','desc')->take($nView)->get();
+        }
+
+        else if($query=="Between 20,000 and 30,000")
+        {
+            $products = Product::where('brand_id',$id)->whereBetween('price',[20000,30000])->orderBy('id','desc')->take($nView)->get();
+        }
+
+        else if($query=="Between 30,000 and 60,000")
+        {
+             $products = Product::where('brand_id',$id)->whereBetween('price',[30000,60000])->orderBy('id','desc')->take($nView)->get();
+        }
+
+
+        else if($query=="Between 60,000 and 1,00000")
+        {
+             $products = Product::where('brand_id',$id)->whereBetween('price',[60000,100000])->orderBy('id','desc')->take($nView)->get();
+        }
+
+        else if($query=="More Than 1,00000")
+        {
+            $products = Product::where('brand_id',$id)->where('price', '>',100000)->orderBy('id','desc')->take($nView)->get();
+        }
+
+        return view('partials.shop_products_list',compact('products'));
+    }
+>>>>>>> Stashed changes
 }
