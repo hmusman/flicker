@@ -572,7 +572,7 @@ class ProductController extends Controller
             {
                 foreach ($data as $row)
                 {
-                    $image = 'storage/'.$row->image;
+                    $image = 'storage/admin/images/product/thumbnail/100_'.$row->image;
                     $output.='
                         <li>
                           <div class="row">
