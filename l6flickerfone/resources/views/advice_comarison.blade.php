@@ -537,6 +537,7 @@ font-size: 9px !important;
 
 #imgOneMob{
   width: 100% !important;
+      height: 177px !important;
 }
 
 
@@ -700,7 +701,9 @@ div[class="img-zoom-container"]{
 
   @media (max-width: 550px){
 
-  
+  footer{
+  margin-top: 149px !important;
+}
 
   .srcgBtnOnMob{
 
@@ -1246,6 +1249,11 @@ height: 104px;
 .MiscColor{
   height: 70px !important;
 }
+
+
+
+
+
 </style>
 <body>
 
