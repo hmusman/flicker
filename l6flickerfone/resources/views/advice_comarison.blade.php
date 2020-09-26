@@ -1508,40 +1508,6 @@ height: 104px;
 
               <ul onblur="hideagainone()" id="myULone" class="myUL"
                 style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 127%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
-                <!-- <div>
-      <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
-    </div> -->
-
-                <div>
-                  <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">
-                    DEVICES <button class="ButtonSearchOnMob" id="srchbtnid" onclick="hideagainone();" style="margin-left: 305px;
-      background-color: #f8f7f7;
-      color: black;
-   
-      font-weight: 600;
-      border-style: none;">X</button></p>
-                </div>
-
-
-
-                <li>
-                  <div class="row">
-                    <div class="col-md-2">
-                      <div id="setwidthfirst" style="  ">
-                        <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg"
-                          style="  padding-left: 12px;  height: 91px;  ">
-                      </div>
-                    </div>
-                    <div class="col-md-10">
-                      <div id="setwidthsecond" style="  ">
-                        <a href="#">Apple iPhone 12 Pro Max
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
               </ul>
 
             </div>
@@ -2280,42 +2246,8 @@ height: 104px;
   
         <ul onblur="hideagaintwo()" id="myULtwo"
           style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 127%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
-          <!-- <div>
-                        <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
-                      </div> -->
-        
-          <div>
-            <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">
-              DEVICES <button class="ButtonSearchOnMob" id="srchbtnid" onclick="hideagaintwo();" style="margin-left: 305px;
-                        background-color: #f8f7f7;
-                        color: black;
-                     
-                        font-weight: 600;
-                        border-style: none;">X</button></p>
-          </div>
-        
-        
-        
-          <li>
-            <div class="row">
-              <div class="col-md-2">
-                <div id="setwidthfirst" style="  ">
-                  <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg" style="  padding-left: 12px;  height: 91px;  ">
-                </div>
-              </div>
-              <div class="col-md-10">
-                <div id="setwidthsecond" style="  ">
-                  <a href="#">Apple iPhone 12 Pro Max
-                  </a>
-                </div>
-              </div>
-            </div>
-          </li>
-        
-        
-        
-        
-          <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
+          
+      
         </ul>
   
             </div>
@@ -2404,35 +2336,6 @@ height: 104px;
               <!-- <div>
                                     <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
                                   </div> -->
-            
-              <div>
-                <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">
-                  DEVICES <button class="ButtonSearchOnMob" id="srchbtnid" onclick="hideagainthree();" style="margin-left: 280px;
-                                    background-color: #f8f7f7;
-                                    color: black;
-                                 
-                                    font-weight: 600;
-                                    border-style: none;">X</button></p>
-              </div>
-            
-            
-            
-              <li>
-                <div class="row">
-                  <div class="col-md-2">
-                    <div id="setwidthfirst" style="  ">
-                      <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg" style="  padding-left: 12px;  height: 91px;  ">
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div id="setwidthsecond" style="  ">
-                      <a href="#">Apple iPhone 12 Pro Max
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            
             
             
             
