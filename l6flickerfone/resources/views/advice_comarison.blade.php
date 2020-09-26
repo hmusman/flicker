@@ -1572,7 +1572,7 @@ height: 104px;
 
   <div style="height: 1110; width: 100%;" class="hideDivone">
 
-@php $img = 'storage/'.$product->image @endphp
+@php $img = 'storage/admin/images/product/thumbnail/215_'.$product->image @endphp
 
   <div style="height: 310px !important; width: 100%;">
     <div class="container">

@@ -780,7 +780,7 @@ margin-top: 90px;">
 
 
   <div class="toggle-boxqasim">
-    <h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+    <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
       margin-left: 6px; " class="toggleqasim headerqasim">MOBILES CONDITION
     </h6>
   
@@ -935,7 +935,7 @@ margin-top: 90px;">
 
 
   <div class="toggle-boxqasim">
-<h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+<h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
     margin-left: 6px; " class="toggleqasim headerqasim">SEARCH FILTERS
 </h6>
     <div class="contentqasim"><strong>Product Features:</strong><br />
@@ -961,7 +961,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 <div class="toggle-boxqasim">
-<h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+<h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
     margin-left: 6px; " class="toggleqasim headerqasim">PRICE RANGE
 </h6>
 
@@ -998,7 +998,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 <div class="toggle-boxqasim">
-<h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+<h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
     margin-left: 6px; " class="toggleqasim headerqasim">CITY
 </h6>
 
@@ -1198,7 +1198,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 <div class="toggle-boxqasim">
-  <h6 style="border-bottom: 1px #efeeee solid; background-image: url('images/headerimg/ic_arrow_drop_down_black_18dp.png'); background-repeat: no-repeat; background-position: right;     width: 96%;
+  <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
     margin-left: 6px; " class="toggleqasim headerqasim">MOBILES CONDITION
   </h6>
 

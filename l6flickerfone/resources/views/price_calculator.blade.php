@@ -725,7 +725,7 @@ input[type="radio"]:checked + label {
 
     @if($brands->count()>0)
       @foreach($brands as $brand)
-        @foreach($brand->products as $imgRow) @php $img = 'storage/'.$imgRow->image @endphp @endforeach
+        @foreach($brand->price_calculator_products_list as $imgRow) @php $img = 'storage/'.$imgRow->image @endphp @endforeach
         
         <div id="setBrandatMob" style="width: 15%; float: left;">
             <figure style="padding-top: 80px;">
@@ -787,7 +787,7 @@ input[type="radio"]:checked + label {
  
 
 </div>
-
+<style> footer{margin-top: 100px !important;} </style>
 @include('includes.footer')
  
 </body>

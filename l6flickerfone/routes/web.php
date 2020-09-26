@@ -19,6 +19,7 @@ Route::get('Shop','ProductController@ShopPage')->name('Shop');
 Route::get('ShopBrandProducts','ProductController@ShopBrandProducts')->name('ShopBrandProducts');
 Route::get('ShopPriceProducts','ProductController@ShopPriceProducts')->name('ShopPriceProducts');
 Route::get('ShopBrandPriceProducts','ProductController@ShopBrandPriceProducts')->name('ShopBrandPriceProducts');
+Route::get('ShopViewProducts','ProductController@ShopViewProducts')->name('ShopViewProducts');
 Route::get('BuyUsedMobilePhones','SellProductController@frontEndProducts')->name('BuyUsedMobilePhones');
 // Route::view('BuyUsedMobilePhones','buy_used_mobile_phone');
 // Route::view('ProductDetail','product_detail');

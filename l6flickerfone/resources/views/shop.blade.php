@@ -6,8 +6,8 @@
 
 
 <!-- Start WOWSlider.com HEAD section -->
-<link rel="stylesheet" type="text/css" href="Slider/engine1/style.css" />
-<script type="text/javascript" src="Slider/engine1/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('Slider/engine1/style.css')}}" />
+<script type="text/javascript" src="{{ asset('Slider/engine1/jquery.js')}}"></script>
 <!-- End WOWSlider.com HEAD section -->
 
 
@@ -367,7 +367,7 @@ ul[class="dropdown-menu fade-up show"] > li{
     .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
     .navbar .dropdown-menu.fade-up{ top:180%;  }
     .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-  }	
+  } 
   /* ============ desktop view .end// ============ */
   
   
@@ -479,7 +479,7 @@ color: #0071e3 !important;
 
 <!-- Start WOWSlider.com BODY section -->
 <!-- Start WOWSlider.com BODY section -->
-<!-- <div id="wowslider-container1">
+ <div id="wowslider-container1">
   <div class="ws_images"><ul>
       <li>
         <a href="#ShopPAge"> <img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now" title="Shop Now" id="wows1_0"/></a>
@@ -536,7 +536,7 @@ color: #0071e3 !important;
   </button> -->
 
 
-  </div>	 -->
+  </div>
  
   <!-- End WOWSlider.com BODY section -->
   
@@ -819,8 +819,21 @@ color: #0071e3 !important;
       });
 
       $('#view').change(function(){
-          BrandPriceProduct();  
-
+          if($('#brand').children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price')
+          {
+              var nView = $('#view').children('option:selected').val();
+              $.ajax({
+                url:"{{ route('ShopViewProducts') }}",
+                type:"get",
+                data:{nView:nView},
+                success:function(data)
+                {
+                  $('.products').html(data);
+                }
+              });
+          }
+          else
+          {BrandPriceProduct()};  
       });
 
       $('#price').change(function(){
@@ -975,12 +988,6 @@ $(function(){
 
 <script type="text/javascript" src="{{ asset('Slider/engine1/wowslider.js')}}"></script>
   <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>
-
-
- 
-  
-  
-
   <script  src="{{ asset('js/ScrollJS2/script.js')}}"></script>
 </html>
 

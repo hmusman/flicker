@@ -9,16 +9,16 @@
 </div>
 
 @if($total>0)
-	
-	@foreach($product_list as $product)
-		@php $img = 'storage/'.$product->image @endphp
-		
-		<li onclick="singleProduct('{{ $product->id }}','{{ $hide }}');" style="cursor: pointer;border:1px solid;width: 98%;margin-left: 1%;margin-bottom: 5px;">
+  
+  @foreach($product_list as $product)
+    @php $img = 'storage/admin/images/product/thumbnail/100_'.$product->image @endphp
+    
+    <li onclick="singleProduct('{{ $product->id }}','{{ $hide }}');" style="cursor: pointer;border:1px solid;width: 98%;margin-left: 1%;margin-bottom: 5px;">
           <div class="row" style="margin-top: 3px;">
             <div class="col-md-2">
               <div id="setwidthfirst" style="  ">
                 <img src="{{ asset($img) }}"
-                  style="  padding-left: 12px;  height: 91px;  ">
+                  style="height: 91px;  ">
               </div>
             </div>
             <div class="col-md-10">
@@ -29,8 +29,8 @@
             </div>
           </div>
   </li>
-		
-	@endforeach
+    
+  @endforeach
 
 @endif
 

@@ -721,7 +721,14 @@ class ProductController extends Controller
     public function ShopBrandProducts(Request $request)
     {
         $nView = $request->nView;
-        $products =  Product::where('brand_id',$request->id)->take($nView)->get();
+        $products =  Product::where('brand_id',$request->id)->orderBy('id','desc')->take($nView)->get();
+        return view('partials.shop_products_list',compact('products'));
+    }
+
+    public function ShopViewProducts(Request $request)
+    {
+        $nView = $request->nView;
+        $products =  Product::orderBy('id','desc')->take($nView)->get();
         return view('partials.shop_products_list',compact('products'));
     }
 
@@ -731,28 +738,28 @@ class ProductController extends Controller
         $nView = $request->nView;
         if($query=="Less than 20,000")
         {
-            $products = Product::where('price', '<',20000)->take($nView)->get();
+            $products = Product::where('price', '<',20000)->orderBy('id','desc')->take($nView)->get();
         }
 
         else if($query=="Between 20,000 and 30,000")
         {
-            $products = Product::whereBetween('price',[20000,30000])->take($nView)->get();
+            $products = Product::whereBetween('price',[20000,30000])->orderBy('id','desc')->take($nView)->get();
         }
 
         else if($query=="Between 30,000 and 60,000")
         {
-             $products = Product::whereBetween('price',[30000,60000])->take($nView)->get();
+             $products = Product::whereBetween('price',[30000,60000])->orderBy('id','desc')->take($nView)->get();
         }
 
 
         else if($query=="Between 60,000 and 1,00000")
         {
-             $products = Product::whereBetween('price',[60000,100000])->take($nView)->get();
+             $products = Product::whereBetween('price',[60000,100000])->orderBy('id','desc')->take($nView)->get();
         }
 
         else if($query=="More Than 1,00000")
         {
-            $products = Product::where('price', '>',100000)->take($nView)->get();
+            $products = Product::where('price', '>',100000)->orderBy('id','desc')->take($nView)->get();
         }
 
         return view('partials.shop_products_list',compact('products'));
@@ -765,28 +772,28 @@ class ProductController extends Controller
         $nView = $request->nView;
         if($query=="Less than 20,000")
         {
-            $products = Product::where('brand_id',$id)->where('price', '<',20000)->take($nView)->get();
+            $products = Product::where('brand_id',$id)->where('price', '<',20000)->orderBy('id','desc')->take($nView)->get();
         }
 
         else if($query=="Between 20,000 and 30,000")
         {
-            $products = Product::where('brand_id',$id)->whereBetween('price',[20000,30000])->take($nView)->get();
+            $products = Product::where('brand_id',$id)->whereBetween('price',[20000,30000])->orderBy('id','desc')->take($nView)->get();
         }
 
         else if($query=="Between 30,000 and 60,000")
         {
-             $products = Product::where('brand_id',$id)->whereBetween('price',[30000,60000])->take($nView)->get();
+             $products = Product::where('brand_id',$id)->whereBetween('price',[30000,60000])->orderBy('id','desc')->take($nView)->get();
         }
 
 
         else if($query=="Between 60,000 and 1,00000")
         {
-             $products = Product::where('brand_id',$id)->whereBetween('price',[60000,100000])->take($nView)->get();
+             $products = Product::where('brand_id',$id)->whereBetween('price',[60000,100000])->orderBy('id','desc')->take($nView)->get();
         }
 
         else if($query=="More Than 1,00000")
         {
-            $products = Product::where('brand_id',$id)->where('price', '>',100000)->take($nView)->get();
+            $products = Product::where('brand_id',$id)->where('price', '>',100000)->orderBy('id','desc')->take($nView)->get();
         }
 
         return view('partials.shop_products_list',compact('products'));
