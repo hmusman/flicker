@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Category;
 use App\Brand;
 use Image;
+use DB;
 class SellProductController extends Controller
 {
     
@@ -18,12 +19,19 @@ class SellProductController extends Controller
 
      public function frontEndProducts()
     {
-        $products = SellProduct::orderBy('id','desc')->get();
+        $products = SellProduct::orderBy('id','desc')->paginate(1);
         $brands = Brand::select('brands.name','brands.id')->join('sell_products','brands.id','=','sell_products.brand_id')->distinct()->get();
+        $cities = DB::select('SELECT city,COUNT(city) total FROM `sell_products` GROUP by city');
         $colors = SellProduct::select('color')->distinct()->get();
-        return view('buy_used_mobiles',compact(['products','brands','colors']));
+        return view('buy_used_mobiles',compact(['products','brands','colors','cities']));
     }
     
+    public function SellProductsData(Request $request)
+    {
+        $products = SellProduct::orderBy('id','desc')->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
     public function create()
     {
         $categories = Category::all();
@@ -37,14 +45,14 @@ class SellProductController extends Controller
         $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
         $ext1 = $img->getClientOriginalExtension();
         $time = time();
-        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $filename1 = $time.'_'.md5($filename).'.'.$ext1;
         $img->storeAs('public/admin/images/sellproduct', $filename1);
         $img->storeAs('public/admin/images/sellproduct/thumbnail', $filename1);
-        $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
-        Image::make($thumbnailpath)->resize(175,214)->save(public_path('storage/admin/images/sellproduct/thumbnail/175_'.$filename1));
-        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
-        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        $thumbnailpath = public_path('storage\admin\images\sellproduct\thumbnail\\'.$filename1);
+        Image::make($img->getRealPath())->resize(175,214)->save(public_path('storage/admin/images/sellproduct/thumbnail/175_'.$filename1));
+        Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
+        Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
+        Image::make($img->getRealPath())->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
 
@@ -54,13 +62,13 @@ class SellProductController extends Controller
         $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
         $ext1 = $img->getClientOriginalExtension();
         $time = time();
-        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $filename1 = $time.'_'.md5($filename).'.'.$ext1;
         $img->storeAs('public/admin/images/sellproduct', $filename1);
         $img->storeAs('public/admin/images/sellproduct/thumbnail', $filename1);
-        $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
-        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
-        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+       $thumbnailpath = public_path('storage\admin\images\sellproduct\thumbnail\\'.$filename1);
+        Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
+        Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
+        Image::make($img->getRealPath())->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
     public function store(Request $request)
@@ -186,7 +194,196 @@ class SellProductController extends Controller
         }
     }
 
+    public function BrandsSellProducts(Request $request)
+    {
+        $products = SellProduct::whereIn('brand_id',$request->brands)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function CitySellProducts(Request $request)
+    {
+        $products = SellProduct::whereIn('city',$request->cities)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function StatusSellProducts(Request $request)
+    {
+        $products = SellProduct::whereIn('device_status',$request->statuses)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function BrandsPriceSellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereBetween('price',[$fromPrice,$toPrice])->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
    
+    public function PriceSellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function BrandsPriceCitySellProducts(Request $request)
+    {
+        $products="";
+        $proArr = [];
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function BrandsPriceCityStatusSellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function PriceCityStatusSellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function BrandsPriceStatusSellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function PriceStatusSellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function BrandsCityStatusSellProducts(Request $request)
+    {
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function PriceCitySellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+     public function BrandsCitySellProducts(Request $request)
+    {
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function BrandsStatusSellProducts(Request $request)
+    {
+        $products="";
+        $proArr = [];;
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('device_status',$request->statuses)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function BrandsPriceStatusSellProductsSellProducts(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $products = SellProduct::whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function CityStatusSellProducts(Request $request)
+    {
+        $products = SellProduct::whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function UpperCityPriceSellProducts(Request $request)
+    {
+        $query = $request->price;
+        $city = $request->city;
+        if($query=="Less than 20,000")
+        {
+            $products = SellProduct::where('city',$city)->where('price', '<',20000)->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 20,000 and 30,000")
+        {
+            $products = SellProduct::where('city',$city)->whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 30,000 and 60,000")
+        {
+             $products = SellProduct::where('city',$city)->whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate(1);
+        }
+
+
+        else if($query=="Between 60,000 and 1,00000")
+        {
+             $products = SellProduct::where('city',$city)->whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="More Than 1,00000")
+        {
+            $products = SellProduct::where('city',$city)->where('price', '>',100000)->orderBy('id','desc')->paginate(1);
+        }
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function UpperPriceSellProducts(Request $request)
+    {
+        $query = $request->price;
+        if($query=="Less than 20,000")
+        {
+            $products = SellProduct::where('price', '<',20000)->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 20,000 and 30,000")
+        {
+            $products = SellProduct::whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 30,000 and 60,000")
+        {
+             $products = SellProduct::whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate(1);
+        }
+
+
+        else if($query=="Between 60,000 and 1,00000")
+        {
+             $products = SellProduct::whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="More Than 1,00000")
+        {
+            $products = SellProduct::where('price', '>',100000)->orderBy('id','desc')->paginate(1);
+        }
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function UpperCitySellProducts(Request $request)
+    {
+        $city = $request->city;
+        $products = SellProduct::where('city',$city)->orderBy('id','desc')->paginate(1);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+
+
     public function show($id)
     {
         //

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2020 at 12:13 PM
+-- Generation Time: Oct 01, 2020 at 02:42 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -21,6 +21,56 @@ SET time_zone = "+00:00";
 --
 -- Database: `l6flickerfonedb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accessories`
+--
+
+CREATE TABLE `accessories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `accessory_category_id` bigint(20) NOT NULL,
+  `brand_id` int(20) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `accessories`
+--
+
+INSERT INTO `accessories` (`id`, `accessory_category_id`, `brand_id`, `name`, `price`, `img`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'charging plug', '250', '1601460853_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 05:14:13', '2020-09-30 05:14:13'),
+(3, 1, 1, 'samsung power bank', '3500', '1601551731_c23685501622e754070fa3704340e17b.jpg', '2020-10-01 06:28:53', '2020-10-01 06:28:53'),
+(4, 1, 3, 'infinix power bank', '2500', '1601551818_c23685501622e754070fa3704340e17b.jpg', '2020-10-01 06:30:19', '2020-10-01 06:30:19'),
+(5, 1, 4, 'other power bank', '1500', '1601551849_724ce05ff7f359ace899892d0e5316e5.jpg', '2020-10-01 06:30:50', '2020-10-01 06:30:50'),
+(6, 1, 1, 'samsung latest charger', '1200', '1601551920_c0b6bec43a7ce173814b5a475e39c336.jpg', '2020-10-01 06:32:01', '2020-10-01 06:32:01'),
+(7, 1, 3, 'Infinix latest charger', '1000', '1601551959_e3620ef195b1e615421b271a7b4d438c.jpg', '2020-10-01 06:32:39', '2020-10-01 06:32:39'),
+(8, 1, 4, 'other latest charger', '400', '1601552001_5f4d189434f808a8eb34452033811cf6.jpg', '2020-10-01 06:33:21', '2020-10-01 06:33:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accessory_categories`
+--
+
+CREATE TABLE `accessory_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `accessory_categories`
+--
+
+INSERT INTO `accessory_categories` (`id`, `title`, `created_at`, `updated_at`) VALUES
+(1, 'charging', '2020-09-30 03:04:31', '2020-09-30 03:05:54');
 
 -- --------------------------------------------------------
 
@@ -91,7 +141,8 @@ CREATE TABLE `brands` (
 
 INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'samsung', '2020-07-25 05:12:43', '2020-08-05 00:36:06'),
-(3, 'infinix', '2020-08-05 00:35:13', '2020-08-05 00:35:13');
+(3, 'infinix', '2020-08-05 00:35:13', '2020-08-05 00:35:13'),
+(4, 'other', '2020-09-30 06:24:47', '2020-09-30 06:24:47');
 
 -- --------------------------------------------------------
 
@@ -137,9 +188,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `title`, `description`, `img`, `created_at`, `updated_at`) VALUES
-(1, 'mobile', 'this is description', NULL, '2020-07-24 02:34:43', '2020-08-05 00:37:17'),
-(3, 'laptop', 'this is description of laptop', NULL, '2020-07-24 03:01:02', '2020-07-24 03:01:02'),
-(6, 'tablet', 'this is description of tablets', NULL, '2020-08-05 00:36:33', '2020-08-05 00:36:33');
+(1, 'mobile', 'this is description', NULL, '2020-07-24 02:34:43', '2020-08-05 00:37:17');
 
 -- --------------------------------------------------------
 
@@ -209,7 +258,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2020_09_16_061723_create_buy_new_sells_table', 7),
 (11, '2020_09_16_075608_create_blog_sliders_table', 8),
 (12, '2020_09_23_051308_create_sell_products_table', 9),
-(13, '2020_09_23_065148_sell_products', 10);
+(13, '2020_09_23_065148_sell_products', 10),
+(14, '2020_09_30_072722_create_accessories_table', 11),
+(15, '2020_09_30_073927_create_accessory_categories_table', 12),
+(16, '2020_09_30_115547_create_sell_accessories_table', 13),
+(17, '2020_09_30_120524_add_column_sell_accessories', 14);
 
 -- --------------------------------------------------------
 
@@ -322,6 +375,42 @@ CREATE TABLE `roles` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sell_accessories`
+--
+
+CREATE TABLE `sell_accessories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `accessory_category_id` bigint(20) NOT NULL,
+  `brand_id` bigint(20) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sell_accessories`
+--
+
+INSERT INTO `sell_accessories` (`id`, `user_id`, `accessory_category_id`, `brand_id`, `name`, `price`, `city`, `phone`, `img`, `created_at`, `updated_at`) VALUES
+(1, 25, 1, 1, 'test', '666', 'Lahore', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(2, 25, 1, 1, 'test3', '1500', 'Faisalabad', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(3, 25, 1, 1, 'test2', '1500', 'Faisalabad', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(4, 25, 1, 3, 'test4', '1800', 'Faisalabad', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(5, 25, 1, 3, 'test5', '600', 'Gujrat', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(6, 25, 1, 3, 'test6', '1500', 'Gujrat', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(8, 25, 1, 4, 'test7', '1800', 'Gujrat', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(9, 25, 1, 4, 'test8', '600', 'Multan', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(10, 25, 1, 4, 'test8', '1500', 'Multan', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
+(11, 25, 1, 4, 'test10', '1800', 'Multan', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', '2020-09-30 07:22:15', '2020-09-30 07:22:15');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sell_products`
 --
 
@@ -363,8 +452,9 @@ CREATE TABLE `sell_products` (
 --
 
 INSERT INTO `sell_products` (`id`, `user_id`, `category_id`, `brand_id`, `model`, `color`, `price`, `minor_dent_scratch`, `major_dent_scratch`, `original_accessories_available`, `screen_is_cracked`, `device_box_available`, `device_battery_status`, `status`, `device_status`, `pta`, `city`, `phone`, `img1`, `img2`, `img3`, `img4`, `img5`, `img6`, `img7`, `img8`, `img9`, `img10`, `created_at`, `updated_at`) VALUES
-(23, 25, '1', '1', 'samsung new 7 plus', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(24, 25, '1', '3', 'infinix new 8 plus', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '2020-09-26 04:27:25', '2020-09-26 04:27:25');
+(23, 25, '1', '1', 'samsung new 7 plus', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(24, 25, '1', '3', 'infinix new 8 plus', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(25, 25, '1', '1', 'samsung new 8 plus', 'golden', '25500', 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '2020-09-29 05:04:08', '2020-09-29 05:04:08');
 
 -- --------------------------------------------------------
 
@@ -472,8 +562,8 @@ CREATE TABLE `sma_products` (
 --
 
 INSERT INTO `sma_products` (`id`, `code`, `name`, `color`, `unit`, `cost`, `price`, `alert_quantity`, `image`, `dimage`, `dimage1`, `category_id`, `brand_id`, `city`, `subcategory_id`, `quantity`, `details`, `description`, `type`, `promotion`, `launch_announced`, `launch_status`, `body_dimensions`, `body_weight`, `body_build`, `body_sim`, `display_type`, `display_size`, `display_resolution`, `display_protection`, `platform_os`, `platform_chipset`, `platform_cpu`, `platform_gpu`, `memory_card_slot`, `memory_ram`, `memory_storage`, `main_type`, `main_type_value`, `main_feature`, `main_video`, `selfie_single`, `selfie_feature`, `selfie_video`, `sound_loudspeaker`, `sound_jack`, `sound_mic`, `comms_wlan`, `comms_bluetooth`, `comms_gps`, `comms_nfc`, `comms_radio`, `comms_usb`, `feature_sensor`, `battery_status`, `battery_stand_by`, `battery_talk_time`, `battery_music`, `colors`, `promo_price`, `start_date`, `end_date`, `sale_unit`, `brand`, `slug`, `weight`, `upload_type`, `video`, `video_link`, `os`, `processor`, `memory`, `storage`, `camera`, `size`, `resolution`, `connectivity`, `battery`, `height`, `width`, `depth`, `brief_weight`, `minor_dent_scratch`, `major_dent_scratch`, `original_accessories_available`, `screen_is_cracked`, `device_box_available`, `device_battery_status`, `detail_check`, `other_detail`, `created_at`, `updated_at`) VALUES
-(11, '7867862', 'samsung 7 plus', 'grey', NULL, NULL, '95000', '20.0000', '1601026510_iphone6sPlus.png', '1601026511_iphoneXr.png', '1601026511_iphone8.png', 1, 1, NULL, NULL, 2, NULL, 'this is detail', 'standard', 0, '2020-08-12', 'Available', '158 x 77.8 x 8.1 mm (6.22 x 3.06 x 0.32 in)', '125', 'Front/back glass, stainless steel frame', 'Nano-SIM and/or Electronic SIM card IP68 dust/water resistant (up to 4m for 30 mins)', 'Super Retina XDR OLED capacitive touchscreen, 16M colors', '6.5 inches, 102.9 cm2 (~83.7% screen-to-body ratio)', '1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)', 'Scratch-resistant glass, oleophobic coating 800 nits max brightness Dolby Vision HDR10 Wide color gamut True-tone 120Hz touch-sensing', 'iOS 13, upgradable to iOS 13.2', 'Apple A13 Bionic (7 nm+)', 'Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)', 'Apple GPU (4-core graphics)', 'yes', '4GB RAM', '64/256/512GB', 'triple', '12 MP, f/1.8, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS 12 MP, f/2.4 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS 2x opti           <label class=', 'Quad-LED dual-tone flash, HDR (photo/panorama)', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR, stereo sound rec', '12 MP, f/2.2, 23mm (wide) SL 3D camera', 'HDR', '2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS', 'yes', 'yes', 'Active noise cancellation with dedicated mic Dolby Atmos, Dolby Digital Plus', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '5.0, A2DP, LE', 'Yes, with A-GPS, GLONASS, GALILEO, QZSS', 'No', 'yes', NULL, 'Face ID, accelerometer, gyro, proximity, compass, barometer Siri natural language commands and dictation', 'Non-removable Li-Ion 3969 mAh battery (15.04 Wh)', NULL, 'Up to 20 h (multimedia)', 'Up to 80 h', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 'http://flickerfone/videos', 'iOS 10.0.1', 'Quad-core 2.34 GHz', '2 GB RAM', '32/128/256 GB', '12/7 MP', '4.7 inches', '750 x 1334 pixels', 'Wi-Fi 802.11, Bluetooth 4.2, NFC (Apple Pay only)', 'Non-removable Li-Po 1960 mAh battery', '5.44 inches', '2.64 inches', '0.28 inches', '138g', '1000', '1500', '500', '3000', '1000', '1500', 0, NULL, '2020-08-11 07:50:53', '2020-09-25 04:35:11'),
-(18, '432432432', 'infinix hot s3 lites e', 'lightbrown', NULL, NULL, '45466', '20.0000', '1601026606_iphoneX.png', '1601026606_iphoneXr.png', '1601026606_iphone6sPlus.png', 1, 3, NULL, NULL, 6, NULL, 'thid', 'standard', 0, '2020-08-22', 'Available', '158 x 77.8 x 8.1 mm (6.22 x 3.06 x 0.32 in)', '125', 'Front/back glass, stainless steel frame', 'Nano-SIM and/or Electronic SIM card IP68 dust/water resistant (up to 4m for 30 mins)', 'Super Retina XDR OLED capacitive touchscreen, 16M colors', '6.5 inches, 102.9 cm2 (~83.7% screen-to-body ratio)', '1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)', 'Scratch-resistant glass, oleophobic coating 800 nits max brightness Dolby Vision HDR10 Wide color gamut True-tone 120Hz touch-sensing', 'iOS 13, upgradable to iOS 13.2', 'Apple A13 Bionic (7 nm+)', 'Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)', 'Apple GPU (4-core graphics)', NULL, '2GB RAM', '64/256GB', 'triple', '12 MP, f/1.8, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS 12 MP, f/2.4 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS 2x opti           <label class=', 'Quad-LED dual-tone flash, HDR (photo/panorama)', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR, stereo sound rec', '12 MP, f/2.2, 23mm (wide) SL 3D camera', 'HDR', '2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS', 'no', 'no', 'Active noise cancellation with dedicated mic Dolby Atmos, Dolby Digital Plus', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '5.0, A2DP, LE', 'Yes, with A-GPS, GLONASS, GALILEO, QZSS', 'No', 'no', NULL, 'Face ID, accelerometer, gyro, proximity, compass, barometer Siri natural language commands and dictation', 'Non-removable Li-Ion 3969 mAh battery (15.04 Wh)', NULL, 'Up to 20 h (multimedia)', 'Up to 80 h', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 'iOS 10.0.1', 'Quad-core 2.34 GHz', '2 GB RAM', '32/128GB', '12/7 MP', '4.7 inches', '750 x 1334 pixels', 'Wi-Fi 802.11, Bluetooth 4.2, NFC (Apple Pay only)', 'Non-removable Li-Po 1960 mAh battery', '5.44 inches', '2.64 inches', '0.28 inches', '138g', '2500', '5000', '1500', '3500', '500', '2000', 0, NULL, '2020-08-21 05:51:55', '2020-09-25 04:36:47'),
+(11, '7867862', 'samsung 7 plus', 'grey', NULL, NULL, '95000', '20.0000', '1601026510_iphone6sPlus.png', '1601026511_iphoneXr.png', '1601026511_iphone8.png', 1, 1, NULL, NULL, 2, NULL, 'this is detail', 'standard', 0, '2020-08-12', 'Available', '158 x 77.8 x 8.1 mm (6.22 x 3.06 x 0.32 in)', '125', 'Front/back glass, stainless steel frame', 'Nano-SIM and/or Electronic SIM card IP68 dust/water resistant (up to 4m for 30 mins)', 'Super Retina XDR OLED capacitive touchscreen, 16M colors', '6.5 inches, 102.9 cm2 (~83.7% screen-to-body ratio)', '1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)', 'Scratch-resistant glass, oleophobic coating 800 nits max brightness Dolby Vision HDR10 Wide color gamut True-tone 120Hz touch-sensing', 'iOS 13, upgradable to iOS 13.2', 'Apple A13 Bionic (7 nm+)', 'Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)', 'Apple GPU (4-core graphics)', 'yes', '4GB RAM', '64/256/512GB', 'triple', '12 MP, f/1.8, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS 12 MP, f/2.4 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS 2x opti           <label class=', 'Quad-LED dual-tone flash, HDR (photo/panorama)', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR, stereo sound rec', '12 MP, f/2.2, 23mm (wide) SL 3D camera', 'HDR', '2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS', 'yes', 'yes', 'Active noise cancellation with dedicated mic Dolby Atmos, Dolby Digital Plus', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '5.0, A2DP, LE', 'Yes, with A-GPS, GLONASS, GALILEO, QZSS', 'No', 'yes', NULL, 'Face ID, accelerometer, gyro, proximity, compass, barometer Siri natural language commands and dictation', 'Non-removable Li-Ion 3969 mAh battery (15.04 Wh)', NULL, 'Up to 20 h (multimedia)', 'Up to 80 h', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Zw8h-PjtGDI\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'iOS 10.0.1', 'Quad-core 2.34 GHz', '2 GB RAM', '32/128/256 GB', '12/7 MP', '4.7 inches', '750 x 1334 pixels', 'Wi-Fi 802.11, Bluetooth 4.2, NFC (Apple Pay only)', 'Non-removable Li-Po 1960 mAh battery', '5.44 inches', '2.64 inches', '0.28 inches', '138g', '1000', '1500', '500', '3000', '1000', '1500', 0, NULL, '2020-08-11 07:50:53', '2020-10-01 01:17:21'),
+(18, '432432432', 'infinix hot s3 lites e', 'lightbrown', NULL, NULL, '45466', '20.0000', '1601026606_iphoneX.png', '1601026606_iphoneXr.png', '1601026606_iphone6sPlus.png', 1, 3, NULL, NULL, 6, NULL, 'thid', 'standard', 0, '2020-08-22', 'Available', '158 x 77.8 x 8.1 mm (6.22 x 3.06 x 0.32 in)', '125', 'Front/back glass, stainless steel frame', 'Nano-SIM and/or Electronic SIM card IP68 dust/water resistant (up to 4m for 30 mins)', 'Super Retina XDR OLED capacitive touchscreen, 16M colors', '6.5 inches, 102.9 cm2 (~83.7% screen-to-body ratio)', '1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)', 'Scratch-resistant glass, oleophobic coating 800 nits max brightness Dolby Vision HDR10 Wide color gamut True-tone 120Hz touch-sensing', 'iOS 13, upgradable to iOS 13.2', 'Apple A13 Bionic (7 nm+)', 'Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)', 'Apple GPU (4-core graphics)', NULL, '2GB RAM', '64/256GB', 'triple', '12 MP, f/1.8, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS 12 MP, f/2.4 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS 2x opti           <label class=', 'Quad-LED dual-tone flash, HDR (photo/panorama)', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR, stereo sound rec', '12 MP, f/2.2, 23mm (wide) SL 3D camera', 'HDR', '2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS', 'no', 'no', 'Active noise cancellation with dedicated mic Dolby Atmos, Dolby Digital Plus', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '5.0, A2DP, LE', 'Yes, with A-GPS, GLONASS, GALILEO, QZSS', 'No', 'no', NULL, 'Face ID, accelerometer, gyro, proximity, compass, barometer Siri natural language commands and dictation', 'Non-removable Li-Ion 3969 mAh battery (15.04 Wh)', NULL, 'Up to 20 h (multimedia)', 'Up to 80 h', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 'iOS 10.0.1', 'Quad-core 2.34 GHz', '2 GB RAM', '32/128GB', '12/7 MP', NULL, NULL, NULL, 'Non-removable Li-Po 1960 mAh battery', '5.44 inches', '2.64 inches', '0.28 inches', '138g', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2020-08-21 05:51:55', '2020-09-30 01:40:42'),
 (19, '4324545454', 'samsung hot 8 litesme', 'blue', NULL, NULL, '666', '20.0000', '1601026641_iphoneXr.png', '1601026641_iphoneX.png', '1601027015_iphonexsmax.png', 1, 1, NULL, NULL, 7, NULL, 'detail', 'standard', 0, '2020-09-05', 'Available', '158 x 77.8 x 8.1 mm (6.22 x 3.06 x 0.32 in)', '125', 'Front/back glass, stainless steel frame', 'Nano-SIM and/or Electronic SIM card IP68 dust/water resistant (up to 4m for 30 mins)', 'Super Retina XDR OLED capacitive touchscreen, 16M colors', '6.5 inches, 102.9 cm2 (~83.7% screen-to-body ratio)', '1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)', 'Scratch-resistant glass, oleophobic coating 800 nits max brightness Dolby Vision HDR10 Wide color gamut True-tone 120Hz touch-sensing', 'iOS 13, upgradable to iOS 13.2', 'Apple A13 Bionic (7 nm+)', 'Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)', 'Apple GPU (4-core graphics)', 'no', '4GB RAM', '64/256/512GB', 'triple', '12 MP, f/1.8, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS 12 MP, f/2.4 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS 2x optical zoom 12 MP, f/2.4, 13mm (ultrawide)', 'Quad-LED dual-tone flash, HDR (photo/panorama)', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR, stereo sound rec', 'single', 'selfie feature', NULL, NULL, NULL, 'Active noise cancellation with dedicated mic Dolby Atmos, Dolby Digital Plus', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '5.0, A2DP, LE', 'Yes, with A-GPS, GLONASS, GALILEO, QZSS', 'No', 'no', NULL, 'Face ID, accelerometer, gyro, proximity, compass, barometer Siri natural language commands and dictation', 'Non-removable Li-Ion 3969 mAh battery (15.04 Wh)', NULL, 'Up to 20 h (multimedia)', 'Up to 80 h', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, 'http://flickerfone/videos', 'iOS 10.0.1', 'Quad-core 2.34 GHz', '2 GB RAM', '32/128/256 GB', '12/7 MP', '4.7 inches', '750 x 1334 pixels', 'Wi-Fi 802.11, Bluetooth 4.2, NFC (Apple Pay only)', 'Non-removable Li-Po 1960 mAh battery', '5.44 inches', '2.64 inches', '0.28 inches', '138g', '1700', '2700', '1500', '3500', '1200', '2500', 0, NULL, '2020-09-04 01:43:45', '2020-09-25 04:43:36'),
 (20, '453212', 'samsung 11 plus', 'yellow', NULL, NULL, '120000', '20.0000', '1601026672_iphoneX.png', '1601027032_iphonexsmax.png', '1601026672_iphoneXr.png', 1, 1, NULL, NULL, 6, NULL, 'this is description', 'standard', 0, '2020-09-07', 'Available', '158 x 77.8 x 8.1 mm (6.22 x 3.06 x 0.32 in)', '125', 'Front/back glass, stainless steel frame', 'Nano-SIM and/or Electronic SIM card IP68 dust/water resistant (up to 4m for 30 mins)', 'Super Retina XDR OLED capacitive touchscreen, 16M colors', '6.5 inches, 102.9 cm2 (~83.7% screen-to-body ratio)', '1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)', 'Scratch-resistant glass, oleophobic coating 800 nits max brightness Dolby Vision HDR10 Wide color gamut True-tone 120Hz touch-sensing', 'iOS 13, upgradable to iOS 13.2', NULL, 'Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)', 'Apple GPU (4-core graphics)', 'yes', '8GB', '64/256/512GB', 'single', '12 MP, f/1.8, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS 12 MP, f/2.4 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS 2x optical zoom 12 MP, f/2.4, 13mm (ultrawide)', 'Quad-LED dual-tone flash, HDR (photo/panorama)', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR, stereo sound rec', '12 MP, f/2.2, 23mm (wide) SL 3D camera', 'selfie feature', '2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS', 'yes', 'no', 'Active noise cancellation with dedicated mic Dolby Atmos, Dolby Digital Plus', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '5.0, A2DP, LE', 'Yes, with A-GPS, GLONASS, GALILEO, QZSS', 'No', 'yes', '2.0, proprietary reversible connecto', 'Face ID, accelerometer, gyro, proximity, compass, barometer Siri natural language commands and dictation', 'Non-removable Li-Ion 3969 mAh battery (15.04 Wh)', NULL, 'Up to 20 h (multimedia)', 'Up to 80 h', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 'iOS 10.0.1', 'Quad-core 2.34 GHz', '4 GB RAM', '32/128GB', '12/7 MP', '4.7 inches', '750 x 1334 pixels', 'Wi-Fi 802.11, Bluetooth 4.2, NFC (Apple Pay only)', 'Non-removable Li-Po 1960 mAh battery', '5.44 inches', '2.64 inches', '0.28 inches', '138g', '1500', '4500', '2400', '4500', '1300', '2300', 0, NULL, '2020-09-14 00:35:34', '2020-09-25 04:43:52'),
 (21, '876123', 'samsung 7 plus', 'grey', NULL, NULL, '85500', '20.0000', '1601026720_iphoneX.png', '1601027119_iphone8.png', '1601027056_iphoneXr.png', 1, 1, NULL, NULL, 6, NULL, 'this is detail', 'standard', 0, '2020-09-08', 'Available', '158 x 77.8 x 8.1 mm (6.22 x 3.06 x 0.32 in)', '125', 'Front/back glass, stainless steel frame', 'Nano-SIM and/or Electronic SIM card IP68 dust/water resistant (up to 4m for 30 mins)', 'Super Retina XDR OLED capacitive touchscreen, 16M colors', '6.5 inches, 102.9 cm2 (~83.7% screen-to-body ratio)', '1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)', 'Scratch-resistant glass, oleophobic coating 800 nits max brightness Dolby Vision HDR10 Wide color gamut True-tone 120Hz touch-sensing', 'iOS 13, upgradable to iOS 13.2', 'Apple A13 Bionic (7 nm+)', 'Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)', 'Apple GPU (4-core graphics)', 'yes', '8GB', '64/256/512GB', 'triple', '12 MP, f/1.8, 26mm (wide), 1/2.55\", 1.4µm, dual pixel PDAF, OIS 12 MP, f/2.4 52mm (telephoto), 1/3.4\", 1.0µm, PDAF, OIS 2x optical zoom 12 MP, f/2.4, 13mm (ultrawide)', 'Quad-LED dual-tone flash, HDR (photo/panorama)', '2160p@24/30/60fps, 1080p@30/60/120/240fps, HDR, stereo sound rec', '12 MP, f/2.2, 23mm (wide) SL 3D camera', 'selfie feature', '2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS', 'yes', 'yes', 'Active noise cancellation with dedicated mic Dolby Atmos, Dolby Digital Plus', 'Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot', '5.0, A2DP, LE', 'Yes, with A-GPS, GLONASS, GALILEO, QZSS', 'No', 'yes', '2.0, proprietary reversible connecto', 'Face ID, accelerometer, gyro, proximity, compass, barometer Siri natural language commands and dictation', 'Non-removable Li-Ion 3969 mAh battery (15.04 Wh)', NULL, 'Up to 20 h (multimedia)', 'Up to 80 h', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, 'iOS 10.0.1', 'Quad-core 2.34 GHz', '8 GB RAM', '32/128/256 GB', '12/7 MP', '4.7 inches', '750 x 1334 pixels', 'Wi-Fi 802.11, Bluetooth 4.2, NFC (Apple Pay only)', 'Non-removable Li-Po 1960 mAh battery', '5.44 inches', '2.64 inches', '0.28 inches', '138g', '500', '2500', '800', '1500', '500', '1500', 0, NULL, '2020-09-14 01:00:19', '2020-09-25 04:45:20'),
@@ -524,6 +614,7 @@ CREATE TABLE `variations` (
   `color` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `storage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -532,31 +623,44 @@ CREATE TABLE `variations` (
 -- Dumping data for table `variations`
 --
 
-INSERT INTO `variations` (`id`, `product_id`, `cproduct_id`, `color`, `storage`, `price`, `created_at`, `updated_at`) VALUES
-(280, '11', NULL, 'blue', '32gb', '45000', '2020-09-25 04:35:11', '2020-09-25 04:35:11'),
-(281, '11', NULL, 'blue', '64gb', '28000', '2020-09-25 04:35:11', '2020-09-25 04:35:11'),
-(282, '11', NULL, 'pink', '64gb', '45500', '2020-09-25 04:35:11', '2020-09-25 04:35:11'),
-(283, '11', NULL, 'pink', '32gb', '55500', '2020-09-25 04:35:11', '2020-09-25 04:35:11'),
-(284, '18', NULL, 'lightbrown', '32gb', '45000', '2020-09-25 04:36:47', '2020-09-25 04:36:47'),
-(285, '18', NULL, 'lightbrown', '64gb', '65500', '2020-09-25 04:36:47', '2020-09-25 04:36:47'),
-(286, '18', NULL, 'lightyellow', '64gb', '55500', '2020-09-25 04:36:47', '2020-09-25 04:36:47'),
-(299, '19', NULL, 'pink', '32gb', '45000', '2020-09-25 04:43:36', '2020-09-25 04:43:36'),
-(300, '19', NULL, 'pink', '64gb', '55000', '2020-09-25 04:43:36', '2020-09-25 04:43:36'),
-(301, '20', NULL, 'pink', '32gb', '45000', '2020-09-25 04:43:52', '2020-09-25 04:43:52'),
-(302, '20', NULL, 'pink', '64gb', '70500', '2020-09-25 04:43:52', '2020-09-25 04:43:52'),
-(303, '20', NULL, 'light pink', '128gb', '85500', '2020-09-25 04:43:52', '2020-09-25 04:43:52'),
-(311, '21', NULL, 'black', '32gb', '25000', '2020-09-25 04:45:20', '2020-09-25 04:45:20'),
-(312, '21', NULL, 'blue', '64gb', '55500', '2020-09-25 04:45:20', '2020-09-25 04:45:20'),
-(313, '21', NULL, 'blue', '128gb', '85500', '2020-09-25 04:45:20', '2020-09-25 04:45:20'),
-(318, '28', NULL, 'blue', '32gb', '45000', '2020-09-26 04:25:24', '2020-09-26 04:25:24'),
-(323, '22', NULL, 'blue', '32gb', '45000', '2020-09-26 04:52:47', '2020-09-26 04:52:47'),
-(324, '22', NULL, 'pink', '64gb', '55500', '2020-09-26 04:52:47', '2020-09-26 04:52:47'),
-(325, '22', NULL, 'pink', '128gb', '75500', '2020-09-26 04:52:47', '2020-09-26 04:52:47'),
-(326, '22', NULL, 'pink', '256gb', '95500', '2020-09-26 04:52:47', '2020-09-26 04:52:47');
+INSERT INTO `variations` (`id`, `product_id`, `cproduct_id`, `color`, `storage`, `price`, `img`, `created_at`, `updated_at`) VALUES
+(299, '19', NULL, 'pink', '32gb', '45000', NULL, '2020-09-25 04:43:36', '2020-09-25 04:43:36'),
+(300, '19', NULL, 'pink', '64gb', '55000', NULL, '2020-09-25 04:43:36', '2020-09-25 04:43:36'),
+(301, '20', NULL, 'pink', '32gb', '45000', NULL, '2020-09-25 04:43:52', '2020-09-25 04:43:52'),
+(302, '20', NULL, 'pink', '64gb', '70500', NULL, '2020-09-25 04:43:52', '2020-09-25 04:43:52'),
+(303, '20', NULL, 'light pink', '128gb', '85500', NULL, '2020-09-25 04:43:52', '2020-09-25 04:43:52'),
+(311, '21', NULL, 'black', '32gb', '25000', NULL, '2020-09-25 04:45:20', '2020-09-25 04:45:20'),
+(312, '21', NULL, 'blue', '64gb', '55500', NULL, '2020-09-25 04:45:20', '2020-09-25 04:45:20'),
+(313, '21', NULL, 'blue', '128gb', '85500', NULL, '2020-09-25 04:45:20', '2020-09-25 04:45:20'),
+(318, '28', NULL, 'blue', '32gb', '45000', NULL, '2020-09-26 04:25:24', '2020-09-26 04:25:24'),
+(323, '22', NULL, 'blue', '32gb', '45000', NULL, '2020-09-26 04:52:47', '2020-09-26 04:52:47'),
+(324, '22', NULL, 'pink', '64gb', '55500', NULL, '2020-09-26 04:52:47', '2020-09-26 04:52:47'),
+(325, '22', NULL, 'pink', '128gb', '75500', NULL, '2020-09-26 04:52:47', '2020-09-26 04:52:47'),
+(326, '22', NULL, 'pink', '256gb', '95500', NULL, '2020-09-26 04:52:47', '2020-09-26 04:52:47'),
+(334, '18', NULL, 'blue', '32gb', '45000', '1601448542_4eb3a5c8b2a4c1820e0bd9f8423b8e2a.png', '2020-09-30 01:50:05', '2020-09-30 01:50:05'),
+(335, '18', NULL, 'blue', '64gb', '55000', '1601448542_4eb3a5c8b2a4c1820e0bd9f8423b8e2a.png', '2020-09-30 01:50:05', '2020-09-30 01:50:05'),
+(336, '18', NULL, 'brown', '32gb', '45500', '1601448605_9266d77e2d552b0469ebaca1fd8d6397.png', '2020-09-30 01:50:05', '2020-09-30 01:50:05'),
+(337, '29', NULL, 'blue', '32gb', '45000', '1601449807_89550539725a10717eb10c5db6950983.png', '2020-09-30 02:10:08', '2020-09-30 02:10:08'),
+(342, '11', NULL, 'blue', '32gb', '45000', '1601531495_89550539725a10717eb10c5db6950983.png', '2020-10-01 01:17:21', '2020-10-01 01:17:21'),
+(343, '11', NULL, 'blue', '64gb', '28000', '1601531495_89550539725a10717eb10c5db6950983.png', '2020-10-01 01:17:21', '2020-10-01 01:17:21'),
+(344, '11', NULL, 'pink', '64gb', '45500', '1601531497_3e6777aa3f4e3de20e114cc603264993.png', '2020-10-01 01:17:21', '2020-10-01 01:17:21'),
+(345, '11', NULL, 'pink', '32gb', '55500', '1601531497_3e6777aa3f4e3de20e114cc603264993.png', '2020-10-01 01:17:21', '2020-10-01 01:17:21');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `accessories`
+--
+ALTER TABLE `accessories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `accessory_categories`
+--
+ALTER TABLE `accessory_categories`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `admins`
@@ -637,6 +741,12 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sell_accessories`
+--
+ALTER TABLE `sell_accessories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sell_products`
 --
 ALTER TABLE `sell_products`
@@ -665,6 +775,18 @@ ALTER TABLE `variations`
 --
 
 --
+-- AUTO_INCREMENT for table `accessories`
+--
+ALTER TABLE `accessories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `accessory_categories`
+--
+ALTER TABLE `accessory_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
@@ -680,7 +802,7 @@ ALTER TABLE `blog_sliders`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `buy_new_sells`
@@ -710,7 +832,7 @@ ALTER TABLE `metas`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -737,16 +859,22 @@ ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `sell_accessories`
+--
+ALTER TABLE `sell_accessories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `sell_products`
 --
 ALTER TABLE `sell_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `sma_products`
 --
 ALTER TABLE `sma_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -758,7 +886,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `variations`
 --
 ALTER TABLE `variations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=327;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

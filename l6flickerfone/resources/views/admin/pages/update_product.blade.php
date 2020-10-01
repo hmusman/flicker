@@ -424,12 +424,12 @@
 
 
                                                 <div class="form-group row">
-                                                    <label class="col-md-2 col-form-label">Variotion</label>
-                                                    <div class="col-md-10">
+                                                    <label class="col-md-1 col-form-label">Variotion:</label>
+                                                    <div class="col-md-11">
                                                         <div class="row">
-                                                            <div class="col-md-3"><label>Color</label></div>
-                                                            <div class="col-md-3"><label>Storage</label></div>
-                                                            <div class="col-md-3"><label>Price</label></div>
+                                                            <div class="col-md-2"><label>Color</label></div>
+                                                            <div class="col-md-2"><label>Storage</label></div>
+                                                            <div class="col-md-2"><label>Price</label></div>
                                                         </div>
                                                        
                                                     
@@ -437,26 +437,41 @@
                                                             @php $i=-1; $colorName = ""; $j=0;@endphp
 
                                                             @foreach($product->variation_colors as $color)
-                                                                 @if($colorName != $color->color)
+                                                                @if($colorName != $color->color)
                                                                     @php $i++; $j++; @endphp
                                                                 @endif
                                                                
                                                                 <div id="" class="row check<?php echo $i;?> <?php if($colorName != $color->color){ echo "color".$i; } else {echo "childColor".$i; }?>" style="margin-top: 5px;">
                                                                     @if($colorName != $color->color)
-                                                                         <div class="col-md-3"><input type="text" class="form-control" value="{{ $color->color }}"  name="variation_color[]"></div>
+                                                                         <div class="col-md-2"><input type="text" class="form-control" value="{{ $color->color }}"  name="variation_color[]"></div>
                                                                     @else 
-                                                                        <div class="col-md-3"></div>
+                                                                        <div class="col-md-2"></div>
                                                                     @endif
                                                                    
-                                                                    <div class="col-md-3"><input type="text" class="form-control" value="{{ $color->storage }}" name="variation_storage[<?php echo $i;?>][]"></div>
-                                                                    <div class="col-md-3"><input type="text" class="form-control" value="{{ $color->price }}" name="variation_price[<?php echo $i;?>][]">
+                                                                    <div class="col-md-2"><input type="text" class="form-control" value="{{ $color->storage }}" name="variation_storage[<?php echo $i;?>][]"></div>
+                                                                    <div class="col-md-2"><input type="text" class="form-control" value="{{ $color->price }}" name="variation_price[<?php echo $i;?>][]">
                                                                     </div>
                                                                     @if($colorName != $color->color)
                                                                          <div class="col-md-1"><button type="button" class="btn-primary btn add_more_storage_price"  onclick="add_more_storage_price(<?php echo $i;?>)">More</button></div>
                                                                     
                                                                     @endif
-                                                                    @php $colorName = $color->color @endphp
-                                                                    <button type="button" class="myRemove btn btn-danger"  style="border:none; margin-left:10px;" onclick="myRemove(this);"> x </button>
+                                                                   
+                                                                    <button type="button" class="myRemove btn btn-danger"  style="border:none; height: 40px;margin-left:12px !important;" onclick="myRemove(this);"> x </button>
+
+                                                                    @if($colorName != $color->color)
+                                                                        <input type="hidden" name="old_variation_img[]" value="{{ $color->img }}">
+                                                                        <div class="col-md-2"><input class="form-control" type="file" name="variation_image[]" title=" " style="color: transparent;border: none;" /></div>
+                                                                        <div class="col-md-2">
+                                                                            @if($color->img !='')
+                                                                                <img src="{{ asset('storage/admin/images/product/thumbnail/100_'.$color->img) }}"/>
+                                                                            @endif
+                                                                            
+                                                                        </div>
+
+                                                                    @else 
+                                                                        <div class="col-md-2"></div>
+                                                                    @endif
+                                                                     @php $colorName = $color->color @endphp
                                                                 </div>
 
                                                             @endforeach
@@ -491,7 +506,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
+                                                <!-- <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent Deduction</label>
                                                     <div class="col-md-8">
                                                         <input class="form-control" type="number" value="{{ $product->minor_dent_scratch }}" name="minor_dent" placeholder="Enter Minor Dent Deduction" id="example-text-input">
@@ -551,7 +566,7 @@
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                             </div><!-- detail -->
 
@@ -786,7 +801,7 @@
 
         var start = '{{ $j }}';       
         $('#color_add_more').click(function(){
-            var html = '<div class="row check'+start+' color'+start+'" style="margin-top: 10px;"><div class="col-md-3"><input type="text" class="form-control" name="variation_color[]"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_storage['+start+'][]"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_price['+start+'][]"></div> <div class="col-md-1"><button type="button" class="add_more_storage_price btn btn-primary" onclick="add_more_storage_price('+start+')">More</button></div> <button type="button" class="myRemove btn btn-danger"   style="border:none; margin-left:10px;" onclick="myRemove(this);"> x </button> </div>';
+            var html = '<div class="row check'+start+' color'+start+'" style="margin-top: 10px;"><div class="col-md-2"><input type="text" class="form-control" name="variation_color[]"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_storage['+start+'][]"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_price['+start+'][]"></div> <div class="col-md-1"><button type="button" class="add_more_storage_price btn btn-primary" onclick="add_more_storage_price('+start+')">More</button></div> <button type="button" class="myRemove btn btn-danger"   style="border:none; margin-left:10px; height:40px;" onclick="myRemove(this);"> x </button><div class="col-md-3"><input type="file" name="variation_image[]"  title=" " style="color: transparent;border: none;" /></div> </div>';
             $('.color_variation').append(html);
             start++;
        });
@@ -806,7 +821,7 @@
 
     function add_more_storage_price(id)
     {
-        var html = '<div class="row" style="margin-top: 10px;"><div class="col-md-3"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_storage['+id+'][]"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_price['+id+'][]"></div> <button type="button" class="myRemove btn btn-danger"  style="border:none; margin-left:10px;" onclick="myRemove(this);"> x </button> </div>';
+        var html = '<div class="row" style="margin-top: 10px;"><div class="col-md-2"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_storage['+id+'][]"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_price['+id+'][]"></div> <button type="button" class="myRemove btn btn-danger"  style="border:none; margin-left:12px;" onclick="myRemove(this);"> x </button> </div>';
         if($('.check'+id).hasClass('childColor'+id))
         {
             $('.childColor'+id).after(html);

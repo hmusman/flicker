@@ -45,7 +45,7 @@
             </div>
             <div class="col-md-10">
               <div id="setwidthsecond" style="  ">
-                <a type="button" style="margin-top: 20px;" onclick="singleProduct('{{ $product->id }}','{{ $hide }}');">{{ $product->name }}
+                <a type="button" style="margin-top: 20px;" onclick="singleProduct('{{ $product->id }}','{{ $hide }}');">{{ ucfirst($product->name) }}
                 </a>
               </div>
             </div>

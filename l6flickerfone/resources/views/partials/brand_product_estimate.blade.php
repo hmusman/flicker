@@ -111,7 +111,7 @@
           <input type="hidden" name="" id="device_battery_status" value="{{ $csproduct->device_battery_status }}">
           <select class="form-control battery">
             <option disabled="" selected="">Select Status</option>
-            @for($i=1; $i<=10; $i++)
+            @for($i=5; $i<=10; $i++)
               <option value="{{ $i*10 }}">{{ $i*10 }} %</option>
             @endfor
           </select>

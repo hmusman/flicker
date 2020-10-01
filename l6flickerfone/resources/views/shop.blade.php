@@ -544,12 +544,6 @@ color: #0071e3 !important;
 
 
 
-
-
-
-
-
-
 <br/>
 
 
@@ -565,13 +559,9 @@ color: #0071e3 !important;
 </div>
 
 
-
-
-
-
   <div class="container-fluid" style="background-color: #f7f7f7 !important;">
     <div class="container" style="background-color: #f7f7f7 !important;">
-      <div class="row" style="background-color: #f7f7f7 !important;">
+      <div class="row filterRow" style="background-color: #f7f7f7 !important;">
         <div class="col-md-2" style="color: black; margin-top: 15px; " >
         <p style="font-weight: bold !important;"> FILTERS</p> 
         </div>
@@ -620,37 +610,17 @@ color: #0071e3 !important;
         
         </div>
 
-        <div class="col-md-1" style="color: black;  "></div>
+        <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px;">Reset</button></div>
       </div>
     </div>
   </div>
   
-  <div class="row products" style="    background-color: white;">
+  <div class="container">
+      
+      <div class="row products" style="    background-color: white;">
+        @include('partials.shop_products_list')
+      </div>
 
-      @if($products->count()>0)
-        @foreach($products as $row)
-          @php $img = '/storage/admin/images/product/thumbnail/215_'.$row->image @endphp
-          <div class="col-md-4" style="border-right: 1px #f2f2f2 solid;border-bottom: 1px #f2f2f2 solid;" >
-    
-               <center> <img src="{{ asset($img) }}" style="height: 215px;margin-top: 40px;" /></center>
-               <center> <p style="
-              
-                text-transform: uppercase; font-weight: bold; color: black !important;">{{ ucwords($row->name) }}</p></center>
-               <center> <p style="  margin-top: -17px !important;color: #b3b5be;">It is in your Pocket</p></center>
-
-               <!-- <center> <del style="  color: #252629 !important;">PKR {{ $row->price }}</del></center> -->
-               <center> <p style="  color: #db4f45 !important;">PKR {{ $row->price }}</p></center>
-               <center><a href="{{ route('AdviceComparison',$row->id) }}"> <p class="HoveStylAddComp" style="text-transform: uppercase;  color: #b3b5be">Add to compare</p></a></center>
-
-
-          </div>
-        @endforeach
-      @else
-        No Product Available
-      @endif
-
-    
-   
   </div>
   
 <br/>
@@ -719,6 +689,13 @@ color: #0071e3 !important;
 
 <script type="text/javascript">
   $(document).ready(function(){
+      $('#ResetFilter').click(function(){
+          $('#brand').val("Brands");
+          $('#price').val("Price");
+          $('#view').val("Select View");
+          FetchData(0);
+      });
+
       function BrandPriceProduct()
       {
           if($('#brand').children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price')
@@ -727,31 +704,15 @@ color: #0071e3 !important;
             {
               var brand = $('#brand').children("option:selected").val();
               var price = $('#price').children("option:selected").val();
-              var nView = 9;
-              $.ajax({
-                url:"{{ route('ShopBrandPriceProducts') }}",
-                type:"get",
-                data:{nView:nView,brand:brand,price:price},
-                success:function(data)
-                {
-                  $('.products').html(data);
-                }
-              });
+              var nView = 1;
+              FetchBrandPriceProducts(0,brand,price,nView);
             }
             else
             {
               var view = $('#view').children('option:selected').val();
               var brand = $('#brand').children("option:selected").val();
               var price = $('#price').children("option:selected").val();
-              $.ajax({
-                url:"{{ route('ShopBrandPriceProducts') }}",
-                type:"get",
-                data:{nView:nView,brand:brand,price:price},
-                success:function(data)
-                {
-                  $('.products').html(data);
-                }
-              });
+              FetchBrandPriceProducts(0,brand,price,view);
             }
             
           }  
@@ -784,30 +745,13 @@ color: #0071e3 !important;
             if($('#view').children('option:selected').val() =="Select View")
             {
               var id = $('#brand').children("option:selected").val();
-              var nView = 9;
-              $.ajax({
-                url:"{{ route('ShopBrandProducts') }}",
-                type:"get",
-                data:{nView:nView,id:id},
-                success:function(data)
-                {
-                  $('.products').html(data);
-                }
-              });
+              FetchBrandProducts(0,id,1);
             }
             else
             {
               var nView = $('#view').children('option:selected').val();
               var id = $('#brand').children("option:selected").val();
-              $.ajax({
-                url:"{{ route('ShopBrandProducts') }}",
-                type:"get",
-                data:{nView:nView,id:id},
-                success:function(data)
-                {
-                  $('.products').html(data);
-                }
-              });
+              FetchBrandProducts(0,id,nView);
             }
             
           }
@@ -822,15 +766,19 @@ color: #0071e3 !important;
           if($('#brand').children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price')
           {
               var nView = $('#view').children('option:selected').val();
-              $.ajax({
-                url:"{{ route('ShopViewProducts') }}",
-                type:"get",
-                data:{nView:nView},
-                success:function(data)
-                {
-                  $('.products').html(data);
-                }
-              });
+              FetchNViewProducts(0,nView);
+          }
+          else if($('#brand').children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price')
+          {
+            var brand = $('#brand').children("option:selected").val();
+            var nView = $('#view').children("option:selected").val();
+            FetchBrandProducts(0,brand,nView);
+          }
+          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
+          {
+            var price = $('#price').children("option:selected").val();
+            var view = $('#view').children("option:selected").val();
+            FetchPriceProducts(0,price,view);         
           }
           else
           {BrandPriceProduct()};  
@@ -843,30 +791,13 @@ color: #0071e3 !important;
             if($('#view').children('option:selected').val() =="Select View")
             {
               var price = $('#price').children("option:selected").val();
-              var nView = 9;
-              $.ajax({
-                url:"{{ route('ShopPriceProducts') }}",
-                type:"get",
-                data:{nView:nView,id:price},
-                success:function(data)
-                {
-                  $('.products').html(data);
-                }
-              });
+              FetchPriceProducts(0,price,1);
             }
             else
             {
               var nView = $('#view').children('option:selected').val();
-              var id = $('#price').children("option:selected").val();
-              $.ajax({
-                url:"{{ route('ShopPriceProducts') }}",
-                type:"get",
-                data:{nView:nView,id:id},
-                success:function(data)
-                {
-                  $('.products').html(data);
-                }
-              });
+              var price = $('#price').children("option:selected").val();
+              FetchPriceProducts(0,price,nView);
             }
 
           }
@@ -876,6 +807,121 @@ color: #0071e3 !important;
           }
           
       });
+
+
+      $(document).on('click', '.pagination a', function(event){
+          event.preventDefault(); 
+          var page = $(this).attr('href').split('page=')[1];
+          if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
+          {
+            var brand = $('#brand').children("option:selected").val();
+            FetchBrandProducts(page,brand,1);
+          }
+
+          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
+          {
+            var price = $('#price').children("option:selected").val();
+            FetchPriceProducts(page,price,1);
+          }
+
+          else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
+          {
+            var brand = $('#brand').children("option:selected").val();
+            var price = $('#price').children("option:selected").val();
+            FetchBrandPriceProducts(page,brand,price,1);         
+          }
+
+          else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
+          {
+            var brand = $('#brand').children("option:selected").val();
+            var price = $('#price').children("option:selected").val();
+            var view = $('#view').children("option:selected").val();
+            FetchBrandPriceProducts(page,brand,price,1);         
+          }
+
+          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
+          {
+            var brand = $('#brand').children("option:selected").val();
+            var price = $('#price').children("option:selected").val();
+            var view = $('#view').children("option:selected").val();
+            FetchBrandPriceProducts(page,price,view);         
+          }
+
+          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() !="Select View")
+          {
+            var view = $('#view').children("option:selected").val();
+            FetchNViewProducts(page,view);         
+          }
+
+          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
+          {
+            FetchData(page);            
+          }
+         });
+
+         function FetchData(page)
+         {
+          $.ajax({
+           url:"/pagination/fetch_data?page="+page,
+           type:"get",
+           success:function(data)
+           {
+            $('.products').html(data);
+           }
+          });
+         }
+
+         function FetchBrandProducts(page,id,nView)
+         {
+          $.ajax({
+           url:"ShopBrandProducts?page="+page,
+           type:"get",
+           data:{id:id,nView:nView},
+           success:function(data)
+           {
+            $('.products').html(data);
+           }
+          });
+         }
+
+         function FetchNViewProducts(page,nView)
+         {
+          $.ajax({
+           url:"ShopViewProducts?page="+page,
+           type:"get",
+           data:{nView:nView},
+           success:function(data)
+           {
+            $('.products').html(data);
+           }
+          });
+         }
+
+         function FetchPriceProducts(page,price,nView)
+         {
+            $.ajax({
+             url:"ShopPriceProducts?page="+page,
+             type:"get",
+             data:{price:price,nView:nView},
+             success:function(data)
+             {
+              $('.products').html(data);
+             }
+            });
+         }
+
+         function FetchBrandPriceProducts(page,id,price,nView)
+         {
+          $.ajax({
+           url:"ShopBrandPriceProducts?page="+page,
+           type:"get",
+           data:{brand:id,price:price,nView:nView},
+           success:function(data)
+           {
+            $('.products').html(data);
+           }
+          });
+         }
   });
 </script>
 <script>

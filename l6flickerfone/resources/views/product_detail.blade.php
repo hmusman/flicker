@@ -29,7 +29,7 @@
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
     #myInput {
-      background-image: url('/css/searchicon.png')}}');
+      background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
       width: 50%;
@@ -320,6 +320,7 @@ a[href="#view4"]{
 
 
 <style>
+  .video_area iframe{ width: 100%; }
 img[src="{{ asset('storage/images/logo Black-01.jpg')}}"]{
   height: 65px !important;
     /* top: -1px; */
@@ -535,7 +536,6 @@ font-size: 20px !important;
       @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
       @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
       <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($img1_400)}}"  srcset="{{ asset('http://127.0.0.1:8000/storage/admin/images/product/thumbnail/400_'.$product->image)}}"></p></span>
-    
       <span id="myhide" style="float: right;
         position: absolute;
         top: -100px;
@@ -1604,15 +1604,30 @@ margin-left: 15px;">{{ $product->price }}</font>
            
 
 
-            <h5>No Vedio Availabla</h5>
-                                                          
+            <!-- <h5>No Vedio Availabla</h5> -->
+              <div class="row">
+                  <div class="col-md-6 video_area">
+                      
+                       @if($product->video_link !='')
+
+                        {!! $product->video_link !!}
+
+                      @else
+                        <h5>No Vedio Available</h5>
+                      @endif
+
+                  </div>
+
+              </div>
+             
+
           </div>
 
 
 
 
           <div id="view4">
-            <h5>No Reviws Availabla</h5>       
+            <h5>No Reviws Available</h5>       
                                                           
           </div>
 
@@ -1651,6 +1666,22 @@ margin-left: 15px;">{{ $product->price }}</font>
 				$('#colorStorage').html(data);	
 			}
 		});
+
+    $.ajax({
+      url:"{{ route('ColorFilterImg') }}",
+      type:"get",
+      data:{id:id,color:color},
+      success:function(data){
+        if(data !='')
+        {
+            var imgSrc="{{ url('storage/admin/images/product/thumbnail/400_') }}";
+            imgSrc += data;
+            document.getElementById("myimage").srcset = imgSrc;
+            document.getElementById("myresult").style.backgroundImage = 'url("'+imgSrc+'")';
+        }
+        
+      }
+    });
 	}
 
 	$(document).ready(function(){

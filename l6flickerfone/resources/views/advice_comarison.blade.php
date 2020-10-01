@@ -2195,13 +2195,14 @@ height: 104px;
         height: 160px;border-bottom: 5px #eeeeee solid;
     " class="">
       @if($product->variation_colors->count()>0)
-        @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
+        @php $colorNameP = ''; $countP = $product->variation_colors->count(); $j=1; @endphp
+
           @foreach($product->variation_colors as $color)
-            @php $i++; @endphp
-            @if($colorName !=$color->color)
-              PKR {{$color->price}} ({{ ucfirst($color->storage)}},{{$product->memory_ram}}) @if($count>$i) , @endif
+            @php $j++; @endphp
+            @if($colorNameP !=$color->color)
+              PKR {{$color->price}} ({{ ucfirst($color->storage)}},{{$product->memory_ram}}) @if($countP>$j && $countP !== $j) , @endif
             @endif
-          @php $colorName = $color->color; @endphp
+          @php $colorNameP = $color->color; @endphp
           @endforeach
       @endif
 </div>
@@ -2333,133 +2334,6 @@ height: 104px;
   
             <ul onblur="hideagainthree()" id="myULthree"
               style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 127%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
-              <!-- <div>
-                                    <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">X</button>
-                                  </div> -->
-            
-            
-            
-              <li>
-                <div class="row">
-                  <div class="col-md-2">
-                    <div id="setwidthfirst">
-                      <img src="images/LiveSrchImages/852D3B1A-4511-EA95-7918-A7FAAAF29DE0.jpg"
-                        style="     padding-left: 3px; height: 97px;  ">
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div id="setwidthsecond">
-                      <a href="#">Redmi Note 9 Pro
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            
-            
-            
-            
-              <li>
-                <div class="row">
-                  <div class="col-md-2">
-                    <div id="setwidthfirst" style=" ">
-                      <img src="images/LiveSrchImages/303612.png" style=" 
-                                          padding-left: 6px;
-                                          height: 106px;
-                                       ">
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div id="setwidthsecond">
-                      <a href="#">Apple iphone x 64 GB
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            
-            
-            
-            
-              <li>
-                <div class="row">
-                  <div class="col-md-2">
-                    <div id="setwidthfirst" style="   ">
-                      <img src="images/LiveSrchImages/alcatel-3x-2019.jpg" style="     padding-left: 12px;
-                                          height: 98px;
-                                          margin-top: 5px; ">
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div id="setwidthsecond">
-                      <a href="#">Alcatel jabi=ong Green 4 GB
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            
-            
-            
-              <li>
-                <div class="row">
-                  <div class="col-md-2">
-                    <div id="setwidthfirst" style=" ">
-                      <img src="images/LiveSrchImages/12-Gold-1-600x600.jpg" style="  padding-left: 0px; height: 110px;  ">
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div id="setwidthsecond">
-                      <a href="#">Apple VIVO Y15 Gold 16 GB
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            
-            
-            
-            
-              <li>
-                <div class="row" style="margin-top: 9px;">
-                  <div class="col-md-2">
-                    <div id="setwidthfirst">
-                      <img src="images/LiveSrchImages/1560367_6.jpg" style="     padding-left: 12px;
-                                          height: 92px;
-                                          width: 104px;
-                                          margin-left: 0px;  ">
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div id="setwidthsecond">
-                      <a href="#">HTC Play 2 Black 4 GB
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            
-            
-            
-            
-              <li>
-                <div class="row">
-                  <div class="col-md-2">
-                    <div id="setwidthfirst">
-                      <img src="images/LiveSrchImages/Apple_iPhone_12_5G_1.jpg" style="  padding-left: 12px;  height: 91px;  ">
-                    </div>
-                  </div>
-                  <div class="col-md-10">
-                    <div id="setwidthsecond">
-                      <a href="#">HTC Play 2 Black 4 GB
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            
-            
-              <!-- <div class="row" style="padding-right: 167px;"><div class="col-md-12" style="background-color: rgb(30, 219, 46);"><li><a href="#">Agnes</a></li></div></div> -->
             </ul>
 
   
