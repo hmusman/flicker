@@ -618,7 +618,16 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 </style>
 
 <style>
-  input[type="radio"] {
+  .radioyesNo {
+  display: none;
+}
+.radiotextcol{
+  color: black !important;
+  font-weight: bold;
+}
+
+
+.hide {
   display: none;
 }
 
@@ -632,7 +641,7 @@ display: inline-block;
 color: black;
 }
 
-input[type="radio"]:checked + label {
+.radioyesNo:checked + label {
   background-color: rgb(74 136 194);
   cursor: default;
   color: #E6E6E6;
@@ -691,7 +700,13 @@ input[type="radio"]:checked + label {
 
                   <div class="tab-content">
                       <div class="tab-pane active" id="detail">
-                          <div class="form-group row">
+
+
+
+<div class="form-group row">
+  <div class="col-md-7" >
+
+    <div class="form-group row">
                               <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
                               <div class="col-md-10">
                                   <input type="hidden" name="user_id" value="{{ Session::get('user')->id }}">
@@ -744,7 +759,7 @@ input[type="radio"]:checked + label {
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">Phone</label>
+                              <label for="example-text-input" class="col-md-2 col-form-label">Phone-Number</label>
                               <div class="col-md-10">
                                   <input class="form-control" type="text" value="{{ old('phone') }}" name="phone" placeholder="Enter Active Phone" id="example-text-input">
                                   @error('phone')
@@ -786,178 +801,48 @@ input[type="radio"]:checked + label {
                                   @enderror
                               </div>
                           </div>
+</div>
+    <div class="col-md-5">
+  
 
 
 
 
 
-                          <!-- <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 1</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image1" type="file">
-                                      @error('image1')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
 
-                                      @error('invalidImage1')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
 
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 2</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image2" type="file">
-                                      @error('image2')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
+ <div class="form-group row">
+   <div class="col-md-4">
+     <p class="radiotextcol">Choose: </p>
 
-                                      @error('invalidImage2')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
+   </div>
+   <div class="col-md-8">
+     
+  <input type="radio" id="male" name="gender" value="male" onclick="showPhonedet();">
+  <label for="male">Phone</label>
+  <input type="radio" id="female" name="gender" value="female" onclick="hidePhonedet();">
+  <label for="female">Accessories</label>
+   </div>
+ </div>
 
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 3</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image3" type="file">
-                                      @error('image3')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
 
-                                      @error('invalidImage3')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
 
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 4</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image4" type="file">
-                                      @error('image4')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
 
-                                      @error('invalidImage4')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
 
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 5</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image5" type="file">
-                                      @error('image5')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
 
-                                      @error('invalidImage5')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
 
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 6</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image6" type="file">
-                                      @error('image6')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
 
-                                      @error('invalidImage6')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
 
-                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 7</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image7" type="file">
-                                      @error('image7')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
 
-                                      @error('invalidImage7')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
 
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 8</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image8" type="file">
-                                      @error('image8')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-
-                                      @error('invalidImage8')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 9</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image9" type="file">
-                                      @error('image9')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-
-                                      @error('invalidImage9')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label"> Image 10</label>
-                              <div class="col-md-3"> 
-                                  <div class="fallback">
-                                      <input name="image10" type="file">
-                                      @error('image10')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-
-                                      @error('invalidImage10')
-                                          <p class="text-danger mt-3">{{ $message }}</p>
-                                      @enderror
-                                  </div>
-                              </div>
-                          </div> -->
-
-                          <div class="form-group row">
+    <div id="PhoneDetBox"  class="hide">
+                <div class="form-group row" >
                               <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent / Scratch?</label>
                               <div class="col-md-8">
                                    <div>
-                                      <input id="minor-on" class="minor" name="minor" type="radio" value="yes">
-                                    <label for="minor-on" class="myLabel">Yes</label>
-                                    <input id="minor-off" class="minor" name="minor" type="radio" value="no">
+                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes">
+                                    <label for="minor-on" class="myLabel ">Yes</label>
+                                    <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no">
                                     <label for="minor-off" class="myLabel">No</label>
 
                                     </div>
@@ -967,13 +852,15 @@ input[type="radio"]:checked + label {
                               </div>
                           </div>
 
+
+                      
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Major Dent</label>
                               <div class="col-md-8">
                                   <div>
-                                      <input id="major-on" class="major" name="major" type="radio" value="yes">
+                                      <input id="major-on" class="major radioyesNo" name="major" type="radio" value="yes">
                                     <label for="major-on" class="myLabel">Yes</label>
-                                    <input id="major-off" class="major" name="major" type="radio" value="no">
+                                    <input id="major-off" class="major radioyesNo"  name="major" type="radio" value="no">
                                     <label for="major-off" class="myLabel">No</label>
 
                                   </div>
@@ -988,9 +875,9 @@ input[type="radio"]:checked + label {
                               <label for="example-text-input" class="col-md-4 col-form-label">Original Accessories Available</label>
                               <div class="col-md-8">
                                  <div>
-                                    <input id="accessory-on" class="accessory" name="accessory" type="radio" value="yes">
+                                    <input id="accessory-on" class="accessory radioyesNo" name="accessory" type="radio" value="yes">
                                   <label for="accessory-on" class="myLabel">Yes</label>
-                                  <input id="accessory-off" class="accessory" name="accessory" type="radio" value="no">
+                                  <input id="accessory-off" class="accessory radioyesNo" name="accessory" type="radio" value="no">
                                   <label for="accessory-off" class="myLabel">No</label>
                                   </div>
                                   @error('accessory')
@@ -1004,9 +891,9 @@ input[type="radio"]:checked + label {
                               <label for="example-text-input" class="col-md-4 col-form-label">Screen Is Cracked</label>
                               <div class="col-md-8">
                                   <div>
-                                    <input id="screen-on" class="screen" name="screen" type="radio" value="yes">
+                                    <input id="screen-on" class="screen radioyesNo" name="screen" type="radio" value="yes">
                                   <label for="screen-on" class="myLabel">Yes</label>
-                                  <input id="screen-off" class="screen" name="screen" type="radio" value="no">
+                                  <input id="screen-off" class="screen radioyesNo" name="screen" type="radio" value="no">
                                   <label for="screen-off" class="myLabel">No</label>
 
                                   </div>
@@ -1020,9 +907,9 @@ input[type="radio"]:checked + label {
                               <label for="example-text-input" class="col-md-4 col-form-label">Device Box Available</label>
                               <div class="col-md-8">
                                  <div>
-                                      <input id="device-on" class="device" name="device" type="radio" value="yes">
-                                    <label for="device-on" class="myLabel">Yes</label>
-                                    <input id="device-off" name="device" class="device" type="radio" value="no">
+                                      <input id="device-on" class="device radioyesNo" name="device" type="radio" value="yes">
+                                    <label for="device-on" class="myLabel ">Yes</label>
+                                    <input id="device-off" name="device" class="device radioyesNo" type="radio" value="no">
                                     <label for="device-off" class="myLabel">No</label>
 
                                   </div>
@@ -1035,17 +922,37 @@ input[type="radio"]:checked + label {
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Device Battery Status</label>
                               <div class="col-md-8">
-                                 <select class="form-control battery" name="battery">
+                                 <select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
                                     <option disabled="" selected="">Select Status</option>
                                     @for($i=1; $i<=10; $i++)
                                       <option value="{{ $i*10 }}">{{ $i*10 }} %</option>
                                     @endfor
+
+                                    <option value="others">Others</option>
                                   </select>
+
+
+
+
+                                  <!-- <input type="text" name="color" id="color" /> -->
+
+
+
+
+                                  <input class="form-control" type="text" value="" name="color" placeholder="Enter Other %" id="otherInputField" style='display:none; margin-top:17px '>
                                   @error('battery')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
                               </div>
                           </div>
+
+
+
+                          </div>
+  </div>
+</div>
+
+                      
 
                       </div> <!-- detail -->
                   </div>
@@ -1056,7 +963,7 @@ input[type="radio"]:checked + label {
                   <div class="card">
                   	<div class="card-body row">
 
-                  		<div class="text-center mt-4 col-md-3" id="SetOnDesktop" >
+                  		<div class="text-center mt-4 col-md-3" id="" >
                         <input type="file" name="image1" style="display:none;" id="imgInput1" onchange="fileChangeFun(this,$('#DropZonIcon1'),1);"/> 
                   			<div class="dropzone" id="DropZonIcon1">
                   				<div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
@@ -1064,15 +971,22 @@ input[type="radio"]:checked + label {
                           </div>
                   			</div>
                       </div>
-                      <div class="text-center mt-4 col-md-1"></div>
+               
                   		<div class="text-center mt-4 col-md-3">
                         <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
                   			<div class="dropzone" id="DropZonIcon2">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
-                       <div class="text-center mt-4 col-md-1"></div>
+                  
                   		<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                  			<div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                      
+                      	<div class="text-center mt-4 col-md-3" >
                         <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
                   			<div class="dropzone" id="DropZonIcon3">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
@@ -1082,31 +996,52 @@ input[type="radio"]:checked + label {
                   </div>
 
 
-                  <div class="card">
+             <div class="card">
                   	<div class="card-body row">
-                  		<div class="text-center mt-4 col-md-3 " id="SetOnDesktop">
-                        <input type="file" name="image4" style="display:none;" id="imgInput4" onchange="fileChangeFun(this,$('#DropZonIcon4'),4);"/> 
-                  			<div class="dropzone" id="DropZonIcon4">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(4);" id="imgFullWidthDiv4"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+
+                  		<div class="text-center mt-4 col-md-3" id="" >
+                        <input type="file" name="image1" style="display:none;" id="imgInput1" onchange="fileChangeFun(this,$('#DropZonIcon1'),1);"/> 
+                  			<div class="dropzone" id="DropZonIcon1">
+                  				<div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
+                          <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
+                          </div>
+                  			</div>
+                      </div>
+               
+                  		<div class="text-center mt-4 col-md-3">
+                        <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
+                  			<div class="dropzone" id="DropZonIcon2">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
-                         <div class="text-center mt-4 col-md-1"></div>
-                  		<div class="text-center mt-4 col-md-3">
-                        <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
-                  			<div class="dropzone" id="DropZonIcon5">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"> <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> <img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                  
+                  		<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                  			<div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                       
-                         <div class="text-center mt-4 col-md-1"></div>
-                  		<div class="text-center mt-4 col-md-3" >
-                        <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
-                  			<div class="dropzone" id="DropZonIcon6">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"> <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> <img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                      	<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                  			<div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                   		</div>
                   	</div>
                   </div>
+
+
+ <div class="card">
+                      <div class="card-body row">
+                         <div class="col-md-12">
+     <textarea  name="descBox" rows="4" cols="50" style="width:100%; border-color:#dfdfdf " placeholder="">
+ Please Write Description...
+  </textarea>
+   </div>
+                      </div>
+                  </div>
+
 
                   
                   <div class="card">
@@ -1124,6 +1059,15 @@ input[type="radio"]:checked + label {
          
 
           </div>
+
+
+
+
+
+
+
+
+          
       </div>
   
   </div>
@@ -1171,6 +1115,7 @@ input[type="radio"]:checked + label {
               reader.readAsDataURL(input.files[0]);
           }
       }
+
 
       function fileChangeFun(input,div,num)
       {
@@ -1793,7 +1738,13 @@ $(document).ready(function(){
 
 
 
-
+function OtherPerc(val){
+ var element=document.getElementById('otherInputField');
+ if(val=='pick a color'||val=='others')
+   element.style.display='block';
+ else  
+   element.style.display='none';
+}
 
 
 
@@ -1887,6 +1838,22 @@ function myRemoveFun(id)
 // document.getElementById("uploadimg5").style.display="none"
 //     }, 5000);
 // }
+
+
+
+
+
+
+
+function showPhonedet(){
+document.getElementById('PhoneDetBox').style.display ='block' ;
+}
+
+
+function hidePhonedet() {
+  document.getElementById('PhoneDetBox').style.display ='none' ;
+}
+
 </script>
  
 

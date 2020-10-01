@@ -41,11 +41,12 @@ class ProductController extends Controller
         $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
         $ext1 = $img->getClientOriginalExtension();
         $time = time();
-        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $filename1 = $time.'_'.md5($filename).'.'.$ext1;
         $img->storeAs('public/admin/images/product', $filename1);
         $img->storeAs('public/admin/images/product/thumbnail', $filename1);
         $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
         Image::make($thumbnailpath)->resize(175,250)->save(public_path('storage/admin/images/product/thumbnail/175_'.$filename1));
+        Image::make($thumbnailpath)->resize(700,700)->save(public_path('storage/admin/images/product/thumbnail/700_'.$filename1));
         Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
         Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
         Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
@@ -58,11 +59,12 @@ class ProductController extends Controller
         $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
         $ext1 = $img->getClientOriginalExtension();
         $time = time();
-        $filename1 = $time.'_'.$filename.'.'.$ext1;
+        $filename1 = $time.'_'.md5($filename).'.'.$ext1;
         $img->storeAs('public/admin/images/product', $filename1);
         $img->storeAs('public/admin/images/product/thumbnail', $filename1);
         $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
         Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
+        Image::make($thumbnailpath)->resize(700,700)->save(public_path('storage/admin/images/product/thumbnail/700_'.$filename1));
         Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
         Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
         return $filename1;

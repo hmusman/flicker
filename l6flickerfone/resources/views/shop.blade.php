@@ -459,6 +459,19 @@ color: #0071e3 !important;
 }
 
 
+.phoneBoxstyle{
+border-right: 1px #e1dfdf solid;
+border-bottom: 1px #e1dfdf solid;
+}
+
+
+.phoneBoxstyle:nth-child(3), .phoneBoxstyle:nth-child(6) , .phoneBoxstyle:nth-child(9),
+.phoneBoxstyle:nth-child(12), .phoneBoxstyle:nth-child(15), .phoneBoxstyle:nth-child(18),
+.phoneBoxstyle:nth-child(21), .phoneBoxstyle:nth-child(24) , .phoneBoxstyle:nth-child(27),
+.phoneBoxstyle:nth-child(30), .phoneBoxstyle:nth-child(33), .phoneBoxstyle:nth-child(36) {
+ 
+  border-right: 0px !important;
+}
 
 
 </style>
@@ -573,7 +586,7 @@ color: #0071e3 !important;
     <div class="container" style="background-color: #f7f7f7 !important;">
       <div class="row" style="background-color: #f7f7f7 !important;">
         <div class="col-md-2" style="color: black; margin-top: 15px; " >
-        <p style="font-weight: bold !important;"> FILTERS</p> 
+        <p style="font-weight: bold !important; margin-top: 9px "> FILTERS</p> 
         </div>
 
         <div class="col-md-3" style="color: black; margin-top: 15px; ">
@@ -625,12 +638,12 @@ color: #0071e3 !important;
     </div>
   </div>
   
-  <div class="row products" style="    background-color: white;">
+  <div class="row products" style=" padding: 0px 35px 0px 35px;   background-color: white;">
 
       @if($products->count()>0)
         @foreach($products as $row)
           @php $img = '/storage/admin/images/product/thumbnail/215_'.$row->image @endphp
-          <div class="col-md-4" style="border-right: 1px #f2f2f2 solid;border-bottom: 1px #f2f2f2 solid;" >
+          <div class="col-md-4 phoneBoxstyle" >
     
                <center> <img src="{{ asset($img) }}" style="height: 215px;margin-top: 40px;" /></center>
                <center> <p style="

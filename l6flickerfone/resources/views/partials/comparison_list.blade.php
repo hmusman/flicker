@@ -26,12 +26,13 @@
   
   }
 
-
  #hoverstyle:hover #styleOfCampSrch{
      background: #f9f9f9 !important;
   }
   
 </style>
+
+
 
 @if($total>0)
   
