@@ -17,7 +17,7 @@ class SellProductController extends Controller
         //
     }
 
-     public function frontEndProducts()
+    public function frontEndProducts()
     {
         $products = SellProduct::orderBy('id','desc')->paginate(1);
         $brands = Brand::select('brands.name','brands.id')->join('sell_products','brands.id','=','sell_products.brand_id')->distinct()->get();
