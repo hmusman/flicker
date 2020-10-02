@@ -89,4 +89,127 @@ class SellAccessoryController extends Controller
         $accessories = SellAccessory::orderBy('id','desc')->paginate(1);
         return view('partials.sell_accessories_list',compact('accessories'));
     }
+
+     public function BrandsSellAccessories(Request $request)
+    {
+        $accessories = SellAccessory::whereIn('brand_id',$request->brands)->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function BrandsPriceSellAccessories(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $accessories = SellAccessory::whereIn('brand_id',$request->brands)->whereBetween('price',[$fromPrice,$toPrice])->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function BrandsCitySellAccessories(Request $request)
+    {
+        $accessories = SellAccessory::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function BrandsPriceCitySellAccessories(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $accessories = SellAccessory::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function CitySellAccessories(Request $request)
+    {
+        $accessories = SellAccessory::whereIn('city',$request->cities)->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function PriceCitySellAccessories(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $accessories = SellAccessory::whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function PriceSellAccessories(Request $request)
+    {
+        $fromPrice = intval($request->from);
+        $toPrice = intval($request->to);
+        $accessories = SellAccessory::where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function UpperCityPriceSellAccessories(Request $request)
+    {
+        $query = $request->price;
+        $city = $request->city;
+        if($query=="Less than 500")
+        {
+            $accessories = SellAccessory::where('city',$city)->where('price', '<',500)->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 500 and 3000")
+        {
+            $accessories = SellAccessory::where('city',$city)->whereBetween('price',[5,3000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 3000 and 6000")
+        {
+             $accessories = SellAccessory::where('city',$city)->whereBetween('price',[3000,6000])->orderBy('id','desc')->paginate(1);
+        }
+
+
+        else if($query=="Between 6000 and 10,000")
+        {
+             $accessories = SellAccessory::where('city',$city)->whereBetween('price',[6000,10000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="More Than 10,000")
+        {
+            $accessories = SellAccessory::where('city',$city)->where('price', '>',10000)->orderBy('id','desc')->paginate(1);
+        }
+
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function UpperPriceSellAccessories(Request $request)
+    {
+        $query = $request->price;
+        if($query=="Less than 500")
+        {
+            $accessories = SellAccessory::where('price', '<',500)->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 500 and 3000")
+        {
+            $accessories = SellAccessory::whereBetween('price',[5,3000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="Between 3000 and 6000")
+        {
+             $accessories = SellAccessory::whereBetween('price',[3000,6000])->orderBy('id','desc')->paginate(1);
+        }
+
+
+        else if($query=="Between 6000 and 10,000")
+        {
+             $accessories = SellAccessory::whereBetween('price',[6000,10000])->orderBy('id','desc')->paginate(1);
+        }
+
+        else if($query=="More Than 10,000")
+        {
+            $accessories = SellAccessory::where('price', '>',10000)->orderBy('id','desc')->paginate(1);
+        }
+
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function UpperCitySellAccessories(Request $request)
+    {
+        $city = $request->city;
+        $accessories = SellAccessory::where('city',$city)->orderBy('id','desc')->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
 }

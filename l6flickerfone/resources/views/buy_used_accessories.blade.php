@@ -1033,7 +1033,7 @@ margin-top: 90px;">
         <div class="form-group">
        
           <select class="form-control" id="price" style="font-weight: bold !important;">
-              <option selected=""  disabled="" style="font-weight: bold !important;">Price</option>
+              <option selected=""  disabled="" style="font-weight: bold !important;">Select Price</option>
               <option value="Less than 500">Less than 500 PKR</option>
               <option value="Between 500 and 3000">Between 500 and 3000 PKR</option>
               <option value="Between 3000 and 6000">Between 3000 and 6000 PKR</option>
@@ -1352,10 +1352,10 @@ margin-top: 90px;">
     });
   }
 
-  function FetchPriceProducts(page,from,to,options)
+  function FetchPriceAccessories(page,from,to,options)
   {
     $.ajax({
-        url:"PriceSellProducts?page="+page,
+        url:"PriceSellAccessories?page="+page,
         type:"get",
         data:{from:from,to:to},
         success:function(data){
@@ -1368,10 +1368,10 @@ margin-top: 90px;">
     });
   }
 
-  function FetchCityProducts(page,cities,options)
+  function FetchCityAccessories(page,cities,options)
   {
     $.ajax({
-        url:"CitySellProducts?page="+page,
+        url:"CitySellAccessories?page="+page,
         type:"get",
         data:{cities:cities},
         success:function(data){
@@ -1384,74 +1384,10 @@ margin-top: 90px;">
     });
   }
 
-  function FetchStatusProducts(page,statuses,options)
+  function FetchBrandsPriceCityAccessories(page,brands,from,to,cities,options)
   {
     $.ajax({
-        url:"StatusSellProducts?page="+page,
-        type:"get",
-        data:{statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchBrandsPriceCityStatusProducts(page,brands,from,to,cities,statuses,options)
-  {
-    $.ajax({
-        url:"BrandsPriceCityStatusSellProducts?page="+page,
-        type:"get",
-        data:{brands:brands,from:from,to:to,cities:cities,statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchBrandsPriceStatusProducts(page,brands,from,to,statuses,options)
-  {
-    $.ajax({
-        url:"BrandsPriceStatusSellProducts?page="+page,
-        type:"get",
-        data:{brands:brands,from:from,to:to,statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchBrandsCityStatusProducts(page,brands,cities,statuses,options)
-  {
-    $.ajax({
-        url:"BrandsCityStatusSellProducts?page="+page,
-        type:"get",
-        data:{brands:brands,from:from,to:to,cities:cities,statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchBrandsPriceCityProducts(page,brands,from,to,cities,options)
-  {
-    $.ajax({
-        url:"BrandsPriceCitySellProducts?page="+page,
+        url:"BrandsPriceCitySellAccessories?page="+page,
         type:"get",
         data:{brands:brands,from:from,to:to,cities:cities},
         success:function(data){
@@ -1464,26 +1400,10 @@ margin-top: 90px;">
     });
   }
 
-  function FetchCityStatusProducts(page,cities,statuses,options)
+  function FetchPriceCityAccessories(page,from,to,cities,options)
   {
     $.ajax({
-        url:"CityStatusSellProducts?page="+page,
-        type:"get",
-        data:{cities:cities,statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchPriceCityProducts(page,from,to,cities,options)
-  {
-    $.ajax({
-        url:"PriceCitySellProducts?page="+page,
+        url:"PriceCitySellAccessories?page="+page,
         type:"get",
         data:{from:from,to:to,cities:cities},
         success:function(data){
@@ -1496,78 +1416,12 @@ margin-top: 90px;">
     });
   }
 
-  function FetchBrandsCityProducts(page,brands,cities,options)
+  function FetchBrandsCityAccessories(page,brands,cities,options)
   {
     $.ajax({
-        url:"BrandsCitySellProducts?page="+page,
+        url:"BrandsCitySellAccessories?page="+page,
         type:"get",
         data:{brands:brands,cities:cities},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchBrandsStatusProducts(page,brands,statuses,options)
-  {
-    $.ajax({
-        url:"BrandsStatusSellProducts?page="+page,
-        type:"get",
-        data:{brands:brands,statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchBrandsCityStatusProducts(page,brands,cities,statuses,options)
-  {
-    $.ajax({
-        url:"BrandsCityStatusSellProducts?page="+page,
-        type:"get",
-        data:{brands:brands,cities:cities,statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-
-
-  function FetchPriceCityStatusProducts(page,from,to,cities,statuses,options)
-  {
-    $.ajax({
-        url:"PriceCityStatusSellProducts?page="+page,
-        type:"get",
-        data:{from:from,to:to,cities:cities,statuses:statuses},
-        success:function(data){
-          setTimeout(function () {
-            $(".autoplayFeatures").not('.slick-initialized').slick(options)
-        },0);
-          $('#sellProducts').html(data);
-          
-        }
-    });
-  }
-
-  function FetchPriceStatusProducts(page,from,to,statuses,options)
-  {
-    $.ajax({
-        url:"PriceStatusSellProducts?page="+page,
-        type:"get",
-        data:{from:from,to:to,statuses:statuses},
         success:function(data){
           setTimeout(function () {
             $(".autoplayFeatures").not('.slick-initialized').slick(options)
@@ -1593,11 +1447,11 @@ margin-top: 90px;">
     });
   }
 
-  function FetchBrandsPriceProducts(page,brands,from,to,options)
+  function FetchBrandsPriceAccessories(page,brands,from,to,options)
   {
 
     $.ajax({
-      url:"BrandsPriceSellProducts?page="+page,
+      url:"BrandsPriceSellAccessories?page="+page,
       type:"get",
       data:{brands:brands,from:from,to:to},
       success:function(data){
@@ -1611,11 +1465,11 @@ margin-top: 90px;">
 
   }
 
-  function FetchUpperCitySellProducts(page,city,options)
+  function FetchUpperCitySellAccessories(page,city,options)
   {
 
     $.ajax({
-      url:"UpperCitySellProducts?page="+page,
+      url:"UpperCitySellAccessories?page="+page,
       type:"get",
       data:{city:city},
       success:function(data){
@@ -1629,11 +1483,11 @@ margin-top: 90px;">
 
   }
 
-  function FetchUpperPriceSellProducts(page,price,options)
+  function FetchUpperPriceSellAccessories(page,price,options)
   {
 
     $.ajax({
-      url:"UpperPriceSellProducts?page="+page,
+      url:"UpperPriceSellAccessories?page="+page,
       type:"get",
       data:{price:price},
       success:function(data){
@@ -1647,11 +1501,11 @@ margin-top: 90px;">
 
   }
 
-  function FetchUpperCityPriceSellProducts(page,city,price,options)
+  function FetchUpperCityPriceSellAccessories(page,city,price,options)
   {
 
     $.ajax({
-      url:"UpperCityPriceSellProducts?page="+page,
+      url:"UpperCityPriceSellAccessories?page="+page,
       type:"get",
       data:{city:city,price:price},
       success:function(data){
@@ -1673,18 +1527,18 @@ margin-top: 90px;">
       $('#from_price').val('');
       $('#to_price').val('');
       var val = $('#sell').children('option:selected').val();
-      var sellPrice = $('#upperPrice').children('option:selected').val();
+      var sellPrice = $('#price').children('option:selected').val();
       if(sellPrice=='Select Price' && val!='Select City')
       {
-        FetchUpperCitySellProducts(0,val,options);
+        FetchUpperCitySellAccessories(0,val,options);
       }
       else if(sellPrice!='Select Price' && val=='Select City')
       {
-        FetchUpperPriceSellProducts(0,sellPrice,options);
+        FetchUpperPriceSellAccessories(0,sellPrice,options);
       }
       else if(sellPrice!='Select Price' && val!='Select City')
       {
-        FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
+        FetchUpperCityPriceSellAccessories(0,val,sellPrice,options);
       }
   });
 
@@ -1693,238 +1547,91 @@ margin-top: 90px;">
    if(key == 13){ $('#upperSearch').click(); }
   }); 
 
-  // $('#sell').change(function(){
-  //   $(".brands_check"). prop("checked", false);
-  //   $(".device_status_check"). prop("checked", false);
-  //   $(".city_check"). prop("checked", false);
-  //   $(".brands_check"). prop("checked", false);
-  //   $('#from_price').val('');
-  //   $('#to_price').val('');
-  //   var val = $(this).children('option:selected').val();
-  //   var sellPrice = $('#upperPrice').children('option:selected').val();
-  //   if(sellPrice=='Select Price' && val!='Select City')
-  //   {
-  //     FetchUpperCitySellProducts(0,val,options);
-  //   }
-  //   else if(sellPrice!='Select Price' && val!='Select City')
-  //   {
-  //     FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
-  //   }
-  // });
-
-  // $('#upperPrice').change(function(){
-  //   $(".brands_check").prop("checked", false);
-  //   $(".device_status_check"). prop("checked", false);
-  //   $(".city_check"). prop("checked", false);
-  //   $(".brands_check"). prop("checked", false);
-  //   $('#from_price').val('');
-  //   $('#to_price').val('');
-  //   var sellPrice = $(this).children('option:selected').val();
-  //   var val = $('#sell').children('option:selected').val();
-  //   if(sellPrice!='Select Price' && val=='Select City')
-  //   {
-  //     FetchUpperPriceSellProducts(0,sellPrice,options);
-  //   }
-  //   else if(sellPrice!='Select Price' && val!='Select City')
-  //   {
-  //     FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
-  //   }
-  // });
-
   $('.brands_check').change(function(){
       var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
       var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
-      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
       var from = $('#from_price').val();
       var to = $('#to_price').val();
       $("#sell").val("Select City");
-      $("#upperPrice").val("Select Price");
-      if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      $("#price").val("Select Price");
+      if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
-        FetchBrandProducts(0,brands,options);
+
+        FetchBrandAccessories(0,brands,options);
       }
-      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
-        FetchBrandsPriceProducts(0,brands,from,to,options);
+        FetchBrandsPriceAccessories(0,brands,from,to,options);
       }
 
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
-        FetchBrandsCityProducts(0,brands,cities,options);
+        FetchBrandsCityAccessories(0,brands,cities,options);
       }
 
-       else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
-        FetchBrandsStatusProducts(0,brands,statuses,options);
+        FetchBrandsPriceCityAccessories(0,brands,from,to,cities,options);
       }
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      {
-        FetchBrandsPriceCityProducts(0,brands,from,to,cities,options);
-      }
-
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-       {
-        FetchBrandsCityStatusProducts(0,brands,cities,statuses,options);
-      } 
-
-      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-       {
-        FetchBrandsPriceStatusProducts(0,brands,from,to,statuses,options);
-      }
-
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-       {
-        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
-      } 
 
   });
 
   $('.city_check').change(function(){
       var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
       var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
-      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
       var from = $('#from_price').val();
       var to = $('#to_price').val();
       $("#sell").val("Select City");
-      $("#upperPrice").val("Select Price");
+      $("#price").val("Select Price");
       if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
           var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
-          FetchCityProducts(0,cities,options);
-      }
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      {
-        FetchBrandsCityProducts(0,brands,cities,options);
-      }
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      {
-        FetchBrandsPriceCityProducts(0,brands,from,to,cities,options);
+          FetchCityAccessories(0,cities,options);
       }
 
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-       {
-        FetchBrandsCityStatusProducts(0,brands,cities,statuses,options);
-      } 
-
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-       {
-        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
-      } 
-
-      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-       {
-        FetchCityStatusProducts(0,cities,statuses,options);
-      } 
-
-      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-       {
-        FetchPriceCityProducts(0,from,to,cities,options);
-      } 
-
-      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-       {
-        FetchPriceCityStatusProducts(0,from,to,cities,statuses,options);
-      } 
-
-  });
-
-   $('.device_status_check').change(function(){
-      var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
-      var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
-      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
-      var from = $('#from_price').val();
-      var to = $('#to_price').val();
-      $("#sell").val("Select City");
-      $("#upperPrice").val("Select Price");
-      if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
-        FetchStatusProducts(0,statuses,options);
-      } 
-
-       else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-       {
-        FetchCityStatusProducts(0,cities,statuses,options);
-      } 
-
-      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      {
-        FetchBrandsStatusProducts(0,brands,statuses,options);
+        FetchPriceCityAccessories(0,from,to,cities,options);
       }
 
-      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsCityAccessories(0,brands,cities,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
        {
-        FetchBrandsPriceStatusProducts(0,brands,from,to,statuses,options);
-      }
-
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      {
-        FetchPriceStatusProducts(0,from,to,statuses,options);
-      }
-
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      {
-        FetchBrandsCityStatusProducts(0,brands,cities,statuses,options);
+        FetchPriceCityAccessories(0,from,to,cities,options);
       } 
 
-      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-       {
-        FetchPriceCityStatusProducts(page,from,to,cities,statuses,options);
-      }
-
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
-        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
-      } 
-
+        FetchBrandsPriceCityAccessories(0,brands,from,to,cities,options);
+      }
   });
 
   $('#go_price').click(function(){
       var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
       var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
-      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
       var from = $('#from_price').val();
       var to = $('#to_price').val();
       $("#sell").val("Select City");
-      $("#upperPrice").val("Select Price");
+      $("#price").val("Select Price");
 
-      if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
-        FetchPriceProducts(0,from,to,options);
+        FetchPriceAccessories(0,from,to,options);
       } 
 
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      {
-        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
-      } 
-
-      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
        {
-        FetchBrandsPriceStatusProducts(0,brands,from,to,statuses,options);
-      }
-
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      {
-        FetchPriceStatusProducts(0,from,to,statuses,options);
-      }
-
-      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      {
-        FetchPriceCityProducts(0,from,to,cities,options);
+        FetchPriceCityAccessories(0,from,to,cities,options);
       } 
 
-      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
-        FetchBrandsPriceProducts(0,brands,from,to,options);
-      }
-
-      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-       {
-        FetchPriceCityStatusProducts(0,from,to,cities,statuses,options);
-      }
-
-      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      {
-        FetchBrandsPriceCityProducts(0,brands,from,to,cities,options);
+        FetchBrandsPriceCityAccessories(0,brands,from,to,cities,options);
       }
 
   });
@@ -1934,108 +1641,65 @@ margin-top: 90px;">
       var page = $(this).attr('href').split('page=')[1];
       var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
       var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
-      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
       var city = $('#sell').children('option:selected').val()
-      var price = $('#upperPrice').children('option:selected').val()
+      var price = $('#price').children('option:selected').val()
       var from = $('#from_price').val();
       var to = $('#to_price').val();
 
-      if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
-        FetchBrandProducts(page,brands,options);
+        FetchBrandAccessories(page,brands,options);
       }
 
-      // else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      // {
-      //     var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
-      //     FetchCityProducts(page,cities,options);
-      // }
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchPriceAccessories(page,from,to,options);
+      } 
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceAccessories(page,brands,from,to,options);
+      }
 
-      // else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      // {
-      //   FetchBrandsPriceProducts(page,brands,from,to,options);
-      // }
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+          FetchCityAccessories(page,cities,options);
+      }
 
-      // else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      // {
-      //   FetchBrandsCityProducts(page,brands,cities,options);
-      // }
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsCityAccessories(page,brands,cities,options);
+      }
 
-      //  else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      // {
-      //   FetchBrandsStatusProducts(page,brands,statuses,options);
-      // }
-      // else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      // {
-      //   FetchBrandsPriceCityProducts(page,brands,from,to,cities,options);
-      // }
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchPriceCityAccessories(page,from,to,cities,options);
+      } 
 
-      // else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      //  {
-      //   FetchBrandsPriceCityStatusProducts(page,brands,from,to,cities,statuses,options);
-      // } 
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceCityAccessories(page,brands,from,to,cities,options);
+      }
 
-      // else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      //  {
-      //   FetchCityStatusProducts(page,cities,statuses,options);
-      // } 
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#price').children('option:selected').val()=='Select Price')
+      {
+        FetchUpperCitySellAccessories(page,city,options);
+      } 
 
-      // else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      //  {
-      //   FetchBrandsPriceStatusProducts(page,brands,from,to,statuses,options);
-      // }
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#price').children('option:selected').val()!='Select Price')
+      {
+        FetchUpperCityPriceSellAccessories(page,city,price,options);
+      } 
 
-      // else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      //  {
-      //   FetchPriceCityProducts(page,from,to,cities,options);
-      // } 
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#price').children('option:selected').val()!='Select Price')
+      {
+        FetchUpperPriceSellAccessories(page,price,options);
+      } 
 
-      // else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      // {
-      //   FetchStatusProducts(page,statuses,options);
-      // }
-
-      // else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      // {
-      //   FetchPriceStatusProducts(page,from,to,statuses,options);
-      // } 
-
-      // else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      // {
-      //   FetchPriceProducts(page,from,to,options);
-      // } 
-
-      // else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
-      // {
-      //   FetchBrandsCityStatusProducts(page,brands,cities,statuses,options);
-      // } 
-
-      // else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
-      // {
-      //   FetchUpperCitySellProducts(page,city,options);
-      // } 
-
-      // else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
-      //  {
-      //   FetchPriceCityStatusProducts(page,from,to,cities,statuses,options);
-      // }
-
-      // else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
-      // {
-      //   FetchUpperCityPriceSellProducts(page,city,price,options);
-      // } 
-
-      // else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
-      // {
-      //   FetchUpperPriceSellProducts(page,price,options);
-      // } 
-
-
-      // else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
-      // {
-      //   FetchData(page,options);
-      // } 
-
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#price').children('option:selected').val()=='Select Price')
+      {
+        FetchData(page,options);
+      } 
+});
 
 </script>
   
