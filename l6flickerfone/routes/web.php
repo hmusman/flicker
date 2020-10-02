@@ -28,6 +28,7 @@ Route::get('pagination/fetch_data', 'ProductController@fetch_data');
 Route::get('pagination/accessory_fetch_data', 'AccessoryController@fetch_data');
 Route::get('ShopViewProducts','ProductController@ShopViewProducts')->name('ShopViewProducts');
 Route::get('BuyUsedAccessories','SellAccessoryController@frontEndAccessories')->name('BuyUsedAccessories');
+Route::get('BuyUsedAccessoriesData','SellAccessoryController@BuyUsedAccessoriesData')->name('BuyUsedAccessoriesData');
 Route::get('BuyUsedMobilePhones','SellProductController@frontEndProducts')->name('BuyUsedMobilePhones');
 Route::get('BrandsSellProducts','SellProductController@BrandsSellProducts')->name('BrandsSellProducts');
 Route::get('BrandsPriceSellProducts','SellProductController@BrandsPriceSellProducts')->name('BrandsPriceSellProducts');
