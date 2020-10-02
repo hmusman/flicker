@@ -673,11 +673,11 @@ color: black;
 
 
 <div class="form-group row">
-  <div class="col-md-7" >
+  <div class="col-md-6" >
 
     <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Category</label>
+                              <div class="col-md-8">
                                   <input type="hidden" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
                                   <input type="hidden" name="status" value="" id="status">
                                   <select class="form-control" name="category">
@@ -693,8 +693,8 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">Brand</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Brand</label>
+                              <div class="col-md-8">
                                   <select class="form-control" name="brand">
                                       <option selected="" disabled="">Select Brand</option>
                                       @foreach($brands as $brand)
@@ -708,8 +708,8 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">Model</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Model</label>
+                              <div class="col-md-8">
                                   <input class="form-control" type="text" value="{{ old('model') }}" name="model" placeholder="Enter Model" id="example-text-input">
                                   @error('model')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -718,8 +718,8 @@ color: black;
                           </div>
 
                            <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">City</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">City</label>
+                              <div class="col-md-8">
                                   <select class="form-control" name="city">  
                                       <option selected="" disabled="">Select City</option> 
                                       <option class="option" value="Abbottabad">Abbottabad</option>
@@ -1030,8 +1030,8 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">Phone-Number</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Phone Number</label>
+                              <div class="col-md-8">
                                   <input class="form-control" type="text" value="{{ old('phone') }}" name="phone" placeholder="Enter Phone Number" id="example-text-input">
                                   @error('phone')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -1040,8 +1040,8 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">Color</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Color</label>
+                              <div class="col-md-8">
                                   <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="example-text-input">
                                   @error('color')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -1050,8 +1050,8 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">Price</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Price</label>
+                              <div class="col-md-8">
                                   <input class="form-control" type="number" value="{{ old('price') }}" name="price" placeholder="Enter Price" id="example-text-input">
                                   @error('price')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -1060,8 +1060,8 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-2 col-form-label">PTA</label>
-                              <div class="col-md-10">
+                              <label for="example-text-input" class="col-md-4 col-form-label">PTA</label>
+                              <div class="col-md-8">
                                  <select class="form-control " name="pta">
                                         <option disabled="" selected="">Select Status</option>
                                         <option value="approved">Approved</option>
@@ -1073,12 +1073,13 @@ color: black;
                               </div>
                           </div>
 </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
  <div class="form-group row">
    <div class="col-md-4">
      <p class="radiotextcol">Choose: </p>
 
    </div>
+
    <div class="col-md-8">
      
   <input type="radio" id="male" name="gender" value="male" onclick="showPhonedet();">
@@ -1100,14 +1101,20 @@ color: black;
 
     <div id="PhoneDetBox"  class="hide">
                 <div class="form-group row" >
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent / Scratch?</label>
-                              <div class="col-md-8">
+                         
+
+
+                          <div class="col-md-4">
+
+                              <label for="example-text-input" class="col-form-label">Minor Dent / Scratch?</label>
+                            </div>
+                            
+                              <div class="col-md-8" style="text-align:center" >
                                    <div>
-                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes">
-                                    <label for="minor-on" class="myLabel ">Yes</label>
-                                    <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no">
-                                    <label for="minor-off" class="myLabel">No</label>
+                                      <input id="major-on" class="major radioyesNo" name="major" type="radio" value="yes">
+                                    <label for="major-on" class="myLabel ">Yes</label>
+                                    <input id="major-off" class="major radioyesNo" name="major" type="radio" value="no">
+                                    <label for="major-off" class="myLabel">No</label>
 
                                     </div>
                                     @error('minor')
@@ -1116,9 +1123,23 @@ color: black;
                               </div>
                           </div>
 
+ <div class="form-group row">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Major Dent / Scratch?</label>
+                              <div class="col-md-8" style="text-align:center" >
+                                   <div>
+                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes">
+                                    <label for="minor-on" class="myLabel ">Yes</label>
+                                    <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no">
+                                    <label for="minor-off" class="myLabel">No</label>
 
+                                    </div>
+                                    @error('major')
+                                      <p class="text-danger mt-3">{{ $message }}</p>
+                                  @enderror
+                              </div>
+                          </div>
                       
-                          <div class="form-group row">
+                          <!-- <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Major Dent</label>
                               <div class="col-md-8">
                                   <div>
@@ -1132,12 +1153,12 @@ color: black;
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
                               </div>
-                          </div>
+                          </div> -->
 
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Original Accessories Available</label>
-                              <div class="col-md-8">
+                              <div class="col-md-8" style="text-align:center" >
                                  <div>
                                     <input id="accessory-on" class="accessory radioyesNo" name="accessory" type="radio" value="yes">
                                   <label for="accessory-on" class="myLabel">Yes</label>
@@ -1153,7 +1174,7 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Screen Is Cracked</label>
-                              <div class="col-md-8">
+                              <div class="col-md-8" style="text-align:center" >
                                   <div>
                                     <input id="screen-on" class="screen radioyesNo" name="screen" type="radio" value="yes">
                                   <label for="screen-on" class="myLabel">Yes</label>
@@ -1169,7 +1190,7 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Device Box Available</label>
-                              <div class="col-md-8">
+                              <div class="col-md-8" style="text-align:center" >
                                  <div>
                                       <input id="device-on" class="device radioyesNo" name="device" type="radio" value="yes">
                                     <label for="device-on" class="myLabel ">Yes</label>
@@ -1185,7 +1206,7 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Device Battery Status</label>
-                              <div class="col-md-8">
+                              <div class="col-md-8" style="text-align:center" >
                                  <select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
                                     <option disabled="" selected="">Select Status</option>
                                     @for($i=5; $i<=10; $i++)

@@ -122,7 +122,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
   font-size: 17px !important;
 } */
 #MainHeightOnDesktop{
-  height: 3141px !important;
+  height: 2655px !important;
 }
 
 .colblue{
@@ -179,12 +179,12 @@ ul[class="dropdown-menu fade-up"] > li::after{
 
 
 .Cameratriple{
-      height: 190px;
+      height: 110px;
    
 }
 
 .SelfieSingle{
-      height: 100px;
+      height: 75px;
    
 }
 
@@ -206,6 +206,14 @@ ul[class="dropdown-menu fade-up"] > li::after{
   @media (max-width: 550px){
 
 
+#customers td, #customers th{
+  padding: 8px 6px 8px 0px !important;
+}
+
+ .Dprotect, .DispPro{
+
+height: 140px !important;
+ }
 .settRatingMob{
   width: 19% !important;
     
@@ -258,7 +266,7 @@ div[id="view1"]{
 }
 
 .MusicPlayOnMob{
-  height: 104px !important;
+  height: 75px !important;
 }
 
 
@@ -399,7 +407,7 @@ height: 37px !important;
 }
 .DBatteryChargingOne{
 
-    height: 130px !important;
+    height: 75px !important;
 }
 
 .simweight2{
@@ -534,11 +542,11 @@ padding-top: 9px !important;
       }
  .CameraTripple{
           /* margin-top: 33px !important; */
-              height: 190px !important;
+              height: 110px !important;
       }
        .CameraSinleNexxt{
           /* margin-top: 33px !important; */
-              height: 100px !important;
+              height: 75px !important;
       }
       .StatusOnMob{
           height: 75px !important;
@@ -727,6 +735,9 @@ ol > li{
 
   @media (min-width:500px){
   
+    .tdBlockOnMobhead {
+      width: 46%;
+    }
 .LaunchWidthOnlyOnDesk{
       width: 110px !important;
 }
@@ -1223,7 +1234,7 @@ height: 65px;
   .Dprotect{
 display: block;
 
-height: 185px;
+height: 100px;
 
     font-weight: 600 !important;
     text-shadow: 0px 0px 0.1px black !important;
@@ -1246,7 +1257,7 @@ height: 70px;
   .CameraVedios{
 display: block;
 
-height: 104px;
+height: 75px;
 
     font-weight: 600 !important;
     text-shadow: 0px 0px 0.1px black !important;
@@ -1264,7 +1275,7 @@ height: 104px;
 
 
 .FeatureSensor{
-  height: 130px !important;
+  height: 100px !important;
 }
 
 
@@ -1418,7 +1429,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 185px;border-bottom: 5px #eeeeee solid;
+        height: 100px;border-bottom: 5px #eeeeee solid;
    
 }
 .PlateOSS{
@@ -1498,7 +1509,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 190px;border-bottom: 1px #eeeeee solid;
+        height: 110px;border-bottom: 1px #eeeeee solid;
   
 }
 
@@ -1524,7 +1535,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 104px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+        height: 75px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
  
 }
 .SelfiSinle{
@@ -1535,7 +1546,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 100px;border-bottom: 1px #eeeeee solid;
+        height: 75px;border-bottom: 1px #eeeeee solid;
     
 }
 
@@ -1560,7 +1571,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 104px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+        height: 75px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
  
 }
 .SoundLSp{
@@ -1571,7 +1582,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 103px;border-bottom: 1px #eeeeee solid;
+        height: 77px;border-bottom: 1px #eeeeee solid;
   
 }
 .SoundmmJack{
@@ -1596,7 +1607,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 104px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+        height: 73px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
   
 }
 
@@ -1678,7 +1689,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 130px;border-bottom: 5px #eeeeee solid;
+        height: 100px;border-bottom: 5px #eeeeee solid;
    
 }
 
@@ -1701,7 +1712,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 130px;border-bottom: 1px #eeeeee solid;
+        height: 75px;border-bottom: 1px #eeeeee solid;
   
 }
 
@@ -1724,7 +1735,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 104px;border-bottom: 5px #eeeeee solid;
+        height: 75px;border-bottom: 5px #eeeeee solid;
  
 }
 
@@ -1749,7 +1760,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 160px;border-bottom: 5px #eeeeee solid;
+        height: 75px;border-bottom: 5px #eeeeee solid;
   
 }
 

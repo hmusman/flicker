@@ -626,7 +626,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
               <div style="height: 60%; width: 100%;">
               
-             <center> <img src="{{ asset($img) }}"  style="height: 216px;width: 136px;padding-top: 16px;" />  </center>
+             <center> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </center>
               </div>
               <div style="height: 30%; width: 100%;">
                 <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
@@ -977,7 +977,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 $(document).ready(function(){
        $('.autoplayFeatures').slick({
  slidesToShow: 5,
- slidesToScroll: 1,
+ slidesToScroll: 5,
   autoplay: true,
  autoplaySpeed: 3000,
 
@@ -989,7 +989,7 @@ $(document).ready(function(){
        breakpoint: 500,
        settings: {
        slidesToShow: 2,
-       slidesToScroll: 1,
+       slidesToScroll: 2,
        }
      }
    ]  

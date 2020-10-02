@@ -25,1247 +25,10 @@
 
 
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
-</style>
- 
-  <style>
-/*  
-    /////////////////////////////////////////////     nav Bar search css//////////////////////// */
-    #myInput {
-      background-image: url('/css/searchicon.png');
-      background-position: 10px 12px;
-      background-repeat: no-repeat;
-      width: 50%;
-      font-size: 16px;
-      padding: 12px 20px 12px 40px;
-      border: 1px solid #ddd;
-      margin-bottom: 12px;
-    }
-    
-    #myUL {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-   
-    }
-    
-    #myUL li a {
-      
-      margin-top: -1px; /* Prevent double borders */
-      
-      padding: 12px;
-      text-decoration: none;
-      color: #605d5d;
-    display: block;
-    font-weight: 600;
-    }
-    
-    /* #myUL li a:hover:not(.header) {
-      background-color: #eee;
-    } */
-
-
-    .dropdown-toggle::after {
-content: none !important;
-}
-
-.navbar-nav > a{
-  background-color: #0071e3 !important;
-    padding: 5px 19px 5px 19px !important;
-    margin-right: 21px !important;
-    border-radius: 25px !important;   
-    color: white !important;
- 
-}
-
-ul[class="dropdown-menu fade-up"] > li::after{
-  background: #e3e6e5!important;
-  display: block;
-    position: absolute;
-   
-    left: 0;
-   width: 90%;
-    height: 1px !important;
-    content: '' !important;
-    text-align: center;
-    margin-left: 8px;
-}
-
-
-.col-md-4{
-  padding-right: 0px !important;
-  padding-left: 0px !important;
-}
-
-/* @media (min-width:500px){
-  
- #seconNav{
-   background-color: red !important;
- }
-  } */
-  @media (min-width:500px){
-
-/* #TableHeadFontSizeOnDesk{
-  font-size: 17px !important;
-} */
-#MainHeightOnDesktop{
-  height: 2793px !important;
-}
-
-.colblue{
-
-  font-size: 17px !important;
-}
-
-
-#TableFonSizeOnDeskTop > div{
-  font-size: 15px !important;
-}
-
-.widthOnDesk{
-        width: 110px !important;
-}
-      .TechOnDeskTop{
-              width: 57% !important;
-      }
-  
-    #seconNav{
-   background-color: rgb(238, 237, 237) !important;
- }
-
-
-
-
-
-
-
-
-  }
-
-
-.tdBlockOnMobSubhead{
-      font-size: 14px;
-    font-weight: 600;
-
-        height: 37px !important;
-    padding-top: 11px !important;
-    text-shadow: 0px 0px 0.1px black !important;
-}
-
-
-
-
-
-.cradslotOnMob{
-      height: 65px;
-    font-weight: 600;
-    text-shadow: 0px 0px 0.1px black;
-  
-    padding: 5px;
-}
-
-
-.Cameratriple{
-      height: 145px;
-   
-}
-
-.SelfieSingle{
-      height: 60px;
-   
-}
-
-.CameraFeaturesOnMob{
-      height: 67px ;
-
-    text-shadow: 0px 0px 0.1px black;
-    font-size: 15px ;
-  
-}
-.SeliecamFatureMob{
-      height: 67px ;
-
-    text-shadow: 0px 0px 0.1px black;
-    font-size: 15px ;
-  
-}
-
-  @media (max-width: 550px){
-.Cameratriple {
-    height: 190px !important;
-}
-  .Dprotect{
-
-height: 180px !important;
-  }
-.ProtecOnMoble{
-  height: 180px !important;
-}
-
-#FootStyleOnMob{
-  margin-top: 200px !important;
-}
-
-.MusicPlayOnMob{
-  height: 104px !important;
-}
-
-
-.FeatureSensor{
-      font-size: 12px !important;
-}
-
-
-.batteryCarge{
-      font-size: 12px !important;
-}
-
- .Commsblutoth{
-font-size: 13px !important;
-
-}
-
-
-
-
-
-
-  .CameraVedios{
-
-
-height: 113px !important;
-
-    
-
-}
-
-
-
-.CameraFeaturesOnMob{
-      height: 113px !important;
-
-  
-  
-}
-
-.AboveSoundbarSpce{
-  height: 37px !important;
-}
-
-.SeliecamFatureMob{
-      height: 67px !important;
-
-  
-  
-}
-.cradslotOnMob{
-      height: 65px;
-    font-weight: 600;
-    text-shadow: 0px 0px 0.1px black;
-    font-size: 13px;
-    padding: 5px;
-}
-
-
-.topPlateformSpconmob{
-height: 56px !important;
-}
-
-.topCommsfirstSpconmob{
-height: 37px !important;
-}
-
-
-.topFeaturSensoronmob{
-height: 33px !important;
-}
-.topMainCameraSpconmob{
-height: 56px !important;
-}
-
-.topMemorSpconmob{
-height: 37px !important;
-}
-
-  .Dprotect{
-
-
-
-
-
-   
-    font-size: 11px !important;
-
-
-}
-  .Dresolution{
-
-    font-size: 11px !important;
-
-
-}
-
-.mobTitleOnMob{
-  margin-top: 41px !important;
-}
-.TopheightOnMob{
-    height: 33px !important;
-}
-
-
-.topBodySpconmob{
-     height: 36px !important;
-}
-
-.topBodySpconmob{
-     height: 36px !important;
-}
-.topDisplaySpconmob{
-height: 37px !important;
-}
-.Net1OnMob{
-    height: 37px !important;
-}
-
-
-.lanchSpcOn{
-    height: 33px !important;
-}
-
-.builWeigt2{
- padding-top: 21px !important;
-    height: 65px !important;
-}
-
-.DisplayReslution{
-
-    height: 70px !important;
-}
-
-
-.batteryTalkTime2{
-
-    height: 67px !important;
-}
-.DBatteryChargingOne{
-
-    height: 75px !important;
-}
-
-.simweight2{
-padding-top: 9px !important;
-    height: 120px !important;
-}
-
-
-
-.DisplaLastHeightOnMob{
-padding-top: 9px !important;
-    height: 120px !important;
-}
-.bodyweight2{
-    padding-top: 21px !important;
-    height: 65px !important;
-}
-
-.DisplayType{
-  
-    height: 65px !important;
-}
-.mem0ryInt{
-  
-    height: 70px !important;
-}
-
-
-.CameraVedioa{
-  
-    height: 70px !important;
-}
-.BuildSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-     height: 65px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    padding-left: 16px !important;
-}
-
-.SIMSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-     height: 120px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    padding-left: 16px !important;
-}
-.BodyHeadMob{
-    display: block !important;
-    font-size: 13px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-
-.BatteryOneMob{
-    display: block !important;
-    font-size: 10px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-.BodyHeadMobForFeatureSensor{
-    display: block !important;
-    font-size: 10px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-
-.BodySts1{
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-     height: 65px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    padding-left: 16px !important;
-}
-
-.BuildSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-    
-    padding-left: 16px !important;
-}
-
-.ResoltiondSts1{
-   font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-    height: 65px !important;
-    padding-left: 5px !important;
-}
-
-.SIMSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-    
-    padding-left: 16px !important;
-}
-.DimnOnMobSubhead{
-    font-weight: 600 !important;
-    height: 65px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    font-size: 9px !important;
-}
-
-
-      .DimensionsMob{
-          /* margin-top: 33px !important; */
-              height: 65px !important;
-      }
-
-
-      .CameraFeature{
-          /* margin-top: 33px !important; */
-              height: 113px !important;
-      }
-
-
-    
-
-        .TrpleVed{
-          /* margin-top: 33px !important; */
-              height: 113px !important;
-      }
- .CameraTripple{
-          /* margin-top: 33px !important; */
-              height: 190px !important;
-      }
-       .CameraSinleNexxt{
-          /* margin-top: 33px !important; */
-              height: 60px !important;
-      }
-      .StatusOnMob{
-          height: 75px !important;
-      }
-
-      .StatheadOnMob{
-          height: 75px !important;
-    padding-top: 28px !important;
-    font-size: 11px !important;
-    text-shadow: 0px 0px 0.5px black !important;
-    padding-left: 16px !important;
-
-      }
-
-.Lannounced{
-        height: 37px !important;
-  
-}
-.SpecialMargMob{
-    margin-top: 28px !important;
-}
-.mobileCntTD{
-    
-    font-size: 13px !important;
-    padding: 10.8px !important;
-
-}
-
-/* .LeftColheightOnMob{
-    height: 477px !important;
-
-} */
-
-.fontOnMob{
-    font-size: 21.3px !important;
-}
-
-
-.tdBlockOnMobhead{
-    display: block !important;
-    font-size: 10px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-.tdBlockOnMobSubhead{
-  display: block !important;
-font-size: 9px !important;
-}
-
-
-#myInputone{
-  height: 30px !important;
-  
-}
-
-#myInputthree{
-    height: 30px !important;
-}
-
-#imgOneMob{
-  width: 100% !important;
-      height: 177px !important;
-}
-
-
-/* #widthThirtyOnMob{
-width: 0% !important;
-display: none !important;
-visibility: hidden !important;
-} */
-
-/* #widthSeventyOnMob{
-width: 100% !important;
-} */
-
-
-#navbarNavAltMarkup1{
-  background-color: #e6e6e6 !important;
-    z-index: 12 !important;
-    margin-left: -12px !important;
-    width: 100% !important;
-}
-
-input[id="myInput"]{
-  width: 333px !important;
-}
-
-#prcCal{
-  margin-left: -1px !important;
-}
-ul[id="myUL"]{
-  width: 87% !important;
-}
-
-
-ul[class="dropdown-menu fade-up show"] > li{
-  display: block !important;
-}
-
-    #reglogin{
-      right: 81px !important;
-    font-size: 13px !important;
-      right: 91px !important;
-    font-size: 10px !important;
-    border-bottom: none !important;
-    
-    bottom: 21px !important;
-
-      
-    border-bottom: none !important;
- }
-#logoFlickerflone{
-  height: 48px !important;
-    width: 181px !important;
-    margin-left: -17px !important;
-    font-size: 58px;
-   
-
-}
-
-  }
-
-
-
-   /* ============ only desktop view ============ */
-   @media all and (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
-    .navbar .nav-item:hover .nav-link{ color:  rgba(0,0,0,.5) }
-    .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
-    .navbar .dropdown-menu.fade-up{ top:180%;  }
-    .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-  } 
-  /* ============ desktop view .end// ============ */
-  
-    </style>
-
-
-
-
-
-<style>
-
-/* 
-  //////////////////////////////////////////    slick btns///////////////////////// */
-
-  div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
- display: none !important;
-}
-
-
-#slickBtnFor > div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
-  background-image: url('images/headerimg/ic_keyboard_arrow_left_black_18dp.png');
-  border-radius: 50%;
-  height: 38px;
-    background-repeat: no-repeat;
-    width: 100px;
-}
-#slickBtnFor > div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
-  background-image: url('images/headerimg/ic_keyboard_arrow_right_black_18dp.png');
-  border-radius: 50%;
-  height: 38px;
-    background-repeat: no-repeat;
-    width: 26px;
-}
-</style>
-
-
-<style>
-
-.tblrowbottmstl{
-  margin-top: -10px ;
-  border-bottom: 1px #efefef solid; 
-   width: 118%;
-}
-.tblrowbottmstl2{
-  margin-top: -10px ;
-  border-bottom: 1px #efefef solid; 
-  
-}
-
-.tblrowbottmstl3{
-  margin-top: -10px ;
- 
-  
-}
-
-
-
-ol > li{
-  font-size: 14px !important;
-    font-weight: 500 !important;
-}
-
-
-
 
 
 </style>
 
-
-
-
-<style>
-  @media (min-width:500px){
-  
-.LaunchWidthOnlyOnDesk{
-      width: 110px !important;
-}
-
-
-div[class="img-zoom-container"]{
-  margin-left: 174px !important;
-}
-
-
-.mobTitleOnMob{
-  margin-top: -24px !important;
-}
-
-
-  }
-
-
-  @media (max-width: 550px){
-
-  footer{
-  margin-top: 149px !important;
-}
-
-  .srcgBtnOnMob{
-
-    height: 30px !important;
-    padding-top: 0px !important;
-
-
-        background-color: #eeeeee !important;
-    border: 1px #cdcdcd solid !important;
-
-  }
-
-
-
-
-#ColOnMobileFirst{
-  width: 40% !important;
-}
-
-#ColOnMobileCenter{
-  width: 0% !important;
-  display: none !important;
-  visibility: hidden !important;
-}
-#ColOnMobileLast{
-  width: 41% !important;
-}
-
-  
-#mobviebtns{
-  font-size: 7px !important;
-}
-#mobviebtnsabove{
-  padding: 0px 10px 5px 10px !important;
-}
-#comparebtm{
-  margin-top: 39px !important;
-}
-
-
-
-
-
-a[href="#view4"]{
-  
-  top: 18px !important;
-
-}
-
-.tabcontents{
-  margin-top: 19px !important;
-}
-}
-</style>
-
-
-
-
-
-
-
- <style type="text/css">
-
- 
-/* ///////////////////////  pagination////////////////////////////////////////////////  */
-
-
-  ul, li {
-      list-style: none;
-  }
-
-  #wrapper {
-      width: 900px;
-      margin: 20px auto;
-  }
-
-  .data-container {
-      margin-top: 20px;
-  }
-
-  .data-container ul {
-      padding: 0;
-      margin: 0;
-  }
-
-  .data-container li {
-      margin-bottom: 5px;
-      padding: 5px 10px;
-      background: #eee;
-      color: #666;
-  }
-</style>
-
-
-
-
-<style>
-img[src="{{ asset('storage/images/logo Black-01.jpg')}}"]{
-  height: 65px !important;
-    /* top: -1px; */
-    margin-top: -8px;
-    margin-bottom: -8px;
-}
-img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
-  height: 28px !important;
-}
-
-
-  @media (max-width: 550px){
-
-#myULthree{
-  margin-left: -45px !important;
-}
-.ButtonSearchOnMob{
-  margin-left: 139px !important;
-}
-
-
-#myInputone, #myInputthree{
-  width: 150% !important;
-  margin-left: -28px !important;
-}
-
-
-
-    #ChangeContentSetMob{
-      margin-top: 55px !important;
-    }
-  #ChangeContentSetMob3{
-      margin-top: 40px !important;
-    }
-#changePFontVWOnMob{
-  font-size: 2.4vw !important;
-}
-
-#pages{
-  text-align: center !important;
-}
-
-#srchoption{
-  height: 26px !important;
-    font-size: 1.8vw !important;
-    text-align: center !important;
-    padding: 7px 18px 10px 18px !important;
-}
-#srchopnon{
-  
-  height: 28px !important;
-
-}
-
-#sortBy{
-  text-align: center !important;
-}
-
-#set55atmob{
-  width: 10% !important;
-}
-#setSobercatOnMob{
-  width: 26% !important;
-  font-size: 4vw !important;
-
-}
-
-#settimepnMob{
-  width: 50% !important;
-}
-
-
-
-#zeroCpOnMobile{
-
-  font-size: 4.4vw !important;
-    margin-left: 3px !important;
-}
-
-#aug20onmob{
-  font-size: 3.7vw !important;
-}
-
-
-
-img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
-  height: 17px !important;
-    margin-top: -12px !important;
-}
-
-
-
-
-img[src="images/headerimg/ic_room_black_18dp.png"]{
-  height: 18px !important;
-    margin-top: -12px !important;
-}
-
-
-#vibiatmob{
-  font-size: 4vw !important;
-}
-
-
-#vibiresponsive{
-  width: 50% !important
-  ;
-}
-
-img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
-  width: 83% !important;
-    height: 10px !important;
-    margin-top: -1px !important;
-}
-
-
-
-#Sresponsive{
-  padding-top: 24px !important;
-  font-size: 6.2vw !important;
-}
-
-#replybtnMobile{
-  width: 20% !important;
-}
-
-#ReplyResp{
-  width: 30% !important;
-}
-
-
-#RatingMob{
-  width: 50% !important;
-}
-
-#replyomgresponsive{
-  font-size: 3.5vw !important;
-}
-
-
-
-
-#RatingZero{
-  margin-left: 36px !important;
-  font-size: 3.7vw !important;
-}
-
-
-
-
-#LoremResp{
-  font-size: 2.2vw !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 320px) and (max-width: 350px) {
-
-
-
-  .img-zoom-container {
- 
-    width: 304px !important;
-   
-  }
-
-
-}
-
-
-
-
-
-
-
-}
-</style>
-
-<style>
-  #myInputone {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-   height: 45px;
-    border: 1px black solid;
-  }
- #myInputtwo {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-        height: 45px;
-  }
-   #myInputthree {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid black;
-    margin-bottom: 12px;
-        height: 45px;
-  }
-  #myULone {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
-  }
-
-  #myULtwo {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
-  }
-  #myULthree {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
-  }
-  #myULone li a {
-    /* border: 1px solid #ddd; */
-    margin-top: -1px;
-    /* Prevent double borders */
-   /*  background-color: #f6f6f6; */
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
-  }
- #myULtwo li a {
-    /* border: 1px solid #ddd; */
-    margin-top: -1px;
-    /* Prevent double borders */
-    /* background-color: #f6f6f6; */
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
-  }
-
-   #myULthree li a {
-    /* border: 1px solid #ddd; */
-    margin-top: -1px;
-    /* Prevent double borders */
-   /*  background-color: #f6f6f6; */
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
-  }
-  #myULone li a:hover:not(.header) {
-    background-color: #eee;
-  }
-  #myULthree li a:hover:not(.header) {
-  /*   background-color: #eee; */
-  }
-
-  #setwidthfirst{
-  height: 115px;
-   width:100%;  
-      margin-right: 115px;
-  }
-
-  #setwidthsecond{
-        height: 115px;
-    width: 92%;
-    margin-top: -15px;
-    margin-left: 32px;
-    margin-right: 115px;
-  }
-
-
-
-
-
-
-
-
-
-#customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-      /* border-bottom: 4px #eee solid; */
-    /* background-color: #fafafa;
-    border-bottom: 5px #eeeeee solid; */
-}
-
-#customers td, #customers th {
- border: 1px solid #ededed;
-  padding: 8px;
-  background-color: #fafafa;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-
-
-.colblue{
-  color: blue !important;
-  font-weight: bold !important;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-
-
-
-
-</style>
-
-
-<style>
-
-
-
-
-
-  .DType{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px !important;
-  padding: 5px !important;
-
-}
-
-  .Dsize{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px !important;
-  padding: 5px !important;
-
-}
- .Commsblutoth{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-   
-  padding: 5px !important;
-
-}
-  .cardslotfont{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-  font-size: 11px !important;
-  padding: 5px !important;
-
-}
-  .Dprotect{
-display: block;
-
-height: 120px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px;
-  padding: 5px !important;
-
-}
-  .Dresolution{
-display: block;
-
-height: 70px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px;
-  padding: 5px !important;
-
-}
-
-  .CameraVedios{
-display: block;
-
-height: 75px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px;
-  padding: 5px !important;
-
-}
-
-
-.plateGpu{
-  height: 65px !important;
-}
-
-
-
-
-.FeatureSensor{
-  height: 130px !important;
-}
-
-
-.MiscColor{
-  height: 70px !important;
-}
-
-
-
-
-
-</style>
 <body>
 
 
@@ -1522,299 +285,602 @@ margin-left: 15px;">{{ $product->price }}</font>
 <div class="row">
 
   <div class="col-md-12">
+
     <div style=" margin: 0 auto; padding: 120px 0 40px;">
       <ul class="tabs" data-persist="true">
           <li><a href="#view1">TECHNICLE SPECS</a></li>
           <li><a href="#view2">OPINIOS</a></li>
           <li><a href="#view3">VEDIOS</a></li>
           <li><a href="#view4">REVIEWS</a></li>
+
+            
       </ul>
       <div class="tabcontents">
          
 
 
-<div id="view1">
+         <div id="view1">
+         
+         
+ 
+
 <div class="row">
-   <div style="width: 19%;  float: left;">
-      <div style="height: 3700px; "  id="MainHeightOnDesktop">
-         <table id="customers">
-            <tr>
-               <td class="colblue tdBlockOnMobhead ">Network</td>
-               <td class="tdBlockOnMobSubhead TechOnDeskTop" style="border-bottom: 4px #eee solid; "> Technology</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue tdBlockOnMobhead LaunchWidthOnlyOnDesk" >LAUNCH</td>
-               <td class="tdBlockOnMobSubhead" style="display: block;"> Announced</td>
-               <td class="StatheadOnMob" style="display: block;     border-bottom: 5px #eeeeee solid; font-weight: 600; "> Status</td>
-            </tr>
-         </table>
-         <!-- <table id="customers">
-            <tr>
-                <td class="colblue tdBlockOnMobhead">BODY</td>
-                <td class="tdBlockOnMobSubhead" style="display: block;"> Dimensions</td>
-                <td class="StatheadOnMob" style="display: block;"> Weight</td>
-                <td class="StatheadOnMob" style="display: block;"> Build</td>
-                <td class="StatheadOnMob" style="display: block;"> SIM</td>
-            </tr>
-            </table> -->
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Body</td>
-               <td class="DimnOnMobSubhead" style="display: block;font-weight: 600;"> Dimensions</td>
-               <td class="BodySts1" style="display: block;font-weight: 600;"> Weight</td>
-               <td class="BuildSts1" style="display: block;font-weight: 600;"> Build</td>
-               <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Display</td>
-               <td class="DType" style=""> Type</td>
-               <td class="Dsize" style="display: block;font-weight: 600;"> Size</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> Resolution</td>
-               <td class="Dprotect" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Plate-<br/>Form</td>
-               <td class="DType" style=""> OS</td>
-               <td class="Dsize" style="display: block;font-weight: 600;"> Chipset</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> CPU</td>
-               <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Memory</td>
-               <td class="cradslotOnMob" style="display: block;font-weight: 600;"> Card slot</td>
-               <td class="Dresolution" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Internal</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Main-<br/>Camera</td>
-               <td class="Cameratriple" style="display: block;font-weight: 600;"> Triple</td>
-               <td class="CameraFeaturesOnMob" style="display: block;font-weight: 600;"> Features</td>
-               <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Selfie-<br />Camera</td>
-               <td class="SelfieSingle" style="display: block;font-weight: 600;"> Single</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> Features</td>
-               <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Sound</td>
-               <td class="SelfieSingle" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> 3.5mm jack</td>
-               <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">COMMS</td>
-               <td class="DType" style=""> WLAN</td>
-               <td class="Commsblutoth" style="display: block;font-weight: 600;"> Bluetooth</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> GPS</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> Radio</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> NFC</td>
-               <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> USB</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">Features</td>
-               <td class="FeatureSensor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Sensors</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BatteryOneMob widthOnDesk">Battery</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> &nbsp; </td>
-               <td class="batteryCarge" style="display: block;font-weight: 600; height: 130px; "> Charging</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> talk Time</td>
-               <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 104px;"> Music Play</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">MISC</td>
-               <td class="MiscColor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Colors</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">&nbsp;</td>
-               <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 160px; "> Price & Storage</td>
-            </tr>
-         </table>
+<!-- <div  style="width: 16%; float: left;  background-color: rgb(227, 231, 231); "></div>
+ -->
+
+
+
+
+ <div style="width: 19%;  float: left;">
+
+
+<div style="height: 3700px; "  id="MainHeightOnDesktop">
+
+    <table id="customers">
+        <tr>
+            <td class="colblue tdBlockOnMobhead ">Network</td>
+            <td class="tdBlockOnMobSubhead TechOnDeskTop" style="border-bottom: 4px #eee solid; "> Technology</td>
+        </tr>
+    </table>
+
+
+  
+
+
+
+
+            <table id="customers">
+                <tr>
+                    <td class="colblue tdBlockOnMobhead LaunchWidthOnlyOnDesk" >LAUNCH</td>
+                    <td class="tdBlockOnMobSubhead" style="display: block;"> Announced</td>
+                    <td class="StatheadOnMob" style="display: block;     border-bottom: 5px #eeeeee solid; font-weight: 600; "> Status</td>
+                </tr>
+            </table>
+
+                <!-- <table id="customers">
+                    <tr>
+                        <td class="colblue tdBlockOnMobhead">BODY</td>
+                        <td class="tdBlockOnMobSubhead" style="display: block;"> Dimensions</td>
+                        <td class="StatheadOnMob" style="display: block;"> Weight</td>
+                        <td class="StatheadOnMob" style="display: block;"> Build</td>
+                        <td class="StatheadOnMob" style="display: block;"> SIM</td>
+                    </tr>
+                </table> -->
+
+                    <table id="customers">
+                        <tr>
+                            <td class="colblue BodyHeadMob widthOnDesk">Body</td>
+                            <td class="DimnOnMobSubhead" style="display: block;font-weight: 600;"> Dimensions</td>
+                            <td class="BodySts1" style="display: block;font-weight: 600;"> Weight</td>
+                            <td class="BuildSts1" style="display: block;font-weight: 600;"> Build</td>
+                            <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
+                        
+                        </tr>
+                    </table>
+
+
+
+
+                    <table id="customers">
+                      <tr>
+                        <td class="colblue BodyHeadMob widthOnDesk">Display</td>
+                        <td class="DType" style=""> Type</td>
+                        <td class="Dsize" style="display: block;font-weight: 600;"> Size</td>
+                        <td class="Dresolution" style="display: block;font-weight: 600;"> Resolution</td>
+                        <td class="Dprotect" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
+                    
+                      </tr>
+                    </table>
+
+
+
+
+
+
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMob widthOnDesk">Plate-<br/>Form</td>
+    <td class="DType" style=""> OS</td>
+    <td class="Dsize" style="display: block;font-weight: 600;"> Chipset</td>
+    <td class="Dresolution" style="display: block;font-weight: 600;"> CPU</td>
+    <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
+
+  </tr>
+</table>
+
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMob widthOnDesk">Memory</td>
+
+    <td class="cradslotOnMob" style="display: block;font-weight: 600;"> Card slot</td>
+    <td class="Dresolution" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Internal</td>
+
+
+  </tr>
+</table>
+
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMob widthOnDesk">Main-<br/>Camera</td>
+
+    <td class="Cameratriple" style="display: block;font-weight: 600;"> Triple</td>
+        <td class="CameraFeaturesOnMob" style="display: block;font-weight: 600;"> Features</td>
+    <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
+
+
+  </tr>
+</table>
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMob widthOnDesk">Selfie-<br />Camera</td>
+
+    <td class="SelfieSingle" style="display: block;font-weight: 600;"> Single</td>
+    <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> Features</td>
+    <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
+
+
+  </tr>
+</table>
+
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMob widthOnDesk">Sound</td>
+
+    <td class="SelfieSingle" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
+    <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> 3.5mm jack</td>
+    <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
+
+
+  </tr>
+</table>
+
+
+
+
+
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMob widthOnDesk">COMMS</td>
+    <td class="DType" style=""> WLAN</td>
+    <td class="Commsblutoth" style="display: block;font-weight: 600;"> Bluetooth</td>
+    <td class="Dresolution" style="display: block;font-weight: 600;"> GPS</td>
+        <td class="Dresolution" style="display: block;font-weight: 600;"> Radio</td>
+            <td class="Dresolution" style="display: block;font-weight: 600;"> NFC</td>
+    <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> USB</td>
+
+  </tr>
+</table>
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">Features</td>
+   
+    <td class="FeatureSensor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Sensors</td>
+
+  </tr>
+</table>
+
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BatteryOneMob widthOnDesk">Battery</td>
+  <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> &nbsp; </td>
+    <td class="batteryCarge" style="display: block;font-weight: 600; height: 75px; "> Charging</td>
+    <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> talk Time</td>
+    <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 75px;"> Music Play</td>
+
+
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">MISC</td>
+
+    <td class="MiscColor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Colors</td>
+
+  </tr>
+</table>
+
+
+<table id="customers">
+  <tr>
+    <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">&nbsp;</td>
+
+    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
+
+  </tr>
+</table>
+
+
+</div>
+
+</div>
+
+
+<div id="ColOnMobileFirst" style="width: 54%;  float: left; ">
+
+
+
+
+
+
+
+
+
+
+  <div style="height: 1110; width: 100%;">
+
+
+
+
+
+    <div style="height: 800px;" id="TableFonSizeOnDeskTop">
+
+
+
+      <div class="TopheightOnMob" style="height: 0px; width: 100%;"></div>
+
+
+
+      <div class="Net1OnMob NTone" style=" ">GSM / HSPA / LTE1
       </div>
-   </div>
-   <div id="ColOnMobileFirst" style="width: 54%;  float: left; ">
-      @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
-      @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
-      @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
-      <!-- <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($img1_400)}}"  srcset="{{ asset('http://127.0.0.1:8000/storage/admin/images/product/thumbnail/400_'.$product->image)}}"></p></span> -->
-      <div style="height: 1110; width: 100%;">
-         <div style="height: 800px;" id="TableFonSizeOnDeskTop">
-            <div class="TopheightOnMob" style="height: 0px; width: 100%;"></div>
-            <div class="Net1OnMob NTone" style=" ">GSM / HSPA / LTE1
-            </div>
-            <div class="lanchSpcOn" style="height: 0px; width: 100%;"></div>
-            <div class="Lannounced Lannone">
-               2018, September 15
-            </div>
-            <div  class="StatusOnMob Lannsts">
-               Available. Released 2019, September
-            </div>
-            <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob BodyDimension" style="  " class="StatusOnMob">
-               175.9 x 78.1 x 9 mm (6.49 x 3.04 x 0.42 in) 1
-            </div>
-            <div style="  " class="bodyweight2 BodyWeight">
-               226 g (7.97 oz)
-            </div>
-            <div style="    " class="builWeigt2 BodyBuild">
-               Front/back glass, stainless steel frame 2
-            </div>
-            <div style="   
-               " class="simweight2 BodySim">
-               Dual SIM (Nano-SIM, dual stand-by)
-            </div>
-            <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob DispType" style="   
-               " class="StatusOnMob">
-               Super Retina XDR OLED capacitive touchscreen, 16M colors
-            </div>
-            <div style="    
-               " class="DisplayType DispSize">
-               6.5 inches, 102.9 cm 2 (~83.7% screen-to-body ratio)
-            </div>
-            <div style="  " class="DisplayReslution DispReso">
-               1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)
-            </div>
-            <div style="   " class="DispPro">
-               Scratch-resistant glass, oleophobic coating
-               800 nits max brightness
-               Dolby Vision
-               HDR10
-               Wide color gamut
-               True-tone
-               120Hz touch-sensing
-            </div>
-            <div class="topPlateformSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob PlateOSS" style="     " >
-               iOS 13, upgradable to iOS 13.2
-            </div>
-            <div style="     " class="DisplayType PlateChips">
-               Apple A13 Bionic (7 nm+)
-            </div>
-            <div style="    " class="DisplayReslution PlateCpU">
-               Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)
-            </div>
-            <div style="     " class="PlateGpUOne">
-               Apple GPU (4-core graphics)
-            </div>
-            <div class="topMemorSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob  MemoryCardone" >
-               No
-            </div>
-            <div style="    " class="mem0ryInt MemryIntrnl">
-               64/256/512GB 4GB RAM1
-            </div>
-            <div class="topMainCameraSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="CameraTripple CamreTripp" style="    " >
-               12 MP, f/1.8, 26mm (wide), 1/2.55", 1.4B5m, dual pixel PDAF, OIS
-               12 MP, f/2.4 52mm (telephoto), 1/3.4", 1.0B5m, PDAF, OIS
-               2x optical zoom 12 MP, f/2.4, 13mm (ultrawide)
-            </div>
-            <div class="CameraFeature CamFeaturOne" style="     " >
-               Quad-LED dual-tone flash, HDR (photo/panorama)
-            </div>
-            <div style="      " class="TrpleVed camraVedioOne" >
-               2160p @ 24/30 / 60fps, 1080p @ 30 / 60 / 120 / 240fps, HDR, stereo sound rec.
-            </div>
-            <div class="topMainCameraSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="CameraSinleNexxt SelfiSinle" style="">
-               12 MP, f/2.2, 23mm (wide)
-               SL 3D camera
-            </div>
-            <div class="CameraSingleHdr SelfiHdrOne" style="   ">
-               HDR
-            </div>
-            <div style="      " class="TrpleVed SelfieVedoOne">
-               2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS
-            </div>
-            <div class="AboveSoundbarSpce" style="height: 0px; width: 100%;"></div>
-            <div class="CameraSinleNexxt SoundLSp" style="    ">
-               Yes, with stereo speakers
-            </div>
-            <div class="CameraSingleHdr SoundmmJack" style="     ">
-               No
-            </div>
-            <div style="     " class="TrpleVed SoundMicOne">
-               Active noise cancellation with dedicated mic
-               Dolby Atmos, Dolby Digital Plus
-            </div>
-            <div class="topCommsfirstSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob CommsWlan" style="      " class="StatusOnMob">
-               Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot
-            </div>
-            <div style="   " class="DisplayType CommsBluetooth">
-               5.0, A2DP, LE
-            </div>
-            <div style="    " class="DisplayReslution CommGPSOne">
-               Yes, with A-GPS, GLONASS, GALILEO, QZSS
-            </div>
-            <div style="     " class="DisplayReslution CommsRadioOne">
-               No
-            </div>
-            <div style="     " class="DisplayReslution CommsNFC">
-               YES
-            </div>
-            <div style="   " class="CommsUsB">
-               2.0, proprietary reversible connector
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="   " class="FeatureSensorOne">
-               Face ID, accelerometer, gyro, proximity, compass, barometer
-               Siri natural language commands and dictation1
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="     " class="batteryTalkTime2 BatteryEmpty">
-               Non-removable Li-Ion 3969 mAh battery (15.04 Wh)
-            </div>
-            <div style="   " class="DBatteryChargingOne battryChargOne">
-               Fast battery charging 18W: 50% in 30 min
-               USB Power Delivery 2.0
-               Qi wireless charging
-            </div>
-            <div style="    " class="batteryTalkTime2 BattTalkTime">
-               Up to 20 h (multimedia)
-            </div>
-            <div style="       " class="BattryMusicPly">
-               Up to 80 h
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="      " class="MiscColorOne">
-               Space Gray, Silver, Gold, Midnight Green (matte colors)
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="     " class="MiscPricStrg">
-               About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
-            </div>
+
+      <div class="lanchSpcOn" style="height: 0px; width: 100%;"></div>
+
+
+      <div class="Lannounced Lannone">
+        2018, September 15
+      </div>
+
+
+      <div  class="StatusOnMob Lannsts">
+Available. Released 2019, September
+      </div>
+
+
+      <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
+
+      <div class="DimensionsMob BodyDimension" style="  " class="StatusOnMob">
+        175.9 x 78.1 x 9 mm (6.49 x 3.04 x 0.42 in) 1
+      </div>
+
+
+
+      <div style="  " class="bodyweight2 BodyWeight">
+        226 g (7.97 oz)
+      </div>
+
+
+
+      <div style="    " class="builWeigt2 BodyBuild">
+Front/back glass, stainless steel frame 2
+      </div>
+
+
+
+      <div style="   
+" class="simweight2 BodySim">
+        Dual SIM (Nano-SIM, dual stand-by)
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
+    
+    <div class="DimensionsMob DispType" style="   
+    " class="StatusOnMob">
+  Super Retina XDR OLED capacitive touchscreen, 16M colors
+    </div>
+    
+    
+    
+    <div style="    
+    " class="DisplayType DispSize">
+      6.5 inches, 102.9 cm 2 (~83.7% screen-to-body ratio)
+    </div>
+    
+    
+    
+    <div style="  " class="DisplayReslution DispReso">
+      1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)
+    </div>
+    
+    
+    
+    <div style="   " class="DispPro">
+  Scratch-resistant glass, oleophobic coating
+  800 nits max brightness
+  Dolby Vision
+  HDR10
+  Wide color gamut
+  True-tone
+  120Hz touch-sensing
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="topPlateformSpconmob" style="height: 0px; width: 100%;"></div>
+
+<div class="DimensionsMob PlateOSS" style="     " >
+  iOS 13, upgradable to iOS 13.2
+</div>
+
+
+
+<div style="     " class="DisplayType PlateChips">
+Apple A13 Bionic (7 nm+)
+</div>
+
+
+
+<div style="    " class="DisplayReslution PlateCpU">
+  Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)
+</div>
+
+
+
+<div style="     " class="PlateGpUOne">
+  Apple GPU (4-core graphics)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="topMemorSpconmob" style="height: 0px; width: 100%;"></div>
+
+<div class="DimensionsMob  MemoryCardone" >
+  No
+</div>
+
+
+
+<div style="    " class="mem0ryInt MemryIntrnl">
+  64/256/512GB 4GB RAM1
+</div>
+
+
+
+
+
+
+<div class="topMainCameraSpconmob" style="height: 0px; width: 100%;"></div>
+
+<div class="CameraTripple CamreTripp" style="    " >
+  12 MP, f/1.8, 26mm (wide), 1/2.55", 1.4B5m, dual pixel PDAF, OIS
+  12 MP, f/2.4 52mm (telephoto), 1/3.4", 1.0B5m, PDAF, OIS
+  2x optical zoom 12 MP, f/2.4, 13mm (ultrawide)
+</div>
+
+<div class="CameraFeature CamFeaturOne" style="     " >
+  Quad-LED dual-tone flash, HDR (photo/panorama)
+</div>
+
+<div style="      " class="TrpleVed camraVedioOne" >
+  2160p @ 24/30 / 60fps, 1080p @ 30 / 60 / 120 / 240fps, HDR, stereo sound rec.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="topMainCameraSpconmob" style="height: 0px; width: 100%;"></div>
+
+<div class="CameraSinleNexxt SelfiSinle" style="">
+  12 MP, f/2.2, 23mm (wide)
+  SL 3D camera
+</div>
+
+<div class="CameraSingleHdr SelfiHdrOne" style="   ">
+  HDR
+</div>
+
+<div style="      " class="TrpleVed SelfieVedoOne">
+    2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS
+</div>
+
+<div class="AboveSoundbarSpce" style="height: 0px; width: 100%;"></div>
+
+<div class="CameraSinleNexxt SoundLSp" style="    ">
+Yes, with stereo speakers
+</div>
+
+<div class="CameraSingleHdr SoundmmJack" style="     ">
+  No
+</div>
+
+<div style="     " class="TrpleVed SoundMicOne">
+  Active noise cancellation with dedicated mic
+  Dolby Atmos, Dolby Digital Plus
+</div>
+
+
+
+
+
+<div class="topCommsfirstSpconmob" style="height: 0px; width: 100%;"></div>
+
+<div class="DimensionsMob CommsWlan" style="      " class="StatusOnMob">
+  Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot
+</div>
+
+
+
+<div style="   " class="DisplayType CommsBluetooth">
+5.0, A2DP, LE
+</div>
+
+
+
+<div style="    " class="DisplayReslution CommGPSOne">
+  Yes, with A-GPS, GLONASS, GALILEO, QZSS
+</div>
+
+<div style="     " class="DisplayReslution CommsRadioOne">
+No
+</div>
+
+<div style="     " class="DisplayReslution CommsNFC">
+YES
+</div>
+
+<div style="   " class="CommsUsB">
+  2.0, proprietary reversible connector
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
+
+<div style="   " class="FeatureSensorOne">
+  Face ID, accelerometer, gyro, proximity, compass, barometer
+  Siri natural language commands and dictation1
+</div>
+
+
+
+
+
+<div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
+
+<div style="     " class="batteryTalkTime2 BatteryEmpty">
+  Non-removable Li-Ion 3969 mAh battery (15.04 Wh)
+</div>
+<div style="   " class="DBatteryChargingOne battryChargOne">
+Fast battery charging 18W: 50% in 30 min
+USB Power Delivery 2.0
+Qi wireless charging
+</div>
+
+
+
+<div style="    " class="batteryTalkTime2 BattTalkTime">
+Up to 20 h (multimedia)
+</div>
+<div style="       " class="BattryMusicPly">
+Up to 80 h
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
+
+<div style="      " class="MiscColorOne">
+Space Gray, Silver, Gold, Midnight Green (matte colors)
+</div>
+
+
+
+<div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
+
+<div style="     " class="MiscPricStrg">
+About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
+</div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<div  style="width: 5%; float: left; "></div> -->
+</div>
+
+         
          </div>
-      </div>
-   </div>
-</div>
-</div>
           
           <div id="view2">
              
@@ -2257,30 +1323,15 @@ margin-left: 15px;">{{ $product->price }}</font>
            
 
 
-            <!-- <h5>No Vedio Availabla</h5> -->
-              <div class="row">
-                  <div class="col-md-6 video_area">
-                      
-                       @if($product->video_link !='')
-
-                        {!! $product->video_link !!}
-
-                      @else
-                        <h5>No Vedio Available</h5>
-                      @endif
-
-                  </div>
-
-              </div>
-             
-
+            <h5>No Vedio Availabla</h5>
+                                                          
           </div>
 
 
 
 
           <div id="view4">
-            <h5>No Reviws Available</h5>       
+            <h5>No Reviws Availabla</h5>       
                                                           
           </div>
 
@@ -2319,22 +1370,6 @@ margin-left: 15px;">{{ $product->price }}</font>
 				$('#colorStorage').html(data);	
 			}
 		});
-
-    $.ajax({
-      url:"{{ route('ColorFilterImg') }}",
-      type:"get",
-      data:{id:id,color:color},
-      success:function(data){
-        if(data !='')
-        {
-            var imgSrc="{{ url('storage/admin/images/product/thumbnail/400_') }}";
-            imgSrc += data;
-            document.getElementById("myimage").srcset = imgSrc;
-            document.getElementById("myresult").style.backgroundImage = 'url("'+imgSrc+'")';
-        }
-        
-      }
-    });
 	}
 
 	$(document).ready(function(){
