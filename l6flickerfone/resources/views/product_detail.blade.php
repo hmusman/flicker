@@ -27,7 +27,13 @@
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
 
 
-</style>
+
+
+ <style>
+   #clickopinon{
+cursor: pointer;
+   }
+ </style>
 
 <body>
 
@@ -897,7 +903,7 @@ About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
           
             <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
               <div class="col-md-6" style="height: 81px;padding-top: 27px;" >
-              <a href="#" style="  background-color: #4a88c2; 
+              <a id="clickopinon"  style="  background-color: #4a88c2; 
               color: white;
               padding: 10px 18px 10px 18px; text-decoration: none;
               border-radius: 4px;">POST YOUR OPINIONS </a>
@@ -925,8 +931,47 @@ About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
      
      
      
-     
-     
+     <div class="row" id="OpinonBox" style="display: none">
+       <div class="col-md-12" style="background-color: #f0f0f0; border: 1px black solid " >
+<h5>Post Your Opinion</h5>
+
+<div class="row"> 
+  <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
+   <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
+</div>
+
+
+<hr/>
+
+
+<label>Your nickname (optional)</label><br/>
+<input type="text" id="uname" name="sName" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
+
+<br/>
+<br/>
+  <div class="row"> 
+  <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
+   <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
+</div>
+
+<label>Your Comment</label><br/>
+<textarea name="descBox" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false">
+                           </textarea>
+
+
+
+
+
+  <div class="row"> 
+  <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
+   <div class="col-md-6" ><p  style="text-align:right"><button>Submit</button></p></div>
+</div>
+
+                         
+
+       </div>
+
+     </div>
      
           </div>
 
@@ -1654,5 +1699,17 @@ $(function(){
 <script src="js/pagination.js"></script>
 
 <script  src="js/ScrollJS2/script.js"></script>
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#clickopinon").click(function(){
+    $("#OpinonBox").toggle();
+  });
+});
+</script>
 
 </html>
