@@ -83,4 +83,10 @@ class SellAccessoryController extends Controller
         $cities = DB::select('SELECT city,COUNT(city) total FROM `sell_accessories` GROUP by city');
         return view('buy_used_accessories',compact(['accessories','brands','cities']));
     }
+
+    public function BuyUsedAccessoriesData(Request $request)
+    {
+        $accessories = SellAccessory::orderBy('id','desc')->paginate(1);
+        return view('partials.sell_accessories_list',compact('accessories'));
+    }
 }
