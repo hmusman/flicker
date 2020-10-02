@@ -418,7 +418,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
+      height: 67px;border-bottom: 1px #eeeeee solid;
       " class="batteryTalkTime2">
       {{ $product->battery_talk_time }}
    </div>
@@ -459,7 +459,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 100px;border-bottom: 5px #eeeeee solid;
+      height: 103px;border-bottom: 5px #eeeeee solid;
       " class="">
       @if($product->variation_colors->count()>0)
       @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
