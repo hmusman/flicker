@@ -103,7 +103,7 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 Route::prefix('Sell')->middleware('SellLoginSessionCheck')->group(function(){
 	// Route::get('/','SellProductController@create')->name('Sell');
 	Route::post('Product','SellProductController@store')->name('Sell.Product.store');
-	Route::post('SellAccessorySave','SellAccessoryController@store')->name('Sell.Accessory.store');
+	Route::post('Accessory','SellAccessoryController@store')->name('Sell.Accessory.store');
 });
 
 Route::group(['middleware'=>['LoginSessionCheck']],function(){

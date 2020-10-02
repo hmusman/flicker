@@ -349,7 +349,7 @@ ul[class="dropdown-menu fade-up show"] > li{
     .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
     .navbar .dropdown-menu.fade-up{ top:180%;  }
     .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-  } 
+  }	
   /* ============ desktop view .end// ============ */
   
   
@@ -664,7 +664,7 @@ color: black;
                 <div class="alert alert-success">{{ Session::get('msg') }}</div>
               @endif
 
-              <form action="" id="ProductAccessory" method="post" enctype="multipart/form-data">
+              <form action="{{ route('Sell.Product.store') }}" method="post" enctype="multipart/form-data">
                   @csrf
 
                   <div class="tab-content">
@@ -1082,9 +1082,9 @@ color: black;
 
    <div class="col-md-8">
      
-  <input type="radio" id="phone_check" name="gender" value="male">
+  <input type="radio" id="phone_check" name="gender" value="male" onclick="showPhonedet();">
   <label for="male">Phone</label>
-  <input type="radio" id="accessory_check" name="gender" value="female">
+  <input type="radio" id="accessory_check" name="gender" value="female" onclick="hidePhonedet();">
   <label for="female">Accessories</label>
    </div>
  </div>
@@ -1224,7 +1224,7 @@ color: black;
 
 
 
-                                  <input class="form-control" type="text" value="" placeholder="Enter Other %" id="otherInputField" style='display:none; margin-top:17px '>
+                                  <input class="form-control" type="text" value="" name="color" placeholder="Enter Other %" id="otherInputField" style='display:none; margin-top:17px '>
                                   @error('battery')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -1246,81 +1246,81 @@ color: black;
 
 
                   <div class="card">
-                    <div class="card-body row">
+                  	<div class="card-body row">
 
-                      <div class="text-center mt-4 col-md-3" id="" >
+                  		<div class="text-center mt-4 col-md-3" id="" >
                         <input type="file" name="image1" style="display:none;" id="imgInput1" onchange="fileChangeFun(this,$('#DropZonIcon1'),1);"/> 
-                        <div class="dropzone" id="DropZonIcon1">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
+                  			<div class="dropzone" id="DropZonIcon1">
+                  				<div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
                           <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
                           </div>
-                        </div>
+                  			</div>
                       </div>
                
-                      <div class="text-center mt-4 col-md-3">
+                  		<div class="text-center mt-4 col-md-3">
                         <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
-                        <div class="dropzone" id="DropZonIcon2">
+                  			<div class="dropzone" id="DropZonIcon2">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                   
-                      <div class="text-center mt-4 col-md-3" >
+                  		<div class="text-center mt-4 col-md-3" >
                         <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
-                        <div class="dropzone" id="DropZonIcon3">
+                  			<div class="dropzone" id="DropZonIcon3">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3" >
-                        <input type="file" name="image4" style="display:none;" id="imgInput4" onchange="fileChangeFun(this,$('#DropZonIcon4'),4);"/> 
-                        <div class="dropzone" id="DropZonIcon4">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(4);" id="imgFullWidthDiv4"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                      	<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                  			<div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
-                      </div>
-                    </div>
+                  		</div>
+                  	</div>
                   </div>
 
 
              <div class="card">
-                    <div class="card-body row">
+                  	<div class="card-body row">
 
-                      <div class="text-center mt-4 col-md-3" id="" >
-                        <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
-                        <div class="dropzone" id="DropZonIcon5">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
+                  		<div class="text-center mt-4 col-md-3" id="" >
+                        <input type="file" name="image1" style="display:none;" id="imgInput1" onchange="fileChangeFun(this,$('#DropZonIcon1'),1);"/> 
+                  			<div class="dropzone" id="DropZonIcon1">
+                  				<div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
                           <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
                           </div>
-                        </div>
+                  			</div>
                       </div>
                
-                      <div class="text-center mt-4 col-md-3">
-                        <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
-                        <div class="dropzone" id="DropZonIcon6">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                  		<div class="text-center mt-4 col-md-3">
+                        <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
+                  			<div class="dropzone" id="DropZonIcon2">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                   
-                      <div class="text-center mt-4 col-md-3" >
-                        <input type="file" name="image7" style="display:none;" id="imgInput7" onchange="fileChangeFun(this,$('#DropZonIcon7'),7);"/> 
-                        <div class="dropzone" id="DropZonIcon7">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(7);" id="imgFullWidthDiv7"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                  		<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                  			<div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3" >
-                        <input type="file" name="image8" style="display:none;" id="imgInput8" onchange="fileChangeFun(this,$('#DropZonIcon8'),8);"/> 
-                        <div class="dropzone" id="DropZonIcon8">
-                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(8);" id="imgFullWidthDiv8"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                      	<div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                  			<div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
-                      </div>
-                    </div>
+                  		</div>
+                  	</div>
                   </div>
 
 
  <div class="card">
                       <div class="card-body row">
                          <div class="col-md-12">
-                             <textarea  name="deta" rows="4" cols="50" style="width:100%; border-color:#dfdfdf " placeholder="">
+                             <textarea  name="descBox" rows="4" cols="50" style="width:100%; border-color:#dfdfdf " placeholder="">
                          Please Write Description...
                           </textarea>
                            </div>
@@ -1369,23 +1369,6 @@ color: black;
 <script src="js/bootstrap.min.js" ></script> -->
   
  <script type="text/javascript">
-
-      $('#phone_check').change(function(){
-          if($('#phone_check').is(":checked"))
-          {
-            document.getElementById('PhoneDetBox').style.display ='block';
-            $('#ProductAccessory').attr('action','Sell/Product');
-          }
-      });
-
-      $('#accessory_check').change(function(){
-          if($('#accessory_check').is(":checked"))
-          {
-            document.getElementById('PhoneDetBox').style.display ="none";
-            $('#ProductAccessory').attr('action','Sell/Accessory');
-          }
-      });
-
       function filePreview(input,div,num) {
           if (input.files && input.files[0]) {
               var reader = new FileReader();

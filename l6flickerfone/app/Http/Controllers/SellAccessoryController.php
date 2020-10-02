@@ -37,9 +37,9 @@ class SellAccessoryController extends Controller
     public function store(Request $request)
     {
         $validations = Validator::make($request->all(),[
-            'name'=>'bail | required',
+            'model'=>'bail | required',
             'price'=>'bail | required',
-            'img'=>'required | mimes:jpg,png,jpeg',
+            'image1'=>'required | mimes:jpg,png,jpeg',
             'category'=>'required',
             'brand'=>'required',
             'city'=>'required',
@@ -53,7 +53,7 @@ class SellAccessoryController extends Controller
         
         else
         {
-             if(SellAccessory::where('name',$request->name)->count() >0)
+             if(SellAccessory::where('name',$request->model)->count() >0)
             {
                 $request->session()->flash('warningMsg','Accessory is already exist');
                 return back()->withInput();
@@ -63,11 +63,11 @@ class SellAccessoryController extends Controller
             $accessory->user_id=$request->user_id;
             $accessory->accessory_category_id=$request->category;
             $accessory->brand_id = $request->brand;
-            $accessory->name = $request->name;
+            $accessory->name = $request->model;
             $accessory->price = $request->price;
             $accessory->city = $request->city;
             $accessory->phone = $request->phone;
-            $accessory->img = $this->ResizeImage($request->file('img'));
+            $accessory->img = $this->ResizeImage($request->file('image1'));
             if ($accessory->save())
             {
                 $request->session()->flash('msg','Accessory has been added successfully');
