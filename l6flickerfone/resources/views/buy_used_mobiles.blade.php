@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
   </head>
   <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
@@ -685,6 +686,90 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 </style>
 
 
+<!-- 
+////////////////////////////////////  POPUP MODEL BOX CSS //////////////////////////// -->
+
+<style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 500;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #004488;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;color:black !important;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #004488;
+  color: white;
+}
+</style>
+
+
+
+
+
+
+
+
 <body>
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
@@ -1366,10 +1451,8 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 <p style="  color: #898889;;">1-48 of 126,978 Results</p>
-
-
       <div style="width: 100%;" class="row" id="sellProducts">
-         @include('partials.sell_products_list',$products)
+         @include('partials.sell_products_list',$products)e
       </div>
     </div>
 </div>
@@ -2141,9 +2224,8 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
         
 <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js') }}"></script>
-  
-<script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>>
 
+<script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>>
 <script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
 <script type="text/javascript">
   

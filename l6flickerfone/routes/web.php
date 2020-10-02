@@ -63,11 +63,6 @@ Route::get('BrandsPriceCitySellProducts','SellProductController@BrandsPriceCityS
 Route::get('BrandsPriceCitySellAccessories','SellAccessoryController@BrandsPriceCitySellAccessories')->name('BrandsPriceCitySellAccessories');
 Route::get('Sell','SellProductController@create')->name('Sell');
 Route::get('BuyUsedMobilePhonesData','SellProductController@SellProductsData')->name('BuyUsedMobilePhonesData');
-
-
-
-// Route::view('BuyUsedMobilePhones','buy_used_mobile_phone');
-// Route::view('ProductDetail','product_detail');
 Route::view('ReviewDetail','review_detail');
 Route::view('NewMobilePhonePrices','new_mobile_phone_prices');
 Route::view('PriceCalculator','price_calculator');

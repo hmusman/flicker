@@ -1,0 +1,1763 @@
+
+
+/* 
+//////////////////////////////// FOR SHOP PAGE CSS ///////////////////////////////// */
+
+.phoneBoxstyle{
+border-right: 1px #e1dfdf solid;
+border-bottom: 1px #e1dfdf solid;
+}
+
+
+.phoneBoxstyle:nth-child(3), .phoneBoxstyle:nth-child(6) , .phoneBoxstyle:nth-child(9),
+.phoneBoxstyle:nth-child(12), .phoneBoxstyle:nth-child(15), .phoneBoxstyle:nth-child(18) {
+ 
+  border-right: 0px !important;
+}
+
+
+
+
+
+
+
+/* 
+///////////////////////////////////////   FOR PRODUCT DETAI PAGE CSS ////////////////////////// */
+
+
+
+
+
+
+ul[class="tabs"]{
+      background-color: #eeeeee;
+    border: 1px solid #CCC;
+}
+
+
+img[src="http://127.0.0.1:8000/storage/images/logo Black-01.jpg"] {
+    height: 65px !important;
+    /* top: -1px; */
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+
+/*  
+    /////////////////////////////////////////////     nav Bar search css//////////////////////// */
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 50%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+    
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+   
+    }
+    
+    #myUL li a {
+      
+      margin-top: -1px; /* Prevent double borders */
+      
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+    display: block;
+    font-weight: 600;
+    }
+    
+    /* #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    } */
+
+
+    .dropdown-toggle::after {
+content: none !important;
+}
+
+.navbar-nav > a{
+  background-color: #0071e3 !important;
+    padding: 5px 19px 5px 19px !important;
+    margin-right: 21px !important;
+    border-radius: 25px !important;   
+    color: white !important;
+ 
+}
+
+ul[class="dropdown-menu fade-up"] > li::after{
+  background: #e3e6e5!important;
+  display: block;
+    position: absolute;
+   
+    left: 0;
+   width: 90%;
+    height: 1px !important;
+    content: '' !important;
+    text-align: center;
+    margin-left: 8px;
+}
+
+
+.col-md-4{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+/* @media (min-width:500px){
+  
+ #seconNav{
+   background-color: red !important;
+ }
+  } */
+  @media (min-width:500px){
+
+/* #TableHeadFontSizeOnDesk{
+  font-size: 17px !important;
+} */
+#MainHeightOnDesktop{
+  height: 3141px !important;
+}
+
+.colblue{
+
+  font-size: 17px !important;
+}
+
+
+#TableFonSizeOnDeskTop > div{
+  font-size: 15px !important;
+}
+
+.widthOnDesk{
+        width: 110px !important;
+}
+      .TechOnDeskTop{
+              width: 57% !important;
+      }
+  
+    #seconNav{
+   background-color: rgb(238, 237, 237) !important;
+ }
+
+
+
+
+
+
+
+
+  }
+
+
+.tdBlockOnMobSubhead{
+      font-size: 14px;
+    font-weight: 600;
+
+        height: 37px !important;
+    padding-top: 11px !important;
+    text-shadow: 0px 0px 0.1px black !important;
+}
+
+
+
+
+
+.cradslotOnMob{
+      height: 65px;
+    font-weight: 600;
+    text-shadow: 0px 0px 0.1px black;
+  
+    padding: 5px;
+}
+
+
+.Cameratriple{
+      height: 190px;
+   
+}
+
+.SelfieSingle{
+      height: 100px;
+   
+}
+
+.CameraFeaturesOnMob{
+      height: 67px ;
+
+    text-shadow: 0px 0px 0.1px black;
+    font-size: 15px ;
+  
+}
+.SeliecamFatureMob{
+      height: 67px ;
+
+    text-shadow: 0px 0px 0.1px black;
+    font-size: 15px ;
+  
+}
+
+  @media (max-width: 550px){
+
+
+.settRatingMob{
+  width: 19% !important;
+    
+    margin-right: 26px !important;
+}
+
+.BoldPara{
+  font-size: 3.4vw !important;
+}
+.LocOnMob{
+  margin-top: -9px !important;
+}
+
+
+.changeClockHeihtOnMob{
+  height: 15px !important;
+    margin-top: -11px !important;
+}
+.SoberOnMob{
+      font-size: 3.5vw !important;
+}
+
+
+#view2zeroAtMobile{
+  width: 0% !important;
+}
+#view2FullAtMobile{
+  width: 100% !important;
+}
+
+
+
+#view2MobileZero{
+   width: 0% !important;
+}
+
+
+
+
+ul[class="tabs"]{
+  height: 66px !important;
+}
+
+
+div[id="view1"]{
+  height: 4000px !important;
+}
+#FootStyleOnMob{
+  margin-top: 200px !important;
+}
+
+.MusicPlayOnMob{
+  height: 104px !important;
+}
+
+
+.FeatureSensor{
+      font-size: 12px !important;
+}
+
+
+.batteryCarge{
+      font-size: 12px !important;
+}
+
+ .Commsblutoth{
+font-size: 13px !important;
+
+}
+
+
+
+
+
+
+  .CameraVedios{
+
+
+height: 113px !important;
+
+    
+
+}
+
+
+
+.CameraFeaturesOnMob{
+      height: 113px !important;
+
+  
+  
+}
+
+.AboveSoundbarSpce{
+  height: 37px !important;
+}
+
+.SeliecamFatureMob{
+      height: 67px !important;
+
+  
+  
+}
+.cradslotOnMob{
+      height: 65px;
+    font-weight: 600;
+    text-shadow: 0px 0px 0.1px black;
+    font-size: 13px;
+    padding: 5px;
+}
+
+
+.topPlateformSpconmob{
+height: 56px !important;
+}
+
+.topCommsfirstSpconmob{
+height: 37px !important;
+}
+
+
+.topFeaturSensoronmob{
+height: 33px !important;
+}
+.topMainCameraSpconmob{
+height: 56px !important;
+}
+
+.topMemorSpconmob{
+height: 37px !important;
+}
+
+  .Dprotect{
+
+
+
+
+   
+    font-size: 11px !important;
+
+
+}
+  .Dresolution{
+
+    font-size: 11px !important;
+
+
+}
+
+.mobTitleOnMob{
+  margin-top: 41px !important;
+}
+.TopheightOnMob{
+    height: 33px !important;
+}
+
+
+.topBodySpconmob{
+     height: 36px !important;
+}
+
+.topBodySpconmob{
+     height: 36px !important;
+}
+.topDisplaySpconmob{
+height: 37px !important;
+}
+.Net1OnMob{
+    height: 37px !important;
+}
+
+
+.lanchSpcOn{
+    height: 33px !important;
+}
+
+.builWeigt2{
+ padding-top: 21px !important;
+    height: 65px !important;
+}
+
+.DisplayReslution{
+
+    height: 70px !important;
+}
+
+
+.batteryTalkTime2{
+
+    height: 67px !important;
+}
+.DBatteryChargingOne{
+
+    height: 130px !important;
+}
+
+.simweight2{
+padding-top: 9px !important;
+    height: 65px !important;
+}
+
+
+
+.DisplaLastHeightOnMob{
+padding-top: 9px !important;
+    height: 120px !important;
+}
+.bodyweight2{
+    padding-top: 21px !important;
+    height: 65px !important;
+}
+
+.DisplayType{
+  
+    height: 65px !important;
+}
+.mem0ryInt{
+  
+    height: 70px !important;
+}
+
+
+.CameraVedioa{
+  
+    height: 70px !important;
+}
+.BuildSts1{
+ font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 10px !important;
+     height: 65px !important;
+ 
+    text-shadow: 0px 0px 0.1px black !important;
+      padding-top: 28px !important;
+    padding-left: 16px !important;
+}
+
+.SIMSts1{
+ font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 10px !important;
+     height: 65px !important;
+ 
+    text-shadow: 0px 0px 0.1px black !important;
+      padding-top: 28px !important;
+    padding-left: 16px !important;
+}
+.BodyHeadMob{
+    display: block !important;
+    font-size: 13px !important;
+    text-shadow: 0px 0px 0.7px blue !important;
+}
+
+.BatteryOneMob{
+    display: block !important;
+    font-size: 10px !important;
+    text-shadow: 0px 0px 0.7px blue !important;
+}
+.BodyHeadMobForFeatureSensor{
+    display: block !important;
+    font-size: 10px !important;
+    text-shadow: 0px 0px 0.7px blue !important;
+}
+
+.BodySts1{
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 10px !important;
+     height: 65px !important;
+ 
+    text-shadow: 0px 0px 0.1px black !important;
+      padding-top: 28px !important;
+    padding-left: 16px !important;
+}
+
+.BuildSts1{
+ font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 10px !important;
+    
+    padding-left: 16px !important;
+}
+
+.ResoltiondSts1{
+   font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 10px !important;
+    height: 65px !important;
+    padding-left: 5px !important;
+}
+
+.SIMSts1{
+ font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 10px !important;
+    
+    padding-left: 16px !important;
+}
+.DimnOnMobSubhead{
+    font-weight: 600 !important;
+    height: 65px !important;
+ 
+    text-shadow: 0px 0px 0.1px black !important;
+      padding-top: 28px !important;
+    font-size: 9px !important;
+}
+
+
+      .DimensionsMob{
+          /* margin-top: 33px !important; */
+              height: 65px !important;
+      }
+
+
+      .CameraFeature{
+          /* margin-top: 33px !important; */
+              height: 113px !important;
+      }
+
+
+    
+
+        .TrpleVed{
+          /* margin-top: 33px !important; */
+              height: 113px !important;
+      }
+ .CameraTripple{
+          /* margin-top: 33px !important; */
+              height: 190px !important;
+      }
+       .CameraSinleNexxt{
+          /* margin-top: 33px !important; */
+              height: 100px !important;
+      }
+      .StatusOnMob{
+          height: 75px !important;
+      }
+
+      .StatheadOnMob{
+          height: 75px !important;
+    padding-top: 28px !important;
+    font-size: 11px !important;
+    text-shadow: 0px 0px 0.5px black !important;
+    padding-left: 16px !important;
+
+      }
+
+.Lannounced{
+        height: 37px !important;
+  
+}
+.SpecialMargMob{
+    margin-top: 28px !important;
+}
+.mobileCntTD{
+    
+    font-size: 13px !important;
+    padding: 10.8px !important;
+
+}
+
+/* .LeftColheightOnMob{
+    height: 477px !important;
+
+} */
+
+.fontOnMob{
+    font-size: 21.3px !important;
+}
+
+
+.tdBlockOnMobhead{
+    display: block !important;
+    font-size: 10px !important;
+    text-shadow: 0px 0px 0.7px blue !important;
+}
+.tdBlockOnMobSubhead{
+  display: block !important;
+font-size: 9px !important;
+}
+
+
+#myInputone{
+  height: 30px !important;
+  
+}
+
+#myInputthree{
+    height: 30px !important;
+}
+
+#imgOneMob{
+  width: 100% !important;
+}
+
+
+/* #widthThirtyOnMob{
+width: 0% !important;
+display: none !important;
+visibility: hidden !important;
+} */
+
+/* #widthSeventyOnMob{
+width: 100% !important;
+} */
+
+
+#navbarNavAltMarkup1{
+  background-color: #e6e6e6 !important;
+    z-index: 12 !important;
+    margin-left: -12px !important;
+    width: 100% !important;
+}
+
+input[id="myInput"]{
+  width: 333px !important;
+}
+
+#prcCal{
+  margin-left: -1px !important;
+}
+ul[id="myUL"]{
+  width: 87% !important;
+}
+
+
+ul[class="dropdown-menu fade-up show"] > li{
+  display: block !important;
+}
+
+    #reglogin{
+      right: 81px !important;
+    font-size: 13px !important;
+      right: 91px !important;
+    font-size: 10px !important;
+    border-bottom: none !important;
+    
+    bottom: 21px !important;
+
+      
+    border-bottom: none !important;
+ }
+#logoFlickerflone{
+  height: 48px !important;
+    width: 181px !important;
+    margin-left: -17px !important;
+    font-size: 58px;
+   
+
+}
+
+  }
+
+
+
+   /* ============ only desktop view ============ */
+   @media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+    .navbar .nav-item:hover .nav-link{ color:  rgba(0,0,0,.5) }
+    .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+    .navbar .dropdown-menu.fade-up{ top:180%;  }
+    .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+  }	
+  /* ============ desktop view .end// ============ */
+  
+  
+
+/* 
+  //////////////////////////////////////////    slick btns///////////////////////// */
+
+  div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+ display: none !important;
+}
+
+
+#slickBtnFor > div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
+  background-image: url('images/headerimg/ic_keyboard_arrow_left_black_18dp.png');
+  border-radius: 50%;
+  height: 38px;
+    background-repeat: no-repeat;
+    width: 100px;
+}
+#slickBtnFor > div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
+  background-image: url('images/headerimg/ic_keyboard_arrow_right_black_18dp.png');
+  border-radius: 50%;
+  height: 38px;
+    background-repeat: no-repeat;
+    width: 26px;
+}
+
+
+.tblrowbottmstl{
+  margin-top: -10px ;
+  border-bottom: 1px #efefef solid; 
+   width: 118%;
+}
+.tblrowbottmstl2{
+  margin-top: -10px ;
+  border-bottom: 1px #efefef solid; 
+  
+}
+
+.tblrowbottmstl3{
+  margin-top: -10px ;
+ 
+  
+}
+
+
+
+ol > li{
+  font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+
+
+
+
+  @media (min-width:500px){
+  
+.LaunchWidthOnlyOnDesk{
+      width: 110px !important;
+}
+
+
+div[class="img-zoom-container"]{
+  margin-left: 174px !important;
+}
+
+
+.mobTitleOnMob{
+  margin-top: -24px !important;
+}
+
+
+  }
+
+
+  @media (max-width: 550px){
+
+  
+
+  .srcgBtnOnMob{
+
+    height: 30px !important;
+    padding-top: 0px !important;
+
+
+        background-color: #eeeeee !important;
+    border: 1px #cdcdcd solid !important;
+
+  }
+
+
+
+
+#ColOnMobileFirst{
+  width: 80% !important;
+}
+
+#ColOnMobileCenter{
+  width: 0% !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+#ColOnMobileLast{
+  width: 41% !important;
+}
+
+  
+#mobviebtns{
+  font-size: 7px !important;
+}
+#mobviebtnsabove{
+  padding: 0px 10px 5px 10px !important;
+}
+#comparebtm{
+  margin-top: 39px !important;
+}
+
+
+
+
+
+a[href="#view4"]{
+  
+  top: 18px !important;
+
+}
+
+.tabcontents{
+  margin-top: 19px !important;
+}
+}
+
+ 
+/* ///////////////////////  pagination////////////////////////////////////////////////  */
+
+
+  ul, li {
+      list-style: none;
+  }
+
+  #wrapper {
+      width: 900px;
+      margin: 20px auto;
+  }
+
+  .data-container {
+      margin-top: 20px;
+  }
+
+  .data-container ul {
+      padding: 0;
+      margin: 0;
+  }
+
+  .data-container li {
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      background: #eee;
+      color: #666;
+  }
+
+img[src="images/logo Black-01.jpg"]{
+  height: 65px !important;
+    /* top: -1px; */
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
+  height: 28px !important;
+}
+
+
+  @media (max-width: 550px){
+
+#myULthree{
+  margin-left: -45px !important;
+}
+.ButtonSearchOnMob{
+  margin-left: 139px !important;
+}
+
+
+#myInputone, #myInputthree{
+  width: 150% !important;
+  margin-left: -28px !important;
+}
+
+
+
+    #ChangeContentSetMob{
+      margin-top: 55px !important;
+    }
+  #ChangeContentSetMob3{
+      margin-top: 40px !important;
+    }
+#changePFontVWOnMob{
+  font-size: 2.4vw !important;
+}
+
+#pages{
+  text-align: center !important;
+}
+
+#srchoption{
+  height: 26px !important;
+    font-size: 1.8vw !important;
+    text-align: center !important;
+    padding: 7px 18px 10px 18px !important;
+}
+#srchopnon{
+  
+  height: 28px !important;
+
+}
+
+#sortBy{
+  text-align: center !important;
+}
+
+#set55atmob{
+  width: 10% !important;
+}
+#setSobercatOnMob{
+  width: 26% !important;
+  font-size: 4vw !important;
+
+}
+
+#settimepnMob{
+  width: 50% !important;
+}
+
+
+
+#zeroCpOnMobile{
+
+  font-size: 4.4vw !important;
+    margin-left: 3px !important;
+}
+
+#aug20onmob{
+  font-size: 3.3vw !important;
+}
+
+
+
+img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
+  height: 17px !important;
+    margin-top: -12px !important;
+}
+
+
+
+
+img[src="images/headerimg/ic_room_black_18dp.png"]{
+  height: 18px !important;
+    margin-top: -12px !important;
+}
+
+
+#vibiatmob{
+  font-size: 4vw !important;
+}
+
+
+#vibiresponsive{
+  width: 50% !important
+  ;
+}
+
+img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
+  width: 83% !important;
+    height: 10px !important;
+    margin-top: -1px !important;
+}
+
+
+
+#Sresponsive{
+  padding-top: 24px !important;
+  font-size: 6.2vw !important;
+}
+
+#replybtnMobile{
+  width: 20% !important;
+}
+
+#ReplyResp{
+  width: 30% !important;
+}
+
+
+#RatingMob{
+  width: 50% !important;
+}
+
+#replyomgresponsive{
+  font-size: 3.5vw !important;
+}
+
+
+
+
+#RatingZero{
+  margin-left: 36px !important;
+  font-size: 3.7vw !important;
+}
+
+
+
+
+#LoremResp{
+  font-size: 2.2vw !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 320px) and (max-width: 350px) {
+
+
+
+  .img-zoom-container {
+ 
+    width: 304px !important;
+   
+  }
+
+
+}
+
+
+
+
+
+
+
+}
+
+  #myInputone {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    /* padding: 12px 20px 12px 40px; */
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+   height: 45px;
+    border: 1px black solid;
+  }
+ #myInputtwo {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    /* padding: 12px 20px 12px 40px; */
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+        height: 45px;
+  }
+   #myInputthree {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    /* padding: 12px 20px 12px 40px; */
+    border: 1px solid black;
+    margin-bottom: 12px;
+        height: 45px;
+  }
+  #myULone {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+  }
+
+  #myULtwo {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+  }
+  #myULthree {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+  }
+  #myULone li a {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+ #myULtwo li a {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+
+   #myULthree li a {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+  #myULone li a:hover:not(.header) {
+    background-color: #eee;
+  }
+  #myULthree li a:hover:not(.header) {
+    background-color: #eee;
+  }
+
+  #setwidthfirst{
+  height: 115px;
+   width:100%;  
+      margin-right: 115px;
+  }
+
+  #setwidthsecond{
+        height: 115px;
+    width: 92%;
+    margin-top: -15px;
+    margin-left: 32px;
+    margin-right: 115px;
+  }
+
+
+
+
+
+
+
+
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+      /* border-bottom: 4px #eee solid; */
+    /* background-color: #fafafa;
+    border-bottom: 5px #eeeeee solid; */
+}
+
+#customers td, #customers th {
+ border: 1px solid #ededed;
+  padding: 8px;
+  background-color: #fafafa;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.colblue{
+  color: blue !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+  .DType{
+display: block;
+
+height: 65px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px !important;
+  padding: 5px !important;
+
+}
+
+  .Dsize{
+display: block;
+
+height: 65px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px !important;
+  padding: 5px !important;
+
+}
+ .Commsblutoth{
+display: block;
+
+height: 65px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+   
+  padding: 5px !important;
+
+}
+  .cardslotfont{
+display: block;
+
+height: 65px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+  font-size: 11px !important;
+  padding: 5px !important;
+
+}
+  .Dprotect{
+display: block;
+
+height: 185px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
+
+}
+  .Dresolution{
+display: block;
+
+height: 70px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
+
+}
+
+  .CameraVedios{
+display: block;
+
+height: 104px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
+
+}
+
+
+.plateGpu{
+  height: 65px !important;
+}
+
+
+
+
+.FeatureSensor{
+  height: 130px !important;
+}
+
+
+.MiscColor{
+  height: 70px !important;
+}
+
+
+
+/* 
+          /////////////////////////////////////  Internal CSS From Inline   //////////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .NTone{
+    width: 100%; height: 30px;    font-size: 13px;
+    background-color: #fafafa;
+    border: 1px #ededed solid;
+    border-bottom: 4px #eee solid; 
+   
+    height: 45px;
+    padding-left: 5px;
+    padding-top: 8px;
+  }
+
+
+  .Lannone{
+    width: 100%;
+  
+    font-size: 13px;
+    background-color: #fafafa;
+    border: 1px #ededed solid;
+        border-bottom: 2px #eeeeee solid;
+    padding-top: 8px;
+   padding-left: 5px;
+    height: 38px;
+  }
+
+  .Lannsts{
+ width: 100%;
+  
+    font-size: 13px;
+    background-color: #fafafa;
+    border: 1px #ededed solid;
+    padding-top: 8px;
+   padding-left: 5px;
+    height: 45px;border-bottom: 5px #eeeeee solid;
+  }
+
+  .BodyDimension{
+  width: 100%;
+  
+    font-size: 13px;
+    background-color: #fafafa;
+    border: 1px #ededed solid;
+    padding-top: 8px;
+   padding-left: 5px;
+    height: 43px;border-bottom: 1px #eeeeee solid;
+
+  }
+
+  .BodyWeight{
+  width: 100%;
+  
+    font-size: 13px;
+    background-color: #fafafa;
+    border: 1px #ededed solid;
+    padding-top: 8px;
+   padding-left: 5px;
+    height: 42px;border-bottom: 1px #eeeeee solid;
+
+  }
+
+
+  .BodyBuild{
+width: 100%;
+  
+    font-size: 13px;
+    background-color: #fafafa;
+    border: 1px #ededed solid;
+    padding-top: 8px;
+   padding-left: 5px;
+    height: 42px;border-bottom: 1px #eeeeee solid;
+
+  }
+
+  .BodySim{
+ width: 100%;
+  
+    font-size: 13px;
+    background-color: #fafafa;
+    border: 1px #ededed solid;
+    padding-top: 8px;
+   padding-left: 5px;
+    height: 46px;border-bottom: 5px #eeeeee solid;
+  }
+
+
+
+  .DispType{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 65px;border-bottom: 1px #eeeeee solid;
+  }
+
+
+.DispSize{
+width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 65px;border-bottom: 1px #eeeeee solid;
+}
+
+.DispReso{
+     width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 1px #eeeeee solid;
+   
+}
+
+.DispPro{
+  width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 185px;border-bottom: 5px #eeeeee solid;
+   
+}
+.PlateOSS{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 67px;border-bottom: 1px #eeeeee solid;
+  
+}
+.PlateChips{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 65px;border-bottom: 1px #eeeeee solid;
+  
+}
+
+.PlateCpU{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 1px #eeeeee solid;
+   
+}
+
+.PlateGpUOne{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 65px;border-bottom: 5px #eeeeee solid;
+  
+}
+
+.MemoryCardone{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 67px;border-bottom: 1px #eeeeee solid;
+   
+}
+.MemryIntrnl{
+    width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+  
+}
+.CamreTripp{
+    width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 190px;border-bottom: 1px #eeeeee solid;
+  
+}
+
+
+
+.CamFeaturOne{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 67px;border-bottom: 1px #eeeeee solid;
+  
+}
+
+.camraVedioOne{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 104px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+ 
+}
+.SelfiSinle{
+    width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 100px;border-bottom: 1px #eeeeee solid;
+    
+}
+
+
+.SelfiHdrOne{
+  width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 67px;border-bottom: 1px #eeeeee solid;
+   
+}
+
+.SelfieVedoOne{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 104px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+ 
+}
+.SoundLSp{
+  width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 103px;border-bottom: 1px #eeeeee solid;
+  
+}
+.SoundmmJack{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 67px;border-bottom: 1px #eeeeee solid;
+  
+}
+
+
+
+.SoundMicOne{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 104px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+  
+}
+
+
+.CommsWlan{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 67px;border-bottom: 1px #eeeeee solid;
+ 
+}
+.CommsBluetooth{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 65px;border-bottom: 1px #eeeeee solid;
+    
+}
+.CommGPSOne{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 1px #eeeeee solid;
+   
+}
+.CommsRadioOne{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 1px #eeeeee solid;
+  
+}
+.CommsNFC{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 1px #eeeeee solid;
+  
+}
+
+
+.CommsUsB{
+  width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 65px;border-bottom: 5px #eeeeee solid;
+   
+}
+
+.FeatureSensorOne{
+  width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 130px;border-bottom: 5px #eeeeee solid;
+   
+}
+
+.BatteryEmpty{
+  width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 67px;border-bottom: 1px #eeeeee solid;
+ 
+}
+.battryChargOne{
+   width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 130px;border-bottom: 1px #eeeeee solid;
+  
+}
+
+.BattTalkTime{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 1px #eeeeee solid;
+   
+}
+.BattryMusicPly{
+width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 104px;border-bottom: 5px #eeeeee solid;
+ 
+}
+
+.MiscColorOne{
+width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 70px;border-bottom: 5px #eeeeee solid;
+  
+}
+
+
+.MiscPricStrg{
+ width: 100%;
+      
+        font-size: 13px;
+        background-color: #fafafa;
+        border: 1px #ededed solid;
+        padding-top: 8px;
+       padding-left: 5px;
+        height: 160px;border-bottom: 5px #eeeeee solid;
+  
+}
+
+
+
+
+
+/* 
+////////////////////////////////////////  Shop  PAGE CSS//////////////////////////// */
+
+

@@ -1,0 +1,29 @@
+
+.loupe-widget {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+.loupe-widget__loupe {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  border: 2px solid #222;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: none;
+}
+.loupe-widget:hover {
+  cursor: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), auto;
+}
+.loupe-widget:hover .loupe-widget__loupe {
+  display: block;
+  pointer-events: none;
+}

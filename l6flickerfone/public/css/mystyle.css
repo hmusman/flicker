@@ -96,7 +96,7 @@ div[class="slider-handle max-slider-handle round"],
 }
 .products{
   border:0px;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   border-top: 1px solid #ddd;
 
 }

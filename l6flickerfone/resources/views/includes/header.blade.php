@@ -67,51 +67,9 @@
             
             </ul>
         </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;"> TABLETS / PC </a>
-            <ul class="dropdown-menu fade-up">
-            <li><a class="dropdown-item" href="#"> <center>LENOVO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>HP </center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>DELL</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ACER</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ASUS</center></a></li>
-            
-            </ul>
-        </li>
 
 
-
-
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> WEAREABLES  </a>
-            <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Samsung Gear 2</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>FitBit Flex</center></a></li>
-           
-            <li><a class="dropdown-item" href="#"> <center>Google Glass</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>GoQii</center></a></li>
-
-            <li><a class="dropdown-item" href="#"> <center>Get Active Slim</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>LECHAL GPS Shoes</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Fin Ring</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Spotnsave Wristband</center></a></li>
-           
-            
-            
-            </ul>
-        </li>
-
-
-
-        
-        <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
           style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
             <ul class="dropdown-menu fade-up">
@@ -130,6 +88,51 @@
             
             </ul>
         </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
+          style="padding: 8px 70px 6px 70px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;">Blog </a>
+            <!-- <ul class="dropdown-menu fade-up">
+            <li><a class="dropdown-item" href="#"> <center>LENOVO</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>HP </center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>DELL</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>ACER</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>ASUS</center></a></li>
+            
+            </ul> -->
+        </li>
+
+
+
+
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
+          style="padding: 8px 70px 6px 70px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> Forums  </a>
+            <!-- <ul class="dropdown-menu fade-up">
+              <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Samsung Gear 2</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>FitBit Flex</center></a></li>
+           
+            <li><a class="dropdown-item" href="#"> <center>Google Glass</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>GoQii</center></a></li>
+
+            <li><a class="dropdown-item" href="#"> <center>Get Active Slim</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>LECHAL GPS Shoes</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Fin Ring</center></a></li>
+            <li><a class="dropdown-item" href="#"> <center>Spotnsave Wristband</center></a></li>
+           
+            
+            
+            </ul> -->
+        </li>
+
+
+
+        
+      
 
         
 

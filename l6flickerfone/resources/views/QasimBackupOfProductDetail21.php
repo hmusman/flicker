@@ -13,7 +13,6 @@
   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
   <!-- <link href="{{ asset('css/style.css')}}" rel='stylesheet' type='text/css' media="all"> -->
   <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/ProductDetail.css') }}" rel='stylesheet' type='text/css' media="all">
   <link href="{{ asset('css/template1/tabcontent.css') }}" rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
@@ -25,13 +24,19 @@
 
 
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
-</style>
- 
+
+
   <style>
+
+  #thumb-lens{
+        border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.75) -1px 1px 5px 1px;
+    cursor: none !important;
+}
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
     #myInput {
-      background-image: url('/css/searchicon.png');
+      background-image: url('/css/searchicon.png')}}');
       background-position: 10px 12px;
       background-repeat: no-repeat;
       width: 50%;
@@ -103,466 +108,16 @@ ul[class="dropdown-menu fade-up"] > li::after{
  }
   } */
   @media (min-width:500px){
-
-/* #TableHeadFontSizeOnDesk{
-  font-size: 17px !important;
-} */
-#MainHeightOnDesktop{
-  height: 2793px !important;
-}
-
-.colblue{
-
-  font-size: 17px !important;
-}
-
-
-#TableFonSizeOnDeskTop > div{
-  font-size: 15px !important;
-}
-
-.widthOnDesk{
-        width: 110px !important;
-}
-      .TechOnDeskTop{
-              width: 57% !important;
-      }
   
     #seconNav{
    background-color: rgb(238, 237, 237) !important;
  }
 
 
-
-
-
-
-
-
   }
 
-
-.tdBlockOnMobSubhead{
-      font-size: 14px;
-    font-weight: 600;
-
-        height: 37px !important;
-    padding-top: 11px !important;
-    text-shadow: 0px 0px 0.1px black !important;
-}
-
-
-
-
-
-.cradslotOnMob{
-      height: 65px;
-    font-weight: 600;
-    text-shadow: 0px 0px 0.1px black;
-  
-    padding: 5px;
-}
-
-
-.Cameratriple{
-      height: 145px;
-   
-}
-
-.SelfieSingle{
-      height: 60px;
-   
-}
-
-.CameraFeaturesOnMob{
-      height: 67px ;
-
-    text-shadow: 0px 0px 0.1px black;
-    font-size: 15px ;
-  
-}
-.SeliecamFatureMob{
-      height: 67px ;
-
-    text-shadow: 0px 0px 0.1px black;
-    font-size: 15px ;
-  
-}
 
   @media (max-width: 550px){
-.Cameratriple {
-    height: 190px !important;
-}
-  .Dprotect{
-
-height: 180px !important;
-  }
-.ProtecOnMoble{
-  height: 180px !important;
-}
-
-#FootStyleOnMob{
-  margin-top: 200px !important;
-}
-
-.MusicPlayOnMob{
-  height: 104px !important;
-}
-
-
-.FeatureSensor{
-      font-size: 12px !important;
-}
-
-
-.batteryCarge{
-      font-size: 12px !important;
-}
-
- .Commsblutoth{
-font-size: 13px !important;
-
-}
-
-
-
-
-
-
-  .CameraVedios{
-
-
-height: 113px !important;
-
-    
-
-}
-
-
-
-.CameraFeaturesOnMob{
-      height: 113px !important;
-
-  
-  
-}
-
-.AboveSoundbarSpce{
-  height: 37px !important;
-}
-
-.SeliecamFatureMob{
-      height: 67px !important;
-
-  
-  
-}
-.cradslotOnMob{
-      height: 65px;
-    font-weight: 600;
-    text-shadow: 0px 0px 0.1px black;
-    font-size: 13px;
-    padding: 5px;
-}
-
-
-.topPlateformSpconmob{
-height: 56px !important;
-}
-
-.topCommsfirstSpconmob{
-height: 37px !important;
-}
-
-
-.topFeaturSensoronmob{
-height: 33px !important;
-}
-.topMainCameraSpconmob{
-height: 56px !important;
-}
-
-.topMemorSpconmob{
-height: 37px !important;
-}
-
-  .Dprotect{
-
-
-
-
-
-   
-    font-size: 11px !important;
-
-
-}
-  .Dresolution{
-
-    font-size: 11px !important;
-
-
-}
-
-.mobTitleOnMob{
-  margin-top: 41px !important;
-}
-.TopheightOnMob{
-    height: 33px !important;
-}
-
-
-.topBodySpconmob{
-     height: 36px !important;
-}
-
-.topBodySpconmob{
-     height: 36px !important;
-}
-.topDisplaySpconmob{
-height: 37px !important;
-}
-.Net1OnMob{
-    height: 37px !important;
-}
-
-
-.lanchSpcOn{
-    height: 33px !important;
-}
-
-.builWeigt2{
- padding-top: 21px !important;
-    height: 65px !important;
-}
-
-.DisplayReslution{
-
-    height: 70px !important;
-}
-
-
-.batteryTalkTime2{
-
-    height: 67px !important;
-}
-.DBatteryChargingOne{
-
-    height: 75px !important;
-}
-
-.simweight2{
-padding-top: 9px !important;
-    height: 120px !important;
-}
-
-
-
-.DisplaLastHeightOnMob{
-padding-top: 9px !important;
-    height: 120px !important;
-}
-.bodyweight2{
-    padding-top: 21px !important;
-    height: 65px !important;
-}
-
-.DisplayType{
-  
-    height: 65px !important;
-}
-.mem0ryInt{
-  
-    height: 70px !important;
-}
-
-
-.CameraVedioa{
-  
-    height: 70px !important;
-}
-.BuildSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-     height: 65px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    padding-left: 16px !important;
-}
-
-.SIMSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-     height: 120px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    padding-left: 16px !important;
-}
-.BodyHeadMob{
-    display: block !important;
-    font-size: 13px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-
-.BatteryOneMob{
-    display: block !important;
-    font-size: 10px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-.BodyHeadMobForFeatureSensor{
-    display: block !important;
-    font-size: 10px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-
-.BodySts1{
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-     height: 65px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    padding-left: 16px !important;
-}
-
-.BuildSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-    
-    padding-left: 16px !important;
-}
-
-.ResoltiondSts1{
-   font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-    height: 65px !important;
-    padding-left: 5px !important;
-}
-
-.SIMSts1{
- font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 10px !important;
-    
-    padding-left: 16px !important;
-}
-.DimnOnMobSubhead{
-    font-weight: 600 !important;
-    height: 65px !important;
- 
-    text-shadow: 0px 0px 0.1px black !important;
-      padding-top: 28px !important;
-    font-size: 9px !important;
-}
-
-
-      .DimensionsMob{
-          /* margin-top: 33px !important; */
-              height: 65px !important;
-      }
-
-
-      .CameraFeature{
-          /* margin-top: 33px !important; */
-              height: 113px !important;
-      }
-
-
-    
-
-        .TrpleVed{
-          /* margin-top: 33px !important; */
-              height: 113px !important;
-      }
- .CameraTripple{
-          /* margin-top: 33px !important; */
-              height: 190px !important;
-      }
-       .CameraSinleNexxt{
-          /* margin-top: 33px !important; */
-              height: 60px !important;
-      }
-      .StatusOnMob{
-          height: 75px !important;
-      }
-
-      .StatheadOnMob{
-          height: 75px !important;
-    padding-top: 28px !important;
-    font-size: 11px !important;
-    text-shadow: 0px 0px 0.5px black !important;
-    padding-left: 16px !important;
-
-      }
-
-.Lannounced{
-        height: 37px !important;
-  
-}
-.SpecialMargMob{
-    margin-top: 28px !important;
-}
-.mobileCntTD{
-    
-    font-size: 13px !important;
-    padding: 10.8px !important;
-
-}
-
-/* .LeftColheightOnMob{
-    height: 477px !important;
-
-} */
-
-.fontOnMob{
-    font-size: 21.3px !important;
-}
-
-
-.tdBlockOnMobhead{
-    display: block !important;
-    font-size: 10px !important;
-    text-shadow: 0px 0px 0.7px blue !important;
-}
-.tdBlockOnMobSubhead{
-  display: block !important;
-font-size: 9px !important;
-}
-
-
-#myInputone{
-  height: 30px !important;
-  
-}
-
-#myInputthree{
-    height: 30px !important;
-}
-
-#imgOneMob{
-  width: 100% !important;
-      height: 177px !important;
-}
-
-
-/* #widthThirtyOnMob{
-width: 0% !important;
-display: none !important;
-visibility: hidden !important;
-} */
-
-/* #widthSeventyOnMob{
-width: 100% !important;
-} */
-
-
 #navbarNavAltMarkup1{
   background-color: #e6e6e6 !important;
     z-index: 12 !important;
@@ -618,7 +173,7 @@ ul[class="dropdown-menu fade-up show"] > li{
     .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
     .navbar .dropdown-menu.fade-up{ top:180%;  }
     .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-  } 
+  }	
   /* ============ desktop view .end// ============ */
   
     </style>
@@ -638,14 +193,14 @@ ul[class="dropdown-menu fade-up show"] > li{
 
 
 #slickBtnFor > div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
-  background-image: url('images/headerimg/ic_keyboard_arrow_left_black_18dp.png');
+  background-image: url({{ asset('storage/images/headerimg/ic_keyboard_arrow_left_black_18dp.png')}}');
   border-radius: 50%;
   height: 38px;
     background-repeat: no-repeat;
     width: 100px;
 }
 #slickBtnFor > div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
-  background-image: url('images/headerimg/ic_keyboard_arrow_right_black_18dp.png');
+  background-image: url({{ asset('storage/images/headerimg/ic_keyboard_arrow_right_black_18dp.png')}}');
   border-radius: 50%;
   height: 38px;
     background-repeat: no-repeat;
@@ -692,58 +247,18 @@ ol > li{
 <style>
   @media (min-width:500px){
   
-.LaunchWidthOnlyOnDesk{
-      width: 110px !important;
-}
-
-
 div[class="img-zoom-container"]{
   margin-left: 174px !important;
 }
-
-
-.mobTitleOnMob{
-  margin-top: -24px !important;
-}
-
 
   }
 
 
   @media (max-width: 550px){
 
-  footer{
-  margin-top: 149px !important;
-}
-
-  .srcgBtnOnMob{
-
-    height: 30px !important;
-    padding-top: 0px !important;
-
-
-        background-color: #eeeeee !important;
-    border: 1px #cdcdcd solid !important;
-
-  }
-
-
-
-
-#ColOnMobileFirst{
-  width: 40% !important;
-}
-
-#ColOnMobileCenter{
-  width: 0% !important;
-  display: none !important;
-  visibility: hidden !important;
-}
-#ColOnMobileLast{
-  width: 41% !important;
-}
-
-  
+    /* .img-zoom-container{
+      width: 0px !important;
+    } */
 #mobviebtns{
   font-size: 7px !important;
 }
@@ -767,6 +282,12 @@ a[href="#view4"]{
 .tabcontents{
   margin-top: 19px !important;
 }
+}
+
+
+.tabs{
+  background: #F0F0F0 url(tabbg.gif) 0 0 repeat-x;
+  border: 1px solid #CCC;
 }
 </style>
 
@@ -818,37 +339,12 @@ img[src="{{ asset('storage/images/logo Black-01.jpg')}}"]{
     margin-top: -8px;
     margin-bottom: -8px;
 }
-img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
+img[src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png') }} "]{
   height: 28px !important;
 }
 
 
   @media (max-width: 550px){
-
-#myULthree{
-  margin-left: -45px !important;
-}
-.ButtonSearchOnMob{
-  margin-left: 139px !important;
-}
-
-
-#myInputone, #myInputthree{
-  width: 150% !important;
-  margin-left: -28px !important;
-}
-
-
-
-    #ChangeContentSetMob{
-      margin-top: 55px !important;
-    }
-  #ChangeContentSetMob3{
-      margin-top: 40px !important;
-    }
-#changePFontVWOnMob{
-  font-size: 2.4vw !important;
-}
 
 #pages{
   text-align: center !important;
@@ -897,7 +393,7 @@ img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
 
 
 
-img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
+img[src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}"]{
   height: 17px !important;
     margin-top: -12px !important;
 }
@@ -905,7 +401,7 @@ img[src="images/headerimg/ic_query_builder_black_18dp.png"]{
 
 
 
-img[src="images/headerimg/ic_room_black_18dp.png"]{
+img[src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}"]{
   height: 18px !important;
     margin-top: -12px !important;
 }
@@ -921,7 +417,7 @@ img[src="images/headerimg/ic_room_black_18dp.png"]{
   ;
 }
 
-img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
+img[src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).png')}}"]{
   width: 83% !important;
     height: 10px !important;
     margin-top: -1px !important;
@@ -995,277 +491,30 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
 
 
 
+}
 
+
+#myimage{
+  border: 2px #afa3a3 solid !important;
+}
+
+
+.colr{
+color: #0071e3;
+font-size: 20px !important;
+}
+
+.TableStyl{
+  color: #8c8585fc !important;
+}
+
+
+#view1{
+  width: 70% !important;
 }
 </style>
 
-<style>
-  #myInputone {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-   height: 45px;
-    border: 1px black solid;
-  }
- #myInputtwo {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-        height: 45px;
-  }
-   #myInputthree {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid black;
-    margin-bottom: 12px;
-        height: 45px;
-  }
-  #myULone {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
-  }
 
-  #myULtwo {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
-  }
-  #myULthree {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
-  }
-  #myULone li a {
-    /* border: 1px solid #ddd; */
-    margin-top: -1px;
-    /* Prevent double borders */
-   /*  background-color: #f6f6f6; */
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
-  }
- #myULtwo li a {
-    /* border: 1px solid #ddd; */
-    margin-top: -1px;
-    /* Prevent double borders */
-    /* background-color: #f6f6f6; */
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
-  }
-
-   #myULthree li a {
-    /* border: 1px solid #ddd; */
-    margin-top: -1px;
-    /* Prevent double borders */
-   /*  background-color: #f6f6f6; */
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
-  }
-  #myULone li a:hover:not(.header) {
-    background-color: #eee;
-  }
-  #myULthree li a:hover:not(.header) {
-  /*   background-color: #eee; */
-  }
-
-  #setwidthfirst{
-  height: 115px;
-   width:100%;  
-      margin-right: 115px;
-  }
-
-  #setwidthsecond{
-        height: 115px;
-    width: 92%;
-    margin-top: -15px;
-    margin-left: 32px;
-    margin-right: 115px;
-  }
-
-
-
-
-
-
-
-
-
-#customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-      /* border-bottom: 4px #eee solid; */
-    /* background-color: #fafafa;
-    border-bottom: 5px #eeeeee solid; */
-}
-
-#customers td, #customers th {
- border: 1px solid #ededed;
-  padding: 8px;
-  background-color: #fafafa;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-
-
-.colblue{
-  color: blue !important;
-  font-weight: bold !important;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-
-
-
-
-</style>
-
-
-<style>
-
-
-
-
-
-  .DType{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px !important;
-  padding: 5px !important;
-
-}
-
-  .Dsize{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px !important;
-  padding: 5px !important;
-
-}
- .Commsblutoth{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-   
-  padding: 5px !important;
-
-}
-  .cardslotfont{
-display: block;
-
-height: 65px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-  font-size: 11px !important;
-  padding: 5px !important;
-
-}
-  .Dprotect{
-display: block;
-
-height: 120px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px;
-  padding: 5px !important;
-
-}
-  .Dresolution{
-display: block;
-
-height: 70px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px;
-  padding: 5px !important;
-
-}
-
-  .CameraVedios{
-display: block;
-
-height: 75px;
-
-    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
-    font-size: 16px;
-  padding: 5px !important;
-
-}
-
-
-.plateGpu{
-  height: 65px !important;
-}
-
-
-
-
-.FeatureSensor{
-  height: 130px !important;
-}
-
-
-.MiscColor{
-  height: 70px !important;
-}
-
-
-
-
-
-</style>
 <body>
 
 
@@ -1522,309 +771,438 @@ margin-left: 15px;">{{ $product->price }}</font>
 <div class="row">
 
   <div class="col-md-12">
+
     <div style=" margin: 0 auto; padding: 120px 0 40px;">
       <ul class="tabs" data-persist="true">
           <li><a href="#view1">TECHNICLE SPECS</a></li>
           <li><a href="#view2">OPINIOS</a></li>
           <li><a href="#view3">VEDIOS</a></li>
           <li><a href="#view4">REVIEWS</a></li>
+
+            <li><a href="#view5">REVIEWS</a></li>
       </ul>
       <div class="tabcontents">
+            <div id="view1">
+              
+
+
+	            <div class="row"  style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+	              <div class="col-md-2">
+	               <font style="font-size: 20px;
+	              
+	               font-weight: 600; " class="colr"> NETWORK</font>
+	              </div>
+	              <div class="col-md-2" style="color: black; font-size: 20px" >Technology</div>
+	              <div class="col-md-8 TableStyl" style="color: black; font-size: 20px">GSM / SDMA /HSPA / EVDO / LTE</div>
+	            </div>
+
+
+
          
 
 
-<div id="view1">
-<div class="row">
-   <div style="width: 19%;  float: left;">
-      <div style="height: 3700px; "  id="MainHeightOnDesktop">
-         <table id="customers">
-            <tr>
-               <td class="colblue tdBlockOnMobhead ">Network</td>
-               <td class="tdBlockOnMobSubhead TechOnDeskTop" style="border-bottom: 4px #eee solid; "> Technology</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue tdBlockOnMobhead LaunchWidthOnlyOnDesk" >LAUNCH</td>
-               <td class="tdBlockOnMobSubhead" style="display: block;"> Announced</td>
-               <td class="StatheadOnMob" style="display: block;     border-bottom: 5px #eeeeee solid; font-weight: 600; "> Status</td>
-            </tr>
-         </table>
-         <!-- <table id="customers">
-            <tr>
-                <td class="colblue tdBlockOnMobhead">BODY</td>
-                <td class="tdBlockOnMobSubhead" style="display: block;"> Dimensions</td>
-                <td class="StatheadOnMob" style="display: block;"> Weight</td>
-                <td class="StatheadOnMob" style="display: block;"> Build</td>
-                <td class="StatheadOnMob" style="display: block;"> SIM</td>
-            </tr>
-            </table> -->
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Body</td>
-               <td class="DimnOnMobSubhead" style="display: block;font-weight: 600;"> Dimensions</td>
-               <td class="BodySts1" style="display: block;font-weight: 600;"> Weight</td>
-               <td class="BuildSts1" style="display: block;font-weight: 600;"> Build</td>
-               <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Display</td>
-               <td class="DType" style=""> Type</td>
-               <td class="Dsize" style="display: block;font-weight: 600;"> Size</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> Resolution</td>
-               <td class="Dprotect" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Plate-<br/>Form</td>
-               <td class="DType" style=""> OS</td>
-               <td class="Dsize" style="display: block;font-weight: 600;"> Chipset</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> CPU</td>
-               <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Memory</td>
-               <td class="cradslotOnMob" style="display: block;font-weight: 600;"> Card slot</td>
-               <td class="Dresolution" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Internal</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Main-<br/>Camera</td>
-               <td class="Cameratriple" style="display: block;font-weight: 600;"> Triple</td>
-               <td class="CameraFeaturesOnMob" style="display: block;font-weight: 600;"> Features</td>
-               <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Selfie-<br />Camera</td>
-               <td class="SelfieSingle" style="display: block;font-weight: 600;"> Single</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> Features</td>
-               <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">Sound</td>
-               <td class="SelfieSingle" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> 3.5mm jack</td>
-               <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMob widthOnDesk">COMMS</td>
-               <td class="DType" style=""> WLAN</td>
-               <td class="Commsblutoth" style="display: block;font-weight: 600;"> Bluetooth</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> GPS</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> Radio</td>
-               <td class="Dresolution" style="display: block;font-weight: 600;"> NFC</td>
-               <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> USB</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">Features</td>
-               <td class="FeatureSensor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Sensors</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BatteryOneMob widthOnDesk">Battery</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> &nbsp; </td>
-               <td class="batteryCarge" style="display: block;font-weight: 600; height: 130px; "> Charging</td>
-               <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> talk Time</td>
-               <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 104px;"> Music Play</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">MISC</td>
-               <td class="MiscColor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Colors</td>
-            </tr>
-         </table>
-         <table id="customers">
-            <tr>
-               <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">&nbsp;</td>
-               <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 160px; "> Price & Storage</td>
-            </tr>
-         </table>
-      </div>
-   </div>
-   <div id="ColOnMobileFirst" style="width: 54%;  float: left; ">
-      @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
-      @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
-      @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
-      <!-- <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($img1_400)}}"  srcset="{{ asset('http://127.0.0.1:8000/storage/admin/images/product/thumbnail/400_'.$product->image)}}"></p></span> -->
-      <div style="height: 1110; width: 100%;">
-         <div style="height: 800px;" id="TableFonSizeOnDeskTop">
-            <div class="TopheightOnMob" style="height: 0px; width: 100%;"></div>
-            <div class="Net1OnMob NTone" style=" ">GSM / HSPA / LTE1
+	            <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+	              	<div class="col-md-2"><font style="font-size: 24px;font-weight: 600; " class="colr"> LAUNCH</font></div>
+	              	<div class="col-md-2" style="color: black; font-size: 20px" >
+	              		@if($product->launch_announced !='')
+		                	<p  style="border-bottom: 1px #efefef solid;     width: 118%;">Announced</p>
+		                @endif
+		                @if($product->launch_status !='')
+		                	<p style="margin-top: -10px;"> Status</p>
+		                @endif
+	            	</div>
+	              	<div class="col-md-8" style="color: black; font-size: 20px">
+	                	@if($product->launch_announced !='')
+	                		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ date('Y',strtotime($product->launch_announced)) }},
+							{{ date('F',strtotime($product->launch_announced)) }} {{ date('d',strtotime($product->launch_announced)) }} </p>
+	                	@endif
+	                	@if($product->launch_status !='')
+	                 		<p class="TableStyl" style="margin-top: -10px;">{{ $product->launch_status }} </p>
+	                 	@endif
+	                 </div>
+	            </div>
+
+
+
+
+
+	            <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+	              <div class="col-md-2">
+	               <font style="font-size: 24px;
+	              
+	               font-weight: 600; " class="colr"> BODY</font>
+	              </div>
+	              <div class="col-md-2" style="color: black; font-size: 20px" >
+	                @if($product->body_dimension !='')
+	                	<p  style="border-bottom: 1px #efefef solid;      width: 118%;">Dimensions</p>
+	                @endif
+	                @if($product->body_weight !='')
+	                	<p  class="tblrowbottmstl"> Weight</p>
+	                @endif
+	                @if($product->body_build !='')
+	                	<p class="tblrowbottmstl"> Build</p>
+	                @endif
+	                @if($product->body_sim !='')
+	                	<p class="tblrowbottmstl"> SIM</p>
+	                @endif
+
+	              </div>
+	              <div class="col-md-8" style="color: black; font-size: 20px">
+	                @if($product->body_dimension !='')
+	                	<p class="TableStyl"style="border-bottom: 1px #efefef solid;">{{ $product->body_dimension }}</p>
+	                @endif
+	                @if($product->body_weight !='')
+	                	<p class="tblrowbottmstl2 TableStyl">{{ $product->body_weight }}</p>
+	                @endif
+	                 @if($product->body_build!='')
+	                	<p class="tblrowbottmstl2 TableStyl">{{ $product->body_build }}</p>
+	                @endif
+	                 @if($product->body_sim !='')
+	                	<p class="tblrowbottmstl2 TableStyl">{{ $product->body_sim }}</p>
+	                @endif
+
+	                </div>
+                                
+                </div>
+
+
+
+                <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                  <div class="col-md-2">
+                   <font style="font-size: 24px;
+                  
+                   font-weight: 600; " class="colr"> DISPLAY</font>
+                  </div>
+                  <div class="col-md-2" style="color: black; font-size: 20px" >
+                    	@if($product->display_type !='')
+                    		<p  style="border-bottom: 1px #efefef solid;      width: 118%;">Type</p>
+                    	@endif
+                    	@if($product->display_size !='')
+                    		<p class="tblrowbottmstl" >Size</p>
+                    	@endif
+                    	@if($product->display_resolution !='')
+                    		<p class="tblrowbottmstl" >Resolution</p>
+                    	@endif
+                    	@if($product->display_protection !='')
+                    		<p class="tblrowbottmstl" >Protection</p>
+                    	@endif
+    
+    
+                  </div>
+                  <div class="col-md-8" style="color: black; font-size: 20px">
+                    	@if($product->display_type !='')
+                    		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->display_type }}</p>
+                    	@endif
+                    	@if($product->display_size !='')
+                    		<p class="tblrowbottmstl2 TableStyl">{{ $product->display_size }}</p>
+                    	@endif
+                    	@if($product->display_resolution !='')
+                    		<p class="tblrowbottmstl2 TableStyl">{{ $product->display_resolution }}</p>
+                    	@endif
+                     	@if($product->display_protection !='')
+                    		<p class="tblrowbottmstl2 TableStyl">{{ $product->display_protection }}</p>
+                    	@endif
+                    </div>
+                   
+                    
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr"> PLATEFORM</font>
+                      </div>
+                      <div class="col-md-2" style="color: black; font-size: 20px" >
+                        @if($product->platform_os !='')
+                        	<p  style="border-bottom: 1px #efefef solid;      width: 118%;">OS</p>
+                        @endif
+                        @if($product->platform_chipset !='')
+                        	 <p class="tblrowbottmstl">Chipset</p>
+                        @endif
+                        @if($product->platform_cpu !='')
+                        	 <p class="tblrowbottmstl">CPU</p>
+                        @endif
+                        @if($product->platform_gpu !='')
+                        	 <p class="tblrowbottmstl">GPU</p>
+                        @endif
+
+        
+        
+                      </div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+	                        @if($product->platform_os !='')
+	                        	<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->platform_os }}</p>
+	                        @endif
+                        	@if($product->platform_chipset !='')
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->platform_chipset }}</p>
+	                        @endif
+	                        @if($product->platform_cpu !='')
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->platform_cpu }}</p>
+	                        @endif
+	                        @if($product->platform_gpu !='')
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->platform_gpu }}</p>
+	                        @endif
+                       
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
+                        
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr"> MEMORY</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+                        @if($product->memory_card_slot !='')
+                        	<p  style="border-bottom: 1px #efefef solid;      width: 118%;">Card Slot</p>
+                        @endif
+                        @if($product->memory_ram !='')
+                        	 <p class="tblrowbottmstl">Ram</p>
+                        @endif
+                        @if($product->memory_storage !='')
+                        	 <p class="tblrowbottmstl">Storage</p>
+                        @endif
+        
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                        
+                         	@if($product->memory_card_slot !='')
+	                        	<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->memory_card_slot }}</p>
+	                        @endif
+	                        @if($product->memory_ram !='')
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->memory_ram }}</p>
+	                        @endif
+	                        @if($product->memory_storage !='')
+	                        	<p class="tblrowbottmstl2 TableStyl">{{ $product->memory_storage }}</p>
+	                        @endif
+                        
+                        </div>
+                        
+                    </div>
+                        
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr"> MAIN CAMERA</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+	                      	@if($product->main_type !='' && $product->main_type_value !='')
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">{{ ucwords($product->main_type) }}</p>
+	                      	@endif
+	                      	@if($product->main_feature !='')
+	                      		 <p class="tblrowbottmstl">Features</p>
+	                      	@endif
+	                      	@if($product->main_video !='')
+	                      		 <p class="tblrowbottmstl">Video</p>
+	                      	@endif
+                      	</div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+                        	@if($product->main_type !='' && $product->main_type_value !='')
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->main_type_value }}</p>
+                        	@endif
+                        	@if($product->main_feature !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->main_feature }} </p>
+                        	@endif
+                        	@if($product->main_video !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->main_video }} </p>
+                        	@endif
+                        </div>
+                    </div>
+            
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr"> SELFIE CAMERA</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+	                      	@if($product->selfie_type !='' && $product->selfie_type_value !='')
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">{{ ucwords($product->selfie_type) }}</p>
+	                      	@endif
+	                      	@if($product->selfie_feature !='')
+	                      		 <p class="tblrowbottmstl">Features</p>
+	                      	@endif
+	                      	@if($product->selfie_video !='')
+	                      		 <p class="tblrowbottmstl">Video</p>
+	                      	@endif
+                      	</div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+                        	@if($product->selfie_type !='' && $product->selfie_type_value !='')
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->selfie_type_value }}</p>
+                        	@endif
+                        	@if($product->selfie_feature !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->selfie_feature }} </p>
+                        	@endif
+                        	@if($product->selfie_video !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->selfie_video }} </p>
+                        	@endif
+                        </div>
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr"> SOUND</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+	                      	@if($product->sound_loudspeaker !='')
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">Loudspeaker</p>
+	                      	@endif
+	                      	@if($product->sound_jack !='')
+	                      		 <p class="tblrowbottmstl">3.5 mm Jack</p>
+	                      	@endif
+	                      	@if($product->sound_mic!='')
+	                      		 <p class="tblrowbottmstl">Mic</p>
+	                      	@endif
+                      	</div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+                        	@if($product->sound_loudspeaker !='')
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->sound_loudspeaker }}</p>
+                        	@endif
+                        	@if($product->sound_jack !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->sound_jack }} </p>
+                        	@endif
+                        	@if($product->sound_mic !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->sound_mic }} </p>
+                        	@endif
+                        </div>
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr">COMMS</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+	                      	@if($product->comms_wlan !='')
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">Wlan</p>
+	                      	@endif
+	                      	@if($product->comms_bluetooth !='')
+	                      		 <p class="tblrowbottmstl">Bluetooth</p>
+	                      	@endif
+	                      	@if($product->comms_gps!='')
+	                      		 <p class="tblrowbottmstl">GPS</p>
+	                      	@endif
+	                      	@if($product->comms_nfc!='')
+	                      		 <p class="tblrowbottmstl">NFC</p>
+	                      	@endif
+                      	</div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+                        	@if($product->comms_wlan !='')
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->comms_wlan }}</p>
+                        	@endif
+                        	@if($product->bluetooth !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->bluetooth }} </p>
+                        	@endif
+                        	@if($product->comms_gps !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->comms_gps }} </p>
+                        	@endif
+                        	@if($product->comms_nfc !='')
+	                      		 <p class="tblrowbottmst2 TableStyl">{{ $product->comms_nfc }}</p>
+	                      	@endif
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr">FEATURES</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+	                      	@if($product->feature_sensor !='')
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">Sensor</p>
+	                      	@endif
+                      	</div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+                        	@if($product->feature_sensor !='')
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->feature_sensor }}</p>
+                        	@endif
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr">BATTERY</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+	                      	@if($product->battery_status !='')
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">Status</p>
+	                      	@endif
+	                      	@if($product->battery_talk_time !='')
+	                      		<p class="tblrowbottmstl">Talk Time</p>
+	                      	@endif
+	                      	@if($product->battery_music!='')
+	                      		 <p class="tblrowbottmstl">Music</p>
+	                      	@endif
+                      	</div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+                        	@if($product->battery_status !='')
+                        		<p  class="TableStyl" style="border-bottom: 1px #efefef solid;">{{ $product->battery_status }}</p>
+                        	@endif
+                        	@if($product->battery_talk_time !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->battery_talk_time }} </p>
+                        	@endif
+                        	@if($product->battery_music !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->battery_music }} </p>
+                        	@endif
+                        </div>
+
+                    </div>
+                 	
+                 	<div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; " class="colr">MISC</font>
+                      </div>
+                      	<div class="col-md-2" style="color: black; font-size: 20px" >
+                      		@if($product->variation_colors->count()>0)
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">Colors</p>
+	                      	@endif
+	                      	@if($product->price !='')
+	                      		 <p  style="border-bottom: 1px #efefef solid;width: 118%;">Price</p>
+	                      	@endif
+                      	</div>
+                      	<div class="col-md-8" style="color: black; font-size: 20px">
+                        	@if($product->variation_colors->count()>0)
+                        		@php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
+                        		<p class="TableStyl" style="border-bottom: 1px #efefef solid;">
+                        			@foreach($product->variation_colors as $color)
+          								  		@php $i++; @endphp
+          								  		@if($colorName !=$color->color)
+          								  			{{ ucfirst($color->color)}} @if($count>$i) , @endif
+          								  		@endif
+          										@php $colorName = $color->color; @endphp
+          								  	@endforeach
+
+                        		</p>
+                        	@endif
+                        	@if($product->price !='')
+                        		 <p class="tblrowbottmstl2 TableStyl">{{ $product->price }} </p>
+                        	@endif
+                        	
+                        </div>
+
+                    </div>
+
             </div>
-            <div class="lanchSpcOn" style="height: 0px; width: 100%;"></div>
-            <div class="Lannounced Lannone">
-               2018, September 15
-            </div>
-            <div  class="StatusOnMob Lannsts">
-               Available. Released 2019, September
-            </div>
-            <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob BodyDimension" style="  " class="StatusOnMob">
-               175.9 x 78.1 x 9 mm (6.49 x 3.04 x 0.42 in) 1
-            </div>
-            <div style="  " class="bodyweight2 BodyWeight">
-               226 g (7.97 oz)
-            </div>
-            <div style="    " class="builWeigt2 BodyBuild">
-               Front/back glass, stainless steel frame 2
-            </div>
-            <div style="   
-               " class="simweight2 BodySim">
-               Dual SIM (Nano-SIM, dual stand-by)
-            </div>
-            <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob DispType" style="   
-               " class="StatusOnMob">
-               Super Retina XDR OLED capacitive touchscreen, 16M colors
-            </div>
-            <div style="    
-               " class="DisplayType DispSize">
-               6.5 inches, 102.9 cm 2 (~83.7% screen-to-body ratio)
-            </div>
-            <div style="  " class="DisplayReslution DispReso">
-               1242 x 2688 pixels, 19.5:9 ratio (~458 ppi density)
-            </div>
-            <div style="   " class="DispPro">
-               Scratch-resistant glass, oleophobic coating
-               800 nits max brightness
-               Dolby Vision
-               HDR10
-               Wide color gamut
-               True-tone
-               120Hz touch-sensing
-            </div>
-            <div class="topPlateformSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob PlateOSS" style="     " >
-               iOS 13, upgradable to iOS 13.2
-            </div>
-            <div style="     " class="DisplayType PlateChips">
-               Apple A13 Bionic (7 nm+)
-            </div>
-            <div style="    " class="DisplayReslution PlateCpU">
-               Hexa-core (2x2.65 GHz Lightning + 4x1.8 GHz Thunder)
-            </div>
-            <div style="     " class="PlateGpUOne">
-               Apple GPU (4-core graphics)
-            </div>
-            <div class="topMemorSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob  MemoryCardone" >
-               No
-            </div>
-            <div style="    " class="mem0ryInt MemryIntrnl">
-               64/256/512GB 4GB RAM1
-            </div>
-            <div class="topMainCameraSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="CameraTripple CamreTripp" style="    " >
-               12 MP, f/1.8, 26mm (wide), 1/2.55", 1.4B5m, dual pixel PDAF, OIS
-               12 MP, f/2.4 52mm (telephoto), 1/3.4", 1.0B5m, PDAF, OIS
-               2x optical zoom 12 MP, f/2.4, 13mm (ultrawide)
-            </div>
-            <div class="CameraFeature CamFeaturOne" style="     " >
-               Quad-LED dual-tone flash, HDR (photo/panorama)
-            </div>
-            <div style="      " class="TrpleVed camraVedioOne" >
-               2160p @ 24/30 / 60fps, 1080p @ 30 / 60 / 120 / 240fps, HDR, stereo sound rec.
-            </div>
-            <div class="topMainCameraSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="CameraSinleNexxt SelfiSinle" style="">
-               12 MP, f/2.2, 23mm (wide)
-               SL 3D camera
-            </div>
-            <div class="CameraSingleHdr SelfiHdrOne" style="   ">
-               HDR
-            </div>
-            <div style="      " class="TrpleVed SelfieVedoOne">
-               2160p@24/30/60fps, 1080p@30/60/120fps, gyro-EIS
-            </div>
-            <div class="AboveSoundbarSpce" style="height: 0px; width: 100%;"></div>
-            <div class="CameraSinleNexxt SoundLSp" style="    ">
-               Yes, with stereo speakers
-            </div>
-            <div class="CameraSingleHdr SoundmmJack" style="     ">
-               No
-            </div>
-            <div style="     " class="TrpleVed SoundMicOne">
-               Active noise cancellation with dedicated mic
-               Dolby Atmos, Dolby Digital Plus
-            </div>
-            <div class="topCommsfirstSpconmob" style="height: 0px; width: 100%;"></div>
-            <div class="DimensionsMob CommsWlan" style="      " class="StatusOnMob">
-               Wi-Fi 802.11 a/b/g/n/ac, dual-band, hotspot
-            </div>
-            <div style="   " class="DisplayType CommsBluetooth">
-               5.0, A2DP, LE
-            </div>
-            <div style="    " class="DisplayReslution CommGPSOne">
-               Yes, with A-GPS, GLONASS, GALILEO, QZSS
-            </div>
-            <div style="     " class="DisplayReslution CommsRadioOne">
-               No
-            </div>
-            <div style="     " class="DisplayReslution CommsNFC">
-               YES
-            </div>
-            <div style="   " class="CommsUsB">
-               2.0, proprietary reversible connector
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="   " class="FeatureSensorOne">
-               Face ID, accelerometer, gyro, proximity, compass, barometer
-               Siri natural language commands and dictation1
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="     " class="batteryTalkTime2 BatteryEmpty">
-               Non-removable Li-Ion 3969 mAh battery (15.04 Wh)
-            </div>
-            <div style="   " class="DBatteryChargingOne battryChargOne">
-               Fast battery charging 18W: 50% in 30 min
-               USB Power Delivery 2.0
-               Qi wireless charging
-            </div>
-            <div style="    " class="batteryTalkTime2 BattTalkTime">
-               Up to 20 h (multimedia)
-            </div>
-            <div style="       " class="BattryMusicPly">
-               Up to 80 h
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="      " class="MiscColorOne">
-               Space Gray, Silver, Gold, Midnight Green (matte colors)
-            </div>
-            <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
-            <div style="     " class="MiscPricStrg">
-               About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-</div>
+
           
           <div id="view2">
              
-
-
-<div class="row">
-<div id="view2zeroAtMobile"  style="width:20%; float:left "></div>
-
-<div id="view2FullAtMobile"  style="width:60%; float:left " >
-
 
 
             <div class="container">
@@ -1852,16 +1230,6 @@ margin-left: 15px;">{{ $product->price }}</font>
              
             </div>
 
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
           </div>
 
 
@@ -1878,7 +1246,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 <div style="float: left; width: 50%; height: 100%; "><input id="srchopnon" type="search" name="srch" style="height: 42px;width: 97%" /></div>
 <div style="float: left; width: 50%; height: 100%; "><a href="#"><p id="srchoption" style="  
   height: 43px;
-  font-size: 1vw;
+  font-size: 1.2vw;
   text-align: center;  background-color: #f9f9f9;   color: #0b0a0a;  padding: 10px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px black solid;">SEARCH OPINIONS </p></a></div>
 
 
@@ -1892,10 +1260,10 @@ margin-left: 15px;">{{ $product->price }}</font>
             </div>
 
               
-              <div id="sortBy" class="col-md-3" style="color: black; font-size: 20px; text-align: right; padding-top: 19px;        " >  Sort By: </div>
+              <div id="sortBy" class="col-md-4" style="color: black; font-size: 20px; text-align: right; padding-top: 19px;        " >  Sort By: </div>
 
 
-              <div class="col-md-3" style="color: black; font-size: 20px ; padding-top: 19px;              " >
+              <div class="col-md-2" style="color: black; font-size: 20px ; padding-top: 19px;              " >
               
               
    
@@ -1937,7 +1305,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                   <div id="setSobercatOnMob" style="height: 100%; width: 20%;  float: left; color: black;    font-size: 2vw;    font-weight: 700;">
                     
                     
-                    <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p class="SoberOnMob" style="width: 100%;  font-weight: 400; font-size: 2vw ">SoberCat </p></div>
+                    <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p style="width: 100%;  font-weight: 400;">SoberCat </p></div>
                     <div style="height: 100%; width: 8%;  float: left;">
                       <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" />
                     
@@ -1945,22 +1313,21 @@ margin-left: 15px;">{{ $product->price }}</font>
                   
                   </div>
                   
-                  <div id="set55atmob" style="height: 100%; width: 45%;  float: left;">
+                  <div id="set55atmob" style="height: 100%; width: 55%;  float: left;">
 
                   </div>
                  
                  
-                  <div id="settimepnMob" style="height: 100%; width: 35%;  float: left;float: left; font-size: 20px;  font-weight: 600;"> 
+                  <div id="settimepnMob" style="height: 100%; width: 25%;  float: left;float: left; font-size: 20px;  font-weight: 600;"> 
                     <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /> 
                     20 Aug 2020 
                     <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
                     0Cp  -->
-                    <div style="height: 100%; width: 10%; float: left;"><img class="changeClockHeihtOnMob"  style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
+                    <div style="height: 100%; width: 10%; float: left;"><img   style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
 
-                    <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;
-    margin-top: 2px;">20 Aug 2020</p></div>
+                    <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.7vw;">20 Aug 2020</p></div>
 
-                    <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
+                    <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img style=""src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
                     <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div>
 
 
@@ -2010,7 +1377,7 @@ margin-left: 15px;">{{ $product->price }}</font>
               <div style="  width: 92% ;height: 100%; background-color: #f7f7f7; float: left;">
               
                 <div style="height: 70%; width: 100%;  color: black !important;">
-                <p id="LoremResp" style="font-size: 1.1vw;  padding: 33px;  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In distinctio aut saepe eius expedita incidunt, quos inventore numquam architecto sapiente officiis! Officia architecto explicabo reiciendis distinctio dolorum nam praesentium alias!
+                <p id="LoremResp" style="font-size: 1.5vw;  padding: 33px;  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In distinctio aut saepe eius expedita incidunt, quos inventore numquam architecto sapiente officiis! Officia architecto explicabo reiciendis distinctio dolorum nam praesentium alias!
                 
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sit, perferendis doloremque maiores quibusdam repellendus quo, deserunt at quae alias laborum cupiditate necessitatibus molestiae similique velit dicta aperiam atque molestias!
                 </p>
@@ -2022,7 +1389,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
                 <div style="height: 30%; width: 100%; background-color: #ffffff; ">
-              <p class="BoldPara" style="    font-size: 1.4vw;
+              <p style="    font-size: 1.7vw;
               font-weight: 500;">
  Turning off truetons should solve, with true tones on the display looks yellowwish...
               </p>
@@ -2051,11 +1418,10 @@ margin-left: 15px;">{{ $product->price }}</font>
               <!-- <p style="width: 100%">
                 Rating 0 <img src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" />  |  <img src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" />        <img src="{{ asset('storage/images/headerimg/ic_warning_black_18dp.png')}}" />Report     
               </p> -->
-              <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;">
-              <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
+              <div style="height: 100%; width: 30%;  float: left;"><p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
            
            
-              <div style="height: 100%; width: 20%;  float: left;"> </div>
+              <div style="height: 100%; width: 30%;  float: left;"> </div>
            
               <div style="height: 100%; width: 40%;  float: left;"> 
               
@@ -2066,8 +1432,8 @@ margin-left: 15px;">{{ $product->price }}</font>
               
               </div>
 
-              <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-              <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <a href="#" style="text-decoration: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></a> </div>
+              <div id="ReplyResp" style="height: 100%; width: 60%; float: left;"> </div>
+              <div id="replybtnMobile" style="height: 100%; width: 10%;  float: left;"> <a href="#" style="text-decoration: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></a> </div>
             
             </div>
           
@@ -2099,7 +1465,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                             <div id="setSobercatOnMob" style="height: 100%; width: 20%;  float: left; color: black;    font-size: 2vw;    font-weight: 700;">
                               
                               
-                              <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p class="SoberOnMob" style="width: 100%;  font-weight: 400; font-size: 2vw ">SoberCat </p></div>
+                              <div style="height: 100%; width: 92%; float: left;     text-align: right;"> <p style="width: 100%;  font-weight: 400;">SoberCat </p></div>
                               <div style="height: 100%; width: 8%;  float: left;">
                                 <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" />
                               
@@ -2107,22 +1473,21 @@ margin-left: 15px;">{{ $product->price }}</font>
                             
                             </div>
                             
-                            <div id="set55atmob" style="height: 100%; width: 45%;  float: left;">
+                            <div id="set55atmob" style="height: 100%; width: 55%;  float: left;">
           
                             </div>
                            
                            
-                            <div id="settimepnMob" style="height: 100%; width: 35%;  float: left;float: left; font-size: 20px;  font-weight: 600;"> 
+                            <div id="settimepnMob" style="height: 100%; width: 25%;  float: left;float: left; font-size: 20px;  font-weight: 600;"> 
                               <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /> 
                               20 Aug 2020 
                               <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
                               0Cp  -->
-                              <div style="height: 100%; width: 10%; float: left;"><img class="changeClockHeihtOnMob"  style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
+                              <div style="height: 100%; width: 10%; float: left;"><img   style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
           
-                              <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;
-    margin-top: 2px;">20 Aug 2020</p></div>
+                              <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.7vw;">20 Aug 2020</p></div>
           
-                              <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
+                              <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img style=""src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
                               <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div>
           
           
@@ -2135,7 +1500,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                           <div style="height: 40%; width: 100%; background-color: #ffffff;text-decoration: underline; ">
                             
                           <div style="width: 10%; height: 100%;float: left; text-align: right; ">
-                            <img  style="width: 35%;  height: 15px;   margin-top: 10px;" src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).png')}}" /> 
+                            <img  style="width: 35%;  height: 21px;   margin-top: 10px;" src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).png')}}" /> 
                           </div>
           
           
@@ -2172,7 +1537,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                         <div style="  width: 92% ;height: 100%; background-color: #f7f7f7; float: left;">
                         
                           <div style="height: 70%; width: 100%;  color: black !important;">
-                          <p id="LoremResp" style="font-size: 1.1vw;  padding: 33px;  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In distinctio aut saepe eius expedita incidunt, quos inventore numquam architecto sapiente officiis! Officia architecto explicabo reiciendis distinctio dolorum nam praesentium alias!
+                          <p id="LoremResp" style="font-size: 1.5vw;  padding: 33px;  ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In distinctio aut saepe eius expedita incidunt, quos inventore numquam architecto sapiente officiis! Officia architecto explicabo reiciendis distinctio dolorum nam praesentium alias!
                           
                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sit, perferendis doloremque maiores quibusdam repellendus quo, deserunt at quae alias laborum cupiditate necessitatibus molestiae similique velit dicta aperiam atque molestias!
                           </p>
@@ -2184,7 +1549,7 @@ margin-left: 15px;">{{ $product->price }}</font>
           
           
                           <div style="height: 30%; width: 100%; background-color: #ffffff; ">
-                        <p class="BoldPara" style="    font-size: 1.4vw;
+                        <p style="    font-size: 1.7vw;
                         font-weight: 500;">
            Turning off truetons should solve, with true tones on the display looks yellowwish...
                         </p>
@@ -2213,10 +1578,10 @@ margin-left: 15px;">{{ $product->price }}</font>
                         <!-- <p style="width: 100%">
                           Rating 0 <img src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" />  |  <img src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" />        <img src="{{ asset('storage/images/headerimg/ic_warning_black_18dp.png')}}" />Report     
                         </p> -->
-                        <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;"><p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
+                        <div style="height: 100%; width: 30%;  float: left;"><p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
                      
                      
-                        <div style="height: 100%; width: 20%;  float: left;"> </div>
+                        <div style="height: 100%; width: 30%;  float: left;"> </div>
                      
                         <div style="height: 100%; width: 40%;  float: left;"> 
                         
@@ -2227,8 +1592,8 @@ margin-left: 15px;">{{ $product->price }}</font>
                         
                         </div>
           
-                        <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-                        <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <a href="#" style="text-decoration: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></a> </div>
+                        <div id="ReplyResp" style="height: 100%; width: 60%; float: left;"> </div>
+                        <div id="replybtnMobile" style="height: 100%; width: 10%;  float: left;"> <a href="#" style="text-decoration: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></a> </div>
                       
                       </div>
                     
@@ -2240,12 +1605,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 
         
 
-</div>
 
-
-
-<div id="view2MobileZero" style="width:20%; float:left " ></div>
-</div>
 
           </div>
 
@@ -2257,30 +1617,15 @@ margin-left: 15px;">{{ $product->price }}</font>
            
 
 
-            <!-- <h5>No Vedio Availabla</h5> -->
-              <div class="row">
-                  <div class="col-md-6 video_area">
-                      
-                       @if($product->video_link !='')
-
-                        {!! $product->video_link !!}
-
-                      @else
-                        <h5>No Vedio Available</h5>
-                      @endif
-
-                  </div>
-
-              </div>
-             
-
+            <h5>No Vedio Availabla</h5>
+                                                          
           </div>
 
 
 
 
           <div id="view4">
-            <h5>No Reviws Available</h5>       
+            <h5>No Reviws Availabla</h5>       
                                                           
           </div>
 
@@ -2319,22 +1664,6 @@ margin-left: 15px;">{{ $product->price }}</font>
 				$('#colorStorage').html(data);	
 			}
 		});
-
-    $.ajax({
-      url:"{{ route('ColorFilterImg') }}",
-      type:"get",
-      data:{id:id,color:color},
-      success:function(data){
-        if(data !='')
-        {
-            var imgSrc="{{ url('storage/admin/images/product/thumbnail/400_') }}";
-            imgSrc += data;
-            document.getElementById("myimage").srcset = imgSrc;
-            document.getElementById("myresult").style.backgroundImage = 'url("'+imgSrc+'")';
-        }
-        
-      }
-    });
 	}
 
 	$(document).ready(function(){

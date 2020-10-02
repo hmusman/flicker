@@ -62,7 +62,7 @@ class ProductController extends Controller
         $filename1 = $time.'_'.md5($filename).'.'.$ext1;
         $img->storeAs('public/admin/images/product', $filename1);
         $img->storeAs('public/admin/images/product/thumbnail', $filename1);
-         $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
+        $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
         Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
         Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/product/thumbnail/700_'.$filename1));
         Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
@@ -666,6 +666,7 @@ class ProductController extends Controller
     }// citySearch
 
 
+
     public function adviceComparison($id)
     {
         $product = Product::where('id',$id)->first();
@@ -823,4 +824,5 @@ class ProductController extends Controller
 
         return view('partials.shop_products_list',compact('products'));
     }
+
 }
