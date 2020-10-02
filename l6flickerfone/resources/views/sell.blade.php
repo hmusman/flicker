@@ -226,6 +226,267 @@
       right: 81px !important;
       font-size: 13px !important;
       right: 91px !important;
+
+    font-size: 10px !important;
+    border-bottom: none !important;
+    
+    bottom: 21px !important;
+
+      
+    border-bottom: none !important;
+ }
+#logoFlickerflone{
+  height: 48px !important;
+    width: 181px !important;
+    margin-left: -17px !important;
+    font-size: 58px;
+   
+
+}
+
+  }
+
+</style>
+<style type="text/css">
+
+  /* ============ only desktop view ============ */
+  @media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+    .navbar .nav-item:hover .nav-link{ color:  rgba(0,0,0,.5) }
+    .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+    .navbar .dropdown-menu.fade-up{ top:180%;  }
+    .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+  } 
+  /* ============ desktop view .end// ============ */
+  
+  
+  </style>
+
+<style>
+
+img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
+  height: 65px !important;
+    /* top: -1px; */
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+
+
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+  margin-left: 21px;
+}
+  
+@media (max-width: 550px){
+
+#NewPhones{
+  padding: 0px 10px 0px 10px !important;
+}
+
+
+}
+
+
+
+
+@media (min-width: 280px) and (max-width: 319px) {
+
+#extlrgwid{
+  width: 103% !important;
+}
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+  top: 128px !important;
+    
+    width: 92% !important;
+}
+
+#slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
+  right: -1px !important;
+}
+
+
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    top: 148px !important;
+    margin-left: 17px !important;
+  }
+
+  input[id="myInput"] {
+    width: 293px !important;
+}
+
+button[id="srchbtnid"]{
+  margin-left: 237px !important;
+}
+}
+
+
+@media (min-width: 360px) and (max-width: 374px) {
+  ul[class="slick-dots"]{
+    margin-top: 9px !important;
+  }
+
+
+  #slickblogimg{
+    width: 283px !important;
+  }
+
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    top: 163px !important;
+    width: 93.6% !important;
+    right: 0px !important;
+  }
+}
+@media (min-width: 375px) and (max-width: 410px) {
+
+div[class="thumb"]{
+  position: relative !important;
+    right: 20px !important;
+}
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+  top: 181px !important;
+    width: 93.5% !important;
+    margin-left: 3px !important;
+}
+
+
+#slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
+  margin-left: 0px !important;
+}
+
+
+
+#slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
+  right: 20px !important;
+}
+
+
+
+}
+@media (min-width: 411px) and (max-width: 449px){
+  div[class="thumb"]{
+    right: 20px !important;
+    position: relative !important;
+  }
+
+
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    width: 95.1% !important;
+    margin-left: 2px !important;
+  }
+
+
+  #slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
+    margin-left: 0px !important;
+  }
+
+  #slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
+    right: 16px !important;
+  }
+
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    top: 199px !important;
+  }
+}
+@media (min-width: 450px) and (max-width: 499px){
+ 
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    top: 220px !important;
+  }
+
+
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    width: 96.1% !important;
+  }
+
+  #extlrgwid{
+    width: 98% !important;
+  }
+
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    width: 94.8% !important;
+  }
+
+}
+
+@media (min-width: 500px) and (max-width: 767px){
+ 
+div[class="slick-slide slick-current slick-active"]{
+  width: 395px !important; 
+}
+
+#slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
+  right: 15px !important
+}
+
+
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+  top: 234px !important;
+}
+div[class="autoplay slick-initialized slick-slider slick-dotted"]{
+  margin-left: -34px !important;
+}
+
+div[class="slick-slide slick-current slick-active"]{
+  width: 425px !important;
+}
+
+
+
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .thumb{
+    width: 107% !important;
+  }
+
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    top: 113px !important;
+    height: 420px !important;
+    width: 84% !important;
+    margin-left: 23px  !important;
+  }
+}
+
+
+
+@media (min-width: 1024px)  and (max-width: 1050px){
+  .thumb{
+    width: 103% !important;
+  }
+
+
+  div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+    top: 114px !important;
+    height: 319px !important;
+    width: 89% !important;
+    margin-left: 23px !important;
+  }
+}
+/* @media (max-width: 411px){
+  ul[class="slick-dots"]{
+    margin-top: 9px !important;
+  }
+
+
+  #slickblogimg {
+    width: 336px !important;
+}
+
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"] {
+   
+    top: 179px !important;
+  
+    width: 93% !important;
+}
+} */
+</style>
+
+
+<style>
+  @media (max-width: 550px){
+
+    #resphrOnmob{
       font-size: 10px !important;
       border-bottom: none !important;
       bottom: 21px !important;
@@ -465,9 +726,10 @@
                <div class="alert alert-warning">{{ Session::get('warningMsg') }}</div>
                @endif
                @if(Session::has('msg'))
-               <div class="alert alert-success">{{ Session::get('msg') }}</div>
-               @endif
-               <form action="{{ route('Sell.Product.store') }}" method="post" enctype="multipart/form-data">
+                <div class="alert alert-success">{{ Session::get('msg') }}</div>
+              @endif
+
+              <form action="" id="ProductAccessory" method="post" enctype="multipart/form-data">
                   @csrf
                   <div class="tab-content">
                      <div class="tab-pane active" id="detail">
@@ -863,18 +1125,55 @@
                                     @enderror
                                  </div>
                               </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="form-group row">
-                                 <div class="col-md-4">
-                                    <p class="radiotextcol">Choose: </p>
-                                 </div>
-                                 <div class="col-md-8">
-                                    <input type="radio" id="male" name="gender" value="male" onclick="showPhonedet();">
-                                    <label for="male">Phone</label>
-                                    <input type="radio" id="female" name="gender" value="female" onclick="hidePhonedet();">
-                                    <label for="female">Accessories</label>
-                                 </div>
+                          </div>
+</div>
+    <div class="col-md-6">
+ <div class="form-group row">
+   <div class="col-md-4">
+     <p class="radiotextcol">Choose: </p>
+
+   </div>
+
+   <div class="col-md-8">
+     
+  <input type="radio" id="phone_check" name="gender" value="male">
+  <label for="male">Phone</label>
+  <input type="radio" id="accessory_check" name="gender" value="female">
+  <label for="female">Accessories</label>
+   </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div id="PhoneDetBox"  class="hide">
+                <div class="form-group row" >
+                         
+
+
+                          <div class="col-md-4">
+
+                              <label for="example-text-input" class="col-form-label">Minor Dent / Scratch?</label>
+                            </div>
+                            
+                              <div class="col-md-8" style="text-align:center" >
+                                   <div>
+                                      <input id="major-on" class="major radioyesNo" name="major" type="radio" value="yes">
+                                    <label for="major-on" class="myLabel ">Yes</label>
+                                    <input id="major-off" class="major radioyesNo" name="major" type="radio" value="no">
+                                    <label for="major-off" class="myLabel">No</label>
+
+                                    </div>
+                                    @error('minor')
+                                      <p class="text-danger mt-3">{{ $message }}</p>
+                                  @enderrorm
                               </div>
                               <div id="PhoneDetBox"  class="hide">
                                  <div class="form-group row" >
@@ -1014,67 +1313,118 @@
                                  <img src="NewZoomerImages/ic_backup_black_48dp.png" />
                                  <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
                               </div>
-                           </div>
-                        </div>
-                        <div class="text-center mt-4 col-md-3" >
-                           <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
-                           <div class="dropzone" id="DropZonIcon3">
-                              <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3">
-                                 <img src="NewZoomerImages/ic_backup_black_48dp.png" />
-                                 <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
+                          </div>
+
+                          <div class="form-group row">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Device Battery Status</label>
+                              <div class="col-md-8" style="text-align:center" >
+                                 <select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
+                                    <option disabled="" selected="">Select Status</option>
+                                    @for($i=5; $i<=10; $i++)
+                                      <option value="{{ $i*10 }}">{{ $i*10 }} %</option>
+                                    @endfor
+
+                                    <option value="others">Others</option>
+                                  </select>
+
+
+
+
+                                  <!-- <input type="text" name="color" id="color" /> -->
+
+
+
+
+                                  <input class="form-control" type="text" value="" placeholder="Enter Other %" id="otherInputField" style='display:none; margin-top:17px '>
+                                  @error('battery')
+                                      <p class="text-danger mt-3">{{ $message }}</p>
+                                  @enderror
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="card">
-                     <div class="card-body row">
-                        <div class="text-center mt-4 col-md-3" id="" >
-                           <input type="file" name="image1" style="display:none;" id="imgInput1" onchange="fileChangeFun(this,$('#DropZonIcon1'),1);"/> 
-                           <div class="dropzone" id="DropZonIcon1">
-                              <div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1">
-                                 <img src="NewZoomerImages/ic_backup_black_48dp.png" />
-                                 <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
-                              </div>
-                           </div>
+
+                    <div class="card-body row">
+
+                      <div class="text-center mt-4 col-md-3" id="" >
+                        <input type="file" name="image1" style="display:none;" id="imgInput1" onchange="fileChangeFun(this,$('#DropZonIcon1'),1);"/> 
+                        <div class="dropzone" id="DropZonIcon1">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(1);" id="imgFullWidthDiv1"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
+                          <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
+                          </div>
                         </div>
-                        <div class="text-center mt-4 col-md-3">
-                           <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
-                           <div class="dropzone" id="DropZonIcon2">
-                              <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2">
-                                 <img src="NewZoomerImages/ic_backup_black_48dp.png" />
-                                 <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
-                              </div>
-                           </div>
+                      </div>
+               
+                      <div class="text-center mt-4 col-md-3">
+                        <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
+                        <div class="dropzone" id="DropZonIcon2">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
+                      </div>
+                  
+                      <div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
+                        <div class="dropzone" id="DropZonIcon3">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                      
                         <div class="text-center mt-4 col-md-3" >
-                           <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
-                           <div class="dropzone" id="DropZonIcon3">
-                              <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3">
-                                 <img src="NewZoomerImages/ic_backup_black_48dp.png" />
-                                 <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
-                              </div>
-                           </div>
+                        <input type="file" name="image4" style="display:none;" id="imgInput4" onchange="fileChangeFun(this,$('#DropZonIcon4'),4);"/> 
+                        <div class="dropzone" id="DropZonIcon4">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(4);" id="imgFullWidthDiv4"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
-                        <div class="text-center mt-4 col-md-3" >
-                           <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
-                           <div class="dropzone" id="DropZonIcon3">
-                              <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3">
-                                 <img src="NewZoomerImages/ic_backup_black_48dp.png" />
-                                 <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card">
-                     <div class="card-body row">
-                        <div class="col-md-12">
-                           <textarea  name="descBox" rows="4" cols="50" style="width:100%; border-color:#dfdfdf " placeholder="">
-                           Please Write Description...
-                           </textarea>
+
+
+             <div class="card">
+                    <div class="card-body row">
+
+                      <div class="text-center mt-4 col-md-3" id="" >
+                        <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
+                        <div class="dropzone" id="DropZonIcon5">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
+                          <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
+                          </div>
                         </div>
-                     </div>
+                      </div>
+               
+                      <div class="text-center mt-4 col-md-3">
+                        <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
+                        <div class="dropzone" id="DropZonIcon6">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                  
+                      <div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image7" style="display:none;" id="imgInput7" onchange="fileChangeFun(this,$('#DropZonIcon7'),7);"/> 
+                        <div class="dropzone" id="DropZonIcon7">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(7);" id="imgFullWidthDiv7"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                      
+                        <div class="text-center mt-4 col-md-3" >
+                        <input type="file" name="image8" style="display:none;" id="imgInput8" onchange="fileChangeFun(this,$('#DropZonIcon8'),8);"/> 
+                        <div class="dropzone" id="DropZonIcon8">
+                          <div style="width:100%; height:100%;" onclick="fullWidthInputCall(8);" id="imgFullWidthDiv8"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+ <div class="card">
+                      <div class="card-body row">
+                         <div class="col-md-12">
+                             <textarea  name="deta" rows="4" cols="50" style="width:100%; border-color:#dfdfdf " placeholder="">
+                         Please Write Description...
+                          </textarea>
+                           </div>
+                      </div>
                   </div>
                   <div class="card">
                      <div class="card-body row">
@@ -1087,13 +1437,37 @@
             </div>
          </div>
       </div>
-      @include('includes.footer')
-   </body>
-   <!-- 
-      <script src="js/jquery-slim.min.js" ></script>
-      <script src="js/popper.min.js" ></script>
-      <script src="js/bootstrap.min.js" ></script> -->
-   <script type="text/javascript">
+
+  </div>
+
+@include('includes.footer')
+
+
+</body>
+
+
+<!-- 
+<script src="js/jquery-slim.min.js" ></script>
+<script src="js/popper.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script> -->
+  
+ <script type="text/javascript">
+
+      $('#phone_check').change(function(){
+          if($('#phone_check').is(":checked"))
+          {
+            document.getElementById('PhoneDetBox').style.display ='block';
+            $('#ProductAccessory').attr('action','Sell/Product');
+          }
+      });
+
+      $('#accessory_check').change(function(){
+          if($('#accessory_check').is(":checked"))
+          {
+            document.getElementById('PhoneDetBox').style.display ="none";
+            $('#ProductAccessory').attr('action','Sell/Accessory');
+          }
+      });
       function filePreview(input,div,num) {
           if (input.files && input.files[0]) {
               var reader = new FileReader();
