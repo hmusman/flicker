@@ -363,7 +363,7 @@ ul[class="dropdown-menu fade-up show"] > li{
     .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
     .navbar .dropdown-menu.fade-up{ top:180%;  }
     .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
-  }	
+  } 
   /* ============ desktop view .end// ============ */
   
   
@@ -805,16 +805,311 @@ margin-top: 90px;">
       border-right: 1px black solid;">
       
         <div class="form-group">
-       
-          <select class="form-control" id="sel1" style="font-weight: bold !important;">
-            <option style="font-weight: bold !important;">All Cities</option>
-            <option>Multan</option>
-            <option>Lahore</option>
-            <option>Quetta</option>
-            <option>Peshawar</option>
-            <option>Sahiwal</option>
-            <option>Chiniot</option>
+          <select class="form-control" id="sell" style="font-weight: bold !important;">  
+              <option selected="" disabled="">Select City</option> 
+              <option class="option" value="Abbottabad">Abbottabad</option>
+              <option class="option" value="Adezai">Adezai</option>
+              <option class="option" value="Ali Bandar">Ali Bandar</option>
+              <option class="option" value="Amir Chah">Amir Chah</option>
+              <option class="option" value="Attock">Attock</option>
+              <option class="option" value="Ayubia">Ayubia</option>
+              <option class="option" value="Bahawalpur">Bahawalpur</option>
+              <option class="option" value="Baden">Baden</option>
+              <option class="option" value="Bagh">Bagh</option>
+              <option class="option" value="Bahawalnagar">Bahawalnagar</option>
+              <option class="option" value="Burewala">Burewala</option>
+              <option class="option" value="Banda Daud Shah">Banda Daud Shah</option>
+              <option class="option" value="Bannu district|Bannu">Bannu</option>
+              <option class="option" value="Batagram">Batagram</option>
+              <option class="option" value="Bazdar">Bazdar</option>
+              <option class="option" value="Bela">Bela</option>
+              <option class="option" value="Bellpat">Bellpat</option>
+              <option class="option" value="Bhag">Bhag</option>
+              <option class="option" value="Bhakkar">Bhakkar</option>
+              <option class="option" value="Bhalwal">Bhalwal</option>
+              <option class="option" value="Bhimber">Bhimber</option>
+              <option class="option" value="Birote">Birote</option>
+              <option class="option" value="Buner">Buner</option>
+              <option class="option" value="Burj">Burj</option>
+              <option class="option" value="Chiniot">Chiniot</option>
+              <option class="option" value="Chachro">Chachro</option>
+              <option class="option" value="Chagai">Chagai</option>
+              <option class="option" value="Chah Sandan">Chah Sandan</option>
+              <option class="option" value="Chailianwala">Chailianwala</option>
+              <option class="option" value="Chakdara">Chakdara</option>
+              <option class="option" value="Chakku">Chakku</option>
+              <option class="option" value="Chakwal">Chakwal</option>
+              <option class="option" value="Chaman">Chaman</option>
+              <option class="option" value="Charsadda">Charsadda</option>
+              <option class="option" value="Chhatr">Chhatr</option>
+              <option class="option" value="Chichawatni">Chichawatni</option>
+              <option class="option" value="Chitral">Chitral</option>
+              <option class="option" value="Dadu">Dadu</option>
+              <option class="option" value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+              <option class="option" value="Dera Ismail Khan">Dera Ismail Khan</option>
+               <option class="option" value="Dalbandin">Dalbandin</option>
+              <option class="option" value="Dargai">Dargai</option>
+              <option class="option" value="Darya Khan">Darya Khan</option>
+              <option class="option" value="Daska">Daska</option>
+              <option class="option" value="Dera Bugti">Dera Bugti</option>
+              <option class="option" value="Dhana Sar">Dhana Sar</option>
+              <option class="option" value="Digri">Digri</option>
+              <option class="option" value="Dina City|Dina">Dina</option>
+              <option class="option" value="Dinga">Dinga</option>
+              <option class="option" value="Diplo, Pakistan|Diplo">Diplo</option>
+              <option class="option" value="Diwana">Diwana</option>
+              <option class="option" value="Dokri">Dokri</option>
+              <option class="option" value="Drosh">Drosh</option>
+              <option class="option" value="Duki">Duki</option>
+              <option class="option" value="Dushi">Dushi</option>
+              <option class="option" value="Duzab">Duzab</option>
+              <option class="option" value="Faisalabad">Faisalabad</option>
+              <option class="option" value="Fateh Jang">Fateh Jang</option>
+              <option class="option" value="Ghotki">Ghotki</option>
+              <option class="option" value="Gwadar">Gwadar</option>
+              <option class="option" value="Gujranwala">Gujranwala</option>
+              <option class="option" value="Gujrat">Gujrat</option>
+              <option class="option" value="Gadra">Gadra</option>
+              <option class="option" value="Gajar">Gajar</option>
+              <option class="option" value="Gandava">Gandava</option>
+              <option class="option" value="Garhi Khairo">Garhi Khairo</option>
+              <option class="option" value="Garruck">Garruck</option>
+              <option class="option" value="Ghakhar Mandi">Ghakhar Mandi</option>
+              <option class="option" value="Ghanian">Ghanian</option>
+              <option class="option" value="Ghauspur">Ghauspur</option>
+              <option class="option" value="Ghazluna">Ghazluna</option>
+              <option class="option" value="Girdan">Girdan</option>
+              <option class="option" value="Gulistan">Gulistan</option>
+              <option class="option" value="Gwash">Gwash</option>
+              <option class="option" value="Hyderabad">Hyderabad</option>
+              <option class="option" value="Hala">Hala</option>
+              <option class="option" value="Haripur">Haripur</option>
+              <option class="option" value="Hab Chauki">Hab Chauki</option>
+              <option class="option" value="Hafizabad">Hafizabad</option>
+              <option class="option" value="Hameedabad">Hameedabad</option>
+              <option class="option" value="Hangu">Hangu</option>
+              <option class="option" value="Harnai">Harnai</option>
+              <option class="option" value="Hasilpur">Hasilpur</option>
+              <option class="option" value="Haveli Lakha">Haveli Lakha</option>
+              <option class="option" value="Hinglaj">Hinglaj</option>
+              <option class="option" value="Hoshab">Hoshab</option>
+              <option class="option" value="Islamabad">Islamabad</option>
+              <option class="option" value="Islamkot">Islamkot</option>
+              <option class="option" value="Ispikan">Ispikan</option>
+              <option class="option" value="Jacobabad">Jacobabad</option>
+              <option class="option" value="Jamshoro">Jamshoro</option>
+              <option class="option" value="Jhang">Jhang</option>
+              <option class="option" value="Jhelum">Jhelum</option>
+              <option class="option" value="Jamesabad">Jamesabad</option>
+              <option class="option" value="Jampur">Jampur</option>
+              <option class="option" value="Janghar">Janghar</option>
+              <option class="option" value="Jati, Jati(Mughalbhin)">Jati</option>
+              <option class="option" value="Jauharabad">Jauharabad</option>
+              <option class="option" value="Jhal">Jhal</option>
+              <option class="option" value="Jhal Jhao">Jhal Jhao</option>
+              <option class="option" value="Jhatpat">Jhatpat</option>
+              <option class="option" value="Jhudo">Jhudo</option>
+              <option class="option" value="Jiwani">Jiwani</option>
+              <option class="option" value="Jungshahi">Jungshahi</option>
+              <option class="option" value="Karachi">Karachi</option>
+              <option class="option" value="Kotri">Kotri</option>
+              <option class="option" value="Kalam">Kalam</option>
+              <option class="option" value="Kalandi">Kalandi</option>
+              <option class="option" value="Kalat">Kalat</option>
+              <option class="option" value="Kamalia">Kamalia</option>
+              <option class="option" value="Kamararod">Kamararod</option>
+              <option class="option" value="Kamber">Kamber</option>
+              <option class="option" value="Kamokey">Kamokey</option>
+              <option class="option" value="Kanak">Kanak</option>
+              <option class="option" value="Kandi">Kandi</option>
+              <option class="option" value="Kandiaro">Kandiaro</option>
+              <option class="option" value="Kanpur">Kanpur</option>
+              <option class="option" value="Kapip">Kapip</option>
+              <option class="option" value="Kappar">Kappar</option>
+              <option class="option" value="Karak City">Karak City</option>
+              <option class="option" value="Karodi">Karodi</option>
+              <option class="option" value="Kashmor">Kashmor</option>
+              <option class="option" value="Kasur">Kasur</option>
+              <option class="option" value="Katuri">Katuri</option>
+              <option class="option" value="Keti Bandar">Keti Bandar</option>
+              <option class="option" value="Khairpur">Khairpur</option>
+              <option class="option" value="Khanaspur">Khanaspur</option>
+              <option class="option" value="Khanewal">Khanewal</option>
+              <option class="option" value="Kharan">Kharan</option>
+              <option class="option" value="kharian">kharian</option>
+              <option class="option" value="Khokhropur">Khokhropur</option>
+              <option class="option" value="Khora">Khora</option>
+              <option class="option" value="Khushab">Khushab</option>
+              <option class="option" value="Khuzdar">Khuzdar</option>
+              <option class="option" value="Kikki">Kikki</option>
+              <option class="option" value="Klupro">Klupro</option>
+              <option class="option" value="Kohan">Kohan</option>
+              <option class="option" value="Kohat">Kohat</option>
+              <option class="option" value="Kohistan">Kohistan</option>
+              <option class="option" value="Kohlu">Kohlu</option>
+              <option class="option" value="Korak">Korak</option>
+              <option class="option" value="Korangi">Korangi</option>
+              <option class="option" value="Kot Sarae">Kot Sarae</option>
+              <option class="option" value="Kotli">Kotli</option>
+              <option class="option" value="Lahore">Lahore</option>
+              <option class="option" value="Larkana">Larkana</option>
+              <option class="option" value="Lahri">Lahri</option>
+              <option class="option" value="Lakki Marwat">Lakki Marwat</option>
+              <option class="option" value="Lasbela">Lasbela</option>
+              <option class="option" value="Latamber">Latamber</option>
+              <option class="option" value="Layyah">Layyah</option>
+              <option class="option" value="Leiah">Leiah</option>
+              <option class="option" value="Liari">Liari</option>
+              <option class="option" value="Lodhran">Lodhran</option>
+              <option class="option" value="Loralai">Loralai</option>
+              <option class="option" value="Lower Dir">Lower Dir</option>
+              <option class="option" value="Shadan Lund">Shadan Lund</option>
+              <option class="option" value="Multan">Multan</option>
+              <option class="option" value="Mandi Bahauddin">Mandi Bahauddin</option>
+              <option class="option" value="Mansehra">Mansehra</option>
+              <option class="option" value="Mian Chanu">Mian Chanu</option>
+              <option class="option" value="Mirpur">Mirpur</option>
+              <option class="option" value="Moro, Pakistan|Moro">Moro</option>
+              <option class="option" value="Mardan">Mardan</option>
+              <option class="option" value="Mach">Mach</option>
+              <option class="option" value="Madyan">Madyan</option>
+              <option class="option" value="Malakand">Malakand</option>
+              <option class="option" value="Mand">Mand</option>
+              <option class="option" value="Manguchar">Manguchar</option>
+              <option class="option" value="Mashki Chah">Mashki Chah</option>
+              <option class="option" value="Maslti">Maslti</option>
+              <option class="option" value="Mastuj">Mastuj</option>
+              <option class="option" value="Mastung">Mastung</option>
+              <option class="option" value="Mathi">Mathi</option>
+              <option class="option" value="Matiari">Matiari</option>
+              <option class="option" value="Mehar">Mehar</option>
+              <option class="option" value="Mekhtar">Mekhtar</option>
+              <option class="option" value="Merui">Merui</option>
+              <option class="option" value="Mianwali">Mianwali</option>
+              <option class="option" value="Mianez">Mianez</option>
+              <option class="option" value="Mirpur Batoro">Mirpur Batoro</option>
+              <option class="option" value="Mirpur Khas">Mirpur Khas</option>
+              <option class="option" value="Mirpur Sakro">Mirpur Sakro</option>
+              <option class="option" value="Mithi">Mithi</option>
+              <option class="option" value="Mongora">Mongora</option>
+              <option class="option" value="Murgha Kibzai">Murgha Kibzai</option>
+              <option class="option" value="Muridke">Muridke</option>
+              <option class="option" value="Musa Khel Bazar">Musa Khel Bazar</option>
+              <option class="option" value="Muzaffar Garh">Muzaffar Garh</option>
+              <option class="option" value="Muzaffarabad">Muzaffarabad</option>
+              <option class="option" value="Nawabshah">Nawabshah</option>
+              <option class="option" value="Nazimabad">Nazimabad</option>
+              <option class="option" value="Nowshera">Nowshera</option>
+              <option class="option" value="Nagar Parkar">Nagar Parkar</option>
+              <option class="option" value="Nagha Kalat">Nagha Kalat</option>
+              <option class="option" value="Nal">Nal</option>
+              <option class="option" value="Naokot">Naokot</option>
+              <option class="option" value="Nasirabad">Nasirabad</option>
+              <option class="option" value="Nauroz Kalat">Nauroz Kalat</option>
+              <option class="option" value="Naushara">Naushara</option>
+              <option class="option" value="Nur Gamma">Nur Gamma</option>
+              <option class="option" value="Nushki">Nushki</option>
+              <option class="option" value="Nuttal">Nuttal</option>
+              <option class="option" value="Okara">Okara</option>
+              <option class="option" value="Ormara">Ormara</option>
+              <option class="option" value="Peshawar">Peshawar</option>
+              <option class="option" value="Panjgur">Panjgur</option>
+              <option class="option" value="Pasni City">Pasni City</option>
+              <option class="option" value="Paharpur">Paharpur</option>
+              <option class="option" value="Palantuk">Palantuk</option>
+              <option class="option" value="Pendoo">Pendoo</option>
+              <option class="option" value="Piharak">Piharak</option>
+              <option class="option" value="Pirmahal">Pirmahal</option>
+              <option class="option" value="Pishin">Pishin</option>
+              <option class="option" value="Plandri">Plandri</option>
+              <option class="option" value="Pokran">Pokran</option>
+              <option class="option" value="Pounch">Pounch</option>
+              <option class="option" value="Quetta">Quetta</option>
+              <option class="option" value="Qambar">Qambar</option>
+              <option class="option" value="Qamruddin Karez">Qamruddin Karez</option>
+              <option class="option" value="Qazi Ahmad">Qazi Ahmad</option>
+              <option class="option" value="Qila Abdullah">Qila Abdullah</option>
+              <option class="option" value="Qila Ladgasht">Qila Ladgasht</option>
+              <option class="option" value="Qila Safed">Qila Safed</option>
+              <option class="option" value="Qila Saifullah">Qila Saifullah</option>
+              <option class="option" value="Rawalpindi">Rawalpindi</option>
+              <option class="option" value="Rabwah">Rabwah</option>
+              <option class="option" value="Rahim Yar Khan">Rahim Yar Khan</option>
+              <option class="option" value="Rajan Pur">Rajan Pur</option>
+              <option class="option" value="Rakhni">Rakhni</option>
+              <option class="option" value="Ranipur">Ranipur</option>
+              <option class="option" value="Ratodero">Ratodero</option>
+              <option class="option" value="Rawalakot">Rawalakot</option>
+              <option class="option" value="Renala Khurd">Renala Khurd</option>
+              <option class="option" value="Robat Thana">Robat Thana</option>
+              <option class="option" value="Rodkhan">Rodkhan</option>
+              <option class="option" value="Rohri">Rohri</option>
+              <option class="option" value="Sialkot">Sialkot</option>
+              <option class="option" value="Sadiqabad">Sadiqabad</option>
+              <option class="option" value="Safdar Abad- (Dhaban Singh)">Safdar Abad</option>
+              <option class="option" value="Sahiwal">Sahiwal</option>
+              <option class="option" value="Saidu Sharif">Saidu Sharif</option>
+              <option class="option" value="Saindak">Saindak</option>
+              <option class="option" value="Sakrand">Sakrand</option>
+              <option class="option" value="Sanjawi">Sanjawi</option>
+              <option class="option" value="Sargodha">Sargodha</option>
+              <option class="option" value="Saruna">Saruna</option>
+              <option class="option" value="Shabaz Kalat">Shabaz Kalat</option>
+              <option class="option" value="Shadadkhot">Shadadkhot</option>
+              <option class="option" value="Shahbandar">Shahbandar</option>
+              <option class="option" value="Shahpur">Shahpur</option>
+              <option class="option" value="Shahpur Chakar">Shahpur Chakar</option>
+              <option class="option" value="Shakargarh">Shakargarh</option>
+              <option class="option" value="Shangla">Shangla</option>
+              <option class="option" value="Sharam Jogizai">Sharam Jogizai</option>
+              <option class="option" value="Sheikhupura">Sheikhupura</option>
+              <option class="option" value="Shikarpur">Shikarpur</option>
+              <option class="option" value="Shingar">Shingar</option>
+              <option class="option" value="Shorap">Shorap</option>
+              <option class="option" value="Sibi">Sibi</option>
+              <option class="option" value="Sohawa">Sohawa</option>
+              <option class="option" value="Sonmiani">Sonmiani</option>
+              <option class="option" value="Sooianwala">Sooianwala</option>
+              <option class="option" value="Spezand">Spezand</option>
+              <option class="option" value="Spintangi">Spintangi</option>
+              <option class="option" value="Sui">Sui</option>
+              <option class="option" value="Sujawal">Sujawal</option>
+              <option class="option" value="Sukkur">Sukkur</option>
+              <option class="option" value="Suntsar">Suntsar</option>
+              <option class="option" value="Surab">Surab</option>
+              <option class="option" value="Swabi">Swabi</option>
+              <option class="option" value="Swat">Swat</option>
+              <option class="option" value="Tando Adam">Tando Adam</option>
+              <option class="option" value="Tando Bago">Tando Bago</option>
+              <option class="option" value="Tangi">Tangi</option>
+              <option class="option" value="Tank City">Tank City</option>
+              <option class="option" value="Tar Ahamd Rind">Tar Ahamd Rind</option>
+              <option class="option" value="Thalo">Thalo</option>
+              <option class="option" value="Thatta">Thatta</option>
+              <option class="option" value="Toba Tek Singh">Toba Tek Singh</option>
+              <option class="option" value="Tordher">Tordher</option>
+              <option class="option" value="Tujal">Tujal</option>
+              <option class="option" value="Tump">Tump</option>
+              <option class="option" value="Turbat">Turbat</option>
+              <option class="option" value="Umarao">Umarao</option>
+              <option class="option" value="Umarkot">Umarkot</option>
+              <option class="option" value="Upper Dir">Upper Dir</option>
+              <option class="option" value="Uthal">Uthal</option>
+              <option class="option" value="Vehari">Vehari</option>
+              <option class="option" value="Veirwaro">Veirwaro</option>
+              <option class="option" value="Vitakri">Vitakri</option>
+              <option class="option" value="Wadh">Wadh</option>
+              <option class="option" value="Wah Cantt">Wah Cantt</option>
+              <option class="option" value="Warah">Warah</option>
+              <option class="option" value="Washap">Washap</option>
+              <option class="option" value="Wasjuk">Wasjuk</option>
+              <option class="option" value="Wazirabad">Wazirabad</option>
+              <option class="option" value="Yakmach">Yakmach</option>
+              <option class="option" value="Zhob">Zhob</option>
+              <option class="option" value="Other">Other</option>                                       
           </select>
+
+
         </div>
       
       </div>
@@ -822,17 +1117,19 @@ margin-top: 90px;">
       
         <div class="form-group">
        
-          <select class="form-control" id="sel1" style="font-weight: bold !important;">
-            <option style="font-weight: bold !important;">Price Range</option>
-            <option>Less than 20,000</option>
-            <option>Between 20,000 and 30, 000</option>
-            <option>More than 30,000</option>
+          <select class="form-control" id="upperPrice" style="font-weight: bold !important;">
+             <option selected=""  disabled="" style="font-weight: bold !important;">Select Price</option>
+              <option value="Less than 20,000">Less than 20,000 PKR</option>
+              <option value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
+              <option value="Between 30,000 and 60,000">Between 30,000 and 60,000 PKR</option>
+              <option value="Between 60,000 and 1,00000">Between 60,000 and 1,00000 PKR</option>
+              <option value="More Than 1,00000">More Than 1,00000 PKR</option>
            
           </select>
         </div>
       
       </div>
-      <div  style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;" src="{{ asset('storage/images/ic_search_white_18dp.png')}}"></div>
+      <div id="upperSearch" style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;" src="{{ asset('storage/images/ic_search_white_18dp.png')}}"></div>
     
     
     </div>
@@ -866,152 +1163,27 @@ margin-top: 90px;">
 
   <div class="toggle-boxqasim">
     <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
-      margin-left: 6px; " class="toggleqasim headerqasim">MOBILES CONDITION
+      margin-left: 6px; " class="toggleqasim headerqasim">Make
     </h6>
   
     <div class="contentqasim">
   
       <ul>
-        <div style="width: 87%; height: 30px;  ">
-          <div style="width: 80%; float: left;">
-  
-            <label for="Apple" style="color: #101115;"> Apple</label>
-          </div>
-          <div style="width: 20%; float: left;">
-            <input type="checkbox" id="Apple" name="vehicle1" value="Bike">
-          </div>
-  
-  
-        </div>
 
-
-
-
-
-
-
-
-
-          <div style="width: 87%; height: 30px;  ">
-            <div style="width: 80%; float: left;">
-          
-              <label for="iPhone" style="color: #101115;"> iPhone 11</label>
-            </div>
-            <div style="width: 20%; float: left;">
-              <input type="checkbox" id="iPhone" name="vehicle1" value="Bike">
-            </div>
-          
-          
-          </div>
-
-
-
-
-
-
-
-
-
-
-
+        @if($brands->count()>0)
+          @foreach($brands as $brand)
             <div style="width: 87%; height: 30px;  ">
               <div style="width: 80%; float: left;">
-            
-                <label for="Oppo" style="color: #101115;"> Oppo</label>
+      
+                <label for="{{ $brand->id }}" style="color: #101115;">{{ ucwords($brand->name) }}</label>
               </div>
               <div style="width: 20%; float: left;">
-                <input type="checkbox" id="Oppo" name="vehicle1" value="Bike">
+                <input type="checkbox" id="{{ $brand->id }}" class="brands_check" name="brands[]" value="{{ $brand->id }}">
               </div>
-            
-            
             </div>
+          @endforeach
 
-
-
-
-
-
-
-
-
-              <div style="width: 87%; height: 30px;  ">
-                <div style="width: 80%; float: left;">
-              
-                  <label for="Huawei" style="color: #101115;"> Huawei</label>
-                </div>
-                <div style="width: 20%; float: left;">
-                  <input type="checkbox" id="Huawei" name="vehicle1" value="Bike">
-                </div>
-              
-              
-              </div>
-
-
-
-
-
-
-                <div style="width: 87%; height: 30px;  ">
-                  <div style="width: 80%; float: left;">
-                
-                    <label for="Infinix" style="color: #101115;"> Infinix</label>
-                  </div>
-                  <div style="width: 20%; float: left;">
-                    <input type="checkbox" id="Infinix" name="vehicle1" value="Bike">
-                  </div>
-                
-                
-                </div>
-  
-  
-  
-  
-  
-  
-        <div style="width: 87%; height: 30px;  ">
-          <div style="width: 80%; float: left;">
-  
-            <label for="Good" style="color: #101115;"> Good</label>
-          </div>
-          <div style="width: 20%; float: left;">
-            <input type="checkbox" id="Good" name="vehicle1" value="Bike">
-          </div>
-  
-  
-        </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-        <div style="width: 87%; height: 30px;  ">
-          <div style="width: 80%; float: left;">
-  
-            <label for="Fair" style="color: #101115;"> Fair</label>
-          </div>
-          <div style="width: 20%; float: left;">
-            <input type="checkbox" id="Fair" name="vehicle1" value="Bike">
-          </div>
-  
-  
-        </div>
-  
-  
-  
-  
-  
-  
+        @endif
   
       </ul>
     </div>
@@ -1019,10 +1191,10 @@ margin-top: 90px;">
 
 
 
-  <div class="toggle-boxqasim">
-<h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
-    margin-left: 6px; " class="toggleqasim headerqasim">SEARCH FILTERS
-</h6>
+  <!-- <div class="toggle-boxqasim">
+    <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
+        margin-left: 6px; " class="toggleqasim headerqasim">SEARCH FILTERS
+    </h6>
     <div class="contentqasim"><strong>Product Features:</strong><br />
       <ul>
         <li style="color: black; display: block;">
@@ -1036,7 +1208,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
        
       </ul>
     </div>
-  </div>
+  </div> -->
 
 
 
@@ -1057,16 +1229,13 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 <div style="width: 100%; ">
 <div style="width: 45%; float: left; ">
-<input type="text" placeholder="From" />
+<input type="number" placeholder="From" id="from_price" />
 </div>
 <div style="width: 45%; float: left; ">
-<input type="text" placeholder="To" style="width: 100%;" /></div>
+<input type="number" placeholder="To" id="to_price" style="width: 100%;" /></div>
 <div style="width: 10%;float: left;  ">
 
-<p style="    background-color: #0071e3;
-    color: white;
-    padding: 3px 3px 3px 5px;
-    width: 117%;">Go</p>
+<button type="button" style="background-color: #0071e3;color: white;padding: 3px 3px 3px 5px;width: 117%;border: none;outline: none;" id="go_price">Go</button>
 </div>
 </div>
 
@@ -1090,108 +1259,25 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
   <div class="contentqasim">
   
 <ul>
-    <div style="width: 87%; height: 30px;  ">
-      <div style="width: 80%; float: left;">
-      <input type="checkbox" id="lahore" name="vehicle1" value="Bike">
-      <label for="lahore" style="color: #101115;"> Lahore</label>
-      </div>
-        <div style="width: 20%; float: left;">
-        <p style="    background-color: #fafafa;
-    padding: 0px 1px 0px 1px;
-    border-radius: 12px;
-    text-align: center;
-    color: black;
-    border: 1px #d9d3d3 solid;">2850</p>
+
+    @if(count($cities)>0)
+      @foreach($cities as $city)
+        <div style="width: 87%; height: 30px;  ">
+          <div style="width: 80%; float: left;">
+          <input type="checkbox" id="{{ $city->city }}" value="{{ $city->city }}" name="cities[]" class="city_check" >
+          <label for="{{ $city->city }}"  style="color: #101115;">{{ ucwords($city->city)}}</label>
+          </div>
+            <div style="width: 20%; float: left;">
+            <p style="    background-color: #fafafa;
+        padding: 0px 1px 0px 1px;
+        border-radius: 12px;
+        text-align: center;
+        color: black;
+        border: 1px #d9d3d3 solid;">{{$city->total}}</p>
+            </div>
         </div>
-    
-    
-    
-    
-    
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  <div style="width: 87%;height: 30px;">
-    <div style="width: 80%; float: left;">
-      <input type="checkbox" id="Islamabad" name="vehicle1" value="Bike">
-      <label for="Islamabad" style="color: #101115;"> Islamabad</label>
-    </div>
-    <div style="width: 20%; float: left;">
-      <p style="    background-color: #fafafa;
-      padding: 0px 1px 0px 1px;
-      border-radius: 12px;
-      text-align: center;
-      color: black;
-      border: 1px #d9d3d3 solid;">2850</p>
-    </div>
-  
-  
-  
-  
-  
-  </div>
-
-
-
-
-
-
-<div style="width: 87%;height: 30px;">
-  <div style="width: 80%; float: left;">
-    <input type="checkbox" id="Peshawar" name="vehicle1" value="Bike">
-    <label for="Peshawar" style="color: #101115;"> Peshawar</label>
-  </div>
-  <div style="width: 20%; float: left;">
-    <p style="    background-color: #fafafa;
-      padding: 0px 1px 0px 1px;
-      border-radius: 12px;
-      text-align: center;
-      color: black;
-      border: 1px #d9d3d3 solid;">2850</p>
-  </div>
-
-
-
-
-
-</div>
-
-
-
-
-
-<div style="width: 87%;height: 30px;margin-bottom: 45px;">
-  <div style="width: 80%; float: left;">
-    <input type="checkbox" id="Quetta" name="vehicle1" value="Bike">
-    <label for="Quetta" style="color: #101115;"> Quetta</label>
-  </div>
-  <div style="width: 20%; float: left;">
-    <p style="    background-color: #fafafa;
-      padding: 0px 1px 0px 1px;
-      border-radius: 12px;
-      text-align: center;
-      color: black;
-      border: 1px #d9d3d3 solid;">1500</p>
-  </div>
-
-
-</div>
-
-
-
-
-
-
+      @endforeach
+    @endif
 
 <div id="showmorecity" style="display: none;">
 
@@ -1273,7 +1359,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 </div>
-<a href="javascript:void(0)" style="color: blue;" onclick="document.getElementById('showmorecity').style.display= 'block'">more choices</a>
+<!-- <a href="javascript:void(0)" style="color: blue;" onclick="document.getElementById('showmorecity').style.display= 'block'">more choices</a> -->
  
 
 
@@ -1296,7 +1382,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
           <label for="Excellent" style="color: #101115;"> Excellent</label>
         </div>
         <div style="width: 20%; float: left;">
-        <input type="checkbox" id="Excellent" name="vehicle1" value="Bike">
+        <input type="checkbox" id="Excellent" name="statuses[]" class="device_status_check" value="Excellent">
         </div>
       </div>
 
@@ -1305,7 +1391,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         <label for="Good1" style="color: #101115;"> Good</label>
       </div>
       <div style="width: 20%; float: left;">
-        <input type="checkbox" id="Good1" name="vehicle1" value="Bike">
+        <input type="checkbox" id="Good1" name="statuses[]" class="device_status_check" value="Good">
       </div>
     </div>
 
@@ -1315,14 +1401,11 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         <label for="Fairyy" style="color: #101115;"> Fair</label>
       </div>
       <div style="width: 20%; float: left;">
-        <input type="checkbox" id="Fairyy" name="vehicle1" value="Bike">
+        <input type="checkbox" id="Fairyy" name="statuses[]" class="device_status_check" value="Fair">
       </div>
     
     
     </div>
-
-
-
 
 
 
@@ -1368,120 +1451,8 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 <p style="  color: #898889;;">1-48 of 126,978 Results</p>
-
-
-      <div style="width: 100%;" id="sellProducts">
-          @if($products->count()>0)
-            @foreach($products as $row)
-                @php $img1 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img1 @endphp
-                @php $img2 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img2 @endphp
-                @php $img3 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img3 @endphp
-                <div style="width: 100%; margin-top: 30px; float: left;">
-                    <div style="width: 30%; float: left;">
-                
-                        <div class="autoplayFeatures">
-                            <img src="{{ asset($img1) }}" alt="Trulli" >
-                            <img src="{{ asset($img2) }}" alt="Trulli">
-                            <img src="{{ asset($img3) }}" alt="Trulli">
-                        </div>
-                      
-                      </div>
-                      <div style="width: 70%; float: left;border-bottom: 1px #d8d5d5 solid;" >
-                      
-                      
-                        <p style="color: black">{{ ucwords($row->model) }}</p>
-                        <!-- <p style="color: #969494;">&#x2713;Collisimo&#x2713;2-4 Jours&#x2713;Guarntie 2 ans&#x2713; FR Plug</p> -->
-                      
-
-
-
-                        <div class="row">
-                          <div class="col-md-6"><font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">{{ $row->device_status }}</font></div>
-                          <div class="col-md-6"></div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-md-6">
-                         <p style="    position: relative;
-                            top: 43px;
-                            left: 25px;
-                            font-weight: 600; color: blue;
-                        ">  PKR</p>
-                        <p style="    color: blue;
-                            font-size: 48px;
-                            padding: 20px;
-                            font-weight: 700;"> {{ $row->price }}</p>
-                          </div>
-
-
-                          <div class="col-md-6">
-
-                            <div style="width: 50%; float: left; color: black;">
-                            <p>City:</p>
-                                <p>PTA STATUS:</p>
-                                    <p>Date Posted:</p>
-                            </div>
-                            <div style="width: 50%; float: left; color: black;">
-                            
-                              <p>{{ ucfirst($row->city) }}</p>
-                              <p>{{ ucfirst($row->pta) }}</p>
-                              <p>{{ date('d',strtotime($row->created_at)) }} {{ date('M',strtotime($row->created_at)) }} , {{ date('Y',strtotime($row->created_at)) }}</p>
-                            
-                            </div>
-                          </div>
-                        </div>
-
-                        <p id="myBtn" style="    background-color: blue;
-                        width: 180px;
-                        padding: 9px;
-                        text-align: center;
-                        font-weight: 700;
-                        font-size: larger;">Contact</p>
-
-
-
-
-
-
-
-
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-       <h2>Modal Header</h2>
-      <span class="close">&times;</span>
-     
-    </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      </div>
-
-                </div>
-            @endforeach
-          @endif
+      <div style="width: 100%;" class="row" id="sellProducts">
+         @include('partials.sell_products_list',$products)e
       </div>
     </div>
 </div>
@@ -1502,29 +1473,732 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 <script>
-  function myFunction() {
-      shoediv();
+
+  var options = {
+            slidesToShow: 1,
+           slidesToScroll: 1,
+            autoplay: true,
+           autoplaySpeed: 3000,
+
+
+           dots: true,
+           responsive: [
+               {
+                 breakpoint: 500,
+                 settings: {
+                 slidesToShow: 1,
+                 slidesToScroll: 1,
+                 }
+               }
+             ]
+        };
   
-      var input, filter, ul, li, a, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myUL");
-      li = ul.getElementsByTagName("li");
-      for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = "";
-          } else {
-              li[i].style.display = "none";
-          }
-      }
   
-      
+
+  function FetchBrandProducts(page,brands,options)
+  {
+    $.ajax({
+        url:"BrandsSellProducts?page="+page,
+        type:"get",
+        data:{brands:brands},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
   }
-  </script>
+
+  function FetchPriceProducts(page,from,to,options)
+  {
+    $.ajax({
+        url:"PriceSellProducts?page="+page,
+        type:"get",
+        data:{from:from,to:to},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchCityProducts(page,cities,options)
+  {
+    $.ajax({
+        url:"CitySellProducts?page="+page,
+        type:"get",
+        data:{cities:cities},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchStatusProducts(page,statuses,options)
+  {
+    $.ajax({
+        url:"StatusSellProducts?page="+page,
+        type:"get",
+        data:{statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchBrandsPriceCityStatusProducts(page,brands,from,to,cities,statuses,options)
+  {
+    $.ajax({
+        url:"BrandsPriceCityStatusSellProducts?page="+page,
+        type:"get",
+        data:{brands:brands,from:from,to:to,cities:cities,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchBrandsPriceStatusProducts(page,brands,from,to,statuses,options)
+  {
+    $.ajax({
+        url:"BrandsPriceStatusSellProducts?page="+page,
+        type:"get",
+        data:{brands:brands,from:from,to:to,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchBrandsCityStatusProducts(page,brands,cities,statuses,options)
+  {
+    $.ajax({
+        url:"BrandsCityStatusSellProducts?page="+page,
+        type:"get",
+        data:{brands:brands,from:from,to:to,cities:cities,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchBrandsPriceCityProducts(page,brands,from,to,cities,options)
+  {
+    $.ajax({
+        url:"BrandsPriceCitySellProducts?page="+page,
+        type:"get",
+        data:{brands:brands,from:from,to:to,cities:cities},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchCityStatusProducts(page,cities,statuses,options)
+  {
+    $.ajax({
+        url:"CityStatusSellProducts?page="+page,
+        type:"get",
+        data:{cities:cities,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchPriceCityProducts(page,from,to,cities,options)
+  {
+    $.ajax({
+        url:"PriceCitySellProducts?page="+page,
+        type:"get",
+        data:{from:from,to:to,cities:cities},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchBrandsCityProducts(page,brands,cities,options)
+  {
+    $.ajax({
+        url:"BrandsCitySellProducts?page="+page,
+        type:"get",
+        data:{brands:brands,cities:cities},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchBrandsStatusProducts(page,brands,statuses,options)
+  {
+    $.ajax({
+        url:"BrandsStatusSellProducts?page="+page,
+        type:"get",
+        data:{brands:brands,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchBrandsCityStatusProducts(page,brands,cities,statuses,options)
+  {
+    $.ajax({
+        url:"BrandsCityStatusSellProducts?page="+page,
+        type:"get",
+        data:{brands:brands,cities:cities,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+
+
+  function FetchPriceCityStatusProducts(page,from,to,cities,statuses,options)
+  {
+    $.ajax({
+        url:"PriceCityStatusSellProducts?page="+page,
+        type:"get",
+        data:{from:from,to:to,cities:cities,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchPriceStatusProducts(page,from,to,statuses,options)
+  {
+    $.ajax({
+        url:"PriceStatusSellProducts?page="+page,
+        type:"get",
+        data:{from:from,to:to,statuses:statuses},
+        success:function(data){
+          setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+          $('#sellProducts').html(data);
+          
+        }
+    });
+  }
+
+  function FetchData(page,options)
+  {
+    $.ajax({
+     url:"BuyUsedMobilePhonesData?page="+page,
+     type:"get",
+     success:function(data)
+     {
+        setTimeout(function () {
+            $(".autoplayFeatures").not('.slick-initialized').slick(options)
+        },0);
+        $('#sellProducts').html(data);
+     }
+    });
+  }
+
+  function FetchBrandsPriceProducts(page,brands,from,to,options)
+  {
+
+    $.ajax({
+      url:"BrandsPriceSellProducts?page="+page,
+      type:"get",
+      data:{brands:brands,from:from,to:to},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperCitySellProducts(page,city,options)
+  {
+
+    $.ajax({
+      url:"UpperCitySellProducts?page="+page,
+      type:"get",
+      data:{city:city},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperPriceSellProducts(page,price,options)
+  {
+
+    $.ajax({
+      url:"UpperPriceSellProducts?page="+page,
+      type:"get",
+      data:{price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperCityPriceSellProducts(page,city,price,options)
+  {
+
+    $.ajax({
+      url:"UpperCityPriceSellProducts?page="+page,
+      type:"get",
+      data:{city:city,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  $('#upperSearch').click(function(){
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      var val = $('#sell').children('option:selected').val();
+      var sellPrice = $('#upperPrice').children('option:selected').val();
+      if(sellPrice=='Select Price' && val!='Select City')
+      {
+        FetchUpperCitySellProducts(0,val,options);
+      }
+      else if(sellPrice!='Select Price' && val=='Select City')
+      {
+        FetchUpperPriceSellProducts(0,sellPrice,options);
+      }
+      else if(sellPrice!='Select Price' && val!='Select City')
+      {
+        FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
+      }
+  });
+
+  $(document).keypress(function (e){
+   var key = e.which;
+   if(key == 13){ $('#upperSearch').click(); }
+  }); 
+
+  // $('#sell').change(function(){
+  //   $(".brands_check"). prop("checked", false);
+  //   $(".device_status_check"). prop("checked", false);
+  //   $(".city_check"). prop("checked", false);
+  //   $(".brands_check"). prop("checked", false);
+  //   $('#from_price').val('');
+  //   $('#to_price').val('');
+  //   var val = $(this).children('option:selected').val();
+  //   var sellPrice = $('#upperPrice').children('option:selected').val();
+  //   if(sellPrice=='Select Price' && val!='Select City')
+  //   {
+  //     FetchUpperCitySellProducts(0,val,options);
+  //   }
+  //   else if(sellPrice!='Select Price' && val!='Select City')
+  //   {
+  //     FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
+  //   }
+  // });
+
+  // $('#upperPrice').change(function(){
+  //   $(".brands_check").prop("checked", false);
+  //   $(".device_status_check"). prop("checked", false);
+  //   $(".city_check"). prop("checked", false);
+  //   $(".brands_check"). prop("checked", false);
+  //   $('#from_price').val('');
+  //   $('#to_price').val('');
+  //   var sellPrice = $(this).children('option:selected').val();
+  //   var val = $('#sell').children('option:selected').val();
+  //   if(sellPrice!='Select Price' && val=='Select City')
+  //   {
+  //     FetchUpperPriceSellProducts(0,sellPrice,options);
+  //   }
+  //   else if(sellPrice!='Select Price' && val!='Select City')
+  //   {
+  //     FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
+  //   }
+  // });
+
+  $('.brands_check').change(function(){
+      var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
+      var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
+      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
+      var from = $('#from_price').val();
+      var to = $('#to_price').val();
+      $("#sell").val("Select City");
+      $("#upperPrice").val("Select Price");
+      if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandProducts(0,brands,options);
+      }
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceProducts(0,brands,from,to,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsCityProducts(0,brands,cities,options);
+      }
+
+       else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsStatusProducts(0,brands,statuses,options);
+      }
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceCityProducts(0,brands,from,to,cities,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+       {
+        FetchBrandsCityStatusProducts(0,brands,cities,statuses,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchBrandsPriceStatusProducts(0,brands,from,to,statuses,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
+      } 
+
+  });
+
+  $('.city_check').change(function(){
+      var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
+      var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
+      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
+      var from = $('#from_price').val();
+      var to = $('#to_price').val();
+      $("#sell").val("Select City");
+      $("#upperPrice").val("Select Price");
+      if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+          var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
+          FetchCityProducts(0,cities,options);
+      }
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsCityProducts(0,brands,cities,options);
+      }
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceCityProducts(0,brands,from,to,cities,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+       {
+        FetchBrandsCityStatusProducts(0,brands,cities,statuses,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+       {
+        FetchCityStatusProducts(0,cities,statuses,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchPriceCityProducts(0,from,to,cities,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchPriceCityStatusProducts(0,from,to,cities,statuses,options);
+      } 
+
+  });
+
+   $('.device_status_check').change(function(){
+      var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
+      var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
+      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
+      var from = $('#from_price').val();
+      var to = $('#to_price').val();
+      $("#sell").val("Select City");
+      $("#upperPrice").val("Select Price");
+      if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchStatusProducts(0,statuses,options);
+      } 
+
+       else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+       {
+        FetchCityStatusProducts(0,cities,statuses,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsStatusProducts(0,brands,statuses,options);
+      }
+
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchBrandsPriceStatusProducts(0,brands,from,to,statuses,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchPriceStatusProducts(0,from,to,statuses,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsCityStatusProducts(0,brands,cities,statuses,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchPriceCityStatusProducts(page,from,to,cities,statuses,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
+      } 
+
+  });
+
+  $('#go_price').click(function(){
+      var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
+      var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
+      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
+      var from = $('#from_price').val();
+      var to = $('#to_price').val();
+      $("#sell").val("Select City");
+      $("#upperPrice").val("Select Price");
+
+      if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchPriceProducts(0,from,to,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchBrandsPriceStatusProducts(0,brands,from,to,statuses,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchPriceStatusProducts(0,from,to,statuses,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchPriceCityProducts(0,from,to,cities,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceProducts(0,brands,from,to,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchPriceCityStatusProducts(0,from,to,cities,statuses,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceCityProducts(0,brands,from,to,cities,options);
+      }
+
+  });
+
+  $(document).on('click', '.pagination a', function(event){
+      event.preventDefault();
+      var page = $(this).attr('href').split('page=')[1];
+      var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
+      var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
+      var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
+      var city = $('#sell').children('option:selected').val()
+      var price = $('#upperPrice').children('option:selected').val()
+      var from = $('#from_price').val();
+      var to = $('#to_price').val();
+
+      if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandProducts(page,brands,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+          var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
+          FetchCityProducts(page,cities,options);
+      }
+
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceProducts(page,brands,from,to,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsCityProducts(page,brands,cities,options);
+      }
+
+       else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsStatusProducts(page,brands,statuses,options);
+      }
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchBrandsPriceCityProducts(page,brands,from,to,cities,options);
+      }
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchBrandsPriceCityStatusProducts(page,brands,from,to,cities,statuses,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+       {
+        FetchCityStatusProducts(page,cities,statuses,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchBrandsPriceStatusProducts(page,brands,from,to,statuses,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchPriceCityProducts(page,from,to,cities,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchStatusProducts(page,statuses,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchPriceStatusProducts(page,from,to,statuses,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+      {
+        FetchPriceProducts(page,from,to,options);
+      } 
+
+      else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchBrandsCityStatusProducts(page,brands,cities,statuses,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
+      {
+        FetchUpperCitySellProducts(page,city,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
+       {
+        FetchPriceCityStatusProducts(page,from,to,cities,statuses,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
+      {
+        FetchUpperCityPriceSellProducts(page,city,price,options);
+      } 
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
+      {
+        FetchUpperPriceSellProducts(page,price,options);
+      } 
+
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
+      {
+        FetchData(page)
+      } 
+  });
+
+</script>
   
-  
+
   <script>
   (function ($) {
 
@@ -1542,131 +2216,39 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
   })(jQuery);
 
-
-</script>
-  
-  
-  
-  
-  
-  
-  
-  
-  <script>
-      function shoediv(){
-         
-          document.getElementById('myUL').style.display = 'block';
-      }
-  
-  
-  
-      function hideagain(){
-          document.getElementById('myUL').style.display = 'none';
-      }
-  </script>
-  
-  
-  
-  
-<script>
-
-
-
-
-
-
-
-$(document).ready(function(){
-       $('.autoplayFeatures').slick({
-         slidesToShow: 1,
-         slidesToScroll: 1,
-          autoplay: true,
-         autoplaySpeed: 3000,
-
-
-         dots: true,
-         responsive: [
-             {
-               breakpoint: 500,
-               settings: {
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               }
-             }
-           ]  
-         // variableWidth: true
-        });
-});
-
-
-
-
-
-$(document).ready(function(){
-        $('.autoplay').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  // autoplay: true,
-  autoplaySpeed: 3000,
-
-
-  dots: true,
  
-  // variableWidth: true
-});
-});
-
-
-
-
-
-
-
-
-
-
-
+  
 </script>
 
-  
+
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
         
 <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js') }}"></script>
-  
-<script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>
- 
 
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-
-
-<!-- <script  src="js/jquery-2.1.3.min.js"></script> -->
-
+<script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>>
 <script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+      $('.autoplayFeatures').slick({
+           slidesToShow: 1,
+           slidesToScroll: 1,
+            autoplay: true,
+           autoplaySpeed: 3000,
+
+
+           dots: true,
+           responsive: [
+               {
+                 breakpoint: 500,
+                 settings: {
+                 slidesToShow: 1,
+                 slidesToScroll: 1,
+                 }
+               }
+             ]  
+           // variableWidth: true
+          });
+   });
+</script>
 </html>

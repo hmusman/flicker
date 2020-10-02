@@ -1,5 +1,5 @@
  @foreach($products as $row)
-    @php $img = 'storage/'.$row->image @endphp
+     @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$row->image @endphp
     <div id="changecolorseletidOnMobile" style="width: 33%; height: 100%; background-color: White;  float: left;  ">
 
       <figure style="padding-top: 8px;">

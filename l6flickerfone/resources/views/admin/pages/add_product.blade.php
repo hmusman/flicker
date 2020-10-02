@@ -417,17 +417,18 @@
                                                     <div class="col-md-10">
                                                         <div class="row">
                                                             <div class="col-md-3"><label>Color</label></div>
-                                                            <div class="col-md-3"><label>Storage</label></div>
-                                                            <div class="col-md-3"><label>Price</label></div>
+                                                            <div class="col-md-2"><label>Storage</label></div>
+                                                            <div class="col-md-2"><label>Price</label></div>
                                                         </div>
                                                        
                                                     
                                                         <div class="color_variation">
                                                             <div class="row color0">
                                                                 <div class="col-md-3"><input type="text" class="form-control"  name="variation_color[]"></div>
-                                                                <div class="col-md-3"><input type="text" class="form-control" name="variation_storage[0][]"></div>
-                                                                <div class="col-md-3"><input type="text" class="form-control" name="variation_price[0][]"></div>
+                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_storage[0][]"></div>
+                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_price[0][]"></div>
                                                                 <div class="col-md-1"><button type="button" class="btn-primary btn add_more_storage_price"  onclick="add_more_storage_price(0)">More</button></div>
+                                                                <div class="col-md-4"><input type="file" name="variation_image[]" /></div>
                                                             </div>
                                                         </div>
 
@@ -479,7 +480,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
+                                               <!--  <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent Deduction</label>
                                                     <div class="col-md-8">
                                                         <input class="form-control" type="number" value="{{ old('minor_dent') }}" name="minor_dent" placeholder="Enter Minor Dent Deduction" id="example-text-input">
@@ -539,7 +540,7 @@
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                             </div> <!-- detail -->
 
@@ -773,7 +774,7 @@
 
         var start = 1;       
         $('#color_add_more').click(function(){
-            var html = '<div class="row color'+start+'" style="margin-top: 10px;"><div class="col-md-3"><input type="text" class="form-control" name="variation_color[]"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_storage['+start+'][]"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_price['+start+'][]"></div> <div class="col-md-1"><button type="button" class="add_more_storage_price btn btn-primary" onclick="add_more_storage_price('+start+')" >More</button></div> <button type="button" class="myRemove btn btn-danger"  style="border:none; margin-left:10px;" onclick="myRemove(this);"> x </button> </div>';
+            var html = '<div class="row color'+start+'" style="margin-top: 10px;"><div class="col-md-3"><input type="text" class="form-control" name="variation_color[]"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_storage['+start+'][]"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_price['+start+'][]"></div> <div class="col-md-1"><button type="button" class="add_more_storage_price btn btn-primary" onclick="add_more_storage_price('+start+')" >More</button></div> <button type="button" class="myRemove btn btn-danger"  style="border:none; margin-left:10px;" onclick="myRemove(this);"> x </button><div class="col-md-3"><input type="file" name="variation_image[]" /></div> </div>';
             $('.color_variation').append(html);
             start++;
        });
@@ -793,7 +794,7 @@
 
     function add_more_storage_price(id)
     {
-        var html = '<div class="row" style="margin-top: 10px;"><div class="col-md-3"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_storage['+id+'][]"></div><div class="col-md-3"><input type="text" class="form-control" name="variation_price['+id+'][]"></div> <button type="button" class="myRemove btn btn-danger"  style="border:none; margin-left:10px;" onclick="myRemove(this);"> x </button> </div>';
+        var html = '<div class="row" style="margin-top: 10px;"><div class="col-md-3"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_storage['+id+'][]"></div><div class="col-md-2"><input type="text" class="form-control" name="variation_price['+id+'][]"></div> <button type="button" class="myRemove btn btn-danger"  style="border:none; margin-left:10px;" onclick="myRemove(this);"> x </button> </div>';
         $('.color'+id).after(html);
     }
 

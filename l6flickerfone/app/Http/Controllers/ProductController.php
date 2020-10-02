@@ -45,11 +45,11 @@ class ProductController extends Controller
         $img->storeAs('public/admin/images/product', $filename1);
         $img->storeAs('public/admin/images/product/thumbnail', $filename1);
         $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
-        Image::make($thumbnailpath)->resize(175,250)->save(public_path('storage/admin/images/product/thumbnail/175_'.$filename1));
-        Image::make($thumbnailpath)->resize(700,700)->save(public_path('storage/admin/images/product/thumbnail/700_'.$filename1));
-        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
-        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
-        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(175,250)->save(public_path('storage/admin/images/product/thumbnail/175_'.$filename1));
+        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/product/thumbnail/700_'.$filename1));
+        Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
+        Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
+        Image::make($img->getRealPath())->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
         return $filename1;
     }
 
@@ -63,10 +63,10 @@ class ProductController extends Controller
         $img->storeAs('public/admin/images/product', $filename1);
         $img->storeAs('public/admin/images/product/thumbnail', $filename1);
         $thumbnailpath = public_path('storage/admin/images/product/thumbnail/'.$filename1);
-        Image::make($thumbnailpath)->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
-        Image::make($thumbnailpath)->resize(700,700)->save(public_path('storage/admin/images/product/thumbnail/700_'.$filename1));
-        Image::make($thumbnailpath)->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
-        Image::make($thumbnailpath)->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/product/thumbnail/100_'.$filename1));
+        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/product/thumbnail/700_'.$filename1));
+        Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/product/thumbnail/215_'.$filename1));
+        Image::make($img->getRealPath())->resize(400,400)->save(public_path('storage/admin/images/product/thumbnail/400_'.$filename1));
         return $filename1;
     }
     
@@ -181,13 +181,7 @@ class ProductController extends Controller
                 'height' => $request->brief_height,
                 'width' => $request->brief_width,
                 'depth' => $request->brief_depth,
-                'brief_weight' => $request->brief_weight, 
-                'minor_dent_scratch' => $request->minor_dent,
-                'major_dent_scratch' => $request->major_dent,
-                'original_accessories_available' => $request->original_accessories_available,
-                'screen_is_cracked' => $request->screen_is_cracked,
-                'device_box_available' => $request->device_box_available,
-                'device_battery_status' => $request->device_battery_status,
+                'brief_weight' => $request->brief_weight,
                 'detail_check'=>$request->detail_check,
                 'other_detail'=>$request->other_detail
                 ]);
@@ -200,11 +194,18 @@ class ProductController extends Controller
                         {
                             for($j=0; $j<count($request->variation_storage[$i]); $j++)
                             {
+                                $vari_img = $request->variation_image; 
+                                if(!empty($vari_img[$i]))
+                                {
+                                    $f = $this->ResizeImageOther($vari_img[$i]);
+                                }
+
                                 $variation = new ColorVariation();
                                 $variation->product_id = $product->id;
                                 $variation->color = $request->variation_color[$i];
                                 $variation->storage = $request->variation_storage[$i][$j];
                                 $variation->price = $request->variation_price[$i][$j];
+                                $variation->img= $f;
                                 $variation->save();
                             }
 
@@ -458,13 +459,7 @@ class ProductController extends Controller
             $product->height = $request->brief_height;
             $product->width = $request->brief_width;
             $product->depth = $request->brief_depth;
-            $product->brief_weight = $request->brief_weight; 
-            $product->minor_dent_scratch = $request->minor_dent;
-            $product->major_dent_scratch = $request->major_dent;
-            $product->original_accessories_available = $request->original_accessories_available;
-            $product->screen_is_cracked = $request->screen_is_cracked;
-            $product->device_box_available = $request->device_box_available;
-            $product->device_battery_status = $request->device_battery_status;
+            $product->brief_weight = $request->brief_weight;
             $product->detail_check = $request->detail_check;
             $product->other_detail = $request->other_detail;
 
@@ -477,11 +472,21 @@ class ProductController extends Controller
                     {
                         for($j=0; $j<count($request->variation_storage[$i]); $j++)
                         {
+                            $vari_img = $request->variation_image; 
+                            if(!empty($vari_img[$i]))
+                            {
+                                $f = $this->ResizeImageOther($vari_img[$i]);
+                            }
+                            else
+                            {
+                                $f =$request->old_variation_img[$i];
+                            }
                             $variation = new ColorVariation();
                             $variation->product_id = $product->id;
                             $variation->color = $request->variation_color[$i];
                             $variation->storage = $request->variation_storage[$i][$j];
                             $variation->price = $request->variation_price[$i][$j];
+                            $variation->img= $f;
                             $variation->save();
                         }
 
@@ -694,6 +699,12 @@ class ProductController extends Controller
         return view('partials.color_storage',compact('storage'));
     }
 
+    public function colorFilterImg(Request $request)
+    {
+        $storage = ColorVariation::select('img')->where([['product_id',$request->id],['color',$request->color]])->first();
+        return $storage->img;
+    }
+
     public function StorageFilterPrice(Request $request)
     {
          $storage = ColorVariation::where([['product_id',$request->id],['color',$request->color],['storage',$request->storage]])->first();
@@ -721,52 +732,60 @@ class ProductController extends Controller
     public function ShopPage()
     {
         $brands = Brand::all();
-        $products = Product::orderBy('id','desc')->get();
+        $products = Product::orderBy('id','desc')->paginate(1);
         return view('shop', compact(['brands','products'])); 
     }
 
     public function ShopBrandProducts(Request $request)
     {
         $nView = $request->nView;
-        $products =  Product::where('brand_id',$request->id)->orderBy('id','desc')->take($nView)->get();
+        $products =  Product::where('brand_id',$request->id)->orderBy('id','desc')->paginate($nView);
         return view('partials.shop_products_list',compact('products'));
     }
 
+    function fetch_data(Request $request)
+    {
+     if($request->ajax())
+     {
+      $products = Product::orderBy('id','desc')->paginate(1);
+      return view('partials.shop_products_list', compact('products'))->render();
+     }
+    }
     public function ShopViewProducts(Request $request)
     {
         $nView = $request->nView;
-        $products =  Product::orderBy('id','desc')->take($nView)->get();
+        $products =  Product::orderBy('id','desc')->paginate($nView);
         return view('partials.shop_products_list',compact('products'));
     }
 
     public function ShopPriceProducts(Request $request)
     {
-        $query = $request->id;
+        $query = $request->price;
         $nView = $request->nView;
         if($query=="Less than 20,000")
         {
-            $products = Product::where('price', '<',20000)->orderBy('id','desc')->take($nView)->get();
+            $products = Product::where('price', '<',20000)->orderBy('id','desc')->paginate($nView);
         }
 
         else if($query=="Between 20,000 and 30,000")
         {
-            $products = Product::whereBetween('price',[20000,30000])->orderBy('id','desc')->take($nView)->get();
+            $products = Product::whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate($nView);
         }
 
         else if($query=="Between 30,000 and 60,000")
         {
-             $products = Product::whereBetween('price',[30000,60000])->orderBy('id','desc')->take($nView)->get();
+             $products = Product::whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate($nView);
         }
 
 
         else if($query=="Between 60,000 and 1,00000")
         {
-             $products = Product::whereBetween('price',[60000,100000])->orderBy('id','desc')->take($nView)->get();
+             $products = Product::whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate($nView);
         }
 
         else if($query=="More Than 1,00000")
         {
-            $products = Product::where('price', '>',100000)->orderBy('id','desc')->take($nView)->get();
+            $products = Product::where('price', '>',100000)->orderBy('id','desc')->paginate($nView);
         }
 
         return view('partials.shop_products_list',compact('products'));
@@ -779,28 +798,28 @@ class ProductController extends Controller
         $nView = $request->nView;
         if($query=="Less than 20,000")
         {
-            $products = Product::where('brand_id',$id)->where('price', '<',20000)->orderBy('id','desc')->take($nView)->get();
+            $products = Product::where('brand_id',$id)->where('price', '<',20000)->orderBy('id','desc')->paginate($nView);
         }
 
         else if($query=="Between 20,000 and 30,000")
         {
-            $products = Product::where('brand_id',$id)->whereBetween('price',[20000,30000])->orderBy('id','desc')->take($nView)->get();
+            $products = Product::where('brand_id',$id)->whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate($nView);
         }
 
         else if($query=="Between 30,000 and 60,000")
         {
-             $products = Product::where('brand_id',$id)->whereBetween('price',[30000,60000])->orderBy('id','desc')->take($nView)->get();
+             $products = Product::where('brand_id',$id)->whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate($nView);
         }
 
 
         else if($query=="Between 60,000 and 1,00000")
         {
-             $products = Product::where('brand_id',$id)->whereBetween('price',[60000,100000])->orderBy('id','desc')->take($nView)->get();
+             $products = Product::where('brand_id',$id)->whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate($nView);
         }
 
         else if($query=="More Than 1,00000")
         {
-            $products = Product::where('brand_id',$id)->where('price', '>',100000)->orderBy('id','desc')->take($nView)->get();
+            $products = Product::where('brand_id',$id)->where('price', '>',100000)->orderBy('id','desc')->paginate($nView);
         }
 
         return view('partials.shop_products_list',compact('products'));

@@ -167,6 +167,29 @@
                                 </ul>
                             </li>
 
+                             <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Accessory Category</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('AccessoryCategory.create') }}">Add Category</a></li>
+                                    <li><a href="{{ route('AccessoryCategory.index') }}">View Category</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Accessory</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('Accessory.create') }}">Add Accessory </a></li>
+                                    <li><a href="{{ route('Accessory.index') }}">View Accessory </a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">

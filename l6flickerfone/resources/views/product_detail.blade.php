@@ -25,8 +25,6 @@
 
 
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
-
-
 </style>
 
 <body>
@@ -285,15 +283,12 @@ margin-left: 15px;">{{ $product->price }}</font>
 <div class="row">
 
   <div class="col-md-12">
-
     <div style=" margin: 0 auto; padding: 120px 0 40px;">
       <ul class="tabs" data-persist="true">
           <li><a href="#view1">TECHNICLE SPECS</a></li>
           <li><a href="#view2">OPINIOS</a></li>
           <li><a href="#view3">VEDIOS</a></li>
           <li><a href="#view4">REVIEWS</a></li>
-
-            
       </ul>
       <div class="tabcontents">
          
@@ -305,12 +300,6 @@ margin-left: 15px;">{{ $product->price }}</font>
  
 
 <div class="row">
-<!-- <div  style="width: 16%; float: left;  background-color: rgb(227, 231, 231); "></div>
- -->
-
-
-
-
  <div style="width: 19%;  float: left;">
 
 
@@ -522,11 +511,11 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 <div id="ColOnMobileFirst" style="width: 54%;  float: left; ">
 
-
-
-
-
-
+      @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
+      @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
+      @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
+      <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($img1_400)}}"  srcset="{{ asset('http://127.0.0.1:8000/storage/admin/images/product/thumbnail/400_'.$product->image)}}"></p></span>
+    
 
 
 
@@ -1323,15 +1312,30 @@ About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
            
 
 
-            <h5>No Vedio Availabla</h5>
-                                                          
+            <!-- <h5>No Vedio Availabla</h5> -->
+              <div class="row">
+                  <div class="col-md-6 video_area">
+                      
+                       @if($product->video_link !='')
+
+                        {!! $product->video_link !!}
+
+                      @else
+                        <h5>No Vedio Available</h5>
+                      @endif
+
+                  </div>
+
+              </div>
+             
+
           </div>
 
 
 
 
           <div id="view4">
-            <h5>No Reviws Availabla</h5>       
+            <h5>No Reviws Available</h5>       
                                                           
           </div>
 
@@ -1370,6 +1374,22 @@ About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
 				$('#colorStorage').html(data);	
 			}
 		});
+
+    $.ajax({
+      url:"{{ route('ColorFilterImg') }}",
+      type:"get",
+      data:{id:id,color:color},
+      success:function(data){
+        if(data !='')
+        {
+            var imgSrc="{{ url('storage/admin/images/product/thumbnail/400_') }}";
+            imgSrc += data;
+            document.getElementById("myimage").srcset = imgSrc;
+            document.getElementById("myresult").style.backgroundImage = 'url("'+imgSrc+'")';
+        }
+        
+      }
+    });
 	}
 
 	$(document).ready(function(){
