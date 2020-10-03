@@ -145,6 +145,38 @@ class LoginAndRegisterController extends Controller
     	}
     }
 
+    public function UserModalLogin(Request $request)
+    {
+        $user =  User::select('*')->where([['email','=',$request->login_email],['status','=',1]])->first();
+        if ($user) 
+        {
+            if(Hash::check($request->login_password,$user->password))
+            {
+               $request->session()->put('user',$user);
+               return response()->json([
+                   'id' => $user->id,
+                   'status' => ""
+                  ]);
+            }
+            else
+            {
+                return response()->json([
+                   'email' => $request->login_email,
+                   'status' => "error", 
+                   'msg'=>'Sorry Email / Password Is Wrong'
+                  ]);
+            }
+        }
+        else
+        {
+            return response()->json([
+                   'email' => $request->login_email,
+                   'status' => "error", 
+                   'msg'=>'You are not active user'
+                  ]);
+        }
+    }
+
      public function adminLogin(Request $request)
     {
         $validation = Validator::make($request->all(),[
