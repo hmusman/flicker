@@ -1320,8 +1320,7 @@ color: black;
  <div class="card">
                       <div class="card-body row">
                          <div class="col-md-12">
-                             <textarea  name="descBox" rows="4" cols="50" style="width:100%; border-color:#dfdfdf " placeholder="">
-                         Please Write Description...
+                             <textarea  name="descBox" rows="4" cols="50" style="width:100%; padding: 5px;border-color:#dfdfdf " placeholder="">Please Write Description...
                           </textarea>
                            </div>
                       </div>

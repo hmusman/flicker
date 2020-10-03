@@ -44,6 +44,7 @@ class SellAccessoryController extends Controller
             'brand'=>'required',
             'city'=>'required',
             'phone'=>'required',
+            'detail'=>'required',
         ]);
 
         if($validations->fails())

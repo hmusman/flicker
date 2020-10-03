@@ -656,7 +656,7 @@ color: black;
             <style type="text/css">
               label{ color: black; }
             </style>
-              <h4 class="header-title" style="color:black;">Add Your Device</h4>
+              <h4 class="header-title" style="color:black;">Add Your Product</h4>
               @if(Session::has('warningMsg'))
                 <div class="alert alert-warning">{{ Session::get('warningMsg') }}</div>
               @endif
@@ -678,7 +678,7 @@ color: black;
     <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Category</label>
                               <div class="col-md-8">
-                                  <input type="hidden" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
+                                  <input type="hidden" id="user_id" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
                                   <input type="hidden" name="status" value="" id="status">
                                   <select class="form-control" name="category">
                                       <option selected="" disabled="">Select Category</option>
@@ -708,9 +708,9 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-4 col-form-label">Model</label>
+                              <label for="example-text-input" class="col-md-4 col-form-label">Name</label>
                               <div class="col-md-8">
-                                  <input class="form-control" type="text" value="{{ old('model') }}" name="model" placeholder="Enter Model" id="example-text-input">
+                                  <input class="form-control" type="text" value="{{ old('model') }}" name="model" placeholder="Enter Name" id="example-text-input">
                                   @error('model')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -1039,7 +1039,7 @@ color: black;
                               </div>
                           </div>
 
-                          <div class="form-group row">
+                          <div class="form-group row hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">Color</label>
                               <div class="col-md-8">
                                   <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="example-text-input">
@@ -1059,7 +1059,7 @@ color: black;
                               </div>
                           </div>
 
-                          <div class="form-group row">
+                          <div class="form-group row hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">PTA</label>
                               <div class="col-md-8">
                                  <select class="form-control " name="pta">
@@ -1082,9 +1082,9 @@ color: black;
 
    <div class="col-md-8">
      
-  <input type="radio" id="phone_check" name="gender" value="male">
+  <input type="radio" id="phone_check" name="product_check" value="phone" @if(old('product_check')=='phone')checked @endif>
   <label for="male">Phone</label>
-  <input type="radio" id="accessory_check" name="gender" value="female">
+  <input type="radio" id="accessory_check" name="product_check" value="accessory" @if(old('product_check')=='accessory') checked @endif>
   <label for="female">Accessories</label>
    </div>
  </div>
@@ -1099,8 +1099,8 @@ color: black;
 
 
 
-    <div id="PhoneDetBox"  class="hide">
-                <div class="form-group row" >
+                      <div id="PhoneDetBox"  class="hide">
+                        <div class="form-group row" >
                          
 
 
@@ -1108,29 +1108,31 @@ color: black;
 
                               <label for="example-text-input" class="col-form-label">Minor Dent / Scratch?</label>
                             </div>
-                            
+                              
                               <div class="col-md-8" style="text-align:center" >
                                    <div>
-                                      <input id="major-on" class="major radioyesNo" name="major" type="radio" value="yes">
-                                    <label for="major-on" class="myLabel ">Yes</label>
-                                    <input id="major-off" class="major radioyesNo" name="major" type="radio" value="no">
-                                    <label for="major-off" class="myLabel">No</label>
+                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes" @if(old('')=='yes') checked @endif>
+                                    <label for="minor-on" class="myLabel ">Yes</label>
+                                    <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no" @if(old('minor')=='no') checked @endif>
+                                    <label for="minor-off" class="myLabel">No</label>
 
                                     </div>
                                     @error('minor')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
                               </div>
+
+                              
                           </div>
 
- <div class="form-group row">
+                          <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Major Dent / Scratch?</label>
                               <div class="col-md-8" style="text-align:center" >
                                    <div>
-                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes">
-                                    <label for="minor-on" class="myLabel ">Yes</label>
-                                    <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no">
-                                    <label for="minor-off" class="myLabel">No</label>
+                                      <input id="major-on" class="major radioyesNo" name="major" type="radio" value="yes" @if(old('major')=='yes') checked @endif>
+                                    <label for="major-on" class="myLabel ">Yes</label>
+                                    <input id="major-off" class="major radioyesNo" name="major" type="radio" value="no" @if(old('major')=='no') checked @endif>
+                                    <label for="major-off" class="myLabel">No</label>
 
                                     </div>
                                     @error('major')
@@ -1160,9 +1162,9 @@ color: black;
                               <label for="example-text-input" class="col-md-4 col-form-label">Original Accessories Available</label>
                               <div class="col-md-8" style="text-align:center" >
                                  <div>
-                                    <input id="accessory-on" class="accessory radioyesNo" name="accessory" type="radio" value="yes">
+                                    <input id="accessory-on" class="accessory radioyesNo" name="accessory" type="radio" value="yes" @if(old('accessory')=='yes') checked @endif>
                                   <label for="accessory-on" class="myLabel">Yes</label>
-                                  <input id="accessory-off" class="accessory radioyesNo" name="accessory" type="radio" value="no">
+                                  <input id="accessory-off" class="accessory radioyesNo" name="accessory" type="radio" value="no" @if(old('accessory')=='no') checked @endif>
                                   <label for="accessory-off" class="myLabel">No</label>
                                   </div>
                                   @error('accessory')
@@ -1176,9 +1178,9 @@ color: black;
                               <label for="example-text-input" class="col-md-4 col-form-label">Screen Is Cracked</label>
                               <div class="col-md-8" style="text-align:center" >
                                   <div>
-                                    <input id="screen-on" class="screen radioyesNo" name="screen" type="radio" value="yes">
+                                    <input id="screen-on" class="screen radioyesNo" name="screen" type="radio" value="yes" @if(old('screen')=='yes') checked @endif>
                                   <label for="screen-on" class="myLabel">Yes</label>
-                                  <input id="screen-off" class="screen radioyesNo" name="screen" type="radio" value="no">
+                                  <input id="screen-off" class="screen radioyesNo" name="screen" type="radio" value="no" @if(old('screen')=='no') checked @endif>
                                   <label for="screen-off" class="myLabel">No</label>
 
                                   </div>
@@ -1192,9 +1194,9 @@ color: black;
                               <label for="example-text-input" class="col-md-4 col-form-label">Device Box Available</label>
                               <div class="col-md-8" style="text-align:center" >
                                  <div>
-                                      <input id="device-on" class="device radioyesNo" name="device" type="radio" value="yes">
+                                      <input id="device-on" class="device radioyesNo" name="device" type="radio" value="yes" @if(old('device')=='yes') checked @endif>
                                     <label for="device-on" class="myLabel ">Yes</label>
-                                    <input id="device-off" name="device" class="device radioyesNo" type="radio" value="no">
+                                    <input id="device-off" name="device" class="device radioyesNo" type="radio" value="no" @if(old('device')=='no') checked @endif>
                                     <label for="device-off" class="myLabel">No</label>
 
                                   </div>
@@ -1210,7 +1212,7 @@ color: black;
                                  <select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
                                     <option disabled="" selected="">Select Status</option>
                                     @for($i=5; $i<=10; $i++)
-                                      <option value="{{ $i*10 }}">{{ $i*10 }} %</option>
+                                      <option value="{{ $i*10 }}" @if(old('battery')==$i*10) selected @endif >{{ $i*10 }} %</option>
                                     @endfor
 
                                     <option value="others">Others</option>
@@ -1220,11 +1222,8 @@ color: black;
 
 
                                   <!-- <input type="text" name="color" id="color" /> -->
-
-
-
-
-                                  <input class="form-control" type="text" value="" placeholder="Enter Other %" id="otherInputField" style='display:none; margin-top:17px '>
+                                  <input class="form-control" type="number" name="battery" value="{{ old('battery') }}" placeholder="Enter Integer Value Ex 52 " id="otherInputField" style='display:none;
+                                   margin-top:17px '>
                                   @error('battery')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -1234,8 +1233,8 @@ color: black;
 
 
                           </div>
-  </div>
-</div>
+                        </div>
+                      </div>
 
                       
 
@@ -1257,21 +1256,21 @@ color: black;
                         </div>
                       </div>
                
-                      <div class="text-center mt-4 col-md-3">
+                      <div class="text-center mt-4 col-md-3 hide_some_block">
                         <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
                         <div class="dropzone" id="DropZonIcon2">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                   
-                      <div class="text-center mt-4 col-md-3" >
+                      <div class="text-center mt-4 col-md-3 hide_some_block" >
                         <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
                         <div class="dropzone" id="DropZonIcon3">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3" >
+                        <div class="text-center mt-4 col-md-3 hide_some_block" >
                         <input type="file" name="image4" style="display:none;" id="imgInput4" onchange="fileChangeFun(this,$('#DropZonIcon4'),4);"/> 
                         <div class="dropzone" id="DropZonIcon4">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(4);" id="imgFullWidthDiv4"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
@@ -1281,10 +1280,10 @@ color: black;
                   </div>
 
 
-             <div class="card">
+                  <div class="card">
                     <div class="card-body row">
 
-                      <div class="text-center mt-4 col-md-3" id="" >
+                      <div class="text-center mt-4 col-md-3 hide_some_block" id="" >
                         <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
                         <div class="dropzone" id="DropZonIcon5">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
@@ -1293,23 +1292,23 @@ color: black;
                         </div>
                       </div>
                
-                      <div class="text-center mt-4 col-md-3">
+                      <div class="text-center mt-4 col-md-3 hide_some_block">
                         <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
                         <div class="dropzone" id="DropZonIcon6">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                   
-                      <div class="text-center mt-4 col-md-3" >
+                      <div class="text-center mt-4 col-md-3 hide_some_block" >
                         <input type="file" name="image7" style="display:none;" id="imgInput7" onchange="fileChangeFun(this,$('#DropZonIcon7'),7);"/> 
-                        <div class="dropzone" id="DropZonIcon7">
+                        <div class="dropzone" id="DropZonIcon7"style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(7);" id="imgFullWidthDiv7"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3" >
+                        <div class="text-center mt-4 col-md-3 hide_some_block" >
                         <input type="file" name="image8" style="display:none;" id="imgInput8" onchange="fileChangeFun(this,$('#DropZonIcon8'),8);"/> 
-                        <div class="dropzone" id="DropZonIcon8">
+                        <div class="dropzone" id="DropZonIcon8" style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(8);" id="imgFullWidthDiv8"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
@@ -1317,12 +1316,14 @@ color: black;
                   </div>
 
 
- <div class="card">
+                  <div class="card">
                       <div class="card-body row">
                          <div class="col-md-12">
-                             <textarea  name="deta" rows="4" cols="50" style="width:100%; border-color:#dfdfdf " placeholder="">
-                         Please Write Description...
-                          </textarea>
+                            <textarea  name="detail" rows="4" cols="50" style="width:100%; padding: 5px; border-color:#dfdfdf " placeholder="Please Write Description...">{{ old('detail') }} 
+                            </textarea>
+                             @error('detail')
+                                      <p class="text-danger mt-3">{{ $message }}</p>
+                              @enderror
                            </div>
                       </div>
                   </div>
@@ -1331,28 +1332,64 @@ color: black;
                   
                   <div class="card">
                       <div class="card-body row">
-                          <div class="text-center mt-4">
-                              <button type="submit" onclick="estimate_fun();" class="btn btn-primary waves-effect waves-light">Save</button>
+                          <div class="text-center mt-4 submit_area">
+
+                              @if(!empty(Session::get('user')->id))
+                                <button type="submit" onclick="estimate_fun();" disabled="" class="btn btn-primary waves-effect waves-light save_btn">Save</button>
+                              @else
+                                  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary waves-effect waves-light">Login</button>
+                              @endif
+                              
+                               
+
                           </div>
                       </div>
                   </div>
-              </form>
+                </form>
 
 
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog" style="margin-top: 5%;">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: black;">Sign in</h4>
+                        
+                    </div>
+                      <div class="modal-body">
+                        <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
+                        <form method="post">
+                          @csrf
+                          <div class="form-group">
+                              <label class="info-title">Email</label>
+                              <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                              <label class="info-title">Password</label>
+                              <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
+                          </div>  
+
+                          <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
+                          <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
 
 
-         
+                        </form>
+                       
+                   
+                    
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default modal_close" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- End Modal -->
 
           </div>
-
-
-
-
-
-
-
-
-          
       </div>
   
   </div>
@@ -1369,10 +1406,69 @@ color: black;
 <script src="js/bootstrap.min.js" ></script> -->
   
  <script type="text/javascript">
+      $('.ErrorMsg').hide();
+
+      setTimeout( function(){ 
+        if($('#phone_check').is("checked") || $('#accessory_check').is("checked"))
+        {
+          $('.save_btn').attr('disabled',"disabled");
+        }
+      },100);
+      $(document).ready(function(){
+
+          if($('#phone_check').is(":checked"))
+          {
+            $('.hide_some_block').show();
+            $('.save_btn').removeAttr('disabled','');
+            document.getElementById('PhoneDetBox').style.display ='block';
+            $('#ProductAccessory').attr('action','Sell/Product');
+          } 
+
+          if($('#accessory_check').is(":checked"))
+          {
+            $('.hide_some_block').hide();
+            $('.save_btn').removeAttr('disabled','');
+            document.getElementById('PhoneDetBox').style.display ="none";
+            $('#ProductAccessory').attr('action','Sell/Accessory');
+          } 
+
+      });
+      $('.modal_login').click(function(){
+          var email = $('#username').val();
+          var pass = $('#password').val();
+          var token = '{{ csrf_token() }}';
+          $.ajax({
+            url:"{{ route('UserModalLogin') }}",
+            type:"post",
+            data:{_token:token,login_email:email,login_password:pass},
+            success:function(data){
+              if(data.status=="")
+              {
+                 var btn_html_not = '<button type="submit" onclick="estimate_fun();" class="btn btn-primary waves-effect waves-light save_btn">Save</button>';
+                  var btn_html = '<button type="submit" onclick="estimate_fun();" disabled="" class="btn btn-primary waves-effect waves-light save_btn">Save</button>';
+                if($('#phone_check').is(":checked") || $('#accessory_check').is(":checked")){$('.submit_area').html(btn_html_not);}
+                else{$('.submit_area').html(btn_html);}
+                
+                $('#user_id').val(data.id);
+                $('.modal_close').click();
+              }
+              else{
+                  $('.ErrorMsg').show();
+                  $('#username').val(data.email);
+                  $('#password').val('');
+                  $('.ErrorMsg').text(data.msg);
+
+
+              }
+            }
+          });
+      });
 
       $('#phone_check').change(function(){
           if($('#phone_check').is(":checked"))
           {
+            $('.hide_some_block').show();
+            $('.save_btn').removeAttr('disabled','');
             document.getElementById('PhoneDetBox').style.display ='block';
             $('#ProductAccessory').attr('action','Sell/Product');
           }
@@ -1381,6 +1477,8 @@ color: black;
       $('#accessory_check').change(function(){
           if($('#accessory_check').is(":checked"))
           {
+            $('.hide_some_block').hide();
+            $('.save_btn').removeAttr('disabled','');
             document.getElementById('PhoneDetBox').style.display ="none";
             $('#ProductAccessory').attr('action','Sell/Accessory');
           }
@@ -2015,7 +2113,27 @@ $(document).ready(function(){
 });
 
 
+  $('#otherInputField').keyup(function(){
+      var val = $(this).val();
+      if(val<50)
+      {
+        if(!$('.save_btn').hasAttr('disabled'))
+        {
+          $('.save_btn').attr('disabled','disabled');
+        }
+      }
+      else if(val>50)
+      {
+        $('.battery').append('<option value="'+val+'" selected >'+ val +' %</option>');
+        document.getElementById('otherInputField').style.display='none';
+        if($('.save_btn').hasAttr('disabled'))
+        {
+          $('.save_btn').removeAttr('disabled','');
+        }
+      }
 
+
+  });
 
 
 

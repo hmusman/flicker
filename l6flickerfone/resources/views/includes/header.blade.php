@@ -23,7 +23,7 @@
                         @csrf
                     </form>
         @else
-           <span id="reglogin" onclick="reglogin();" style="cursor: pointer;position: absolute;
+           <span id="reglogin" onclick="reglogin();" class="reglogin" style="cursor: pointer;position: absolute;
         right: 46px;
         bottom: 25px;color: white !important; border-bottom: 1px white solid  " align="right"    >
           <i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
