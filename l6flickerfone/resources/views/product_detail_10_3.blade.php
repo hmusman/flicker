@@ -515,7 +515,7 @@ margin-left: 15px;">{{ $product->price }}</font>
   <tr>
     <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">&nbsp;</td>
 
-    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
+    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 71px; "> Price & Storage</td>
 
   </tr>
 </table>
