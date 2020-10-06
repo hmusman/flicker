@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\ProductOpinion;
+use App\OpinionReply;
 
 class User extends Authenticatable
 {
@@ -36,4 +38,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function replies()
+    {
+        return $this->hasMany(OpinionReply::class,'user_id','id');
+    }
+
+    public function opinions()
+    {
+        return $this->hasMany(ProductOpinion::class,'user_id','id');
+    }
+
 }

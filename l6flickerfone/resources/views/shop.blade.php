@@ -486,7 +486,7 @@
                 {
                   var brand = $('#brand').children("option:selected").val();
                   var price = $('#price').children("option:selected").val();
-                  var nView = 1;
+                  var nView = 10;
                   FetchBrandPriceProducts(0,brand,price,nView);
                 }
                 else
@@ -527,7 +527,7 @@
                 if($('#view').children('option:selected').val() =="Select View")
                 {
                   var id = $('#brand').children("option:selected").val();
-                  FetchBrandProducts(0,id,1);
+                  FetchBrandProducts(0,id,10);
                 }
                 else
                 {
@@ -573,7 +573,7 @@
                 if($('#view').children('option:selected').val() =="Select View")
                 {
                   var price = $('#price').children("option:selected").val();
-                  FetchPriceProducts(0,price,1);
+                  FetchPriceProducts(0,price,10);
                 }
                 else
                 {
@@ -597,20 +597,20 @@
               if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
               {
                 var brand = $('#brand').children("option:selected").val();
-                FetchBrandProducts(page,brand,1);
+                FetchBrandProducts(page,brand,10);
               }
       
               else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
               {
                 var price = $('#price').children("option:selected").val();
-                FetchPriceProducts(page,price,1);
+                FetchPriceProducts(page,price,10);
               }
       
               else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
               {
                 var brand = $('#brand').children("option:selected").val();
                 var price = $('#price').children("option:selected").val();
-                FetchBrandPriceProducts(page,brand,price,1);         
+                FetchBrandPriceProducts(page,brand,price,10);         
               }
       
               else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
@@ -618,7 +618,7 @@
                 var brand = $('#brand').children("option:selected").val();
                 var price = $('#price').children("option:selected").val();
                 var view = $('#view').children("option:selected").val();
-                FetchBrandPriceProducts(page,brand,price,1);         
+                FetchBrandPriceProducts(page,brand,price,10);         
               }
       
               else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")

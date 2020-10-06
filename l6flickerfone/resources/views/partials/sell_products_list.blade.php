@@ -90,7 +90,7 @@
             <div style="width: 70%; float: left;border-bottom: 1px #d8d5d5 solid;" >
             
             
-              <p style="color: black">{{ ucwords($row->model) }}</p>
+              <h4 style="color: black">{{ ucwords($row->model) }}</h4>
               <!-- <p style="color: #969494;">&#x2713;Collisimo&#x2713;2-4 Jours&#x2713;Guarntie 2 ans&#x2713; FR Plug</p> -->
             
 

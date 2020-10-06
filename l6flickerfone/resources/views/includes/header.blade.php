@@ -1,3 +1,11 @@
+ <style type="text/css">
+   
+   .pagination{
+  float: right !important;
+    margin-top: 20px !important;
+ }
+
+ </style>
  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topNav"  >
     <a class="navbar-brand" href="{{ route('home') }}"><img  id="logoFlickerflone" src="{{ asset('storage/images/logo Black-01.jpg') }}"></a>
     <button style="background-color: white !important;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup, #navbarNavAltMarkup1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

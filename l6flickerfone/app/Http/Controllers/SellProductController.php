@@ -19,7 +19,7 @@ class SellProductController extends Controller
 
     public function frontEndProducts()
     {
-        $products = SellProduct::orderBy('id','desc')->paginate(1);
+        $products = SellProduct::orderBy('id','desc')->paginate(10);
         $brands = Brand::select('brands.name','brands.id')->join('sell_products','brands.id','=','sell_products.brand_id')->distinct()->get();
         $cities = DB::select('SELECT city,COUNT(city) total FROM `sell_products` GROUP by city');
         $colors = SellProduct::select('color')->distinct()->get();
@@ -28,7 +28,7 @@ class SellProductController extends Controller
     
     public function SellProductsData(Request $request)
     {
-        $products = SellProduct::orderBy('id','desc')->paginate(1);
+        $products = SellProduct::orderBy('id','desc')->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -220,19 +220,19 @@ class SellProductController extends Controller
 
     public function BrandsSellProducts(Request $request)
     {
-        $products = SellProduct::whereIn('brand_id',$request->brands)->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
     public function CitySellProducts(Request $request)
     {
-        $products = SellProduct::whereIn('city',$request->cities)->paginate(1);
+        $products = SellProduct::whereIn('city',$request->cities)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
     public function StatusSellProducts(Request $request)
     {
-        $products = SellProduct::whereIn('device_status',$request->statuses)->paginate(1);
+        $products = SellProduct::whereIn('device_status',$request->statuses)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -240,7 +240,7 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('brand_id',$request->brands)->whereBetween('price',[$fromPrice,$toPrice])->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereBetween('price',[$fromPrice,$toPrice])->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
    
@@ -248,7 +248,7 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -258,7 +258,7 @@ class SellProductController extends Controller
         $proArr = [];
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -266,7 +266,7 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -274,7 +274,7 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -282,7 +282,7 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -290,13 +290,13 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
     public function BrandsCityStatusSellProducts(Request $request)
     {
-        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -304,13 +304,13 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::whereIn('city',$request->cities)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
      public function BrandsCitySellProducts(Request $request)
     {
-        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('city',$request->cities)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -318,7 +318,7 @@ class SellProductController extends Controller
     {
         $products="";
         $proArr = [];;
-        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('device_status',$request->statuses)->paginate(1);
+        $products = SellProduct::whereIn('brand_id',$request->brands)->whereIn('device_status',$request->statuses)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -326,13 +326,13 @@ class SellProductController extends Controller
     {
         $fromPrice = intval($request->from);
         $toPrice = intval($request->to);
-        $products = SellProduct::whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(1);
+        $products = SellProduct::whereIn('device_status',$request->statuses)->where('price', '>=',$fromPrice)->where('price', '<=', $toPrice)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
     public function CityStatusSellProducts(Request $request)
     {
-        $products = SellProduct::whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->paginate(1);
+        $products = SellProduct::whereIn('city',$request->cities)->whereIn('device_status',$request->statuses)->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -342,28 +342,28 @@ class SellProductController extends Controller
         $city = $request->city;
         if($query=="Less than 20,000")
         {
-            $products = SellProduct::where('city',$city)->where('price', '<',20000)->orderBy('id','desc')->paginate(1);
+            $products = SellProduct::where('city',$city)->where('price', '<',20000)->orderBy('id','desc')->paginate(10);
         }
 
         else if($query=="Between 20,000 and 30,000")
         {
-            $products = SellProduct::where('city',$city)->whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate(1);
+            $products = SellProduct::where('city',$city)->whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate(10);
         }
 
         else if($query=="Between 30,000 and 60,000")
         {
-             $products = SellProduct::where('city',$city)->whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate(1);
+             $products = SellProduct::where('city',$city)->whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate(10);
         }
 
 
         else if($query=="Between 60,000 and 1,00000")
         {
-             $products = SellProduct::where('city',$city)->whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate(1);
+             $products = SellProduct::where('city',$city)->whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate(10);
         }
 
         else if($query=="More Than 1,00000")
         {
-            $products = SellProduct::where('city',$city)->where('price', '>',100000)->orderBy('id','desc')->paginate(1);
+            $products = SellProduct::where('city',$city)->where('price', '>',100000)->orderBy('id','desc')->paginate(10);
         }
         return view('partials.sell_products_list',compact('products'));
     }
@@ -373,28 +373,28 @@ class SellProductController extends Controller
         $query = $request->price;
         if($query=="Less than 20,000")
         {
-            $products = SellProduct::where('price', '<',20000)->orderBy('id','desc')->paginate(1);
+            $products = SellProduct::where('price', '<',20000)->orderBy('id','desc')->paginate(10);
         }
 
         else if($query=="Between 20,000 and 30,000")
         {
-            $products = SellProduct::whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate(1);
+            $products = SellProduct::whereBetween('price',[20000,30000])->orderBy('id','desc')->paginate(10);
         }
 
         else if($query=="Between 30,000 and 60,000")
         {
-             $products = SellProduct::whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate(1);
+             $products = SellProduct::whereBetween('price',[30000,60000])->orderBy('id','desc')->paginate(10);
         }
 
 
         else if($query=="Between 60,000 and 1,00000")
         {
-             $products = SellProduct::whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate(1);
+             $products = SellProduct::whereBetween('price',[60000,100000])->orderBy('id','desc')->paginate(10);
         }
 
         else if($query=="More Than 1,00000")
         {
-            $products = SellProduct::where('price', '>',100000)->orderBy('id','desc')->paginate(1);
+            $products = SellProduct::where('price', '>',100000)->orderBy('id','desc')->paginate(10);
         }
         return view('partials.sell_products_list',compact('products'));
     }
@@ -402,7 +402,7 @@ class SellProductController extends Controller
     public function UpperCitySellProducts(Request $request)
     {
         $city = $request->city;
-        $products = SellProduct::where('city',$city)->orderBy('id','desc')->paginate(1);
+        $products = SellProduct::where('city',$city)->orderBy('id','desc')->paginate(10);
         return view('partials.sell_products_list',compact('products'));
     }
 
