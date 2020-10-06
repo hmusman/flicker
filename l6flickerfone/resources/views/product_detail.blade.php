@@ -161,27 +161,32 @@ cursor: pointer;
 
 
    <h4 style="font-size: 18px !important;">{{ ucwords($product->name) }}</h4>
- <p>{{ $product->storage }}</p>
+   <p>{{ $product->storage }}</p>
 
 
 
+   @if($product->detail_check==1)
+      {!! $product->other_detail !!}
+   @else
+    <ol type="circle"> 
+      @if($product->os !='') <li>{{ $product->os }}</li> @endif
 
- <ol type="circle"> 
-  @if($product->os !='') <li>{{ $product->os }}</li> @endif
+      @if($product->processor !='') <li>{{ $product->processor }}</li> @endif
 
-  @if($product->processor !='') <li>{{ $product->processor }}</li> @endif
+      @if($product->memory !='') <li>{{ $product->memory }}</li> @endif
+      @if($product->camera !='') <li>{{ $product->camera }}</li> @endif
+      @if($product->size !='') <li>{{ $product->size }}</li> @endif
+      @if($product->resolution !='') <li>{{ $product->resolution }}</li> @endif
+      @if($product->connectivity !='') <li>{{ $product->connectivity }}</li> @endif
+      @if($product->battery !='') <li>{{ $product->battery }}</li> @endif
+      @if($product->height !='') <li>{{ $product->height }}</li> @endif
+      @if($product->width !='') <li>{{ $product->width }}</li> @endif
+      @if($product->breif_weight !='') <li>{{ $product->breif_weight }}</li> @endif
 
-  @if($product->memory !='') <li>{{ $product->memory }}</li> @endif
-  @if($product->camera !='') <li>{{ $product->camera }}</li> @endif
-  @if($product->size !='') <li>{{ $product->size }}</li> @endif
-  @if($product->resolution !='') <li>{{ $product->resolution }}</li> @endif
-  @if($product->connectivity !='') <li>{{ $product->connectivity }}</li> @endif
-  @if($product->battery !='') <li>{{ $product->battery }}</li> @endif
-  @if($product->height !='') <li>{{ $product->height }}</li> @endif
-  @if($product->width !='') <li>{{ $product->width }}</li> @endif
-  @if($product->breif_weight !='') <li>{{ $product->breif_weight }}</li> @endif
+    </ol>
+   @endif
 
-</ol>
+  
 <input type="hidden" value="{{ $product->id }}" id="product_id">
 
 <style type="text/css">
@@ -842,11 +847,11 @@ margin-left: 15px;">{{ $product->price }}</font>
                 <div class="col-md-6" style="height: 81px;padding-top: 27px;" >
 
 
-                  <div style="float: left; width: 50%; height: 100%; "><input id="srchopnon" type="search" name="srch" style="height: 42px;width: 97%" /></div>
-                  <div style="float: left; width: 50%; height: 100%; "><a href="#"><p id="srchoption" style="  
+                  <div style="float: left; width: 50%; height: 100%; "><input id="opinion_search" type="search" name="srch" style="height: 42px;width: 97%; outline: none;" /></div>
+                  <div style="float: left; width: 50%; height: 100%; "><button id="opinion_search_btn" style="border: none; outline: none;cursor: pointer;"><p id="srchoption" style="  
                   height: 43px;
-                  font-size: 1vw;
-                  text-align: center;  background-color: #f9f9f9;   color: #0b0a0a;  padding: 10px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px black solid;">SEARCH OPINIONS </p></a></div>
+                  font-size: .9vw;
+                  text-align: center;  background-color: #f9f9f9;   color: #0b0a0a;  padding: 10px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px black solid;">SEARCH OPINIONS </p></button></div>
                 
                 
                  </div>
@@ -862,9 +867,10 @@ margin-left: 15px;">{{ $product->price }}</font>
 
                   <div class="form-group">
            
-                    <select class="form-control" id="asc_desc" style="font-weight: bold !important;">
+                    <select class="form-control" id="asc_desc">
+                      <option selected="" disabled="">Select View</option>
+                      <option value ="desc">Newest First</option>
                       <option value="asc" >Older First</option>
-                      <option value ="desc" style="font-weight: bold !important;">Newest First</option>
                     </select>
                   </div>
       
@@ -882,7 +888,7 @@ margin-left: 15px;">{{ $product->price }}</font>
               @if($opinions->count())
                 @foreach($opinions as $row)
                     <div class="row">
-                      <div   style=" height: 400px;  border: 1px #c4c0c0 solid;   margin-top: 17px;  background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
+                      <div   style=" height: 400px;  border: 1px #c4c0c0 solid;   margin-top: 17px;  background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid; width: 100%; ">
                       
                         <div style="height: 20%; width: 100%; background-image: linear-gradient(to top right, #e5817a, #f0f0f0); ">
                         
@@ -1115,10 +1121,48 @@ margin-left: 15px;">{{ $product->price }}</font>
 	}
 
   $('#asc_desc').change(function(){
-
     var val = $('#asc_desc option:selected').val();
+    var id = '{{ $product->id }}';
+    $('#opinion_search').val('');
+    FetchDataAscDesc(0,val,id);
 
   });
+
+  $('#opinion_search_btn').click(function(){
+      var val = $('#opinion_search').val();
+      $('#asc_desc').val('Select View');
+      FetchOpinionSearchData(0,val,'{{ $product->id }}');
+  });
+
+  function FetchDataAscDesc(page,val,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionDataAscDesc?page="+page,
+     type:"get",
+     data:{order:val,id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
+
+  function FetchOpinionSearchData(page,val,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionSearchData?page="+page,
+     type:"get",
+     data:{query:val,id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
 
   function FetchData(page,id)
   {
@@ -1138,7 +1182,16 @@ margin-left: 15px;">{{ $product->price }}</font>
   $(document).on('click', '.pagination a', function(event){
       event.preventDefault();
       var page = $(this).attr('href').split('page=')[1]; 
-      FetchData(page,'{{ $product->id }}');
+      if($('#asc_desc option:selected').val()!='Select View')
+      {
+        var val = $('#asc_desc option:selected').val();
+        var id = '{{ $product->id }}';
+        FetchDataAscDesc(page,val,id);
+      }
+      else if($('#opinion_search').val() !=''){
+        FetchOpinionSearchData(page,$('#opinion_search').val(),'{{ $product->id }}');
+      }
+      else{FetchData(page,'{{ $product->id }}')};
     });
 
 	$(document).ready(function(){
