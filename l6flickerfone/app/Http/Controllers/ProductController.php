@@ -11,6 +11,7 @@ use App\ColorVariation;
 use Session;
 use DB;
 use Image;
+use App\ProductOpinion;
 class ProductController extends Controller
 {
    
@@ -223,7 +224,8 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::where('id',$id)->first();
-        return view('product_detail',compact('product'));
+        $opinions = ProductOpinion::where('product_id',$id)->paginate(15);
+        return view('product_detail',compact(['product','opinions']));
     }
 
     public function commonCode($data)
@@ -732,7 +734,7 @@ class ProductController extends Controller
     public function ShopPage()
     {
         $brands = Brand::all();
-        $products = Product::orderBy('id','desc')->paginate(1);
+        $products = Product::orderBy('id','desc')->paginate(9);
         return view('shop', compact(['brands','products'])); 
     }
 
@@ -747,7 +749,7 @@ class ProductController extends Controller
     {
      if($request->ajax())
      {
-      $products = Product::orderBy('id','desc')->paginate(1);
+      $products = Product::orderBy('id','desc')->paginate(9);
       return view('partials.shop_products_list', compact('products'))->render();
      }
     }

@@ -1222,7 +1222,7 @@ color: black;
 
 
                                   <!-- <input type="text" name="color" id="color" /> -->
-                                  <input class="form-control" type="number" name="battery" value="{{ old('battery') }}" placeholder="Enter Integer Value Ex 52 " id="otherInputField" style='display:none;
+                                  <input class="form-control" type="number" name="" value="" placeholder="Enter Integer Value Ex 52 " id="otherInputField" style='display:none;
                                    margin-top:17px '>
                                   @error('battery')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -1379,7 +1379,7 @@ color: black;
                        
                    
                     
-                    </div>
+                      </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default modal_close" data-dismiss="modal">Close</button>
                     </div>

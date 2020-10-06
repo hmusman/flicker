@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use App\Brand;
 use App\ColorVariation;
+use App\ProductOpinion;
+
 class Product extends Model
 {
     protected $table = "sma_products";
@@ -97,4 +99,11 @@ class Product extends Model
     {
         return $this->hasMany(ColorVariation::class,'product_id','id');
     }
+
+    public function opinions()
+    {
+
+        return $this->hasMany(ProductOpinion::class,'product_id','id');
+    }
+
 }
