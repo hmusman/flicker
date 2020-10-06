@@ -85,6 +85,7 @@ Route::get('ColorFilterStorage','ProductController@colorFilterStorage')->name('C
 Route::get('ColorFilterImg','ProductController@colorFilterImg')->name('ColorFilterImg');
 Route::get('StorageFilterPrice','ProductController@StorageFilterPrice')->name('StorageFilterPrice');
 Route::get('PriceEstimateCalculator','BrandController@PriceEstimateCalculator')->name('PriceEstimateCalculator');
+Route::get('/BrandProductsList/{id}','BrandController@BrandProductsList')->name('BrandProductsList');
 Route::get('BrandProducts','BrandController@BrandProducts')->name('BrandProducts');
 Route::get('BrandProductDetail','pricecalculatorproducts\PriceCalculatorProductController@BrandProductDetail')->name('BrandProductDetail');
 Route::get('BrandProductColorItem','pricecalculatorproducts\PriceCalculatorProductController@BrandProductColorItem')->name('BrandProductColorItem');
