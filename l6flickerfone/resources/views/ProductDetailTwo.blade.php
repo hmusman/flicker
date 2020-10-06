@@ -9,24 +9,27 @@
 
   </head>
   <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+  <!-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet"> -->
   <!-- <link href="{{ asset('css/style.css')}}" rel='stylesheet' type='text/css' media="all"> -->
   <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
   <link href="{{ asset('css/ProductDetail.css') }}" rel='stylesheet' type='text/css' media="all">
   <link href="{{ asset('css/template1/tabcontent.css') }}" rel="stylesheet" type="text/css" />
 
-  <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
+  <!-- <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}"> -->
   
-  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
+  <!-- <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
 
   <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/magnifier.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/magnifier.css') }}"> -->
 
 
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
 
 
+<link href="{{ asset('OriginalZoomer/css/cloudzoom.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('OriginalZoomer/css/thumbnail.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('OriginalZoomer/css/CloudBootstrap.css') }}" rel="stylesheet" type="text/css">
 
 
  <style>
@@ -80,81 +83,104 @@ cursor: pointer;
   
 </div> -->
 
-<div>
-    <a  class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
-        <img id="thumb"
-           src="{{ asset($img1_400)}}">
-    </a>
-    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by
-        Vincent van Gogh</div>
-</div>
 
 
-<div >
+
+
+
+
+
+<section >
+   
+
+<div class="container" >
+
+      <div class="row">
+         <div class="col-sm-12 ">
   
 
 
+    <div id="surround" align="center">
+    <img class="cloudzoom img-responsive" alt ="Small image" id ="zoom1" src="{{asset('OriginalZoomer/ZoomerImg/314776c8af8ec35be0a187536dd23c1a.jpg')}}" 
+       data-cloudzoom='  zoomSizeMode:"image",     autoInside: 550 '>
 
 
 
-
-
-
-
-
-
-
-
-<div class="container">
-
-
-  <div class="row" >
-  
-    <div class="col-md-12 col-lg-12 col-sm-12" id="slickBtnFor">
-    
-      <div class="autoplayFeatures">
+            <div id="slider1">
+        <div class="thumbelina-but horiz left">
+          
+        <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_left_black_18dp.png')}}">
         
-         @if(!empty($img1))
-
-          <figure  >
-            <img class="productImgs" data-id="{{ $product->image }}" class="img-thumbnail" src="{{ asset($img1_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-          </figure>
-
-        @endif
-
-        @if(!empty($img2))
-
-        	<figure  >
-	          <img class="productImgs" data-id="{{ $product->dimage }}" class="img-thumbnail" src="{{ asset($img2_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-	        </figure>
-
-      	@endif
-
-
-
-
-        @if(!empty($img3))
-
-        	<figure  >
-	          <img class="productImgs" data-id="{{ $product->dimage1 }}" class="img-thumbnail" src="{{ asset($img3_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-	        </figure>
-
-      	@endif
-       
         
+        </div>
+            <ul >
+            <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/8aef0f1a521422cd7c5d14d9918e706f.jpg')}}"
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/8aef0f1a521422cd7c5d14d9918e706f.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
+
+
+
+            <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/75289b8c7db4ae501fb8cc9bd09a1b15.jpg')}}"
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/75289b8c7db4ae501fb8cc9bd09a1b15.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
+
+
+                         
+                         <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/496d5a540d30fcd25a5fe607dece7761.jpg')}}"
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/496d5a540d30fcd25a5fe607dece7761.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
+
+
+                         
+                         <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}"
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
+
+
+
+                         
+                         <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}"
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
+
+
+
+
+
+  <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}"
+      data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}'  "
+      style='max-width:90px;max-height:100px;'></li>
+
+
+        <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}"
+            data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}'  "
+            style='max-width:90px;max-height:100px;'></li>
+
+            </ul>
+            <div class="thumbelina-but horiz right">
+     
+                    <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_right_black_18dp.png')}}">
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+
         </div>
       
       </div>
 
 
-    
-    </div>
 
 
   </div>
+ 
+</section>
 
 
-</div>
+
+
+
+
+
   </div>
 
   <div class="col-md-6" style="    margin-top: -70px;color: black !important;">
@@ -1504,29 +1530,6 @@ About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
 
 
 
-$(document).ready(function(){
-       $('.autoplayFeatures').slick({
- slidesToShow: 4,
- slidesToScroll: 1,
-  autoplay: true,
- autoplaySpeed: 3000,
- pauseOnHover:true,
-
- dots: true,
- responsive: [
-     {
-       breakpoint: 500,
-       settings: {
-       slidesToShow: 2,
-       slidesToScroll: 1,
-       }
-     }
-   ]  
- // variableWidth: true
-});
-});
-
-
 
 
 
@@ -1576,13 +1579,28 @@ function image1ReplaceOnClick1(){
  
 
 </script>
+<!-- <script src="js/select2.js"></script>
 
+
+<script src="js/cloudzoom.js"></script>
+<script src="js/thumbnail.js"></script> -->
+
+
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/cloudzoom.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/select2.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/slick.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/thumbnail.js')}}"></script>
+
+
+
+
+<!-- <script type="text/javascript" src="js/slick.js"></script> -->
   
-<script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script> -->
         
 <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script>
   
-<script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script> -->
  
 
 
@@ -1711,5 +1729,92 @@ $(document).ready(function(){
   });
 });
 </script>
+
+<script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+CloudZoom.quickStart();
+$(function(){
+    $('#slider1').Thumbelina({
+        $bwdBut:$('#slider1 .left'),
+        $fwdBut:$('#slider1 .right')
+    });
+});
+
+
+
+    $('#commentbtn').click(function(){
+
+      submitComment($("#comment").val());
+    });
+var limit = 5;
+
+
+  function submitComment(msg) {
+     // alert('https://flickerfone.com/main/submicomment?'+"slug="+5+"&name="+$("#name").val()+"&email="+$("#email").val()+"&g-recaptcha-response="+$("#g-recaptcha-response").val());
+
+ $.get("https://flickerfone.com/main/submicomment?slug=428&comment="+msg+"&name="+$("#name").val()+"&email="+$("#email").val()+"&response="+$("#g-recaptcha-response").val(),function(data){
+     loadComments();
+    if(data.success==false){
+      loadComments();
+      sa_alert('Request',data.message, 'info',2000);
+    }else{
+
+      $("#comment").val("");
+      $("#name").val("");
+      $("#email").val("");
+       sa_alert('Success',data.message, 'success',2000);
+    }
+ });
+}
+
+
+
+function submitRating(msg) {
+
+ $.get("https://flickerfone.com/main/submitrating?slug=428&review="+msg,function(data){
+    if(data.success==false){
+      sa_alert('Request',data.message, 'info',2000);
+    }else{
+        $(".rating-widget").html("Thanks for your feedback.")
+       sa_alert('Success',data.message, 'success',2000);
+    }
+ });
+}
+  $('#stars li').on('mouseover', function(){
+
+    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+    // Now highlight all the stars that's not after the current hovered star
+    $(this).parent().children('li.star').each(function(e){
+      if (e < onStar) {
+        $(this).addClass('hover');
+      }
+      else {
+        $(this).removeClass('hover');
+      }
+    });
+
+  }).on('mouseout', function(){
+    $(this).parent().children('li.star').each(function(e){
+      $(this).removeClass('hover');
+    });
+  });
+
+
+
+
+
+});
+
+
+
+
+
+
+</script>
+
+
 
 </html>

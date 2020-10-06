@@ -226,6 +226,14 @@ class ProductController extends Controller
         return view('product_detail',compact('product'));
     }
 
+
+      public function showTwo($id)
+    {
+        $product = Product::where('id',$id)->first();
+        return view('ProductDetailTwo',compact('product'));
+    }
+
+
     public function commonCode($data)
     {
         $output = "";

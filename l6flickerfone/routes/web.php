@@ -67,6 +67,7 @@ Route::view('ReviewDetail','review_detail');
 Route::view('NewMobilePhonePrices','new_mobile_phone_prices');
 Route::view('PriceCalculator','price_calculator');
 Route::get('ProductDetail/{id}','ProductController@show')->name('ProductDetail');
+Route::get('ProductDetailTwo/{id}','ProductController@showTwo')->name('ProductDetailTwo');
 Route::get('pricesearch','ProductController@priceSearch')->name('pricesearch');
 Route::get('brandsearch','ProductController@brandSearch')->name('brandsearch');
 Route::get('colorsearch','ProductController@colorSearch')->name('colorsearch');
