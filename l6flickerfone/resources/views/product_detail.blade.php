@@ -1,1128 +1,1524 @@
-@extends('layouts.basic')
-
-@section('head')
-	@include('includes.head')
-@endsection<!-- end head -->
-
-@section('header')
-	@include('includes.header')
-@endsection<!-- end header -->
-
-
-@section('content')
-	
-	<a id="button"></a>
-	<!-- <button class="btn-xs button3 buydetailsbtn" style="position: absolute;right: 10%;" data-toggle="modal" data-target="#myModal"><i class="fa fa-phone"></i> Contact</button> -->
-	<div class="modal fade" id="myModal" tabindex="1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-
-		 <div class="modal-dialog">
-		    <!-- Modal Content: begins -->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title">Contact Details</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">×</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		      	Item: {{ ucwords($product->name) }}<br>
-		       	Name: Owner Owner<br>
-		        Phone Number : <b>03001234567</b>
-		      </div>
-
-		    </div>
-
-		 </div>
-
-	</div>
-	<section class="" style="">
-	    <div class="container">
-	      <div class="row">
-	         <div class="col-sm-12 ">
-		        <div align="left" class="" style="padding:1%;">
-		             <ul style="color:black;">
-		            <li style="padding-right: 1%;"><a href="/">Home</a></li>/
-		            <li style="padding-right: 1%;"><a href="">{{ ucwords($product->name) }}</a></li>
-		            </ul>
-		        </div>
-
-	        <div class="col-sm-12 hover01" style="padding: 2%; padding-top: 2%;">
-
-	        <div class="col-sm-5">
-		        <div class="img-zoom-container" onmousenter="showme(this)">
-		  			@php $image1 = 'storage/'.$product->image; $image2 = 'storage/'.$product->dimage; $image3 = 'storage/'.$product->dimage1;  @endphp
-		            <span><p class="imgid" style="allign:center;"><img  id="myimage" src="{{ asset($image1) }}"  srcset="{{ asset($image1) }}" width="426" height="426"></p></span>
-		          
-		            <span id="myhide" style="float: right;
-		              position: absolute;
-		              top: -100px;
-		              left: 437px;
-		              width: auto;
-		              height: 100%; z-index: 12; ">
-		              <div style="height: 426px; width: 426px; margin-top: 100px; background-repeat:no-repeat !important ;   "  id="myresult" class="img-zoom-result"  onmouseleave="" ></div></span>
-		        
-		        	<div id="slider1">
-		          		<div class="thumbelina-but horiz left disabled"><i class="glyphicon glyphicon-circle-arrow-left"></i></div>
-		                <div style="position:absolute;overflow:hidden;width:100%;height:100%;"><ul class="thumbelina" style="left: 0px;">
-			              <li style="display: inline-block;"><img class="cloudzoom-gallery img-thumbnail" src="{{ asset($image2) }}" data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($image2) }}'  " style="max-width:90px;max-height:100px;"></li>
-			              <li style="display: inline-block;"><img class="cloudzoom-gallery img-thumbnail" src="{{ asset($image3) }}" data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($image3) }}'  " style="max-width:90px;max-height:100px;"></li>
-		  
-		              		</ul>
-		          		</div>
-		              <div class="thumbelina-but horiz right disabled"><i class="glyphicon glyphicon-circle-arrow-right"></i></div>
-		          </div>
-		      
-		      
-		      	</div>
-	           
-	        </div>
-	        <div class="col-sm-6">
-	           <h3>{{ ucwords($product->name) }}</h3>
-	           <!-- <p style="font-size: 16px;font-weight:700;padding: 10px;">dlkbjoidfv</p> -->
-	           <b class="buyprice" style="font-size: 23px;display:block;margin-top: 20px;">PKR  {{ number_format($product->price) }}<button class="btn-xs button3 buydetailsbtn" style="position: absolute;right: 10%;" data-toggle="modal" data-target="#myModal"><i class="fa fa-phone"></i> Contact</button></b>
-	           <div style="margin:15px;">
-	            <table class="table-bordered">
-	            <tbody><tr>
-	            <td><p style="padding:7px;">Fair</p></td>
-	            <td><p style="padding:7px;padding:7px;background:#028f63;color:#fff;">Good</p>
-	              </td>
-	              <td><p style="padding:7px;">Excellent</p>
-	            </td>
-	            </tr></tbody></table>
-	               </div>
-	           <table class="table table-striped">
-
-
-	                        <tbody><tr>
-	                          <td><b>Negotiable: </b> </td>
-	                          <td><b>Yes</b></td>
-	                        </tr>
-	                        <tr>
-	                          <td>From:</td>
-	                          <td>Gujrat</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Brand:</td>
-	                          <td>Apple</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Model:</td>
-	                          <td>iphone x</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Network:</td>
-	                          <td>unlocked</td>
-	                        </tr>
-
-	                        <tr>
-	                          <td>Does the device has minor dent/crack?</td>
-	                          <td>No</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Does the device has major dent/crack?</td>
-	                          <td>No</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Are accessories orignal?</td>
-	                          <td>No</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Does screen has a crack?</td>
-	                          <td>No</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Device Box Availabe?</td>
-	                          <td>Yes</td>
-	                        </tr>
-	                        <tr>
-	                          <td>PTA Approved</td>
-	                          <td>Yes</td>
-	                        </tr>
-	                        <tr>
-	                          <td>Rate your battery 1 to 10</td>
-	                          <td>1</td>
-	                        </tr>
-
-	                      </tbody></table>
-
-
-	        </div>
-	      </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
 
 
 
 
-	  </div>
-	</div>
-	</div>
-	</section>
+  </head>
+  <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
+  <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+  <!-- <link href="{{ asset('css/style.css')}}" rel='stylesheet' type='text/css' media="all"> -->
+  <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
+  <link href="{{ asset('css/ProductDetail.css') }}" rel='stylesheet' type='text/css' media="all">
+  <link href="{{ asset('css/template1/tabcontent.css') }}" rel="stylesheet" type="text/css" />
 
-    <hr/>
-	<section>
-    	<div class="container">
-      		<div class="row">
-        		<div class="col-sm-12">
-       				<div class="row bootstrap snippets">
-      					<div class="col-md-12 col-sm-12">
-          					<div class="comment-wrapper">
-				              	<div class=" panel-info panelcmt">
-				                    <div class="panel-heading" style="background: #028f63;color: #fff;">
-				                    	Add Your Comment
-				                    </div>
-				                    <div style="padding: 15px;">
-					                   <div class="row">
-						                  <div class="form-group col-xs-6">
-						                   		<input name="name" placeholder="Enter Your Name" class="form-control" type="text" id="name" required="">
-						  
-						                   </div>
-						                    <div class="form-group col-xs-6">
-						                   		<input name="email" placeholder="Enter Your Email" class="form-control" type="email" id="email" required="">
-						                   </div>
-					                   </div>
-				                       <textarea class="form-control" placeholder="write a comment..." rows="3" name="comment" id="comment" style="margin-bottom:12px;"></textarea>
-				  
-				                        <div class="g-recaptcha" data-sitekey="6LdI274UAAAAAIGNcJZLOWKX1O7chYCtXvVOSDaf" style="margin-bottom:12px;"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdI274UAAAAAIGNcJZLOWKX1O7chYCtXvVOSDaf&amp;co=aHR0cHM6Ly9mbGlja2VyZm9uZS5jb206NDQz&amp;hl=en&amp;v=nuX0GNR875hMLA1LR7ayD9tc&amp;size=normal&amp;cb=2ruo7uvnp48e" width="304" height="78" role="presentation" name="a-7rcz7bk2lypw" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
-				                               <div class="clearfix"></div>
-					                    <button type="button" class="btn btn-success" id="commentbtn" style="background: #028f63;">Post</button>
-					                     <div class="clearfix"></div>
-					                      <hr>
-				  
-				                        <ul class="media-list"><div class="col-sm-12" align="center"><h2>No Comments! </h2></div></ul>
-				      					<div class="clearfix"></div>
-				      					<div class="col-sm-12" align="center">
-								        	<button class="btn loadmore" style="margin-top: 40px; padding: 5px; font-size: 18px; font-style: normal; width: 25%; background-color: rgb(2, 143, 99); border-width: 2px 2px 5px; border-style: solid; border-color: rgb(2, 143, 99); border-image: initial; color: rgb(255, 255, 255); min-width: 150px; display: none;">LOAD MORE</button>
-								        </div>
-				  
-				                    </div>
-				              	</div>
-          					</div>
+  <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
   
-      					</div>
- 			 		</div>
-        		</div>
-      		</div>
-    	</div>
-  	</section>
+  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
 
-  	<section>
-  		<div class="container mt-10 mb-10">
-  				
-  			<table class="MsoTableMediumGrid1Accent4" border="1" cellspacing="0" cellpadding="0">
-				<tbody>
-					<tr>
-					 <td class="Network" width="102">
-					  <p class="Networktext" align="center">
-					   <strong><span class="Networktext">Network</span></strong>
-					  </p>
-					 </td>
-					 <td class="Technology" width="114">
-					  <p class="Technologytext">
-					   <strong><span class="Technologytext">Technology</span></strong>
-					  </p>
-					 </td>
-					 <td class="GSMHSPALTE" width="468">
-					  <p class="GSMHSPALTEtext">
-					   <strong><u>GSM / HSPA / LTE</u></strong>
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Launch" width="102" rowspan="2">
-					  <p class="Launchtext" align="center">
-					   <strong>Launch</strong>
-					  </p>
-					 </td>
-					 <td class="Announced" width="114">
-					  <p class="Announcedtext">
-					   <strong>Announced</strong>
-					  </p>
-					 </td>
-					 <td class="Date" width="468">
-					  <p class="Datetext">
-					   {{ date('Y',strtotime($product->launch_announced)) }},
-					  {{ date('F',strtotime($product->launch_announced)) }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Status" width="114">
-					  <p class="Statustext">
-					   <strong>Status</strong>
-					  </p>
-					 </td>
-					 <td class="Statusdate" width="468">
-					  <p class="Statusdatetext">
-					  {{ $product->launch_status }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Body" width="102" rowspan="4">
-					  <p class="Bodytext" align="center">
-					   <strong>Body</strong>
-					  </p>
-					 </td>
-					 <td class="Dimensions" width="114">
-					  <p class="Dimensionstext">
-					   <strong>Dimensions</strong>
-					  </p>
-					 </td>
-					 <td class="Dimensize" width="468">
-					  <p class="Dimensizetext">
-					  {{ $product->body_dimensions}}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Weight" width="114">
-					  <p class="Weighttext">
-					   <strong>Weight</strong>
-					  </p>
-					 </td>
-					 <td class="Weightgrams" width="468">
-					  <p class="Weightgramstext">
-					  {{ $product->body_weight}}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Build" width="114">
-					  <p class="Buildtext">
-					   <strong>Build</strong>
-					  </p>
-					 </td>
-					 <td class="Buildtype" width="468">
-					  <p class="Buildtypetext">
-					   {{ $product->body_build }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="SIM" width="114">
-					  <p class="SIMtext">
-					   <strong>SIM</strong>
-					  </p>
-					 </td>
-					 <td class="SIMtype" width="468">
-					  <p class="SIMtypetext">
-					   {{ $product->body_sim }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Display" width="102" rowspan="4">
-					  <p class="Displaytext" align="center">
-					   <strong>Display</strong>
-					  </p>
-					 </td>
-					 <td class="Type" width="114">
-					  <p class="Typetext">
-					   <strong>Type</strong>
-					  </p>
-					 </td>
-					 <td class="LCDtype" width="468">
-					  <p class="LCDtypetext">
-					  {{ $product->display_type}}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Size" width="114">
-					  <p class="Sizetext">
-					   <strong>Size</strong>
-					  </p>
-					 </td>
-					 <td class="Screensize" width="468">
-					  <p class="Screensizetext">
-					  <!--  4.7 inches, 60.9 cm<sup><span xss="removed">2</span></sup><span xss="removed"> (~65.6% screen-to-body ratio)</span> -->
-					  {{ $product->display_size }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Resolution" width="114">
-					  <p class="Resolutiontext">
-					   <strong>Resolution</strong>
-					  </p>
-					 </td>
-					 <td class="Resolutiontype" width="468">
-					  <p class="Resolutiontypetext">
-					   {{ $product->display_resolution }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Protection" width="114">
-					  <p class="Protectiontext">
-					   <strong>Protection</strong>
-					  </p>
-					 </td>
-					 <td class="Protectiontype" width="468">
-					  <p class="Protectiontypetext Portectiontypetext">
-					   {{ $product->display_protection }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Platform" width="102" rowspan="4">
-					  <p class="Platformtext" align="center">
-					   <strong>Platform</strong>
-					  </p>
-					 </td>
-					 <td class="OS" width="114">
-					  <p class="OStext">
-					   <strong>OS</strong>
-					  </p>
-					 </td>
-					 <td class="Operatingsystem" width="468">
-					  <p class="Operatingsystemtext">
-					   {{ $product->platform_os }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Chipset" width="114">
-					  <p class="Chipsettext">
-					   <strong>Chipset</strong>
-					  </p>
-					 </td>
-					 <td class="Processortype" width="468">
-					  <p class="Processortypetext">
-					   {{ $product->platform_chipset }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="CPU" width="114">
-					  <p class="CPUtext">
-					   <strong>CPU</strong>
-					  </p>
-					 </td>
-					 <td class="Processorsize" width="468">
-					  <p class="Processorsizetext">
-					   {{ $product->platform_cpu }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="GPU" width="114">
-					  <p class="GPUtext">
-					   <strong>GPU</strong>
-					  </p>
-					 </td>
-					 <td class="Graphicprocessor" width="468">
-					  <p class="Graphicprocessortext">
-					   {{ $product->platform_gpu }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Memory" width="102" rowspan="2">
-					  <p class="Memorytext" align="center">
-					   <strong>Memory</strong>
-					  </p>
-					 </td>
-					 <td class="Cardslot" width="114">
-					  <p class="Cardslottext">
-					   <strong>Card slot</strong>
-					  </p>
-					 </td>
-					 <td class="Memorycard" width="468">
-					  <p class="Memorycardtext">
-					  {{ $product->memory_card_slot }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Internal" width="114">
-					  <p class="Internaltext">
-					   <strong>Internal</strong>
-					  </p>
-					 </td>
-					 <td class="ROMRAM" width="468">
-					  <p class="ROMRAMtext ROAMRAMtext">
-					   {{ $product->memory_storage }}, {{ $product->memory_ram }} RAM
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="MainCamera" width="102" rowspan="3">
-					  <p class="MainCameratext" align="center">
-					   <strong>Main Camera</strong>
-					  </p>
-					 </td>
-					 <td class="Dual" width="114">
-					  <p class="Dualtext">
-					   <strong>{{ ucfirst($product->main_type) }}</strong>
-					  </p>
-					 </td>
-					 <td class="Cameraprofile" width="468">
-					  <p class="Cameraprofiletext">
-					  {{ $product->main_type_value }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="MainCameraFeatures" width="114">
-					  <p class="MainCameraFeaturestext">
-					   <strong>Features</strong>
-					  </p>
-					 </td>
-					 <td class="Camerafeatures" width="468">
-					  <p class="Camerafeaturestext">
-					  {{ $product->main_feature }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="MainCameraVideo" width="114">
-					  <p class="MainCameraVideotext">
-					   <strong>Video</strong>
-					  </p>
-					 </td>
-					 <td class="MainCameraVideoquality" width="468">
-					  <p class="MainCameraVideoqualitytext">
-					  {{ $product->main_video }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="SelfieCamera" width="102" rowspan="3">
-					  <p class="SelfieCameratext" align="center">
-					   <strong>Selfie Camera</strong>
-					  </p>
-					 </td>
-					 <td class="Single" width="114">
-					  <p class="Singletext">
-					   <strong>Single</strong>
-					  </p>
-					 </td>
-					 <td class="Cameramegapixels" width="468">
-					  <p class="Cameramegapixelstype Camerapixelstype">
-					   {{ $product->selfie_single }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="SelfieCameraFeatures" width="114">
-					  <p class="SelfieCameraFeaturestext">
-					   <strong>Features</strong>
-					  </p>
-					 </td>
-					 <td class="Flash" width="468">
-					  <p class="Flashtext">
-					  {{ $product->selfie_feature }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="SelfieCameraVideo" width="114">
-					  <p class="SelfieCameraVideotext">
-					   <strong>Video</strong>
-					  </p>
-					 </td>
-					 <td class="SelfieCameraVideoquality" width="468">
-					  <p class="SelfieCameraVideoqualitytext">
-					  {{ $product->selfie_video }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Sound" width="102" rowspan="3">
-					  <p class="Soundtext" align="center">
-					   <strong>Sound</strong>
-					  </p>
-					 </td>
-					 <td class="Loudspeaker" width="114">
-					  <p class="Loudspeakertext">
-					   <strong>Loudspeaker</strong>
-					  </p>
-					 </td>
-					 <td class="Loudspeakerstatus" width="468">
-					  <p class="Loudspeakerstatustext">
-					  {{ $product->sound_loudspeaker }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="mmjack" width="114">
-					  <p class="mmjacktext">
-					   <strong>3.5mm jack</strong>
-					  </p>
-					 </td>
-					 <td class="Headphonejack" width="468">
-					  <p class="Headphonejacktext">
-					   {{ $product->sound_jack }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Emptycol2" width="114">
-					  <p class="Emptycol2text">
-					   <strong>Mic</strong>
-					  </p>
-					 </td>
-					 <td class="Noisecancellation" width="468">
-					  <p class="Noisecancellationtext">
-					   {{ $product->sound_mic }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="COMMS" width="102" rowspan="6">
-					  <p class="COMMStext" align="center">
-					   <strong>COMMS</strong>
-					  </p>
-					 </td>
-					 <td class="WLAN" width="114">
-					  <p class="WLANtext">
-					   <strong>WLAN</strong>
-					  </p>
-					 </td>
-					 <td class="WIFI" width="468">
-					  <p class="WIFItext">
-					  {{ $product->comms_wlan }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Bluetooth" width="114">
-					  <p class="Bluetoothtext">
-					   <strong>Bluetooth</strong>
-					  </p>
-					 </td>
-					 <td class="Bluetoothtype" width="468">
-					  <p class="Bluetoothtypetext">
-					  {{ $product->comms_bluetooth }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="GPS" width="114">
-					  <p class="GPStext">
-					   <strong>GPS</strong>
-					  </p>
-					 </td>
-					 <td class="GPSdetails" width="468">
-					  <p class="GPSdetailstext">
-					   {{ $product->comms_gps }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="GPS" width="114">
-					  <p class="GPStext">
-					   <strong>NFC</strong>
-					  </p>
-					 </td>
-					 <td class="GPSdetails" width="468">
-					  <p class="GPSdetailstext">
-					   {{ $product->comms_nfc }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Radio" width="114">
-					  <p class="Radiotext">
-					   <strong>Radio</strong>
-					  </p>
-					 </td>
-					 <td class="FM" width="468">
-					  <p class="FMtext">
-					   {{ $product->comms_radio }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="USB" width="114">
-					  <p class="USBtext">
-					   <strong>USB</strong>
-					  </p>
-					 </td>
-					 <td class="USBtype" width="468">
-					  <p class="USBtypetext">
-					  {{ $product->comms_usb }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Features" width="102">
-					  <p class="Featurestext" align="center">
-					   <strong>Features</strong>
-					  </p>
-					 </td>
-					 <td class="Sensors" width="114">
-					  <p class="Sensorstext">
-					   <strong>Sensors</strong>
-					  </p>
-					 </td>
-					 <td class="Sensortype" width="468">
-					  <p class="Sensortypetext">
-					   {{ $product->feature_sensor }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Battery" width="102" rowspan="2">
-					  <p class="Batterytext" align="center">
-					   <strong>Battery</strong>
-					  </p>
-					 </td>
-					 <td class="Emptycol21" width="114">
-					  <p class="Emptycol21text">
-					   <strong> </strong>
-					  </p>
-					 </td>
-					 <td class="Batterypower" width="468">
-					  <p class="Batterypowertext">
-					  {{ $product->battery_status }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="Charging" width="114">
-					  <p class="Chargingtext">
-					   <strong>
-					Talk Time
-					   <br>
-					Music Play
-					   </strong>
-					  </p>
-					 </td>
-					 <td class="Chargingstatus" width="468">
-					  <p class="Chargingstatustext">
-					   
-					 {{ $product->battery_talk_time }}
-					   <br>
-					  {{ $product->battery_music }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="MISC" width="102">
-					  <p class="MISCtext" align="center">
-					   <strong>MISC</strong>
-					  </p>
-					 </td>
-					 <td class="Colors" width="114">
-					  <p class="Colorstext">
-					   <strong>Colors</strong>
-					  </p>
-					 </td>
-					 <td class="Colorcode" width="468">
-					  <p class="Colorcodetext">
-					   {{ $product->colors }}
-					  </p>
-					 </td>
-					</tr>
-					<tr xss="removed">
-					 <td class="MISC" width="102">
-					  <p class="MISCtext2" align="center">
-					   <strong> </strong>
-					  </p>
-					 </td>
-					 <td class="Price" width="114">
-					  <p class="Pricetext">
-					   <strong>Price</strong>
-					  </p>
-					 </td>
-					 <td class="PKR" width="468">
-					  <p class="PKRtext">
-					  {{ $product->price }} PKR
-					  </p>
-					 </td>
-					</tr>
-				</tbody>
-			</table>
+  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/magnifier.css') }}">
 
-  		</div>
-  	</section>
 
-	<script type="text/javascript" src="{{ asset('js/bootstrap-slider.min.js') }} "></script>
-	<script type="text/javascript">
+  <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
 
-		totalsize=0;
-		comesize=0;
-		froms = 0;
-		tos=0;
-		options = "";
-		productstart=0;
-		productend=3;
-		productmin=0;
-		productmax=0;
-		productcompany="";
-		psort="";
-		gsort="";
-		nsort="";
-		varient = "";
-		search = "";
 
-		var slider = new Slider('#ex2', {
-		  //tooltip: 'always'
-		}).on('slideStop', function(data){
-		  productmin = data[0];
-		  productmax = data[1];
-		  loadProducts();
+
+
+ <style>
+   #clickopinon{
+cursor: pointer;
+   }
+ </style>
+
+<body>
+
+
+
+  <a href="#" id="scroll" style="display: none;"><span></span></a>
+  @include('includes.header');
+
+<br/>
+<div class="container">
+<div class="row">
+  <div class="col-md-12 text-uppercase" style="color: gray;">
+    HOME / {{ $product->category->title }} / {{ $product->Productbrand->name }} / {{ $product->name }}
+  </div>
+</div>
+
+
+</div>
+
+
+<br/>
+
+<br/>
+
+
+<div class="row" style="margin-top: 31px;">
+  <div class="col-md-6" >
+
+	@php $img1 = $product->image @endphp
+      @php $img1_400 = '/storage/admin/images/product/thumbnail/400_'.$product->image @endphp
+      @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
+    	@php $img2 = $product->dimage @endphp
+    	@php $img3 = $product->dimage1 @endphp
+
+      @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
+      @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
+      @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
+
+ <!-- <div class="loupe-widget js-loupe">
+  <div class="loupe-widget__loupe js-loupe-element"></div>
+  <div id="image_container">
+    <img id="myimage" style="    width: 100%;" class="loupe-widget__image js-loupe-image" src="{{asset($img1_400)}}" alt="image" data-image-full="{{asset($img1_700)}}"/>
+  </div>
+  
+</div> -->
+
+<div>
+    <a  class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
+        <img id="thumb"
+           src="{{ asset($img1_400)}}">
+    </a>
+    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by
+        Vincent van Gogh</div>
+</div>
+
+
+<div >
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <div class="row" >
+  
+    <div class="col-md-12 col-lg-12 col-sm-12" id="slickBtnFor">
+    
+      <div class="autoplayFeatures">
+        
+         @if(!empty($img1))
+
+          <figure  >
+            <img class="productImgs" data-id="{{ $product->image }}" class="img-thumbnail" src="{{ asset($img1_100)}}" alt="Trulli" style="width:100%;height: 100px;">
+          </figure>
+
+        @endif
+
+        @if(!empty($img2))
+
+        	<figure  >
+	          <img class="productImgs" data-id="{{ $product->dimage }}" class="img-thumbnail" src="{{ asset($img2_100)}}" alt="Trulli" style="width:100%;height: 100px;">
+	        </figure>
+
+      	@endif
+
+
+
+
+        @if(!empty($img3))
+
+        	<figure  >
+	          <img class="productImgs" data-id="{{ $product->dimage1 }}" class="img-thumbnail" src="{{ asset($img3_100)}}" alt="Trulli" style="width:100%;height: 100px;">
+	        </figure>
+
+      	@endif
+       
+        
+        </div>
+      
+      </div>
+
+
+    
+    </div>
+
+
+  </div>
+
+
+</div>
+  </div>
+
+  <div class="col-md-6" style="    margin-top: -70px;color: black !important;">
+
+
+   <h4 style="font-size: 18px !important;">{{ ucwords($product->name) }}</h4>
+   <p>{{ $product->storage }}</p>
+
+
+
+   @if($product->detail_check==1)
+      {!! $product->other_detail !!}
+   @else
+    <ol type="circle"> 
+      @if($product->os !='') <li>{{ $product->os }}</li> @endif
+
+      @if($product->processor !='') <li>{{ $product->processor }}</li> @endif
+
+      @if($product->memory !='') <li>{{ $product->memory }}</li> @endif
+      @if($product->camera !='') <li>{{ $product->camera }}</li> @endif
+      @if($product->size !='') <li>{{ $product->size }}</li> @endif
+      @if($product->resolution !='') <li>{{ $product->resolution }}</li> @endif
+      @if($product->connectivity !='') <li>{{ $product->connectivity }}</li> @endif
+      @if($product->battery !='') <li>{{ $product->battery }}</li> @endif
+      @if($product->height !='') <li>{{ $product->height }}</li> @endif
+      @if($product->width !='') <li>{{ $product->width }}</li> @endif
+      @if($product->breif_weight !='') <li>{{ $product->breif_weight }}</li> @endif
+
+    </ol>
+   @endif
+
+  
+<input type="hidden" value="{{ $product->id }}" id="product_id">
+
+<style type="text/css">
+	.color_active{ background: #42bd41 !important; color: white !important; }
+</style>
+<hr style="width: 80%;" />
+
+@if($product->variation_colors->count()>0)
+
+	<p style="font-weight: bold;">Color <font style="" class="colr"> *</font></p>
+
+	<div style="height: 100px; width: 100%;">
+		@php $productColor = '' @endphp
+		@php $i = 1 @endphp
+		@foreach($product->variation_colors as $color)
+			
+			@if($productColor != $color->color)
+				<div class="@if($i==1) color_active @endif productColorClass" id="mobviebtnsabove" style="width: 20%;  border: 2px #d3d3d3 solid ; cursor: pointer;float: left; text-align: center;    padding: 5px 10px 5px 10px;margin-right: 6px;
+				  border-radius: 6px;">
+				  <button id="mobviebtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: black;  font-weight: 500;">{{ ucwords($color->color) }}</button>
+				</div>
+
+			@endif
+			@php $productColor = $color->color; $i++; @endphp
+		@endforeach
+	  	&nbsp;&nbsp;&nbsp;
+	</div>	
+
+@endif
+
+
+
+
+
+<p style="font-weight: bold;">Storage <font style="" class="colr"> *</font></p>
+
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+       
+      <select class="form-control" id="colorStorage" style="font-weight: bold !important; height: 35px !important; ">
+       
+      </select>
+    </div>
+  </div>
+  <div class="col-md-2">
+   
+  </div>
+
+   <div class="col-md-3">
+
+
+    
+    <a style="position: absolute ;text-decoration: none ;  border: 2px #d0c6c6 solid;padding: 2px 20px 7px 20px;color: white !important; background-color: #42bd41; border-radius: 6px; height: 35px !important;cursor: pointer; " href="{{ route('AdviceComparison',$product->id) }}">COMPARE</a>
+
+   </div>
+
+
+   <div class="col-md-4" id="comparebtm">
+     
+   </div>
+
+</div>
+
+
+
+<hr style="width: 80%;" />
+
+
+
+<div class="row">
+  <div class="col-md-4">
+<h3> <sup>*</sup> <font style="color: #0188cc !important" > PKR</font><br/>
+<font class="StoragePrice" style="    font-size: 40px;
+color: #0188cc;
+margin-left: 15px;">{{ $product->price }}</font>
+</h3>
+  </div>
+  <div class="col-md-8">
+   <p>
+    * Disclaimer: All prices on website are subject to change without notice. While we make every effort to provide you with the latest prices.
+   </p>
+  </div>
+   
+
+
+
+  </div>
+
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="row">
+
+  <div class="col-md-12">
+
+    <div style=" margin: 0 auto; padding: 120px 0 40px;">
+      <ul class="tabs" data-persist="true">
+          <li><a href="#view1">TECHNICLE SPECS</a></li>
+          <li><a href="#view2">OPINIOS</a></li>
+          <li><a href="#view3">VEDIOS</a></li>
+          <li><a href="#view4">REVIEWS</a></li>
+
+            
+      </ul>
+      <div class="tabcontents">
+         
+<div id="view1">
+              <div class="row"  style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                <div class="col-md-2">
+                 <font style="font-size: 24px;
+                
+                 font-weight: 600; color: red;"> NETWORK</font>
+                </div>
+                <div class="col-md-2" style="color: black; font-size: 20px" >Technology</div>
+                <div class="col-md-8" style="color: black; font-size: 20px">GSM / SDMA /HSPA / EVDO / LTE</div>
+              </div>
+
+
+
+         
+
+
+              <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                  <div class="col-md-2"><font style="font-size: 24px;font-weight: 600; color: red;"> LAUNCH</font></div>
+                  <div class="col-md-2" style="color: black; font-size: 20px" >
+                    @if($product->launch_announced !='')
+                      <p  style="border-bottom: 1px #efefef solid;     width: 118%;">Announced</p>
+                    @endif
+                    @if($product->launch_status !='')
+                      <p style="margin-top: -10px;"> Status</p>
+                    @endif
+                </div>
+                  <div class="col-md-8" style="color: black; font-size: 20px">
+                    @if($product->launch_announced !='')
+                      <p style="border-bottom: 1px #efefef solid;">{{ date('Y',strtotime($product->launch_announced)) }},
+              {{ date('F',strtotime($product->launch_announced)) }} {{ date('d',strtotime($product->launch_announced)) }} </p>
+                    @endif
+                    @if($product->launch_status !='')
+                      <p style="margin-top: -10px;">{{ $product->launch_status }} </p>
+                    @endif
+                   </div>
+              </div>
+
+
+
+
+
+              <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                <div class="col-md-2">
+                 <font style="font-size: 24px;
+                
+                 font-weight: 600; color: red;"> BODY</font>
+                </div>
+                <div class="col-md-2" style="color: black; font-size: 20px" >
+                  @if($product->body_dimension !='')
+                    <p  style="border-bottom: 1px #efefef solid;      width: 118%;">Dimensions</p>
+                  @endif
+                  @if($product->body_weight !='')
+                    <p class="tblrowbottmstl"> Weight</p>
+                  @endif
+                  @if($product->body_build !='')
+                    <p class="tblrowbottmstl"> Build</p>
+                  @endif
+                  @if($product->body_sim !='')
+                    <p class="tblrowbottmstl"> SIM</p>
+                  @endif
+
+                </div>
+                <div class="col-md-8" style="color: black; font-size: 20px">
+                  @if($product->body_dimension !='')
+                    <p style="border-bottom: 1px #efefef solid;">{{ $product->body_dimension }}</p>
+                  @endif
+                  @if($product->body_weight !='')
+                    <p class="tblrowbottmstl2">{{ $product->body_weight }}</p>
+                  @endif
+                   @if($product->body_build!='')
+                    <p class="tblrowbottmstl2">{{ $product->body_build }}</p>
+                  @endif
+                   @if($product->body_sim !='')
+                    <p class="tblrowbottmstl2">{{ $product->body_sim }}</p>
+                  @endif
+
+                  </div>
+                                
+                </div>
+
+
+
+                <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                  <div class="col-md-2">
+                   <font style="font-size: 24px;
+                  
+                   font-weight: 600; color: red;"> DISPLAY</font>
+                  </div>
+                  <div class="col-md-2" style="color: black; font-size: 20px" >
+                      @if($product->display_type !='')
+                        <p  style="border-bottom: 1px #efefef solid;      width: 118%;">Type</p>
+                      @endif
+                      @if($product->display_size !='')
+                        <p class="tblrowbottmstl" >Size</p>
+                      @endif
+                      @if($product->display_resolution !='')
+                        <p class="tblrowbottmstl" >Resolution</p>
+                      @endif
+                      @if($product->display_protection !='')
+                        <p class="tblrowbottmstl" >Protection</p>
+                      @endif
+    
+    
+                  </div>
+                  <div class="col-md-8" style="color: black; font-size: 20px">
+                      @if($product->display_type !='')
+                        <p style="border-bottom: 1px #efefef solid;">{{ $product->display_type }}</p>
+                      @endif
+                      @if($product->display_size !='')
+                        <p class="tblrowbottmstl2">{{ $product->display_size }}</p>
+                      @endif
+                      @if($product->display_resolution !='')
+                        <p class="tblrowbottmstl2">{{ $product->display_resolution }}</p>
+                      @endif
+                      @if($product->display_protection !='')
+                        <p class="tblrowbottmstl2">{{ $product->display_protection }}</p>
+                      @endif
+                    </div>
+                   
+                    
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;"> PLATEFORM</font>
+                      </div>
+                      <div class="col-md-2" style="color: black; font-size: 20px" >
+                        @if($product->platform_os !='')
+                          <p  style="border-bottom: 1px #efefef solid;      width: 118%;">OS</p>
+                        @endif
+                        @if($product->platform_chipset !='')
+                           <p class="tblrowbottmstl">Chipset</p>
+                        @endif
+                        @if($product->platform_cpu !='')
+                           <p class="tblrowbottmstl">CPU</p>
+                        @endif
+                        @if($product->platform_gpu !='')
+                           <p class="tblrowbottmstl">GPU</p>
+                        @endif
+
+        
+        
+                      </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->platform_os !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->platform_os }}</p>
+                          @endif
+                          @if($product->platform_chipset !='')
+                            <p class="tblrowbottmstl2">{{ $product->platform_chipset }}</p>
+                          @endif
+                          @if($product->platform_cpu !='')
+                            <p class="tblrowbottmstl2">{{ $product->platform_cpu }}</p>
+                          @endif
+                          @if($product->platform_gpu !='')
+                            <p class="tblrowbottmstl2">{{ $product->platform_gpu }}</p>
+                          @endif
+                       
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
+                        
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;"> MEMORY</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                        @if($product->memory_card_slot !='')
+                          <p  style="border-bottom: 1px #efefef solid;      width: 118%;">Card Slot</p>
+                        @endif
+                        @if($product->memory_ram !='')
+                           <p class="tblrowbottmstl">Ram</p>
+                        @endif
+                        @if($product->memory_storage !='')
+                           <p class="tblrowbottmstl">Storage</p>
+                        @endif
+        
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                        
+                          @if($product->memory_card_slot !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->memory_card_slot }}</p>
+                          @endif
+                          @if($product->memory_ram !='')
+                            <p class="tblrowbottmstl2">{{ $product->memory_ram }}</p>
+                          @endif
+                          @if($product->memory_storage !='')
+                            <p class="tblrowbottmstl2">{{ $product->memory_storage }}</p>
+                          @endif
+                        
+                        </div>
+                        
+                    </div>
+                        
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;"> MAIN CAMERA</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                          @if($product->main_type !='' && $product->main_type_value !='')
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">{{ ucwords($product->main_type) }}</p>
+                          @endif
+                          @if($product->main_feature !='')
+                             <p class="tblrowbottmstl">Features</p>
+                          @endif
+                          @if($product->main_video !='')
+                             <p class="tblrowbottmstl">Video</p>
+                          @endif
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->main_type !='' && $product->main_type_value !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->main_type_value }}</p>
+                          @endif
+                          @if($product->main_feature !='')
+                             <p class="tblrowbottmstl2">{{ $product->main_feature }} </p>
+                          @endif
+                          @if($product->main_video !='')
+                             <p class="tblrowbottmstl2">{{ $product->main_video }} </p>
+                          @endif
+                        </div>
+                    </div>
+            
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;"> SELFIE CAMERA</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                          @if($product->selfie_type !='' && $product->selfie_type_value !='')
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">{{ ucwords($product->selfie_type) }}</p>
+                          @endif
+                          @if($product->selfie_feature !='')
+                             <p class="tblrowbottmstl">Features</p>
+                          @endif
+                          @if($product->selfie_video !='')
+                             <p class="tblrowbottmstl">Video</p>
+                          @endif
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->selfie_type !='' && $product->selfie_type_value !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->selfie_type_value }}</p>
+                          @endif
+                          @if($product->selfie_feature !='')
+                             <p class="tblrowbottmstl2">{{ $product->selfie_feature }} </p>
+                          @endif
+                          @if($product->selfie_video !='')
+                             <p class="tblrowbottmstl2">{{ $product->selfie_video }} </p>
+                          @endif
+                        </div>
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;"> SOUND</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                          @if($product->sound_loudspeaker !='')
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">Loudspeaker</p>
+                          @endif
+                          @if($product->sound_jack !='')
+                             <p class="tblrowbottmstl">3.5 mm Jack</p>
+                          @endif
+                          @if($product->sound_mic!='')
+                             <p class="tblrowbottmstl">Mic</p>
+                          @endif
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->sound_loudspeaker !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->sound_loudspeaker }}</p>
+                          @endif
+                          @if($product->sound_jack !='')
+                             <p class="tblrowbottmstl2">{{ $product->sound_jack }} </p>
+                          @endif
+                          @if($product->sound_mic !='')
+                             <p class="tblrowbottmstl2">{{ $product->sound_mic }} </p>
+                          @endif
+                        </div>
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;">COMMS</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                          @if($product->comms_wlan !='')
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">Wlan</p>
+                          @endif
+                          @if($product->comms_bluetooth !='')
+                             <p class="tblrowbottmstl">Bluetooth</p>
+                          @endif
+                          @if($product->comms_gps!='')
+                             <p class="tblrowbottmstl">GPS</p>
+                          @endif
+                          @if($product->comms_nfc!='')
+                             <p class="tblrowbottmstl">NFC</p>
+                          @endif
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->comms_wlan !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->comms_wlan }}</p>
+                          @endif
+                          @if($product->bluetooth !='')
+                             <p class="tblrowbottmstl2">{{ $product->bluetooth }} </p>
+                          @endif
+                          @if($product->comms_gps !='')
+                             <p class="tblrowbottmstl2">{{ $product->comms_gps }} </p>
+                          @endif
+                          @if($product->comms_nfc !='')
+                             <p class="tblrowbottmst2">{{ $product->comms_nfc }}</p>
+                          @endif
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;">FEATURES</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                          @if($product->feature_sensor !='')
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">Sensor</p>
+                          @endif
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->feature_sensor !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->feature_sensor }}</p>
+                          @endif
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;">BATTERY</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                          @if($product->battery_status !='')
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">Status</p>
+                          @endif
+                          @if($product->battery_talk_time !='')
+                            <p class="tblrowbottmstl">Talk Time</p>
+                          @endif
+                          @if($product->battery_music!='')
+                             <p class="tblrowbottmstl">Music</p>
+                          @endif
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->battery_status !='')
+                            <p style="border-bottom: 1px #efefef solid;">{{ $product->battery_status }}</p>
+                          @endif
+                          @if($product->battery_talk_time !='')
+                             <p class="tblrowbottmstl2">{{ $product->battery_talk_time }} </p>
+                          @endif
+                          @if($product->battery_music !='')
+                             <p class="tblrowbottmstl2">{{ $product->battery_music }} </p>
+                          @endif
+                        </div>
+
+                    </div>
+                  
+                  <div class="row" style="    background-color: #fafafa;   border-bottom: 5px #efefef solid;  ">
+                      <div class="col-md-2">
+                       <font style="font-size: 24px;
+                      
+                       font-weight: 600; color: red;">MISC</font>
+                      </div>
+                        <div class="col-md-2" style="color: black; font-size: 20px" >
+                          @if($product->variation_colors->count()>0)
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">Colors</p>
+                          @endif
+                          @if($product->price !='')
+                             <p  style="border-bottom: 1px #efefef solid;width: 118%;">Price</p>
+                          @endif
+                        </div>
+                        <div class="col-md-8" style="color: black; font-size: 20px">
+                          @if($product->variation_colors->count()>0)
+                            @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
+                            <p style="border-bottom: 1px #efefef solid;">
+                              @foreach($product->variation_colors as $color)
+                                @php $i++; @endphp
+                                @if($colorName !=$color->color)
+                                  {{ ucfirst($color->color)}} @if($count>$i) , @endif
+                                @endif
+                              @php $colorName = $color->color; @endphp
+                              @endforeach
+
+                            </p>
+                          @endif
+                          @if($product->price !='')
+                             <p class="tblrowbottmstl2">{{ $product->price }} </p>
+                          @endif
+                          
+                        </div>
+
+                    </div>
+
+            </div>
+          
+          <div id="view2">
+             
+
+
+          <div class="row">
+          <div id="view2zeroAtMobile"  style="width:20%; float:left "></div>
+
+          <div id="view2FullAtMobile"  style="width:60%; float:left " >
+
+            <div class="container">
+            
+                <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
+                  <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
+                  <a id="clickopinon"  style="  background-color: #4a88c2; 
+                  color: white;
+                  padding: 10px 18px 10px 18px; text-decoration: none;
+                  border-radius: 4px;">POST YOUR OPINIONS </a>
+                  </div>
+
+                  <div class="col-md-2" style="margin-top: 10px;">Pages :</div>
+                  <style>
+                     .pagination{ float: left !important; margin-top: 10px !important; }
+                  </style>
+                  <div class="col-md-5" id="pages" >{{ $opinions->links() }} </div>
+                 
+                </div>
+
+                <div class="row" id="OpinonBox" style="display: none">
+                   <div class="col-md-12" style="background-color: #f0f0f0; border: 1px black solid " >
+                      <h5>Post Your Opinion</h5>
+                      <!-- <div class="row"> 
+                        <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
+                         <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
+                      </div> -->
+                    <hr/>
+
+
+                    <form action="{{ route('ProductOpinion') }}" method="post">
+                        @csrf
+                        <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        <label>Your nickname (optional)</label><br/>
+                        <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
+
+                        <br/>
+                        <br/>
+                          <!-- <div class="row"> 
+                            <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
+                             <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
+                          </div> -->
+
+                        <label>Your Comment</label><br/>
+                          <textarea name="comment" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
+                          <div class="row"> 
+                            <div class="col-md-6" ><p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p></div>
+                             <div class="col-md-6" >
+                               
+                              <p  style="text-align:right" class="submit_area">
+                                  @if(!empty(Session::get('user')->id))
+                                       <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                  @else
+                                      <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button>
+                                     <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
+                                  @endif
+                               
+                              </p>
+                            </div>
+                          </div>
+                        </form>         
+
+                          <!-- Modal -->
+                          <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
+                            <div class="modal-dialog">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h4 class="modal-title" style="color: black;">Sign in</h4>
+                                    
+                                </div>
+                                  <div class="modal-body">
+                                    <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
+                                    <form method="post">
+                                      @csrf
+                                      <div class="form-group">
+                                          <label class="info-title">Email</label>
+                                          <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="info-title">Password</label>
+                                          <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
+                                      </div>  
+
+                                      <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
+                                      <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+
+
+                                    </form>
+                                   
+                               
+                                
+                                  </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default modal_close" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <!-- End Modal --> 
+                   </div>
+
+
+                </div>
+       
+            </div>
+
+            <div class="container">
+
+                <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
+                
+                
+                <div class="col-md-6" style="height: 81px;padding-top: 27px;" >
+
+
+                  <div style="float: left; width: 50%; height: 100%; "><input id="opinion_search" type="search" name="srch" style="height: 42px;width: 97%; outline: none;" /></div>
+                  <div style="float: left; width: 50%; height: 100%; "><button id="opinion_search_btn" style="border: none; outline: none;cursor: pointer;"><p id="srchoption" style="  
+                  height: 43px;
+                  font-size: .9vw;
+                  text-align: center;  background-color: #f9f9f9;   color: #0b0a0a;  padding: 10px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px black solid;">SEARCH OPINIONS </p></button></div>
+                
+                
+                 </div>
+
+                  
+                  <div id="sortBy" class="col-md-3" style="color: black; font-size: 20px; text-align: right; padding-top: 19px;        " >  Sort By: </div>
+
+
+                  <div class="col-md-3" style="color: black; font-size: 20px ; padding-top: 19px;              " >
+                  
+                  
+       
+
+                  <div class="form-group">
+           
+                    <select class="form-control" id="asc_desc">
+                      <option selected="" disabled="">Select View</option>
+                      <option value ="desc">Newest First</option>
+                      <option value="asc" >Older First</option>
+                    </select>
+                  </div>
+      
+      
+                    </div>
+                 
+                </div>
+
+
+            </div>
+
+
+            <div class="container opinions_data">
+
+              @if($opinions->count())
+                @foreach($opinions as $row)
+                    <div class="row">
+                      <div   style=" height: 400px;  border: 1px #c4c0c0 solid;   margin-top: 17px;  background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid; width: 100%; ">
+                      
+                        <div style="height: 20%; width: 100%; background-image: linear-gradient(to top right, #e5817a, #f0f0f0); ">
+                        
+                          <div  style="  width: 8% ;height: 100%;  float: left; text-align: center;"><p  id="Sresponsive" style="width: 100%;    font-size: 3.2vw;  color: white;   ">{{ strtoupper(substr($row->user->name,0,1)) }}</p> </div>
+                          <div style="  width: 92% ;height: 100%; background-color: #f0f0f0; float: left;">
+                          
+                            <div style="height: 60%; width: 100%;  color: black !important;">
+                            
+                              <div id="setSobercatOnMob" style="height: 100%; width: 20%;  float: left; color: black;    font-size: 2vw;    font-weight: 700;">
+                                
+                                
+                                <div class="row">
+                                  <div class="col-md-8" style="margin-top: 7px;"><h5>{{ $row->user->name }}</h5></div>
+                                  <div class="col-md-4"><div style="height: 100%; width: 8%;  float: left;">
+                                  <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" /> --></div>
+                                </div>
+                                 </div>
+                              </div>
+                             
+                              <div id="settimepnMob" style="height: 100%; width: 35%;  float: right; font-size: 20px;  font-weight: 600;margin-top: 7px;"> 
+                                <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /> 
+                                20 Aug 2020 
+                                <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
+                                0Cp  -->
+                                <div style="height: 100%; width: 10%; float: left;"><img class="changeClockHeihtOnMob"  style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
+
+                                <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;margin-top: 2px;">{{ date('Y M  d',strtotime($row->created_at)) }}</p></div>
+
+                                <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
+                                <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="height: 70%; width: 100%; background-color: #81c5ec;">
+                        
+                          <div style="  width: 8% ;height: 100%;  float: left; text-align: center;background-color: white;">
+                            
+                            <!-- <p> <img style="width: 25%; height: auto;" src="{{ asset('storage/images/headerimg/ic_speaker_notes_black_18dp.png')}}"  /> 6</p> -->
+
+                          </div>
+                        
+                          <div style=" width: 92% ;height: 100%; background-color: #f7f7f7; float: left; overflow-y: scroll;">
+                          
+                            <div style="width: 100%;  color: black !important;">
+                            <p id="LoremResp" style="font-size: 1.1vw;  padding: 33px;  ">{{ $row->comment }}</p>
+                            </div>
+
+                            <div class="row">
+                              @if($row->replies->count() >0)
+                                <h4>Opinion Replies</h4>
+                                @foreach($row->replies as $opinion)
+                                  <div class="col-md-12" style="margin-top: 5px;">
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <div  style="width: 20% ;float: left; background-image: linear-gradient(to top right, #e5817a, #f0f0f0);height: 42px;"><p  id="Sresponsive" style="width: 100%;font-size: 2vw;text-align: center;">{{ strtoupper(substr($opinion->user->name,0,1)) }}</p> </div>
+                                          &nbsp;&nbsp;&nbsp;{{ $opinion->user->name }}
+                                        </div> <!-- 30% user nae -->
+                                        <div class="col-md-8">
+                                            <p id="LoremResp" style="">{{ $opinion->reply }}</p>
+                                        </div>
+
+                                      </div>
+                                  </div>
+                                  
+                                @endforeach
+                              @endif
+                              
+                            </div>
+
+                            <div style="width: 100%; background-color: #ffffff; ">
+                              <p class="BoldPara" style="    font-size: 1.4vw;
+                              font-weight: 500;">
+                               
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div style="height: 10%; width: 100%; background-color: white;">
+                        
+                          <div id="RatingMob" style="height: 100%; width: 30%;  float: left;"> 
+                        
+                          <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;">
+                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
+                       
+                       
+                          <div style="height: 100%; width: 20%;  float: left;"> </div>
+                       
+                          <div style="height: 100%; width: 40%;  float: left;"> 
+                          
+                            <a href="#up" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" /> </a> | <a href="#down" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" /> </a>
+                          
+
+                          </div>
+                        
+                          
+                          </div>
+
+                          <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
+                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href="" type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
+                        
+                        </div>
+                    
+                      </div>
+
+                          <div class="row" id="ReplyBox{{ $row->id }}" style="display: none;    margin: 0px auto;margin-top: 20px;width: 80%;">
+                            <div class="col-md-12" style="background-color: #f0f0f0; border: 1px black solid " >
+                                <h5 style="margin-top: 9px;">Post Your Reply</h5>
+                                <!-- <div class="row"> 
+                                  <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
+                                   <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
+                                </div> -->
+                              <hr/>
+
+
+                              <form action="{{ route('OpinionReply') }}" method="post">
+                                  @csrf
+                                  <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
+                                  <input type="hidden" name="opinion_id" value="{{ $row->id }}">
+                                  <label>Your nickname (optional)</label><br/>
+                                  <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
+
+                                  <br/>
+                                  <br/>
+                                    <!-- <div class="row"> 
+                                      <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
+                                       <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
+                                    </div> -->
+
+                                  <label>Your Reply</label><br/>
+                                    <textarea name="reply" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
+                                    <div class="row"> 
+                                      <div class="col-md-6" ><p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p></div>
+                                       <div class="col-md-6" >
+                                         
+                                        <p  style="text-align:right" class="submit_area">
+                                            @if(!empty(Session::get('user')->id))
+                                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                            @else
+                                                <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button>
+                                               <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
+                                            @endif
+                                         
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </form>         
+
+                              </div>
+
+                          </div>
+
+                    </div>
+                @endforeach
+                
+              @else
+                no opinion available
+              @endif
+            
+            </div>
+
+         </div>
+
+
+
+<div id="view2MobileZero" style="width:20%; float:left " ></div>
+</div>
+
+          </div>
+
+
+
+
+
+          <div id="view3">
+           
+              @if($product->video_link !='')
+                  {!! $product->video_link !!}
+              @else
+                <h5>No Video Available</h5>
+              @endif
+
+            
+                                                          
+          </div>
+
+
+
+
+          <div id="view4">
+            <h5>No Reviws Availabla</h5>       
+                                                          
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+
+  </div>
+</div>
+
+
+
+
+<br/>
+
+@include('includes.footer')
+ 
+</body>
+
+
+<!-- 
+<script src="js/jquery-slim.min.js" ></script>
+<script src="js/popper.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script> -->
+
+
+<script>
+  $('.ErrorMsg').hide();
+	function colorStorage(id,color)
+	{
+		$.ajax({
+			url:"{{ route('ColorFilterStorage') }}",
+			type:"get",
+			data:{id:id,color:color},
+			success:function(data){
+				$('#colorStorage').html(data);	
+			}
 		});
-		slider.on('slide', function(data){
-		    $(".pmin").val(data[0]);
-		    $(".pmax").val(data[1]);
+	}
+
+  $('#asc_desc').change(function(){
+    var val = $('#asc_desc option:selected').val();
+    var id = '{{ $product->id }}';
+    $('#opinion_search').val('');
+    FetchDataAscDesc(0,val,id);
+
+  });
+
+  $('#opinion_search_btn').click(function(){
+      var val = $('#opinion_search').val();
+      $('#asc_desc').val('Select View');
+      FetchOpinionSearchData(0,val,'{{ $product->id }}');
+  });
+
+  function FetchDataAscDesc(page,val,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionDataAscDesc?page="+page,
+     type:"get",
+     data:{order:val,id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
+
+  function FetchOpinionSearchData(page,val,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionSearchData?page="+page,
+     type:"get",
+     data:{query:val,id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
+
+  function FetchData(page,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionData?page="+page,
+     type:"get",
+     data:{id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
+
+  $(document).on('click', '.pagination a', function(event){
+      event.preventDefault();
+      var page = $(this).attr('href').split('page=')[1]; 
+      if($('#asc_desc option:selected').val()!='Select View')
+      {
+        var val = $('#asc_desc option:selected').val();
+        var id = '{{ $product->id }}';
+        FetchDataAscDesc(page,val,id);
+      }
+      else if($('#opinion_search').val() !=''){
+        FetchOpinionSearchData(page,$('#opinion_search').val(),'{{ $product->id }}');
+      }
+      else{FetchData(page,'{{ $product->id }}')};
+    });
+
+	$(document).ready(function(){
+		if($('.productColorClass').hasClass('color_active'))
+		{
+			colorStorage($('#product_id').val(),$('.color_active').children('.colorBtns').data('id'));	
+		}
+	});
+
+	$('.productColorClass').click(function(){
+		$('.productColorClass').removeClass('color_active');
+		$(this).addClass('color_active');
+	});
+
+  $('.modal_login').click(function(){
+    var email = $('#username').val();
+    var pass = $('#password').val();
+    var token = '{{ csrf_token() }}';
+    var btn_html = '<button type="submit" class="btn btn-primary waves-effect waves-light save_btn">Submit</button>';
+    $.ajax({
+      url:"{{ route('UserModalLogin') }}",
+      type:"post",
+      data:{_token:token,login_email:email,login_password:pass},
+      success:function(data){
+        if(data.status=="")
+        {
+          $('.login_status').html('');
+          $('.user_id').val(data.id);
+          $('.modal_close').click();
+          $('.submit_area').html(btn_html);
+        }
+        else{
+            $('.ErrorMsg').show();
+            $('#username').val(data.email);
+            $('#password').val('');
+            $('.ErrorMsg').text(data.msg);
+        }
+      }
+    });
+});
+
+	$('#colorStorage').change(function(){
+		var storage = $(this).val();
+		var id = $('#product_id').val();
+		var color = $('.color_active').children('.colorBtns').data('id')
+		$.ajax({
+			url:"{{ route('StorageFilterPrice') }}",
+			type:"get",
+			data:{id:id,color:color,storage:storage},
+			success:function(data){
+				$('.StoragePrice').html(data);	
+			}
 		});
+	});
 
-		document.addEventListener("DOMContentLoaded", function(event) {
-		$(".dropdown-toggle").dropdown();
-		  $("#psorta").click(function(){
+	$('.colorBtns').click(function(){ colorStorage($('#product_id').val(),$(this).data('id')); });
 
-		     psort = 1;
-		    loadProducts();
-		  });
-		  $("#psortb").click(function(){
-
-		     psort = 0;
-		    loadProducts();
-		  });
-
-		  $("#nsorta").click(function(){
-
-		    nsort = 1;
-		    loadProducts();
-		  });
-		  $("#nsortb").click(function(){
-
-		    nsort = 0
-		    loadProducts();
-		  });
-		  $("#gsorta").click(function(){
-
-		    gsort = 1;
-		    loadProducts();
-		  });
-		  $("#gsortb").click(function(){
-
-		    gsort = 0;
-		    loadProducts();
-		  });
-
-		  $(".pmax").change(function(){
-		    let vm =  $(".pmin").val();
-		    let vmx =  $(".pmax").val();
-
-		   $("#ex2").attr("data-slider-value","["+vm+","+vmx+"]");
-		   $("#ex2").attr("data-slider-min",vm);
-		   $("#ex2").attr("data-slider-max",vmx);
-		    slider.destroy();
-
-		    slider = new Slider('#ex2', {
-		  //tooltip: 'always'
-		    }).on('slideStop', function(data){
-		      productmin = data[0];
-		      productmax = data[1];
-		      loadProducts();
-		    });
-		    slider.on('slide', function(data){
-
-		        $(".pmin").val(data[0]);
-		        $(".pmax").val(data[1]);
-		    });
-
-		  productmin = vm;
-		  productmax = vmx;
-		  loadProducts();
-
-		});
-
-		  $(".pmin").change(function(){
-		    let vm =  $(".pmin").val();
-		    let vmx =  $(".pmax").val();
-
-		   $("#ex2").attr("data-slider-value","["+vm+","+vmx+"]");
-		   $("#ex2").attr("data-slider-min",vm);
-		   $("#ex2").attr("data-slider-max",vmx);
-		    slider.destroy();
-
-		    slider = new Slider('#ex2', {
-		  //tooltip: 'always'
-		    }).on('slideStop', function(data){
-		      productmin = data[0];
-		      productmax = data[1];
-		      loadProducts();
-		    });
-		    slider.on('slide', function(data){
-
-		        $(".pmin").val(data[0]);
-		        $(".pmax").val(data[1]);
-		    });
-
-		  productmin = vm;
-		  productmax = vmx;
-		  loadProducts();
-
-		});
-
-
-		  $('[data-toggle="tooltip"]').tooltip();
-		  loadProducts();
-		  $(".loadmore").click(function(){
-		    productend+=7;
-		    loadProducts();
-		  });
-
-		$('#city').amsifySuggestags({
-		      suggestions: ['18 Hazari','Abbotabad','Abdul Hakim','adda bun bosan','Alipur','arif wala','Attock','Baddin','Badin','Bagh','Bahawal Nagar','Bahawalpur','Balakot','Bannu','Basir pur','Bukkur','Burewala','Chakwal','Chaman','Channab Nagar','Charsadda','Chicha watni','Chistian','Dadu','Daska','Dera Ghazi Khan','Dera Ismail Khan','Dinga','Faisalabad','faisalabad','Fort Abbass','Ghotki','Gujjar Khan','Gujranwala','Gujrat','Gwadar','Hafizabad','Hangoo','Haripur','Hasilpur','Hyderabad','Islamabad','Jacobabad','Jaffarabad','Jalalpur Bhattian','jalalpur jattan','Jamshoro','Jauharabad','Jhang','Kahuta','kalllar Kahar','Karachi','Kasur','Khairpur','Khanpur','Kharian','Khuzdar','Khuzdar','Kot Addu','Lahore','LalaMusa','Larkana','Lasbela','Layyah','Mansehra','Mardan','Mehrab Kot','Mehrab Pur','Mianwali','Mirpur AJK','Mirpur Khas','Multan','Muridkey','Muzzafar Garh','Nankana Sahib','NAROWAL','Nasirabad','Nawabshah','Nowshera','Okara','Pak Pattan','Pattoki','Peshawar','Petaro','Quetta','Rahim Yar Khan','Rajan Pur','Rawalpindi','Sahiwal','Sangla hil','Sargodha','shahdara','Shahkot','Sheikhupura','Shikarpur','Sialkot','Sibi','Sukkur','Swabi','Talagang','Taunsa','Taxila','Turbat','Vehari','Wah Cantt','Wah Cantt','Wah Cantt','Wazirabad','Zhob'],
-		    whiteList: true
-		  });
-		//Document ready End
-		  });
-
-		var site_url = "https://flickerfone.com/"+"assets/uploads";
-		function loadProducts(){
-		  listcolors();
-		  $.ajax('main/listproductsbuy.json', {
-		        type: 'GET',  // http method
-		        timeout: 10000,
-		        data: {
-
-		          start:productstart,
-		          end:productend,
-		          nsort:nsort,
-		          brand:productcompany,
-		          min:productmin,
-		          max:productmax,
-		          q:search,
-		          city:options,
-		          gsort:gsort,
-		          psort:psort,
-		          varient:varient
-		         },
-		        success: function (data, status, xhr) {
-		            var view = "";
-		            pcomesize = data.total;
-		            pfroms = data.from;
-		            ptos = data.to;
-
-		      if(data.data.length > 0){
-
-		        if(data.total <= productend){
-		          $(".loadmore").hide();
-		        }else{
-		          $(".loadmore").fadeIn();
-		        }
-		        for(var i =0;i<data.data.length;i++){
-
-		       view += `<div class="row buyleft">
-		            <a href="buyproductdetails/%60%2bdata.data%5bi%5d.html">
-		            <div class="col-xs-12 mainboxbuy">
-		              <div class="col-sm-3" align="center">
-		                  <img class="img-responsive img-thumbnail" src="`+site_url+"/thumbs/"+data.data[i].image+`"/>
-		              </div>
-		              <div class="col-sm-9">
-		                  <h3 id="buytextmain" style="font-size:20px;">`+data.data[i].company+` `+data.data[i].model+` `+data.data[i].color+` `+data.data[i].space;
-		                  if(data.data[i].time>25){
-		                    view += `<span class="newlist" style="position: absolute;right: 0px;top: 50px;">NEW LISTING</span>`;
-		                  }
-		                 view += `  </h3>
-
-		                  <p>`+data.data[i].description+`</p>
-		                  <div class="clearfix"></div>
-		                <div class="row buymargintop">
-		                  <div class="col-sm-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-		                  <p class="buyprice">`+data.data[i].price+`</p>
-		                  `;
-
-		                  if(data.data[i].grade == 'Fair'){
-		                    view+=`<table class="table-bordered"><tr><td style="padding:5px;background:#028f63;color:#fff;">Fair</td><td style="padding:5px;color:#444;background:#e0e0e1;">Good</td><td style="padding:5px;color:#444;background:#e0e0e1;">Excellent</td></tr></table>`;
-		                  }
-		                  if(data.data[i].grade == 'Good'){
-		                    view+=`<table class="table-bordered"><tr><td  style="padding:5px;color:#444;background:#e0e0e1;">Fair</td><td style="padding:5px;background:#028f63;color:#fff;">Good</td><td style="padding:5px;color:#444;background:#e0e0e1;">Excellent</td></tr></table>`;
-		                  }
-		                  if(data.data[i].grade == 'Excellent'){
-		                    view+=`<table class="table-bordered"><tr><td style="padding:5px;color:#444;background:#e0e0e1;">Fair</td><td style="padding:5px;color:#444;background:#e0e0e1;">Good</td><td style="padding:5px;background:#028f63;color:#fff;">Excellent</td></tr></table>`;
-		                  }
-
-		                  view+=`</div>
-		                  <div class=" col-sm-8 col-md-8 col-lg-8">
-		                      <table>
-		                        <tr>
-		                          <td><b>Negotiable: </b> </td>
-		                          <td><b>`+data.data[i].nego+`</b></td>
-		                        </tr>
-		                        <tr>
-		                          <td>From:</td>
-		                          <td>`+data.data[i].city+`</td>
-		                        </tr>
-		                        <tr>
-		                          <td>Brand:</td>
-		                          <td>`+data.data[i].company+`</td>
-		                        </tr>
-		                        <tr>
-		                          <td>Model:</td>
-		                          <td>`+data.data[i].model+`</td>
-		                        </tr>
-		                        <tr>
-		                          <td>Network:</td>
-		                          <td>`+data.data[i].network+`</td>
-		                        </tr>
-		                        <tr>
-		                          <td>PTA Approved:</td>
-		                          <td>`+data.data[i].pta+`</td>
-		                        </tr>
-		                        <tr>
-		                          <td>Posted Date:</td>
-		                          <td>`+data.data[i].timestamp+`</td>
-		                        </tr>
-		                      </table>
-		                      <a href="https://flickerfone.com/buyproductdetails/`+data.data[i].id+`">
-		                      <button class="btn-xs button3 buydetailsbtn">Contact / Details</button>
-		                      </a>
-		                  </div>
-		                </div>
-		              </div>
-		            </div></a>
-		          </div>`;
+  function myFunction() {
+      shoediv();
+  
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  
+      
+  }
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+      }
+  
+  
+  
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+      }
+  </script>
+  
+  
+  
+  
+<script>
 
 
 
-		              }
-		            }else{
-		              $(".loadmore").hide();
-		              view+="<div align='center'><img src='https://flickerfone.com/assets/images/noproduct.png' class='img-responsive'/></div>";
-		            }
-		            $(".products").html(view);
-
-		        },
-		        error: function (jqXhr, textStatus, errorMessage) {
-		                sa_alert('error', 'Unable to load Mobiles '+errorMessage,'error');
-		                console.log('Error' + textStatus);
-		                console.log('Error' + jqXhr);
-		                console.log('Error' + errorMessage);
-
-		        }
-		    });
-		$(".table_make > td").click(function(){
-		    
-		    $(".table_make > td.active").css("background","");
-		  $(".table_make > td").removeClass("active");
-		  $(this).addClass("active");
-		  $(".table_make > td.active").css("background","#f00");
-
-		});
-
-		$("#qsearch").submit(function(){
-		  search = $("#qv").val();
-		  loadProducts();
-		  return false;
-		})
-
-		}
-
-		brand = function(id){
-		 varient = "";
-		 productcompany =id;
-		 loadProducts();
-		}
-
-		color = function(id){
-		 productcompany =id;
-		 loadProducts();
-		}
-
-		function listcolors(){
-		     $.ajax('main/listcolors.json', {
-		          type: 'GET',  // http method
-		          timeout: 10000,
-		          data: {
-		          brand:productcompany,
-		          min:productmin,
-		          max:productmax,
-		          q:search,
-		          city:options,
-
-		         },
-		        success: function (data, status, xhr) {
-
-		            var view = "";
-		            name = data.name;
-
-		        for(var i =0;i<data.data.length;i++){
-		      view += `
-		        <tr>`;
-
-		             if(data.data[i] != undefined) {
-		                 if(varient ==data.data[i].id){
-		                    active = "active";
-		                 }else{
-		                    active = "";
-		                 }
-		               view+=`<td class='btnbrand `+active+`' style='border: 1px solid #bbb;cursor: pointer;' onClick="colorfilter('`+data.data[i].id+`',this)" align='center'>`+data.data[i].name+`</td>`;
-		                  }
-		                  else{
-		                    break;
-		                  }
-		                   i++;
-		          if(data.data[i] != undefined) {
-		              if(varient ==data.data[i].id){
-		                    active = "active";
-		                 }else{
-		                    active = "";
-		                 }
-		               view+=`<td class='btnbrand `+active+`' style='border: 1px solid #bbb;cursor: pointer;'  onClick="colorfilter('`+data.data[i].id+`',this)" align='center'>`+data.data[i].name+`</td>`;
-		                  }
-		                  else{
-		                    break;
-		                  }
-		            i++;
-		            if(data.data[i] != undefined) {
-		                if(varient ==data.data[i].id){
-		                    active = "active";
-		                 }else{
-		                    active = "";
-		                 }
-		               view+=`<td class='btnbrand `+active+`'  style='border: 1px solid #bbb;cursor: pointer;'  onClick="colorfilter('`+data.data[i].id+`',this)" align='center'>`+data.data[i].name+`</td>`;
-		              }
-		              else{
-		                break;
-		              }
-		            i++;
-		            if(data.data[i] != undefined) {
-		                if(varient ==data.data[i].id){
-		                    active = "active";
-		                 }else{
-		                    active = "";
-		                 }
-		               view+=`<td class='btnbrand `+active+`' style='border: 1px solid #bbb;cursor: pointer;'  onClick="colorfilter('`+data.data[i].id+`',this)" align='center'>`+data.data[i].name+`</td>`;
-		              }
-		              else{
-		                break;
-		              }
-
-		        view+=` </tr>`;
-
-		              }
-
-		        $(".make_color").html(view);
-		        $(".make_color > tr > .active").css("background","#f00");
-		        $(".make_color > tr > .active").css("color","#fff");
-		        },
-		        error: function (jqXhr, textStatus, errorMessage) {
-		                sa_alert('error', 'Unable to load Colors'+errorMessage,'error');
-		                console.log('Error' + textStatus);
-		                console.log('Error' + jqXhr);
-		                console.log('Error' + errorMessage);
-
-		        }
-		    });
-		}
-
-		function colorfilter(id,view){
-		    varient = id;
-
-		    loadProducts();
-		}
-	</script>
 
 
-@endsection<!-- end content -->
 
-@section('footer')
-	@include('includes.footer')
-@endsection<!-- end footer -->
+
+
+$(document).ready(function(){
+       $('.autoplayFeatures').slick({
+ slidesToShow: 4,
+ slidesToScroll: 1,
+  autoplay: true,
+ autoplaySpeed: 3000,
+ pauseOnHover:true,
+
+ dots: true,
+ responsive: [
+     {
+       breakpoint: 500,
+       settings: {
+       slidesToShow: 2,
+       slidesToScroll: 1,
+       }
+     }
+   ]  
+ // variableWidth: true
+});
+});
+
+
+
+
+
+
+
+$(function(){
+   $('#shopBtn').attr('href','#scrollTo');
+});
+
+
+
+function image1ReplaceOnClick1(){
+
+//   document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389384.jpg')}}";
+//   document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389384.jpg')}})";
+}
+
+
+// function image1ReplaceOnClick2(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389619.jpg')}}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389619.jpg')}})";
+// }
+
+
+// function image1ReplaceOnClick3(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/KHIPSE264BLK_4.jpg')}}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/KHIPSE264BLK_4.jpg')}})";
+// }
+
+
+// function image1ReplaceOnClick4(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-packaging-new-black-iphone-se-multinational-company-182969056.jpg') }}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-packaging-new-black-iphone-se-multinational-company-182969056.jpg')}})";
+// }
+
+
+// function image1ReplaceOnClick5(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-193162726.jpg')}}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-193162726.jpg')}})";
+// }
+
+
+ 
+
+</script>
+
+  
+<script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
+        
+<script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script>
+  
+<script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script>
+ 
+
+
+
+<script  src="{{ asset('js/tabcontent.js')}}"></script>
+  <script  src="{{ asset('js/Event.js')}}"></script>
+    <script  src="{{ asset('js/Magnifier.js')}}"></script>
+
+
+<!-- 
+<script type="text/javascript" src="Event.js"></script>
+<script type="text/javascript" src="Magnifier.js"></script> -->
+<script type="text/javascript">
+    
+
+    var evt = new Event(),
+    m = new Magnifier(evt);
+     m.attach({
+     
+            thumb: '#thumb',
+            large:  "{{asset($img1_400)}}",
+            mode: 'inside',
+            zoom: 3,
+            zoomable: true
+        });
+
+
+
+        	$('.productImgs').click(function(){
+    var imgSrc="{{url('storage/admin/images/product/thumbnail/400_') }}";
+    imgSrc += $(this).data('id');
+
+
+    
+    document.getElementById("thumb").src = imgSrc;
+            console.log(imgSrc);
+    var evt = new Event(),
+    m = new Magnifier(evt);
+     m.attach({
+     
+            thumb: '#thumb',
+            large:  imgSrc,
+            mode: 'inside',
+            zoom: 3,
+            zoomable: true
+        });
+// m.attacth['large'] = imgSrc;
+
+  
+  });
+
+</script>
+
+
+
+  <script>
+    $(function() {
+      (function(name) {
+        var container = $('#pagination-' + name);
+        var sources = function () {
+          var result = [];
+    
+          for (var i = 1; i < 196; i++) {
+            result.push(i);
+          }
+    
+          return result;
+        }();
+    
+        var options = {
+          dataSource: sources,
+          callback: function (response, pagination) {
+            window.console && console.log(response, pagination);
+    
+            var dataHtml = '<ul>';
+    
+            $.each(response, function (index, item) {
+              dataHtml += '<li>' + item + '</li>';
+            });
+    
+            dataHtml += '</ul>';
+    
+            container.prev().html(dataHtml);
+          }
+        };
+    
+        //$.pagination(container, options);
+    
+        container.addHook('beforeInit', function () {
+          window.console && console.log('beforeInit...');
+        });
+        container.pagination(options);
+    
+        container.addHook('beforePageOnClick', function () {
+          window.console && console.log('beforePageOnClick...');
+          //return false
+        });
+      })('demo1');
+    
+
+    })
+
+
+
+    
+$(function(){
+   $('#shopBtn').attr('href','#scrollTo');
+});
+
+
+    </script>
+
+
+<script src="js/pagination.js"></script>
+
+<script  src="js/ScrollJS2/script.js"></script>
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#clickopinon").click(function(){
+    $("#OpinonBox").toggle();
+  });
+
+  $(".clickReply").click(function(){
+    var id = $(this).data('id');
+    $("#ReplyBox"+id).toggle();
+  });
+});
+</script>
+
+</html>

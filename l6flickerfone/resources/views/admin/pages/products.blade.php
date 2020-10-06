@@ -64,11 +64,11 @@
                                             @php $i=1 @endphp
                                             @if($products->count() > 0)
                                                  @foreach($products as $product)
-                                                    @php $image = 'storage/'.$product->image  @endphp
+                                                    @php $image = 'storage/admin/images/product/thumbnail/100_'.$product->image  @endphp
                                                     <tr>
                                                        <td>{{ $i }}</td>
                                                        <td>{{ ucfirst($product->category->title) }}</td>
-                                                       <td><img src="{{ asset($image) }}" style="width: 100px; height: 100px;"></td>
+                                                       <td><img src="{{ asset($image) }}"></td>
                                                        <td>{{ $product->code }}</td>
                                                        <td>{{ ucfirst($product->name) }}</td>
                                                        <td>{{ $product->price }}</td>

@@ -29,6 +29,7 @@ class Kernel extends HttpKernel
     protected $middlewareGroups = [
         'AdminLoginSessionCheck'=>[ \App\Http\Middleware\AdminLoginSessionCheck::class],
         'LoginSessionCheck'=>[ \App\Http\Middleware\LoginSessionCheck::class],
+        'SellLoginSessionCheck'=>[ \App\Http\Middleware\SellLoginSessionCheck::class],
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,

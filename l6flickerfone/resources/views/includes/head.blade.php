@@ -49,7 +49,10 @@
         <link href="{{ asset('css/quick-look-table-2.css') }}" rel="stylesheet">
 
 <style>
- 
+ .pagination{
+  float: right !important;
+    margin-top: 20px !important;
+ }
   
   #myInput {
     background-image: url('/css/searchicon.png');
