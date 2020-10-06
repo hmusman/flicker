@@ -709,7 +709,7 @@ color: black;
                           </div>
 
                           <div class="form-group row">
-                              <label for="example-text-input" class="col-md-4 col-form-label">Name</label>
+                              <label for="example-text-input" class="col-md-4 col-form-label">Product Name</label>
                               <div class="col-md-8">
                                   <input class="form-control" type="text" value="{{ old('model') }}" name="model" placeholder="Enter Name" id="example-text-input">
                                   @error('model')
@@ -718,7 +718,41 @@ color: black;
                               </div>
                           </div>
 
-                           <div class="form-group row">
+                          <div class="form-group row hide_some_block">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Color</label>
+                              <div class="col-md-8">
+                                  <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="example-text-input">
+                                  @error('color')
+                                      <p class="text-danger mt-3">{{ $message }}</p>
+                                  @enderror
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
+                              <label for="example-text-input" class="col-md-4 col-form-label">Price</label>
+                              <div class="col-md-8">
+                                  <input class="form-control" type="number" value="{{ old('price') }}" name="price" placeholder="Enter Price" id="example-text-input">
+                                  @error('price')
+                                      <p class="text-danger mt-3">{{ $message }}</p>
+                                  @enderror
+                              </div>
+                          </div>
+
+                          <div class="form-group row hide_some_block">
+                              <label for="example-text-input" class="col-md-4 col-form-label">PTA</label>
+                              <div class="col-md-8">
+                                 <select class="form-control " name="pta">
+                                        <option disabled="" selected="">Select Status</option>
+                                        <option value="approved">Approved</option>
+                                        <option value="unapproved">Un Approved</option>
+                                  </select>
+                                  @error('pta')
+                                      <p class="text-danger mt-3">{{ $message }}</p>
+                                  @enderror
+                              </div>
+                          </div>
+
+                          <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">City</label>
                               <div class="col-md-8">
                                   <select class="form-control" name="city">  
@@ -1039,56 +1073,22 @@ color: black;
                                   @enderror
                               </div>
                           </div>
-
-                          <div class="form-group row hide_some_block">
-                              <label for="example-text-input" class="col-md-4 col-form-label">Color</label>
-                              <div class="col-md-8">
-                                  <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="example-text-input">
-                                  @error('color')
-                                      <p class="text-danger mt-3">{{ $message }}</p>
-                                  @enderror
-                              </div>
-                          </div>
-
-                          <div class="form-group row">
-                              <label for="example-text-input" class="col-md-4 col-form-label">Price</label>
-                              <div class="col-md-8">
-                                  <input class="form-control" type="number" value="{{ old('price') }}" name="price" placeholder="Enter Price" id="example-text-input">
-                                  @error('price')
-                                      <p class="text-danger mt-3">{{ $message }}</p>
-                                  @enderror
-                              </div>
-                          </div>
-
-                          <div class="form-group row hide_some_block">
-                              <label for="example-text-input" class="col-md-4 col-form-label">PTA</label>
-                              <div class="col-md-8">
-                                 <select class="form-control " name="pta">
-                                        <option disabled="" selected="">Select Status</option>
-                                        <option value="approved">Approved</option>
-                                        <option value="unapproved">Un Approved</option>
-                                  </select>
-                                  @error('pta')
-                                      <p class="text-danger mt-3">{{ $message }}</p>
-                                  @enderror
-                              </div>
-                          </div>
 </div>
     <div class="col-md-6">
- <div class="form-group row">
-   <div class="col-md-4">
-     <p class="radiotextcol">Choose: </p>
+     <div class="form-group row">
+       <div class="col-md-4">
+         <p class="radiotextcol">Choose: </p>
 
-   </div>
+       </div>
 
-   <div class="col-md-8">
-     
-  <input type="radio" id="phone_check" name="product_check" value="phone" @if(old('product_check')=='phone')checked @endif>
-  <label for="male">Phone</label>
-  <input type="radio" id="accessory_check" name="product_check" value="accessory" @if(old('product_check')=='accessory') checked @endif>
-  <label for="female">Accessories</label>
-   </div>
- </div>
+       <div class="col-md-8">
+         
+      <input type="radio" id="phone_check" name="product_check" checked="" value="phone" @if(old('product_check')=='phone')checked @endif>
+      <label for="male">Phone</label>
+      <input type="radio" id="accessory_check" name="product_check" value="accessory" @if(old('product_check')=='accessory') checked @endif>
+      <label for="female">Accessories</label>
+       </div>
+     </div>
 
 
 
@@ -1112,7 +1112,7 @@ color: black;
                               
                               <div class="col-md-8" style="text-align:center" >
                                    <div>
-                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes" @if(old('')=='yes') checked @endif>
+                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes" @if(old('minor')=='yes') checked @endif>
                                     <label for="minor-on" class="myLabel ">Yes</label>
                                     <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no" @if(old('minor')=='no') checked @endif>
                                     <label for="minor-off" class="myLabel">No</label>
@@ -1322,7 +1322,8 @@ color: black;
 
                   <div class="card">
                       <div class="card-body row">
-                         <div class="col-md-12">
+                          <label for="example-text-input" class="col-md-3 col-form-label">Device Detail</label>
+                         <div class="col-md-9">
                             <textarea  name="detail" rows="4" cols="50" style="width:100%; padding: 5px; border-color:#dfdfdf " placeholder="Please Write Description...">{{ old('detail') }} 
                             </textarea>
                              @error('detail')

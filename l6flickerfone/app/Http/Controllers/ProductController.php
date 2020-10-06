@@ -750,7 +750,7 @@ class ProductController extends Controller
     {
         $nView = $request->nView;
         $products =  Product::where('brand_id',$request->id)->orderBy('id','desc')->paginate($nView);
-        return view('partials.shop_products_list',compact('products'));
+        return view('partials.shop_products_list',compact('products'))->render();
     }
 
     function fetch_data(Request $request)

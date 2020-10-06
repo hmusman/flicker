@@ -24,5 +24,5 @@
     
     
   @else
-    <div class="col-md-3"></div><div class="col-md-6" style="margin-top: 3%;margin-bottom: 1.5%;"><div class="alert alert-warning">No Product Available</div></div>
+    <div class="col-md-3"></div><div class="col-md-6" style="margin-top: 3%;margin-bottom: 1.5%;"><div class="alert alert-warning">{{ $products->count() }} No Product Available</div></div>
   @endif

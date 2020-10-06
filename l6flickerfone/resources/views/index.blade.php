@@ -597,19 +597,26 @@
                   <div class="autoplayFeatures">
                      @foreach($products as $product)
                      @php $img = 'storage/admin/images/product/thumbnail/175_'.$product->image  @endphp
-                     <figure>
-                        <img src="{{ asset($img) }}" class="img-thumbnail" style="height: 214px;" alt="Trulli">
-                        <figcaption>
-                           <div class="rightbox" style="height: 75px;margin-top: 19px;">
-                              <center>
-                                 <p style="font-size: 15px;   font-variant: all-small-caps;"><a style="color: #000000;     " href="{{ route('ProductDetail',$product->id) }}">{{ $product->name }}</a>    </p>
-                              </center>
-                              <center>
-                                 <div class="shortdesc" style=" color: #959595 ;  font-size: 11px;   ">Computer in your pocket</div>
-                              </center>
-                           </div>
-                        </figcaption>
-                     </figure>
+
+
+
+                        <figure>
+                              <a href="{{ route('ProductDetail',$product->id) }}" style="outline: none;">
+                                    <img src="{{ asset($img) }}" class="img-thumbnail" style="height: 214px;" alt="Trulli">
+
+                                    <figcaption>
+                                       <div class="rightbox" style="height: 75px;margin-top: 19px;">
+                                          <center>
+                                             <p style="font-size: 15px;   font-variant: all-small-caps;color: #000000; ">{{ $product->name }}</p>
+                                          </center>
+                                          <center>
+                                             <div class="shortdesc" style=" color: #959595 ;  font-size: 11px;   ">Computer in your pocket</div>
+                                          </center>
+                                       </div>
+
+                                    </figcaption>
+                              </a>
+                        </figure>
                      @endforeach
                   </div>
                </div>
