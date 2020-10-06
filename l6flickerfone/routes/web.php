@@ -13,6 +13,7 @@ Route::get('SingleCompareProductDetail','ProductController@singleCompareProductD
 Route::get('AdviceComparison3','ProductController@adviceComparison2')->name('AdviceComparison2');
 Route::get('Logout', 'LoginAndRegisterController@logout');
 Route::post('LoginSession', 'LoginAndRegisterController@login');
+Route::post('UserModalLogin', 'LoginAndRegisterController@UserModalLogin')->name('UserModalLogin');
 Route::post('Register/Buyer', 'LoginAndRegisterController@buyer');
 Route::post('Register/Seller', 'LoginAndRegisterController@seller');
 Route::get('NewMobilePhones','ProductController@ShopPage')->name('Shop');
