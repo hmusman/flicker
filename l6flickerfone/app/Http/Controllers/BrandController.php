@@ -6,6 +6,7 @@ use App\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\pricecalculatorproduct\PriceCalcultorProduct;
+use App\Product;
 class BrandController extends Controller
 {
     public function index()
@@ -101,6 +102,13 @@ class BrandController extends Controller
     {
         $brands = Brand::join('price_calculator_products','brands.id','=','price_calculator_products.brand_id')->select('brands.name','brands.id')->get();
         return view('price_calculator',compact('brands'));
+    }
+
+    public function BrandProductsList($id)
+    {
+       $brand= Brand::where('id',$id)->first();
+       $products = Product::where('brand_id',$id)->paginate(9);
+       return view('front_brand_products_list',compact(['products','brand']));
     }
 
     public function BrandProducts(Request $request)

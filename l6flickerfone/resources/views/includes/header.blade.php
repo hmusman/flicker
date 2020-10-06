@@ -65,14 +65,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
           style="padding: 8px 30px 6px 30px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
+            @php $brands = App\Brand::all() @endphp
             <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>GOOGLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>HUAWIE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>VIVO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>OPPO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>NOKIA</center></a></li>
-            
+              @foreach($brands as $brand)
+                   <li><a class="dropdown-item" href="{{ route('BrandProductsList',$brand->id) }}"> <center>{{ ucwords($brand->name) }}</center></a></li>
+              @endforeach
             </ul>
         </li>
 
@@ -80,21 +77,13 @@
           <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
           style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
+             @php $brands = App\AccessoryCategory::all() @endphp
             <ul class="dropdown-menu fade-up">
-            <li><a class="dropdown-item" href="#"> <center>Charger Cables & Docks</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Mobile Covers & Cases</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Power Banks</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Other Accessories</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Phone Stands</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Screen Protectors</center></a></li>
-
-            <li><a class="dropdown-item" href="#"> <center>Monopod & Selfie Sticks</a></li>
-            <li><a class="dropdown-item" href="#"> <center>Phone Rings</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>VR Glasses</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Battery Packs</center></a></li>
-            
-            
+              @foreach($brands as $accessory)
+                   <li><a class="dropdown-item" href="#"> <center>{{ ucwords($accessory->title) }}</center></a></li>
+              @endforeach
             </ul>
+          
         </li>
         
         <li class="nav-item dropdown">

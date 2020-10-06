@@ -377,6 +377,7 @@ ul[class="dropdown-menu fade-up show"] > li{
 
   .toggle-boxqasim {
     border: 1px solid #999;
+    overflow-y: scroll;
   }
 
   .toggleqasim {

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-     <head>
+   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" >
       <!-- Start WOWSlider.com HEAD section -->
@@ -336,7 +336,7 @@
       @include('includes.header')
       <!-- Start WOWSlider.com BODY section -->
       <!-- Start WOWSlider.com BODY section -->
-      <div id="wowslider-container1">
+      <!-- <div id="wowslider-container1">
          <div class="ws_images">
             <ul>
                <li>
@@ -374,19 +374,15 @@
          </div>
          <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html slider</a> by WOWSlider.com v8.8</div>
          <div class="ws_shadow"></div>
-         <!-- <h3 style="background-color: green !important;">Wedding Cupcakes</h3>
-            <span>the newest craze in town</span>
-            <button class="orderNowHome" type="button">
-                order now
-            </button> -->
-      </div>
+      </div> -->
+
       <!-- End WOWSlider.com BODY section -->
       <!-- End WOWSlider.com BODY section -->
       <br/>
       <div class="container">
          <div class="row">
             <div class="col-md-12" style="color: gray;">
-               HOME / PHONES / BRANDS
+               HOME / PHONES / {{ strtoupper($brand->name) }}
             </div>
          </div>
       </div>
@@ -396,18 +392,7 @@
                <div class="col-md-2" style="color: black; margin-top: 15px; " >
                   <p style="font-weight: bold !important; margin-top: 9px "> FILTERS</p>
                </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
-                  <div class="form-group">
-                     <select class="form-control" id="brand" style="font-weight: bold !important;">
-                        <option selected="" disabled="" style="font-weight: bold !important;">Brands</option>
-                        @if($brands->count()>0)
-                        @foreach($brands as $brand)
-                        <option value="{{ $brand->id }}">{{ ucwords($brand->name) }}</option>
-                        @endforeach
-                        @endif
-                     </select>
-                  </div>
-               </div>
+            
                <div class="col-md-3" style="color: black; margin-top: 15px; ">
                   <div class="form-group">
                      <select class="form-control" id="price" style="font-weight: bold !important;">
@@ -474,27 +459,26 @@
    <script type="text/javascript">
       $(document).ready(function(){
           $('#ResetFilter').click(function(){
-              $('#brand').val("Brands");
               $('#price').val("Price");
               $('#view').val("Select View");
-              FetchData(0);
+             FetchBrandProducts(0,'{{ $brand->id }}',9);
           });
       
           function BrandPriceProduct()
           {
-              if($('#brand').children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price')
+              if($('#price'). children("option:selected").val() !='Price')
               {
                 if($('#view').children('option:selected').val() =="Select View")
                 {
-                  var brand = $('#brand').children("option:selected").val();
+                  var brand = '{{ $brand->id }}';
                   var price = $('#price').children("option:selected").val();
-                  var nView = 10;
+                  var nView = 9;
                   FetchBrandPriceProducts(0,brand,price,nView);
                 }
                 else
                 {
                   var view = $('#view').children('option:selected').val();
-                  var brand = $('#brand').children("option:selected").val();
+                  var brand ='{{ $brand->id }}';
                   var price = $('#price').children("option:selected").val();
                   FetchBrandPriceProducts(0,brand,price,view);
                 }
@@ -522,125 +506,67 @@
               fetch_products(query);
           });
       
-          $('#brand').change(function(){
+         
+          $('#view').change(function(){
               if($('#price'). children("option:selected").val() =='Price')
               {
-      
-                if($('#view').children('option:selected').val() =="Select View")
-                {
-                  var id = $('#brand').children("option:selected").val();
-                  FetchBrandProducts(0,id,10);
-                }
-                else
-                {
                   var nView = $('#view').children('option:selected').val();
-                  var id = $('#brand').children("option:selected").val();
-                  FetchBrandProducts(0,id,nView);
-                }
-                
-              }
-              else
-              {
-                BrandPriceProduct();
+                  FetchBrandProducts(0,'{{ $brand->id }}',nView);
               }
               
-          });
-      
-          $('#view').change(function(){
-              if($('#brand').children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price')
-              {
-                  var nView = $('#view').children('option:selected').val();
-                  FetchNViewProducts(0,nView);
-              }
-              else if($('#brand').children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price')
-              {
-                var brand = $('#brand').children("option:selected").val();
-                var nView = $('#view').children("option:selected").val();
-                FetchBrandProducts(0,brand,nView);
-              }
-              else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
+              else if($('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
               {
                 var price = $('#price').children("option:selected").val();
                 var view = $('#view').children("option:selected").val();
-                FetchPriceProducts(0,price,view);         
+               FetchBrandPriceProducts(0,'{{ $brand->id }}',price,view);       
               }
-              else
-              {BrandPriceProduct()};  
           });
       
           $('#price').change(function(){
-              if($('#brand').children("option:selected").val() =='Brands')
-              {
-      
-                if($('#view').children('option:selected').val() =="Select View")
-                {
-                  var price = $('#price').children("option:selected").val();
-                  FetchPriceProducts(0,price,10);
-                }
-                else
-                {
-                  var nView = $('#view').children('option:selected').val();
-                  var price = $('#price').children("option:selected").val();
-                  FetchPriceProducts(0,price,nView);
-                }
-      
-              }
-              else
-              {
-                BrandPriceProduct();
-              }
-              
+             if($('#view').children('option:selected').val() =="Select View")
+             {
+               var price = $('#price').children("option:selected").val();
+               FetchBrandPriceProducts(0,'{{ $brand->id }}',price,9);
+             }
+             else
+             {
+               var nView = $('#view').children('option:selected').val();
+               var price = $('#price').children("option:selected").val();
+               FetchBrandPriceProducts(0,'{{ $brand->id }}',price,nView);
+             }
           });
       
       
           $(document).on('click', '.pagination a', function(event){
               event.preventDefault(); 
               var page = $(this).attr('href').split('page=')[1];
-              if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
-              {
-                var brand = $('#brand').children("option:selected").val();
-                FetchBrandProducts(page,brand,10);
-              }
-      
-              else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
+              
+              if($('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
               {
                 var price = $('#price').children("option:selected").val();
-                FetchPriceProducts(page,price,10);
+                FetchBrandPriceProducts(page,'{{ $brand->id }}',price,9);
               }
       
-              else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
+              else if($('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
               {
-                var brand = $('#brand').children("option:selected").val();
-                var price = $('#price').children("option:selected").val();
-                FetchBrandPriceProducts(page,brand,price,10);         
-              }
-      
-              else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
-              {
-                var brand = $('#brand').children("option:selected").val();
+                var brand = '{{ $brand->id }}';
                 var price = $('#price').children("option:selected").val();
                 var view = $('#view').children("option:selected").val();
-                FetchBrandPriceProducts(page,brand,price,10);         
+                FetchBrandPriceProducts(page,brand,price,view);         
               }
       
-              else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
-              {
-                var brand = $('#brand').children("option:selected").val();
-                var price = $('#price').children("option:selected").val();
-                var view = $('#view').children("option:selected").val();
-                FetchBrandPriceProducts(page,price,view);         
-              }
-      
-              else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() !="Select View")
+              else if($('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() !="Select View")
               {
                 var view = $('#view').children("option:selected").val();
-                FetchNViewProducts(page,view);         
+                FetchBrandProducts(page,'{{ $brand->id }}',view);         
               }
       
-              else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
+              else if($('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
               {
-                FetchData(page);            
+                var brand = '{{ $brand->id }}';
+                FetchBrandProducts(page,brand,9);
               }
+
              });
       
              function FetchData(page)
@@ -658,7 +584,7 @@
              function FetchBrandProducts(page,id,nView)
              {
               $.ajax({
-               url:"ShopBrandProducts?page="+page,
+               url:"/ShopBrandProducts?page="+page,
                type:"get",
                data:{id:id,nView:nView},
                success:function(data)
@@ -671,7 +597,7 @@
              function FetchNViewProducts(page,nView)
              {
               $.ajax({
-               url:"ShopViewProducts?page="+page,
+               url:"/ShopViewProducts?page="+page,
                type:"get",
                data:{nView:nView},
                success:function(data)
@@ -684,7 +610,7 @@
              function FetchPriceProducts(page,price,nView)
              {
                 $.ajax({
-                 url:"ShopPriceProducts?page="+page,
+                 url:"/ShopPriceProducts?page="+page,
                  type:"get",
                  data:{price:price,nView:nView},
                  success:function(data)
@@ -697,7 +623,7 @@
              function FetchBrandPriceProducts(page,id,price,nView)
              {
               $.ajax({
-               url:"ShopBrandPriceProducts?page="+page,
+               url:"/ShopBrandPriceProducts?page="+page,
                type:"get",
                data:{brand:id,price:price,nView:nView},
                success:function(data)
