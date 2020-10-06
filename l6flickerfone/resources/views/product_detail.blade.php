@@ -830,6 +830,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                           <!-- End Modal --> 
                    </div>
 
+
                 </div>
        
             </div>
@@ -975,6 +976,7 @@ margin-left: 15px;">{{ $product->price }}</font>
                           
                             <a href="#up" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" /> </a> | <a href="#down" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" /> </a>
                           
+
                           </div>
                         
                           

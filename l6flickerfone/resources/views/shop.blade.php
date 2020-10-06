@@ -49,6 +49,12 @@
       /* #myUL li a:hover:not(.header) {
       background-color: #eee;
       } */
+
+
+
+      .ws_shadow{
+         display: none !important;
+      }
    </style>
    <style>
       /* /////////////////////////////slick css//////////////////////////////////// */

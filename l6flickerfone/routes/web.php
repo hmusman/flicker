@@ -68,11 +68,15 @@ Route::view('ReviewDetail','review_detail');
 Route::view('NewMobilePhonePrices','new_mobile_phone_prices');
 Route::view('PriceCalculator','price_calculator');
 Route::get('ProductDetail/{id}','ProductController@show')->name('ProductDetail');
+
 Route::post('ProductOpinion','ProductOpinionsController@store')->name('ProductOpinion');
 Route::get('ProductOpinionData','ProductOpinionsController@ProductOpinionData')->name('ProductOpinionData');
 Route::get('ProductOpinionDataAsc','ProductOpinionsController@ProductOpinionDataAsc')->name('ProductOpinionDataAsc');
 Route::get('ProductOpinionDataDesc','ProductOpinionsController@ProductOpinionDataDesc')->name('ProductOpinionDataDesc');
 Route::post('OpinionReply','OpinionReplyController@store')->name('OpinionReply');
+
+Route::get('ProductDetailTwo/{id}','ProductController@showTwo')->name('ProductDetailTwo');
+
 Route::get('pricesearch','ProductController@priceSearch')->name('pricesearch');
 Route::get('brandsearch','ProductController@brandSearch')->name('brandsearch');
 Route::get('colorsearch','ProductController@colorSearch')->name('colorsearch');
@@ -109,7 +113,7 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 Route::prefix('Sell')->middleware('SellLoginSessionCheck')->group(function(){
 	// Route::get('/','SellProductController@create')->name('Sell');
 	Route::post('Product','SellProductController@store')->name('Sell.Product.store');
-	Route::post('Accessory','SellAccessoryController@store')->name('Sell.Accessory.store');
+	Route::post('SellAccessorySave','SellAccessoryController@store')->name('Sell.Accessory.store');
 });
 
 Route::group(['middleware'=>['LoginSessionCheck']],function(){
