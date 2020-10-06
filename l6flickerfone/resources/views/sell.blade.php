@@ -320,6 +320,7 @@ ul[class="dropdown-menu fade-up show"] > li{
       right: 81px !important;
     font-size: 13px !important;
       right: 91px !important;
+
     font-size: 10px !important;
     border-bottom: none !important;
     
@@ -1134,6 +1135,7 @@ color: black;
                                     <input id="major-off" class="major radioyesNo" name="major" type="radio" value="no" @if(old('major')=='no') checked @endif>
                                     <label for="major-off" class="myLabel">No</label>
 
+
                                     </div>
                                     @error('major')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -1204,6 +1206,7 @@ color: black;
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
                               </div>
+
                           </div>
 
                           <div class="form-group row">
@@ -1227,6 +1230,7 @@ color: black;
                                   @error('battery')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
+
                               </div>
                           </div>
 
@@ -1241,7 +1245,6 @@ color: black;
                       </div> <!-- detail -->
                   </div>
 
-               
 
 
                   <div class="card">
@@ -1310,10 +1313,11 @@ color: black;
                         <input type="file" name="image8" style="display:none;" id="imgInput8" onchange="fileChangeFun(this,$('#DropZonIcon8'),8);"/> 
                         <div class="dropzone" id="DropZonIcon8" style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(8);" id="imgFullWidthDiv8"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
+
                         </div>
-                      </div>
-                    </div>
+                     </div>
                   </div>
+
 
 
                   <div class="card">
@@ -1326,6 +1330,7 @@ color: black;
                               @enderror
                            </div>
                       </div>
+
                   </div>
 
 
@@ -1345,6 +1350,7 @@ color: black;
                           </div>
                       </div>
                   </div>
+
                 </form>
 
 
@@ -1483,6 +1489,7 @@ color: black;
             $('#ProductAccessory').attr('action','Sell/Accessory');
           }
       });
+
 
       function filePreview(input,div,num) {
           if (input.files && input.files[0]) {
