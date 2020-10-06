@@ -55,4 +55,17 @@ class ProductOpinionsController extends Controller
             ]);
          }
     }
+
+    public function ProductOpinionSearchData(Request $request)
+    {
+        if($request->ajax())
+         {
+            $opinions = ProductOpinion::where('product_id',intval($request->id))->where('comment','like','%'.$request->get('query').'%')->paginate(15);
+            $product = Product::where('id',$request->id)->first();
+            return response()->json([
+                'output'=> view('partials.product_opinions_list', compact(['opinions','product']))->render(),
+                'pagination'=>$opinions->links()->render(),
+            ]);
+         }
+    }
 }

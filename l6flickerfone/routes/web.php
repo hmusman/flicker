@@ -71,8 +71,8 @@ Route::get('ProductDetail/{id}','ProductController@show')->name('ProductDetail')
 
 Route::post('ProductOpinion','ProductOpinionsController@store')->name('ProductOpinion');
 Route::get('ProductOpinionData','ProductOpinionsController@ProductOpinionData')->name('ProductOpinionData');
-Route::get('ProductOpinionDataAsc','ProductOpinionsController@ProductOpinionDataAsc')->name('ProductOpinionDataAsc');
-Route::get('ProductOpinionDataDesc','ProductOpinionsController@ProductOpinionDataDesc')->name('ProductOpinionDataDesc');
+Route::get('ProductOpinionDataAscDesc','ProductOpinionsController@ProductOpinionDataAscDesc')->name('ProductOpinionDataAscDesc');
+Route::get('ProductOpinionSearchData','ProductOpinionsController@ProductOpinionSearchData')->name('ProductOpinionSearchData');
 Route::post('OpinionReply','OpinionReplyController@store')->name('OpinionReply');
 
 Route::get('ProductDetailTwo/{id}','ProductController@showTwo')->name('ProductDetailTwo');
