@@ -6,11 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 use App\Product;
 use App\Models\pricecalculatorproduct\PriceCalculatorProduct;
 use App\Accessory;
+use App\SellProduct;
 class Brand extends Model
 {
     public function products()
     {
     	return $this->hasMany(Product::class,'brand_id','id');
+    }
+
+    public function Sellproducts()
+    {
+        return $this->hasMany(SellProduct::class,'brand_id','id');
     }
 
     public function accessories()

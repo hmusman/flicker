@@ -580,7 +580,8 @@ class SellProductController extends Controller
 
     public function show($id)
     {
-        //
+        $product = SellProduct::where('id',$id)->first();
+        return view('sell_product_detail',compact(['product']));
     }
 
     

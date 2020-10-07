@@ -73,6 +73,7 @@ Route::view('ReviewDetail','review_detail');
 Route::view('NewMobilePhonePrices','new_mobile_phone_prices');
 Route::view('PriceCalculator','price_calculator');
 Route::get('ProductDetail/{id}','ProductController@show')->name('ProductDetail');
+Route::get('SellProductDetail/{id}','SellProductController@show')->name('SellProductDetail');
 
 Route::post('ProductOpinion','ProductOpinionsController@store')->name('ProductOpinion');
 Route::get('ProductOpinionData','ProductOpinionsController@ProductOpinionData')->name('ProductOpinionData');
