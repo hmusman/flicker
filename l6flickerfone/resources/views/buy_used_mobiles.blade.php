@@ -762,6 +762,11 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
   background-color: #004488;
   color: white;
 }
+
+
+#upperSearch:hover{
+cursor: pointer;
+}
 </style>
 
 
