@@ -131,7 +131,7 @@ class AccessoryController extends Controller
     public function ShopPage()
     {
         $brands = Brand::all();
-        $accessories = Accessory::orderBy('id','desc')->paginate(1);
+        $accessories = Accessory::orderBy('id','desc')->paginate(9);
         return view('shop_accessory', compact(['brands','accessories'])); 
     }
 
@@ -146,7 +146,7 @@ class AccessoryController extends Controller
     {
         if($request->ajax())
         {
-            $accessories = Accessory::orderBy('id','desc')->paginate(1);
+            $accessories = Accessory::orderBy('id','desc')->paginate(9);
             return view('partials.shop_accessories_list', compact('accessories'))->render();
         }
     }
