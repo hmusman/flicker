@@ -1,7 +1,24 @@
+ <style>
+ #BorderStyle:nth-child(4), #BorderStyle:nth-child(7),  #BorderStyle:nth-child(10), 
+ #BorderStyle:nth-child(13), #BorderStyle:nth-child(16), #BorderStyle:nth-child(19) {
+
+border-right: none !important;
+
+
+}
+
+
+.addComp:hover{
+  color: blue !important;
+  
+}
+ </style>
+ 
+ 
  @if($products->count()>0)
     @foreach($products as $row)
       @php $img = 'storage/admin/images/product/thumbnail/215_'.$row->image @endphp
-      <div class="col-md-4" style="border-right: 1px #f2f2f2 solid;border-bottom: 1px #f2f2f2 solid;" >
+      <div class="col-md-4" id="BorderStyle" style="border-right: 1px #e3e0e0 solid;border-bottom: 1px #e3e0e0 solid;" >
 
            <a href="{{ route('ProductDetail',$row->id) }}"><center> <img src="{{ asset($img) }}" style="height: 215px;margin-top: 40px;" /></center>
            <center> <p style="
@@ -11,7 +28,7 @@
 
            <!-- <center> <del style="  color: #252629 !important;">PKR {{ $row->price }}</del></center> -->
            <center> <p style="  color: #db4f45 !important;">PKR {{ $row->price }}</p></center></a>
-           <center><a href="{{ route('AdviceComparison',$row->id) }}"> <p style="text-transform: uppercase;  color: #b3b5be !important;">Add to compare</p></a></center>
+           <center><a href="{{ route('AdviceComparison',$row->id) }}"> <p class="addComp" style="text-transform: uppercase;  color: #b3b5be;">Add to compare</p></a></center>
 
 
       </div>

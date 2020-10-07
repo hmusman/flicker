@@ -49,7 +49,7 @@ class PriceCalculatorProductController extends Controller
             'category'=>'required',
             'brand'=>'required',
             'code'=>'bail | required | numeric',
-            'name'=>'bail | required | alpha_dash',
+            'name'=>'bail | required',
             'image1'=>'required|mimes:png,jpg,jpeg',
         ]);
 
@@ -65,7 +65,7 @@ class PriceCalculatorProductController extends Controller
             // { $filename1= $request->file('image1')->store('admin/images/pricecalculatorproduct','public'); }
             // else{ return back()->withErrors(['invalidImage1'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
 
-            if(PriceCalculatorProduct::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
+            if(PriceCalculatorProduct::where('name',$request->name)->count() > 0)
             {
                 $request->session()->flash('warningMsg',"Product is already exist");
                  return back()->withInput();
@@ -134,7 +134,7 @@ class PriceCalculatorProductController extends Controller
             'category'=>'required',
             'brand'=>'required',
             'code'=>'bail | required | numeric',
-            'name'=>'bail | required | alpha_dash',
+            'name'=>'bail | required',
         ]);
 
         if($validations->fails())
