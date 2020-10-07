@@ -406,7 +406,177 @@ class SellProductController extends Controller
         return view('partials.sell_products_list',compact('products'));
     }
 
+    public function UpperSearchSellProducts(Request $request)
+    {
+        $query = $request->get('query');
+        $brands = Brand::where('name','like','%'.$query.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
 
+        if(!empty($brandArr))
+        {
+            $products = SellProduct::whereIn('brand_id',$brandArr)->distinct()->paginate(10);
+        }
+
+        else
+        {
+            $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->distinct()->paginate(10);
+        }
+
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function UpperSearchCitySellProducts(Request $request)
+    {
+        $query = $request->get('query');
+        $brands = Brand::where('name','like','%'.$query.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+
+        if(!empty($brandArr))
+        {
+            $products = SellProduct::whereIn('brand_id',$brandArr)->where('sell_products.city','=',$request->city)->distinct()->paginate(10);
+        }
+
+        else
+        {
+            $products = SellProduct::where('sell_products.city','=',$request->city)->where('sell_products.model','like','%'.$query.'%')->distinct()->paginate(10);
+        }
+        
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+     public function UpperSearchPriceSellProducts(Request $request)
+    {
+        $price = $request->price;
+        $query = $request->get('query');
+        $brands = Brand::where('name','like','%'.$query.'%')->distinct('model')->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+
+        if(!empty($brandArr))
+        {
+            if($price=="Less than 20,000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('price', '<',20000)->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 20,000 and 30,000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->whereBetween('price',[20000,30000])->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 30,000 and 60,000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->whereBetween('price',[30000,60000])->distinct()->paginate(10);
+            }
+
+
+            else if($price=="Between 60,000 and 1,00000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->whereBetween('price',[60000,100000])->distinct()->paginate(10);
+            }
+
+            else if($price=="More Than 1,00000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('price', '>',100000)->distinct()->paginate(10);
+            }
+        }
+        
+        else
+        {
+            if($price=="Less than 20,000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->where('price', '<',20000)->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 20,000 and 30,000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->whereBetween('price',[20000,30000])->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 30,000 and 60,000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->whereBetween('price',[30000,60000])->distinct()->paginate(10);
+            }
+
+
+            else if($price=="Between 60,000 and 1,00000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->whereBetween('price',[60000,100000])->distinct()->paginate(10);
+            }
+
+            else if($price=="More Than 1,00000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->were('price', '>',100000)->distinct()->paginate(10);
+            }
+        }
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+     public function UpperSearchCityPriceSellProducts(Request $request)
+    {
+        $price = $request->price;
+        $query = $request->get('query');
+        $brands = Brand::where('name','like','%'.$query.'%')->distinct('model')->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+
+        if(!empty($brandArr))
+        {
+            if($price=="Less than 20,000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('city','=',$request->city)->where('price', '<',20000)->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 20,000 and 30,000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('city','=',$request->city)->whereBetween('price',[20000,30000])->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 30,000 and 60,000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('city','=',$request->city)->whereBetween('price',[30000,60000])->distinct()->paginate(1);
+            }
+
+
+            else if($price=="Between 60,000 and 1,00000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('city','=',$request->city)->whereBetween('price',[60000,100000])->distinct()->paginate(10);
+            }
+
+            else if($price=="More Than 1,00000")
+            {
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('city','=',$request->city)->where('price', '>',100000)->distinct()->paginate(10);
+            }
+        }
+        
+        else
+        {
+            if($price=="Less than 20,000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->where('city','=',$request->city)->where('price', '<',20000)->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 20,000 and 30,000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->where('city','=',$request->city)->whereBetween('price',[20000,30000])->distinct()->paginate(10);
+            }
+
+            else if($price=="Between 30,000 and 60,000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->where('city','=',$request->city)->whereBetween('price',[30000,60000])->distinct()->paginate(10);
+            }
+
+
+            else if($price=="Between 60,000 and 1,00000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->where('city','=',$request->city)->whereBetween('price',[60000,100000])->distinct()->paginate(10);
+            }
+
+            else if($price=="More Than 1,00000")
+            {
+                $products = SellProduct::where('sell_products.model','like','%'.$query.'%')->where('city','=',$request->city)->were('price', '>',100000)->distinct()->paginate(10);
+            }
+        }
+        return view('partials.sell_products_list',compact('products'));
+    }
 
     public function show($id)
     {
