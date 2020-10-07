@@ -798,7 +798,8 @@ margin-top: 90px;">
   
   
   <div class="row">
-    <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div>
+    <!-- <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div> -->
+     <div class="col-md-4" style="text-align: center;"><input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;;"></div>
     <div class="col-md-8" style="padding-right: 0px !important;">
     
     
@@ -1771,6 +1772,24 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
   }
 
+  function FetchUpperSearchSellProducts(page,val,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchSellProducts?page="+page,
+      type:"get",
+      data:{query:val},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
   function FetchUpperCitySellProducts(page,city,options)
   {
 
@@ -1825,6 +1844,59 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
   }
 
+  function FetchUpperSearchCityPriceSellProducts(page,query,city,price,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchCityPriceSellProducts?page="+page,
+      type:"get",
+      data:{query:query,city:city,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperSearchCitySellProducts(page,query,city,options)
+  {
+    $.ajax({
+      url:"UpperSearchCitySellProducts?page="+page,
+      type:"get",
+      data:{query:query,city:city},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperSearchPriceSellProducts(page,query,price,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchPriceSellProducts?page="+page,
+      type:"get",
+      data:{query:query,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
   $('#upperSearch').click(function(){
       $(".brands_check"). prop("checked", false);
       $(".device_status_check"). prop("checked", false);
@@ -1834,15 +1906,37 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       $('#to_price').val('');
       var val = $('#sell').children('option:selected').val();
       var sellPrice = $('#upperPrice').children('option:selected').val();
-      if(sellPrice=='Select Price' && val!='Select City')
+      var inptVal = $('#upperInpt').val(); 
+      
+      if(inptVal !='' && sellPrice=='Select Price' && val=='Select City')
+      {
+        FetchUpperSearchSellProducts(0,inptVal,options);
+      } 
+
+      else if(inptVal !='' && sellPrice!='Select Price' && val=='Select City')
+      {
+        FetchUpperSearchPriceSellProducts(0,inptVal,sellPrice,options);
+      } 
+
+      else if(inptVal !='' && sellPrice=='Select Price' && val!='Select City')
+      {
+        FetchUpperSearchCitySellProducts(0,inptVal,val,options);
+      } 
+
+      else if(inptVal !='' && sellPrice!='Select Price' && val!='Select City')
+      {
+        FetchUpperSearchCityPriceSellProducts(0,inptVal,val,sellPrice,options);
+      }
+
+      else if(inptVal =='' && sellPrice=='Select Price' && val!='Select City')
       {
         FetchUpperCitySellProducts(0,val,options);
       }
-      else if(sellPrice!='Select Price' && val=='Select City')
+      else if(inptVal =='' && sellPrice!='Select Price' && val=='Select City')
       {
         FetchUpperPriceSellProducts(0,sellPrice,options);
       }
-      else if(sellPrice!='Select Price' && val!='Select City')
+      else if(inptVal =='' && sellPrice!='Select Price' && val!='Select City')
       {
         FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
       }
@@ -2095,10 +2189,11 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
       var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
       var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
-      var city = $('#sell').children('option:selected').val()
+      var city = $('#sell').children('option:selected').val();
       var price = $('#upperPrice').children('option:selected').val()
       var from = $('#from_price').val();
       var to = $('#to_price').val();
+      var inptVal = $('#upperInpt').val();
 
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
@@ -2170,7 +2265,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         FetchBrandsCityStatusProducts(page,brands,cities,statuses,options);
       } 
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price' && $('#upperInpt').val()=='')
       {
         FetchUpperCitySellProducts(page,city,options);
       } 
@@ -2180,16 +2275,35 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         FetchPriceCityStatusProducts(page,from,to,cities,statuses,options);
       }
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#upperInpt').val()=='')
       {
         FetchUpperCityPriceSellProducts(page,city,price,options);
       } 
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#upperInpt').val()=='')
       {
         FetchUpperPriceSellProducts(page,price,options);
       } 
 
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()=='Select Price' && $('#sell').children('option:selected').val()=='Select City')
+      {
+        FetchUpperSearchSellProducts(page,inptVal,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#sell').children('option:selected').val()=='Select City')
+      {
+        FetchUpperSearchPriceSellProducts(page,inptVal,price,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()=='Select Price' && $('#sell').children('option:selected').val()!='Select City')
+      {
+        FetchUpperSearchCitySellProducts(page,inptVal,city,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#sell').children('option:selected').val()!='Select City')
+      {
+        FetchUpperSearchCityPriceSellProducts(page,inptVal,city,price,options);
+      }
 
       else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
       {

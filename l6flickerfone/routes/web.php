@@ -48,6 +48,11 @@ Route::get('UpperCityPriceSellProducts','SellProductController@UpperCityPriceSel
 Route::get('PriceCityStatusSellProducts','SellProductController@PriceCityStatusSellProducts')->name('PriceCityStatusSellProducts');
 Route::get('UpperPriceSellProducts','SellProductController@UpperPriceSellProducts')->name('UpperPriceSellProducts');
 Route::get('UpperCitySellProducts','SellProductController@UpperCitySellProducts')->name('UpperCitySellProducts');
+Route::get('UpperSearchSellProducts','SellProductController@UpperSearchSellProducts')->name('UpperSearchSellProducts');
+Route::get('UpperSearchCitySellProducts','SellProductController@UpperSearchCitySellProducts')->name('UpperSearchCitySellProducts');
+Route::get('UpperSearchPriceSellProducts','SellProductController@UpperSearchPriceSellProducts')->name('UpperSearchPriceSellProducts');
+Route::get('UpperSearchCityPriceSellProducts','SellProductController@UpperSearchCityPriceSellProducts')->name('UpperSearchCityPriceSellProducts');
+
 Route::get('PriceCitySellProducts','SellProductController@PriceCitySellProducts')->name('PriceCitySellProducts');
 Route::get('UpperPriceSellAccessories','SellAccessoryController@UpperPriceSellAccessories')->name('UpperPriceSellAccessories');
 Route::get('UpperCitySellAccessories','SellAccessoryController@UpperCitySellAccessories')->name('UpperCitySellAccessories');
