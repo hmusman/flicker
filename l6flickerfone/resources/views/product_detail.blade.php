@@ -623,7 +623,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
            @if($product->price !='')
-    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
+    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 72px; "> Price & Storage</td>
  @endif
   </tr>
 </table>
