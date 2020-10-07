@@ -1198,46 +1198,7 @@ Up to 20 h (multimedia)
                           </div>
                         </form>         
 
-                          <!-- Modal -->
-                          <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
-                            <div class="modal-dialog">
-
-                              <!-- Modal content-->
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h4 class="modal-title" style="color: black;">Sign in</h4>
-                                    
-                                </div>
-                                  <div class="modal-body">
-                                    <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
-                                    <form method="post">
-                                      @csrf
-                                      <div class="form-group">
-                                          <label class="info-title">Email</label>
-                                          <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="info-title">Password</label>
-                                          <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
-                                      </div>  
-
-                                      <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
-                                      <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
-
-
-                                    </form>
-                                   
-                               
-                                
-                                  </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-default modal_close" data-dismiss="modal">Close</button>
-                                </div>
-                              </div>
-
-                            </div>
-                          </div>
-                          <!-- End Modal --> 
+                          
                    </div>
 
 
@@ -1394,7 +1355,7 @@ Up to 20 h (multimedia)
                           </div>
 
                           <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href="" type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
+                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
                         
                         </div>
                     
@@ -1457,7 +1418,46 @@ Up to 20 h (multimedia)
             </div>
 
          </div>
+        <!-- Modal -->
+            <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
+              <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title" style="color: black;">Sign in</h4>
+                      
+                  </div>
+                    <div class="modal-body">
+                      <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
+                      <form method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label class="info-title">Email</label>
+                            <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title">Password</label>
+                            <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
+                        </div>  
+
+                        <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
+                        <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+
+
+                      </form>
+                     
+                 
+                  
+                    </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default modal_close" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        <!-- End Modal --> 
 
 
 <div id="view2MobileZero" style="width:20%; float:left " ></div>
