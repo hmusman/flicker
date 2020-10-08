@@ -623,7 +623,7 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
            @if($product->price !='')
-    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 72px; "> Price & Storage</td>
+    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
  @endif
   </tr>
 </table>
@@ -1198,7 +1198,46 @@ Up to 20 h (multimedia)
                           </div>
                         </form>         
 
-                          
+                          <!-- Modal -->
+                          <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
+                            <div class="modal-dialog">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h4 class="modal-title" style="color: black;">Sign in</h4>
+                                    
+                                </div>
+                                  <div class="modal-body">
+                                    <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
+                                    <form method="post">
+                                      @csrf
+                                      <div class="form-group">
+                                          <label class="info-title">Email</label>
+                                          <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="info-title">Password</label>
+                                          <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
+                                      </div>  
+
+                                      <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
+                                      <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+
+
+                                    </form>
+                                   
+                               
+                                
+                                  </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default modal_close" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <!-- End Modal --> 
                    </div>
 
 
@@ -1284,8 +1323,8 @@ Up to 20 h (multimedia)
 
                                 <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;margin-top: 2px;">{{ date('Y M  d',strtotime($row->created_at)) }}</p></div>
 
-                                <!-- <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div> -->
-                                <!-- <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div> -->
+                                <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
+                                <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div>
                               </div>
                             </div>
                           </div>
@@ -1339,23 +1378,23 @@ Up to 20 h (multimedia)
                           <div id="RatingMob" style="height: 100%; width: 30%;  float: left;"> 
                         
                           <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;">
-                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Replies {{ $row->replies->count() }}</p> </div>
+                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
                        
                        
                           <div style="height: 100%; width: 20%;  float: left;"> </div>
                        
-                         <!--  <div style="height: 100%; width: 40%;  float: left;"> 
+                          <div style="height: 100%; width: 40%;  float: left;"> 
                           
                             <a href="#up" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" /> </a> | <a href="#down" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" /> </a>
                           
 
-                          </div> -->
+                          </div>
                         
                           
                           </div>
 
                           <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
+                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href="" type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
                         
                         </div>
                     
@@ -1418,46 +1457,7 @@ Up to 20 h (multimedia)
             </div>
 
          </div>
-        <!-- Modal -->
-            <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
-              <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title" style="color: black;">Sign in</h4>
-                      
-                  </div>
-                    <div class="modal-body">
-                      <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
-                      <form method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label class="info-title">Email</label>
-                            <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label class="info-title">Password</label>
-                            <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
-                        </div>  
-
-                        <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
-                        <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
-
-
-                      </form>
-                     
-                 
-                  
-                    </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default modal_close" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-        <!-- End Modal --> 
 
 
 <div id="view2MobileZero" style="width:20%; float:left " ></div>

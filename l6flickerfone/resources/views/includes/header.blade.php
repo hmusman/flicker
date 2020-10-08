@@ -65,7 +65,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
           style="padding: 8px 30px 6px 30px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
-            @php $brands = App\Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct()->get() @endphp
+            @php $brands = App\Brand::all() @endphp
             <ul class="dropdown-menu fade-up">
               @foreach($brands as $brand)
                    <li><a class="dropdown-item" href="{{ route('BrandProductsList',$brand->id) }}"> <center>{{ ucwords($brand->name) }}</center></a></li>
