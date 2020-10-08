@@ -1284,8 +1284,8 @@ Up to 20 h (multimedia)
 
                                 <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;margin-top: 2px;">{{ date('Y M  d',strtotime($row->created_at)) }}</p></div>
 
-                                <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
-                                <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div>
+                                <!-- <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div> -->
+                                <!-- <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div> -->
                               </div>
                             </div>
                           </div>
@@ -1339,17 +1339,17 @@ Up to 20 h (multimedia)
                           <div id="RatingMob" style="height: 100%; width: 30%;  float: left;"> 
                         
                           <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;">
-                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
+                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Replies {{ $row->replies->count() }}</p> </div>
                        
                        
                           <div style="height: 100%; width: 20%;  float: left;"> </div>
                        
-                          <div style="height: 100%; width: 40%;  float: left;"> 
+                         <!--  <div style="height: 100%; width: 40%;  float: left;"> 
                           
                             <a href="#up" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" /> </a> | <a href="#down" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" /> </a>
                           
 
-                          </div>
+                          </div> -->
                         
                           
                           </div>

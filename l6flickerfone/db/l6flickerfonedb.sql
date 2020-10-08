@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2020 at 12:54 PM
+-- Generation Time: Oct 08, 2020 at 12:27 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -295,7 +295,9 @@ CREATE TABLE `opinion_replies` (
 
 INSERT INTO `opinion_replies` (`id`, `user_id`, `opinion_id`, `nick_name`, `reply`, `created_at`, `updated_at`) VALUES
 (1, 25, 1, 'test', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, co', '2020-10-05 01:53:58', '2020-10-05 01:53:58'),
-(8, 25, 4, 'sdfsd', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, co', '2020-10-05 02:12:04', '2020-10-05 02:12:04');
+(8, 25, 4, 'sdfsd', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, co', '2020-10-05 02:12:04', '2020-10-05 02:12:04'),
+(18, 29, 4, 'test', 'tesla', '2020-10-08 00:30:25', '2020-10-08 00:30:25'),
+(19, 29, 4, 'test', 'no login', '2020-10-08 00:31:20', '2020-10-08 00:31:20');
 
 -- --------------------------------------------------------
 
@@ -453,9 +455,9 @@ CREATE TABLE `roles` (
 CREATE TABLE `sell_accessories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) NOT NULL,
-  `accessory_category_id` bigint(20) NOT NULL,
+  `accessory_category_id` bigint(20) DEFAULT NULL,
   `brand_id` bigint(20) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -476,7 +478,9 @@ INSERT INTO `sell_accessories` (`id`, `user_id`, `accessory_category_id`, `brand
 (4, 25, 1, 3, 'test4', '1800', 'Faisalabad', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', NULL, '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
 (5, 25, 1, 3, 'test5', '600', 'Gujrat', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', NULL, '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
 (6, 25, 1, 3, 'test6', '1500', 'Gujrat', '03051449423', '1601468535_fd456406745d816a45cae554c788e754.jpg', NULL, '2020-09-30 07:22:15', '2020-09-30 07:22:15'),
-(12, 25, 1, 1, 'testagain', '1200', 'Bahawalpur', '03013435656', '1601640310_5f4d189434f808a8eb34452033811cf6.jpg', NULL, '2020-10-02 07:05:11', '2020-10-02 07:05:11');
+(12, 25, 1, 1, 'testagain', '1200', 'Bahawalpur', '03013435656', '1601640310_5f4d189434f808a8eb34452033811cf6.jpg', NULL, '2020-10-02 07:05:11', '2020-10-02 07:05:11'),
+(14, 25, 1, 1, 'power bank', '1500', 'Bannu district|Bannu', '03013435656', '1602132959_89f7223010c05c784156d05f5e705a32.png', NULL, '2020-10-07 23:55:59', '2020-10-07 23:55:59'),
+(15, 29, NULL, 3, NULL, '1500', 'Adezai', '03015643789', '1602142943_89f7223010c05c784156d05f5e705a32.png', NULL, '2020-10-08 02:42:24', '2020-10-08 02:42:24');
 
 -- --------------------------------------------------------
 
@@ -491,7 +495,7 @@ CREATE TABLE `sell_products` (
   `brand_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` int(11) NOT NULL,
   `minor_dent_scratch` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `major_dent_scratch` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `original_accessories_available` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -523,31 +527,31 @@ CREATE TABLE `sell_products` (
 --
 
 INSERT INTO `sell_products` (`id`, `user_id`, `category_id`, `brand_id`, `model`, `color`, `price`, `minor_dent_scratch`, `major_dent_scratch`, `original_accessories_available`, `screen_is_cracked`, `device_box_available`, `device_battery_status`, `status`, `device_status`, `pta`, `city`, `phone`, `img1`, `img2`, `img3`, `img4`, `img5`, `img6`, `img7`, `img8`, `img9`, `img10`, `detail`, `created_at`, `updated_at`) VALUES
-(23, 25, '1', '1', 'samsung new 7 plus', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(24, 25, '1', '3', 'infinix new 8 plus 1', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(25, 25, '1', '1', 'samsung new 8 plus 2', 'golden', '25500', 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
-(28, 25, '1', '3', 'test', 'green', '666', 'no', 'no', 'no', 'no', 'yes', '76', '0', 'Excellent', 'approved', 'Amir Chah', '03013435656', '1601711431_724ce05ff7f359ace899892d0e5316e5.jpg', '1601711431_5f4d189434f808a8eb34452033811cf6.jpg', '1601711432_5f4d189434f808a8eb34452033811cf6.jpg', '', '', '', '', '', NULL, NULL, 'this', '2020-10-03 02:50:32', '2020-10-03 02:50:32'),
-(29, 25, '1', '3', 'qwerty', 'green', '666', 'no', 'no', 'yes', 'no', 'no', '100', '0', 'Good', 'approved', 'Bannu district|Bannu', '03013435656', '1601725081_117c718047ff0e11702b16e2adb165ed.jpg', '1601725081_117c718047ff0e11702b16e2adb165ed.jpg', '1601725082_acb6ae29a429ff0a4b2adbded6bb4bf6.jpg', '1601725082_acb6ae29a429ff0a4b2adbded6bb4bf6.jpg', '1601725082_87d5aab4f98ab59dedff28c6f6fe1aa1.jpg', '1601725082_117c718047ff0e11702b16e2adb165ed.jpg', '1601725082_acb6ae29a429ff0a4b2adbded6bb4bf6.jpg', '1601725082_a7c2620410267a07133598074b3c1cfc.jpg', NULL, NULL, 'wertyuio', '2020-10-03 06:38:02', '2020-10-03 06:38:02'),
-(30, 25, '1', '1', 'samsung new 7 plus 1', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(31, 25, '1', '3', 'infinix new 8 plus 3', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(32, 25, '1', '3', 'infinix new 8 plus 4', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(33, 25, '1', '1', 'samsung new 8 plus 5', 'golden', '25500', 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
-(34, 25, '1', '3', 'test 4', 'green', '666', 'no', 'no', 'no', 'no', 'yes', '76', '0', 'Excellent', 'approved', 'Amir Chah', '03013435656', '1601711431_724ce05ff7f359ace899892d0e5316e5.jpg', '1601711431_5f4d189434f808a8eb34452033811cf6.jpg', '1601711432_5f4d189434f808a8eb34452033811cf6.jpg', '', '', '', '', '', NULL, NULL, 'this', '2020-10-03 02:50:32', '2020-10-03 02:50:32'),
-(35, 25, '1', '1', 'samsung new 7 plus 3', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(36, 25, '1', '3', 'infinix new 8 plus', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(37, 25, '1', '1', 'samsung new 8 plus 98', 'golden', '25500', 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
-(38, 25, '1', '3', 'infinix new 8 plus 2', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(39, 25, '1', '1', 'samsung new 8 plus 6', 'golden', '25500', 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
-(40, 25, '1', '1', 'samsung new 7 plus 3', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(41, 25, '1', '3', 'infinix new 8 plus 7', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(42, 25, '1', '1', 'samsung new 7 plus 7', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(43, 25, '1', '3', 'infinix new 8 plus', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(44, 25, '1', '1', 'samsung new 8 plus', 'golden', '25500', 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
-(45, 25, '1', '1', 'samsung new 7 plus', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(46, 25, '1', '3', 'infinix new 8 plus t', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
-(47, 25, '1', '1', 'samsung new 8 plus 67', 'golden', '25500', 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
-(48, 25, '1', '1', 'samsung new 7 plus 89', 'green', '45500', 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
-(49, 25, '1', '3', 'infinix new 8 plus 54', 'grey', '35900', 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25');
+(23, 25, '1', '1', 'samsung new 7 plus', 'green', 45500, 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(24, 25, '1', '3', 'infinix new 8 plus 1', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(25, 25, '1', '1', 'samsung new 8 plus 2', 'golden', 25500, 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
+(28, 25, '1', '3', 'test', 'green', 666, 'no', 'no', 'no', 'no', 'yes', '76', '0', 'Excellent', 'approved', 'Amir Chah', '03013435656', '1601711431_724ce05ff7f359ace899892d0e5316e5.jpg', '1601711431_5f4d189434f808a8eb34452033811cf6.jpg', '1601711432_5f4d189434f808a8eb34452033811cf6.jpg', '', '', '', '', '', NULL, NULL, 'this', '2020-10-03 02:50:32', '2020-10-03 02:50:32'),
+(29, 25, '1', '3', 'qwerty', 'green', 666, 'no', 'no', 'yes', 'no', 'no', '100', '0', 'Good', 'approved', 'Bannu district|Bannu', '03013435656', '1601725081_117c718047ff0e11702b16e2adb165ed.jpg', '1601725081_117c718047ff0e11702b16e2adb165ed.jpg', '1601725082_acb6ae29a429ff0a4b2adbded6bb4bf6.jpg', '1601725082_acb6ae29a429ff0a4b2adbded6bb4bf6.jpg', '1601725082_87d5aab4f98ab59dedff28c6f6fe1aa1.jpg', '1601725082_117c718047ff0e11702b16e2adb165ed.jpg', '1601725082_acb6ae29a429ff0a4b2adbded6bb4bf6.jpg', '1601725082_a7c2620410267a07133598074b3c1cfc.jpg', NULL, NULL, 'wertyuio', '2020-10-03 06:38:02', '2020-10-03 06:38:02'),
+(30, 25, '1', '1', 'samsung new 7 plus 1', 'green', 45500, 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(31, 25, '1', '3', 'infinix new 8 plus 3', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(32, 25, '1', '3', 'infinix new 8 plus 4', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(33, 25, '1', '1', 'samsung new 8 plus 5', 'golden', 25500, 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
+(34, 25, '1', '3', 'test 4', 'green', 666, 'no', 'no', 'no', 'no', 'yes', '76', '0', 'Excellent', 'approved', 'Amir Chah', '03013435656', '1601711431_724ce05ff7f359ace899892d0e5316e5.jpg', '1601711431_5f4d189434f808a8eb34452033811cf6.jpg', '1601711432_5f4d189434f808a8eb34452033811cf6.jpg', '', '', '', '', '', NULL, NULL, 'this', '2020-10-03 02:50:32', '2020-10-03 02:50:32'),
+(35, 25, '1', '1', 'samsung new 7 plus 3', 'green', 45500, 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(36, 25, '1', '3', 'infinix new 8 plus', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(37, 25, '1', '1', 'samsung new 8 plus 98', 'golden', 25500, 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
+(38, 25, '1', '3', 'infinix new 8 plus 2', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(39, 25, '1', '1', 'samsung new 8 plus 6', 'golden', 25500, 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
+(40, 25, '1', '1', 'samsung new 7 plus 3', 'green', 45500, 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(41, 25, '1', '3', 'infinix new 8 plus 7', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(42, 25, '1', '1', 'samsung new 7 plus 7', 'green', 45500, 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(43, 25, '1', '3', 'infinix new 8 plus', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(44, 25, '1', '1', 'samsung new 8 plus', 'golden', 25500, 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
+(45, 25, '1', '1', 'samsung new 7 plus', 'green', 45500, 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(46, 25, '1', '3', 'infinix new 8 plus t', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25'),
+(47, 25, '1', '1', 'samsung new 8 plus 67', 'golden', 25500, 'yes', 'yes', 'no', 'no', 'no', '80', '0', 'Fair', 'approved', 'gujrat', '03013435656', '1601373847_1026ae1042d5350779f203ad082b6ec0.png', '1601373848_9f4356e130e607f26ab445c5d9c4b190.png', '1601373848_8c67e3c01d95ccf586ec5f8f48742628.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-29 05:04:08', '2020-09-29 05:04:08'),
+(48, 25, '1', '1', 'samsung new 7 plus 89', 'green', 45500, 'no', 'no', 'no', 'yes', 'yes', '97', '0', 'Fair', 'approved', 'Lahore', '03051449423', '1601018295_0rX2eOOHzpD712u3pmjkntQ0vex7jQbQT2TbNlrL.png', '1601018295_4LIykWOVWbaX6GG01NNAzDR7fhshkPiX4dLO3Iru.png', '1601018296_DlfcotlQ1HyJow9VDUDzxXkmWiK6jft03bYawewm.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-25 02:18:16', '2020-09-25 02:18:16'),
+(49, 25, '1', '3', 'infinix new 8 plus 54', 'grey', 35900, 'yes', 'yes', 'yes', 'no', 'no', '60', '0', 'Fair', 'approved', 'Faisalabad', '03051449423', '1601112444_iphone11pro.png', '1601112445_iphoneXr.png', '1601112445_iphone7.png', '', '', '', NULL, NULL, NULL, NULL, '', '2020-09-26 04:27:25', '2020-09-26 04:27:25');
 
 -- --------------------------------------------------------
 
@@ -698,7 +702,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `role_name`, `username`, `name`, `email`, `company`, `shop`, `phone`, `city`, `password`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (25, 'buyer', 'muhammadwaseem', 'MuhammadWaseem', 'waseemulfat961@gmail.com', 'devsbeta', NULL, '03013435656', '18 Hazari', '$2y$10$lmUGQX/.oecGqmadj2UgnuiKa04q1nV9at0zLiFYWJmo.vvzoShUu', 1, 'FZpdSV1kUOkBR61HbsyPZh2sgBI99Q9Pxs3xWgD0cQ8Ok4Aruw9FTIDvcZUK', '2020-09-19 02:15:16', '2020-09-26 01:45:38'),
 (27, 'buyer', 'usman', 'usman', 'evkpbbrefazqvzlfzs@tsyefn.com', 'dd', NULL, '1234556', 'Baddin', '$2y$10$92tSKJzzOBmqQXtdeyG8AO6CGyWnV1afOijW/Ad02zuAa89PLwfUq', 1, NULL, '2020-09-24 00:20:50', '2020-09-24 00:23:59'),
-(28, 'buyer', 'usman', 'Muhammad Waseem', 'evkpbbrefazqvzlfzs1@tsyefn.com', 'newcommpany', NULL, '03013435656', '18 Hazari', '$2y$10$k0fBa9EBP4OyQ7bUpT4WfuIC7pvydQyXlEv/dVAq5u0woZnXqFb1i', 0, NULL, '2020-09-24 00:21:47', '2020-09-25 00:11:47');
+(28, 'buyer', 'usman', 'Muhammad Waseem', 'evkpbbrefazqvzlfzs1@tsyefn.com', 'newcommpany', NULL, '03013435656', '18 Hazari', '$2y$10$k0fBa9EBP4OyQ7bUpT4WfuIC7pvydQyXlEv/dVAq5u0woZnXqFb1i', 0, NULL, '2020-09-24 00:21:47', '2020-09-25 00:11:47'),
+(29, 'buyer', 'test', 'usman89', 'testre@gmail.com', 'ff', NULL, '78897', 'Kot Addu', '$2y$10$uTUAKVWT8y4dYoVOz3rsaOBC1VPKlINYxGvYQMTf.F9q9Geckn4rq', 1, NULL, '2020-10-08 00:05:18', '2020-10-08 00:09:04');
 
 -- --------------------------------------------------------
 
@@ -949,7 +954,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `opinion_replies`
 --
 ALTER TABLE `opinion_replies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -985,13 +990,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sell_accessories`
 --
 ALTER TABLE `sell_accessories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `sell_products`
 --
 ALTER TABLE `sell_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `sma_products`
@@ -1003,7 +1008,7 @@ ALTER TABLE `sma_products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `variations`

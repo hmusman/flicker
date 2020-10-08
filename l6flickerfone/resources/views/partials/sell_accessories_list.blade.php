@@ -12,8 +12,8 @@
             <div style="width: 70%; float: left;border-bottom: 1px #d8d5d5 solid;" >
             
             
-              <p style="color: black">{{ ucwords($row->name) }}</p>
-
+             <!--  <p style="color: black">{{ ucwords($row->name) }}</p> -->
+             <p style="color: black"><b>Brand</b> :  {{ ucwords($row->Accessorybrand->name) }}</p>
               <div class="row">
                 <div class="col-md-6">
                <p style="    position: relative;
