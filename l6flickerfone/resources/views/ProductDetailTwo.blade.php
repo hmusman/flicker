@@ -298,6 +298,23 @@ margin-left: 15px;">{{ $product->price }}</font>
 
   </div>
 
+<<<<<<< Updated upstream
+=======
+  </script>
+<script>
+  $('.ErrorMsg').hide();
+  function colorStorage(id,color)
+  {
+    $.ajax({
+      url:"{{ route('ColorFilterStorage') }}",
+      type:"get",
+      data:{id:id,color:color},
+      success:function(data){
+        $('#colorStorage').html(data);  
+      }
+    });
+  }
+>>>>>>> Stashed changes
 
 
 
@@ -308,7 +325,21 @@ margin-left: 15px;">{{ $product->price }}</font>
 </div>
 
 
+<<<<<<< Updated upstream
 
+=======
+  $(document).ready(function(){
+    if($('.productColorClass').hasClass('color_active'))
+    {
+      colorStorage($('#product_id').val(),$('.color_active').children('.colorBtns').data('id'));  
+    }
+  });
+
+  $('.productColorClass').click(function(){
+    $('.productColorClass').removeClass('color_active');
+    $(this).addClass('color_active');
+  });
+>>>>>>> Stashed changes
 
 
 
@@ -1457,21 +1488,21 @@ About PKR 210000(64GB 4GB),PKR 220000(128GB 4GB),PKR 230000(256GB 4GB)
 
 
 
-	$('#colorStorage').change(function(){
-		var storage = $(this).val();
-		var id = $('#product_id').val();
-		var color = $('.color_active').children('.colorBtns').data('id')
-		$.ajax({
-			url:"{{ route('StorageFilterPrice') }}",
-			type:"get",
-			data:{id:id,color:color,storage:storage},
-			success:function(data){
-				$('.StoragePrice').html(data);	
-			}
-		});
-	});
+  $('#colorStorage').change(function(){
+    var storage = $(this).val();
+    var id = $('#product_id').val();
+    var color = $('.color_active').children('.colorBtns').data('id')
+    $.ajax({
+      url:"{{ route('StorageFilterPrice') }}",
+      type:"get",
+      data:{id:id,color:color,storage:storage},
+      success:function(data){
+        $('.StoragePrice').html(data);  
+      }
+    });
+  });
 
-	$('.colorBtns').click(function(){ colorStorage($('#product_id').val(),$(this).data('id')); });
+  $('.colorBtns').click(function(){ colorStorage($('#product_id').val(),$(this).data('id')); });
 
   function myFunction() {
       shoediv();

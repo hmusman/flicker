@@ -226,10 +226,13 @@ cursor: pointer;
 <div class="row">
   <div class="col-md-3">
     <div class="form-group">
+      @if($product->variation_colors->count()>0)
+        <select class="form-control" id="colorStorage" style="font-weight: bold !important; height: 35px !important; ">
        
-      <select class="form-control" id="colorStorage" style="font-weight: bold !important; height: 35px !important; ">
-       
-      </select>
+        </select>
+
+      @endif
+      
     </div>
   </div>
   <div class="col-md-2">
@@ -299,7 +302,7 @@ margin-left: 15px;">{{ $product->price }}</font>
     <div style=" margin: 0 auto; padding: 120px 0 40px;">
       <ul class="tabs" data-persist="true">
           <li><a href="#view1">TECHNICLE SPECS</a></li>
-          <li><a href="#view2">OPINIOS</a></li>
+          <li><a href="#view2">OPINIONS</a></li>
           <li><a href="#view3">VEDIOS</a></li>
           <li><a href="#view4">REVIEWS</a></li>
 
@@ -319,10 +322,9 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
 
- <div style="width: 19%;  float: left;">
+<div style="width: 19%;  float: left;">
 
-
-<div   id="MainHeightOnDesktop">
+  <div   id="MainHeightOnDesktop">
 
     <table id="customers">
         <tr>
@@ -331,305 +333,264 @@ margin-left: 15px;">{{ $product->price }}</font>
         </tr>
     </table>
 
+    <table id="customers">
+        <tr>
+            <td class="colblue tdBlockOnMobhead LaunchWidthOnlyOnDesk" >LAUNCH</td>
+              @if($product->launch_announced !='')
+                <td class="tdBlockOnMobSubhead" style="display: block;"> Announced</td>
+              @endif
+            @if($product->launch_status !='')
+            <td class="StatheadOnMob" style="display: block;     border-bottom: 5px #eeeeee solid; font-weight: 600; "> Status</td>
+            @endif
+        
+        </tr>
+    </table>
 
-  
+    <table id="customers">
+        <tr>
+          @if($product->body_dimensions !='' || $product->body_weight !='' || $product->body_build !='' || $product->body_sim !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Body</td>
+          @endif
+          
 
+          @if($product->body_dimensions !='')
+            <td class="DimnOnMobSubhead" style="display: block;font-weight: 600;"> Dimensions</td>
+          @endif
 
+          @if($product->body_weight !='')
+            <td class="BodySts1" style="display: block;font-weight: 600;"> Weight</td>
+          @endif
 
-
-            <table id="customers">
-                <tr>
-                    <td class="colblue tdBlockOnMobhead LaunchWidthOnlyOnDesk" >LAUNCH</td>
-                       @if($product->launch_announced !='')
-                    <td class="tdBlockOnMobSubhead" style="display: block;"> Announced</td>
-                    @endif
-                    @if($product->launch_status !='')
-                    <td class="StatheadOnMob" style="display: block;     border-bottom: 5px #eeeeee solid; font-weight: 600; "> Status</td>
-                    @endif
-                
-                </tr>
-            </table>
-
-                <!-- <table id="customers">
-                    <tr>
-                        <td class="colblue tdBlockOnMobhead">BODY</td>
-                        <td class="tdBlockOnMobSubhead" style="display: block;"> Dimensions</td>
-                        <td class="StatheadOnMob" style="display: block;"> Weight</td>
-                        <td class="StatheadOnMob" style="display: block;"> Build</td>
-                        <td class="StatheadOnMob" style="display: block;"> SIM</td>
-                    </tr>
-                </table> -->
-
-                    <table id="customers">
-                        <tr>
-                            <td class="colblue BodyHeadMob widthOnDesk">Body</td>
-
-                            @if($product->body_dimensions !='')
-                            <td class="DimnOnMobSubhead" style="display: block;font-weight: 600;"> Dimensions</td>
-                             @endif
-
-                              @if($product->body_weight !='')
-                            <td class="BodySts1" style="display: block;font-weight: 600;"> Weight</td>
-                            @endif
+          @if($product->body_build !='')
+          <td class="BuildSts1" style="display: block;font-weight: 600;"> Build</td>
+          @endif
 
 
+          @if($product->body_sim !='')
+            <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
+          @endif
+        </tr>
+    </table>
 
-                            @if($product->body_build !='')
-                            <td class="BuildSts1" style="display: block;font-weight: 600;"> Build</td>
-                            @endif
+    <table id="customers">
+      <tr>
+        @if($product->display_type !='' || $product->display_size !='' || $product->display_resolution !='' || $product->protection !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Display
+              </td>
+        @endif
 
+        @if($product->display_type !='')
+          <td class="DType" style=""> Type</td>
+        @endif
+        
+        @if($product->display_size !='')
+          <td class="Dsize" style="display: block;font-weight: 600;"> Size</td>
+        @endif
+        
+        @if($product->display_resolution !='')
+          <td class="Dresolution" style="display: block;font-weight: 600;"> Resolution</td>
+        @endif
 
-                            @if($product->body_sim !='')
-                            <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
-                           @endif
-                        </tr>
-                    </table>
+        @if($product->display_protection !='')
+          <td class="Dprotect" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
+        @endif
+      </tr>
+    </table>
 
+    <table id="customers">
+      <tr>
+        @if($product->platform_os !='' || $product->platform_chipset !='' || $product->cput !='' || $product->gpu !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Plate-<br/>Form</td>
+        @endif
 
+        @if($product->platform_os !='')
+          <td class="DType" style=""> OS</td>
+        @endif
 
+        @if($product->platform_chipset !='')
+          <td class="Dsize" style="display: block;font-weight: 600;"> Chipset</td>
+        @endif
+        
+        @if($product->platform_cpu !='')
+          <td class="Dresolution" style="display: block;font-weight: 600;"> CPU</td>
+        @endif
+        
+        @if($product->platform_gpu !='')
+         <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
+        @endif
 
-                    <table id="customers">
-                      <tr>
-                        <td class="colblue BodyHeadMob widthOnDesk">Display</td>
+      </tr>
+    </table>
 
-                         @if($product->display_type !='')
-                        <td class="DType" style=""> Type</td>
-                        @endif
-                         @if($product->display_size !='')
-                        <td class="Dsize" style="display: block;font-weight: 600;"> Size</td>
-                        @endif
-                          @if($product->display_resolution !='')
-                        <td class="Dresolution" style="display: block;font-weight: 600;"> Resolution</td>
-                        @endif
-                        @if($product->display_protection !='')
-                        <td class="Dprotect" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
-                        @endif
-                      </tr>
-                    </table>
+    <table id="customers">
+      <tr>
+        @if($product->memory_card_slot !='' || $product->memory_ram !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Memory</td>
+        @endif
 
+        @if($product->memory_card_slot !='')
+          <td class="cradslotOnMob" style="display: block;font-weight: 600;"> Card slot</td>
+        @endif
 
+        @if($product->memory_ram !='')
+          <td class="Dresolution" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> RAM</td>
+        @endif
 
+      </tr>
+    </table>
 
+    <table id="customers">
+      <tr>
+        @if($product->main_type !='' || $product->main_feature !='' || $product->main_video !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Main-<br/>Camera</td>
+        @endif
+        @if($product->main_type !='' && $product->main_type_value !='')
+          <td class="Cameratriple" style="display: block;font-weight: 600;"> {{ ucwords($product->main_type) }}</td>
+        @endif
 
-
-
-
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMob widthOnDesk">Plate-<br/>Form</td>
-
-      @if($product->platform_os !='')
-    <td class="DType" style=""> OS</td>
-    @endif
-
-      @if($product->platform_chipset !='')
-    <td class="Dsize" style="display: block;font-weight: 600;"> Chipset</td>
-    @endif
-     @if($product->platform_cpu !='')
-    <td class="Dresolution" style="display: block;font-weight: 600;"> CPU</td>
-      @endif
-     @if($product->platform_gpu !='')
-    <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
-      @endif
-  </tr>
-</table>
-
-
-
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMob widthOnDesk">Memory</td>
-  @if($product->memory_card_slot !='')
-    <td class="cradslotOnMob" style="display: block;font-weight: 600;"> Card slot</td>
-   @endif
-
-
-
-
-     @if($product->memory_ram !='')
-    <td class="Dresolution" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> RAM</td>
-      @endif
-
-  </tr>
-</table>
-
-
-
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMob widthOnDesk">Main-<br/>Camera</td>
- @if($product->main_type !='' && $product->main_type_value !='')
-    <td class="Cameratriple" style="display: block;font-weight: 600;"> {{ ucwords($product->main_type) }}</td>
-     @endif
-
-       @if($product->main_feature !='')
-        <td class="CameraFeaturesOnMob" style="display: block;font-weight: 600;"> Features</td>
+        @if($product->main_feature !='')
+          <td class="CameraFeaturesOnMob" style="display: block;font-weight: 600;"> Features</td>
         @endif
 
         @if($product->main_video !='')
-    <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
-    @endif
+          <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
+        @endif
 
 
-  </tr>
-</table>
+      </tr>
+    </table>
+
+    <table id="customers">
+      <tr>
+        @if($product->selfie_type !='' || $product->selfie_feature !='' || $product->selfie_video !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Selfie-<br />Camera</td>
+        @endif
 
 
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMob widthOnDesk">Selfie-<br />Camera</td>
+          @if($product->selfie_type !='' && $product->selfie_type_value !='')
+        <td class="SelfieSingle" style="display: block;font-weight: 600;"> Single</td>
+        @endif
 
 
-      @if($product->selfie_type !='' && $product->selfie_type_value !='')
-    <td class="SelfieSingle" style="display: block;font-weight: 600;"> Single</td>
-    @endif
+          @if($product->selfie_feature !='')
+        <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> Features</td>
+        @endif
+
+          @if($product->selfie_video !='')
+        <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
+        @endif
 
 
-      @if($product->selfie_feature !='')
-    <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> Features</td>
-    @endif
+      </tr>
+    </table>
 
-      @if($product->selfie_video !='')
-    <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
-    @endif
+    <table id="customers">
+      <tr>
+        @if($product->sound_loudspeaker !='' || $product->sound_jack !='' || $product->sound_mic !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Sound</td>
+        @endif
 
-
-  </tr>
-</table>
-
-
-
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMob widthOnDesk">Sound</td>
+        @if($product->sound_loudspeaker !='')
+          <td class="SelfieSingle" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
+        @endif
 
 
-
-      @if($product->sound_loudspeaker !='')
-    <td class="SelfieSingle" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
-    @endif
-
-
-     @if($product->sound_jack !='')
-    <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> 3.5mm jack</td>
-    @endif
+        @if($product->sound_jack !='')
+          <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> 3.5mm jack</td>
+        @endif
 
 
-       @if($product->sound_mic!='')
-    <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
-    @endif
+        @if($product->sound_mic!='')
+          <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
+        @endif
+      </tr>
+    </table>
 
+    <table id="customers">
+      <tr>
+        @if($product->comms_wlan !='' || $product->comms_bluetooth !='' || $product->comms_gps !='' || $product->comms_nfc !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Comms</td>
+        @endif
 
-  </tr>
-</table>
+        @if($product->comms_wlan !='')
+          <td class="DType" style=""> WLAN</td>
+        @endif
 
+        @if($product->comms_bluetooth !='')
+        <td class="Commsblutoth" style="display: block;font-weight: 600;"> Bluetooth</td>
+        @endif
 
-
-
-
-
-
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMob widthOnDesk">COMMS</td>
-
-
-      @if($product->comms_wlan !='')
-    <td class="DType" style=""> WLAN</td>
-    @endif
-
-    
-
-      @if($product->comms_bluetooth !='')
-    <td class="Commsblutoth" style="display: block;font-weight: 600;"> Bluetooth</td>
-    @endif
-
-
-
-     @if($product->comms_gps!='')
-    <td class="Dresolution" style="display: block;font-weight: 600;"> GPS</td>
-    @endif
-        <!-- <td class="Dresolution" style="display: block;font-weight: 600;"> Radio</td> -->
-
-
+        @if($product->comms_gps!='')
+          <td class="Dresolution" style="display: block;font-weight: 600;"> GPS</td>
+        @endif
 
         @if($product->comms_nfc!='')
             <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> NFC</td>
-            @endif
-    <!-- <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> USB</td> -->
+        @endif
+      </tr>
+    </table>
 
-  </tr>
-</table>
+    <table id="customers">
+      <tr>
+        @if($product->feature_sensor !='')
+              <td class="colblue BodyHeadMob widthOnDesk">Features</td>
+        @endif
 
+        @if($product->feature_sensor !='')
+          <td class="FeatureSensor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Sensors</td>
+        @endif
+      </tr>
+    </table>
 
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">Features</td>
-   
+    <table id="customers">
+      <tr>
+        @if($product->battery_status !='' || $product->batttery_talk_time !='' || $product->battery_music !='')
+              <td class="colblue BatteryOneMob widthOnDesk">Battery</td>
+        @endif
 
+        @if($product->battery_status !='')
+          <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> status </td>
+        @endif
 
-      @if($product->feature_sensor !='')
-    <td class="FeatureSensor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Sensors</td>
-      @endif
-  </tr>
-</table>
+        @if($product->battery_talk_time !='')
+          <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> talk Time</td>
+        @endif
 
+        @if($product->battery_music!='')
+          <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 78px;"> Music</td>
+        @endif
 
-
-<table id="customers">
-  <tr>
-    <td class="colblue BatteryOneMob widthOnDesk">Battery</td>
-
-     @if($product->battery_status !='')
-  <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> status </td>
-     @endif
-    <!-- <td class="batteryCarge" style="display: block;font-weight: 600; height: 75px; "> Charging</td> -->
-
-     @if($product->battery_talk_time !='')
-    <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> talk Time</td>
-    @endif
-
-
-    @if($product->battery_music!='')
-    <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 78px;"> Music</td>
-@endif
-
-  </tr>
-</table>
+      </tr>
+    </table>
 
 
+    <table id="customers">
+      <tr>
+        @if($product->variation_colors->count()>0)
+          <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">MISC</td>
+        @endif
+        
+        @if($product->variation_colors->count()>0)
+          <td class="MiscColor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Colors</td>
+        @endif
+      </tr>
+    </table>
 
 
+    <table id="customers">
+      <tr>
+        @if($product->variation_colors->count()>0)
+          <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">&nbsp;</td>
+        @endif
+        
+        @if($product->variation_colors->count()>0 && $product->price !='')
+          <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
+        @endif
+      </tr>
+    </table>
 
 
-
-
-
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">MISC</td>
-
-    
-  @if($product->variation_colors->count()>0)
-    <td class="MiscColor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Colors</td>
-@endif
-  </tr>
-</table>
-
-
-<table id="customers">
-  <tr>
-    <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">&nbsp;</td>
-
-
-           @if($product->price !='')
-    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
- @endif
-  </tr>
-</table>
-
-
-</div>
+  </div>
 
 </div>
 
@@ -665,65 +626,55 @@ margin-left: 15px;">{{ $product->price }}</font>
       <div class="lanchSpcOn" style="height: 0px; width: 100%;"></div>
 
 
-   @if($product->launch_announced !='')
-      <div class="Lannounced Lannone">
-       {{ date('Y',strtotime($product->launch_announced)) }},
-              {{ date('F',strtotime($product->launch_announced)) }} {{ date('d',strtotime($product->launch_announced)) }}
-      </div>
-@endif
+        @if($product->launch_announced !='')
+          <div class="Lannounced Lannone">
+           {{ date('Y',strtotime($product->launch_announced)) }},
+                  {{ date('F',strtotime($product->launch_announced)) }} {{ date('d',strtotime($product->launch_announced)) }}
+          </div>
+        @endif
 
 
 
-   @if($product->launch_status !='')
-      <div  class="StatusOnMob Lannsts">
-{{ $product->launch_status }}
-      </div>
- @endif
+        @if($product->launch_status !='')
+            <div  class="StatusOnMob Lannsts">
+        {{ $product->launch_status }}
+            </div>
+       @endif
 
 
       <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
 
 
       @if($product->body_dimensions !='')
-      <div class="DimensionsMob BodyDimension" style="  " class="StatusOnMob">
-      {{ $product->body_dimensions }}
-      </div>
- @endif
-
-
-
-    @if($product->body_weight !='')
-      <div style="  " class="bodyweight2 BodyWeight">
-       {{ $product->body_weight }}
-      </div>
-      @endif
-
-
- @if($product->body_build!='')
-      <div style="    " class="builWeigt2 BodyBuild">
-{{ $product->body_build }}
-      </div>
+        <div class="DimensionsMob BodyDimension" style="  " class="StatusOnMob">
+        {{ $product->body_dimensions }}
+        </div>
       @endif
 
 
 
+      @if($product->body_weight !='')
+        <div style="  " class="bodyweight2 BodyWeight">
+         {{ $product->body_weight }}
+        </div>
+      @endif
 
-       @if($product->body_sim !='')
-      <div style="   
-" class="simweight2 BodySim">
-        {{ $product->body_sim }}
-      </div>
+
+      @if($product->body_build!='')
+            <div style="    " class="builWeigt2 BodyBuild">
+      {{ $product->body_build }}
+        </div>
       @endif
 
 
 
 
-
-
-
-
-
-
+      @if($product->body_sim !='')
+          <div style="   
+    " class="simweight2 BodySim">
+            {{ $product->body_sim }}
+          </div>
+      @endif
 
     <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
     
@@ -1323,8 +1274,8 @@ Up to 20 h (multimedia)
 
                                 <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;margin-top: 2px;">{{ date('Y M  d',strtotime($row->created_at)) }}</p></div>
 
-                                <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
-                                <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div>
+                                <!-- <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
+                                <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div> -->
                               </div>
                             </div>
                           </div>
@@ -1378,17 +1329,17 @@ Up to 20 h (multimedia)
                           <div id="RatingMob" style="height: 100%; width: 30%;  float: left;"> 
                         
                           <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;">
-                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Rating 0</p> </div>
+                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Replies {{$row->replies->count()}}</p> </div>
                        
                        
                           <div style="height: 100%; width: 20%;  float: left;"> </div>
                        
-                          <div style="height: 100%; width: 40%;  float: left;"> 
+                          <!-- <div style="height: 100%; width: 40%;  float: left;"> 
                           
                             <a href="#up" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" /> </a> | <a href="#down" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" /> </a>
                           
 
-                          </div>
+                          </div> -->
                         
                           
                           </div>
