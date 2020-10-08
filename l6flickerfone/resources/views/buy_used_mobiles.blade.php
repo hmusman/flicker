@@ -49,6 +49,17 @@
     display: block;
     font-weight: 600;
     }
+
+    #usedSearchList li a {
+      
+      margin-top: -1px; /* Prevent double borders */
+      
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+    display: block;
+    font-weight: 600;
+    }
     
     /* #myUL li a:hover:not(.header) {
       background-color: #eee;
@@ -804,7 +815,19 @@ margin-top: 90px;">
   
   <div class="row">
     <!-- <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div> -->
-     <div class="col-md-4" style="text-align: center;"><input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;;"></div>
+      <div class="col-md-4" style="text-align: center;">
+        <input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;;">
+        <ul onblur="hideagain()" id="usedSearchList" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 100%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px; margin-left:2%;margin-top: 5px;">
+   
+            <div>
+             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;"><button id="srchbtnid" onclick="usedHideAgain();" style="margin-left: 269px;
+              background-color: #f8f7f7;
+              color: black;
+              font-weight: 600;
+              border-style: none; outline: none; cursor: pointer;">X</button></p>
+            </div>
+        </ul>
+     </div>
     <div class="col-md-8" style="padding-right: 0px !important;">
     
     
@@ -1275,12 +1298,12 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
           <label for="{{ $city->city }}"  style="color: #101115;">{{ ucwords($city->city)}}</label>
           </div>
             <div style="width: 20%; float: left;">
-            <p style="    background-color: #fafafa;
+            <!-- <p style="    background-color: #fafafa;
         padding: 0px 1px 0px 1px;
         border-radius: 12px;
         text-align: center;
         color: black;
-        border: 1px #d9d3d3 solid;">{{$city->total}}</p>
+        border: 1px #d9d3d3 solid;">{{$city->total}}</p> -->
             </div>
         </div>
       @endforeach
@@ -1429,27 +1452,33 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
     
     <div class="row" style="border: 1px black solid;">
 
-
-<div class="col-md-3">
-  <p style="    color: #a8a1a1;
-  
-    padding: 12px 0px 0px 12px;">Sort by:</p>
-</div>
-
-
-      <div class="col-md-9">
-    <div class="form-group" style="padding-top: 9px;">
-    
-      <select class="form-control" id="sel1" style="    background-color: #ffffff !important;
-    border: 1px solid #ffffff !important;">
-        <option style="font-weight: bold !important;"> Update Date: Recent First</option>
-        <option style="font-weight: bold !important;">Update Date: Recent Last</option>
-        <option style="font-weight: bold !important;">Price: Low to High</option>
-          <option style="font-weight: bold !important;">Price: High to Low</option>
-    
-      </select>
-    </div>
+      <div class="col-md-3">
+        <p style="    color: #a8a1a1;
+        
+          padding: 12px 0px 0px 12px;">Sort by:</p>
       </div>
+
+      <div class="col-md-4">
+        <div class="form-group" style="padding-top: 9px;">
+        
+          <select class="form-control" id="sort_by_order">
+            <option selected="" disabled="">Order</option>
+            <option value="desc">Recent First</option>
+            <option value="asc">Recent Last</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <div class="form-group" style="padding-top: 9px;">
+          <select class="form-control" id="sort_by_price">
+            <option selected="" disabled="">Price</option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </div>
+      </div>
+
     </div>
 
 
@@ -1457,7 +1486,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 
-<p style="  color: #898889;;">1-48 of 126,978 Results</p>
+<p style="  color: #898889;;"><!-- 1-48 of 126,978 Results --></p>
       <div style="width: 100%;" class="row" id="sellProducts">
          @include('partials.sell_products_list',$products)e
       </div>
@@ -1902,6 +1931,140 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
   }
 
+  function FetchSortByOrderSellProducts(page,val,options)
+  {
+    $.ajax({
+      url:"SortByOrderSellProducts?page="+page,
+      type:"get",
+      data:{val:val},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+  }
+
+  function FetchSortByPriceSellProducts(page,val,options)
+  {
+    $.ajax({
+      url:"SortByPriceSellProducts?page="+page,
+      type:"get",
+      data:{val:val},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+  }
+
+  function FetchSortByOrderPriceSellProducts(page,val,price,options)
+  {
+    $.ajax({
+      url:"SortByOrderPriceSellProducts?page="+page,
+      type:"get",
+      data:{val:val,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+  }
+
+  $('#sort_by_order').change(function()
+  {
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      $('#sell').val('Select City');
+      $('#upperPrice').val('Select Price');
+      $('#upperInpt').val(''); 
+      var val = $('#sort_by_order option:selected').val();
+      var price = $('#sort_by_price option:selected').val();
+      if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() =="Price")
+      {
+         FetchSortByOrderSellProducts(0,val,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByOrderPriceSellProducts(0,val,price,options);
+      }
+
+     
+  });
+
+  $('#sort_by_price').change(function(){
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      $('#sell').val('Select City');
+      $('#upperPrice').val('Select Price');
+      $('#upperInpt').val('');
+      var val = $('#sort_by_order option:selected').val();
+      var price = $('#sort_by_price option:selected').val();
+      if($('#sort_by_order option:selected').val()=="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByPriceSellProducts(0,price,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByOrderPriceSellProducts(0,val,price,options);
+      }
+  });
+
+  $('#upperInpt').keyup(function(){
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      var query = $(this).val();
+      $.ajax({
+        url:"{{ route('UsedProductsList') }}",
+        type:"get",
+        data:{query:query},
+        success:function(data)
+        {
+          $('#usedSearchList').css('display','block');
+          $('#usedSearchList').html(data);
+        }
+      });
+
+      
+  });
+
+  function ListProducts()
+  {
+    $(".brands_check"). prop("checked", false);
+    $(".device_status_check"). prop("checked", false);
+    $(".city_check"). prop("checked", false);
+    $(".brands_check"). prop("checked", false);
+    $('#from_price').val('');
+    $('#to_price').val(''); 
+    $('#sort_by_order').val('Order');
+    $('#sort_by_price').val('Price');
+    FetchUpperSearchSellProducts(0,$('#upperInpt').val(),options); usedHideAgain(); 
+  }
+
+  function ContactShow(id){$('#contact'+id).toggle()}
+
   $('#upperSearch').click(function(){
       $(".brands_check"). prop("checked", false);
       $(".device_status_check"). prop("checked", false);
@@ -1997,7 +2160,11 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var from = $('#from_price').val();
       var to = $('#to_price').val();
       $("#sell").val("Select City");
+      $("#upperInpt").val("");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchBrandProducts(0,brands,options);
@@ -2046,6 +2213,9 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
           var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
@@ -2095,6 +2265,9 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchStatusProducts(0,statuses,options);
@@ -2145,6 +2318,9 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
 
       if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
@@ -2199,7 +2375,8 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var from = $('#from_price').val();
       var to = $('#to_price').val();
       var inptVal = $('#upperInpt').val();
-
+      var val = $('#sort_by_order option:selected').val();
+      var Orderprice = $('#sort_by_price option:selected').val();
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchBrandProducts(page,brands,options);
@@ -2310,6 +2487,21 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         FetchUpperSearchCityPriceSellProducts(page,inptVal,city,price,options);
       }
 
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() =="Price")
+      {
+         FetchSortByOrderSellProducts(page,val,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()=="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByPriceSellProducts(page,Orderprice,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByOrderPriceSellProducts(page,val,Orderprice,options);
+      }
+
       else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
       {
         FetchData(page)
@@ -2371,4 +2563,22 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
           });
    });
 </script>
+
+ <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+      }
+      
+      
+      
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+      }
+      function usedHideAgain(){
+          // $('#upperInpt').val('');
+          document.getElementById('usedSearchList').style.display = 'none';
+      }
+   </script>
+
 </html>

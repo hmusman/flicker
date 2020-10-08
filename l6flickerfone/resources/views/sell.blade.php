@@ -675,13 +675,13 @@ color: black;
 
 <div class="form-group row">
   <div class="col-md-6" >
-
-    <div class="form-group row">
+                          <input type="hidden" id="user_id" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
+                          <input type="hidden" name="status" value="" id="status">
+                          <div class="form-group row hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">Category</label>
                               <div class="col-md-8">
-                                  <input type="hidden" id="user_id" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
-                                  <input type="hidden" name="status" value="" id="status">
-                                  <select class="form-control" name="category">
+                                  
+                                  <select class="form-control" name="category" id="category">
                                       <option selected="" disabled="">Select Category</option>
                                       @foreach($categories as $category)
                                            <option <?php if(old('category')==$category->id){ echo "selected=''"; } ?>  value="{{ $category->id }}">{{ ucfirst($category->title) }}</option>
@@ -708,7 +708,7 @@ color: black;
                               </div>
                           </div>
 
-                          <div class="form-group row">
+                          <div class="form-group row  hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">Product Name</label>
                               <div class="col-md-8">
                                   <input class="form-control" type="text" value="{{ old('model') }}" name="model" placeholder="Enter Name" id="example-text-input">
@@ -1084,9 +1084,9 @@ color: black;
        <div class="col-md-8">
          
       <input type="radio" id="phone_check" name="product_check" checked="" value="phone" @if(old('product_check')=='phone')checked @endif>
-      <label for="male">Phone</label>
+      <label for="phone_check" style="cursor: pointer;">Phone</label>
       <input type="radio" id="accessory_check" name="product_check" value="accessory" @if(old('product_check')=='accessory') checked @endif>
-      <label for="female">Accessories</label>
+      <label for="accessory_check" style="cursor: pointer;">Accessories</label>
        </div>
      </div>
 
@@ -1103,7 +1103,7 @@ color: black;
                       <div id="PhoneDetBox"  class="hide">
                         <div class="form-group row" >
                          
-
+                          <style type="text/css"> .myLabel{ cursor: pointer !important;  } </style>
 
                           <div class="col-md-4">
 
@@ -1324,8 +1324,7 @@ color: black;
                       <div class="card-body row">
                           <label for="example-text-input" class="col-md-3 col-form-label">Device Detail</label>
                          <div class="col-md-9">
-                            <textarea  name="detail" rows="4" cols="50" style="width:100%; padding: 5px; border-color:#dfdfdf " placeholder="Please Write Description...">{{ old('detail') }} 
-                            </textarea>
+                            <textarea  name="detail" rows="4" cols="50" style="width:100%; padding: 5px; border-color:#dfdfdf " placeholder="Please Write Description...">{{ old('detail') }}</textarea>
                              @error('detail')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                               @enderror
@@ -1491,7 +1490,18 @@ color: black;
           }
       });
 
-
+      function AcccessoryCategories()
+      {
+        $.ajax({
+          url:"{{ route('AccessoryCategories')}}",
+          type:"get",
+          success:function(data)
+          {
+            $('#category').html(data);
+          }
+        });
+      }
+      
       function filePreview(input,div,num) {
           if (input.files && input.files[0]) {
               var reader = new FileReader();

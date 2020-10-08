@@ -425,6 +425,25 @@ class SellProductController extends Controller
         return view('partials.sell_products_list',compact('products'));
     }
 
+    public function UsedProductsList(Request $request)
+    {
+        $query = $request->get('query');
+        $brands = Brand::where('name','like','%'.$query.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+
+        if(!empty($brandArr))
+        {
+            $product_list = SellProduct::whereIn('brand_id',$brandArr)->distinct()->get();
+        }
+
+        else
+        {
+            $product_list = SellProduct::where('sell_products.model','like','%'.$query.'%')->distinct()->get();
+        }
+
+        return view('partials.used_products_list',compact('product_list'));
+    }
+
     public function UpperSearchCitySellProducts(Request $request)
     {
         $query = $request->get('query');
@@ -444,7 +463,7 @@ class SellProductController extends Controller
         return view('partials.sell_products_list',compact('products'));
     }
 
-     public function UpperSearchPriceSellProducts(Request $request)
+    public function UpperSearchPriceSellProducts(Request $request)
     {
         $price = $request->price;
         $query = $request->get('query');
@@ -578,9 +597,28 @@ class SellProductController extends Controller
         return view('partials.sell_products_list',compact('products'));
     }
 
+    public function SortByOrderSellProducts(Request $request)
+    {
+        $products = SellProduct::orderBy('id',$request->val)->paginate(10);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function SortByPriceSellProducts(Request $request)
+    {
+        $products = SellProduct::orderBy('price',$request->val)->paginate(10);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
+    public function SortByOrderPriceSellProducts(Request $request)
+    {
+        $products = SellProduct::orderBy('id',$request->val)->orderBy('price',$request->price)->paginate(10);
+        return view('partials.sell_products_list',compact('products'));
+    }
+
     public function show($id)
     {
-        //
+        $product = SellProduct::where('id',$id)->first();
+        return view('sell_product_detail',compact(['product']));
     }
 
     

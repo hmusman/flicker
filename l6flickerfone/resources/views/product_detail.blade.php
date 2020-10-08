@@ -779,6 +779,7 @@ cursor: pointer;
                                        text-align: center;  background-color: #f9f9f9;   color: #0b0a0a;  padding: 10px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px black solid;">SEARCH OPINIONS </p>
                                  </button>
                               </div>
+
                            </div>
                            <div id="sortBy" class="col-md-3" style="color: black; font-size: 20px; text-align: right; padding-top: 19px;        " >  Sort By: </div>
                            <div class="col-md-3" style="color: black; font-size: 20px ; padding-top: 19px;              " >
