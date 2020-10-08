@@ -105,25 +105,8 @@
           color: black;">Battery Status?</p>
 
 
-<select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
-                                    <option disabled="" selected="">Select Status</option>
-                                    @for($i=5; $i<=10; $i++)
-                                      <option value="{{ $i*10 }}" @if(old('battery')==$i*10) selected @endif >{{ $i*10 }} %</option>
-                                    @endfor
-
-                                    <option value="others">Others</option>
-                                  </select>
 
 
-
-
-                                  <!-- <input type="text" name="color" id="color" /> -->
-                                  <input class="form-control" type="number" name="" value="" placeholder="Enter Integer Value Ex 52 " id="otherInputField" style='display:none;
-                                   margin-top:17px '>
-                                  @error('battery')
-                                      <p class="text-danger mt-3">{{ $message }}</p>
-                                  @enderror
-<!-- 
         <div>
           <input type="hidden" name="" id="device_battery_status" value="{{ $csproduct->device_battery_status }}">
           <select class="form-control battery">
@@ -133,10 +116,7 @@
             @endfor
           </select>
 
-        </div> -->
-
-
-
+        </div>
 
         <button style="margin-top: 20px;" class="btn btn-primary" onclick="estimate_fun();" type="button">Submit</button>
 <!-- 
@@ -732,52 +712,4 @@
         }
       }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  $('#otherInputField').keyup(function(){
-      var val = $(this).val();
-      if(val<50)
-      {
-        if(!$('.save_btn').hasAttr('disabled'))
-        {
-          $('.save_btn').attr('disabled','disabled');
-        }
-      }
-      else if(val>50)
-      {
-        $('.battery').append('<option value="'+val+'" selected >'+ val +' %</option>');
-        document.getElementById('otherInputField').style.display='none';
-        if($('.save_btn').hasAttr('disabled'))
-        {
-          $('.save_btn').removeAttr('disabled','');
-        }
-      }
-
-
-  });
-
-
-
-function OtherPerc(val){
- var element=document.getElementById('otherInputField');
- if(val=='pick a color'||val=='others')
-   element.style.display='block';
- else  
-   element.style.display='none';
-}
-
   </script>
-
-

@@ -64,8 +64,8 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
-            @php $brands = App\Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct()->get() @endphp
+          style="padding: 8px 30px 6px 30px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> BRANDS  </a>
+            @php $brands = App\Brand::all() @endphp
             <ul class="dropdown-menu fade-up">
               @foreach($brands as $brand)
                    <li><a class="dropdown-item" href="{{ route('BrandProductsList',$brand->id) }}"> <center>{{ ucwords($brand->name) }}</center></a></li>
@@ -76,7 +76,7 @@
 
           <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 30px 6px 30px !important;  height: 38px ; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
+          style="padding: 8px 30px 6px 30px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
              @php $brands = App\AccessoryCategory::all() @endphp
             <ul class="dropdown-menu fade-up">
               @foreach($brands as $accessory)
@@ -88,7 +88,7 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 70px 6px 70px !important;  height: 38px ; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;">Blog </a>
+          style="padding: 8px 70px 6px 70px !important;  height: 38px !important; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;">Blog </a>
             <!-- <ul class="dropdown-menu fade-up">
             <li><a class="dropdown-item" href="#"> <center>LENOVO</center></a></li>
             <li><a class="dropdown-item" href="#"> <center>HP </center></a></li>
@@ -106,7 +106,7 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 70px 6px 70px !important;  height: 38px ;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> Forums  </a>
+          style="padding: 8px 70px 6px 70px !important;  height: 38px !important;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> Forums  </a>
             <!-- <ul class="dropdown-menu fade-up">
               <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
             <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>

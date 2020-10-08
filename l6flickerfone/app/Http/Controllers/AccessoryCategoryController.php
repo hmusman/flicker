@@ -96,10 +96,4 @@ class AccessoryCategoryController extends Controller
        }
        
     }
-
-    public function AccessoryCategories(Request $request)
-    {
-        $categories = AccessoryCategory::all();
-        $output = "";
-    }
 }

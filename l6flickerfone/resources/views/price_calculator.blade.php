@@ -724,28 +724,23 @@ input[type="radio"]:checked + label {
     <div id="removetenatMob"  style="width: 5%;float: left; ">&nbsp;&nbsp;&nbsp;</div>
 
     @if($brands->count()>0)
-    
-  @php $bName="" @endphp
-@foreach($brands as $brand)
-  @foreach($brand->price_calculator_products_list as $imgRow) 
-    @if($loop->first && $bName !=$brand->name)
-      @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/150_'.$imgRow->image; @endphp 
-      <div id="setBrandatMob" style="width: 15%; float: left;">
-        <figure style="padding-top: 80px;">
-            <center> <img src="{{ asset($img) }}" alt="Trulli" ></center>
-            <a data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
-            <figcaption id="topfigurecap"  style="background-color: #4a88c2;
-             text-align: center;
-             padding: 10px; color: white !important;
-             border-radius: 5px;
-             margin-top: 10px;  ">{{ ucwords($brand->name) }}</figcaption></a>
-        </figure>
-      </div> 
-    @endif
-    @php $bName=$brand->name @endphp
-  @endforeach          
-@endforeach
-    
+      @foreach($brands as $brand)
+        @foreach($brand->price_calculator_products_list as $imgRow) @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/150_'.$imgRow->image @endphp @endforeach
+        
+        <div id="setBrandatMob" style="width: 15%; float: left;">
+            <figure style="padding-top: 80px;">
+                <center> <img src="{{ asset($img) }}" alt="Trulli" ></center>
+                <a data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
+                <figcaption id="topfigurecap"  style="background-color: #4a88c2;
+                 text-align: center;
+                 padding: 10px; color: white !important;
+                 border-radius: 5px;
+                 margin-top: 10px;  ">{{ ucwords($brand->name) }}</figcaption></a>
+            </figure>
+        </div>
+
+      @endforeach
+
     @endif
 
     <div  id="removetenatMob"   style="width: 5%;float: left;">&nbsp;&nbsp;&nbsp;</div>
