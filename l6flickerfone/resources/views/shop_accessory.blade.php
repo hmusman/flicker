@@ -626,7 +626,7 @@ color: #0071e3 !important;
             {
               var brand = $('#brand').children("option:selected").val();
               var price = $('#price').children("option:selected").val();
-              var nView = 1;
+              var nView = 9;
               FetchBrandPriceAccessories(0,brand,price,nView);
             }
             else
@@ -667,7 +667,7 @@ color: #0071e3 !important;
             if($('#view').children('option:selected').val() =="Select View")
             { 
               var id = $('#brand').children("option:selected").val();
-              FetchBrandAccessories(0,id,1);
+              FetchBrandAccessories(0,id,9);
             }
             else
             {
@@ -713,7 +713,7 @@ color: #0071e3 !important;
             if($('#view').children('option:selected').val() =="Select View")
             {
               var price = $('#price').children("option:selected").val();
-              FetchPriceAccessories(0,price,1);
+              FetchPriceAccessories(0,price,9);
             }
             else
             {
@@ -737,20 +737,20 @@ color: #0071e3 !important;
           if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
           {
             var brand = $('#brand').children("option:selected").val();
-            FetchBrandAccessories(page,brand,1);
+            FetchBrandAccessories(page,brand,9);
           }
 
           else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
           {
             var price = $('#price').children("option:selected").val();
-            FetchPriceAccessories(page,price,1);
+            FetchPriceAccessories(page,price,9);
           }
 
           else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
           {
             var brand = $('#brand').children("option:selected").val();
             var price = $('#price').children("option:selected").val();
-            FetchBrandPriceAccessories(page,brand,price,1);         
+            FetchBrandPriceAccessories(page,brand,price,9);         
           }
 
           else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
@@ -758,7 +758,7 @@ color: #0071e3 !important;
             var brand = $('#brand').children("option:selected").val();
             var price = $('#price').children("option:selected").val();
             var view = $('#view').children("option:selected").val();
-            FetchBrandPriceAccessories(page,brand,price,1);         
+            FetchBrandPriceAccessories(page,brand,price,9);         
           }
 
           else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")

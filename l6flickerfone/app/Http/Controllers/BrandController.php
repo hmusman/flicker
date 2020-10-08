@@ -25,7 +25,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $validations = Validator::make($request->all(),[
-            'name'=>'bail | required | min:5 | max:25',
+            'name'=>'bail | required | min:4 | max:25',
         ]);
 
         if($validations->fails())
@@ -67,7 +67,7 @@ class BrandController extends Controller
     public function update(Request $request, $id)
     {
          $validations = Validator::make($request->all(),[
-            'name'=>'bail | required | min:5 | max:25',
+            'name'=>'bail | required | min:4 | max:25',
         ]);
 
         if($validations->fails())

@@ -1155,12 +1155,12 @@ margin-top: 90px;">
           <label for="{{ $city->city }}"  style="color: #101115;">{{ ucwords($city->city)}}</label>
           </div>
             <div style="width: 20%; float: left;">
-            <p style="    background-color: #fafafa;
+            <!-- <p style="    background-color: #fafafa;
         padding: 0px 1px 0px 1px;
         border-radius: 12px;
         text-align: center;
         color: black;
-        border: 1px #d9d3d3 solid;">{{$city->total}}</p>
+        border: 1px #d9d3d3 solid;">{{$city->total}}</p> -->
             </div>
         </div>
       @endforeach
