@@ -2,16 +2,10 @@
 <html lang="en">
      <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Html slider" />
-	
       <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" >
-
-
       <!-- Start WOWSlider.com HEAD section -->
       <link rel="stylesheet" type="text/css" href="{{asset('Slider/engine1/style.css')}}" />
-      <script type="text/javascript" src="{{asset('Slider/engine1/jquery.js')}}"></script>
+      <script type="text/javascript" src="{{ asset('Slider/engine1/jquery.js')}}"></script>
       <!-- End WOWSlider.com HEAD section -->
 
       <script src="{{ asset('js/jquery-2.1.3.min.js')}}" ></script>
@@ -273,12 +267,11 @@
       .navbar .nav-item:hover .nav-link{ color:  rgba(0,0,0,.5) }
       .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
       .navbar .dropdown-menu.fade-up{ top:180%;  }
-      .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); 
-      }
-   }
+      .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
       /* ============ desktop view .end// ============ */
    </style>
-  
+   <!-- 
+      slider -->
    <style>
       .ws_bullets{
       z-index: 1 !important;
@@ -338,18 +331,11 @@
       border-right: 0px !important;
       }
    </style>
-
-
-
-
    <body>
-      <a href='#' id="scroll" style="display: none;"><span></span></a>
+      <a href="#" id="scroll" style="display: none;"><span></span></a>
       @include('includes.header')
       <!-- Start WOWSlider.com BODY section -->
       <!-- Start WOWSlider.com BODY section -->
-
-
-
       <div id="wowslider-container1">
          <div class="ws_images">
             <ul>
@@ -388,32 +374,12 @@
          </div>
          <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html slider</a> by WOWSlider.com v8.8</div>
          <div class="ws_shadow"></div>
-       
-      </div> -->
-
-
-<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page
-   
-
-
-
-<!-- 
-<div id="wowslider-container1">
-	<div class="ws_images"><ul>
-		<li><img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now" title="Shop Now" id="wows1_0"/></li>
-		<li><a href="http://wowslider.net"><img src="Slider/data1/images/1350-x-376-B.jpg" alt="jquery image carousel" title="Shop Now" id="wows1_1"/></a></li>
-		<li><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now" title="Shop Now" id="wows1_2"/></li>
-	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now"/>1</span></a>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376-B.jpg" alt="Shop Now"/>2</span></a>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now"/>3</span></a>
-	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html slider</a> by WOWSlider.com v8.8</div>
-	<div class="ws_shadow"></div>
-	</div>	 -->
-
-
-
+         <!-- <h3 style="background-color: green !important;">Wedding Cupcakes</h3>
+            <span>the newest craze in town</span>
+            <button class="orderNowHome" type="button">
+                order now
+            </button> -->
+      </div>
       <!-- End WOWSlider.com BODY section -->
       <!-- End WOWSlider.com BODY section -->
       <br/>
@@ -774,15 +740,65 @@
               document.getElementById('myUL').style.display = 'none';
           }
    </script>
-  
-   <!-- <script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
+   <script>
+      $(document).ready(function(){
+             $('.autoplayFeatures').slick({
+       slidesToShow: 5,
+       slidesToScroll: 1,
+        autoplay: true,
+       autoplaySpeed: 3000,
+      
+      
+       dots: true,
+       responsive: [
+           {
+             breakpoint: 500,
+             settings: {
+             slidesToShow: 2,
+             slidesToScroll: 1,
+             }
+           }
+         ]  
+       // variableWidth: true
+      });
+      });
+      
+      
+      
+      
+      
+      
+      $(document).ready(function(){
+              $('.autoplay').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        // autoplay: true,
+        autoplaySpeed: 3000,
+      
+      
+        dots: true,
+       
+        // variableWidth: true
+      });
+      });
+      
+      
+      
+      
+      
+      
+      
+      $(function(){
+         $('#shopBtn').attr('href','#scrollTo');
+      });
+      
+      
+      
+   </script>
+   <script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
    <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script>
-   <script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script> -->
-
+   <script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script>
    <script type="text/javascript" src="{{ asset('Slider/engine1/wowslider.js')}}"></script>
    <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>
-
-
-    <!-- <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>  -->
    <script  src="{{ asset('js/ScrollJS2/script.js')}}"></script>
 </html>
