@@ -586,7 +586,7 @@ class ProductController extends Controller
           color: black;
        
           font-weight: 600;
-          border-style: none;">X</button></p>
+          border-style: none; outline:none; cursor:pointer;">X</button></p>
         </div>
             ';
             if ($total>0)

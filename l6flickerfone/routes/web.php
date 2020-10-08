@@ -65,8 +65,13 @@ Route::get('BrandsStatusSellProducts','SellProductController@BrandsStatusSellPro
 Route::get('BrandsCitySellProducts','SellProductController@BrandsCitySellProducts')->name('BrandsCitySellProducts');
 Route::get('BrandsCitySellAccessories','SellAccessoryController@BrandsCitySellAccessories')->name('BrandsCitySellAccessories');
 Route::get('BrandsPriceCitySellProducts','SellProductController@BrandsPriceCitySellProducts')->name('BrandsPriceCitySellProducts');
-
+Route::get('AccessoryCategories','AccessoryCategoryController@AccessoryCategories')->name('AccessoryCategories');
+Route::get('UsedProductsList','SellProductController@UsedProductsList')->name('UsedProductsList');
 Route::get('BrandsPriceCitySellAccessories','SellAccessoryController@BrandsPriceCitySellAccessories')->name('BrandsPriceCitySellAccessories');
+Route::get('SortByOrderSellProducts','SellProductController@SortByOrderSellProducts')->name('SortByOrderSellProducts');
+Route::get('SortByPriceSellProducts','SellProductController@SortByPriceSellProducts')->name('SortByPriceSellProducts');
+Route::get('SortByOrderPriceSellProducts','SellProductController@SortByOrderPriceSellProducts')->name('SortByOrderPriceSellProducts');
+
 Route::get('Sell','SellProductController@create')->name('Sell');
 Route::get('BuyUsedMobilePhonesData','SellProductController@SellProductsData')->name('BuyUsedMobilePhonesData');
 Route::view('ReviewDetail','review_detail');
@@ -120,7 +125,7 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 Route::prefix('Sell')->middleware('SellLoginSessionCheck')->group(function(){
 	// Route::get('/','SellProductController@create')->name('Sell');
 	Route::post('Product','SellProductController@store')->name('Sell.Product.store');
-	Route::post('SellAccessorySave','SellAccessoryController@store')->name('Sell.Accessory.store');
+	Route::post('/Accessory','SellAccessoryController@store')->name('Sell.Accessory.store');
 });
 
 Route::group(['middleware'=>['LoginSessionCheck']],function(){

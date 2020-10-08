@@ -37,10 +37,8 @@ class SellAccessoryController extends Controller
     public function store(Request $request)
     {
         $validations = Validator::make($request->all(),[
-            'model'=>'bail | required',
             'price'=>'bail | required',
             'image1'=>'required | mimes:jpg,png,jpeg',
-            'category'=>'required',
             'brand'=>'required',
             'city'=>'required',
             'phone'=>'required',
@@ -62,9 +60,9 @@ class SellAccessoryController extends Controller
 
             $accessory = new  SellAccessory();
             $accessory->user_id=$request->user_id;
-            $accessory->accessory_category_id=$request->category;
+            // $accessory->accessory_category_id=$request->category;
             $accessory->brand_id = $request->brand;
-            $accessory->name = $request->model;
+            // $accessory->name = $request->model;
             $accessory->price = $request->price;
             $accessory->city = $request->city;
             $accessory->phone = $request->phone;

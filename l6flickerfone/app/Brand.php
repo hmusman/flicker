@@ -7,6 +7,7 @@ use App\Product;
 use App\Models\pricecalculatorproduct\PriceCalculatorProduct;
 use App\Accessory;
 use App\SellProduct;
+use App\SellAccessory;
 class Brand extends Model
 {
     public function products()
@@ -22,6 +23,11 @@ class Brand extends Model
     public function accessories()
     {
     	return $this->hasMany(Accessory::class,'brand_id','id');
+    }
+
+    public function Sellaccessories()
+    {
+        return $this->hasMany(SellAccessory::class,'brand_id','id');
     }
 
     public function price_calculator_products_list()
