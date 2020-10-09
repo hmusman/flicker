@@ -551,7 +551,7 @@ class SellProductController extends Controller
 
             else if($price=="Between 30,000 and 60,000")
             {
-                $products = SellProduct::whereIn('brand_id',$brandArr)->where('city','=',$request->city)->whereBetween('price',[30000,60000])->distinct()->paginate(1);
+                $products = SellProduct::whereIn('brand_id',$brandArr)->where('city','=',$request->city)->whereBetween('price',[30000,60000])->distinct()->paginate(10);
             }
 
 

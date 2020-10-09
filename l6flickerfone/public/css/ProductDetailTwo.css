@@ -36,12 +36,23 @@ ul[class="tabs"]{
 
 
 img[src="http://127.0.0.1:8000/storage/images/logo Black-01.jpg"] {
-    height: 65px !important;
+    height: 54px !important;
     /* top: -1px; */
-    margin-top: -8px;
+    margin-top: -16px;
     margin-bottom: -8px;
 }
+.navbar{
+    margin-bottom: 0px !important;
+}
 
+a[class="nav-link  dropdown-toggle"]{
+    position: relative !important;
+    top: 6px !important;
+}
+
+ul[id="myUL"]{
+    width: 98% !important;
+}
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
     #myInput {
@@ -122,7 +133,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
   font-size: 17px !important;
 } */
 #MainHeightOnDesktop{
-  height: 2500px !important;
+  height: 2286px !important;
 }
 
 .colblue{
@@ -1309,7 +1320,7 @@ height: 75px;
     border: 1px #ededed solid;
     border-bottom: 4px #eee solid; 
    
-    height: 45px;
+    height: 44px;
     padding-left: 5px;
     padding-top: 8px;
   }
@@ -1335,7 +1346,7 @@ height: 75px;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 45px;border-bottom: 5px #eeeeee solid;
+    height: 41px;border-bottom: 5px #eeeeee solid;
   }
 
   .BodyDimension{
@@ -1346,7 +1357,7 @@ height: 75px;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 43px;border-bottom: 1px #eeeeee solid;
+    height: 39px;border-bottom: 1px #eeeeee solid;
 
   }
 
@@ -1358,7 +1369,7 @@ height: 75px;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 42px;border-bottom: 1px #eeeeee solid;
+    height: 38px;border-bottom: 1px #eeeeee solid;
 
   }
 
@@ -1371,7 +1382,7 @@ width: 100%;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 42px;border-bottom: 1px #eeeeee solid;
+    height: 38px;border-bottom: 1px #eeeeee solid;
 
   }
 
@@ -1383,7 +1394,7 @@ width: 100%;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 46px;border-bottom: 5px #eeeeee solid;
+    height: 42px;border-bottom: 5px #eeeeee solid;
   }
 
 
@@ -1622,7 +1633,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 67px;border-bottom: 1px #eeeeee solid;
+        height: 65px;border-bottom: 1px #eeeeee solid;
  
 }
 .CommsBluetooth{
@@ -1703,7 +1714,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 67px;border-bottom: 1px #eeeeee solid;
+        height: 69px;border-bottom: 1px #eeeeee solid;
  
 }
 .battryChargOne{
@@ -1714,7 +1725,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 75px;border-bottom: 1px #eeeeee solid;
+        height: 68px;border-bottom: 1px #eeeeee solid;
   
 }
 
@@ -1762,7 +1773,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 73px;border-bottom: 5px #eeeeee solid;
+        height: 74px;border-bottom: 5px #eeeeee solid;
   
 }
 

@@ -5,8 +5,8 @@
 /* CSS for lens */
 .cloudzoom-lens {
     border:5px solid #888;
-    width:10px;
-    height:10px;
+    width:100px;
+    height:100px;
     box-shadow: -0px -0px 10px rgba(0,0,0,0.40);
     cursor:crosshair;
     z-index: 9999;
