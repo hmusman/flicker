@@ -49,6 +49,17 @@
     display: block;
     font-weight: 600;
     }
+
+    #usedSearchList li a {
+      
+      margin-top: -1px; /* Prevent double borders */
+      
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+    display: block;
+    font-weight: 600;
+    }
     
     /* #myUL li a:hover:not(.header) {
       background-color: #eee;
@@ -798,7 +809,20 @@ margin-top: 90px;">
   
   
   <div class="row">
-    <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div>
+    <!-- <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div> -->
+      <div class="col-md-4" style="text-align: center;">
+        <input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;;">
+        <ul onblur="hideagain()" id="usedSearchList" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 100%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px; margin-left:2%;margin-top: 5px;">
+   
+            <div>
+             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;"><button id="srchbtnid" onclick="usedHideAgain();" style="margin-left: 269px;
+              background-color: #f8f7f7;
+              color: black;
+              font-weight: 600;
+              border-style: none; outline: none; cursor: pointer;">X</button></p>
+            </div>
+        </ul>
+     </div>
     <div class="col-md-8" style="padding-right: 0px !important;">
     
     
@@ -1130,7 +1154,7 @@ margin-top: 90px;">
         </div>
       
       </div>
-      <div id="upperSearch" style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;" src="{{ asset('storage/images/ic_search_white_18dp.png')}}"></div>
+      <div id="upperSearch" style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;cursor: pointer;" src="{{ asset('storage/images/ic_search_white_18dp.png')}}"></div>
     
     
     </div>
@@ -1269,12 +1293,12 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
           <label for="{{ $city->city }}"  style="color: #101115;">{{ ucwords($city->city)}}</label>
           </div>
             <div style="width: 20%; float: left;">
-            <p style="    background-color: #fafafa;
+            <!-- <p style="    background-color: #fafafa;
         padding: 0px 1px 0px 1px;
         border-radius: 12px;
         text-align: center;
         color: black;
-        border: 1px #d9d3d3 solid;">{{$city->total}}</p>
+        border: 1px #d9d3d3 solid;">{{$city->total}}</p> -->
             </div>
         </div>
       @endforeach
@@ -1423,27 +1447,33 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
     
     <div class="row" style="border: 1px black solid;">
 
-
-<div class="col-md-3">
-  <p style="    color: #a8a1a1;
-  
-    padding: 12px 0px 0px 12px;">Sort by:</p>
-</div>
-
-
-      <div class="col-md-9">
-    <div class="form-group" style="padding-top: 9px;">
-    
-      <select class="form-control" id="sel1" style="    background-color: #ffffff !important;
-    border: 1px solid #ffffff !important;">
-        <option style="font-weight: bold !important;"> Update Date: Recent First</option>
-        <option style="font-weight: bold !important;">Update Date: Recent Last</option>
-        <option style="font-weight: bold !important;">Price: Low to High</option>
-          <option style="font-weight: bold !important;">Price: High to Low</option>
-    
-      </select>
-    </div>
+      <div class="col-md-3">
+        <p style="    color: #a8a1a1;
+        
+          padding: 12px 0px 0px 12px;">Sort by:</p>
       </div>
+
+      <div class="col-md-4">
+        <div class="form-group" style="padding-top: 9px;">
+        
+          <select class="form-control" id="sort_by_order">
+            <option selected="" disabled="">Order</option>
+            <option value="desc">Recent First</option>
+            <option value="asc">Recent Last</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <div class="form-group" style="padding-top: 9px;">
+          <select class="form-control" id="sort_by_price">
+            <option selected="" disabled="">Price</option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </div>
+      </div>
+
     </div>
 
 
@@ -1451,7 +1481,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 
-<p style="  color: #898889;;">1-48 of 126,978 Results</p>
+<p style="  color: #898889;;"><!-- 1-48 of 126,978 Results --></p>
       <div style="width: 100%;" class="row" id="sellProducts">
          @include('partials.sell_products_list',$products)e
       </div>
@@ -1771,6 +1801,24 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
   }
 
+  function FetchUpperSearchSellProducts(page,val,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchSellProducts?page="+page,
+      type:"get",
+      data:{query:val},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
   function FetchUpperCitySellProducts(page,city,options)
   {
 
@@ -1825,6 +1873,193 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
   }
 
+  function FetchUpperSearchCityPriceSellProducts(page,query,city,price,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchCityPriceSellProducts?page="+page,
+      type:"get",
+      data:{query:query,city:city,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperSearchCitySellProducts(page,query,city,options)
+  {
+    $.ajax({
+      url:"UpperSearchCitySellProducts?page="+page,
+      type:"get",
+      data:{query:query,city:city},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperSearchPriceSellProducts(page,query,price,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchPriceSellProducts?page="+page,
+      type:"get",
+      data:{query:query,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchSortByOrderSellProducts(page,val,options)
+  {
+    $.ajax({
+      url:"SortByOrderSellProducts?page="+page,
+      type:"get",
+      data:{val:val},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+  }
+
+  function FetchSortByPriceSellProducts(page,val,options)
+  {
+    $.ajax({
+      url:"SortByPriceSellProducts?page="+page,
+      type:"get",
+      data:{val:val},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+  }
+
+  function FetchSortByOrderPriceSellProducts(page,val,price,options)
+  {
+    $.ajax({
+      url:"SortByOrderPriceSellProducts?page="+page,
+      type:"get",
+      data:{val:val,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+  }
+
+  $('#sort_by_order').change(function()
+  {
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      $('#sell').val('Select City');
+      $('#upperPrice').val('Select Price');
+      $('#upperInpt').val(''); 
+      var val = $('#sort_by_order option:selected').val();
+      var price = $('#sort_by_price option:selected').val();
+      if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() =="Price")
+      {
+         FetchSortByOrderSellProducts(0,val,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByOrderPriceSellProducts(0,val,price,options);
+      }
+
+     
+  });
+
+  $('#sort_by_price').change(function(){
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      $('#sell').val('Select City');
+      $('#upperPrice').val('Select Price');
+      $('#upperInpt').val('');
+      var val = $('#sort_by_order option:selected').val();
+      var price = $('#sort_by_price option:selected').val();
+      if($('#sort_by_order option:selected').val()=="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByPriceSellProducts(0,price,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByOrderPriceSellProducts(0,val,price,options);
+      }
+  });
+
+  $('#upperInpt').keyup(function(){
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      var query = $(this).val();
+      $.ajax({
+        url:"{{ route('UsedProductsList') }}",
+        type:"get",
+        data:{query:query},
+        success:function(data)
+        {
+          $('#usedSearchList').css('display','block');
+          $('#usedSearchList').html(data);
+        }
+      });
+
+      
+  });
+
+  function ListProducts()
+  {
+    $(".brands_check"). prop("checked", false);
+    $(".device_status_check"). prop("checked", false);
+    $(".city_check"). prop("checked", false);
+    $(".brands_check"). prop("checked", false);
+    $('#from_price').val('');
+    $('#to_price').val(''); 
+    $('#sort_by_order').val('Order');
+    $('#sort_by_price').val('Price');
+    FetchUpperSearchSellProducts(0,$('#upperInpt').val(),options); usedHideAgain(); 
+  }
+
+  function ContactShow(id){$('#contact'+id).toggle()}
+
   $('#upperSearch').click(function(){
       $(".brands_check"). prop("checked", false);
       $(".device_status_check"). prop("checked", false);
@@ -1834,15 +2069,37 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       $('#to_price').val('');
       var val = $('#sell').children('option:selected').val();
       var sellPrice = $('#upperPrice').children('option:selected').val();
-      if(sellPrice=='Select Price' && val!='Select City')
+      var inptVal = $('#upperInpt').val(); 
+      
+      if(inptVal !='' && sellPrice=='Select Price' && val=='Select City')
+      {
+        FetchUpperSearchSellProducts(0,inptVal,options);
+      } 
+
+      else if(inptVal !='' && sellPrice!='Select Price' && val=='Select City')
+      {
+        FetchUpperSearchPriceSellProducts(0,inptVal,sellPrice,options);
+      } 
+
+      else if(inptVal !='' && sellPrice=='Select Price' && val!='Select City')
+      {
+        FetchUpperSearchCitySellProducts(0,inptVal,val,options);
+      } 
+
+      else if(inptVal !='' && sellPrice!='Select Price' && val!='Select City')
+      {
+        FetchUpperSearchCityPriceSellProducts(0,inptVal,val,sellPrice,options);
+      }
+
+      else if(inptVal =='' && sellPrice=='Select Price' && val!='Select City')
       {
         FetchUpperCitySellProducts(0,val,options);
       }
-      else if(sellPrice!='Select Price' && val=='Select City')
+      else if(inptVal =='' && sellPrice!='Select Price' && val=='Select City')
       {
         FetchUpperPriceSellProducts(0,sellPrice,options);
       }
-      else if(sellPrice!='Select Price' && val!='Select City')
+      else if(inptVal =='' && sellPrice!='Select Price' && val!='Select City')
       {
         FetchUpperCityPriceSellProducts(0,val,sellPrice,options);
       }
@@ -1898,7 +2155,11 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var from = $('#from_price').val();
       var to = $('#to_price').val();
       $("#sell").val("Select City");
+      $("#upperInpt").val("");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchBrandProducts(0,brands,options);
@@ -1947,6 +2208,9 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
           var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
@@ -1996,6 +2260,9 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchStatusProducts(0,statuses,options);
@@ -2046,6 +2313,9 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
+      $("#sort_by_order").val("Order");
+      $("#sort_by_price").val("Price");
+      $("#upperInpt").val("");
 
       if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
@@ -2095,11 +2365,13 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
       var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
       var statuses = $('.device_status_check:checked').map(function(){ return $(this).val();}).get();
-      var city = $('#sell').children('option:selected').val()
+      var city = $('#sell').children('option:selected').val();
       var price = $('#upperPrice').children('option:selected').val()
       var from = $('#from_price').val();
       var to = $('#to_price').val();
-
+      var inptVal = $('#upperInpt').val();
+      var val = $('#sort_by_order option:selected').val();
+      var Orderprice = $('#sort_by_price option:selected').val();
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchBrandProducts(page,brands,options);
@@ -2170,7 +2442,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         FetchBrandsCityStatusProducts(page,brands,cities,statuses,options);
       } 
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price' && $('#upperInpt').val()=='')
       {
         FetchUpperCitySellProducts(page,city,options);
       } 
@@ -2180,16 +2452,50 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         FetchPriceCityStatusProducts(page,from,to,cities,statuses,options);
       }
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#upperInpt').val()=='')
       {
         FetchUpperCityPriceSellProducts(page,city,price,options);
       } 
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price')
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#upperInpt').val()=='')
       {
         FetchUpperPriceSellProducts(page,price,options);
       } 
 
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()=='Select Price' && $('#sell').children('option:selected').val()=='Select City')
+      {
+        FetchUpperSearchSellProducts(page,inptVal,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#sell').children('option:selected').val()=='Select City')
+      {
+        FetchUpperSearchPriceSellProducts(page,inptVal,price,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()=='Select Price' && $('#sell').children('option:selected').val()!='Select City')
+      {
+        FetchUpperSearchCitySellProducts(page,inptVal,city,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#upperPrice').children('option:selected').val()!='Select Price' && $('#sell').children('option:selected').val()!='Select City')
+      {
+        FetchUpperSearchCityPriceSellProducts(page,inptVal,city,price,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() =="Price")
+      {
+         FetchSortByOrderSellProducts(page,val,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()=="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByPriceSellProducts(page,Orderprice,options);
+      }
+
+      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      {
+         FetchSortByOrderPriceSellProducts(page,val,Orderprice,options);
+      }
 
       else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
       {
@@ -2252,4 +2558,22 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
           });
    });
 </script>
+
+ <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+      }
+      
+      
+      
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+      }
+      function usedHideAgain(){
+          // $('#upperInpt').val('');
+          document.getElementById('usedSearchList').style.display = 'none';
+      }
+   </script>
+
 </html>
