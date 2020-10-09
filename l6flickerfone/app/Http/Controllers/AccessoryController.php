@@ -130,7 +130,7 @@ class AccessoryController extends Controller
 
     public function ShopPage()
     {
-        $brands = Brand::all();
+        $brands = Brand::select('brands.name','brands.id')->join('accessories','brands.id','=','accessories.brand_id')->distinct('brands.name')->get();
         $accessories = Accessory::orderBy('id','desc')->paginate(9);
         return view('shop_accessory', compact(['brands','accessories'])); 
     }

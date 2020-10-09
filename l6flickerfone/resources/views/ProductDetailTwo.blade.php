@@ -17,9 +17,6 @@
 
     
 
-        <!-- <link href="css/cloudzoom.css" rel="stylesheet">
-        <link href="css/thumbnail.css" rel="stylesheet"> -->
- <!-- <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script> -->
         
 
    <link rel="stylesheet" href="{{ asset('OriginalZoomer/ScrollJS2//style.css') }}">
@@ -27,10 +24,9 @@
 <link href="{{ asset('OriginalZoomer/css/thumbnail.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('OriginalZoomer/css/zoomcss.css') }}" rel="stylesheet" type="text/css">
  
-  <!-- <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/ProductDetailTwo.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/template1/tabcontent.css') }}" rel="stylesheet" type="text/css" /> -->
+
  <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
+ 
   <link href="{{ asset('css/ProductDetailTwo.css') }}" rel='stylesheet' type='text/css' media="all">
   <link href="{{ asset('css/template1/tabcontent.css') }}" rel="stylesheet" type="text/css" />
 
@@ -1466,4 +1462,9 @@ window.onclick = function(event) {
   }
 }
 </script>
+
+
+
+
+
 </html>

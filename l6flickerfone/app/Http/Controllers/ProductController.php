@@ -233,7 +233,7 @@ class ProductController extends Controller
       public function showTwo($id)
     {
         $product = Product::where('id',$id)->first();
-          $opinions = ProductOpinion::where('product_id',$id)->paginate(15);
+        $opinions = ProductOpinion::where('product_id',$id)->paginate(15);
         return view('ProductDetailTwo',compact(['product','opinions']));
     }
 
@@ -743,7 +743,7 @@ class ProductController extends Controller
 
     public function ShopPage()
     {
-        $brands = Brand::all();
+        $brands = Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct('brands.name')->get();
         $products = Product::orderBy('id','desc')->paginate(9);
         return view('shop', compact(['brands','products'])); 
     }
