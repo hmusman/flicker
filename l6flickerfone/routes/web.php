@@ -37,7 +37,7 @@ Route::get('BrandsPriceSellAccessories','SellAccessoryController@BrandsPriceSell
 Route::get('CitySellAccessories','SellProductController@CitySellAccessories')->name('CitySellAccessories');
 Route::get('BrandsPriceSellProducts','SellProductController@BrandsPriceSellProducts')->name('BrandsPriceSellProducts');
 Route::get('PriceSellProducts','SellProductController@PriceSellProducts')->name('PriceSellProducts');
-Route::get('PriceSellAccessories','SellProductController@PriceSellAccessories')->name('PriceSellAccessories');
+Route::get('PriceSellAccessories','SellAccessoryController@PriceSellAccessories')->name('PriceSellAccessories');
 Route::get('CitySellProducts','SellProductController@CitySellProducts')->name('CitySellProducts');
 Route::get('CitySellAccessories','SellAccessoryController@CitySellAccessories')->name('CitySellAccessories');
 Route::get('StatusSellProducts','SellProductController@StatusSellProducts')->name('StatusSellProducts');
@@ -49,6 +49,11 @@ Route::get('PriceCityStatusSellProducts','SellProductController@PriceCityStatusS
 Route::get('UpperPriceSellProducts','SellProductController@UpperPriceSellProducts')->name('UpperPriceSellProducts');
 Route::get('UpperCitySellProducts','SellProductController@UpperCitySellProducts')->name('UpperCitySellProducts');
 Route::get('UpperSearchSellProducts','SellProductController@UpperSearchSellProducts')->name('UpperSearchSellProducts');
+Route::get('UpperSearchSellAccessories','SellAccessoryController@UpperSearchSellAccessories')->name('UpperSearchSellAccessories');
+Route::get('UpperSearchCitySellAccessories','SellAccessoryController@UpperSearchCitySellAccessories')->name('UpperSearchCitySellAccessories');
+Route::get('UpperSearchPriceSellAccessories','SellAccessoryController@UpperSearchPriceSellAccessories')->name('UpperSearchPriceSellAccessories');
+Route::get('UpperSearchCityPriceSellAccessories','SellAccessoryController@UpperSearchCityPriceSellAccessories')->name('UpperSearchCityPriceSellAccessories');
+
 Route::get('UpperSearchCitySellProducts','SellProductController@UpperSearchCitySellProducts')->name('UpperSearchCitySellProducts');
 Route::get('UpperSearchPriceSellProducts','SellProductController@UpperSearchPriceSellProducts')->name('UpperSearchPriceSellProducts');
 Route::get('UpperSearchCityPriceSellProducts','SellProductController@UpperSearchCityPriceSellProducts')->name('UpperSearchCityPriceSellProducts');
@@ -67,6 +72,7 @@ Route::get('BrandsCitySellAccessories','SellAccessoryController@BrandsCitySellAc
 Route::get('BrandsPriceCitySellProducts','SellProductController@BrandsPriceCitySellProducts')->name('BrandsPriceCitySellProducts');
 Route::get('AccessoryCategories','AccessoryCategoryController@AccessoryCategories')->name('AccessoryCategories');
 Route::get('UsedProductsList','SellProductController@UsedProductsList')->name('UsedProductsList');
+Route::get('UsedAccessoriesList','SellAccessoryController@UsedAccessoriesList')->name('UsedAccessoriesList');
 Route::get('BrandsPriceCitySellAccessories','SellAccessoryController@BrandsPriceCitySellAccessories')->name('BrandsPriceCitySellAccessories');
 Route::get('SortByOrderSellProducts','SellProductController@SortByOrderSellProducts')->name('SortByOrderSellProducts');
 Route::get('SortByPriceSellProducts','SellProductController@SortByPriceSellProducts')->name('SortByPriceSellProducts');
@@ -99,6 +105,7 @@ Route::get('PriceEstimateCalculator','BrandController@PriceEstimateCalculator')-
 Route::get('/BrandProductsList/{id}','BrandController@BrandProductsList')->name('BrandProductsList');
 Route::get('BrandProducts','BrandController@BrandProducts')->name('BrandProducts');
 Route::get('BrandProductDetail','pricecalculatorproducts\PriceCalculatorProductController@BrandProductDetail')->name('BrandProductDetail');
+Route::get('EmailTest','LoginAndRegisterController@emailTest')->name('EmailTest');
 Route::get('BrandProductColorItem','pricecalculatorproducts\PriceCalculatorProductController@BrandProductColorItem')->name('BrandProductColorItem');
 Route::get('BrandProductEstimate','pricecalculatorproducts\PriceCalculatorProductController@BrandProductEstimate')->name('BrandProductEstimate');
 Route::get('SellAccessory','SellAccessoryController@create')->name('SellAccessory.create');
@@ -133,6 +140,6 @@ Route::group(['middleware'=>['LoginSessionCheck']],function(){
 	// Route::view('BuyUsedMobilePhones','buy_used_mobiles');
 });
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 // Route::get('/home', 'HomeController@index')->name('home');

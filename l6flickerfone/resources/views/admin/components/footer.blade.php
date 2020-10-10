@@ -3,11 +3,12 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                2020 © Metalog.SE.
+                                <!-- 2020 © FlickerFone -->
                             </div>
                             <div class="col-sm-6">
                                 <div class="text-sm-right d-none d-sm-block">
-                                    Crafted with <i class="mdi mdi-heart text-danger"></i> by Metalog.SE at Devsbeta
+                                    <!-- Crafted with <i class="mdi mdi-heart text-danger"></i> by Metalog.SE at Devsbeta -->
+                                    2020 © FlickerFone
                                 </div>
                             </div>
                         </div>
@@ -81,10 +82,27 @@
         <!-- datepicker -->
         <script src="{{asset('Green/assets/libs/air-datepicker/js/datepicker.min.js')}}"></script>
         <script src="{{asset('Green/assets/libs/air-datepicker/js/i18n/datepicker.en.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets\libs/sweetalert2/sweetalert2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('Green/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
         <script src="{{asset('Green/assets/js/app.js')}}"></script>
         <script type="text/javascript">
+
+            function user_delete(id)
+            {
+                Swal.fire({
+                  title: 'Are you sure to delete user?',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, Delete Him!'
+                }).then((result) => {
+                  if (result.value) {
+                    $('#'+id).submit();
+                  }
+                });
+            }
+
             $(document).ready(function(){
                 $('.mytabs').click(function(){
                     $('.mytabs').removeClass('active');
@@ -92,23 +110,43 @@
                 });
 
 
-                 $('.user_active').click(function(){
-                    
+                $('.user_active').click(function(){
+                    var id = $(this).data('id');
                     Swal.fire({
-                      title: 'Are you sure?',
-                      text: "You won't be able to revert this!",
+                      title: 'Are you sure to Block user?',
                       icon: 'warning',
                       showCancelButton: true,
                       confirmButtonColor: '#3085d6',
                       cancelButtonColor: '#d33',
-                      confirmButtonText: 'Yes, delete it!'
+                      confirmButtonText: 'Yes, Block Him!'
                     }).then((result) => {
                       if (result.value) {
-                        alert("ok");
+                        var path = "User/Block/"+id;
+                        window.location = path;
                       }
+                    });
+
                 });
 
-        });
+                $('.user_block').click(function(){
+                    var id = $(this).data('id');
+                    Swal.fire({
+                      title: 'Are you sure to Activate user?',
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Yes, Activate Him!'
+                    }).then((result) => {
+                      if (result.value) {
+                        var path = "User/Active/"+id;
+                        window.location = path;
+                      }
+                    });
+
+                });
+ 
+
             });
         </script>
     </body>

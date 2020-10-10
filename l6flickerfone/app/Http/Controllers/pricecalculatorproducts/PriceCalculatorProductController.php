@@ -37,10 +37,10 @@ class PriceCalculatorProductController extends Controller
         $img->storeAs('public/admin/images/pricecalculatorproduct', $filename1);
         $img->storeAs('public/admin/images/pricecalculatorproduct/thumbnail', $filename1);
         $thumbnailpath = public_path('storage/admin/images/pricecalculatorproduct/thumbnail/'.$filename1);
-        Image::make($thumbnailpath)->resize(150,150)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/150_'.$filename1));
-        Image::make($thumbnailpath)->resize(130,130)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/130_'.$filename1));
-        Image::make($thumbnailpath)->resize(100,130)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$filename1));
-        Image::make($thumbnailpath)->resize(190,250)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/190_'.$filename1));
+        Image::make($img->getRealPath())->resize(150,150)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/150_'.$filename1));
+        Image::make($img->getRealPath())->resize(130,130)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/130_'.$filename1));
+        Image::make($img->getRealPath())->resize(100,130)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$filename1));
+        Image::make($img->getRealPath())->resize(190,250)->save(public_path('storage/admin/images/pricecalculatorproduct/thumbnail/190_'.$filename1));
         return $filename1;
     }
     public function store(Request $request)
@@ -48,7 +48,6 @@ class PriceCalculatorProductController extends Controller
         $validations = Validator::make($request->all(),[
             'category'=>'required',
             'brand'=>'required',
-            'code'=>'bail | required | numeric',
             'name'=>'bail | required',
             'image1'=>'required|mimes:png,jpg,jpeg',
         ]);
@@ -74,7 +73,6 @@ class PriceCalculatorProductController extends Controller
             {
                 $product = PriceCalculatorProduct::create([
                 'brand_id' => $request->brand,
-                'code'=> $request->code,
                 'name'=>str_replace('_',' ',$request->name),
                 'image'=> $filename1,
                 'category_id' => $request->category,
@@ -133,7 +131,6 @@ class PriceCalculatorProductController extends Controller
         $validations = Validator::make($request->all(),[
             'category'=>'required',
             'brand'=>'required',
-            'code'=>'bail | required | numeric',
             'name'=>'bail | required',
         ]);
 
@@ -165,7 +162,7 @@ class PriceCalculatorProductController extends Controller
             $product = PriceCalculatorProduct::find($id);
             $name = str_replace('_',' ',$request->name);
             $product->brand_id = $request->brand;
-            $product->code= $request->code;
+            // $product->code= $request->code;
             $product->name = $name;
             $product->image = $filename1;
             $product->category_id = $request->category; 

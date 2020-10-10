@@ -53,7 +53,7 @@
                                                <th>Category</th>
                                                <th>Brand</th>
                                                <th>Image</th>
-                                               <th>Code</th>
+                                               <!-- <th>Code</th> -->
                                                <th>Name</th>
                                                <!-- <th>Description</th> -->
                                                <th>Action</th>
@@ -69,7 +69,7 @@
                                                        <td>{{ ucfirst($product->category->title) }}</td>
                                                        <td>{{ ucfirst($product->Productbrand->name) }}</td>
                                                        <td><img src="{{ asset($image) }}" style="width: 100px; height: 100px;"></td>
-                                                       <td>{{ $product->code }}</td>
+                                                      <!--  <td>{{ $product->code }}</td> -->
                                                        <td>{{ ucfirst($product->name) }}</td>
                                                   
                                                       <!--  <td>{{ $product->description }}</td> -->

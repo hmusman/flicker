@@ -52,11 +52,11 @@ class SellAccessoryController extends Controller
         
         else
         {
-             if(SellAccessory::where('name',$request->model)->count() >0)
-            {
-                $request->session()->flash('warningMsg','Accessory is already exist');
-                return back()->withInput();
-            }
+            //  if(SellAccessory::where('name',$request->model)->count() >0)
+            // {
+            //     $request->session()->flash('warningMsg','Accessory is already exist');
+            //     return back()->withInput();
+            // }
 
             $accessory = new  SellAccessory();
             $accessory->user_id=$request->user_id;
@@ -139,6 +139,36 @@ class SellAccessoryController extends Controller
         return view('partials.sell_accessories_list',compact('accessories'));
     }
 
+    public function UpperSearchSellAccessories(Request $request)
+    {
+        $query = $request->get('query');
+        $brands = Brand::where('name','like','%'.$query.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+
+        if(!empty($brandArr))
+        {
+            $accessories = SellAccessory::whereIn('brand_id',$brandArr)->distinct()->paginate(10);
+            return view('partials.sell_accessories_list',compact('accessories'));
+        }
+
+        
+    }
+
+    public function UsedAccessoriesList(Request $request)
+    {
+        $query = $request->get('query');
+        $brands = Brand::where('name','like','%'.$query.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+
+        if(!empty($brandArr))
+        {
+            $accessories_list = SellAccessory::whereIn('brand_id',$brandArr)->distinct()->get();
+            return view('partials.used_accessories_list',compact('accessories_list'));
+        }
+
+        
+    }
+
     public function UpperCityPriceSellAccessories(Request $request)
     {
         $query = $request->price;
@@ -170,6 +200,102 @@ class SellAccessoryController extends Controller
         }
 
         return view('partials.sell_accessories_list',compact('accessories'));
+    }
+
+    public function UpperSearchCityPriceSellAccessories(Request $request)
+    {
+        $brand = $request->get('query');
+        $query = $request->price;
+        $city = $request->city;
+        $brands = Brand::where('name','like','%'.$brand.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+        if(!empty($brandArr))
+        {
+            if($query=="Less than 500")
+            {
+                $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('city',$city)->where('price', '<',500)->orderBy('id','desc')->paginate(1);
+            }
+
+            else if($query=="Between 500 and 3000")
+            {
+                $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('city',$city)->whereBetween('price',[5,3000])->orderBy('id','desc')->paginate(1);
+            }
+
+            else if($query=="Between 3000 and 6000")
+            {
+                 $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('city',$city)->whereBetween('price',[3000,6000])->orderBy('id','desc')->paginate(1);
+            }
+
+
+            else if($query=="Between 6000 and 10,000")
+            {
+                 $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('city',$city)->whereBetween('price',[6000,10000])->orderBy('id','desc')->paginate(1);
+            }
+
+            else if($query=="More Than 10,000")
+            {
+                $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('city',$city)->where('price', '>',10000)->orderBy('id','desc')->paginate(1);
+            }
+
+            return view('partials.sell_accessories_list',compact('accessories'));
+        }
+        
+    }
+
+    public function UpperSearchPriceSellAccessories(Request $request)
+    {
+        $brand = $request->get('query');
+        $query = $request->price;
+        $brands = Brand::where('name','like','%'.$brand.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+        if(!empty($brandArr))
+        {
+
+            if($query=="Less than 500")
+            {
+                $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('price', '<',500)->orderBy('id','desc')->paginate(1);
+            }
+
+            else if($query=="Between 500 and 3000")
+            {
+                $accessories = SellAccessory::whereIn('brand_id',$brandArr)->whereBetween('price',[5,3000])->orderBy('id','desc')->paginate(1);
+            }
+
+            else if($query=="Between 3000 and 6000")
+            {
+                 $accessories = SellAccessory::whereIn('brand_id',$brandArr)->whereBetween('price',[3000,6000])->orderBy('id','desc')->paginate(1);
+            }
+
+
+            else if($query=="Between 6000 and 10,000")
+            {
+                 $accessories = SellAccessory::whereIn('brand_id',$brandArr)->whereBetween('price',[6000,10000])->orderBy('id','desc')->paginate(1);
+            }
+
+            else if($query=="More Than 10,000")
+            {
+                $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('price', '>',10000)->orderBy('id','desc')->paginate(1);
+            }
+            return view('partials.sell_accessories_list',compact('accessories'));
+
+        }
+        
+
+        
+    }
+
+    public function UpperSearchCitySellAccessories(Request $request)
+    {
+        $brand = $request->get('query');
+        $city = $request->city;
+        $brands = Brand::where('name','like','%'.$brand.'%')->distinct()->get();
+        foreach ($brands as $value){$brandArr['id'] = $value->id;}
+        if (!empty($brandArr))
+        {
+           $accessories = SellAccessory::whereIn('brand_id',$brandArr)->where('city',$city)->orderBy('id','desc')->paginate(1);
+            return view('partials.sell_accessories_list',compact('accessories'));
+        }
+        
     }
 
     public function UpperPriceSellAccessories(Request $request)
