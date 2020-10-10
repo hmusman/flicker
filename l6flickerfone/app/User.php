@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use App\ProductOpinion;
 use App\OpinionReply;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 

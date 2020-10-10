@@ -43,12 +43,14 @@
                 </div>
               </div>
 
-              <p style="    background-color: blue;
-              width: 180px;
-              padding: 9px;
-              text-align: center;
-              font-weight: 700;
-              font-size: larger;">Contact</p>
+             
+              <ul>
+                <li>
+                    <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 180px;padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
+
+                </li>
+                <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
+              </ul>
 
 
             </div>

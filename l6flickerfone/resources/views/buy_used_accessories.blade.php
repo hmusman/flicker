@@ -696,7 +696,7 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
 <p style="text-align: center;    text-align: center;
 font-size: 23px;
-margin-top: 30px;">Find Used Mobile Phones In Pakistan</p>
+margin-top: 30px;">Find Used Accessories In Pakistan</p>
 
 
 
@@ -712,7 +712,21 @@ margin-top: 90px;">
   
   
   <div class="row">
-    <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div>
+   <!--  <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div> -->
+   <div class="col-md-4" style="text-align: center;">
+        <input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;;">
+        <ul onblur="hideagain()" id="usedSearchList" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 100%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px; margin-left:2%;margin-top: 5px;">
+   
+            <div>
+             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;"><button id="srchbtnid" onclick="usedHideAgain();" style="margin-left: 269px;
+              background-color: #f8f7f7;
+              color: black;
+              font-weight: 600;
+              border-style: none; outline: none; cursor: pointer;">X</button></p>
+            </div>
+        </ul>
+     </div>
+
     <div class="col-md-8" style="padding-right: 0px !important;">
     
     
@@ -1259,38 +1273,38 @@ margin-top: 90px;">
     
     
     
-    <div class="row" style="border: 1px black solid;">
+    <!-- <div class="row" style="border: 1px black solid;">
 
 
-<div class="col-md-3">
-  <p style="    color: #a8a1a1;
-  
-    padding: 12px 0px 0px 12px;">Sort by:</p>
-</div>
-
-
-      <div class="col-md-9">
-    <div class="form-group" style="padding-top: 9px;">
-    
-      <select class="form-control" id="sel1" style="    background-color: #ffffff !important;
-    border: 1px solid #ffffff !important;">
-        <option style="font-weight: bold !important;"> Update Date: Recent First</option>
-        <option style="font-weight: bold !important;">Update Date: Recent Last</option>
-        <option style="font-weight: bold !important;">Price: Low to High</option>
-          <option style="font-weight: bold !important;">Price: High to Low</option>
-    
-      </select>
-    </div>
+      <div class="col-md-3">
+        <p style="    color: #a8a1a1;
+        
+          padding: 12px 0px 0px 12px;">Sort by:</p>
       </div>
-    </div>
+
+
+            <div class="col-md-9">
+          <div class="form-group" style="padding-top: 9px;">
+          
+            <select class="form-control" id="sel1" style="    background-color: #ffffff !important;
+          border: 1px solid #ffffff !important;">
+              <option style="font-weight: bold !important;"> Update Date: Recent First</option>
+              <option style="font-weight: bold !important;">Update Date: Recent Last</option>
+              <option style="font-weight: bold !important;">Price: Low to High</option>
+                <option style="font-weight: bold !important;">Price: High to Low</option>
+          
+            </select>
+          </div>
+            </div>
+    </div> -->
 
 
 
 
 
 
-<p style="  color: #898889;;">1-48 of 126,978 Results</p>
-
+<!-- <p style="  color: #898889;;">1-48 of 126,978 Results</p>
+ -->
 
       <div style="width: 100%;" class="row" id="sellProducts">
          @include('partials.sell_accessories_list',$accessories)
@@ -1382,6 +1396,59 @@ margin-top: 90px;">
           
         }
     });
+  }
+
+  function FetchUpperSearchPriceSellAccessories(page,query,price,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchPriceSellAccessories?page="+page,
+      type:"get",
+      data:{query:query,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperSearchCitySellAccessories(page,query,city,options)
+  {
+    $.ajax({
+      url:"UpperSearchCitySellAccessories?page="+page,
+      type:"get",
+      data:{query:query,city:city},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  function FetchUpperSearchCityPriceSellAccessories(page,query,city,price,options)
+  {
+
+    $.ajax({
+      url:"UpperSearchCityPriceSellAccessories?page="+page,
+      type:"get",
+      data:{query:query,city:city,price:price},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
   }
 
   function FetchBrandsPriceCityAccessories(page,brands,from,to,cities,options)
@@ -1519,6 +1586,59 @@ margin-top: 90px;">
 
   }
 
+  function FetchUpperSearchSellAccessories(page,val)
+  {
+
+    $.ajax({
+      url:"UpperSearchSellAccessories?page="+page,
+      type:"get",
+      data:{query:val},
+      success:function(data){
+        setTimeout(function () {
+          $(".autoplayFeatures").not('.slick-initialized').slick(options)
+      },0);
+        $('#sellProducts').html(data);
+        
+      }
+    });
+
+  }
+
+  $('#upperInpt').keyup(function(){
+      $(".brands_check"). prop("checked", false);
+      $(".device_status_check"). prop("checked", false);
+      $(".city_check"). prop("checked", false);
+      $(".brands_check"). prop("checked", false);
+      $('#from_price').val('');
+      $('#to_price').val('');
+      var query = $(this).val();
+      $.ajax({
+        url:"{{ route('UsedAccessoriesList') }}",
+        type:"get",
+        data:{query:query},
+        success:function(data)
+        {
+          $('#usedSearchList').css('display','block');
+          $('#usedSearchList').html(data);
+        }
+      });
+
+      
+  });
+  function ContactShow(id){$('#contact'+id).toggle()}
+  function AccessoriesList()
+  {
+    $(".brands_check"). prop("checked", false);
+    $(".device_status_check"). prop("checked", false);
+    $(".city_check"). prop("checked", false);
+    $(".brands_check"). prop("checked", false);
+    $('#from_price').val('');
+    $('#to_price').val(''); 
+    $('#sort_by_order').val('Order');
+    $('#sort_by_price').val('Price');
+    FetchUpperSearchSellAccessories(0,$('#upperInpt').val()); usedHideAgain(); 
+  }
+
   $('#upperSearch').click(function(){
       $(".brands_check"). prop("checked", false);
       $(".device_status_check"). prop("checked", false);
@@ -1528,15 +1648,37 @@ margin-top: 90px;">
       $('#to_price').val('');
       var val = $('#sell').children('option:selected').val();
       var sellPrice = $('#price').children('option:selected').val();
-      if(sellPrice=='Select Price' && val!='Select City')
+      var inptVal = $('#upperInpt').val(); 
+      
+      if(inptVal !='' && sellPrice=='Select Price' && val=='Select City')
+      {
+        FetchUpperSearchSellAccessories(0,inptVal,options);
+      } 
+
+      else if(inptVal !='' && sellPrice!='Select Price' && val=='Select City')
+      {
+        FetchUpperSearchPriceSellAccessories(0,inptVal,sellPrice,options);
+      } 
+
+      else if(inptVal !='' && sellPrice=='Select Price' && val!='Select City')
+      {
+        FetchUpperSearchCitySellAccessories(0,inptVal,val,options);
+      } 
+
+      else if(inptVal !='' && sellPrice!='Select Price' && val!='Select City')
+      {
+        FetchUpperSearchCityPriceSellAccessories(0,inptVal,val,sellPrice,options);
+      }
+
+      else if(inptVal =='' && sellPrice=='Select Price' && val!='Select City')
       {
         FetchUpperCitySellAccessories(0,val,options);
       }
-      else if(sellPrice!='Select Price' && val=='Select City')
+      else if(inptVal =='' && sellPrice!='Select Price' && val=='Select City')
       {
         FetchUpperPriceSellAccessories(0,sellPrice,options);
       }
-      else if(sellPrice!='Select Price' && val!='Select City')
+      else if(inptVal =='' && sellPrice!='Select Price' && val!='Select City')
       {
         FetchUpperCityPriceSellAccessories(0,val,sellPrice,options);
       }
@@ -1645,7 +1787,7 @@ margin-top: 90px;">
       var price = $('#price').children('option:selected').val()
       var from = $('#from_price').val();
       var to = $('#to_price').val();
-
+      var inptVal = $('#upperInpt').val(); 
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchBrandAccessories(page,brands,options);
@@ -1680,20 +1822,40 @@ margin-top: 90px;">
         FetchBrandsPriceCityAccessories(page,brands,from,to,cities,options);
       }
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#price').children('option:selected').val()=='Select Price')
+      else if($('#upperInpt').val() =='' && !$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#price').children('option:selected').val()=='Select Price')
       {
         FetchUpperCitySellAccessories(page,city,options);
       } 
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#price').children('option:selected').val()!='Select Price')
+      else if($('#upperInpt').val() =='' && !$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()!='Select City' && $('#price').children('option:selected').val()!='Select Price')
       {
         FetchUpperCityPriceSellAccessories(page,city,price,options);
       } 
 
-      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#price').children('option:selected').val()!='Select Price')
+      else if($('#upperInpt').val() =='' && !$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#price').children('option:selected').val()!='Select Price')
       {
         FetchUpperPriceSellAccessories(page,price,options);
       } 
+
+      else if($('#upperInpt').val() !='' && $('#price').children('option:selected').val()=='Select Price' && $('#sell').children('option:selected').val()=='Select City')
+      {
+        FetchUpperSearchSellAccessories(page,inptVal,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#price').children('option:selected').val()!='Select Price' && $('#sell').children('option:selected').val()=='Select City')
+      {
+        FetchUpperSearchPriceSellAccessories(page,inptVal,price,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#price').children('option:selected').val()=='Select Price' && $('#sell').children('option:selected').val()!='Select City')
+      {
+        FetchUpperSearchCitySellAccessories(page,inptVal,city,options);
+      } 
+
+      else if($('#upperInpt').val() !='' && $('#price').children('option:selected').val()!='Select Price' && $('#sell').children('option:selected').val()!='Select City')
+      {
+        FetchUpperSearchCityPriceSellAccessories(page,inptVal,city,price,options);
+      }
 
       else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#price').children('option:selected').val()=='Select Price')
       {
@@ -1756,5 +1918,10 @@ margin-top: 90px;">
            // variableWidth: true
           });
    });
+
+    function usedHideAgain()
+    {
+      document.getElementById('usedSearchList').style.display = 'none';
+    }
 </script>
 </html>

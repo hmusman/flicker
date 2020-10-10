@@ -95,7 +95,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
+                                               <!--  <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-2 col-form-label">Code</label>
                                                     <div class="col-md-10">
                                                         <input class="form-control" type="text" value="{{ old('code') }}" name="code" placeholder="Enter Code" id="example-text-input">
@@ -103,7 +103,7 @@
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
