@@ -225,6 +225,7 @@ class ProductController extends Controller
     {
         $product = Product::where('id',$id)->first();
         $opinions = ProductOpinion::where('product_id',$id)->paginate(15);
+
         return view('product_detail',compact(['product','opinions']));
     }
 
@@ -232,7 +233,8 @@ class ProductController extends Controller
       public function showTwo($id)
     {
         $product = Product::where('id',$id)->first();
-        return view('ProductDetailTwo',compact('product'));
+        $opinions = ProductOpinion::where('product_id',$id)->paginate(15);
+        return view('ProductDetailTwo',compact(['product','opinions']));
     }
 
 
@@ -586,7 +588,7 @@ class ProductController extends Controller
           color: black;
        
           font-weight: 600;
-          border-style: none;">X</button></p>
+          border-style: none; outline:none; cursor:pointer;">X</button></p>
         </div>
             ';
             if ($total>0)
@@ -741,7 +743,7 @@ class ProductController extends Controller
 
     public function ShopPage()
     {
-        $brands = Brand::all();
+        $brands = Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct('brands.name')->get();
         $products = Product::orderBy('id','desc')->paginate(9);
         return view('shop', compact(['brands','products'])); 
     }

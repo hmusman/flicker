@@ -26,7 +26,7 @@
 
         <!-- alertifyjs default themes  Css -->
         <link href="{{asset('Green/assets/libs/alertifyjs/build/css/themes/default.min.css')}}" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/sweetalert2/sweetalert2.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('Green/assets/libs/sweetalert2/sweetalert2.min.css') }}">
 
     </head>
 

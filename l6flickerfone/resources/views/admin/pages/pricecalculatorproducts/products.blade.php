@@ -53,7 +53,7 @@
                                                <th>Category</th>
                                                <th>Brand</th>
                                                <th>Image</th>
-                                               <th>Code</th>
+                                               <!-- <th>Code</th> -->
                                                <th>Name</th>
                                                <!-- <th>Description</th> -->
                                                <th>Action</th>
@@ -69,7 +69,7 @@
                                                        <td>{{ ucfirst($product->category->title) }}</td>
                                                        <td>{{ ucfirst($product->Productbrand->name) }}</td>
                                                        <td><img src="{{ asset($image) }}" style="width: 100px; height: 100px;"></td>
-                                                       <td>{{ $product->code }}</td>
+                                                      <!--  <td>{{ $product->code }}</td> -->
                                                        <td>{{ ucfirst($product->name) }}</td>
                                                   
                                                       <!--  <td>{{ $product->description }}</td> -->
@@ -78,7 +78,7 @@
                                                                <tr>
                                                                    <td><a href="{{ route('PriceCalculatorProduct.edit',$product->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
                                                                    <td>
-                                                                       <form method="post" action="{{ route('Product.destroy',$product->id) }}">
+                                                                       <form method="post" action="{{ route('PriceCalculatorProduct.destroy',$product->id) }}">
                                                                             @csrf
                                                                             @method('delete')
                                                                            <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>

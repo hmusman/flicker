@@ -46,11 +46,12 @@
 
                                     
 
-                                    <table class="table table-striped">
+                                    <table id="datatable" class="table table-striped">
                                        <thead>
                                            <tr>
                                                <th>#</th>
                                                <th>Category</th>
+                                               <th>Brand</th>
                                                <th>Image</th>
                                                <th>Code</th>
                                                <th>Name</th>
@@ -68,6 +69,7 @@
                                                     <tr>
                                                        <td>{{ $i }}</td>
                                                        <td>{{ ucfirst($product->category->title) }}</td>
+                                                       <td>{{ ucfirst($product->Productbrand->name) }}</td>
                                                        <td><img src="{{ asset($image) }}"></td>
                                                        <td>{{ $product->code }}</td>
                                                        <td>{{ ucfirst($product->name) }}</td>
@@ -119,13 +121,14 @@
 @endsection
 @section('extra-scripts')
 <!-- apexcharts -->
-<script src="{{url('public/Green/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+<script src="{{asset('Green/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
-<script src="{{url('public/Green/assets/libs/jquery-knob/jquery.knob.min.js')}}"></script> 
+<script src="{{asset('Green/assets/libs/jquery-knob/jquery.knob.min.js')}}"></script> 
 
 <!-- Jq vector map -->
-<script src="{{url('public/Green/assets/libs/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{url('public/Green/assets/libs/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+<script src="{{asset('Green/assets/libs/jqvmap/jquery.vmap.min.js')}}"></script>
+<script src="{{asset('Green/assets/libs/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 
-<script src="{{url('public/Green/assets/js/pages/dashboard.init.js')}}"></script>
+<script src="{{asset('Green/assets/js/pages/dashboard.init.js')}}"></script>
+
 @endsection
