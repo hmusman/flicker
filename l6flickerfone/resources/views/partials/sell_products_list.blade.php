@@ -97,7 +97,22 @@
 
 
               <div class="row">
-                <div class="col-md-6"><font style="background-color: #f6ba10;  padding: 5px 30px 5px 30px;margin-right: 5px;">{{ $row->device_status }}</font></div>
+                <div class="col-md-6">
+
+                    @if($row->device_status=="Fair")
+                        <font style="background-color:  #d5d3cd;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #f6ba10;    padding: 5px 30px 5px 30px;">Fair</font>
+
+                    @elseif($row->device_status=="Good")
+                        <font style="background-color:#d5d3cd ;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color:#f6ba10; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+                    @elseif($row->device_status=="Excellent")
+                        <font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+
+                    @endif
+
+                  <!-- <font style="background-color: #f6ba10;  padding: 5px 30px 5px 30px;margin-right: 5px;">{{ $row->device_status }}</font> -->
+
+
+                </div>
                 <div class="col-md-6"></div>
               </div>
 
@@ -133,6 +148,10 @@
               </div>
 
               <ul>
+                <li>
+                    <a href="{{ route('SellProductDetail',$row->id) }}" style="background-color: blue;width: 120px;  border-radius: 3px  ; padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;text-decoration: none;">Detail</a>
+
+                </li>
                 <li>
                     <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 120px;  border-radius: 3px  ; padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
 
