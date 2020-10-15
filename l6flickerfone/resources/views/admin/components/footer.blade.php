@@ -84,6 +84,20 @@
         <!-- datepicker -->
         <script src="{{asset('Green/assets/libs/air-datepicker/js/datepicker.min.js')}}"></script>
         <script src="{{asset('Green/assets/libs/air-datepicker/js/i18n/datepicker.en.js')}}"></script>
+
+        <!-- Required datatable js -->
+        <script src="{{ asset('Green/assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{ asset('Green/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+        <!-- Buttons examples -->
+        <script src="{{ asset('Green/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+        
+        <!-- Responsive examples -->
+        <script src="{{ asset('Green/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+        <script src="{{ asset('Green/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
+
+        <!-- Datatable init js -->
+        <script src="{{ asset('Green/assets/js/pages/datatables.init.js')}}"></script>
+
         <script type="text/javascript" src="{{ asset('Green/assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
         <script src="{{asset('Green/assets/js/app.js')}}"></script>
