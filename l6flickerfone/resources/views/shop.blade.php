@@ -427,11 +427,16 @@
      
 
       <div class="container">
-         <div class="row">
-            <div class="col-md-12" style="color: gray;">
-               HOME / PHONES / BRANDS
+         <div class="row" style="margin-bottom: 15px;">
+            <div class="col-md-9" style="color: gray;">
+               <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a>/ Mobiles
+            </div>
+             <div class="col-md-3">
+                  <a href="{{ route('NewAccessories') }}" style="background-color: #0071e3 !important; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Accessories</a>
             </div>
          </div>
+
+        
       </div>
       <div class="container-fluid" style="background-color: #f7f7f7 !important;">
          <div class="container" style="background-color: #f7f7f7 !important;">
@@ -474,7 +479,7 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px;">Reset</button></div>
+               <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px; background: #0071e3!important; font-weight: bold;">Reset</button></div>
             </div>
          </div>
       </div>
