@@ -194,9 +194,11 @@
         </div>
         <div style="height: 10%; width: 100%;background-color: #f3f1f2; ">
         
-       <center> <p style="background-color: #4a88c2;
+       <center> <a href="#" style="color: white !important;
+    text-decoration: none;
+"><p style="background-color: #4a88c2;
         width: 66%;
-        padding: 10px;">Get your product listed</p></center>
+        padding: 10px;">Get your product listed</p></a></center>
         
         </div>
       </div>

@@ -337,6 +337,12 @@
       .phoneBoxstyle:nth-child(30), .phoneBoxstyle:nth-child(33), .phoneBoxstyle:nth-child(36) {
       border-right: 0px !important;
       }
+
+
+
+      #BorderStyle:nth-last-child(-n+4){
+         border-bottom: none !important;
+      }
    </style>
 
 

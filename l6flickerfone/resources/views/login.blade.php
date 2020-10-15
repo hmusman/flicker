@@ -253,7 +253,7 @@ ul[class="dropdown-menu fade-up show"] > li{
 <style>
 
 img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
-  height: 65px !important;
+  height: 57px !important;
     /* top: -1px; */
     margin-top: -8px;
     margin-bottom: -8px;
