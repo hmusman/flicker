@@ -336,8 +336,8 @@ cursor: pointer;
 
 
           <div id="view2">
-
-            <h4 style="background-color: #dcdcdc38;
+              No QUESTION Available
+            <!-- <h4 style="background-color: #dcdcdc38;
                 padding: 10px;">Question About this product (884) </h4>
             <p> <a href="#">Login</a> or <a href="#">Register</a> to Ask a Question</p>
 
@@ -397,7 +397,7 @@ cursor: pointer;
               Credit Card.
             </p>
             <p style="color: #beb4b4; margin-left: 48px;">Vivi Electric Pvt Ltd, Awnsered within 2 hours</p>
-
+ -->
           </div>
 
           </div>

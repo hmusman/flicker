@@ -96,7 +96,7 @@ class SellProductController extends Controller
             'image8'=>'mimes:png,jpg,jpeg',
             'pta'=>'required',
             'city'=>'required',
-            'detail'=>'required'
+            'detail'=>'required | max:250'
         ]);
         if ($validations->fails())
         {

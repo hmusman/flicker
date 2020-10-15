@@ -26,6 +26,7 @@
 
         <!-- alertifyjs default themes  Css -->
         <link href="{{asset('Green/assets/libs/alertifyjs/build/css/themes/default.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('tinymce/tinymce.min.css') }} " rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="{{ asset('Green/assets/libs/sweetalert2/sweetalert2.min.css') }}">
 
     </head>
@@ -212,6 +213,20 @@
                                     <li><a href="{{ route('PriceCalculatorProduct.create') }}">Add Product</a></li>
                                     <li><a href="{{ route('PriceCalculatorProduct.index') }}">View Products</a></li>
                                     <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            @php $welcome = App\WelcomeEmail::first()->id; $active = App\ActiveEmail::first()->id; $block = App\BlockEmail::first()->id; @endphp
+
+                             <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Emails</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('Welcome.Email.Edit',$welcome) }}">Welcome</a></li>
+                                    <li><a href="{{ route('Active.Email.Edit',$active) }}">Active</a></li>
+                                    <li><a href="{{ route('Block.Email.Edit',$block) }}">Block</a></li>
                                 </ul>
                             </li>
 

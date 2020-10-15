@@ -28,4 +28,11 @@ class OpinionReplyController extends Controller
         	return back();
         }
     }
+
+    public function destroy(Request $request,$id)
+    {
+        OpinionReply::where('id',$id)->delete();
+        $request->session()->flash('msg',"Opinion Reply has been deleted successfully");
+        return back();
+    }
 }

@@ -733,7 +733,7 @@ input[type="radio"]:checked + label {
       <div id="setBrandatMob" style="width: 15%; float: left;">
         <figure style="padding-top: 80px;">
             <center> <img src="{{ asset($img) }}" alt="Trulli" ></center>
-            <a data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
+            <a href="#apple1div" data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
             <figcaption id="topfigurecap"  style="background-color: #4a88c2;
              text-align: center;
              padding: 10px; color: white !important;
@@ -997,56 +997,8 @@ else if(color==="blue"){
   
 <script>
 
-
-
-
-
-
-
-$(document).ready(function(){
-       $('.autoplayFeatures').slick({
- slidesToShow: 5,
- slidesToScroll: 1,
-  autoplay: true,
- autoplaySpeed: 3000,
-
-
- dots: true,
- responsive: [
-     {
-       breakpoint: 500,
-       settings: {
-       slidesToShow: 2,
-       slidesToScroll: 1,
-       }
-     }
-   ]  
- // variableWidth: true
-});
-});
-
-
-
-
-
-
-$(document).ready(function(){
-        $('.autoplay').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  // autoplay: true,
-  autoplaySpeed: 3000,
-
-
-  dots: true,
- 
-  // variableWidth: true
-});
-});
-
-
-
-
+    
+    
 
 
 
@@ -1058,70 +1010,7 @@ $(function(){
 
 </script>
 
-  
-<script type="text/javascript" src="slick/slick.min.js"></script>
-        
-<script type="text/javascript" src="slick/jquery3.2.1.js"></script>
-  
-<script type="text/javascript" src="slick/slick.js"></script>
- 
-
-
-
-
-
-<script type="text/javascript" src="Slider/engine1/wowslider.js"></script>
-  <script type="text/javascript" src="Slider/engine1/script.js"></script>
-
-
- 
-  
-  <script type="text/javascript" src="js/dropzone.js"></script>
-
-  <script  src="js/ScrollJS2/script.js"></script>
-
-
-
-
-
-  <script>
-    $('.dropdown-trigger').dropdown();
-
-    
-$(document).ready(function(){
-       $('.autoplayFeatures').slick({
- slidesToShow: 5,
- slidesToScroll: 1,
-//   autoplay: true,
- autoplaySpeed: 3000,
-
-
-
- dots: true,
- responsive: [
-     {
-       breakpoint: 500,
-       settings: {
-       slidesToShow: 2,
-       slidesToScroll: 1,
-       }
-     }
-   ]  
- // variableWidth: true
-});
-});
-
-
-
-
-  </script>
-
-
-
-
-
-
-
+  <!-- <script  src="js/ScrollJS2/script.js"></script> -->
 
 
 
@@ -1252,8 +1141,6 @@ function apple1aftercolors(){
 </script>
 
 
-<script>
 
-</script>
 
 </html>

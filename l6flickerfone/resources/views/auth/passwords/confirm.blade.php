@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+<style type="text/css">
+    footer{ margin-top: 100px !important; }
+</style>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -47,3 +49,4 @@
     </div>
 </div>
 @endsection
+

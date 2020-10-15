@@ -68,6 +68,8 @@
 
         <!-- JAVASCRIPT -->
         <script src="{{asset('Green/assets/libs/jquery/jquery.min.js')}}"></script>
+        <script src="{{ asset('tinymce/tinymce/tinymce.js') }}"></script>
+        <script src="{{ asset('tinymce/editor-tinymce.js') }}"></script>
         <script src="{{asset('Green/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('Green/assets/libs/metismenu/metisMenu.min.js')}}"></script>
         <script src="{{asset('Green/assets/libs/simplebar/simplebar.min.js')}}"></script>

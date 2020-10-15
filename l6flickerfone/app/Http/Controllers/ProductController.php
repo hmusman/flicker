@@ -521,6 +521,12 @@ class ProductController extends Controller
         }
     }
 
+    public function Opinions($id)
+    {
+        $product = Product::where('id',$id)->first();
+        $opinions = $product->opinions;
+        return view('admin.pages.product_opinions',compact('opinions'));
+    }
     public function liveSearch_old(Request $request)
     {
         if ($request->ajax())
@@ -737,7 +743,7 @@ class ProductController extends Controller
 
     public function BrandProductEstimate(Request $request)
     {
-        $csproduct = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->where('variations.storage',$request->storage)->select('sma_products.id','sma_products.minor_dent_scratch','sma_products.major_dent_scratch','sma_products.original_accessories_available','sma_products.device_battery_status','sma_products.device_box_available','sma_products.screen_is_cracked','sma_products.name','sma_products.image','variations.color','variations.storage','variations.price')->first();
+        $csproduct = Product::join('variations','sma_products.id','=','variations.product_id')->where('variations.product_id',$request->id)->where('variations.color',$request->color)->where('variations.storage',$request->storage)->select('sma_products.id','sma_products.brand_id','sma_products.minor_dent_scratch','sma_products.major_dent_scratch','sma_products.original_accessories_available','sma_products.device_battery_status','sma_products.device_box_available','sma_products.screen_is_cracked','sma_products.name','sma_products.image','variations.color','variations.storage','variations.price')->first();
         return view('partials.brand_product_estimate',compact('csproduct'));
     }
 
