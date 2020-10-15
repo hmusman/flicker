@@ -97,7 +97,7 @@
 
 
               <div class="row">
-                <div class="col-md-6"><font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">{{ $row->device_status }}</font></div>
+                <div class="col-md-6"><font style="background-color: #f6ba10;  padding: 5px 30px 5px 30px;margin-right: 5px;">{{ $row->device_status }}</font></div>
                 <div class="col-md-6"></div>
               </div>
 
@@ -109,7 +109,7 @@
                   font-weight: 600; color: blue;
               ">  PKR</p>
               <p style="    color: blue;
-                  font-size: 48px;
+                  font-size: 34px;
                   padding: 20px;
                   font-weight: 700;"> {{ $row->price }}</p>
                 </div>
@@ -134,7 +134,7 @@
 
               <ul>
                 <li>
-                    <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 180px;padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
+                    <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 120px;  border-radius: 3px  ; padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
 
                 </li>
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>

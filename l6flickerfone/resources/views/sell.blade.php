@@ -359,7 +359,7 @@ ul[class="dropdown-menu fade-up show"] > li{
 <style>
 
 img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
-  height: 65px !important;
+  height: 57px !important;
     /* top: -1px; */
     margin-top: -8px;
     margin-bottom: -8px;
@@ -680,7 +680,9 @@ color: black;
   <div class="col-md-6" >
                           <input type="hidden" id="user_id" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
                           <input type="hidden" name="status" value="" id="status">
+
                           <div class="form-group row" style="display:none !important;">
+
                               <label for="example-text-input" class="col-md-4 col-form-label">Category</label>
                               <div class="col-md-8">
                                   
@@ -694,7 +696,7 @@ color: black;
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
                               </div>
-                          </div>
+                          </div> -->
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Brand</label>
@@ -1271,6 +1273,7 @@ color: black;
                       </div>
                
                       <div class="text-center mt-4 col-md-3">
+
                         <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
                         <div class="dropzone" id="DropZonIcon2">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
@@ -1278,6 +1281,7 @@ color: black;
                       </div>
                   
                       <div class="text-center mt-4 col-md-3" >
+
                         <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
                         <div class="dropzone" id="DropZonIcon3">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
@@ -1298,6 +1302,7 @@ color: black;
                     <div class="card-body row">
 
                       <div class="text-center mt-4 col-md-3" id="" >
+
                         <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
                         <div class="dropzone" id="DropZonIcon5">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
@@ -1307,13 +1312,14 @@ color: black;
                       </div>
                
                       <div class="text-center mt-4 col-md-3">
+
                         <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
                         <div class="dropzone" id="DropZonIcon6">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
-                  
-                      <div class="text-center mt-4 col-md-3" >
+                     <div class="text-center mt-4 col-md-3" >
+
                         <input type="file" name="image7" style="display:none;" id="imgInput7" onchange="fileChangeFun(this,$('#DropZonIcon7'),7);"/> 
                         <div class="dropzone" id="DropZonIcon7"style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(7);" id="imgFullWidthDiv7"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>

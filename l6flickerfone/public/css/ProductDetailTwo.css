@@ -133,7 +133,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
   font-size: 17px !important;
 } */
 #MainHeightOnDesktop{
-  height: 2286px !important;
+  height: 1906px !important;
 }
 
 .colblue{
@@ -214,6 +214,13 @@ ul[class="dropdown-menu fade-up"] > li::after{
     text-shadow: 0px 0px 0.1px black;
     font-size: 15px ;
   
+}
+
+.battryTlkTime{
+     height: 67px ;
+
+    text-shadow: 0px 0px 0.1px black;
+    font-size: 15px ;
 }
 
   @media (max-width: 550px){
@@ -330,6 +337,8 @@ height: 113px !important;
   
   
 }
+
+
 .cradslotOnMob{
       height: 65px;
     font-weight: 600;
@@ -349,10 +358,10 @@ height: 37px !important;
 
 
 .topFeaturSensoronmob{
-height: 33px !important;
+height: 36px !important;
 }
 .topMainCameraSpconmob{
-height: 56px !important;
+height: 53px !important;
 }
 
 .topMemorSpconmob{
@@ -392,7 +401,7 @@ height: 37px !important;
      height: 36px !important;
 }
 .topDisplaySpconmob{
-height: 37px !important;
+height: 36px !important;
 }
 .Net1OnMob{
     height: 37px !important;
@@ -400,7 +409,7 @@ height: 37px !important;
 
 
 .lanchSpcOn{
-    height: 33px !important;
+    height: 31px !important;
 }
 
 .builWeigt2{
@@ -482,7 +491,7 @@ padding-top: 9px !important;
 
 .BatteryOneMob{
     display: block !important;
-    font-size: 10px !important;
+    /* font-size: 10px !important; */
     text-shadow: 0px 0px 0.7px blue !important;
 }
 .BodyHeadMobForFeatureSensor{
@@ -771,7 +780,14 @@ div[class="img-zoom-container"]{
 
   @media (max-width: 550px){
 
-  
+    .BodyHeadMobForFeatureSensor{
+      height: 37px !important;
+    }
+
+  .battryTlkTime{
+   height: 73px !important;
+
+}
 
   .srcgBtnOnMob{
 
@@ -1620,7 +1636,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 73px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+        height: 75px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
   
 }
 

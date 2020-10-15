@@ -142,7 +142,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 1px #eeeeee solid;
+      height: 57px;border-bottom: 1px #eeeeee solid;
       " class="DisplayType">
       {{ $product->display_size }}
    </div>
@@ -152,7 +152,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
+      height: 56px;border-bottom: 1px #eeeeee solid;
       " class="DisplayReslution">
       {{ $product->display_resolution }}
    </div>
@@ -162,7 +162,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 120px;border-bottom: 5px #eeeeee solid;
+      height: 102px;border-bottom: 5px #eeeeee solid;
       " class="ProtecOnMoble">
       {{ $product->display_protection }}
    </div>
@@ -173,7 +173,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="StatusOnMob">
       {{ $product->platform_os }}
    </div>
@@ -183,8 +183,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayType">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="platefrmchips">
       {{ $product->platform_chipset }}
    </div>
    <div style="    width: 100%;
@@ -193,8 +193,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayReslution">
+      height: 57px;border-bottom: 1px #eeeeee solid;
+      " class="PlateuCpu">
       {{ $product->platform_cpu }}
    </div>
    <div style="    width: 100%;
@@ -203,8 +203,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 45px;border-bottom: 5px #eeeeee solid;
+      " class="chipGpuOnMibi">
       {{ $product->platform_gpu }}
    </div>
    <div class="topMemorSpconmob" style="height: 0px; width: 100%;"></div>
@@ -214,7 +214,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="StatusOnMob">
       {{ $product->memory_card_slot }}
    </div>
@@ -224,7 +224,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+      height: 45px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
       " class="mem0ryInt">
       {{ $product->memory_storage }} {{ $product->memory_ram }} 
    </div>
@@ -235,7 +235,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 145px;border-bottom: 1px #eeeeee solid;
+      height: 107px;border-bottom: 1px #eeeeee solid;
       " >
       {{ $product->main_type_value }}
    </div>
@@ -245,7 +245,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 55px;border-bottom: 1px #eeeeee solid;
       " >
       {{ $product->main_feature }}
    </div>
@@ -266,7 +266,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 60px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       ">
       {{ $product->selfie_type_value }}
    </div>
@@ -276,7 +276,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       ">
       {{ $product->selfie_feature }}
    </div>
@@ -286,12 +286,12 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 75px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
-      " class="TrpleVed">
+      height: 65px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+      " class="selfivedo">
       {{ $product->selfie_video }}
    </div>
    <div class="AboveSoundbarSpce" style="height: 0px; width: 100%;"></div>
-   <div class="CameraSinleNexxt" style="    width: 100%;
+   <div class="SloudSpkrMob" style="    width: 100%;
       font-size: 13px;
       background-color: #fafafa;
       border: 1px #ededed solid;
@@ -307,7 +307,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       ">
       {{ $product->sound_jack }}
    </div>
@@ -322,13 +322,13 @@
       {{ $product->sound_mic }}
    </div>
    <div class="topCommsfirstSpconmob" style="height: 0px; width: 100%;"></div>
-   <div class="DimensionsMob" style="    width: 100%;
+   <div class="CommsWlanMob" style="    width: 100%;
       font-size: 13px;
       background-color: #fafafa;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 57px;border-bottom: 1px #eeeeee solid;
       " class="StatusOnMob">
       {{ $product->comms_wlan }}
    </div>
@@ -338,8 +338,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayType">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="DisplayType commsblutoo">
       {{ $product->bluetooth }}
    </div>
    <div style="    width: 100%;
@@ -348,7 +348,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
+      height: 53px;border-bottom: 1px #eeeeee solid;
       " class="DisplayReslution">
       {{ $product->comms_gps }}
    </div>
@@ -358,8 +358,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayReslution">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="commRadio">
       {{ $product->comms_nfc }}
    </div>
    <div style="    width: 100%;
@@ -368,8 +368,9 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayReslution">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="commRadioNext">
+      
    </div>
    <div style="    width: 100%;
       font-size: 13px;
@@ -377,8 +378,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 44px;border-bottom: 5px #eeeeee solid;
+      " class="commRadioNext">
       {{ $product->comms_usb }}
    </div>
    <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
@@ -388,8 +389,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 130px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 97px;border-bottom: 5px #eeeeee solid;
+      " class="featreSenso">
       {{ $product->feature_sensor }}
    </div>
    <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
@@ -399,7 +400,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 69px;border-bottom: 1px #eeeeee solid;
+      height: 42px;border-bottom: 1px #eeeeee solid;
       " class="batteryTalkTime2">
       {{ $product->battery_status }}
    </div>
@@ -409,7 +410,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 75px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="DBatteryChargingOne">
    </div>
    <div style="    width: 100%;
@@ -418,7 +419,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="batteryTalkTime2">
       {{ $product->battery_talk_time }}
    </div>
@@ -428,8 +429,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 104px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 45px;border-bottom: 5px #eeeeee solid;
+      " class="batteryMuscMob">
       {{ $product->battery_music }} 
    </div>
    <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
@@ -439,7 +440,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 5px #eeeeee solid;
+      height: 41px;border-bottom: 5px #eeeeee solid;
       " class="">
       @if($product->variation_colors->count()>0)
       @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
@@ -459,8 +460,8 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 103px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 45px;border-bottom: 5px #eeeeee solid;
+      " class="pricesotageTextOnMob">
       @if($product->variation_colors->count()>0)
       @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
       @foreach($product->variation_colors as $color)
