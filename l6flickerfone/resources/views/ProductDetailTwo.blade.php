@@ -11,7 +11,10 @@
   <meta name="keywords" content="">
   
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
-    <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"> -->
+
+
+<link href="{{ asset('OriginalZoomer/css/CloudBoorstrap.css') }}" rel="stylesheet" type="text/css">
 
 
 <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
@@ -1158,12 +1161,13 @@ Up to 20 h (multimedia)
                   border-radius: 4px;">POST YOUR OPINIONS </a>
                   </div>
 
-                  <div class="col-md-2" style="margin-top: 10px;">Pages :</div>
+
+                  <div class="col-md-5" style="margin-top: 10px; text-align:right"><p style="margin-top: 20px">Pages :</p></div>
                   <style>
-                     .pagination{ float: left !important; margin-top: 10px !important; }
+                     .pagination{ float: left !important; margin-top: 20px !important; }
                   </style>
-                  <div class="col-md-5" id="pages" >{{ $opinions->links() }} </div>
-                 
+                  <div class="col-md-2" id="pages" >{{ $opinions->links() }} </div>
+ 
                 </div>
 
                 <div class="row" id="OpinonBox" style="display: none">
@@ -1279,7 +1283,9 @@ Up to 20 h (multimedia)
                                 
                                 
                                 <div class="row">
-                                  <div class="col-md-8" style="margin-top: 7px;"><h5>{{ $row->user->name }}</h5></div>
+
+                                  <div class="col-md-8" style="margin-top: 7px; margin-left: 30px "><h5>{{ $row->user->name }}</h5></div>
+
                                   <div class="col-md-4"><div style="height: 100%; width: 8%;  float: left;">
                                   <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" /> --></div>
                                 </div>
@@ -1291,7 +1297,8 @@ Up to 20 h (multimedia)
                                 20 Aug 2020 
                                 <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
                                 0Cp  -->
-                                <div style="height: 100%; width: 10%; float: left;"><img class="changeClockHeihtOnMob"  style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
+
+                                <div style="height: 100%; width: 10%; float: left;"><img class="changeClockHeihtOnMob"  style="width: 75%; height: 25px;filter: invert(50%);" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
 
                                 <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;margin-top: 2px;">{{ date('Y M  d',strtotime($row->created_at)) }}</p></div>
 
@@ -1317,7 +1324,9 @@ Up to 20 h (multimedia)
 
                             <div class="row">
                               @if($row->replies->count() >0)
-                                <h4>Opinion Replies</h4>
+
+                                <h4 style="margin-left: 30px; color: #848388 " >Opinion Replies</h4>
+
                                 @foreach($row->replies as $opinion)
                                   <div class="col-md-12" style="margin-top: 5px;">
                                       <div class="row">
@@ -1365,9 +1374,15 @@ Up to 20 h (multimedia)
                           
                           </div>
 
-                          <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href=""  type="button" class="clickReply" nclick="clickReply('{{ $row->id }}');" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Replyr</p></button> </div>
+
+                          <div id="ReplyResp" style="height: 100%; width: 60%; float: left;"> </div>
+                          <div id="replybtnMobile" style="height: 100%; width: 10%;  float: left;"> <button href=""    type="button" class="clickReply"  data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
                         
+
+
+                         
+                          
+
                         </div>
                     
                       </div>
@@ -1898,6 +1913,7 @@ window.onclick = function(event) {
 
 
 
+
 </script>
 
 
@@ -1905,3 +1921,4 @@ window.onclick = function(event) {
 
 
 </html>
+
