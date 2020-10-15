@@ -46,7 +46,7 @@ cursor: pointer;
 <div class="container">
 <div class="row">
   <div class="col-md-12 text-uppercase" style="color: gray;">
-    HOME / {{ $product->category->title }} / {{ $product->Productbrand->name }} / {{ $product->name }}
+    <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a> /  <a href="{{ route('BrandProductsList',$product->Productbrand->id) }}" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">{{ $product->Productbrand->name }} </a> / {{ $product->name }}
   </div>
 </div>
 
@@ -255,7 +255,7 @@ cursor: pointer;
 
 
 
-<hr style="width: 80%;" />
+<hr style="width: 80%;@if($product->variation_colors->count()==0) margin-top: 27px !important; @endif" />
 
 
 

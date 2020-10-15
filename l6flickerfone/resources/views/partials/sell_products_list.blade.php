@@ -134,6 +134,10 @@
 
               <ul>
                 <li>
+                    <a href="{{ route('SellProductDetail',$row->id) }}" style="background-color: blue;width: 120px;  border-radius: 3px  ; padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;text-decoration: none;">Detail</a>
+
+                </li>
+                <li>
                     <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 120px;  border-radius: 3px  ; padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
 
                 </li>

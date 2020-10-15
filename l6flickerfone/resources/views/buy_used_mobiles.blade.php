@@ -1199,7 +1199,7 @@ margin-top: 90px;">
 <br/>
 
 <div class="row" style="    margin-left: 15px;margin-bottom: 15px;">
-  <a href="{{ route('BuyUsedAccessories') }}"  style="background-color: #4a88c2; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px;">Buy Used Accessories</a>
+  <a href="{{ route('BuyUsedAccessories') }}"  style="background-color: #0071e3; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;">Buy Used Accessories</a>
 </div>
 
 <div class="row" style="margin-bottom:30px;">

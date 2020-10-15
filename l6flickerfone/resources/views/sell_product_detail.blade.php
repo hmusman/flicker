@@ -46,7 +46,7 @@ cursor: pointer;
 <div class="container">
 <div class="row">
   <div class="col-md-12 text-uppercase" style="color: gray;">
-    HOME / {{ $product->category->title }} / {{ $product->Productbrand->name }} / {{ $product->model }}
+     <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a> / {{ $product->model }}
   </div>
 </div>
 
@@ -62,7 +62,7 @@ cursor: pointer;
 <div class="row" style="margin-top: 31px;">
   <div class="col-md-6" >
 
-	@php $img1 = $product->image @endphp
+	    @php $img1 = $product->image @endphp
       @php $img1_400 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img1 @endphp
       @php $img1_700 = '/storage/admin/images/sellproduct/thumbnail/700_'.$product->img1 @endphp
     	@php $img2 = $product->img2 @endphp
@@ -284,21 +284,23 @@ cursor: pointer;
    <div style="width: 100%; ">
 
       <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;    border-bottom: 1px solid black;">
         Device Box Available</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;    border-bottom: 1px solid black;">
         {{ ucfirst($product->device_box_available) }}</div>
       <div style="width: 10%; float: left;"></div>
 
 
   </div>
-
-  <div
-    style="width: 186px; text-align: center;    margin-top: 549px; background-color: blue ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500; ">
+  <ul style="margin-top: 549px; list-style: none;width: 100%;">
+    <li style="width: 50%;float: left;cursor: pointer;"><div onclick="ContactShow('{{ $product->id }}')" align="" style="width: 186px; text-align: center; background-color: blue ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
     Contact
-  </div>
-
-
+    </div></li>
+    <li style="width: 50%; float: left;display:none;" id="contact{{ $product->id }}"><div align="" style="width: 186px; text-align: center;background-color: blue ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
+    {{ $product->phone }}
+    </div></li>
+    
+  </ul>
   <div 
     style="width: 186px; 
       font-size: 34px;
@@ -425,6 +427,7 @@ cursor: pointer;
 
 <script>
   $('.ErrorMsg').hide();
+  function ContactShow(id){$('#contact'+id).toggle()}
 	function colorStorage(id,color)
 	{
 		$.ajax({
