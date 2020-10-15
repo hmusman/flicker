@@ -97,7 +97,22 @@
 
 
               <div class="row">
-                <div class="col-md-6"><font style="background-color: #f6ba10;  padding: 5px 30px 5px 30px;margin-right: 5px;">{{ $row->device_status }}</font></div>
+                <div class="col-md-6">
+
+                    @if($row->device_status=="Fair")
+                        <font style="background-color:  #d5d3cd;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #f6ba10;    padding: 5px 30px 5px 30px;">Fair</font>
+
+                    @elseif($row->device_status=="Good")
+                        <font style="background-color:#d5d3cd ;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color:#f6ba10; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+                    @elseif($row->device_status=="Excellent")
+                        <font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+
+                    @endif
+
+                  <!-- <font style="background-color: #f6ba10;  padding: 5px 30px 5px 30px;margin-right: 5px;">{{ $row->device_status }}</font> -->
+
+
+                </div>
                 <div class="col-md-6"></div>
               </div>
 
