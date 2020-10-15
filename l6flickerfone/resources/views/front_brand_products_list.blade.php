@@ -18,6 +18,16 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css')}}"/>
    </head>
   
+<style>
+	 #BorderStyle:nth-last-child(-n+4){
+         border-bottom: none !important;
+      }
+
+      .form-control:focus{
+         box-shadow: 0 0 0 0.2rem rgb(247 247 247) !important;
+      }
+</style>
+
    <style>
       img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
       height: 55px !important;

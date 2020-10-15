@@ -469,7 +469,7 @@ div[class="ws-title"] > span{
 <style>
 
 img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
-  height: 65px !important;
+  height: 57px !important;
     /* top: -1px; */
     margin-top: -8px;
     margin-bottom: -8px;
@@ -489,8 +489,21 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 
 }
 
-
-
+select[id="sell"]:focus {
+    outline: none !important;
+    border:1px solid red;
+   box-shadow: 0 0 10px #f7f7f7;
+}
+input[id="upperInpt"]:focus{
+   outline: none !important;
+    border:1px solid red;
+   box-shadow: 0 0 10px #f7f7f7 !important;
+}
+select[id="upperPrice"]:focus{
+   outline: none !important;
+    border:1px solid red;
+   box-shadow: 0 0 10px #f7f7f7 !important;
+}
 
 @media (min-width: 280px) and (max-width: 319px) {
 
@@ -790,7 +803,7 @@ cursor: pointer;
 <body>
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-  @include('includes.header');
+  @include('includes.header')
 
 
  <div class="row" style="height: 400px;     background-image: linear-gradient(to top , #252525, #233444);">
@@ -816,7 +829,8 @@ margin-top: 90px;">
   <div class="row">
     <!-- <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div> -->
       <div class="col-md-4" style="text-align: center;">
-        <input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;;">
+        <input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;    background-color: #f7f7f7;
+    border-color: transparent;">
         <ul onblur="hideagain()" id="usedSearchList" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 100%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px; margin-left:2%;margin-top: 5px;">
    
             <div>
@@ -835,7 +849,8 @@ margin-top: 90px;">
       border-right: 1px black solid;">
       
         <div class="form-group">
-          <select class="form-control" id="sell" style="font-weight: bold !important;">  
+          <select class="form-control" id="sell" style="font-weight: bold !important;background-color: #f7f7f7;
+    border-color: transparent;">  
               <option selected="" disabled="">Select City</option> 
               <option class="option" value="Abbottabad">Abbottabad</option>
               <option class="option" value="Adezai">Adezai</option>
@@ -1147,7 +1162,8 @@ margin-top: 90px;">
       
         <div class="form-group">
        
-          <select class="form-control" id="upperPrice" style="font-weight: bold !important;">
+          <select class="form-control" id="upperPrice" style="font-weight: bold !important;background-color: #f7f7f7;
+    border-color: transparent;">
              <option selected=""  disabled="" style="font-weight: bold !important;">Select Price</option>
               <option value="Less than 20,000">Less than 20,000 PKR</option>
               <option value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
@@ -1452,15 +1468,15 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
     
     
     
-    <div class="row" style="border: 1px black solid;">
+    <div class="row" style="">
 
-      <div class="col-md-3">
+      <div class="col-md-8">
         <p style="    color: #a8a1a1;
         
           padding: 12px 0px 0px 12px;">Sort by:</p>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-2">
         <div class="form-group" style="padding-top: 9px;">
         
           <select class="form-control" id="sort_by_order">
@@ -1470,8 +1486,8 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
           </select>
         </div>
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-4">
+     
+      <div class="col-md-2">
         <div class="form-group" style="padding-top: 9px;">
           <select class="form-control" id="sort_by_price">
             <option selected="" disabled="">Price</option>

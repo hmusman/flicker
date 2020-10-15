@@ -107,7 +107,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
   font-size: 17px !important;
 } */
 #MainHeightOnDesktop{
-  height: 2793px !important;
+  height: 2153px !important;
 }
 
 .colblue{
@@ -155,7 +155,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
 
 
 .cradslotOnMob{
-      height: 65px;
+      height: 39px;
     font-weight: 600;
     text-shadow: 0px 0px 0.1px black;
   
@@ -164,31 +164,93 @@ ul[class="dropdown-menu fade-up"] > li::after{
 
 
 .Cameratriple{
-      height: 145px;
+      height: 106px;
    
 }
 
 .SelfieSingle{
-      height: 60px;
+      height: 39px;
    
 }
 
+.SoundLoudsp{
+   height: 58px;
+}
+
 .CameraFeaturesOnMob{
-      height: 67px ;
+      height: 55px ;
 
     text-shadow: 0px 0px 0.1px black;
     font-size: 15px ;
   
 }
 .SeliecamFatureMob{
-      height: 67px ;
+      height: 40px ;
 
     text-shadow: 0px 0px 0.1px black;
     font-size: 15px ;
   
 }
 
+.BattTalktimeMobi{
+     height: 40px ;
+
+    text-shadow: 0px 0px 0.1px black;
+    font-size: 15px ;
+}
+
+.BaterryChargMobi{
+    height: 40px ;
+
+    text-shadow: 0px 0px 0.1px black;
+    font-size: 15px ;
+}
+
   @media (max-width: 550px){
+
+
+
+    .pricesotageTextOnMob{
+       height: 70px !important;
+    }
+.pricStorMobi{
+     height: 70px !important;
+}
+
+.batteryMuscMob{
+      height: 105px !important;
+}
+
+    .SloudSpkrMob{
+      height: 57px !important;
+    }
+
+
+.plateGpu{
+  height: 90px !important;
+}
+
+    .chipGpuOnMibi{
+      height: 90px !important;
+    }
+    .Dresolution{
+      height: 90px !important;
+    }
+
+.ChipsetOnMob{
+  height: 65px !important;
+}
+
+    .PlatFormPhone{
+       height: 65px !important;
+    }
+.DipResoMobi{
+  height: 70px !important;
+}
+
+    .DsizeMob{
+      height: 65px !important
+    }
 .Cameratriple {
     height: 190px !important;
 }
@@ -211,6 +273,7 @@ height: 180px !important;
 
 .FeatureSensor{
       font-size: 12px !important;
+      height: 160px !important;
 }
 
 
@@ -237,7 +300,12 @@ height: 113px !important;
 
 }
 
+.SelfiCameraVedios{
+  
+height: 112px !important;
 
+   
+}
 
 .CameraFeaturesOnMob{
       height: 113px !important;
@@ -251,10 +319,18 @@ height: 113px !important;
 }
 
 .SeliecamFatureMob{
-      height: 67px !important;
+      height: 40px !important;
 
   
   
+}
+
+.BattTalktimeMobi{
+  height: 67px !important;
+}
+
+.BaterryChargMobi{
+   height: 67px !important;
 }
 .cradslotOnMob{
       height: 65px;
@@ -303,6 +379,23 @@ height: 37px !important;
 
 }
 
+.commsNfC{
+   font-size: 11px !important;
+}
+.CommsRadio{
+      font-size: 11px !important;
+       height: 67px !important ;
+}
+
+.commGps{
+      font-size: 11px !important;
+      height: 70px !important;
+}
+.MomoIntrnal{
+   font-size: 11px !important;
+       height: 70px !important ;
+}
+
 .mobTitleOnMob{
   margin-top: 41px !important;
 }
@@ -340,6 +433,20 @@ height: 37px !important;
     height: 70px !important;
 }
 
+.commRadio{
+   height: 67px !important;
+}
+
+.commRadioNext{
+   height: 90px !important;
+}
+.featreSenso{
+   height: 160px !important;
+}
+
+.PlateuCpu{
+      height: 56px;
+}
 
 .batteryTalkTime2{
 
@@ -347,7 +454,7 @@ height: 37px !important;
 }
 .DBatteryChargingOne{
 
-    height: 75px !important;
+    height: 40px !important;
 }
 
 .simweight2{
@@ -370,6 +477,16 @@ padding-top: 9px !important;
   
     height: 65px !important;
 }
+
+.commsblutoo{
+  
+    height: 40px !important;
+}
+
+.platefrmchips{
+  height: 65px !important;
+}
+
 .mem0ryInt{
   
     height: 70px !important;
@@ -463,11 +580,17 @@ padding-top: 9px !important;
 
 
       .DimensionsMob{
-          /* margin-top: 33px !important; */
+          
               height: 65px !important;
       }
 
+.CommsWlanMob{
+   height: 95px !important;
+}
 
+.commswlany{
+   height: 95px !important;
+}
       .CameraFeature{
           /* margin-top: 33px !important; */
               height: 113px !important;
@@ -480,13 +603,17 @@ padding-top: 9px !important;
           /* margin-top: 33px !important; */
               height: 113px !important;
       }
+
+      .selfivedo{
+            height: 113px !important;
+      }
  .CameraTripple{
           /* margin-top: 33px !important; */
               height: 190px !important;
       }
        .CameraSinleNexxt{
           /* margin-top: 33px !important; */
-              height: 60px !important;
+              height: 39px !important;
       }
       .StatusOnMob{
           height: 75px !important;
@@ -711,6 +838,14 @@ div[class="img-zoom-container"]{
 
   @media (max-width: 550px){
 
+
+.PlateuCpu{
+      height: 90px !important;
+}
+
+
+
+
   footer{
   margin-top: 149px !important;
 }
@@ -812,7 +947,7 @@ a[href="#view4"]{
 
 <style>
 img[src="{{ asset('storage/images/logo Black-01.jpg')}}"]{
-  height: 65px !important;
+  height: 57px !important;
     /* top: -1px; */
     margin-top: -8px;
     margin-bottom: -8px;
@@ -996,6 +1131,11 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
 
 
 }
+
+
+.PlateuCpu{
+      height: 56px;
+}
 </style>
 
 <style>
@@ -1161,7 +1301,18 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
 
 
 
+.PlateformOS{
+ display: block;
 
+height: 40px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px !important;
+  padding: 5px !important;
+
+ 
+}
 
   .DType{
 display: block;
@@ -1174,11 +1325,10 @@ height: 65px;
   padding: 5px !important;
 
 }
+.commswlany{
+  display: block;
 
-  .Dsize{
-display: block;
-
-height: 65px;
+height: 56px;
 
     font-weight: 600 !important;
     text-shadow: 0px 0px 0.1px black !important;
@@ -1186,10 +1336,33 @@ height: 65px;
   padding: 5px !important;
 
 }
+  .Dsize{
+display: block;
+
+height: 56px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px !important;
+  padding: 5px !important;
+
+}
+.FormChipsethead{
+  display: block;
+
+height: 40px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px !important;
+  padding: 5px !important;
+
+}
+
  .Commsblutoth{
 display: block;
 
-height: 65px;
+height: 40px;
 
     font-weight: 600 !important;
     text-shadow: 0px 0px 0.1px black !important;
@@ -1211,7 +1384,7 @@ height: 65px;
   .Dprotect{
 display: block;
 
-height: 120px;
+height: 102px;
 
     font-weight: 600 !important;
     text-shadow: 0px 0px 0.1px black !important;
@@ -1222,13 +1395,57 @@ height: 120px;
   .Dresolution{
 display: block;
 
-height: 70px;
+height: 56px;
 
     font-weight: 600 !important;
     text-shadow: 0px 0px 0.1px black !important;
     font-size: 16px;
   padding: 5px !important;
 
+}
+
+
+.commsNfC{
+  display: block;
+
+height: 40px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
+}
+.CommsRadio{
+  display: block;
+
+height: 40px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
+}
+
+.commGps{
+  display: block;
+
+height: 53px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
+
+}
+.MomoIntrnal{
+  display: block;
+
+height: 45px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
 }
 
   .CameraVedios{
@@ -1243,21 +1460,32 @@ height: 75px;
 
 }
 
+.SelfiCameraVedios{
+  display: block;
+
+height: 65px;
+
+    font-weight: 600 !important;
+    text-shadow: 0px 0px 0.1px black !important;
+    font-size: 16px;
+  padding: 5px !important;
+
+}
 
 .plateGpu{
-  height: 65px !important;
+  height: 45px;
 }
 
 
 
 
 .FeatureSensor{
-  height: 130px !important;
+  height: 96px;
 }
 
 
 .MiscColor{
-  height: 70px !important;
+  height: 42px !important;
 }
 
 
@@ -1333,8 +1561,8 @@ height: 75px;
                       <tr>
                         <td class="colblue BodyHeadMob widthOnDesk">Display</td>
                         <td class="DType" style=""> Type</td>
-                        <td class="Dsize" style="display: block;font-weight: 600;"> Size</td>
-                        <td class="Dresolution" style="display: block;font-weight: 600;"> Resolution</td>
+                        <td class="Dsize DsizeMob" style="display: block;font-weight: 600;"> Size</td>
+                        <td class="Dresolution DipResoMobi" style="display: block;font-weight: 600;"> Resolution</td>
                         <td class="Dprotect" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
                     
                       </tr>
@@ -1350,8 +1578,8 @@ height: 75px;
 <table id="customers">
   <tr>
     <td class="colblue BodyHeadMob widthOnDesk">Plate-<br/>Form</td>
-    <td class="DType" style=""> OS</td>
-    <td class="Dsize" style="display: block;font-weight: 600;"> Chipset</td>
+    <td class="PlateformOS PlatFormPhone" style=""> OS</td>
+    <td class="FormChipsethead ChipsetOnMob"  style="display: block;font-weight: 600;"> Chipset</td>
     <td class="Dresolution" style="display: block;font-weight: 600;"> CPU</td>
     <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
 
@@ -1365,7 +1593,7 @@ height: 75px;
     <td class="colblue BodyHeadMob widthOnDesk">Memory</td>
 
     <td class="cradslotOnMob" style="display: block;font-weight: 600;"> Card slot</td>
-    <td class="Dresolution" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Internal</td>
+    <td class="MomoIntrnal" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Internal</td>
 
 
   </tr>
@@ -1392,7 +1620,7 @@ height: 75px;
 
     <td class="SelfieSingle" style="display: block;font-weight: 600;"> Single</td>
     <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> Features</td>
-    <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
+    <td class="SelfiCameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
 
 
   </tr>
@@ -1404,7 +1632,7 @@ height: 75px;
   <tr>
     <td class="colblue BodyHeadMob widthOnDesk">Sound</td>
 
-    <td class="SelfieSingle" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
+    <td class="SoundLoudsp" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
     <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> 3.5mm jack</td>
     <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
 
@@ -1421,11 +1649,11 @@ height: 75px;
 <table id="customers">
   <tr>
     <td class="colblue BodyHeadMob widthOnDesk">COMMS</td>
-    <td class="DType" style=""> WLAN</td>
+    <td class="commswlany" style=""> WLAN</td>
     <td class="Commsblutoth" style="display: block;font-weight: 600;"> Bluetooth</td>
-    <td class="Dresolution" style="display: block;font-weight: 600;"> GPS</td>
-        <td class="Dresolution" style="display: block;font-weight: 600;"> Radio</td>
-            <td class="Dresolution" style="display: block;font-weight: 600;"> NFC</td>
+    <td class="commGps" style="display: block;font-weight: 600;"> GPS</td>
+        <td class="CommsRadio" style="display: block;font-weight: 600;"> Radio</td>
+            <td class="Dresolution commsNfC" style="display: block;font-weight: 600;"> NFC</td>
     <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> USB</td>
 
   </tr>
@@ -1446,10 +1674,10 @@ height: 75px;
 <table id="customers">
   <tr>
     <td class="colblue BatteryOneMob widthOnDesk">Battery</td>
-  <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> &nbsp; </td>
-    <td class="batteryCarge" style="display: block;font-weight: 600; height: 75px; "> Charging</td>
-    <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> talk Time</td>
-    <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 104px;"> Music Play</td>
+  <td class="BaterryChargMobi" style="display: block;font-weight: 600;"> &nbsp; </td>
+    <td class="batteryCarge" style="display: block;font-weight: 600; height: 40px; "> Charging</td>
+    <td class="BattTalktimeMobi" style="display: block;font-weight: 600;"> talk Time</td>
+    <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 45px;"> Music Play</td>
 
 
   </tr>
@@ -1477,7 +1705,7 @@ height: 75px;
   <tr>
     <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">&nbsp;</td>
 
-    <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 100px; "> Price & Storage</td>
+    <td class="pricStorMobi" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 42px; "> Price & Storage</td>
 
   </tr>
 </table>
@@ -1667,7 +1895,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 1px #eeeeee solid;
+      height: 57px;border-bottom: 1px #eeeeee solid;
       " class="DisplayType">
       {{ $product->display_size }}
    </div>
@@ -1677,7 +1905,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
+      height: 56px;border-bottom: 1px #eeeeee solid;
       " class="DisplayReslution">
       {{ $product->display_resolution }}
    </div>
@@ -1687,7 +1915,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 120px;border-bottom: 5px #eeeeee solid;
+      height: 102px;border-bottom: 5px #eeeeee solid;
       " class="ProtecOnMoble">
       {{ $product->display_protection }}
    </div>
@@ -1698,7 +1926,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="StatusOnMob">
       {{ $product->platform_os }}
    </div>
@@ -1708,8 +1936,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayType">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="platefrmchips">
       {{ $product->platform_chipset }}
    </div>
    <div style="    width: 100%;
@@ -1718,8 +1946,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayReslution">
+      height: 57px;border-bottom: 1px #eeeeee solid;
+      " class="PlateuCpu">
       {{ $product->platform_cpu }}
    </div>
    <div style="    width: 100%;
@@ -1728,8 +1956,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 45px;border-bottom: 5px #eeeeee solid;
+      " class="chipGpuOnMibi">
       {{ $product->platform_gpu }}
    </div>
    <div class="topMemorSpconmob" style="height: 0px; width: 100%;"></div>
@@ -1739,7 +1967,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="StatusOnMob">
       {{ $product->memory_card_slot }}
    </div>
@@ -1749,7 +1977,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+      height: 45px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
       " class="mem0ryInt">
       {{ $product->memory_storage }} {{ $product->memory_ram }} 
    </div>
@@ -1760,7 +1988,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 145px;border-bottom: 1px #eeeeee solid;
+      height: 107px;border-bottom: 1px #eeeeee solid;
       " >
       {{ $product->main_type_value }}
    </div>
@@ -1770,7 +1998,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 55px;border-bottom: 1px #eeeeee solid;
       " >
       {{ $product->main_feature }}
    </div>
@@ -1791,7 +2019,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 60px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       ">
       {{ $product->selfie_type_value }}
    </div>
@@ -1801,7 +2029,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       ">
       {{ $product->selfie_feature }}
    </div>
@@ -1811,12 +2039,12 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 75px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
-      " class="TrpleVed">
+      height: 65px;border-bottom: 1px #eeeeee solid;border-bottom: 5px #eeeeee solid;
+      " class="selfivedo">
       {{ $product->selfie_video }}
    </div>
    <div class="AboveSoundbarSpce" style="height: 0px; width: 100%;"></div>
-   <div class="CameraSinleNexxt" style="    width: 100%;
+   <div class="SloudSpkrMob" style="    width: 100%;
       font-size: 13px;
       background-color: #fafafa;
       border: 1px #ededed solid;
@@ -1832,7 +2060,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       ">
       {{ $product->sound_jack }}
    </div>
@@ -1847,13 +2075,13 @@ height: 75px;
       {{ $product->sound_mic }}
    </div>
    <div class="topCommsfirstSpconmob" style="height: 0px; width: 100%;"></div>
-   <div class="DimensionsMob" style="    width: 100%;
+   <div class="CommsWlanMob" style="    width: 100%;
       font-size: 13px;
       background-color: #fafafa;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 57px;border-bottom: 1px #eeeeee solid;
       " class="StatusOnMob">
       {{ $product->comms_wlan }}
    </div>
@@ -1863,8 +2091,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayType">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="DisplayType commsblutoo">
       {{ $product->bluetooth }}
    </div>
    <div style="    width: 100%;
@@ -1873,7 +2101,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
+      height: 53px;border-bottom: 1px #eeeeee solid;
       " class="DisplayReslution">
       {{ $product->comms_gps }}
    </div>
@@ -1883,8 +2111,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayReslution">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="commRadio">
       {{ $product->comms_nfc }}
    </div>
    <div style="    width: 100%;
@@ -1893,8 +2121,9 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 1px #eeeeee solid;
-      " class="DisplayReslution">
+      height: 40px;border-bottom: 1px #eeeeee solid;
+      " class="commRadioNext">
+      
    </div>
    <div style="    width: 100%;
       font-size: 13px;
@@ -1902,8 +2131,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 65px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 44px;border-bottom: 5px #eeeeee solid;
+      " class="commRadioNext">
       {{ $product->comms_usb }}
    </div>
    <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
@@ -1913,8 +2142,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 130px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 97px;border-bottom: 5px #eeeeee solid;
+      " class="featreSenso">
       {{ $product->feature_sensor }}
    </div>
    <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
@@ -1924,7 +2153,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 69px;border-bottom: 1px #eeeeee solid;
+      height: 42px;border-bottom: 1px #eeeeee solid;
       " class="batteryTalkTime2">
       {{ $product->battery_status }}
    </div>
@@ -1934,7 +2163,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 75px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="DBatteryChargingOne">
    </div>
    <div style="    width: 100%;
@@ -1943,7 +2172,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 67px;border-bottom: 1px #eeeeee solid;
+      height: 40px;border-bottom: 1px #eeeeee solid;
       " class="batteryTalkTime2">
       {{ $product->battery_talk_time }}
    </div>
@@ -1953,8 +2182,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 104px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 45px;border-bottom: 5px #eeeeee solid;
+      " class="batteryMuscMob">
       {{ $product->battery_music }} 
    </div>
    <div class="topFeaturSensoronmob" style="height: 0px; width: 100%;"></div>
@@ -1964,7 +2193,7 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 70px;border-bottom: 5px #eeeeee solid;
+      height: 41px;border-bottom: 5px #eeeeee solid;
       " class="">
       @if($product->variation_colors->count()>0)
       @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
@@ -1984,8 +2213,8 @@ height: 75px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 103px;border-bottom: 5px #eeeeee solid;
-      " class="">
+      height: 45px;border-bottom: 5px #eeeeee solid;
+      " class="pricesotageTextOnMob">
       @if($product->variation_colors->count()>0)
       @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
       @foreach($product->variation_colors as $color)

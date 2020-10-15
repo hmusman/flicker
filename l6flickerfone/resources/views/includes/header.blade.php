@@ -53,7 +53,7 @@
         <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li> -->
        
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" style="width:65px !important">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              </a>
        
@@ -106,7 +106,7 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
-          style="padding: 8px 70px 6px 70px !important;  height: 38px ;  border-left: 1px #4c4a575c solid !important;font-weight: bold;"> Forums  </a>
+          style="padding: 8px 70px 6px 70px !important;  height: 38px ;  border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> Forums  </a>
             <!-- <ul class="dropdown-menu fade-up">
               <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
             <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
@@ -139,7 +139,7 @@
 
 <li>
   <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm" placeholder="Search our Store" 
-  style="background-position: right !important;outline: none;    width: 388px;margin-left: 3px;border: 1px #f8f7f7 solid;  height: 1px;  margin-top: 6px;background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px; ">
+  style="background-position: right !important; border-color: transparent !important ; outline: none;    width: 388px;margin-left: 3px;border: 1px #f8f7f7 solid;  height: 1px;  margin-top: 6px;background: url(images/ic_search_black_18dp.png) no-repeat scroll 7px 7px; ">
 
 
 

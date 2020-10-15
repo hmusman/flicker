@@ -1,3 +1,6 @@
+
+
+
 @if($products->count()>0)
 	@foreach($products as $product)
 		@php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/130_'.$product->image @endphp
