@@ -661,9 +661,12 @@ color: black;
               @if(Session::has('warningMsg'))
                 <div class="alert alert-warning">{{ Session::get('warningMsg') }}</div>
               @endif
-               @if(Session::has('msg'))
+
+              @if(Session::has('msg'))
                 <div class="alert alert-success">{{ Session::get('msg') }}</div>
               @endif
+
+             
 
               <form action="" id="ProductAccessory" method="post" enctype="multipart/form-data">
                   @csrf
@@ -677,14 +680,14 @@ color: black;
   <div class="col-md-6" >
                           <input type="hidden" id="user_id" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
                           <input type="hidden" name="status" value="" id="status">
-                          <div class="form-group row hide_some_block">
+                          <div class="form-group row" style="display:none !important;">
                               <label for="example-text-input" class="col-md-4 col-form-label">Category</label>
                               <div class="col-md-8">
                                   
                                   <select class="form-control" name="category" id="category">
-                                      <option selected="" disabled="">Select Category</option>
+                                      <!-- <option selected="" disabled="">Select Category</option> -->
                                       @foreach($categories as $category)
-                                           <option <?php if(old('category')==$category->id){ echo "selected=''"; } ?>  value="{{ $category->id }}">{{ ucfirst($category->title) }}</option>
+                                           <option selected=""  value="{{ $category->id }}">{{ ucfirst($category->title) }}</option>
                                       @endforeach
                                   </select>
                                   @error('category')
@@ -696,10 +699,12 @@ color: black;
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Brand</label>
                               <div class="col-md-8">
-                                  <select class="form-control" name="brand">
+                                   @if(!empty(Session::get('EstimateData'))) @php $brand_estimate = Session::get('EstimateData')['brand'] @endphp @else @php $brand_estimate = old('brand') @endphp @endif
+                                  <select class="form-control" id="brand" name="brand">
+
                                       <option selected="" disabled="">Select Brand</option>
                                       @foreach($brands as $brand)
-                                           <option <?php if(old('brand')==$brand->id){ echo "selected=''"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>
+                                           <option <?php if($brand_estimate==$brand->id){ echo "selected=''"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>
                                       @endforeach
                                   </select>
                                   @error('brand')
@@ -711,7 +716,7 @@ color: black;
                           <div class="form-group row  hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">Product Name</label>
                               <div class="col-md-8">
-                                  <input class="form-control" type="text" value="{{ old('model') }}" name="model" placeholder="Enter Name" id="example-text-input">
+                                  <input class="form-control" type="text" value="@if(!empty(Session::get('EstimateData'))) {{Session::get('EstimateData')['name']}} @else old('model') @endif" name="model" placeholder="Enter Name" id="example-text-input">
                                   @error('model')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -721,7 +726,7 @@ color: black;
                           <div class="form-group row hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">Color</label>
                               <div class="col-md-8">
-                                  <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="example-text-input">
+                                  <input class="form-control" type="text" value="@if(!empty(Session::get('EstimateData'))) {{Session::get('EstimateData')['color']}} @else old('color') @endif" name="color" placeholder="Enter Color" id="example-text-input">
                                   @error('color')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -730,8 +735,9 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Price</label>
+                              @if(!empty(Session::get('EstimateData'))) @php $price = intval(Session::get('EstimateData')['price']) @endphp @else @php $price = old('price') @endphp @endif
                               <div class="col-md-8">
-                                  <input class="form-control" type="number" value="{{ old('price') }}" name="price" placeholder="Enter Price" id="example-text-input">
+                                  <input class="form-control" type="number" value="{{ $price }}" name="price" placeholder="Enter Price" id="price">
                                   @error('price')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -1109,12 +1115,12 @@ color: black;
 
                               <label for="example-text-input" class="col-form-label">Minor Dent / Scratch?</label>
                             </div>
-                              
+                              @if(!empty(Session::get('EstimateData'))) @php $minor = Session::get('EstimateData')['minor'] @endphp @else @php $minor = old('minor') @endphp @endif
                               <div class="col-md-8" style="text-align:center" >
                                    <div>
-                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes" @if(old('minor')=='yes') checked @endif>
+                                      <input id="minor-on" class="minor radioyesNo" name="minor" type="radio" value="yes" @if($minor=='yes') checked @endif>
                                     <label for="minor-on" class="myLabel ">Yes</label>
-                                    <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no" @if(old('minor')=='no') checked @endif>
+                                    <input id="minor-off" class="minor radioyesNo" name="minor" type="radio" value="no" @if($minor=='no') checked @endif>
                                     <label for="minor-off" class="myLabel">No</label>
 
                                     </div>
@@ -1128,11 +1134,12 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Major Dent / Scratch?</label>
+                              @if(!empty(Session::get('EstimateData'))) @php $major = Session::get('EstimateData')['major'] @endphp @else @php $major = old('major') @endphp @endif
                               <div class="col-md-8" style="text-align:center" >
                                    <div>
-                                      <input id="major-on" class="major radioyesNo" name="major" type="radio" value="yes" @if(old('major')=='yes') checked @endif>
+                                      <input id="major-on" class="major radioyesNo" name="major" type="radio" value="yes" @if($major=='yes') checked @endif>
                                     <label for="major-on" class="myLabel ">Yes</label>
-                                    <input id="major-off" class="major radioyesNo" name="major" type="radio" value="no" @if(old('major')=='no') checked @endif>
+                                    <input id="major-off" class="major radioyesNo" name="major" type="radio" value="no" @if($major=='no') checked @endif>
                                     <label for="major-off" class="myLabel">No</label>
 
 
@@ -1162,11 +1169,12 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Original Accessories Available</label>
+                              @if(!empty(Session::get('EstimateData'))) @php $accessory = Session::get('EstimateData')['accessory'] @endphp @else @php $accessory = old('accessory') @endphp @endif
                               <div class="col-md-8" style="text-align:center" >
                                  <div>
-                                    <input id="accessory-on" class="accessory radioyesNo" name="accessory" type="radio" value="yes" @if(old('accessory')=='yes') checked @endif>
+                                    <input id="accessory-on" class="accessory radioyesNo" name="accessory" type="radio" value="yes" @if($accessory=='yes') checked @endif>
                                   <label for="accessory-on" class="myLabel">Yes</label>
-                                  <input id="accessory-off" class="accessory radioyesNo" name="accessory" type="radio" value="no" @if(old('accessory')=='no') checked @endif>
+                                  <input id="accessory-off" class="accessory radioyesNo" name="accessory" type="radio" value="no" @if($accessory=='no') checked @endif>
                                   <label for="accessory-off" class="myLabel">No</label>
                                   </div>
                                   @error('accessory')
@@ -1178,11 +1186,12 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Screen Is Cracked</label>
+                              @if(!empty(Session::get('EstimateData'))) @php $screen = Session::get('EstimateData')['screen'] @endphp @else @php $screen = old('screen') @endphp @endif
                               <div class="col-md-8" style="text-align:center" >
                                   <div>
-                                    <input id="screen-on" class="screen radioyesNo" name="screen" type="radio" value="yes" @if(old('screen')=='yes') checked @endif>
+                                    <input id="screen-on" class="screen radioyesNo" name="screen" type="radio" value="yes" @if($screen=='yes') checked @endif>
                                   <label for="screen-on" class="myLabel">Yes</label>
-                                  <input id="screen-off" class="screen radioyesNo" name="screen" type="radio" value="no" @if(old('screen')=='no') checked @endif>
+                                  <input id="screen-off" class="screen radioyesNo" name="screen" type="radio" value="no" @if($screen=='no') checked @endif>
                                   <label for="screen-off" class="myLabel">No</label>
 
                                   </div>
@@ -1194,11 +1203,12 @@ color: black;
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Device Box Available</label>
+                              @if(!empty(Session::get('EstimateData'))) @php $device = Session::get('EstimateData')['device'] @endphp @else @php $device = old('device') @endphp @endif
                               <div class="col-md-8" style="text-align:center" >
                                  <div>
-                                      <input id="device-on" class="device radioyesNo" name="device" type="radio" value="yes" @if(old('device')=='yes') checked @endif>
+                                      <input id="device-on" class="device radioyesNo" name="device" type="radio" value="yes" @if($device=='yes') checked @endif>
                                     <label for="device-on" class="myLabel ">Yes</label>
-                                    <input id="device-off" name="device" class="device radioyesNo" type="radio" value="no" @if(old('device')=='no') checked @endif>
+                                    <input id="device-off" name="device" class="device radioyesNo" type="radio" value="no" @if($device=='no') checked @endif>
                                     <label for="device-off" class="myLabel">No</label>
 
                                   </div>
@@ -1212,10 +1222,11 @@ color: black;
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Device Battery Status</label>
                               <div class="col-md-8" style="text-align:center" >
+                                  @if(!empty(Session::get('EstimateData'))) @php $battery = Session::get('EstimateData')['battery'] @endphp @else @php $battery = old('battery') @endphp @endif
                                  <select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
                                     <option disabled="" selected="">Select Status</option>
                                     @for($i=5; $i<=10; $i++)
-                                      <option value="{{ $i*10 }}" @if(old('battery')==$i*10) selected @endif >{{ $i*10 }} %</option>
+                                      <option value="{{ $i*10 }}" @if($battery==$i*10) selected @endif >{{ $i*10 }} %</option>
                                     @endfor
 
                                     <option value="others">Others</option>
@@ -1259,21 +1270,21 @@ color: black;
                         </div>
                       </div>
                
-                      <div class="text-center mt-4 col-md-3 hide_some_block">
+                      <div class="text-center mt-4 col-md-3">
                         <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
                         <div class="dropzone" id="DropZonIcon2">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                   
-                      <div class="text-center mt-4 col-md-3 hide_some_block" >
+                      <div class="text-center mt-4 col-md-3" >
                         <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
                         <div class="dropzone" id="DropZonIcon3">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3 hide_some_block" >
+                        <div class="text-center mt-4 col-md-3" >
                         <input type="file" name="image4" style="display:none;" id="imgInput4" onchange="fileChangeFun(this,$('#DropZonIcon4'),4);"/> 
                         <div class="dropzone" id="DropZonIcon4">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(4);" id="imgFullWidthDiv4"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
@@ -1286,7 +1297,7 @@ color: black;
                   <div class="card">
                     <div class="card-body row">
 
-                      <div class="text-center mt-4 col-md-3 hide_some_block" id="" >
+                      <div class="text-center mt-4 col-md-3" id="" >
                         <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
                         <div class="dropzone" id="DropZonIcon5">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
@@ -1295,21 +1306,21 @@ color: black;
                         </div>
                       </div>
                
-                      <div class="text-center mt-4 col-md-3 hide_some_block">
+                      <div class="text-center mt-4 col-md-3">
                         <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
                         <div class="dropzone" id="DropZonIcon6">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                   
-                      <div class="text-center mt-4 col-md-3 hide_some_block" >
+                      <div class="text-center mt-4 col-md-3" >
                         <input type="file" name="image7" style="display:none;" id="imgInput7" onchange="fileChangeFun(this,$('#DropZonIcon7'),7);"/> 
                         <div class="dropzone" id="DropZonIcon7"style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(7);" id="imgFullWidthDiv7"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3 hide_some_block" >
+                        <div class="text-center mt-4 col-md-3 " >
                         <input type="file" name="image8" style="display:none;" id="imgInput8" onchange="fileChangeFun(this,$('#DropZonIcon8'),8);"/> 
                         <div class="dropzone" id="DropZonIcon8" style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(8);" id="imgFullWidthDiv8"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
@@ -1412,6 +1423,8 @@ color: black;
 <script src="js/bootstrap.min.js" ></script> -->
   
  <script type="text/javascript">
+      
+
       $('.ErrorMsg').hide();
 
       setTimeout( function(){ 
@@ -1424,6 +1437,9 @@ color: black;
 
           if($('#phone_check').is(":checked"))
           {
+            var b = '<option selected="" disabled="">Select Brand</option> @foreach($brands as $brand)<option <?php if($brand_estimate==$brand->id){ echo "selected"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option> @endforeach';
+            $('#brand').html(b);
+            $('#price').val('{{ $price }}');
             $('.hide_some_block').show();
             $('.save_btn').removeAttr('disabled','');
             document.getElementById('PhoneDetBox').style.display ='block';
@@ -1432,6 +1448,9 @@ color: black;
 
           if($('#accessory_check').is(":checked"))
           {
+            var tb = '<option selected="" disabled="">Select Brand</option>@foreach($brands as $brand)<option <?php if(old("brand")==$brand->id){ echo "selected"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>@endforeach';
+            $('#brand').html(tb);
+            $('#price').val('{{ old("price") }}')
             $('.hide_some_block').hide();
             $('.save_btn').removeAttr('disabled','');
             document.getElementById('PhoneDetBox').style.display ="none";
@@ -1473,6 +1492,9 @@ color: black;
       $('#phone_check').change(function(){
           if($('#phone_check').is(":checked"))
           {
+            var b = '<option selected="" disabled="">Select Brand</option> @foreach($brands as $brand)<option <?php if($brand_estimate==$brand->id){ echo "selected"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option> @endforeach';
+            $('#brand').html(b);
+            $('#price').val('{{ $price }}');
             $('.hide_some_block').show();
             $('.save_btn').removeAttr('disabled','');
             document.getElementById('PhoneDetBox').style.display ='block';
@@ -1481,8 +1503,13 @@ color: black;
       });
 
       $('#accessory_check').change(function(){
+           var tb = '<option selected="" disabled="">Select Brand</option>@foreach($brands as $brand)<option <?php if(old("brand")==$brand->id){ echo "selected"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>@endforeach';
+
+
           if($('#accessory_check').is(":checked"))
           {
+            $('#brand').html(tb);
+            $('#price').val('{{ old("price") }}')
             $('.hide_some_block').hide();
             $('.save_btn').removeAttr('disabled','');
             document.getElementById('PhoneDetBox').style.display ="none";
