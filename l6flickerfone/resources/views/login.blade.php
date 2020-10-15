@@ -398,6 +398,13 @@ button[id="srchbtnid"]{
                 <div class="col-md-8 col-sm-6 create-new-account" style="color: black;">
                     	<div class="row">
                     		<div class="col-md-12">
+                          @error('alreadyError')
+                            <p class="alert alert-warning">{{ $message }}</p>
+                          @enderror
+
+                          @error('success')
+                            <p class="alert alert-success">{{ $message }}</p>
+                          @enderror
                     			<h4 class="checkout-subtitle">Create a new account</h4>
                     			<p class="text title-tag-line">Create your new account.</p>
                     		</div>
@@ -412,13 +419,7 @@ button[id="srchbtnid"]{
 		                        </select>
 		                    </div>
                     	</div>
-                    	@error('alreadyError')
-                    		<p class="alert alert-warning">{{ $message }}</p>
-                    	@enderror
-
-                    	@error('success')
-                    		<p class="alert alert-success">{{ $message }}</p>
-                    	@enderror
+                    	
                    
                     <div class="register_form">
                     	

@@ -1,3 +1,4 @@
+ <style type="text/css"> .myLabel{ cursor: pointer !important;  } </style>
  <div class="row">
     @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/190_'.$csproduct->image @endphp
     <div class="col-md-2" style=""><img src="{{ asset($img) }}" style="width: 100%;" /></div>
@@ -33,9 +34,9 @@
 
           <div>
             <input id="minor-on" class="minor" name="minor" type="radio" value="{{ $csproduct->minor_dent_scratch }}">
-          <label for="minor-on">Yes</label>
+          <label for="minor-on" class="myLabel">Yes</label>
           <input id="minor-off" class="minor" name="minor" type="radio" value="0">
-          <label for="minor-off">No</label>
+          <label for="minor-off" class="myLabel">No</label>
 
           </div>
 
@@ -46,9 +47,9 @@
 
           <div>
             <input id="major-on" class="major" name="major" type="radio" value="{{ $csproduct->major_dent_scratch }}">
-          <label for="major-on">Yes</label>
+          <label for="major-on" class="myLabel">Yes</label>
           <input id="major-off" class="major" name="major" type="radio" value="0">
-          <label for="major-off">No</label>
+          <label for="major-off" class="myLabel">No</label>
 
           </div>
 
@@ -60,9 +61,9 @@
 
           <div>
             <input id="accessory-on" class="accessory" name="accessory" type="radio" value="0">
-          <label for="accessory-on">Yes</label>
+          <label for="accessory-on" class="myLabel">Yes</label>
           <input id="accessory-off" class="accessory" name="accessory" type="radio" value="{{ $csproduct->original_accessories_available }}">
-          <label for="accessory-off">No</label>
+          <label for="accessory-off" class="myLabel">No</label>
 
           </div>
 
@@ -74,9 +75,9 @@
 
           <div>
             <input id="screen-on" class="screen" name="screen" type="radio" value="{{ $csproduct->screen_is_cracked }}">
-          <label for="screen-on">Yes</label>
+          <label for="screen-on" class="myLabel">Yes</label>
           <input id="screen-off" class="screen" name="screen" type="radio" value="0">
-          <label for="screen-off">No</label>
+          <label for="screen-off" class="myLabel">No</label>
 
           </div>
 
@@ -90,9 +91,9 @@
 
           <div>
             <input id="device-on" class="device" name="device" type="radio" value="0">
-          <label for="device-on">Yes</label>
+          <label for="device-on" class="myLabel">Yes</label>
           <input id="device-off" name="device" class="device" type="radio" value="{{ $csproduct->device_box_available }}">
-          <label for="device-off">No</label>
+          <label for="device-off" class="myLabel">No</label>
 
           </div>
 

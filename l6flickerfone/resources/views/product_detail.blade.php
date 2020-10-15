@@ -224,16 +224,20 @@ cursor: pointer;
 @endif
 
 
+
 <div class="row">
   <div class="col-md-3">
     <div class="form-group">
+
        @if($product->variation_colors->count()>0)
           <select class="form-control" id="colorStorage" style="font-weight: bold !important; height: 35px !important; ">
        
           </select>
        @endif
       
-    </div>
+
+
+</div>
   </div>
   <div class="col-md-2">
    
@@ -1436,8 +1440,9 @@ Up to 20 h (multimedia)
 
 
           <div id="view4">
+
             <h5>No Reviews Available</h5>       
-                                                          
+
           </div>
 
         </div>

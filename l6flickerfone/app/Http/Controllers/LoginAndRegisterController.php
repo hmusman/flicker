@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendWelcomeEmail;
 use App\Role;
 use App\User;
 use DB;
+use PDF;
 class LoginAndRegisterController extends Controller
 {
     public function index()
@@ -58,6 +61,7 @@ class LoginAndRegisterController extends Controller
 		    	$user->city = $request->buyer_city;
 		    	if($user->save())
 		    	{
+                    Mail::to($request->buyer_email)->send(new SendWelcomeEmail());
 		    		return back()->withErrors(['success'=>'You Have Been Registered Successfully']);
 		    	}
 	    	}
@@ -103,6 +107,7 @@ class LoginAndRegisterController extends Controller
 		    	$user->city = $request->city;
 		    	if($user->save())
 		    	{
+                    Mail::to($request->email)->send(new SendWelcomeEmail());
 		    		return back()->withErrors(['success'=>'You Have Been Registered Successfully']);
 		    	}
 	    	}
@@ -223,4 +228,10 @@ class LoginAndRegisterController extends Controller
         return "thsi";
     }
 
+
+    public function emailTest()
+    {
+        
+        return view('emails.welcome');
+    }
 }

@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 use App\User;
 use DB;
+use App\Mail\SendEmailToActiveUser;
+use App\Mail\SendEmailToBlockUser;
+
 class UserController extends Controller
 {
     
@@ -194,14 +198,18 @@ class UserController extends Controller
 
     public function active($id)
     {
-        $user = User::where('id',$id)->update(['status'=>1]);
+       $data = User::where('id',$id)->first();
+       $user = User::where('id',$id)->update(['status'=>1]);
+       Mail::to($data->email)->send(new SendEmailToActiveUser());
        return redirect()->route('User.index');
         
     }
 
      public function block($id)
     {
-        $user = User::where('id',$id)->update(['status'=>0]);
+       $data = User::where('id',$id)->first();
+       $user = User::where('id',$id)->update(['status'=>0]);
+       Mail::to($data->email)->send(new SendEmailToBlockUser());
        return redirect()->route('User.index');
         
     }
