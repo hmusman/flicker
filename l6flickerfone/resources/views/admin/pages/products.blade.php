@@ -57,6 +57,7 @@
                                                <th>Name</th>
                                                <th>Price</th>
                                                <th>Quantity</th>
+                                               <th>Opinions</th>
                                                <!-- <th>Description</th> -->
                                                <th>Action</th>
                                            </tr>
@@ -75,6 +76,7 @@
                                                        <td>{{ ucfirst($product->name) }}</td>
                                                        <td>{{ $product->price }}</td>
                                                        <td>{{ $product->quantity }}</td>
+                                                       <td><a href="{{ route('Admin.ProductOpinions',$product->id) }}">{{ $product->opinions->count() }}</a></td>
                                                       <!--  <td>{{ $product->description }}</td> -->
                                                        <td>
                                                            <table>

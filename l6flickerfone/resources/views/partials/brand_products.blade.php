@@ -2,7 +2,7 @@
 	@foreach($products as $product)
 		@php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/130_'.$product->image @endphp
 		<div class="BrandVersions " style="width: 20%;">
-         	<a type="button" onclick="BrandProductItem('{{ $product->id }}');" style="cursor: pointer;"> <figure style="padding-top: 5px;">
+         	<a href="#getEstimatedmobile" type="button" onclick="BrandProductItem('{{ $product->id }}');" style="cursor: pointer;"> <figure style="padding-top: 5px;">
             <center> <img style="" src="{{ asset($img)}}" alt="Trulli" height="130"></center>
             <a  id="flip" href="javascript:void(0);" style="text-decoration: none;">
             

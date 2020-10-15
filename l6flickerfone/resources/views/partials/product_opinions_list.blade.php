@@ -100,7 +100,7 @@
             </div>
 
             <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-            <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href="" type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
+            <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href="" type="button" class="clickReply" onclick="clickReply('{{ $row->id }}');" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
           
           </div>
       

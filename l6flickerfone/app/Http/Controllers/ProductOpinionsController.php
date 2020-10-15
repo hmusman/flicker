@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\ProductOpinion;
+use App\OpinionReply;
 use App\Product;
 class ProductOpinionsController extends Controller
 {
@@ -67,5 +68,22 @@ class ProductOpinionsController extends Controller
                 'pagination'=>$opinions->links()->render(),
             ]);
          }
+    }
+
+    public function Replies($id)
+    {
+        $product = ProductOpinion::where('id',$id)->first();
+        $replies = $product->replies;
+        return view('admin.pages.product_opinion_replies',compact('replies'));
+    }
+
+    public function destroy(Request $request,$id)
+    {
+        if(ProductOpinion::where('id',$id)->delete())
+        {
+            OpinionReply:where('opinion_id',$id)->delete();
+            $request->session()->flash('msg',"Product Opinion has been deleted successfully");
+            return back();
+        }
     }
 }

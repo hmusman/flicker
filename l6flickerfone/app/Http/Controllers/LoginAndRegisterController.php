@@ -232,6 +232,24 @@ class LoginAndRegisterController extends Controller
     public function emailTest()
     {
         
-        return view('emails.welcome');
+        return view('emails.block');
+    }
+
+    public function ProductEstimateData(Request $request)
+    {
+       $data = [
+            'name'=>$request->name,
+            'brand'=>$request->brand,
+            'color'=>$request->color,
+            'price'=>$request->price,
+            'screen'=>$request->screen,
+            'accessory'=>$request->accessory,
+            'device'=>$request->device,
+            'battery'=>$request->battery,
+            'minor'=>$request->minor,
+            'major'=>$request->major
+        ];
+        $request->session()->put('EstimateData',$data);
+        return "Sell";
     }
 }
