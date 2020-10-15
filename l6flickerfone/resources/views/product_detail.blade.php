@@ -223,22 +223,17 @@ cursor: pointer;
   <p style="font-weight: bold;">Storage <font style="" class="colr"> *</font></p>
 @endif
 
-
-
 <div class="row">
   <div class="col-md-3">
     <div class="form-group">
-
        @if($product->variation_colors->count()>0)
           <select class="form-control" id="colorStorage" style="font-weight: bold !important; height: 35px !important; ">
        
           </select>
-       @endif
-      
+        @endif
+       </div>
 
-
-</div>
-  </div>
+   </div>
   <div class="col-md-2">
    
   </div>
@@ -1096,7 +1091,7 @@ Up to 20 h (multimedia)
             
                 <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
                   <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
-                  <a id="clickopinon"  style="  background-color: #4a88c2; 
+                  <a id="clickopinon"  style="background-color: #4a88c2; 
                   color: white;
                   padding: 10px 18px 10px 18px; text-decoration: none;
                   border-radius: 4px;">POST YOUR OPINIONS </a>
@@ -1440,8 +1435,9 @@ Up to 20 h (multimedia)
 
 
           <div id="view4">
-
+        
             <h5>No Reviews Available</h5>       
+                                                          
 
           </div>
 

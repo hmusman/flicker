@@ -18,6 +18,7 @@ Route::post('Register/Buyer', 'LoginAndRegisterController@buyer');
 Route::post('Register/Seller', 'LoginAndRegisterController@seller');
 Route::get('NewMobilePhones','ProductController@ShopPage')->name('Shop');
 Route::get('NewAccessories','AccessoryController@ShopPage')->name('NewAccessories');
+Route::get('NewCategoryAccessories/{id}','AccessoryCategoryController@NewCategoryAccessories')->name('NewCategoryAccessories');
 Route::get('ShopBrandProducts','ProductController@ShopBrandProducts')->name('ShopBrandProducts');
 Route::get('ShopPriceProducts','ProductController@ShopPriceProducts')->name('ShopPriceProducts');
 Route::get('ShopBrandPriceProducts','ProductController@ShopBrandPriceProducts')->name('ShopBrandPriceProducts');
@@ -25,8 +26,14 @@ Route::get('ShopBrandAccessories','AccessoryController@ShopBrandAccessories')->n
 Route::get('ShopPriceAccessories','AccessoryController@ShopPriceAccessories')->name('ShopPriceAccessories');
 Route::get('ShopBrandPriceAccessories','AccessoryController@ShopBrandPriceAccessories')->name('ShopBrandPriceAccessories');
 Route::get('ShopViewAccessories','AccessoryController@ShopViewAccessories')->name('ShopViewAccessories');
+Route::get('/NewShopBrandAccessories','AccessoryCategoryController@ShopBrandAccessories')->name('NewShopBrandAccessories');
+Route::get('/NewShopPriceAccessories','AccessoryCategoryController@ShopPriceAccessories')->name('NewShopPriceAccessories');
+Route::get('/NewShopBrandPriceAccessories','AccessoryCategoryController@ShopBrandPriceAccessories')->name('NewShopBrandPriceAccessories');
+Route::get('/NewShopViewAccessories','AccessoryCategoryController@ShopViewAccessories')->name('NewShopViewAccessories');
+
 Route::get('pagination/fetch_data', 'ProductController@fetch_data');
 Route::get('pagination/accessory_fetch_data', 'AccessoryController@fetch_data');
+Route::get('pagination/accessory_category_fetch_data', 'AccessoryCategoryController@fetch_data');
 Route::get('ShopViewProducts','ProductController@ShopViewProducts')->name('ShopViewProducts');
 Route::get('BuyUsedAccessories','SellAccessoryController@frontEndAccessories')->name('BuyUsedAccessories');
 Route::get('BuyUsedAccessoriesData','SellAccessoryController@BuyUsedAccessoriesData')->name('BuyUsedAccessoriesData');
@@ -34,6 +41,7 @@ Route::get('BuyUsedMobilePhones','SellProductController@frontEndProducts')->name
 Route::get('BrandsSellProducts','SellProductController@BrandsSellProducts')->name('BrandsSellProducts');
 Route::get('BrandsSellAccessories','SellAccessoryController@BrandsSellAccessories')->name('BrandsSellAccessories');
 Route::get('BrandsPriceSellAccessories','SellAccessoryController@BrandsPriceSellAccessories')->name('BrandsPriceSellAccessories');
+Route::get('ProductEstimateData','LoginAndRegisterController@ProductEstimateData')->name('ProductEstimateData');
 Route::get('CitySellAccessories','SellProductController@CitySellAccessories')->name('CitySellAccessories');
 Route::get('BrandsPriceSellProducts','SellProductController@BrandsPriceSellProducts')->name('BrandsPriceSellProducts');
 Route::get('PriceSellProducts','SellProductController@PriceSellProducts')->name('PriceSellProducts');
@@ -124,9 +132,19 @@ Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::resource('BlogSlider','BlogSliderController');
 	Route::post('BlogInActive','BlogSliderController@BlogInActive')->name('BlogInActive');
 	Route::post('BlogActive','BlogSliderController@BlogActive')->name('BlogActive');
+	Route::get('ProductOpinions/{id}','ProductController@Opinions')->name('Admin.ProductOpinions');
+	Route::get('ProductOpinionReplies/{id}','ProductOpinionsController@Replies')->name('Admin.ProductOpinionReplies');
 	Route::resource('/User','UserController');
 	Route::get('User/Active/{id?}','UserController@active')->name('User.Active');
 	Route::get('/User/Block/{id?}','UserController@block')->name('User.Block');
+	Route::delete('Opinion/destroy/{id}','ProductOpinionsController@destroy')->name('Opinion.destroy');
+	Route::delete('Reply/destroy/{id}','OpinionReplyController@destroy')->name('Reply.destroy');
+	Route::get('Welcome/{id}/Edit','WelcomeEmailController@edit')->name('Welcome.Email.Edit');
+	Route::post('Welcome/{id}/Update','WelcomeEmailController@update')->name('Welcome.Email.update');
+	Route::get('Active/{id}/Edit','ActiveEmailController@edit')->name('Active.Email.Edit');
+	Route::post('Active/{id}/Update','ActiveEmailController@update')->name('Active.Email.update');
+	Route::get('Block/{id}/Edit','BlockEmailController@edit')->name('Block.Email.Edit');
+	Route::post('Block/{id}/Update','BlockEmailController@update')->name('Block.Email.update');
 });
 
 Route::prefix('Sell')->middleware('SellLoginSessionCheck')->group(function(){

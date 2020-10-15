@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Petehouston\Tinymce\TinymceServiceProvider::class,
         /*
          * Package Service Providers...
          */

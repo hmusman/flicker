@@ -34,6 +34,22 @@ class SellAccessoryController extends Controller
         return $filename1;
     }
 
+    private function ResizeImageOther($img)
+   {
+        $fileNameWithExtension = $img->getClientOriginalName();
+        $filename = pathinfo($fileNameWithExtension,PATHINFO_FILENAME);
+        $ext1 = $img->getClientOriginalExtension();
+        $time = time();
+        $filename1 = $time.'_'.md5($filename).'.'.$ext1;
+        $img->storeAs('public/admin/images/sellproduct', $filename1);
+        $img->storeAs('public/admin/images/sellproduct/thumbnail', $filename1);
+       $thumbnailpath = public_path('storage\admin\images\sellproduct\thumbnail\\'.$filename1);
+        Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
+        Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
+        Image::make($img->getRealPath())->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        return $filename1;
+   }
+
     public function store(Request $request)
     {
         $validations = Validator::make($request->all(),[
@@ -42,7 +58,7 @@ class SellAccessoryController extends Controller
             'brand'=>'required',
             'city'=>'required',
             'phone'=>'required',
-            'detail'=>'required',
+            'detail'=>'required | max:250',
         ]);
 
         if($validations->fails())
@@ -52,11 +68,72 @@ class SellAccessoryController extends Controller
         
         else
         {
-            //  if(SellAccessory::where('name',$request->model)->count() >0)
-            // {
-            //     $request->session()->flash('warningMsg','Accessory is already exist');
-            //     return back()->withInput();
-            // }
+            if($request->hasFile('image2'))
+            {
+                $filename2 = $this->ResizeImageOther($request->file('image2'));
+            }
+            else
+            {
+                $filename2 ='';
+            }
+
+
+            if($request->hasFile('image3'))
+            {
+                $filename3 = $this->ResizeImageOther($request->file('image3'));
+            }
+            else
+            {
+                $filename3 ='';
+            }
+
+
+            if($request->hasFile('image4'))
+            {
+                $filename4 = $this->ResizeImageOther($request->file('image4'));
+            }
+            else
+            {
+                $filename4 ='';
+            }
+
+
+            if($request->hasFile('image5'))
+            {
+               $filename5 = $this->ResizeImageOther($request->file('image5'));
+            }
+            else
+            {
+                $filename5 ='';
+            }
+
+
+            if($request->hasFile('image6'))
+            {
+                $filename6 = $this->ResizeImageOther($request->file('image6'));
+            }
+            else
+            {
+                $filename6 ='';
+            }
+
+            if($request->hasFile('image7'))
+            {
+                $filename7 = $this->ResizeImageOther($request->file('image7'));
+            }
+            else
+            {
+                $filename7 ='';
+            }
+
+            if($request->hasFile('image8'))
+            {
+                $filename8 = $this->ResizeImageOther($request->file('image8'));
+            }
+            else
+            {
+                $filename8 ='';
+            }
 
             $accessory = new  SellAccessory();
             $accessory->user_id=$request->user_id;
@@ -67,17 +144,26 @@ class SellAccessoryController extends Controller
             $accessory->city = $request->city;
             $accessory->phone = $request->phone;
             $accessory->img = $this->ResizeImage($request->file('image1'));
+            $accessory->img2 = $filename2;
+            $accessory->img3 = $filename3;
+            $accessory->img3 = $filename3;
+            $accessory->img4 = $filename4;
+            $accessory->img5 = $filename5;
+            $accessory->img6 = $filename6;
+            $accessory->img7 = $filename7;
+            $accessory->img8 = $filename8;
+
             if ($accessory->save())
             {
                 $request->session()->flash('msg','Accessory has been added successfully');
-                return back();
+                return back()->withInput($request->only('product_check'));
             }
         }
     }
 
     public function frontEndAccessories()
     {
-        $accessories = SellAccessory::orderBy('id','desc')->paginate(1);
+        $accessories = SellAccessory::orderBy('id','desc')->paginate(4);
         $brands = Brand::select('brands.name','brands.id')->join('sell_accessories','brands.id','=','sell_accessories.brand_id')->distinct()->get();
         $cities = DB::select('SELECT city,COUNT(city) total FROM `sell_accessories` GROUP by city');
         return view('buy_used_accessories',compact(['accessories','brands','cities']));
@@ -85,7 +171,7 @@ class SellAccessoryController extends Controller
 
     public function BuyUsedAccessoriesData(Request $request)
     {
-        $accessories = SellAccessory::orderBy('id','desc')->paginate(1);
+        $accessories = SellAccessory::orderBy('id','desc')->paginate(4);
         return view('partials.sell_accessories_list',compact('accessories'));
     }
 

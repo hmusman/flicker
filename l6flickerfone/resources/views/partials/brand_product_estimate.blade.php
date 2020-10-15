@@ -106,24 +106,24 @@
           color: black;">Battery Status?</p>
 
 
-<select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
-                                    <option disabled="" selected="">Select Status</option>
-                                    @for($i=5; $i<=10; $i++)
-                                      <option value="{{ $i*10 }}" @if(old('battery')==$i*10) selected @endif >{{ $i*10 }} %</option>
-                                    @endfor
+          <select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
+            <option disabled="" selected="">Select Status</option>
+            @for($i=5; $i<=10; $i++)
+              <option value="{{ $i*10 }}" @if(old('battery')==$i*10) selected @endif >{{ $i*10 }} %</option>
+            @endfor
 
-                                    <option value="others">Others</option>
-                                  </select>
-
-
+            <option value="others">Others</option>
+          </select>
 
 
-                                  <!-- <input type="text" name="color" id="color" /> -->
-                                  <input class="form-control" type="number" name="" value="" placeholder="Enter Integer Value Ex 52 " id="otherInputField" style='display:none;
-                                   margin-top:17px '>
-                                  @error('battery')
-                                      <p class="text-danger mt-3">{{ $message }}</p>
-                                  @enderror
+
+
+        <!-- <input type="text" name="color" id="color" /> -->
+        <input class="form-control" type="number" name="" value="" placeholder="Enter Integer Value Ex 52 " id="otherInputField" style='display:none;
+         margin-top:17px '>
+        @error('battery')
+            <p class="text-danger mt-3">{{ $message }}</p>
+        @enderror
 <!-- 
         <div>
           <input type="hidden" name="" id="device_battery_status" value="{{ $csproduct->device_battery_status }}">
@@ -191,7 +191,10 @@
          <br/>
       <center style="color: blue ;font-weight: 500; font-size: 20px;">  <sup>  PKR</sup><font style="font-size: 6vw;margin-left: 5px;" id="estimate_price"> 0</font>  </center>  </p>
         
-        
+        <input type="hidden" id="estimated_product_name" value="{{ $csproduct->name }}">
+        <input type="hidden" id="estimated_product_color" value="{{ $csproduct->color }}">
+        <input type="hidden" id="estimated_product_brand" value="{{ $csproduct->brand_id }}">
+        <input type="hidden" id="estimated_phone_price" value="0">
         </div>
         <div style="height: 10%; width: 100%;background-color: #f3f1f2; ">
         
@@ -199,7 +202,10 @@
     text-decoration: none;
 "><p style="background-color: #4a88c2;
         width: 66%;
-        padding: 10px;">Get your product listed</p></a></center>
+        
+
+        padding: 10px; cursor: pointer;" onclick="ProductEstimateData();">Get your product listed</p></center>
+
         
         </div>
       </div>
@@ -216,6 +222,28 @@
   </div>
 
   <script type="text/javascript">
+    function ProductEstimateData()
+    {
+      if($('#minor-on').is(':checked')){ var minor = "yes";} else if($('#minor-off').is(':checked')){ var minor ="no"; }
+      if($('#major-on').is(':checked')){ var major = "yes";} else if($('#major-off').is(':checked')){ var major ="no"; }
+      if($('#accessory-on').is(':checked')){ var accessory = "yes";} else if($('#accessory-off').is(':checked')){ var accessory ="no"; }
+      if($('#screen-on').is(':checked')){ var screen = "yes";} else if($('#screen-off').is(':checked')){ var screen ="no"; }
+      if($('#device-on').is(':checked')){ var device = "yes";} else if($('#device-off').is(':checked')){ var device ="no"; }
+      var battery = $('.battery option:selected').val();
+      var price = $('#estimated_phone_price').val();
+      var name = $('#estimated_product_name').val();
+      var brand = $('#estimated_product_brand').val();
+      var color = $('#estimated_product_color').val();
+      $.ajax({
+        url:"{{ route('ProductEstimateData') }}",
+        type:"get",
+        data:{name:name,brand:brand,color:color,minor:minor,major:major,accessory:accessory,screen:screen,device:device,battery:battery,price:price},
+        success:function(data){
+          window.location=data;
+        }
+      });
+    }
+
     function estimate_fun()
     {
        var estimate_deduction =0;
@@ -731,22 +759,11 @@
         if($('.battery').children("option:selected").val() >0)
         {
           $('#estimate_price').html(price - estimate_deduction);
+          $('#estimated_phone_price').val(price - estimate_deduction);
           $('#grading').html(grading);        
         }
       }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     
   $('#otherInputField').keyup(function(){
@@ -773,13 +790,13 @@
 
 
 
-function OtherPerc(val){
- var element=document.getElementById('otherInputField');
- if(val=='pick a color'||val=='others')
-   element.style.display='block';
- else  
-   element.style.display='none';
-}
+  function OtherPerc(val){
+   var element=document.getElementById('otherInputField');
+   if(val=='pick a color'||val=='others')
+     element.style.display='block';
+   else  
+     element.style.display='none';
+  }
 
   </script>
 

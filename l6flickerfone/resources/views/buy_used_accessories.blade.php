@@ -1082,6 +1082,9 @@ margin-top: 90px;">
 <br/>
 
 
+<div class="row" style="    margin-left: 15px;margin-bottom: 15px;">
+  <a href="{{ route('BuyUsedMobilePhones') }}"  style="background-color: #4a88c2; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px;">Buy Used Mobiles</a>
+</div>
 
 <div class="row" style="margin-bottom:30px;">
   <div class="col-md-3" >
@@ -1696,6 +1699,7 @@ margin-top: 90px;">
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#price").val("Select Price");
+      $("#upperInpt").val("");
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
 
@@ -1726,6 +1730,7 @@ margin-top: 90px;">
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#price").val("Select Price");
+      $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
           var cities = $('.city_check:checked').map(function(){ return $(this).val();}).get();
@@ -1760,7 +1765,7 @@ margin-top: 90px;">
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#price").val("Select Price");
-
+      $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
         FetchPriceAccessories(0,from,to,options);

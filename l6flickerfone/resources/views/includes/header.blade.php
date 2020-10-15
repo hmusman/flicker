@@ -77,10 +77,10 @@
           <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
           style="padding: 8px 30px 6px 30px !important;  height: 38px ; ; border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> ACCESSORIES  </a>
-             @php $brands = App\AccessoryCategory::all() @endphp
+             @php $accessories = App\AccessoryCategory::select('accessory_categories.title','accessory_categories.id')->join('accessories','accessory_categories.id','=','accessories.accessory_category_id')->distinct()->get() @endphp
             <ul class="dropdown-menu fade-up">
-              @foreach($brands as $accessory)
-                   <li><a class="dropdown-item" href="#"> <center>{{ ucwords($accessory->title) }}</center></a></li>
+              @foreach($accessories as $accessory)
+                   <li><a class="dropdown-item" href="{{ route('NewCategoryAccessories',$accessory->id) }}"> <center>{{ ucwords($accessory->title) }}</center></a></li>
               @endforeach
             </ul>
           
