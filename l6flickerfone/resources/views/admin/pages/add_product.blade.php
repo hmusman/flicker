@@ -363,10 +363,10 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-7 row"> 
+                                                   <!--  <div class="col-md-7 row"> 
                                                         <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
 
                                                 <div class="form-group row">
@@ -384,10 +384,10 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-7 row"> 
+                                                    <!-- <div class="col-md-7 row"> 
                                                         <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
-                                                    </div>
+                                                    </div> -->
 
                                                 </div>
 
@@ -406,10 +406,132 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-7 row"> 
+                                                   <!--  <div class="col-md-7 row"> 
                                                         <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 4</label>
+                                                    <div class="col-md-3"> 
+                                                        <div class="fallback">
+                                                            <input name="image4" type="file">
+                                                            @error('image4')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+
+                                                        </div>
                                                     </div>
+
+                                                    <!-- <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 5</label>
+                                                    <div class="col-md-3"> 
+                                                        <div class="fallback">
+                                                            <input name="image5" type="file">
+                                                            @error('image5')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                            
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 6</label>
+                                                    <div class="col-md-3"> 
+                                                        <div class="fallback">
+                                                            <input name="image6" type="file">
+                                                            @error('image6')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 7</label>
+                                                    <div class="col-md-3"> 
+                                                        <div class="fallback">
+                                                            <input name="image7" type="file">
+                                                            @error('image7')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 8</label>
+                                                    <div class="col-md-3"> 
+                                                        <div class="fallback">
+                                                            <input name="image8" type="file">
+                                                            @error('image8')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                 <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 9</label>
+                                                    <div class="col-md-3"> 
+                                                        <div class="fallback">
+                                                            <input name="image9" type="file">
+                                                            @error('image9')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 10</label>
+                                                    <div class="col-md-3"> 
+                                                        <div class="fallback">
+                                                            <input name="image10" type="file">
+                                                            @error('image10')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
                                                 </div>
 
                                                 <div class="form-group row">

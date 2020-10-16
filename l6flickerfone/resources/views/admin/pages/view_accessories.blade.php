@@ -44,7 +44,7 @@
                                         <div class="alert alert-success col-md-4">{{ Session::get('msg') }}</div>
                                     @endif
 
-                                    <table class="table table-striped table-responsive">
+                                    <table id="datatable" class="table table-striped table-responsive">
                                        <thead>
                                            <tr>
                                                <th>#</th>

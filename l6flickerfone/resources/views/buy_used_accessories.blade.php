@@ -456,7 +456,7 @@ div[class="ws-title"] > span{
 <style>
 
 img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
-  height: 65px !important;
+  height: 57px !important;
     /* top: -1px; */
     margin-top: -8px;
     margin-bottom: -8px;
@@ -1083,7 +1083,7 @@ margin-top: 90px;">
 
 
 <div class="row" style="    margin-left: 15px;margin-bottom: 15px;">
-  <a href="{{ route('BuyUsedMobilePhones') }}"  style="background-color: #4a88c2; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px;">Buy Used Mobiles</a>
+  <a href="{{ route('BuyUsedMobilePhones') }}"  style="background-color: #0071e3; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;">Buy Used Mobiles</a>
 </div>
 
 <div class="row" style="margin-bottom:30px;">

@@ -13,6 +13,17 @@
    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
    <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
    <style>
+
+      .img-thumbnail{
+         border: none !important;
+      }
+      figure{
+             border-right: 1px #F3F3F3 solid;
+    border-left: 1px #F3F3F3 solid;
+      }
+      .slick-slide{
+         margin: 0px !important;
+      }
       #myInput {
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
@@ -266,7 +277,7 @@
    </style>
    <style>
       img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
-      height: 65px !important;
+      height: 57px !important;
       /* top: -1px; */
       margin-top: -8px;
       margin-bottom: -8px;
@@ -470,6 +481,11 @@
          </div>
       </section>
       @endif
+
+
+
+
+      
       <section>
          <div class="pricecalculatorbackground pcback" >
             <div class="pc">
@@ -610,7 +626,7 @@
                                              <p style="font-size: 15px;   font-variant: all-small-caps;color: #000000; ">{{ $product->name }}</p>
                                           </center>
                                           <center>
-                                             <div class="shortdesc" style=" color: #959595 ;  font-size: 11px;   ">Computer in your pocket</div>
+                                             <div class="shortdesc" style=" color: #959595 ;  font-size: 11px;   ">It is in your pocket</div>
                                           </center>
                                        </div>
 
@@ -674,7 +690,7 @@
              $('.autoplayFeatures').slick({
        slidesToShow: 5,
        slidesToScroll: 5,
-        autoplay: true,
+      //   autoplay: true,
        autoplaySpeed: 3000,
       
       

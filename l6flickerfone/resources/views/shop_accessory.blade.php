@@ -471,10 +471,13 @@ color: #0071e3 !important;
   @include('includes.header')
 
 <div class="container mt-30">
-<div class="row">
-  <div class="col-md-12" style="color: gray;">
-    HOME / ACCESSORIES / BRANDS
+<div class="row" style="margin-bottom: 15px;">
+  <div class="col-md-9" style="color: gray;">
+     <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'"  target="_blank">HOME </a> / ACCESSORIES
   </div>
+ <div class="col-md-3">
+      <a href="{{ route('Shop') }}" style="background-color: #0071e3; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Mobiles</a>
+</div>
 </div>
 
 
@@ -532,7 +535,7 @@ color: #0071e3 !important;
         
         </div>
 
-        <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px;">Reset</button></div>
+        <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="background: #0071e3 !important; font-weight: bold; margin-top: 20px;">Reset</button></div>
       </div>
     </div>
   </div>

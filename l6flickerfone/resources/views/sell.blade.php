@@ -359,7 +359,7 @@ ul[class="dropdown-menu fade-up show"] > li{
 <style>
 
 img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
-  height: 65px !important;
+  height: 57px !important;
     /* top: -1px; */
     margin-top: -8px;
     margin-bottom: -8px;
@@ -680,7 +680,9 @@ color: black;
   <div class="col-md-6" >
                           <input type="hidden" id="user_id" name="user_id" value=" @if(!empty(Session::get('user'))) {{ Session::get('user')->id }} @endif">
                           <input type="hidden" name="status" value="" id="status">
+
                           <div class="form-group row" style="display:none !important;">
+
                               <label for="example-text-input" class="col-md-4 col-form-label">Category</label>
                               <div class="col-md-8">
                                   
@@ -694,7 +696,7 @@ color: black;
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
                               </div>
-                          </div>
+                          </div> -->
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">Brand</label>
@@ -715,8 +717,9 @@ color: black;
 
                           <div class="form-group row  hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">Product Name</label>
+                              @if(!empty(Session::get('EstimateData'))) @php $model = Session::get('EstimateData')['name'] @endphp @else  @php $model = old('model') @endphp @endif
                               <div class="col-md-8">
-                                  <input class="form-control" type="text" value="@if(!empty(Session::get('EstimateData'))) {{Session::get('EstimateData')['name']}} @else old('model') @endif" name="model" placeholder="Enter Name" id="example-text-input">
+                                  <input class="form-control" type="text" value="{{ $model }}" name="model" placeholder="Enter Name" id="example-text-input">
                                   @error('model')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -725,8 +728,9 @@ color: black;
 
                           <div class="form-group row hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">Color</label>
+                              @if(!empty(Session::get('EstimateData'))) @php $color = Session::get('EstimateData')['color'] @endphp @else  @php $color = old('color') @endphp @endif
                               <div class="col-md-8">
-                                  <input class="form-control" type="text" value="@if(!empty(Session::get('EstimateData'))) {{Session::get('EstimateData')['color']}} @else old('color') @endif" name="color" placeholder="Enter Color" id="example-text-input">
+                                  <input class="form-control" type="text" value="{{ $color }}" name="color" placeholder="Enter Color" id="example-text-input">
                                   @error('color')
                                       <p class="text-danger mt-3">{{ $message }}</p>
                                   @enderror
@@ -1268,27 +1272,41 @@ color: black;
                           <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
                           </div>
                         </div>
+                        @error('image1')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                       </div>
                
                       <div class="text-center mt-4 col-md-3">
+
                         <input type="file" name="image2" style="display:none;" id="imgInput2" onchange="fileChangeFun(this,$('#DropZonIcon2'),2);"/> 
                         <div class="dropzone" id="DropZonIcon2">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(2);" id="imgFullWidthDiv2"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
+                        @error('image2')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                       </div>
                   
                       <div class="text-center mt-4 col-md-3" >
+
                         <input type="file" name="image3" style="display:none;" id="imgInput3" onchange="fileChangeFun(this,$('#DropZonIcon3'),3);"/> 
                         <div class="dropzone" id="DropZonIcon3">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(3);" id="imgFullWidthDiv3"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
+                        @error('image3')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3" >
+                      <div class="text-center mt-4 col-md-3" >
                         <input type="file" name="image4" style="display:none;" id="imgInput4" onchange="fileChangeFun(this,$('#DropZonIcon4'),4);"/> 
                         <div class="dropzone" id="DropZonIcon4">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(4);" id="imgFullWidthDiv4"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
+                        @error('image4')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                       </div>
                     </div>
                   </div>
@@ -1298,34 +1316,48 @@ color: black;
                     <div class="card-body row">
 
                       <div class="text-center mt-4 col-md-3" id="" >
+
                         <input type="file" name="image5" style="display:none;" id="imgInput5" onchange="fileChangeFun(this,$('#DropZonIcon5'),5);"/> 
                         <div class="dropzone" id="DropZonIcon5">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(5);" id="imgFullWidthDiv5"><img src="NewZoomerImages/ic_backup_black_48dp.png" />
                           <p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p>
                           </div>
+                          @error('image5')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                         </div>
                       </div>
                
                       <div class="text-center mt-4 col-md-3">
+
                         <input type="file" name="image6" style="display:none;" id="imgInput6" onchange="fileChangeFun(this,$('#DropZonIcon6'),6);"/> 
                         <div class="dropzone" id="DropZonIcon6">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(6);" id="imgFullWidthDiv6"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
+                        @error('image6')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                       </div>
-                  
-                      <div class="text-center mt-4 col-md-3" >
+                     <div class="text-center mt-4 col-md-3" >
+
                         <input type="file" name="image7" style="display:none;" id="imgInput7" onchange="fileChangeFun(this,$('#DropZonIcon7'),7);"/> 
                         <div class="dropzone" id="DropZonIcon7"style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(7);" id="imgFullWidthDiv7"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
                         </div>
+                        @error('image7')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                       </div>
                       
-                        <div class="text-center mt-4 col-md-3 " >
+                      <div class="text-center mt-4 col-md-3 " >
                         <input type="file" name="image8" style="display:none;" id="imgInput8" onchange="fileChangeFun(this,$('#DropZonIcon8'),8);"/> 
                         <div class="dropzone" id="DropZonIcon8" style="height: 195px;">
                           <div style="width:100%; height:100%;" onclick="fullWidthInputCall(8);" id="imgFullWidthDiv8"><img src="NewZoomerImages/ic_backup_black_48dp.png" /><p style="color: grey;margin-top: 16px;font-size: 14px;width: 100%;">Please Select Your Photo</p></div>
 
                         </div>
+                        @error('image8')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
                      </div>
                   </div>
 
