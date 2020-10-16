@@ -626,7 +626,7 @@
                                              <p style="font-size: 15px;   font-variant: all-small-caps;color: #000000; ">{{ $product->name }}</p>
                                           </center>
                                           <center>
-                                             <div class="shortdesc" style=" color: #959595 ;  font-size: 11px;   ">Computer in your pocket</div>
+                                             <div class="shortdesc" style=" color: #959595 ;  font-size: 11px;   ">It is in your pocket</div>
                                           </center>
                                        </div>
 

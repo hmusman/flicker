@@ -84,7 +84,14 @@ class ProductController extends Controller
             'description'=>'required',
             'image1'=>'required|mimes:png,jpg,jpeg',
             'image2'=>'required|mimes:png,jpg,jpeg',
-            'image3'=>'required|mimes:png,jpg,jpeg'
+            'image3'=>'required|mimes:png,jpg,jpeg',
+            'image4'=>'required|mimes:png,jpg,jpeg',
+            'image5'=>'required|mimes:png,jpg,jpeg',
+            'image6'=>'required|mimes:png,jpg,jpeg',
+            'image7'=>'required|mimes:png,jpg,jpeg',
+            'image8'=>'required|mimes:png,jpg,jpeg',
+            'image9'=>'required|mimes:png,jpg,jpeg',
+            'image10'=>'required|mimes:png,jpg,jpeg',
         ]);
 
         if($validations->fails())
@@ -111,6 +118,13 @@ class ProductController extends Controller
             $filename1 = $this->ResizeImage($request->file('image1'));
             $filename2 = $this->ResizeImageOther($request->file('image2'));
             $filename3 = $this->ResizeImageOther($request->file('image3'));
+            if($request->hasFile('image4')){$filename4 = $this->ResizeImageOther($request->file('image4'));}
+            if($request->hasFile('image5')){$filename5 = $this->ResizeImageOther($request->file('image5'));}
+            if($request->hasFile('image6')){$filename6 = $this->ResizeImageOther($request->file('image6'));}
+            if($request->hasFile('image7')){$filename7 = $this->ResizeImageOther($request->file('image7'));}
+            if($request->hasFile('image8')){$filename8 = $this->ResizeImageOther($request->file('image8'));}
+            if($request->hasFile('image9')){$filename9 = $this->ResizeImageOther($request->file('image9'));}
+            if($request->hasFile('image10')){$filename10 = $this->ResizeImageOther($request->file('image10'));}
             if(Product::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
             {
                 
@@ -167,6 +181,13 @@ class ProductController extends Controller
                 'image'=> $filename1,
                 'dimage' => $filename2,
                 'dimage1' => $filename3,
+                'img4'=> $filename4,
+                'img5' => $filename5,
+                'img6' => $filename6,
+                'img7'=> $filename7,
+                'img8' => $filename8,
+                'img9' => $filename9,
+                'img10' => $filename10,
                 'description' => $request->description,
                 'category_id' => $request->category,
                 "video_link" => $request->video_link,  
@@ -189,29 +210,33 @@ class ProductController extends Controller
                
                 if ($product)
                 {
-                    for($i=0; $i<count($request->variation_color); $i++)
+                    if(count($request->variation_color)>0)
                     {
-                        if($request->variation_color[$i] !='')
+                        for($i=0; $i<count($request->variation_color); $i++)
                         {
-                            for($j=0; $j<count($request->variation_storage[$i]); $j++)
+                            if($request->variation_color[$i] !='')
                             {
-                                $vari_img = $request->variation_image; 
-                                if(!empty($vari_img[$i]))
+                                for($j=0; $j<count($request->variation_storage[$i]); $j++)
                                 {
-                                    $f = $this->ResizeImageOther($vari_img[$i]);
+                                    $vari_img = $request->variation_image; 
+                                    if(!empty($vari_img[$i]))
+                                    {
+                                        $f = $this->ResizeImageOther($vari_img[$i]);
+                                    }
+
+                                    $variation = new ColorVariation();
+                                    $variation->product_id = $product->id;
+                                    $variation->color = $request->variation_color[$i];
+                                    $variation->storage = $request->variation_storage[$i][$j];
+                                    $variation->price = $request->variation_price[$i][$j];
+                                    $variation->img= $f;
+                                    $variation->save();
                                 }
 
-                                $variation = new ColorVariation();
-                                $variation->product_id = $product->id;
-                                $variation->color = $request->variation_color[$i];
-                                $variation->storage = $request->variation_storage[$i][$j];
-                                $variation->price = $request->variation_price[$i][$j];
-                                $variation->img= $f;
-                                $variation->save();
                             }
-
                         }
                     }
+                    
 
                     $request->session()->flash('msg',"Product has been added successfully");
                     return redirect()->route('Product.index');
@@ -408,6 +433,14 @@ class ProductController extends Controller
                 $filename3 = $request->oldImage3;
             }
 
+            if($request->hasFile('image4')){$filename4 = $this->ResizeImageOther($request->file('image4'));}else{$filename4 = $request->oldImage4;}
+            if($request->hasFile('image5')){$filename5 = $this->ResizeImageOther($request->file('image5'));}else{$filename5 = $request->oldImage5;}
+            if($request->hasFile('image6')){$filename6 = $this->ResizeImageOther($request->file('image6'));}else{$filename6 = $request->oldImage6;}
+            if($request->hasFile('image7')){$filename7 = $this->ResizeImageOther($request->file('image7'));}else{$filename7 = $request->oldImage7;}
+            if($request->hasFile('image8')){$filename8 = $this->ResizeImageOther($request->file('image8'));}else{$filename8 = $request->oldImage8;}
+            if($request->hasFile('image9')){$filename9 = $this->ResizeImageOther($request->file('image9'));}else{$filename9 = $request->oldImage9;}
+            if($request->hasFile('image10')){$filename10 = $this->ResizeImageOther($request->file('image10'));}else{$filename10 = $request->oldImage10;}
+
             $product = Product::find($id);
             $name = str_replace('_',' ',$request->name);
             $product->brand_id = $request->brand;
@@ -456,6 +489,13 @@ class ProductController extends Controller
             $product->image = $filename1;
             $product->dimage = $filename2;
             $product->dimage1 = $filename3;
+            $product->img4 = $filename4;
+            $product->img5 = $filename5;
+            $product->img6 = $filename6;
+            $product->img7 = $filename7;
+            $product->img8 = $filename8;
+            $product->img9 = $filename9;
+            $product->img10 = $filename10;
             $product->description = $request->description;
             $product->category_id = $request->category;
             $product->video_link = $request->video_link;
@@ -477,31 +517,35 @@ class ProductController extends Controller
 
             if ($product->save())
             {
-                ColorVariation::where('product_id',$id)->delete();
-                for($i=0; $i<count($request->variation_color); $i++)
+                
+                if(count($request->variation_color)>0)
                 {
-                    if($request->variation_color[$i] !='')
+                    ColorVariation::where('product_id',$id)->delete();
+                    for($i=0; $i<count($request->variation_color); $i++)
                     {
-                        for($j=0; $j<count($request->variation_storage[$i]); $j++)
+                        if($request->variation_color[$i] !='')
                         {
-                            $vari_img = $request->variation_image; 
-                            if(!empty($vari_img[$i]))
+                            for($j=0; $j<count($request->variation_storage[$i]); $j++)
                             {
-                                $f = $this->ResizeImageOther($vari_img[$i]);
-                            }
-                            else
-                            {
-                                $f =$request->old_variation_img[$i];
-                            }
-                            $variation = new ColorVariation();
-                            $variation->product_id = $product->id;
-                            $variation->color = $request->variation_color[$i];
-                            $variation->storage = $request->variation_storage[$i][$j];
-                            $variation->price = $request->variation_price[$i][$j];
-                            $variation->img= $f;
-                            $variation->save();
-                        }
+                                $vari_img = $request->variation_image; 
+                                if(!empty($vari_img[$i]))
+                                {
+                                    $f = $this->ResizeImageOther($vari_img[$i]);
+                                }
+                                else{
+                                    $f = $request->old_variation_img[$i];
+                                }
 
+                                $variation = new ColorVariation();
+                                $variation->product_id = $product->id;
+                                $variation->color = $request->variation_color[$i];
+                                $variation->storage = $request->variation_storage[$i][$j];
+                                $variation->price = $request->variation_price[$i][$j];
+                                $variation->img= $f;
+                                $variation->save();
+                            }
+
+                        }
                     }
                 }
                 $request->session()->flash('msg',"Product has been updated successfully");

@@ -34,7 +34,7 @@ class LoginAndRegisterController extends Controller
     		// 'buyer_password_confirm'=>'bail | required | min:8 ',
     		'buyer_city'=>'bail | required',
     		'buyer_phone'=>'bail | required | numeric',
-    		'buyer_company'=>'bail | required | alpha',
+    		'buyer_company'=>'bail | required',
 
     	]);
     	if ($buyer_validation->fails())
@@ -81,7 +81,7 @@ class LoginAndRegisterController extends Controller
     		// 'password_confirm'=>'bail | required | min:8 ',
     		'city'=>'bail | required',
     		'phone'=>'bail | required | numeric',
-    		'shop'=>'bail | required | alpha',
+    		'shop'=>'bail | required',
 
     	]);
     	if ($seller_validation->fails())

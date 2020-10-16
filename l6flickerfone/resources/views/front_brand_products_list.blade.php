@@ -392,7 +392,7 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12" style="color: gray;">
-               HOME / PHONES / {{ strtoupper($brand->name) }}
+               <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a> / {{ strtoupper($brand->name) }}
             </div>
          </div>
       </div>

@@ -1,52 +1,175 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+
+<head>
+  <title>iphone 8</title>
+
+  <meta name="description" content="<Flicker fone is the best mobile phone site for information and best mobile phone information site such as specifications, updated prices, features comparison and upcoming future updates of phones in Pakistan. >">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+    <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 
 
+<script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
+    
 
+        
 
-  </head>
-  <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-  <!-- <link href="{{ asset('css/style.css')}}" rel='stylesheet' type='text/css' media="all"> -->
-  <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/ProductDetail.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/template1/tabcontent.css') }}" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="{{ asset('OriginalZoomer/ScrollJS2//style.css') }}">
+<link href="{{ asset('OriginalZoomer/css/cloudzoom.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('OriginalZoomer/css/thumbnail.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('OriginalZoomer/css/zoomcss.css') }}" rel="stylesheet" type="text/css">
+ 
+
+ <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
+ 
+  <link href="{{ asset('css/ProductDetailTwo.css') }}" rel='stylesheet' type='text/css' media="all">
+  <link href="{{ asset('css/template4/tabcontent.css') }}" rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-
-  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/magnifier.css') }}">
-
-
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
+</head>
 
 
+<style>
+
+#aug20onmob, #zeroCpOnMobile{
+   color: #848388 !important
+}
+#LoremResp{
+       color: #727178 !important;
+}
+
+.img-thumbnail{
+       border: 1px solid #fff !important;
+}
 
 
- <style>
-   #clickopinon{
-cursor: pointer;
-   }
- </style>
-
-<body>
+/* @media (min-width: 1200px){
+#OpinonrowOne , #OpinonrowTwo , #OpinonrowThree{
+    width: 724px !important;
+}
+} */
 
 
+body {font-family: Arial, Helvetica, sans-serif;}
 
-  <a href="#" id="scroll" style="display: none;"><span></span></a>
-  @include('includes.header');
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+    padding: 17px 16px;
+    color: white;
+    font-size: 26px;
+}
+button[class="close"]{
+  background-color: gray !important;
+}
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+ color: black;
+    padding: 16px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 15px) !important;
+}
+</style>
+<style>
+  #logoFlickerflone{
+    height: 49px !important;
+  }
+
+
+  .navbar {
+   margin-bottom: 0px !important;
+   min-height: 37px !important;
+  }
+
+
+a[class="nav-link  dropdown-toggle"]{
+  height: 33px !important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+   
+    background-color: transparent !important;
+}
+
+
+</style>
+
+<body style="overflow-x: hidden;">
+
+
+       <a href="#" id="scroll" style="display: none;"><span></span></a>
+      @include('includes.header')
+   
 
 <br/>
 <div class="container">
 <div class="row">
   <div class="col-md-12 text-uppercase" style="color: gray;">
-    <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a> /  <a href="{{ route('BrandProductsList',$product->Productbrand->id) }}" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">{{ $product->Productbrand->name }} </a> / {{ $product->name }}
+    HOME / {{ $product->category->title }} / {{ $product->Productbrand->name }} / {{ $product->name }}
   </div>
 </div>
 
@@ -56,238 +179,182 @@ cursor: pointer;
 
 <br/>
 
-<br/>
+<section >
+   <div class="container" >
+      <div class="row">
+         <div class="col-sm-6 ">
 
 
-<div class="row" style="margin-top: 31px;">
-  <div class="col-md-6" >
-
-	@php $img1 = $product->image @endphp
-      @php $img1_400 = '/storage/admin/images/product/thumbnail/400_'.$product->image @endphp
-      @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
-    	@php $img2 = $product->dimage @endphp
-    	@php $img3 = $product->dimage1 @endphp
+@php $img1 = $product->image @endphp
+      @php $img1_400 = '/storage/admin/images/product/thumbnail/'.$product->image @endphp
+     
+         @php $img2_400 = '/storage/admin/images/product/thumbnail/'.$product->dimage @endphp
+      @php $img3_400 = '/storage/admin/images/product/thumbnail/'.$product->dimage1 @endphp
+     
+        @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
+      @php $img2 = $product->dimage @endphp
+      @php $img3 = $product->dimage1 @endphp
 
       @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
       @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
       @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
 
- <!-- <div class="loupe-widget js-loupe">
-  <div class="loupe-widget__loupe js-loupe-element"></div>
-  <div id="image_container">
-    <img id="myimage" style="    width: 100%;" class="loupe-widget__image js-loupe-image" src="{{asset($img1_400)}}" alt="image" data-image-full="{{asset($img1_700)}}"/>
-  </div>
-  
-</div> -->
-
-<div>
-    <a  class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
-        <img id="thumb"
-           src="{{ asset($img1_400)}}">
-    </a>
-    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px"></div>
-</div>
-
-
-<div >
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-
-
-  <div class="row" >
-  
-    <div class="col-md-12 col-lg-12 col-sm-12" id="slickBtnFor">
-    
-      <div class="autoplayFeatures">
-        
-         @if(!empty($img1))
-
-          <figure  >
-            <img class="productImgs" data-id="{{ $product->image }}" class="img-thumbnail" src="{{ asset($img1_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-          </figure>
-
-        @endif
-
-        @if(!empty($img2))
-
-        	<figure  >
-	          <img class="productImgs" data-id="{{ $product->dimage }}" class="img-thumbnail" src="{{ asset($img2_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-	        </figure>
-
-      	@endif
-
-
-
-
-        @if(!empty($img3))
-
-        	<figure  >
-	          <img class="productImgs" data-id="{{ $product->dimage1 }}" class="img-thumbnail" src="{{ asset($img3_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-	        </figure>
-
-      	@endif
-       
-        
-        </div>
       
-      </div>
 
 
-    
-    </div>
+            <div id="surround" align="center">
+               <img class="cloudzoom img-responsive" alt ="Small image" id ="zoom1" src="{{ ($img1_400) }}" 
+                  data-cloudzoom='  zoomSizeMode:"image",     autoInside: 500 '>
+               
+                  <div id="slider1">
+                  <div class="thumbelina-but horiz left">
+                     <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_left_black_18dp.png')}}">
+                  </div>
+                  <ul class="ClousSlicker">
+
+                    
+                     @if(!empty($img1))
+                     <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img1_400)}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}'  " style='max-width:90px;max-height:100px;'>
+                      </li>
+                      @endif
+                     
+                     
+                       @if(!empty($img2))
+                        <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_400)}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img2_400)}}'  " style='max-width:90px;max-height:100px;'></li>
+                          @endif
 
 
-  </div>
+                      @if(!empty($img3))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img3_400)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img3_400)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                       @endif
+<!-- 
 
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}'  " style='max-width:90px;max-height:100px;'>
+                      </li>
 
-</div>
-  </div>
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
+                   
+                   
+                        <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}"
+                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}'  "
+                        style='max-width:90px;max-height:100px;'></li>
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}"
+                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}'  "
+                        style='max-width:90px;max-height:100px;'></li> -->
 
-  <div class="col-md-6" style="    margin-top: -70px;color: black !important;">
-
-
+                  </ul>
+                  <div class="thumbelina-but horiz right">
+                     <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_right_black_18dp.png')}}">
+                  </div>
+               </div>
+            </div>
+         </div>
+        
+<div class="col-md-6" style="  color: black !important;">
    <h4 style="font-size: 18px !important;">{{ ucwords($product->name) }}</h4>
    <p>{{ $product->storage }}</p>
-
-
-
    @if($product->detail_check==1)
-      {!! $product->other_detail !!}
+   {!! $product->other_detail !!}
    @else
-    <ol type="circle"> 
-      @if($product->os !='') <li>{{ $product->os }}</li> @endif
-
-      @if($product->processor !='') <li>{{ $product->processor }}</li> @endif
-
-      @if($product->memory !='') <li>{{ $product->memory }}</li> @endif
-      @if($product->camera !='') <li>{{ $product->camera }}</li> @endif
-      @if($product->size !='') <li>{{ $product->size }}</li> @endif
-      @if($product->resolution !='') <li>{{ $product->resolution }}</li> @endif
-      @if($product->connectivity !='') <li>{{ $product->connectivity }}</li> @endif
-      @if($product->battery !='') <li>{{ $product->battery }}</li> @endif
-      @if($product->height !='') <li>{{ $product->height }}</li> @endif
-      @if($product->width !='') <li>{{ $product->width }}</li> @endif
-      @if($product->breif_weight !='') <li>{{ $product->breif_weight }}</li> @endif
-
-    </ol>
+   <ol type="circle">
+      @if($product->os !='') 
+      <li>{{ $product->os }}</li>
+      @endif
+      @if($product->processor !='') 
+      <li>{{ $product->processor }}</li>
+      @endif
+      @if($product->memory !='') 
+      <li>{{ $product->memory }}</li>
+      @endif
+      @if($product->camera !='') 
+      <li>{{ $product->camera }}</li>
+      @endif
+      @if($product->size !='') 
+      <li>{{ $product->size }}</li>
+      @endif
+      @if($product->resolution !='') 
+      <li>{{ $product->resolution }}</li>
+      @endif
+      @if($product->connectivity !='') 
+      <li>{{ $product->connectivity }}</li>
+      @endif
+      @if($product->battery !='') 
+      <li>{{ $product->battery }}</li>
+      @endif
+      @if($product->height !='') 
+      <li>{{ $product->height }}</li>
+      @endif
+      @if($product->width !='') 
+      <li>{{ $product->width }}</li>
+      @endif
+      @if($product->breif_weight !='') 
+      <li>{{ $product->breif_weight }}</li>
+      @endif
+   </ol>
    @endif
-
-  
-<input type="hidden" value="{{ $product->id }}" id="product_id">
-
-<style type="text/css">
-	.color_active{ background: #42bd41 !important; color: white !important; }
-</style>
-<hr style="width: 80%;" />
-
-@if($product->variation_colors->count()>0)
-
-	<p style="font-weight: bold;">Color <font style="" class="colr"> *</font></p>
-
-	<div style="height: 100px; width: 100%;">
-		@php $productColor = '' @endphp
-		@php $i = 1 @endphp
-		@foreach($product->variation_colors as $color)
-			
-			@if($productColor != $color->color)
-				<div class="@if($i==1) color_active @endif productColorClass" id="mobviebtnsabove" style="width: 20%;  border: 2px #d3d3d3 solid ; cursor: pointer;float: left; text-align: center;    padding: 5px 10px 5px 10px;margin-right: 6px;
-				  border-radius: 6px;">
-				  <button id="mobviebtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: black;  font-weight: 500;">{{ ucwords($color->color) }}</button>
-				</div>
-
-			@endif
-			@php $productColor = $color->color; $i++; @endphp
-		@endforeach
-	  	&nbsp;&nbsp;&nbsp;
-	</div>	
-
-@endif
-
-
-
-
-@if($product->variation_colors->count()>0)
-  <p style="font-weight: bold;">Storage <font style="" class="colr"> *</font></p>
-@endif
-
-<div class="row">
-  <div class="col-md-3">
-    <div class="form-group">
-       @if($product->variation_colors->count()>0)
-          <select class="form-control" id="colorStorage" style="font-weight: bold !important; height: 35px !important; ">
-       
-          </select>
-        @endif
-       </div>
-
+   <input type="hidden" value="{{ $product->id }}" id="product_id">
+   <style type="text/css">
+      .color_active{ background: #42bd41 !important; color: white !important; }
+   </style>
+   <hr style="width: 80%;" />
+   @if($product->variation_colors->count()>0)
+   <p style="font-weight: bold;">Color <font style="" class="colr"> *</font></p>
+   <div style="height: 100px; width: 100%;">
+      @php $productColor = '' @endphp
+      @php $i = 1 @endphp
+      @foreach($product->variation_colors as $color)
+      @if($productColor != $color->color)
+      <div class="@if($i==1) color_active @endif productColorClass" id="mobviebtnsabove" style="width: 20%;  border: 2px #d3d3d3 solid ; cursor: pointer;float: left; text-align: center;    padding: 5px 10px 5px 10px;margin-right: 6px;
+         border-radius: 6px;">
+         <button id="mobviebtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: black;  font-weight: 500;">{{ ucwords($color->color) }}</button>
+      </div>
+      @endif
+      @php $productColor = $color->color; $i++; @endphp
+      @endforeach
+      &nbsp;&nbsp;&nbsp;
    </div>
-  <div class="col-md-2">
-   
-  </div>
-
-   <div class="col-md-3">
-
-
-    
-    <a style="position: absolute ;text-decoration: none ;  border: 2px #d0c6c6 solid;padding: 2px 20px 7px 20px;color: white !important; background-color: #42bd41; border-radius: 6px; height: 35px !important;cursor: pointer; " href="{{ route('AdviceComparison',$product->id) }}">COMPARE</a>
-
+   @endif
+   <p style="font-weight: bold;">Storage <font style="" class="colr"> *</font></p>
+   <div class="row">
+      <div class="col-md-3">
+         <div class="form-group">
+            <select class="form-control" id="colorStorage" style="font-weight: bold !important; height: 35px !important; ">
+            </select>
+         </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-3">
+         <a style="position: absolute ;text-decoration: none ;  border: 2px #d0c6c6 solid;padding: 2px 20px 7px 20px;color: white !important; background-color: #42bd41; border-radius: 6px; height: 35px !important;cursor: pointer; " href="{{ route('AdviceComparison',$product->id) }}">COMPARE</a>
+      </div>
+      <div class="col-md-4" id="comparebtm">
+      </div>
    </div>
-
-
-   <div class="col-md-4" id="comparebtm">
-     
+   <hr style="width: 80%;" />
+   <div class="row">
+      <div class="col-md-4">
+         <h3> <sup>*</sup> <font style="color: #0188cc !important" > PKR</font><br/>
+            <font class="StoragePrice" style="    font-size: 40px;
+               color: #0188cc;
+               margin-left: 15px;">{{ $product->price }}</font>
+         </h3>
+      </div>
+      <div class="col-md-8">
+         <p>
+            * Disclaimer: All prices on website are subject to change without notice. While we make every effort to provide you with the latest prices.
+         </p>
+      </div>
    </div>
-
 </div>
-
-
-
-<hr style="width: 80%;@if($product->variation_colors->count()==0) margin-top: 27px !important; @endif" />
-
-
-
-<div class="row">
-  <div class="col-md-4">
-<h3> <sup>*</sup> <font style="color: #0188cc !important" > PKR</font><br/>
-<font class="StoragePrice" style="    font-size: 40px;
-color: #0188cc;
-margin-left: 15px;">{{ $product->price }}</font>
-</h3>
-  </div>
-  <div class="col-md-8">
-   <p>
-    * Disclaimer: All prices on website are subject to change without notice. While we make every effort to provide you with the latest prices.
-   </p>
-  </div>
-   
-
-
-
-  </div>
-
-
-
-
-
-
-</div>
-
-</div>
-
-
+      </div>
+   </div>
+</section>
 
 
 
@@ -295,21 +362,16 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
 <div class="row">
-
-  <div class="col-md-12">
-
-    <div style=" margin: 0 auto; padding: 120px 0 40px;">
-      <ul class="tabs" data-persist="true">
-          <li><a href="#view1">TECHNICLE SPECS</a></li>
-          <li><a href="#view2">OPINIONS</a></li>
-          <li><a href="#view3">VEDIOS</a></li>
-          <li><a href="#view4">REVIEWS</a></li>
-
-            
-      </ul>
-      <div class="tabcontents">
-         
-     <div id="view1">
+   <div class="col-md-12">
+      <div style=" margin: 0 auto; padding: 120px 0 40px;">
+         <ul class="tabs" data-persist="true" style="text-align: initial; padding: 11px !important;">
+            <li><a href="#view1">TECHNICLE SPECS</a></li>
+            <li><a href="#view2">OPINIOS</a></li>
+            <li><a href="#view3">VEDIOS</a></li>
+            <li><a href="#view4">REVIEWS</a></li>
+         </ul>
+         <div class="tabcontents">
+             <div id="view1">
          
          
  
@@ -552,11 +614,11 @@ margin-left: 15px;">{{ $product->price }}</font>
         @endif
 
         @if($product->battery_talk_time !='')
-          <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> talk Time</td>
+          <td class="battryTlkTime" style="display: block;font-weight: 600;"> talk Time</td>
         @endif
 
         @if($product->battery_music!='')
-          <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 78px;"> Music</td>
+          <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 75px;"> Music</td>
         @endif
 
       </tr>
@@ -641,7 +703,7 @@ margin-left: 15px;">{{ $product->price }}</font>
        @endif
 
 
-      <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div>
+      <!-- <div class="topDisplaySpconmob" style="height: 0px; width: 100%;"></div> -->
 
 
       @if($product->body_dimensions !='')
@@ -724,8 +786,8 @@ margin-left: 15px;">{{ $product->price }}</font>
 
 
 
-
-<div class="topPlateformSpconmob" style="height: 0px; width: 100%;"></div>
+<!-- 
+<div class="topPlateformSpconmob" style="height: 0px; width: 100%;"></div> -->
 
 
 
@@ -1077,13 +1139,12 @@ Up to 20 h (multimedia)
 
          
          </div>
-          
-          <div id="view2">
+       <div id="view2">
              
 
 
           <div class="row">
-          <div id="view2zeroAtMobile"  style="width:20%; float:left "></div>
+          <div id="view2zeroAtMobile"  style="width:8%; float:left "></div>
 
           <div id="view2FullAtMobile"  style="width:60%; float:left " >
 
@@ -1305,7 +1366,7 @@ Up to 20 h (multimedia)
                           </div>
 
                           <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href="" type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p></button> </div>
+                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href=""  type="button" class="clickReply" nclick="clickReply('{{ $row->id }}');" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Replyr</p></button> </div>
                         
                         </div>
                     
@@ -1416,68 +1477,228 @@ Up to 20 h (multimedia)
           </div>
 
 
-
-
-
-          <div id="view3">
-           
-              @if($product->video_link !='')
-                  {!! $product->video_link !!}
-              @else
-                <h5>No Video Available</h5>
-              @endif
-
-            
-                                                          
-          </div>
-
-
-
-
-          <div id="view4">
-        
-            <h5>No Reviews Available</h5>       
-                                                          
-
-          </div>
-
-        </div>
+            <div id="view3">
+               @if($product->video_link !='')
+               {!! $product->video_link !!}
+               @else
+               <h5>No Video Available</h5>
+               @endif
+            </div>
+            <div id="view4">
+               <h5>No Reviws Availabla</h5>
+            </div>
+         </div>
       </div>
-  </div>
-
-
-  </div>
+   </div>
+</div>
 </div>
 
 
 
-
 <br/>
+      <br/>
+      @include('includes.footer')
 
-@include('includes.footer')
- 
+
+
+
+
+
+
+  <!-- copy right -->
 </body>
 
 
-<!-- 
-<script src="js/jquery-slim.min.js" ></script>
-<script src="js/popper.min.js" ></script>
-<script src="js/bootstrap.min.js" ></script> -->
+
+
+
+
+
+
+<script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+CloudZoom.quickStart();
+$(function(){
+    $('#slider1').Thumbelina({
+        $bwdBut:$('#slider1 .left'),
+        $fwdBut:$('#slider1 .right')
+    });
+});
+
+
+
+    $('#commentbtn').click(function(){
+
+      submitComment($("#comment").val());
+    });
+var limit = 5;
+
+
+  function submitComment(msg) {
+     // alert('https://flickerfone.com/main/submicomment?'+"slug="+5+"&name="+$("#name").val()+"&email="+$("#email").val()+"&g-recaptcha-response="+$("#g-recaptcha-response").val());
+
+ $.get("https://flickerfone.com/main/submicomment?slug=428&comment="+msg+"&name="+$("#name").val()+"&email="+$("#email").val()+"&response="+$("#g-recaptcha-response").val(),function(data){
+     loadComments();
+    if(data.success==false){
+      loadComments();
+      sa_alert('Request',data.message, 'info',2000);
+    }else{
+
+      $("#comment").val("");
+      $("#name").val("");
+      $("#email").val("");
+       sa_alert('Success',data.message, 'success',2000);
+    }
+ });
+}
+
+
+
+function submitRating(msg) {
+
+ $.get("https://flickerfone.com/main/submitrating?slug=428&review="+msg,function(data){
+    if(data.success==false){
+      sa_alert('Request',data.message, 'info',2000);
+    }else{
+        $(".rating-widget").html("Thanks for your feedback.")
+       sa_alert('Success',data.message, 'success',2000);
+    }
+ });
+}
+  $('#stars li').on('mouseover', function(){
+
+    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+    // Now highlight all the stars that's not after the current hovered star
+    $(this).parent().children('li.star').each(function(e){
+      if (e < onStar) {
+        $(this).addClass('hover');
+      }
+      else {
+        $(this).removeClass('hover');
+      }
+    });
+
+  }).on('mouseout', function(){
+    $(this).parent().children('li.star').each(function(e){
+      $(this).removeClass('hover');
+    });
+  });
+
+
+
+
+
+});
+
+
+
+
+
+
+</script>
+
+
+
+
+
+ <script src="https://flickerfone.com/themes/default/shop/assets/js/jquery-2.1.3.min.js"></script>
+
+ 
+ <!-- <script src="https://flickerfone.com/themes/default/shop/assets/js/bs.js"></script> -->
+
+
+
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/cloudzoom.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/select2.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/slick.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/thumbnail.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script> -->
+
+
+
+
+ <script  src="{{ asset('OriginalZoomer/ScrollJS2/script.js') }}"></script>
+ 
+
+<script  src="{{ asset('js/tabcontent.js')}}"></script>
+  <script  src="{{ asset('js/Event.js')}}"></script>
 
 
 <script>
+function clickReply(id){$("#ReplyBox"+id).toggle();}
+
+$(document).ready(function(){
+  $('.select2').select2({
+    width: 'resolve',
+    theme: "classic"
+});
+
+    $('.customer-logos').slick({
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+ <script type="text/javascript">
+     $(".lazy").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+      });
+  </script>
+  <script type="text/javascript">
+    $('#theCarousel').carousel({
+  interval: 2000
+})
+
+$('.multi-item-carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  }
+  else {
+    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+
+
+  </script>
+<script>
   $('.ErrorMsg').hide();
-	function colorStorage(id,color)
-	{
-		$.ajax({
-			url:"{{ route('ColorFilterStorage') }}",
-			type:"get",
-			data:{id:id,color:color},
-			success:function(data){
-				$('#colorStorage').html(data);	
-			}
-		});
-	}
+  function colorStorage(id,color)
+  {
+    $.ajax({
+      url:"{{ route('ColorFilterStorage') }}",
+      type:"get",
+      data:{id:id,color:color},
+      success:function(data){
+        $('#colorStorage').html(data);  
+      }
+    });
+  }
 
   $('#asc_desc').change(function(){
     var val = $('#asc_desc option:selected').val();
@@ -1553,17 +1774,17 @@ Up to 20 h (multimedia)
       else{FetchData(page,'{{ $product->id }}')};
     });
 
-	$(document).ready(function(){
-		if($('.productColorClass').hasClass('color_active'))
-		{
-			colorStorage($('#product_id').val(),$('.color_active').children('.colorBtns').data('id'));	
-		}
-	});
+  $(document).ready(function(){
+    if($('.productColorClass').hasClass('color_active'))
+    {
+      colorStorage($('#product_id').val(),$('.color_active').children('.colorBtns').data('id'));  
+    }
+  });
 
-	$('.productColorClass').click(function(){
-		$('.productColorClass').removeClass('color_active');
-		$(this).addClass('color_active');
-	});
+  $('.productColorClass').click(function(){
+    $('.productColorClass').removeClass('color_active');
+    $(this).addClass('color_active');
+  });
 
   $('.modal_login').click(function(){
     var email = $('#username').val();
@@ -1592,21 +1813,21 @@ Up to 20 h (multimedia)
     });
 });
 
-	$('#colorStorage').change(function(){
-		var storage = $(this).val();
-		var id = $('#product_id').val();
-		var color = $('.color_active').children('.colorBtns').data('id')
-		$.ajax({
-			url:"{{ route('StorageFilterPrice') }}",
-			type:"get",
-			data:{id:id,color:color,storage:storage},
-			success:function(data){
-				$('.StoragePrice').html(data);	
-			}
-		});
-	});
+  $('#colorStorage').change(function(){
+    var storage = $(this).val();
+    var id = $('#product_id').val();
+    var color = $('.color_active').children('.colorBtns').data('id')
+    $.ajax({
+      url:"{{ route('StorageFilterPrice') }}",
+      type:"get",
+      data:{id:id,color:color,storage:storage},
+      success:function(data){
+        $('.StoragePrice').html(data);  
+      }
+    });
+  });
 
-	$('.colorBtns').click(function(){ colorStorage($('#product_id').val(),$(this).data('id')); });
+  $('.colorBtns').click(function(){ colorStorage($('#product_id').val(),$(this).data('id')); });
 
   function myFunction() {
       shoediv();
@@ -1633,240 +1854,7 @@ Up to 20 h (multimedia)
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  <script>
-      function shoediv(){
-         
-          document.getElementById('myUL').style.display = 'block';
-      }
-  
-  
-  
-      function hideagain(){
-          document.getElementById('myUL').style.display = 'none';
-      }
-  </script>
-  
-  
-  
-  
 <script>
-
-
-
-
-
-
-
-
-$(document).ready(function(){
-       $('.autoplayFeatures').slick({
- slidesToShow: 4,
- slidesToScroll: 1,
-  autoplay: true,
- autoplaySpeed: 3000,
- pauseOnHover:true,
-
- dots: true,
- responsive: [
-     {
-       breakpoint: 500,
-       settings: {
-       slidesToShow: 2,
-       slidesToScroll: 1,
-       }
-     }
-   ]  
- // variableWidth: true
-});
-});
-
-
-
-
-
-
-
-$(function(){
-   $('#shopBtn').attr('href','#scrollTo');
-});
-
-
-
-function image1ReplaceOnClick1(){
-
-//   document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389384.jpg')}}";
-//   document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389384.jpg')}})";
-}
-
-
-// function image1ReplaceOnClick2(){
-
-// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389619.jpg')}}";
-// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389619.jpg')}})";
-// }
-
-
-// function image1ReplaceOnClick3(){
-
-// document.getElementById("myimage").srcset = "{{ asset('storage/images/KHIPSE264BLK_4.jpg')}}";
-// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/KHIPSE264BLK_4.jpg')}})";
-// }
-
-
-// function image1ReplaceOnClick4(){
-
-// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-packaging-new-black-iphone-se-multinational-company-182969056.jpg') }}";
-// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-packaging-new-black-iphone-se-multinational-company-182969056.jpg')}})";
-// }
-
-
-// function image1ReplaceOnClick5(){
-
-// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-193162726.jpg')}}";
-// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-193162726.jpg')}})";
-// }
-
-
- 
-
-</script>
-
-  
-<script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
-        
-<script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script>
-  
-<script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script>
- 
-
-
-
-<script  src="{{ asset('js/tabcontent.js')}}"></script>
-  <script  src="{{ asset('js/Event.js')}}"></script>
-    <script  src="{{ asset('js/Magnifier.js')}}"></script>
-
-
-<!-- 
-<script type="text/javascript" src="Event.js"></script>
-<script type="text/javascript" src="Magnifier.js"></script> -->
-<script type="text/javascript">
-    
-
-    var evt = new Event(),
-    m = new Magnifier(evt);
-     m.attach({
-     
-            thumb: '#thumb',
-            large:  "{{asset($img1_400)}}",
-            mode: 'inside',
-            zoom: 3,
-            zoomable: true
-        });
-
-
-
-        	$('.productImgs').click(function(){
-    var imgSrc="{{url('storage/admin/images/product/thumbnail/400_') }}";
-    imgSrc += $(this).data('id');
-
-
-    
-    document.getElementById("thumb").src = imgSrc;
-            console.log(imgSrc);
-    var evt = new Event(),
-    m = new Magnifier(evt);
-     m.attach({
-     
-            thumb: '#thumb',
-            large:  imgSrc,
-            mode: 'inside',
-            zoom: 3,
-            zoomable: true
-        });
-// m.attacth['large'] = imgSrc;
-
-  
-  });
-
-</script>
-
-
-
-  <script>
-    $(function() {
-      (function(name) {
-        var container = $('#pagination-' + name);
-        var sources = function () {
-          var result = [];
-    
-          for (var i = 1; i < 196; i++) {
-            result.push(i);
-          }
-    
-          return result;
-        }();
-    
-        var options = {
-          dataSource: sources,
-          callback: function (response, pagination) {
-            window.console && console.log(response, pagination);
-    
-            var dataHtml = '<ul>';
-    
-            $.each(response, function (index, item) {
-              dataHtml += '<li>' + item + '</li>';
-            });
-    
-            dataHtml += '</ul>';
-    
-            container.prev().html(dataHtml);
-          }
-        };
-    
-        //$.pagination(container, options);
-    
-        container.addHook('beforeInit', function () {
-          window.console && console.log('beforeInit...');
-        });
-        container.pagination(options);
-    
-        container.addHook('beforePageOnClick', function () {
-          window.console && console.log('beforePageOnClick...');
-          //return false
-        });
-      })('demo1');
-    
-
-    })
-
-
-
-    
-$(function(){
-   $('#shopBtn').attr('href','#scrollTo');
-});
-
-
-    </script>
-
-
-<script src="js/pagination.js"></script>
-
-<script  src="js/ScrollJS2/script.js"></script>
-
-
-
-
-
-<script>
-function clickReply(id){$("#ReplyBox"+id).toggle();}
 $(document).ready(function(){
   $("#clickopinon").click(function(){
     $("#OpinonBox").toggle();
@@ -1878,5 +1866,42 @@ $(document).ready(function(){
   });
 });
 </script>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+
+</script>
+
+
+
+
 
 </html>
