@@ -429,7 +429,7 @@
                                                             <input name="image4" type="file">
                                                             <input type="hidden" name="oldImage4" value="{{ $product->img4 }}">
                                                             @php $img4 = 'storage/admin/images/product/thumbnail/100_'.$product->img4  @endphp
-                                                            @if($product->$img4 !='')
+                                                            @if($product->img4 !='')
                                                                 <img src='{{ asset($img4) }}' style="width: 100px; height: 100px;">
                                                              @endif
                                                             
@@ -498,7 +498,7 @@
                                                             <input name="image7" type="file">
                                                             <input type="hidden" name="oldImage7" value="{{ $product->img7 }}">
                                                             @php $img7 = 'storage/admin/images/product/thumbnail/100_'.$product->img7  @endphp
-                                                            @if($product->$img7 !='')
+                                                            @if($product->img7 !='')
                                                                 <img src='{{ asset($img7) }}' style="width: 100px; height: 100px;">
                                                              @endif
                                                             @error('image7')
