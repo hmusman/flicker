@@ -364,10 +364,10 @@
                                                        
                                                     </div>
 
-                                                    <div class="col-md-5 row"> 
+                                                   <!--  <div class="col-md-5 row"> 
                                                         <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
-                                                    </div>
+                                                    </div> -->
 
                                                 </div>
 
@@ -390,10 +390,10 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-5 row"> 
+                                                   <!--  <div class="col-md-5 row"> 
                                                         <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
-                                                    </div>
+                                                    </div> -->
 
                                                 </div>
 
@@ -415,11 +415,169 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-md-5 row"> 
+                                                   <!--  <div class="col-md-5 row"> 
                                                         <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 4</label>
+                                                    <div class="col-md-5"> 
+                                                        <div class="fallback">
+                                                            <input name="image4" type="file">
+                                                            <input type="hidden" name="oldImage4" value="{{ $product->img4 }}">
+                                                            @php $img4 = 'storage/admin/images/product/thumbnail/100_'.$product->img4  @endphp
+                                                            @if($product->$img4 !='')
+                                                                <img src='{{ asset($img4) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                            
+                                                            @error('image4')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+
+                                                        </div>
                                                     </div>
 
+                                                    <!-- <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 5</label>
+                                                    <div class="col-md-5"> 
+                                                        <div class="fallback">
+                                                            <input name="image5" type="file">
+                                                            <input type="hidden" name="oldImage5" value="{{ $product->img5 }}">
+                                                             @php $img5 = 'storage/admin/images/product/thumbnail/100_'.$product->img5  @endphp
+                                                            @if($product->img5 !='')
+                                                                <img src='{{ asset($img5) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                            @error('image5')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                            
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 6</label>
+                                                    <div class="col-md-5"> 
+                                                        <div class="fallback">
+                                                            <input name="image6" type="file">
+                                                            <input type="hidden" name="oldImage6" value="{{ $product->img6 }}">
+                                                            @php $img6 = 'storage/admin/images/product/thumbnail/100_'.$product->img6  @endphp
+                                                            @if($product->img6 !='')
+                                                                <img src='{{ asset($img6) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                            @error('image6')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 7</label>
+                                                    <div class="col-md-5"> 
+                                                        <div class="fallback">
+                                                            <input name="image7" type="file">
+                                                            <input type="hidden" name="oldImage7" value="{{ $product->img7 }}">
+                                                            @php $img7 = 'storage/admin/images/product/thumbnail/100_'.$product->img7  @endphp
+                                                            @if($product->$img7 !='')
+                                                                <img src='{{ asset($img7) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                            @error('image7')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 8</label>
+                                                    <div class="col-md-5"> 
+                                                        <div class="fallback">
+                                                            <input name="image8" type="file">
+                                                            <input type="hidden" name="oldImage8" value="{{ $product->img8 }}">
+                                                            @php $img8 = 'storage/admin/images/product/thumbnail/100_'.$product->img8  @endphp
+                                                            @if($product->img8 !='')
+                                                                <img src='{{ asset($img8) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                            @error('image8')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+                                                 <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 9</label>
+                                                    <div class="col-md-5"> 
+                                                        <div class="fallback">
+                                                            <input name="image9" type="file">
+                                                            <input type="hidden" name="oldImage9" value="{{ $product->img9 }}">
+                                                            @php $img9 = 'storage/admin/images/product/thumbnail/100_'.$product->img9  @endphp
+                                                            @if($product->img9 !='')
+                                                                <img src='{{ asset($img9) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                            @error('image9')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 10</label>
+                                                    <div class="col-md-5"> 
+                                                        <div class="fallback">
+                                                            <input name="image10" type="file">
+                                                            <input type="hidden" name="oldImage10" value="{{ $product->img10 }}">
+                                                            @php $img10 = 'storage/admin/images/product/thumbnail/100_'.$product->img10  @endphp
+                                                            @if($product->img10 !='')
+                                                                <img src='{{ asset($img10) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                            @error('image10')
+                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                   <!--  <div class="col-md-7 row"> 
+                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
+                                                    </div> -->
                                                 </div>
 
 
