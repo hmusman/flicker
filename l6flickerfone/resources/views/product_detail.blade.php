@@ -169,7 +169,7 @@ a[class="nav-link  dropdown-toggle"]{
 <div class="container">
 <div class="row">
   <div class="col-md-12 text-uppercase" style="color: gray;">
-    HOME / {{ $product->category->title }} / {{ $product->Productbrand->name }} / {{ $product->name }}
+    <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a> /  <a href="{{ route('BrandProductsList',$product->Productbrand->id) }}" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">{{ $product->Productbrand->name }} </a> / {{ $product->name }}
   </div>
 </div>
 
@@ -186,10 +186,16 @@ a[class="nav-link  dropdown-toggle"]{
 
 
 @php $img1 = $product->image @endphp
-      @php $img1_400 = '/storage/admin/images/product/thumbnail/'.$product->image @endphp
-     
-         @php $img2_400 = '/storage/admin/images/product/thumbnail/'.$product->dimage @endphp
-      @php $img3_400 = '/storage/admin/images/product/thumbnail/'.$product->dimage1 @endphp
+      @php $img1_400 = '/storage/admin/images/product/thumbnail/500_'.$product->image @endphp
+      @php $img2_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage @endphp
+      @php $img3_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage1 @endphp
+      @php $img4_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img4 @endphp
+      @php $img5_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img5 @endphp
+      @php $img6_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img6 @endphp
+      @php $img7_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img7 @endphp
+      @php $img8_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img8 @endphp
+      @php $img9_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img9 @endphp
+      @php $img10_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img10 @endphp
      
         @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
       @php $img2 = $product->dimage @endphp
@@ -213,24 +219,66 @@ a[class="nav-link  dropdown-toggle"]{
                   <ul class="ClousSlicker">
 
                     
-                     @if(!empty($img1))
+                    @if(!empty($img1))
                      <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img1_400)}}"
                         data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}'  " style='max-width:90px;max-height:100px;'>
                       </li>
-                      @endif
+                    @endif
                      
                      
-                       @if(!empty($img2))
-                        <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_400)}}"
+                    @if(!empty($img2))
+                      <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_400)}}"
                         data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img2_400)}}'  " style='max-width:90px;max-height:100px;'></li>
-                          @endif
+                    @endif
 
 
-                      @if(!empty($img3))
+                    @if(!empty($img3))
                      <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img3_400)}}"
                         data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img3_400)}}"  ' style='max-width:90px;max-height:100px;'>
                       </li>
-                       @endif
+                    @endif
+
+                    @if(!empty($product->img4))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img4_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img4_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img5))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img5_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img5_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img6))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img6_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img6_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img7))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img7_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img7_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img8))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img8_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img8_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img9))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img9_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img9_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img10))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img10_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img10_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
 <!-- 
 
                      <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}"
@@ -366,7 +414,7 @@ a[class="nav-link  dropdown-toggle"]{
       <div style=" margin: 0 auto; padding: 120px 0 40px;">
          <ul class="tabs" data-persist="true" style="text-align: initial; padding: 11px !important;">
             <li><a href="#view1">TECHNICLE SPECS</a></li>
-            <li><a href="#view2">OPINIOS</a></li>
+            <li><a href="#view2">OPINIONS</a></li>
             <li><a href="#view3">VEDIOS</a></li>
             <li><a href="#view4">REVIEWS</a></li>
          </ul>
