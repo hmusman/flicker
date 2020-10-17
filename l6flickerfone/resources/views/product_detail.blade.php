@@ -179,6 +179,7 @@ background-color: #8080807a;
 
 
 
+
   top: 0;
   right: 0;
   bottom: 0;
@@ -259,10 +260,12 @@ small {
 
 
 
+
           <a href="#" title="Close" class="modal-close">
           
            <img  src="{{ asset('storage/images/download__3_-removebg-preview (2) (1).png')}}"  />
           </a>
+
 
 
 
@@ -1366,7 +1369,10 @@ Up to 20 h (multimedia)
 
 
 
+
                                           <button class="interior" style="border-color: transparent;">
+
+
 
 
 
@@ -1575,7 +1581,9 @@ Up to 20 h (multimedia)
 
 
 
+
                                                   <button class="interior" style="border-color: transparent;">
+
 
 
 
@@ -1609,6 +1617,7 @@ Up to 20 h (multimedia)
           <!-- <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
             <div class="modal-dialog">
 
+
             
               <div class="modal-content">
                 <div class="modal-header">
@@ -1630,6 +1639,7 @@ Up to 20 h (multimedia)
 
                       <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
                       <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+
 
 
                     </form>
@@ -2060,6 +2070,7 @@ btn.onclick = function() {
 }
 
 
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
@@ -2070,6 +2081,7 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
 }
 
 </script>
@@ -2111,7 +2123,6 @@ window.onclick = function(event) {
 
 
 </script>
-
 
 
 </html>
