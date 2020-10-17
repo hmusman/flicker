@@ -14,11 +14,11 @@
     <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 
 
-<script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
+<!-- <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script> -->
     
 
         
-
+   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
    <link rel="stylesheet" href="{{ asset('OriginalZoomer/ScrollJS2//style.css') }}">
 <link href="{{ asset('OriginalZoomer/css/cloudzoom.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('OriginalZoomer/css/thumbnail.css') }}" rel="stylesheet" type="text/css">
@@ -33,6 +33,15 @@
   <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
   
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
+
+
+
+<!-- 
+//////////////////////////////////// -->
+   <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
+   <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+  
+
 </head>
 
 
@@ -158,10 +167,112 @@ a[class="nav-link  dropdown-toggle"]{
 
 </style>
 
+
+
+<style>
+  .modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* Demo Styles */
+html,
+body {
+  height: 100%;
+}
+
+
+
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+small {
+  color: #aaa;
+}
+
+
+
+</style>
+
 <body style="overflow-x: hidden;">
 
 
        <a href="#" id="scroll" style="display: none;"><span></span></a>
+
+      <div id="open-modal" class="modal-window">
+        <div>
+          <a href="#" title="Close" class="modal-close">Close</a>
+          <h1>Sign In</h1>
+          <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
+          <form method="post">
+            @csrf
+            <div class="form-group">
+                <label class="info-title">Email</label>
+                <input type="text" name="login_email" id="username" class="form-control unicase-form-control text-input" value="{{ old('login_email') }}" required placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label class="info-title">Password</label>
+                <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
+            </div>  
+
+            <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
+            <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+          </form>
+                         
+                     
+                      
+        </div>
+      </div>
+       
       @include('includes.header')
    
 
@@ -1187,302 +1298,291 @@ Up to 20 h (multimedia)
 
          
          </div>
-       <div id="view2">
-             
+   
+                  <div id="view2">
+               <div class="row">
+                  <!-- <div id="view2zeroAtMobile"  style="width:20%; float:left "></div> -->
+                  <div id="view2FullAtMobile"  style="width:100%;  " >
+                     <div class="container" id="OpinonrowOne">
+                        <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
+                           <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
+                              <a id="clickopinon"  style="  background-color: #4a88c2; 
+                                 color: white;
+                                 padding: 10px 18px 10px 18px; text-decoration: none;
+                                 border-radius: 4px;">POST YOUR OPINIONS </a>
+                           </div>
+                           <div class="col-md-5" style="text-align: end;margin-top: 25px;">Pages :</div>
+                           <style>
+                              .pagination{ margin-top: 10px !important; }
+                           </style>
+                           <div class="col-md-2" id="pages" style="padding-top: 11px;"  >{{ $opinions->links() }} </div>
+                        </div>
+                        <div class="row" id="OpinonBox" style="display: none">
+                           <div class="col-md-12" style="background-color: #f0f0f0;  " >
+                              <h5>Post Your Opinion</h5>
+                              <!-- <div class="row"> 
+                                 <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
+                                  <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
+                                 </div> -->
+                              <hr/>
+                              <form action="{{ route('ProductOpinion') }}" method="post">
+                                 @csrf
+                                 <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
+                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                 <label>Your nickname (optional)</label><br/>
+                                 <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
+                                 <br/>
+                                 <br/>
+                                 <!-- <div class="row"> 
+                                    <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
+                                     <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
+                                    </div> -->
+                                 <label>Your Comment</label><br/>
+                                 <textarea name="comment" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
+                                 <div class="row">
+                                    <div class="col-md-6" >
+                                       <p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p>
+                                    </div>
+                                    <div class="col-md-6"  style="    text-align: end;">
+                                       <p  style="text-align:right" class="submit_area">
+                                          @if(!empty(Session::get('user')->id))
+                                          <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                          @else
+                                          <button class="interior">
+                                          <a  href="#open-modal"   class="btn btn-primary">Login</a>
+                                          </button>
+ <!-- <div class="interior">
+    <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
+  </div> -->
+                                      <!-- Trigger/Open The Modal -->
+<!-- <button id="myBtn">Open Modal</button> -->
+
+<!-- The Modal -->
+<!-- <div id="myModal" class="modal">
 
 
-          <div class="row">
-          <div id="view2zeroAtMobile"  style="width:8%; float:left "></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Modal Header</h2>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div>
+  </div>
 
-          <div id="view2FullAtMobile"  style="width:60%; float:left " >
-
-            <div class="container">
-            
-                <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
-                  <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
-                  <a id="clickopinon"  style="background-color: #4a88c2; 
-                  color: white;
-                  padding: 10px 18px 10px 18px; text-decoration: none;
-                  border-radius: 4px;">POST YOUR OPINIONS </a>
-                  </div>
-
-                  <div class="col-md-2" style="margin-top: 10px;">Pages :</div>
-                  <style>
-                     .pagination{ float: left !important; margin-top: 10px !important; }
-                  </style>
-                  <div class="col-md-5" id="pages" >{{ $opinions->links() }} </div>
-                 
-                </div>
-
-                <div class="row" id="OpinonBox" style="display: none">
-                   <div class="col-md-12" style="background-color: #f0f0f0; border: 1px black solid " >
-                      <h5>Post Your Opinion</h5>
-                      <!-- <div class="row"> 
-                        <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
-                         <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
-                      </div> -->
-                    <hr/>
+</div> -->
+ <!-- Modal -->
+        
 
 
-                    <form action="{{ route('ProductOpinion') }}" method="post">
-                        @csrf
-                        <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
-                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                        <label>Your nickname (optional)</label><br/>
-                        <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
-
-                        <br/>
-                        <br/>
-                          <!-- <div class="row"> 
-                            <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
-                             <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
-                          </div> -->
-
-                        <label>Your Comment</label><br/>
-                          <textarea name="comment" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
-                          <div class="row"> 
-                            <div class="col-md-6" ><p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p></div>
-                             <div class="col-md-6" >
-                               
-                              <p  style="text-align:right" class="submit_area">
-                                  @if(!empty(Session::get('user')->id))
-                                       <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
-                                  @else
-                                      <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button>
-                                     <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
-                                  @endif
-                               
-                              </p>
-                            </div>
-                          </div>
-                        </form>         
-
-                         
-                   </div>
+          
+                  <!-- End Modal --> 
 
 
-                </div>
-       
-            </div>
-
-            <div class="container">
-
-                <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
-                
-                
-                <div class="col-md-6" style="height: 81px;padding-top: 27px;" >
-
-
-                  <div style="float: left; width: 50%; height: 100%; "><input id="opinion_search" type="search" name="srch" style="height: 42px;width: 97%; outline: none;" /></div>
-                  <div style="float: left; width: 50%; height: 100%; "><button id="opinion_search_btn" style="border: none; outline: none;cursor: pointer;"><p id="srchoption" style="  
-                  height: 43px;
-                  font-size: .9vw;
-                  text-align: center;  background-color: #f9f9f9;   color: #0b0a0a;  padding: 10px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px black solid;">SEARCH OPINIONS </p></button></div>
-                
-                
-                 </div>
-
-                  
-                  <div id="sortBy" class="col-md-3" style="color: black; font-size: 20px; text-align: right; padding-top: 19px;        " >  Sort By: </div>
-
-
-                  <div class="col-md-3" style="color: black; font-size: 20px ; padding-top: 19px;              " >
-                  
-                  
-       
-
-                  <div class="form-group">
-           
-                    <select class="form-control" id="asc_desc">
-                      <option selected="" disabled="">Select View</option>
-                      <option value ="desc">Newest First</option>
-                      <option value="asc" >Older First</option>
-                    </select>
-                  </div>
-      
-      
-                    </div>
-                 
-                </div>
-
-
-            </div>
-
-
-            <div class="container opinions_data">
-
-              @if($opinions->count())
-                @foreach($opinions as $row)
-                    <div class="row">
-                      <div   style=" height: 400px;  border: 1px #c4c0c0 solid;   margin-top: 17px;  background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid; width: 100%; ">
-                      
-                        <div style="height: 20%; width: 100%; background-image: linear-gradient(to top right, #e5817a, #f0f0f0); ">
-                        
-                          <div  style="  width: 8% ;height: 100%;  float: left; text-align: center;"><p  id="Sresponsive" style="width: 100%;    font-size: 3.2vw;  color: white;   ">{{ strtoupper(substr($row->user->name,0,1)) }}</p> </div>
-                          <div style="  width: 92% ;height: 100%; background-color: #f0f0f0; float: left;">
-                          
-                            <div style="height: 60%; width: 100%;  color: black !important;">
-                            
-                              <div id="setSobercatOnMob" style="height: 100%; width: 20%;  float: left; color: black;    font-size: 2vw;    font-weight: 700;">
-                                
-                                
-                                <div class="row">
-                                  <div class="col-md-8" style="margin-top: 7px;"><h5>{{ $row->user->name }}</h5></div>
-                                  <div class="col-md-4"><div style="height: 100%; width: 8%;  float: left;">
-                                  <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" /> --></div>
-                                </div>
+                                          <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
+                                          @endif
+                                       </p>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="container" id="OpinonrowTwo">
+                        <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
+                           <div class="col-md-6" style="height: 81px;padding-top: 27px;" >
+                              <div style="float: left; width: 50%; height: 100%;  "><input id="opinion_search" type="search" name="srch" style="height: 42px;width: 97%; outline: none; border-color:transparent " /></div>
+                              <div style="float: left; width: 50%; height: 100%; ">
+                                 <button id="opinion_search_btn" style="border: none; outline: none;cursor: pointer;">
+                                    <p id="srchoption" style="  
+                                       height: 43px;
+                                       font-size: .9vw;
+                                       text-align: center;  background-color: #f9f9f9;   color: #848388;  padding: 13px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px #c4c0c0 solid;">SEARCH OPINIONS </p>
+                                 </button>
+                              </div>
+                           </div>
+                           <div id="sortBy" class="col-md-3" style="color: #848388; font-size: 20px; text-align: right; padding-top: 35px;        " >  Sort By: </div>
+                           <div class="col-md-3" style="color: black; font-size: 20px ; padding-top: 19px;              " >
+                              <div class="form-group">
+                                 <select class="form-control" id="asc_desc" style="    margin-top: 9px;">
+                                    <option selected="" disabled="">Select View</option>
+                                    <option value ="desc">Newest First</option>
+                                    <option value="asc" >Older First</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="container opinions_data" id="OpinonrowThree">
+                        @if($opinions->count())
+                        @foreach($opinions as $row)
+                        <div class="row">
+                           <div   style=" height: 400px;  border: 1px #c4c0c0 solid;   margin-top: 17px;  background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid; width: 100%; ">
+                              <div style="height: 20%; width: 100%; background-image: linear-gradient(to top right, #e5817a, #f0f0f0); ">
+                                 <div  style="  width: 8% ;height: 100%;  float: left; text-align: center;">
+                                    <p  id="Sresponsive" style="width: 100%;    font-size: 3.2vw;  color: white; padding-top:9px   ">{{ strtoupper(substr($row->user->name,0,1)) }}</p>
+                                 </div>
+                                 <div style="  width: 92% ;height: 100%; background-color: #f0f0f0; float: left;">
+                                    <div style="height: 60%; width: 100%;  color: black !important;">
+                                       <div id="setSobercatOnMob" style="height: 100%; width: 20%;  float: left; color: black;    font-size: 2vw;    font-weight: 700;">
+                                          <div class="row">
+                                             <div class="col-md-8" style="margin-top: 7px;">
+                                                <h5 style="margin-left: 10px !important">{{ $row->user->name }}</h5>
+                                             </div>
+                                             <div class="col-md-4">
+                                                <div style="height: 100%; width: 8%;  float: left;">
+                                                   <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_check_circle_black_18dp.png')}}" /> -->
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div id="settimepnMob" style="height: 100%; width: 35%;  float: right; font-size: 20px;  font-weight: 600;margin-top: 7px;">
+                                          <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /> 
+                                             20 Aug 2020 
+                                             <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
+                                             0Cp  -->
+                                          <div style="height: 100%; width: 30%; float: left;    text-align: end;"><img class="changeClockHeihtOnMob"  style="width: 24%; filter: invert(50%);height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
+                                          <div style="height: 100%; width: 40%; float: left;">
+                                             <p id="aug20onmob" style="width: 100%; font-size: 1.5vw;margin-top: 2px;">{{ date('Y M  d',strtotime($row->created_at)) }}</p>
+                                          </div>
+                                          <div style="height: 100%; width: 10%; float: left;text-align: right; "> 
+                                           <!-- <img class="LocOnMob" style="filter: invert(50%);height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> -->
+                                         </div>
+                                          <div style="height: 100%; width: 20%; float: left; text-align: left;">
+                                             <!-- <p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p> -->
+                                          </div>
+                                       </div>
+                                    </div>
                                  </div>
                               </div>
-                             
-                              <div id="settimepnMob" style="height: 100%; width: 35%;  float: right; font-size: 20px;  font-weight: 600;margin-top: 7px;"> 
-                                <!-- <img   style="width: 100%; height: auto;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /> 
-                                20 Aug 2020 
-                                <img style="width: 10%;"src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> 
-                                0Cp  -->
-                                <div style="height: 100%; width: 10%; float: left;"><img class="changeClockHeihtOnMob"  style="width: 96%; height: 25px;" src="{{ asset('storage/images/headerimg/ic_query_builder_black_18dp.png')}}" /></div>
-
-                                <div style="height: 100%; width: 60%; float: left;"><p id="aug20onmob" style="width: 100%; font-size: 1.5vw;margin-top: 2px;">{{ date('Y M  d',strtotime($row->created_at)) }}</p></div>
-
-                                <!-- <div style="height: 100%; width: 10%; float: left;text-align: right; ">  <img class="LocOnMob" style="height:19px" src="{{ asset('storage/images/headerimg/ic_room_black_18dp.png')}}" /> </div>
-                                <div style="height: 100%; width: 20%; float: left; text-align: left;"><p id="zeroCpOnMobile" style="width: 100%; font-size: 1.4vw;">0Cp</p></div> -->
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div style="height: 70%; width: 100%; background-color: #81c5ec;">
-                        
-                          <div style="  width: 8% ;height: 100%;  float: left; text-align: center;background-color: white;">
-                            
-                            <!-- <p> <img style="width: 25%; height: auto;" src="{{ asset('storage/images/headerimg/ic_speaker_notes_black_18dp.png')}}"  /> 6</p> -->
-
-                          </div>
-                        
-                          <div style=" width: 92% ;height: 100%; background-color: #f7f7f7; float: left; overflow-y: scroll;">
-                          
-                            <div style="width: 100%;  color: black !important;">
-                            <p id="LoremResp" style="font-size: 1.1vw;  padding: 33px;  ">{{ $row->comment }}</p>
-                            </div>
-
-                            <div class="row">
-                              @if($row->replies->count() >0)
-                                <h4>Opinion Replies</h4>
-                                @foreach($row->replies as $opinion)
-                                  <div class="col-md-12" style="margin-top: 5px;">
-                                      <div class="row">
-                                        <div class="col-md-4">
-                                          <div  style="width: 20% ;float: left; background-image: linear-gradient(to top right, #e5817a, #f0f0f0);height: 42px;"><p  id="Sresponsive" style="width: 100%;font-size: 2vw;text-align: center;">{{ strtoupper(substr($opinion->user->name,0,1)) }}</p> </div>
-                                          &nbsp;&nbsp;&nbsp;{{ $opinion->user->name }}
-                                        </div> <!-- 30% user nae -->
-                                        <div class="col-md-8">
-                                            <p id="LoremResp" style="">{{ $opinion->reply }}</p>
-                                        </div>
-
-                                      </div>
-                                  </div>
-                                  
-                                @endforeach
-                              @endif
-                              
-                            </div>
-
-                            <div style="width: 100%; background-color: #ffffff; ">
-                              <p class="BoldPara" style="    font-size: 1.4vw;
-                              font-weight: 500;">
-                               
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div style="height: 10%; width: 100%; background-color: white;">
-                        
-                          <div id="RatingMob" style="height: 100%; width: 30%;  float: left;"> 
-                        
-                          <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;">
-                          <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Replies {{$row->replies->count()}}</p> </div>
-                       
-                       
-                          <div style="height: 100%; width: 20%;  float: left;"> </div>
-                       
-                          <!-- <div style="height: 100%; width: 40%;  float: left;"> 
-                          
-                            <a href="#up" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" /> </a> | <a href="#down" style="text-decoration: none;">  <img  style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" /> </a>
-                          
-
-                          </div> -->
-                        
-                          
-                          </div>
-
-                          <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
-                          <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;"> <button href=""  type="button" class="clickReply" nclick="clickReply('{{ $row->id }}');" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;"> <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="width: 26%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Replyr</p></button> </div>
-                        
-                        </div>
-                    
-                      </div>
-
-                          <div class="row" id="ReplyBox{{ $row->id }}" style="display: none;    margin: 0px auto;margin-top: 20px;width: 80%;">
-                            <div class="col-md-12" style="background-color: #f0f0f0; border: 1px black solid " >
-                                <h5 style="margin-top: 9px;">Post Your Reply</h5>
-                                <!-- <div class="row"> 
-                                  <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
-                                   <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
-                                </div> -->
-                              <hr/>
-
-
-                              <form action="{{ route('OpinionReply') }}" method="post">
-                                  @csrf
-                                  <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
-                                  <input type="hidden" name="opinion_id" value="{{ $row->id }}">
-                                  <label>Your nickname (optional)</label><br/>
-                                  <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
-
-                                  <br/>
-                                  <br/>
-                                    <!-- <div class="row"> 
-                                      <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
-                                       <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
-                                    </div> -->
-
-                                  <label>Your Reply</label><br/>
-                                    <textarea name="reply" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
-                                    <div class="row"> 
-                                      <div class="col-md-6" ><p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p></div>
-                                       <div class="col-md-6" >
-                                         
-                                        <p  style="text-align:right" class="submit_area">
-                                            @if(!empty(Session::get('user')->id))
-                                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
-                                            @else
-                                                <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button>
-                                               <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
-                                            @endif
-                                         
-                                        </p>
-                                      </div>
+                              <div style="height: 70%; width: 100%; background-color: #81c5ec;">
+                                 <div style="  width: 8% ;height: 100%;  float: left; text-align: center;background-color: white;">
+                                    <!-- <p> <img style="width: 25%; height: auto;" src="{{ asset('storage/images/headerimg/ic_speaker_notes_black_18dp.png')}}"  /> 6</p> -->
+                                 </div>
+                                 <div style=" width: 92% ;height: 100%; background-color: #f7f7f7; float: left; overflow-y: scroll; overflow-x: hidden;">
+                                    <div style="width: 100%;  color: black !important;">
+                                       <p id="LoremResp" style="font-size: 1.1vw;  padding: 33px;  ">{{ $row->comment }}</p>
                                     </div>
-                                  </form>         
-
+                                    <div class="row">
+                                       @if($row->replies->count() >0)
+                                       <h4 style="margin-left: 39px;    color: #848388;">Opinion Replies</h4>
+                                       @foreach($row->replies as $opinion)
+                                       <div class="col-md-12" style="margin-top: 5px;">
+                                          <div class="row">
+                                             <div class="col-md-4">
+                                                <div  style="width: 20% ;float: left; background-image: linear-gradient(to top right, #e5817a, #f0f0f0);height: 42px;">
+                                                   <p  id="Sresponsive" style="width: 100%;font-size: 2vw;text-align: center;     padding-left: 15px;
+    padding-top: 2px;">{{ strtoupper(substr($opinion->user->name,0,1)) }}</p>
+                                                </div>
+                                                &nbsp;&nbsp;&nbsp;{{ $opinion->user->name }}
+                                             </div>
+                                             <!-- 30% user nae -->
+                                             <div class="col-md-8">
+                                                <p id="LoremResp" style="">{{ $opinion->reply }}</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       @endforeach
+                                       @endif
+                                    </div>
+                                    <div style="width: 100%; background-color: #ffffff; ">
+                                       <p class="BoldPara" style="    font-size: 1.4vw;
+                                          font-weight: 500;">
+                                       </p>
+                                    </div>
+                                 </div>
                               </div>
+                              <div style="height: 10%; width: 100%; background-color: white;">
+                                 <div id="RatingMob" style="height: 100%; width: 30%;  float: left;">
+                                    <div class="settRatingMob" style="height: 100%; width: 40%;  float: left;">
+                                       <p id="RatingZero" style="width: 100%;font-size: 1.5vw; text-align: center;">Replies {{$row->replies->count()}}</p>
+                                    </div>
+                                    <div style="height: 100%; width: 20%;  float: left;"> </div>
+                                    <div style="height: 100%; width: 40%;  float: left;"> 
+                                       <!-- <a href="#up" style="text-decoration: none;">  <img  style="width: 26%; filter: invert(50%);height: auto;" src="{{ asset('storage/images/headerimg//ic_keyboard_arrow_up_black_18dp.png')}}" /> </a> | <a href="#down" style="text-decoration: none;">  <img  style="filter: invert(50%); width: 26%; height: auto;" src="{{ asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}}" /> </a>
+                                   -->
+                                      </div>
+                                 </div>
+                                 <div id="ReplyResp" style="height: 100%; width: 50%; float: left;"> </div>
+                                 <div id="replybtnMobile" style="height: 100%; width: 13%;  float: left;">
+                                    <button type="button" class="clickReply" data-id="{{ $row->id }}" style="text-decoration: none;    border: none;cursor: pointer;height: 38px;outline: none;">
+                                       <p id="replyomgresponsive" style="    font-size: 1.5vw;        "><img style="filter: invert(50%);width: 20%; height: auto;" src="{{ asset('storage/images/headerimg//left-curve-arrow-pngrepo-com.png')}}" /> Reply</p>
+                                    </button>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row" id="ReplyBox{{ $row->id }}" style="display: none;    margin: 0px auto;margin-top: 20px;width: 80%;">
+                              <div class="col-md-12" style="background-color: #f0f0f0; border: 1px #81818133 solid; " >
+                                 <h5 style="margin-top: 9px;">Post Your Reply</h5>
+                                 <!-- <div class="row"> 
+                                    <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
+                                     <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
+                                    </div> -->
+                                 <hr/>
+                                 <form action="{{ route('OpinionReply') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
+                                    <input type="hidden" name="opinion_id" value="{{ $row->id }}">
+                                    <label>Your nickname (optional)</label><br/>
+                                    <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
+                                    <br/>
+                                    <br/>
+                                    <!-- <div class="row"> 
+                                       <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
+                                        <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
+                                       </div> -->
+                                    <label>Your Reply</label><br/>
+                                    <textarea name="reply" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
+                                    <div class="row">
+                                       <div class="col-md-6" >
+                                          <p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p>
+                                       </div>
+                                       <div class="col-md-6" >
+                                          <p  style="text-align:right" class="submit_area">
+                                             @if(!empty(Session::get('user')->id))
+                                             <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                             @else
+                                             <!-- <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button> -->
+                                             <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
+                                                <!-- <button type="button" id="mybtnNext" class="btn btn-primary">Login</button> -->
+                                           
+                                                  <button class="interior">
+                                          <a  href="#open-modal"   class="btn btn-primary">Login</a>
+                                          </button>
+                                             @endif
 
-                          </div>
 
-                    </div>
-                @endforeach
-                
-              @else
-                no opinion available
-              @endif
-            
+                                             
+                                          </p>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                        @endforeach
+                        @else
+                        no opinion available
+                        @endif
+                     </div>
+                  </div>
+                 
+                  <!-- <div id="view2MobileZero" style="width:20%; float:left " ></div> -->
+               </div>
             </div>
 
          </div>
 
           <!-- Modal -->
-          <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
+          <!-- <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
             <div class="modal-dialog">
 
-              <!-- Modal content-->
+            
               <div class="modal-content">
                 <div class="modal-header">
                   <h4 class="modal-title" style="color: black;">Sign in</h4>
@@ -1516,7 +1616,7 @@ Up to 20 h (multimedia)
               </div>
 
             </div>
-          </div>
+          </div> -->
           <!-- End Modal --> 
 
 <div id="view2MobileZero" style="width:20%; float:left " ></div>
@@ -1849,6 +1949,8 @@ $('.multi-item-carousel .item').each(function(){
           $('.login_status').html('');
           $('.user_id').val(data.id);
           $('.modal_close').click();
+          $('.modal-close').click();
+          $('.modal-window').css('display','none');
           $('.submit_area').html(btn_html);
         }
         else{
@@ -1926,14 +2028,14 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
+btn.onclick = function() {
+  modal.style.display = "block";
+}
 
 // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -1941,13 +2043,44 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+</script>
+
+<script>
+// Get the modal
+
+
+function modalTwoagain() {
+  var modal = document.getElementById("myModaltwo");
+
+// Get the button that opens the modal
+var btn = document.getElementById("mybtnNext");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}
 
 
 
 
 
 </script>
-
 
 
 
