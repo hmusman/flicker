@@ -140,8 +140,12 @@
                               @if(!empty(Session::get('user')->id))
                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
                               @else
-                                  <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button>
-                                 <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
+                                  <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Loginqq</button>
+                                
+                                
+                                     <!-- <button  type="button" id="myBtn"  class="btn btn-primary">Login</button> -->
+                                
+                                  <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
                               @endif
                            
                           </p>

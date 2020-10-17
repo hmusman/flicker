@@ -81,7 +81,14 @@ class Product extends Model
                 'device_box_available',
                 'device_battery_status',
                 'detail_check',
-                'other_detail'
+                'other_detail',
+                'img4',
+                'img5',
+                'img6',
+                'img7',
+                'img8',
+                'img9',
+                'img10',
 	];
     
     

@@ -15,6 +15,13 @@ class FrontEndController extends Controller
     	$buynewsell = BuyNewSell::all();
     	$blogslider = BlogSlider::where('status',1)->get();
     	return view('index',compact(['products','buynewsell','blogslider']));
+	} 
+	public function indexmobile()
+    {
+    	$products = Product::all();
+    	$buynewsell = BuyNewSell::all();
+    	$blogslider = BlogSlider::where('status',1)->get();
+    	return view('index_mobile',compact(['products','buynewsell','blogslider']));
     } 
 
 }
