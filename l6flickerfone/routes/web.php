@@ -1,6 +1,7 @@
 <?php
 
 Route::get('/', 'FrontEndController@index')->name('home');
+Route::get('/mobile', 'FrontEndController@indexmobile')->name('homemobile');
 Route::get('Login', 'LoginAndRegisterController@index')->name('Login');
 Route::get('AdminLogin', 'LoginAndRegisterController@adminIndex');
 Route::post('AdminSession', 'LoginAndRegisterController@adminLogin')->name('AdminSession');

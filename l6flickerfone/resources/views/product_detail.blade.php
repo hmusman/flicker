@@ -172,7 +172,14 @@ a[class="nav-link  dropdown-toggle"]{
 <style>
   .modal-window {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
+
+
+
+background-color: #8080807a;
+
+
+
+
   top: 0;
   right: 0;
   bottom: 0;
@@ -250,7 +257,18 @@ small {
 
       <div id="open-modal" class="modal-window">
         <div>
-          <a href="#" title="Close" class="modal-close">Close</a>
+
+
+
+
+          <a href="#" title="Close" class="modal-close">
+          
+           <img  src="{{ asset('storage/images/download__3_-removebg-preview (2) (1).png')}}"  />
+          </a>
+
+
+
+
           <h1>Sign In</h1>
           <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
           <form method="post">
@@ -1348,7 +1366,17 @@ Up to 20 h (multimedia)
                                           @if(!empty(Session::get('user')->id))
                                           <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
                                           @else
-                                          <button class="interior">
+
+
+
+
+                                          <button class="interior" style="border-color: transparent;">
+
+
+
+
+
+
                                           <a  href="#open-modal"   class="btn btn-primary">Login</a>
                                           </button>
  <!-- <div class="interior">
@@ -1550,8 +1578,15 @@ Up to 20 h (multimedia)
                                              <!-- <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button> -->
                                              <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
                                                 <!-- <button type="button" id="mybtnNext" class="btn btn-primary">Login</button> -->
-                                           
-                                                  <button class="interior">
+
+
+
+
+                                                  <button class="interior" style="border-color: transparent;">
+
+
+
+
                                           <a  href="#open-modal"   class="btn btn-primary">Login</a>
                                           </button>
                                              @endif
@@ -1582,6 +1617,7 @@ Up to 20 h (multimedia)
           <!-- <div id="myModal" class="modal fade" tabindex="" role="dialog" aria-labelledby="myModal" aria-hidden="true" style="margin-top: 5%;">
             <div class="modal-dialog">
 
+
             
               <div class="modal-content">
                 <div class="modal-header">
@@ -1603,6 +1639,7 @@ Up to 20 h (multimedia)
 
                       <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
                       <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+
 
 
                     </form>
@@ -2032,6 +2069,8 @@ btn.onclick = function() {
   modal.style.display = "block";
 }
 
+
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
@@ -2043,7 +2082,10 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+}
+
 </script>
+
 
 <script>
 // Get the modal
@@ -2081,8 +2123,6 @@ window.onclick = function(event) {
 
 
 </script>
-
-
 
 
 </html>

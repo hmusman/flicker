@@ -74,9 +74,9 @@
       }
       div[class="autoplay slick-initialized slick-slider slick-dotted"] >  ul[class="slick-dots"]{
       position: absolute;
-      top: 151px;
-      height: 220px !important;
-      width: 93%;
+      top: 174px;
+      height: 198px !important;
+      width: 99%;
       margin-left: 20px;
       border-bottom: 1px black solid;
       border-right: 1px black solid;
@@ -146,7 +146,7 @@
       content: none !important;
       } */
       #slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
-      margin-left: 23px !important;
+      margin-left: 2px !important;
       top: 81px;
       height: 67px !important;
       width: 22px !important;
@@ -158,7 +158,7 @@
       border-bottom-right-radius: 6px;
       }
       #slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
-      right: 2px !important;
+      right: 1px !important;
       top: 81px !important;
       height: 67px !important;
       width: 22px !important;
@@ -283,7 +283,7 @@
       margin-bottom: -8px;
       }
       div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
-      margin-left: 21px;
+      margin-left: 3px;
       }
       @media (max-width: 550px){
       #NewPhones{
@@ -437,7 +437,12 @@
       }
    </style>
    <body>
+
+
       <a href="#" id="scroll" style="display: none;"><span></span></a>
+
+
+
       @include('includes.header')
       @if($buynewsell->count()>0)
       <section>
@@ -447,7 +452,17 @@
             @if($row->title=='buy') @php $url = "Shop" @endphp @else @php $url = "#" @endphp  @endif
             <div class="col-md-4" style="background-color: #0b0c0c; border-right: 2px white solid;   height: 400px;" >
                <div style="height: 60%; width: 100%;">
-                  <center> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </center>
+                  <center>
+                     
+                  @if($row->title=='buy')
+                  <a href="{{ route('BuyUsedMobilePhones') }}"> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
+                  @elseif($row->title=='sell')
+                  <a href="{{ route('Sell') }}"> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
+                  @else
+                  <a href="{{ route('Shop') }}"> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
+                  @endif
+               
+               </center>
                </div>
                <div style="height: 30%; width: 100%;">
                   <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
@@ -509,7 +524,7 @@
                   <div class="item" style="">
                      <div id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
                         <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset($img) }}"
-                           class="img-responsive img-fullwidth" style=" width: 107% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
+                           class="img-responsive img-fullwidth" style=" width: 100% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
                         </div>
                         <br/>
                         <p style="color: black !important;    padding: 0px 10px 50px 24px;">

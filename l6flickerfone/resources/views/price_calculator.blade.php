@@ -292,7 +292,7 @@ div[class="ws-title"] > span{
 
 
 img[src="images/logo Black-01.jpg"]{
-  height: 65px !important;
+  height: 57px !important;
     /* top: -1px; */
     margin-top: -8px;
     margin-bottom: -8px;
@@ -733,7 +733,7 @@ input[type="radio"]:checked + label {
       <div id="setBrandatMob" style="width: 15%; float: left;">
         <figure style="padding-top: 80px;">
             <center> <img src="{{ asset($img) }}" alt="Trulli" ></center>
-            <a href="#apple1div" data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
+            <a data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
             <figcaption id="topfigurecap"  style="background-color: #4a88c2;
              text-align: center;
              padding: 10px; color: white !important;
@@ -754,7 +754,7 @@ input[type="radio"]:checked + label {
 
   <center>
     
-    <div id="panel" style="background-color: #dad9de;">
+    <div id="panel"  style="background-color: #dad9de;">
 
 
       <p style="color: #4a88c2; text-align: left;   margin-bottom: 0rem !important;">Select > Get Estimate</p>
@@ -762,7 +762,7 @@ input[type="radio"]:checked + label {
       <p style="color: #4a88c2; text-align: left;    margin-bottom: 0rem !important;">Which model do I have?</p>
 
 
-      <div id="verionsatMobWidth" style="  height: 200px; width: 100% ; background-color: white;">
+      <div id="verionsatMobWidth"  onclick="scrollWin();" style="  height: 200px; width: 100% ; background-color: white;">
 
       </div>
 
@@ -770,7 +770,7 @@ input[type="radio"]:checked + label {
   </center>
          
 
-<div id="apple1div" style="background-color: white;margin-top: 15px;">
+<div id="apple1div"  style="background-color: white;margin-top: 15px;">
 
 </div>
 
@@ -878,51 +878,7 @@ input[type="radio"]:checked + label {
         $('#getEstimatedmobile').html(data);
       }
     });
-  }
-  
 
-  // function estimate_fun()
-  // {
-  //   var t =0;
-  //   if($('.minor').is(":checked")){
-  //     t+=parseInt($(".minor:checked").val());
-  //   }
-    
-  //   if($('.major').is(":checked"))
-  //   {
-  //     t+=parseInt($(".major:checked").val());
-  //   }
-
-  //   if($('.screen').is(":checked"))
-  //   {
-  //     t+=parseInt($(".screen:checked").val());
-  //   }
-
-  //   if($('.device').is(":checked"))
-  //   {
-  //     t+=parseInt($(".device:checked").val());
-  //   }
-
-  //   if($('.accessory').is(":checked"))
-  //   {
-  //     t+=parseInt($(".accessory:checked").val());
-  //   }
-
-  //   if($('.battery option:selected').val()<6)
-  //   {
-      
-  //     t+=parseInt($("#device_battery_status").val());
-     
-  //   }
-  //   var price = $('#estimated_advice_price').val();
-  //   if($('.minor').is(":checked") && $('.major').is(":checked") && $('.screen').is(":checked") && $('.device').is(":checked") && $('.accessory').is(":checked"))
-  //   {
-  //     if($('.battery').children("option:selected").val() >0)
-  //     {
-  //       $('#estimate_price').html(price - t);        
-  //     }
-  //   }
-  // }
 
   function myFunction() {
       shoediv();
@@ -967,6 +923,9 @@ else if(color==="blue"){
   document.getElementById("changecolor3").style.filter="hue-rotate(10deg)";
 }
   })
+
+   window.scrollTo(0, 1200);
+  }
   </script>
   
   
@@ -997,8 +956,56 @@ else if(color==="blue"){
   
 <script>
 
-    
-    
+
+
+
+
+
+
+$(document).ready(function(){
+       $('.autoplayFeatures').slick({
+ slidesToShow: 5,
+ slidesToScroll: 1,
+  autoplay: true,
+ autoplaySpeed: 3000,
+
+
+ dots: true,
+ responsive: [
+     {
+       breakpoint: 500,
+       settings: {
+       slidesToShow: 2,
+       slidesToScroll: 1,
+       }
+     }
+   ]  
+ // variableWidth: true
+});
+});
+
+
+
+
+
+
+$(document).ready(function(){
+        $('.autoplay').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  // autoplay: true,
+  autoplaySpeed: 3000,
+
+
+  dots: true,
+ 
+  // variableWidth: true
+});
+});
+
+
+
+
 
 
 
@@ -1010,7 +1017,70 @@ $(function(){
 
 </script>
 
-  <!-- <script  src="js/ScrollJS2/script.js"></script> -->
+  
+<script type="text/javascript" src="slick/slick.min.js"></script>
+        
+<script type="text/javascript" src="slick/jquery3.2.1.js"></script>
+  
+<script type="text/javascript" src="slick/slick.js"></script>
+ 
+
+
+
+
+
+<script type="text/javascript" src="Slider/engine1/wowslider.js"></script>
+  <script type="text/javascript" src="Slider/engine1/script.js"></script>
+
+
+ 
+  
+  <script type="text/javascript" src="js/dropzone.js"></script>
+
+  <script  src="js/ScrollJS2/script.js"></script>
+
+
+
+
+
+  <script>
+    $('.dropdown-trigger').dropdown();
+
+    
+$(document).ready(function(){
+       $('.autoplayFeatures').slick({
+ slidesToShow: 5,
+ slidesToScroll: 1,
+//   autoplay: true,
+ autoplaySpeed: 3000,
+
+
+
+ dots: true,
+ responsive: [
+     {
+       breakpoint: 500,
+       settings: {
+       slidesToShow: 2,
+       slidesToScroll: 1,
+       }
+     }
+   ]  
+ // variableWidth: true
+});
+});
+
+
+
+
+  </script>
+
+
+
+
+
+
+
 
 
 
@@ -1137,10 +1207,17 @@ function apple1aftercolors(){
 
 
 
-
+window.scrollTo(0,document.body.scrollHeight);
 </script>
 
 
 
+<script>
+function scrollWin() {
+  window.scrollTo(0, 1200);
+}
 
+
+
+</script>
 </html>
