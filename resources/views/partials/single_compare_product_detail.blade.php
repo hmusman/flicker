@@ -460,7 +460,7 @@
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: 45px;border-bottom: 5px #eeeeee solid;
+      height: 72px;border-bottom: 5px #eeeeee solid;
       " class="pricesotageTextOnMob">
       @if($product->variation_colors->count()>0)
       @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp

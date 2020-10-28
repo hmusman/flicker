@@ -2,31 +2,39 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+    
 
 
+    
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+    <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+   <link rel="stylesheet" href="{{ asset('OriginalZoomer/ScrollJS2//style.css') }}">
+<link href="{{ asset('OriginalZoomer/css/cloudzoom.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('OriginalZoomer/css/thumbnail.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('OriginalZoomer/css/zoomcss.css') }}" rel="stylesheet" type="text/css">
+ 
 
-
-  </head>
-  <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-  <!-- <link href="{{ asset('css/style.css')}}" rel='stylesheet' type='text/css' media="all"> -->
-  <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/ProductDetail.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/template1/tabcontent.css') }}" rel="stylesheet" type="text/css" />
+ <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
+ 
+  <link href="{{ asset('css/ProductDetailTwo.css') }}" rel='stylesheet' type='text/css' media="all">
+  <link href="{{ asset('css/template4/tabcontent.css') }}" rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
   
-  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-
-  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/magnifier.css') }}">
+  <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
 
 
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
 
 
+
+<!-- 
+//////////////////////////////////// -->
+   <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
+   <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+
+  </head>
 
 
  <style>
@@ -60,101 +68,109 @@ cursor: pointer;
 
 
 <div class="row" style="margin-top: 31px;">
-  <div class="col-md-6" >
-
-	    @php $img1 = $product->image @endphp
-      @php $img1_400 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img1 @endphp
-      @php $img1_700 = '/storage/admin/images/sellproduct/thumbnail/700_'.$product->img1 @endphp
-    	@php $img2 = $product->img2 @endphp
-    	@php $img3 = $product->img3 @endphp
-
-      @php $img1_100 = '/storage/admin/images/sellproduct/thumbnail/100_'.$product->img1 @endphp
-      @php $img2_100 = '/storage/admin/images/sellproduct/thumbnail/100_'.$product->img2 @endphp
-      @php $img3_100 = '/storage/admin/images/sellproduct/thumbnail/100_'.$product->img3 @endphp
-
- <!-- <div class="loupe-widget js-loupe">
-  <div class="loupe-widget__loupe js-loupe-element"></div>
-  <div id="image_container">
-    <img id="myimage" style="    width: 100%;" class="loupe-widget__image js-loupe-image" src="{{asset($img1_400)}}" alt="image" data-image-full="{{asset($img1_700)}}"/>
-  </div>
-  
-</div> -->
-
-<div>
-    <a  class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
-        <img id="thumb"
-           src="{{ asset($img1_400)}}">
-    </a>
-    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px"></div>
-</div>
+  <div class="col-sm-6 ">
 
 
-<div >
-  
+              @php $img1 = $product->image @endphp
+              @php $img1_400 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img1 @endphp
+              @php $img2_400 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img2 @endphp
+              @php $img3_400 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img3 @endphp
+              @php $img4_500 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img4 @endphp
+              @php $img5_500 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img5 @endphp
+              @php $img6_500 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img6 @endphp
+              @php $img7_500 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img7 @endphp
+              @php $img8_500 = '/storage/admin/images/sellproduct/thumbnail/400_'.$product->img8 @endphp
+             
+              @php $img1_100 = '/storage/admin/images/sellproduct/thumbnail/100_'.$product->img1 @endphp
+              @php $img2_100 = '/storage/admin/images/sellproduct/thumbnail/100_'.$product->img2 @endphp
+              @php $img3_100 = '/storage/admin/images/sellproduct/thumbnail/100_'.$product->img3 @endphp
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-
-
-  <div class="row" >
-  
-    <div class="col-md-12 col-lg-12 col-sm-12" id="slickBtnFor">
-    
-      <div class="autoplayFeatures">
-        
-         @if(!empty($img1))
-
-          <figure  >
-            <img class="productImgs" data-id="{{ $product->img1 }}" class="img-thumbnail" src="{{ asset($img1_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-          </figure>
-
-        @endif
-
-        @if(!empty($img2))
-
-        	<figure  >
-	          <img class="productImgs" data-id="{{ $product->img2 }}" class="img-thumbnail" src="{{ asset($img2_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-	        </figure>
-
-      	@endif
-
-
-
-
-        @if(!empty($img3))
-
-        	<figure  >
-	          <img class="productImgs" data-id="{{ $product->img3 }}" class="img-thumbnail" src="{{ asset($img3_100)}}" alt="Trulli" style="width:100%;height: 100px;">
-	        </figure>
-
-      	@endif
-       
-        
-        </div>
       
-      </div>
 
 
-    
-    </div>
+            <div id="surround" align="center">
+               <img class="cloudzoom img-responsive" alt ="Small image" id ="zoom1" src="{{ ($img1_400) }}" 
+                  data-cloudzoom='  zoomSizeMode:"image",     autoInside: 500 '>
+               
+                  <div id="slider1">
+                  <div class="thumbelina-but horiz left">
+                     <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_left_black_18dp.png')}}">
+                  </div>
+                  <ul class="ClousSlicker">
+
+                    
+                    @if(!empty($img1))
+                     <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img1_400)}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}'  " style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+                     
+                     
+                    @if(!empty($img2))
+                      <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_400)}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img2_400)}}'  " style='max-width:90px;max-height:100px;'></li>
+                    @endif
 
 
-  </div>
+                    @if(!empty($img3))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img3_400)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img3_400)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
 
+                    @if(!empty($product->img4))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img4_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img4_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
 
-</div>
-  </div>
+                    @if(!empty($product->img5))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img5_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img5_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img6))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img6_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img6_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img7))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img7_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img7_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+
+                    @if(!empty($product->img8))
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img8_500)}}"
+                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img8_500)}}"  ' style='max-width:90px;max-height:100px;'>
+                      </li>
+                    @endif
+<!-- 
+
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}'  " style='max-width:90px;max-height:100px;'>
+                      </li>
+
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}"
+                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
+                   
+                   
+                        <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}"
+                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}'  "
+                        style='max-width:90px;max-height:100px;'></li>
+                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}"
+                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}'  "
+                        style='max-width:90px;max-height:100px;'></li> -->
+
+                  </ul>
+                  <div class="thumbelina-but horiz right">
+                     <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_right_black_18dp.png')}}">
+                  </div>
+               </div>
+            </div>
+         </div>
 
 <div class="col-md-6">
   
@@ -700,18 +716,29 @@ function image1ReplaceOnClick1(){
 </script>
 
   
-<script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
         
 <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script>
   
-<script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script>
+<script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script> -->
  
 
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/cloudzoom.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/select2.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/slick.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/thumbnail.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script> -->
 
+
+
+
+ <script  src="{{ asset('OriginalZoomer/ScrollJS2/script.js') }}"></script>
+ 
 
 <script  src="{{ asset('js/tabcontent.js')}}"></script>
   <script  src="{{ asset('js/Event.js')}}"></script>
-    <script  src="{{ asset('js/Magnifier.js')}}"></script>
+
+
 
 
 <!-- 
@@ -720,16 +747,16 @@ function image1ReplaceOnClick1(){
 <script type="text/javascript">
     
 
-    var evt = new Event(),
-    m = new Magnifier(evt);
-     m.attach({
+    // var evt = new Event(),
+    // m = new Magnifier(evt);
+    //  m.attach({
      
-            thumb: '#thumb',
-            large:  "{{asset($img1_400)}}",
-            mode: 'inside',
-            zoom: 3,
-            zoomable: true
-        });
+    //         thumb: '#thumb',
+    //         large:  "{{asset($img1_400)}}",
+    //         mode: 'inside',
+    //         zoom: 3,
+    //         zoomable: true
+    //     });
 
 
 
@@ -817,7 +844,7 @@ $(function(){
 
 <script src="js/pagination.js"></script>
 
-<script  src="js/ScrollJS2/script.js"></script>
+<!-- <script  src="js/ScrollJS2/script.js"></script> -->
 
 
 
@@ -834,6 +861,93 @@ $(document).ready(function(){
     $("#ReplyBox"+id).toggle();
   });
 });
+</script>
+
+
+
+<script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+CloudZoom.quickStart();
+$(function(){
+    $('#slider1').Thumbelina({
+        $bwdBut:$('#slider1 .left'),
+        $fwdBut:$('#slider1 .right')
+    });
+});
+
+
+
+    $('#commentbtn').click(function(){
+
+      submitComment($("#comment").val());
+    });
+var limit = 5;
+
+
+  function submitComment(msg) {
+     // alert('https://flickerfone.com/main/submicomment?'+"slug="+5+"&name="+$("#name").val()+"&email="+$("#email").val()+"&g-recaptcha-response="+$("#g-recaptcha-response").val());
+
+ $.get("https://flickerfone.com/main/submicomment?slug=428&comment="+msg+"&name="+$("#name").val()+"&email="+$("#email").val()+"&response="+$("#g-recaptcha-response").val(),function(data){
+     loadComments();
+    if(data.success==false){
+      loadComments();
+      sa_alert('Request',data.message, 'info',2000);
+    }else{
+
+      $("#comment").val("");
+      $("#name").val("");
+      $("#email").val("");
+       sa_alert('Success',data.message, 'success',2000);
+    }
+ });
+}
+
+
+
+function submitRating(msg) {
+
+ $.get("https://flickerfone.com/main/submitrating?slug=428&review="+msg,function(data){
+    if(data.success==false){
+      sa_alert('Request',data.message, 'info',2000);
+    }else{
+        $(".rating-widget").html("Thanks for your feedback.")
+       sa_alert('Success',data.message, 'success',2000);
+    }
+ });
+}
+  $('#stars li').on('mouseover', function(){
+
+    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+    // Now highlight all the stars that's not after the current hovered star
+    $(this).parent().children('li.star').each(function(e){
+      if (e < onStar) {
+        $(this).addClass('hover');
+      }
+      else {
+        $(this).removeClass('hover');
+      }
+    });
+
+  }).on('mouseout', function(){
+    $(this).parent().children('li.star').each(function(e){
+      $(this).removeClass('hover');
+    });
+  });
+
+
+
+
+
+});
+
+
+
+
+
+
 </script>
 
 </html>
