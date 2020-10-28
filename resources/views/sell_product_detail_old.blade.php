@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>{{ config('app.name') }}</title>
-
-  <meta name="description" content="<Flicker fone is the best mobile phone site for information and best mobile phone information site such as specifications, updated prices, features comparison and upcoming future updates of phones in Pakistan. >">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="">
-  
-  <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
-    <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-
-
-<!-- <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     
 
-        
+
+    
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+    <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
    <link rel="stylesheet" href="{{ asset('OriginalZoomer/ScrollJS2//style.css') }}">
 <link href="{{ asset('OriginalZoomer/css/cloudzoom.css') }}" rel="stylesheet" type="text/css">
@@ -33,23 +25,19 @@
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
 
 
+  <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
+
+
 
 <!-- 
 //////////////////////////////////// -->
    <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-  
 
-</head>
-
+  </head>
 
 
  <style>
-
-ul[class="tabs"]{
-text-align: initial !important;
-}
-
    #clickopinon{
 cursor: pointer;
    }
@@ -453,6 +441,430 @@ cursor: pointer;
 <script src="js/bootstrap.min.js" ></script> -->
 
 
+<script>
+  $('.ErrorMsg').hide();
+  function ContactShow(id){$('#contact'+id).toggle()}
+	function colorStorage(id,color)
+	{
+		$.ajax({
+			url:"{{ route('ColorFilterStorage') }}",
+			type:"get",
+			data:{id:id,color:color},
+			success:function(data){
+				$('#colorStorage').html(data);	
+			}
+		});
+	}
+
+  $('#asc_desc').change(function(){
+    var val = $('#asc_desc option:selected').val();
+    var id = '{{ $product->id }}';
+    $('#opinion_search').val('');
+    FetchDataAscDesc(0,val,id);
+
+  });
+
+  $('#opinion_search_btn').click(function(){
+      var val = $('#opinion_search').val();
+      $('#asc_desc').val('Select View');
+      FetchOpinionSearchData(0,val,'{{ $product->id }}');
+  });
+
+  function FetchDataAscDesc(page,val,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionDataAscDesc?page="+page,
+     type:"get",
+     data:{order:val,id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
+
+  function FetchOpinionSearchData(page,val,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionSearchData?page="+page,
+     type:"get",
+     data:{query:val,id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
+
+  function FetchData(page,id)
+  {
+    $.ajax({
+     url:"/ProductOpinionData?page="+page,
+     type:"get",
+     data:{id:id},
+     success:function(data)
+     {
+        $('.opinions_data').html(data.output);
+        $('#pages').html(data.pagination);
+      // $('#view2FullAtMobile').html(data);
+     }
+    });
+  }
+
+  $(document).on('click', '.pagination a', function(event){
+      event.preventDefault();
+      var page = $(this).attr('href').split('page=')[1]; 
+      if($('#asc_desc option:selected').val()!='Select View')
+      {
+        var val = $('#asc_desc option:selected').val();
+        var id = '{{ $product->id }}';
+        FetchDataAscDesc(page,val,id);
+      }
+      else if($('#opinion_search').val() !=''){
+        FetchOpinionSearchData(page,$('#opinion_search').val(),'{{ $product->id }}');
+      }
+      else{FetchData(page,'{{ $product->id }}')};
+    });
+
+	$(document).ready(function(){
+		if($('.productColorClass').hasClass('color_active'))
+		{
+			colorStorage($('#product_id').val(),$('.color_active').children('.colorBtns').data('id'));	
+		}
+	});
+
+	$('.productColorClass').click(function(){
+		$('.productColorClass').removeClass('color_active');
+		$(this).addClass('color_active');
+	});
+
+  $('.modal_login').click(function(){
+    var email = $('#username').val();
+    var pass = $('#password').val();
+    var token = '{{ csrf_token() }}';
+    var btn_html = '<button type="submit" class="btn btn-primary waves-effect waves-light save_btn">Submit</button>';
+    $.ajax({
+      url:"{{ route('UserModalLogin') }}",
+      type:"post",
+      data:{_token:token,login_email:email,login_password:pass},
+      success:function(data){
+        if(data.status=="")
+        {
+          $('.login_status').html('');
+          $('.user_id').val(data.id);
+          $('.modal_close').click();
+          $('.submit_area').html(btn_html);
+        }
+        else{
+            $('.ErrorMsg').show();
+            $('#username').val(data.email);
+            $('#password').val('');
+            $('.ErrorMsg').text(data.msg);
+        }
+      }
+    });
+});
+
+	$('#colorStorage').change(function(){
+		var storage = $(this).val();
+		var id = $('#product_id').val();
+		var color = $('.color_active').children('.colorBtns').data('id')
+		$.ajax({
+			url:"{{ route('StorageFilterPrice') }}",
+			type:"get",
+			data:{id:id,color:color,storage:storage},
+			success:function(data){
+				$('.StoragePrice').html(data);	
+			}
+		});
+	});
+
+	$('.colorBtns').click(function(){ colorStorage($('#product_id').val(),$(this).data('id')); });
+
+  function myFunction() {
+      shoediv();
+  
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+          } else {
+              li[i].style.display = "none";
+          }
+      }
+  
+      
+  }
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+      }
+  
+  
+  
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+      }
+  </script>
+  
+  
+  
+  
+<script>
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+       $('.autoplayFeatures').slick({
+ slidesToShow: 4,
+ slidesToScroll: 1,
+  autoplay: true,
+ autoplaySpeed: 3000,
+ pauseOnHover:true,
+
+ dots: true,
+ responsive: [
+     {
+       breakpoint: 500,
+       settings: {
+       slidesToShow: 2,
+       slidesToScroll: 1,
+       }
+     }
+   ]  
+ // variableWidth: true
+});
+});
+
+
+
+
+
+
+
+$(function(){
+   $('#shopBtn').attr('href','#scrollTo');
+});
+
+
+
+function image1ReplaceOnClick1(){
+
+//   document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389384.jpg')}}";
+//   document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389384.jpg')}})";
+}
+
+
+// function image1ReplaceOnClick2(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389619.jpg')}}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-184389619.jpg')}})";
+// }
+
+
+// function image1ReplaceOnClick3(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/KHIPSE264BLK_4.jpg')}}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/KHIPSE264BLK_4.jpg')}})";
+// }
+
+
+// function image1ReplaceOnClick4(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-packaging-new-black-iphone-se-multinational-company-182969056.jpg') }}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-packaging-new-black-iphone-se-multinational-company-182969056.jpg')}})";
+// }
+
+
+// function image1ReplaceOnClick5(){
+
+// document.getElementById("myimage").srcset = "{{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-193162726.jpg')}}";
+// document.getElementById("myresult").style.backgroundImage = "url({{ asset('storage/images/packaging-new-iphone-se-apple-paris-france-may-black-multinational-company-days-its-studio-release-white-193162726.jpg')}})";
+// }
+
+
+ 
+
+</script>
+
+  
+<!-- <script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
+        
+<script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script>
+  
+<script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script> -->
+ 
+
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/cloudzoom.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/select2.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/slick.js')}}"></script>
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/thumbnail.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script> -->
+
+
+
+
+ <script  src="{{ asset('OriginalZoomer/ScrollJS2/script.js') }}"></script>
+ 
+
+<script  src="{{ asset('js/tabcontent.js')}}"></script>
+  <script  src="{{ asset('js/Event.js')}}"></script>
+
+
+
+
+<!-- 
+<script type="text/javascript" src="Event.js"></script>
+<script type="text/javascript" src="Magnifier.js"></script> -->
+<script type="text/javascript">
+    
+
+    // var evt = new Event(),
+    // m = new Magnifier(evt);
+    //  m.attach({
+     
+    //         thumb: '#thumb',
+    //         large:  "{{asset($img1_400)}}",
+    //         mode: 'inside',
+    //         zoom: 3,
+    //         zoomable: true
+    //     });
+
+
+
+  $('.productImgs').click(function(){
+    var imgSrc="{{url('storage/admin/images/sellproduct/thumbnail/400_') }}";
+    imgSrc += $(this).data('id');
+    document.getElementById("thumb").src = imgSrc;
+            console.log(imgSrc);
+    var evt = new Event(),
+    m = new Magnifier(evt);
+     m.attach({
+     
+            thumb: '#thumb',
+            large:  imgSrc,
+            mode: 'inside',
+            zoom: 3,
+            zoomable: true
+        });
+// m.attacth['large'] = imgSrc;
+
+  
+  });
+
+</script>
+
+
+
+  <script>
+    $(function() {
+      (function(name) {
+        var container = $('#pagination-' + name);
+        var sources = function () {
+          var result = [];
+    
+          for (var i = 1; i < 196; i++) {
+            result.push(i);
+          }
+    
+          return result;
+        }();
+    
+        var options = {
+          dataSource: sources,
+          callback: function (response, pagination) {
+            window.console && console.log(response, pagination);
+    
+            var dataHtml = '<ul>';
+    
+            $.each(response, function (index, item) {
+              dataHtml += '<li>' + item + '</li>';
+            });
+    
+            dataHtml += '</ul>';
+    
+            container.prev().html(dataHtml);
+          }
+        };
+    
+        //$.pagination(container, options);
+    
+        container.addHook('beforeInit', function () {
+          window.console && console.log('beforeInit...');
+        });
+        container.pagination(options);
+    
+        container.addHook('beforePageOnClick', function () {
+          window.console && console.log('beforePageOnClick...');
+          //return false
+        });
+      })('demo1');
+    
+
+    })
+
+
+
+    
+$(function(){
+   $('#shopBtn').attr('href','#scrollTo');
+});
+
+
+    </script>
+
+
+<script src="js/pagination.js"></script>
+
+<!-- <script  src="js/ScrollJS2/script.js"></script> -->
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#clickopinon").click(function(){
+    $("#OpinonBox").toggle();
+  });
+
+  $(".clickReply").click(function(){
+    var id = $(this).data('id');
+    $("#ReplyBox"+id).toggle();
+  });
+});
+</script>
+
+
+
 <script type="text/javascript">
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -537,31 +949,5 @@ function submitRating(msg) {
 
 
 </script>
-
-
-
-
-
- <script src="https://flickerfone.com/themes/default/shop/assets/js/jquery-2.1.3.min.js"></script>
-
- 
- <!-- <script src="https://flickerfone.com/themes/default/shop/assets/js/bs.js"></script> -->
-
-
-
-<script type="text/javascript" src="{{ asset('OriginalZoomer/js/cloudzoom.js')}}"></script>
-<script type="text/javascript" src="{{ asset('OriginalZoomer/js/select2.js')}}"></script>
-<script type="text/javascript" src="{{ asset('OriginalZoomer/js/slick.js')}}"></script>
-<script type="text/javascript" src="{{ asset('OriginalZoomer/js/thumbnail.js')}}"></script>
-<!-- <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script> -->
-
-
-
-
- <script  src="{{ asset('OriginalZoomer/ScrollJS2/script.js') }}"></script>
- 
-
-<script  src="{{ asset('js/tabcontent.js')}}"></script>
-  <script  src="{{ asset('js/Event.js')}}"></script>
 
 </html>

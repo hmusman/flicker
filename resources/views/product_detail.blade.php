@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>iphone 8</title>
+  <title>{{ config('app.name') }}</title>
 
   <meta name="description" content="<Flicker fone is the best mobile phone site for information and best mobile phone information site such as specifications, updated prices, features comparison and upcoming future updates of phones in Pakistan. >">
   <meta charset="UTF-8">
