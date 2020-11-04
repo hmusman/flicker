@@ -144,7 +144,11 @@ ul[class="dropdown-menu fade-up"] > li::after{
 
   }
 
-
+@media (min-width: 992px) and (max-width : 1500px){
+  #getEstimatedmobile{
+  margin-top: 50px !important;
+  }
+}
   @media (max-width: 550px){
 #navbarNavAltMarkup1{
   background-color: #e6e6e6 !important;
