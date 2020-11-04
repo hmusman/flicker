@@ -46,7 +46,10 @@
 
 
 <style>
+footer{
+      margin-top: 300px !important;
 
+}
 #aug20onmob, #zeroCpOnMobile{
    color: #848388 !important
 }
