@@ -144,7 +144,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
 
   }
 
-@media (min-width: 992px) and (max-width : 1500px){
+@media (min-width: 992px) and (max-width : 2000px){
   #getEstimatedmobile{
   margin-top: 50px !important;
   }
