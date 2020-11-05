@@ -47,7 +47,7 @@
 
 <style>
 footer{
-      margin-top: 300px !important;
+      margin-top: 340px !important;
 
 }
 #aug20onmob, #zeroCpOnMobile{
