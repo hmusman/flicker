@@ -14,6 +14,11 @@
     <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 
 
+
+            
+   <link href="{{ asset('OriginalZoomer/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
 <!-- <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script> -->
     
 
@@ -47,7 +52,7 @@
 
 <style>
 footer{
-      margin-top: 300px !important;
+      margin-top: 370px !important;
 
 }
 #aug20onmob, #zeroCpOnMobile{
@@ -311,129 +316,230 @@ small {
 
 <br/>
 
+
+
+
+
+
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+</section>
+
+
 <section >
    <div class="container" >
+
       <div class="row">
+
          <div class="col-sm-6 ">
 
+    <!-- @php $img1 = $product->image @endphp
+                    @php $img1_400 = '/storage/admin/images/product/thumbnail/500_'.$product->image @endphp
+                    @php $img2_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage @endphp
+                    @php $img3_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage1 @endphp
+                    @php $img4_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img4 @endphp
+                    @php $img5_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img5 @endphp
+                    @php $img6_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img6 @endphp
+                    @php $img7_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img7 @endphp
+                    @php $img8_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img8 @endphp
+                    @php $img9_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img9 @endphp
+                    @php $img10_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img10 @endphp
 
-@php $img1 = $product->image @endphp
-      @php $img1_400 = '/storage/admin/images/product/thumbnail/500_'.$product->image @endphp
-      @php $img2_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage @endphp
-      @php $img3_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage1 @endphp
-      @php $img4_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img4 @endphp
-      @php $img5_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img5 @endphp
-      @php $img6_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img6 @endphp
-      @php $img7_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img7 @endphp
-      @php $img8_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img8 @endphp
-      @php $img9_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img9 @endphp
-      @php $img10_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img10 @endphp
-     
-        @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
-      @php $img2 = $product->dimage @endphp
-      @php $img3 = $product->dimage1 @endphp
+                    @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
+                    @php $img2 = $product->dimage @endphp
+                    @php $img3 = $product->dimage1 @endphp
 
-      @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
-      @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
-      @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
-
-      
+                    @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
+                    @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
+                    @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp -->
 
 
-            <div id="surround" align="center">
-               <img class="cloudzoom img-responsive" alt ="Small image" id ="zoom1" src="{{ ($img1_400) }}" 
-                  data-cloudzoom='  zoomSizeMode:"image",     autoInside: 500 '>
-               
-                  <div id="slider1">
-                  <div class="thumbelina-but horiz left">
-                     <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_left_black_18dp.png')}}">
-                  </div>
-                  <ul class="ClousSlicker">
-
-                    
-                    @if(!empty($img1))
-                     <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img1_400)}}"
-                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}'  " style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
-                     
-                     
-                    @if(!empty($img2))
-                      <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_400)}}"
-                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img2_400)}}'  " style='max-width:90px;max-height:100px;'></li>
-                    @endif
 
 
-                    @if(!empty($img3))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img3_400)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img3_400)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
+                    <div id="surround" align="center">
+                        <img class="cloudzoom img-responsive" alt="Small image" id="zoom1" src="{{ ($img1_400) }}"
+                            data-cloudzoom='  zoomSizeMode:"image",     autoInside: 500 '>
 
-                    @if(!empty($product->img4))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img4_500)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img4_500)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
+                        <div id="slider1">
+                            <div class="thumbelina-but horiz left">
+                                <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_left_black_18dp.png')}}">
+                            </div>
+                            <ul class="ClousSlicker">
 
-                    @if(!empty($product->img5))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img5_500)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img5_500)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
 
-                    @if(!empty($product->img6))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img6_500)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img6_500)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
+                                <!-- @if(!empty($img1))
+                                <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail'
+                                        src="{{ asset($img1_400)}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}'  "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
 
-                    @if(!empty($product->img7))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img7_500)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img7_500)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
 
-                    @if(!empty($product->img8))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img8_500)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img8_500)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
+                                @if(!empty($img2))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_400)}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($img2_400)}}'  "
+                                        style='max-width:90px;max-height:100px;'></li>
+                                @endif
 
-                    @if(!empty($product->img9))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img9_500)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img9_500)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
 
-                    @if(!empty($product->img10))
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img10_500)}}"
-                        data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img10_500)}}"  ' style='max-width:90px;max-height:100px;'>
-                      </li>
-                    @endif
-<!-- 
+                                @if(!empty($img3))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img3_400)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img3_400)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
 
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}"
-                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}'  " style='max-width:90px;max-height:100px;'>
-                      </li>
+                                @if(!empty($product->img4))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img4_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img4_500)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
 
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}"
-                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
-                   
-                   
-                        <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}"
-                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}'  "
-                        style='max-width:90px;max-height:100px;'></li>
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}"
-                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}'  "
-                        style='max-width:90px;max-height:100px;'></li> -->
+                                @if(!empty($product->img5))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img5_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img5_500)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
 
-                  </ul>
-                  <div class="thumbelina-but horiz right">
-                     <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_right_black_18dp.png')}}">
-                  </div>
-               </div>
-            </div>
+                                @if(!empty($product->img6))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img6_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img6_500)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img7))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img7_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img7_500)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img8))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img8_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img8_500)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img9))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img9_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img9_500)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img10))
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img10_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img10_500)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif -->
+
+
+
+
+                                    @if(!empty($img1))
+                                <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail'
+                                       src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/3.jpg')}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/3.jpg')}}'  "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+
+                                @if(!empty($img2))
+                                <li><img class='cloudzoom-gallery img-thumbnail'
+                                     src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/2.jpg')}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/2.jpg')}}'  "
+                                        style='max-width:90px;max-height:100px;'></li>
+                                @endif
+
+
+                                @if(!empty($img3))
+                                <li><img class='cloudzoom-gallery img-thumbnail' 
+                                     src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/4.jpg')}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/4.jpg')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img4))
+                                <li><img class='cloudzoom-gallery img-thumbnail' 
+                                     src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/5.png')}}"
+                                          data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/5.png')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img5))
+                                <li><img class='cloudzoom-gallery img-thumbnail' 
+                                       src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/6.jpg')}}"
+                                          data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/6.jpg')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img6))
+                                <li><img class='cloudzoom-gallery img-thumbnail' 
+                                src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/7.jpg')}}"
+                                          data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/7.jpg')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img7))
+                                <li><img class='cloudzoom-gallery img-thumbnail' 
+                                     src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/8.jpg')}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/8.jpg')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img8))
+                                <li><img class='cloudzoom-gallery img-thumbnail' 
+                                     src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/9.jpg')}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/9.jpg')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                <!-- @if(!empty($product->img9))
+                                <li><img class='cloudzoom-gallery img-thumbnail' 
+                                     src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/1.jpg')}}"
+                                         data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/1.jpg')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif
+
+                                @if(!empty($product->img10))
+                                <li><img class='cloudzoom-gallery img-thumbnail'
+                                     src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/1.jpg')}}"
+                                         data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/1.jpg')}}' "
+                                        style='max-width:90px;max-height:100px;'>
+                                </li>
+                                @endif -->
+                                
+                            </ul>
+                            <div class="thumbelina-but horiz right">
+                                <img
+                                    src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_right_black_18dp.png')}}">
+                            </div>
+                        </div>
+                    </div>
+
          </div>
         
 <div class="col-md-6" style="  color: black !important;">
@@ -532,7 +638,9 @@ small {
       </div>
    </div>
 </div>
+
       </div>
+
    </div>
 </section>
 
@@ -1798,7 +1906,7 @@ function submitRating(msg) {
  <!-- <script src="https://flickerfone.com/themes/default/shop/assets/js/bs.js"></script> -->
 
 
-
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/jquery-2.1.3.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('OriginalZoomer/js/cloudzoom.js')}}"></script>
 <script type="text/javascript" src="{{ asset('OriginalZoomer/js/select2.js')}}"></script>
 <script type="text/javascript" src="{{ asset('OriginalZoomer/js/slick.js')}}"></script>
