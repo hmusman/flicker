@@ -239,7 +239,7 @@ class ProductController extends Controller
                     
 
                     $request->session()->flash('msg',"Product has been added successfully");
-                    return redirect()->route('Product.index');
+                    return redirect()->route('products.index');
                 }
             }
         }
@@ -549,7 +549,7 @@ class ProductController extends Controller
                     }
                 }
                 $request->session()->flash('msg',"Product has been updated successfully");
-                return redirect()->route('Product.index');
+                return redirect()->route('products.index');
             }
         }
             
@@ -561,7 +561,7 @@ class ProductController extends Controller
         if(Product::where('id',$id)->delete())
         {
             $request->session()->flash('msg',"Product has been deleted successfully");
-            return redirect()->route('Product.index');
+            return redirect()->route('products.index');
         }
     }
 

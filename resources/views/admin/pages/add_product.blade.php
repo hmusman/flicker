@@ -48,7 +48,7 @@
                                         <div class="alert alert-warning col-md-4">{{ Session::get('warningMsg') }}</div>
                                     @endif
                                     
-                                    <form action="{{ route('Product.store') }}" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <style type="text/css">
                                              .nav-tabs li

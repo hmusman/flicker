@@ -205,8 +205,8 @@
                                     <span>Product</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('Product.create') }}">Add Product</a></li>
-                                    <li><a href="{{ route('Product.index') }}">View Products</a></li>
+                                    <li><a href="{{ route('products.create') }}">Add Product</a></li>
+                                    <li><a href="{{ route('products.index') }}">View Products</a></li>
                                     <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
                                 </ul>
                             </li>

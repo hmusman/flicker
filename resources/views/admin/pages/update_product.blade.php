@@ -44,7 +44,7 @@
                                 <div class="card-body">
 
                                     <h4 class="header-title">Update Product</h4>
-                                    <form action="{{ route('Product.update',$product->id) }}" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('products.update',$product->id) }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @method('put')
                                         <style type="text/css">

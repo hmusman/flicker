@@ -202,7 +202,7 @@ class LoginAndRegisterController extends Controller
                 if(Hash::check($request->login_password,$user->password))
                 {
                    $request->session()->put('admin',$user->email);
-                    return redirect('Admin');
+                    return redirect('admin');
                 }
                 else
                 {

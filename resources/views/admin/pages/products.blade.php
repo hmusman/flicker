@@ -81,9 +81,9 @@
                                                        <td>
                                                            <table>
                                                                <tr>
-                                                                   <td><a href="{{ route('Product.edit',$product->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
+                                                                   <td><a href="{{ route('products.edit',$product->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
                                                                    <td>
-                                                                       <form method="post" action="{{ route('Product.destroy',$product->id) }}">
+                                                                       <form method="post" action="{{ route('products.destroy',$product->id) }}">
                                                                             @csrf
                                                                             @method('delete')
                                                                            <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>

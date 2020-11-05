@@ -119,9 +119,9 @@ Route::get('BrandProductColorItem','pricecalculatorproducts\PriceCalculatorProdu
 Route::get('BrandProductEstimate','pricecalculatorproducts\PriceCalculatorProductController@BrandProductEstimate')->name('BrandProductEstimate');
 Route::get('SellAccessory','SellAccessoryController@create')->name('SellAccessory.create');
 // Route::get('pricesearch/{min?}/{max?}','ProductController@priceSearch')->name('pricesearch');
-Route::prefix('Admin')->middleware('AdminLoginSessionCheck')->group(function(){
+Route::prefix('admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::get('/','AdminController@index');
-	Route::resource('Product','ProductController');
+	Route::resource('products','ProductController');
 	Route::resource('/PriceCalculatorProduct','pricecalculatorproducts\PriceCalculatorProductController');
 	Route::resource('/Category','CategoryController');
 	Route::resource('AccessoryCategory','AccessoryCategoryController');
