@@ -366,7 +366,7 @@ small {
 
 
                     <div id="surround" align="center">
-                        <img class="cloudzoom img-responsive" alt="Small image" id="zoom1" src="{{ ($img1_400) }}"
+                        <img class="cloudzoom img-responsive" alt="Small image" id="zoom1" src="{{ ($img1_500) }}"
                             data-cloudzoom='  zoomSizeMode:"image",     autoInside: 500 '>
 
                         <div id="slider1">
