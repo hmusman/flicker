@@ -14,6 +14,11 @@
     <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 
 
+
+            
+   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+
 <!-- <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script> -->
     
 
@@ -1798,7 +1803,7 @@ function submitRating(msg) {
  <!-- <script src="https://flickerfone.com/themes/default/shop/assets/js/bs.js"></script> -->
 
 
-
+<script type="text/javascript" src="{{ asset('OriginalZoomer/js/jquery-2.1.3.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('OriginalZoomer/js/cloudzoom.js')}}"></script>
 <script type="text/javascript" src="{{ asset('OriginalZoomer/js/select2.js')}}"></script>
 <script type="text/javascript" src="{{ asset('OriginalZoomer/js/slick.js')}}"></script>
