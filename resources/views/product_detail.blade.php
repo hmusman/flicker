@@ -342,17 +342,17 @@ small {
 
          <div class="col-sm-6 ">
 
-    <!-- @php $img1 = $product->image @endphp
-                    @php $img1_400 = '/storage/admin/images/product/thumbnail/500_'.$product->image @endphp
-                    @php $img2_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage @endphp
-                    @php $img3_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage1 @endphp
-                    @php $img4_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img4 @endphp
-                    @php $img5_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img5 @endphp
-                    @php $img6_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img6 @endphp
-                    @php $img7_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img7 @endphp
-                    @php $img8_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img8 @endphp
-                    @php $img9_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img9 @endphp
-                    @php $img10_500 = '/storage/admin/images/product/thumbnail/500_'.$product->img10 @endphp
+    @php $img1 = $product->image @endphp
+                    @php $img1_500 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
+                    @php $img2_500 = '/storage/admin/images/product/thumbnail/700_'.$product->dimage @endphp
+                    @php $img3_500 = '/storage/admin/images/product/thumbnail/700_'.$product->dimage1 @endphp
+                    @php $img4_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img4 @endphp
+                    @php $img5_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img5 @endphp
+                    @php $img6_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img6 @endphp
+                    @php $img7_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img7 @endphp
+                    @php $img8_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img8 @endphp
+                    @php $img9_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img9 @endphp
+                    @php $img10_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img10 @endphp
 
                     @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
                     @php $img2 = $product->dimage @endphp
@@ -360,7 +360,7 @@ small {
 
                     @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
                     @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
-                    @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp -->
+                    @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
 
 
 
@@ -376,25 +376,25 @@ small {
                             <ul class="ClousSlicker">
 
 
-                                <!-- @if(!empty($img1))
+                                @if(!empty($img1))
                                 <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail'
-                                        src="{{ asset($img1_400)}}"
-                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}'  "
+                                        src="{{ asset($img1_500)}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($img1_500)}}'  "
                                         style='max-width:90px;max-height:100px;'>
                                 </li>
                                 @endif
 
 
                                 @if(!empty($img2))
-                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_400)}}"
-                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($img2_400)}}'  "
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img2_500)}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($img2_500)}}'  "
                                         style='max-width:90px;max-height:100px;'></li>
                                 @endif
 
 
                                 @if(!empty($img3))
-                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img3_400)}}"
-                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img3_400)}}"  '
+                                <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img3_500)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img3_500)}}"  '
                                         style='max-width:90px;max-height:100px;'>
                                 </li>
                                 @endif
@@ -446,12 +446,12 @@ small {
                                         data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset($img10_500)}}"  '
                                         style='max-width:90px;max-height:100px;'>
                                 </li>
-                                @endif -->
+                                @endif
 
 
 
 
-                                    @if(!empty($img1))
+                                    <!-- @if(!empty($img1))
                                 <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail'
                                        src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/3.jpg')}}"
                                         data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/3.jpg')}}'  "
@@ -515,7 +515,7 @@ small {
                                         style='max-width:90px;max-height:100px;'>
                                 </li>
                                 @endif
-
+ -->
                                 <!-- @if(!empty($product->img9))
                                 <li><img class='cloudzoom-gallery img-thumbnail' 
                                      src="{{ asset('OriginalZoomer/ZoomerImg/NewZoomerImg/1.jpg')}}"
