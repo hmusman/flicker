@@ -10,13 +10,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="">
   
-<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
-    <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="{{ asset('OriginalZoomer/css/bootstrap.min.css') }}" >
+    <!-- <link href="https://flickerfone.com/themes/default/shop/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"> -->
 
 
 
-            
-   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+<!--             
+   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
 
 
 <!-- <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script> -->
@@ -27,7 +27,7 @@
    <link rel="stylesheet" href="{{ asset('OriginalZoomer/ScrollJS2//style.css') }}">
 <link href="{{ asset('OriginalZoomer/css/cloudzoom.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('OriginalZoomer/css/thumbnail.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('OriginalZoomer/css/zoomcss.css') }}" rel="stylesheet" type="text/css">
+<!-- <link href="{{ asset('OriginalZoomer/css/zoomcss.css') }}" rel="stylesheet" type="text/css"> -->
  
 
  <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
@@ -43,8 +43,8 @@
 
 <!-- 
 //////////////////////////////////// -->
-   <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
-   <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+   <!-- <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script> -->
+   <!-- <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script> -->
   
 
 </head>
@@ -321,7 +321,52 @@ small {
       <div class="row">
          <div class="col-sm-6 ">
 
+    <div id="surround" align="center">
+    <img class="cloudzoom img-responsive" alt ="Small image" id ="zoom1" src="ZoomerImg/iphoneSe.png"
+       data-cloudzoom='  zoomSizeMode:"image",     autoInside: 550 '>
 
+
+
+            <div id="slider1">
+        <div class="thumbelina-but horiz left"><i class="glyphicon glyphicon-circle-arrow-left"></i></div>
+            <ul >
+            <li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg'
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg'  " style='max-width:90px;max-height:100px;'></li>
+            <li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/b0ab7b148294fed6cbee67ab3fe4f48d.jpg'
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'ZoomerImg/b0ab7b148294fed6cbee67ab3fe4f48d.jpg'  " style='max-width:90px;max-height:100px;'></li>
+                         
+                         <li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg'
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg'  " style='max-width:90px;max-height:100px;'></li>
+                         
+                         <li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/500_1602997405_8b898375ae85d20499dba7c8e64f5c3b.png'
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'ZoomerImg/500_1602997405_8b898375ae85d20499dba7c8e64f5c3b.png'  " style='max-width:90px;max-height:100px;'></li>
+                         
+                         <li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/Original.png'
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'ZoomerImg/Original.png'  " style='max-width:90px;max-height:100px;'></li>
+
+<li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/Original.png'
+    data-cloudzoom="useZoom:'.cloudzoom', image:'ZoomerImg/Original.png'  " style='max-width:90px;max-height:100px;'>
+</li>
+
+
+<li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/Original.png'
+    data-cloudzoom="useZoom:'.cloudzoom', image:'ZoomerImg/Original.png'  " style='max-width:90px;max-height:100px;'>
+</li>
+
+
+
+ <li><img class='cloudzoom-gallery img-thumbnail' src='ZoomerImg/Original.png'
+                         data-cloudzoom ="useZoom:'.cloudzoom', image:'ZoomerImg/Original.png'  " style='max-width:90px;max-height:100px;'></li>
+
+            </ul>
+            <div class="thumbelina-but horiz right"><i class="glyphicon glyphicon-circle-arrow-right"></i></div>
+        </div>
+
+        </div>
+
+
+
+<!-- 
 @php $img1 = $product->image @endphp
       @php $img1_400 = '/storage/admin/images/product/thumbnail/500_'.$product->image @endphp
       @php $img2_400 = '/storage/admin/images/product/thumbnail/500_'.$product->dimage @endphp
@@ -416,29 +461,14 @@ small {
                         data-cloudzoom ='useZoom:".cloudzoom", image:"{{ asset($img10_500)}}"  ' style='max-width:90px;max-height:100px;'>
                       </li>
                     @endif
-<!-- 
 
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}"
-                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/81a8a44e899e95d879b18e57467ed62c.jpg')}}'  " style='max-width:90px;max-height:100px;'>
-                      </li>
-
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}"
-                        data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/a9211a87b14684be20afe90e74d0fbbe.jpg')}}'  " style='max-width:90px;max-height:100px;'></li>
-                   
-                   
-                        <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}"
-                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/ba273467b19ae349fa5d51d5b8cd813b.jpg')}}'  "
-                        style='max-width:90px;max-height:100px;'></li>
-                     <li><img class='cloudzoom-gallery img-thumbnail' src="{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}"
-                        data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset('OriginalZoomer/ZoomerImg/f567b84a6a01c547baad939baa7ff66b.jpg')}}'  "
-                        style='max-width:90px;max-height:100px;'></li> -->
 
                   </ul>
                   <div class="thumbelina-but horiz right">
                      <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_right_black_18dp.png')}}">
                   </div>
                </div>
-            </div>
+            </div> -->
          </div>
         
 <div class="col-md-6" style="  color: black !important;">
@@ -1796,8 +1826,8 @@ function submitRating(msg) {
 
 
 
-
- <script src="https://flickerfone.com/themes/default/shop/assets/js/jquery-2.1.3.min.js"></script>
+<!-- 
+ <script src="https://flickerfone.com/themes/default/shop/assets/js/jquery-2.1.3.min.js"></script> -->
 
  
  <!-- <script src="https://flickerfone.com/themes/default/shop/assets/js/bs.js"></script> -->
