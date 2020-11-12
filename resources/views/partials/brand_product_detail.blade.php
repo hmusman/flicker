@@ -36,15 +36,15 @@
             @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$product->image @endphp
             <div id="changecolorseletidOnMobile" style="width: 33%; height: 100%; background-color: White;  float: left;  ">
 
-              <figure style="padding-top: 8px;">
-                <center> <img  id="changecolor1" style="    width: 38%;" src="{{ asset($img) }}" alt="Trulli" style="width:100%"></center>
+              <figure style="padding-top: 8px;cursor: pointer;" onclick="ColorStorageProduct('{{ $row->product_id }}','{{ $row->color }}','{{ $row->storage }}');">
+                <center> <img id="changecolor1" style="    width: 38%;" src="{{ asset($img) }}" alt="Trulli" style="width:100%"></center>
                
                 <center>
                   
                   
                   <p style="text-decoration: none; color: black !important;">{{ ucwords($product->name) }} x {{ $row->storage }}</p>
                   
-                  <div onclick="ColorStorageProduct('{{ $row->product_id }}','{{ $row->color }}','{{ $row->storage }}');">
+                  <div >
                   <a    href="#getEstimatedmobile" style="text-decoration: none;">   <figcaption  id=""  style="background-color: #4a88c2;
                  text-align: center; width: 50%;
                  padding: 10px; color: white !important;

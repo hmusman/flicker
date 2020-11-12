@@ -3,7 +3,7 @@
     <div id="changecolorseletidOnMobile" style="width: 33%; height: 100%; background-color: White;  float: left;  ">
 
       <figure style="padding-top: 8px;">
-        <center> <img  id="changecolor1" style="    width: 38%;" src="{{ asset($img) }}" alt="Trulli" style="height: 130px;"></center>
+        <center>  <img  id="changecolor1" style="    width: 38%;" src="{{ asset($img) }}" alt="Trulli" style="height: 130px;"></center>
        
         <center>
           

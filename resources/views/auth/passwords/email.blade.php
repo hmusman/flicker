@@ -1,3 +1,83 @@
+<style>
+
+
+
+            #myInput {
+      /* background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 50%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px; */
+
+
+      
+                 height: 28px;
+    position: relative;
+    top: 4px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 0px solid #ddd;
+      margin-bottom: 12px;
+      }
+        #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      }
+      #myUL li a {
+      margin-top: 16px !important; 
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+      display: block;
+      font-weight: 600;
+
+      
+    height: 24px;
+    margin-top: 16px;
+      }
+
+
+
+      .ws_shadow{
+         display: none !important;
+      }
+
+      #prcCal{
+             margin-top: 2px !important;
+      }
+
+a[class="ws_prev"],
+a[class="ws_next"] {
+   z-index: 1 !important;
+}
+
+.page-item.active .page-link {
+  
+    background-color: #4a88c1 !important;
+    border-color: #4a88c1 !important;
+}
+
+            #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
+</style>
+
 @extends('layouts.app')
 
 @section('content')

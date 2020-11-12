@@ -1,13 +1,116 @@
+
+ 
+ 
+ 
+ 
+ 
+ 
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+ 
+
+ 
+ 
  <style type="text/css">
+
+ 
+.fontUbantu{
+   font-family: 'Ubuntu', sans-serif !important;
+}
+
+
+
+
+
+li[class="nav-item dropdown"] > a{
+      text-decoration: none;
+    color: #4f4a4bdb !important;
+    font-weight: bold;
+}
+
    
    .pagination{
   float: right !important;
     margin-top: 20px !important;
  }
 
+
+@media (min-width: 1399px) and (max-width : 2000px){
+#myUL{
+    width: 23% !important;
+}
+}
+
+
+@media (max-width: 550px){
+
+  .logoFlickerflone{
+      height: 37px  !important;
+    
+      }
+.mobBrand{
+  border-left: 0px #0b0c0c52 solid !important;
+}
+a[id="prcCal"]{
+ height: 37px !important;
+    width: 158px !important;
+    margin-bottom: 10px !important;
+
+}
+
+}
+@media (min-width:500px){
+   .commnscnHead{
+    text-align: center;
+    background-color: #f8f7f7;
+    color: #7c7b7b;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-right: 1px #bab9bd solid;
+     padding: 4px 6px 6px 13px ; 
+ }
+.qasimnavigatin{
+      color: rgb(124 123 123);
+    border-right: 1px #0b0c0c52 solid;
+padding: 11px 10px 0px 10px;
+            text-align: center;
+          
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+    }
+
+
+
+
+
+
+
+    .navbar-fixed-top {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+/*     z-index: 1; */
+  background: white;
+  z-index: 10;
+}
+
+.navbar-fixed-top.cbp-af-header-shrink {
+	padding: 10px 0;
+}
+
+
+  .logoFlickerflone{
+      height: 57px ;
+      /* top: -1px; */
+      margin-top: -8px;
+      margin-bottom: -8px;
+      }
  </style>
+
+<Header class="navbar-fixed-top cbp-af-header">
  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="topNav"  >
-    <a class="navbar-brand" href="{{ route('home') }}"><img  id="logoFlickerflone" src="{{ asset('storage/images/logo Black-01.jpg') }}"></a>
+    <a class="navbar-brand" href="{{ route('home') }}"><img  class="logoFlickerflone" src="{{ asset('storage/images/flickerbig.gif') }}"></a>
     <button style="background-color: white !important;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup, #navbarNavAltMarkup1" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +137,7 @@
            <span id="reglogin" onclick="reglogin();" class="reglogin" style="cursor: pointer;position: absolute;
         right: 46px;
         bottom: 25px;color: white !important; border-bottom: 1px white solid  " align="right"    >
-          <i class="fa fa-user" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
+          <i class="fa fa-user fontUbantu" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
 
         @endif
       </div>
@@ -42,7 +145,7 @@
   </nav>
   
 
-
+<!-- 
   <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important; height: 35px; border-top: 1px #4c4a575c solid !important; border-bottom: 1px #4c4a575c solid !important;">
    
   
@@ -50,8 +153,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
     
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li> -->
+
        
         <li class="nav-item dropdown" style="width:65px !important">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -89,15 +191,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
           style="padding: 8px 70px 6px 70px !important;  height: 38px ; ; border-left: 1px #4c4a575c solid !important;font-weight: bold;">Blog </a>
-            <!-- <ul class="dropdown-menu fade-up">
-            <li><a class="dropdown-item" href="#"> <center>LENOVO</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>HP </center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>DELL</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>APPLE</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ACER</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>ASUS</center></a></li>
-            
-            </ul> -->
+ 
         </li>
 
 
@@ -107,23 +201,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" 
           style="padding: 8px 70px 6px 70px !important;  height: 38px ;  border-left: 1px #4c4a575c solid !important; border-right: 1px #4c4a575c solid !important;font-weight: bold;"> Forums  </a>
-            <!-- <ul class="dropdown-menu fade-up">
-              <li><a class="dropdown-item" href="#"> <center>NuMetrex Fabric Chest Strap</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>JawBone UP</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Samsung Gear 2</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>FitBit Flex</center></a></li>
-           
-            <li><a class="dropdown-item" href="#"> <center>Google Glass</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>GoQii</center></a></li>
-
-            <li><a class="dropdown-item" href="#"> <center>Get Active Slim</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>LECHAL GPS Shoes</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Fin Ring</center></a></li>
-            <li><a class="dropdown-item" href="#"> <center>Spotnsave Wristband</center></a></li>
-           
-            
-            
-            </ul> -->
+     
         </li>
 
 
@@ -169,7 +247,7 @@
             background-color: #0071e3;
             color: white;
             height: 35px;
-            margin-top: 4px;
+            margin-top: 8px;
         "> Price Calculator  </a>
            
         </li>
@@ -177,4 +255,120 @@
     </div>
   </nav>
 
+   -->
+
+
+
+
+  <!-- <div class="row"   style="background-color: #f8f7f7">
+  <div class="container">
+  <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12" style="background-color: #f8f7f7">
   
+  <div class="commnscnHead" style="height:100%; width:10%; float: left; border-left: 1px #bab9bd solid; ">BRANDS</div>
+   <div class="commnscnHead" style="height:100%; width:15%; float: left;"  >ACCESSORIES</div>
+     <div class="commnscnHead"  style="height:100%; width:10%; float: left;" >BLOG</div>
+   <div class="commnscnHead" style="height:100%; width:10%; float: left; ">FORUM</div>
+
+     <div class="commnscnHead" style="height:100%; width:40%; float: left;"  >Search</div>
+   <div class="commnscnHead" style="height:100%; width:15%; float: left;      background-color: #0071e3;color: white; " >Price Calculator</div>
+  
+  </div>
+
+  </div>
+  </div> -->
+
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important; height: 35px; border-top: 1px #4c4a575c solid !important; border-bottom: 1px #4c4a575c solid !important;">
+   
+  
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
+    <div class="container">
+          <ul class="nav navbar-nav" style="width:100%;">
+   <!-- <li class="nav-item dropdown" style="width:65px !important">
+      <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </a>
+      
+      </li> -->
+   <li  class="nav-item dropdown" style="width:10%; float: left; height: 100%">
+      <a class="nav-link  dropdown-toggle qasimnavigatin mobBrand fontUbantu" href="#" data-toggle="dropdown" style="    border-left: 1px #0b0c0c52 solid;" > BRANDS  </a>
+      @php $brands = App\Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct()->get() @endphp
+      <ul class="dropdown-menu fade-up">
+         @foreach($brands as $brand)
+         <li>
+            <a class="dropdown-item" href="{{ route('BrandProductsList',$brand->id) }}">
+               <center>{{ ucwords($brand->name) }}</center>
+            </a>
+         </li>
+         @endforeach
+      </ul>
+   </li>
+   <li class="nav-item dropdown" style="width:15%; float: left; height: 100%">
+      <a class="nav-link  dropdown-toggle qasimnavigatin fontUbantu" href="#" data-toggle="dropdown" > ACCESSORIES  </a>
+      @php $accessories = App\AccessoryCategory::select('accessory_categories.title','accessory_categories.id')->join('accessories','accessory_categories.id','=','accessories.accessory_category_id')->distinct()->get() @endphp
+      <ul class="dropdown-menu fade-up">
+         @foreach($accessories as $accessory)
+         <li>
+            <a class="dropdown-item" href="{{ route('NewCategoryAccessories',$accessory->id) }}">
+               <center>{{ ucwords($accessory->title) }}</center>
+            </a>
+         </li>
+         @endforeach
+      </ul>
+   </li>
+   <li class="nav-item" style="width:10%; float: left; height: 100%">
+      <a class="nav-link   qasimnavigatin fontUbantu" href="{{ route('blog') }}" 
+         >BLOG </a>
+   </li>
+   <li class="nav-item" style="width:10%; float: left; height: 100%">
+      <a class="nav-link   qasimnavigatin fontUbantu" href="{{ route('forum') }}" 
+         > FORUMS  </a>
+   </li>
+   <li style="width:40%; float: left; height: 100%">
+      <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm qasimnavigatin fontUbantu" placeholder="Search our Store" >
+      <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 33% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+         <div>
+         
+            <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none; ">DEVICES  
+            
+            
+            <button id="srchbtnid" onclick="hideagain();" style="margin-left: 325px;
+               background-color: #f8f7f7;
+               color: black;
+               font-weight: 600;
+               border-style: none;">X</button>
+               
+               </p>
+         </div>
+      </ul>
+   </li>
+   <li class="nav-item dropdown" style="width:15%; float: left; height: 100%">
+      <a class="nav-link qasimnavigatin fontUbantu" id="prcCal" href="{{ route('PriceEstimateCalculator') }}" 
+         style="padding: 4px 6px 6px 13px !important;
+         border-right: 1px #4c4a575c solid !important;
+         border-left: 1px #4c4a575c solid !important;
+         font-weight: bold;
+         background-color: #4a88c1 !important;
+         color: white !important;
+         height: 35px;
+         margin-top: 0px;
+         "> Price Calculator  </a>
+   </li>
+</ul>
+
+</div>
+
+    </div>
+  </nav>
+
+</Header>
+
+
+
+
+
+
+
+
+

@@ -413,148 +413,127 @@ border-left: 2px red solid !important;
    <body>
       <a href='#' id="scroll" style="display: none;"><span></span></a>
       @include('includes.header')
-      <!-- Start WOWSlider.com BODY section -->
-      <!-- Start WOWSlider.com BODY section -->
+    
 
 
 
-      <div id="wowslider-container1">
-         <div class="ws_images fontUbantu">
-            <ul>
-               <li>
-                  <a href="#ShopPAge"> <img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now" title="Shop Now" id="wows1_0"/></a>
-                  <p style="font-weight: bold; font-size: 25px; " class="fontUbantu" >Latest Branded Phones <br/>
-                  <h5 style="font-weight: bold; font-size: 15px; color: #2abcfe !important; " class="fontUbantu">GET READY TO RUN SMARTER</h5>
-                  <br/>
-                  <h6 id="shopBtn" class="fontUbantu" style="  padding: 10px 20px 10px 27px !important;width: 149px !important; border: 1px black solid !important;  text-shadow: 1px 1px 5px white !important ;color: #b30930 !important;  font-weight: 700 !important;">SHOP NOW</h6>
-                  </p>
-               </li>
-               <li>
-                  <a href="#ShopPAge"><img src="Slider/data1/images/1350-x-376-B.jpg" alt="bootstrap image slider" title="Shop Now" id="wows1_1"/></a>
-                  <p style="font-weight: bold; font-size: 25px; " class="fontUbantu">Shop Your Desired Phone with Flicker Fone<br/>
-                  <h5 style="font-weight: bold; font-size: 15px; color: #2abcfe !important; " class="fontUbantu">GET READY TO RUN SMARTER</h5>
-                  <br/>
-                  <h6 id="shopBtn" class="fontUbantu" style="  padding: 10px 20px 10px 27px !important;width: 149px !important;text-shadow: 1px 1px 5px white !important ; border: 1px black solid !important; color: #b30930 !important;  font-weight: 700 !important;">SHOP NOW</h6>
-                  </p>
-               </li>
-               <li>
-                  <a href="#ShopPAge"><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now" title="Shop Now" id="wows1_2"/></a>
-                  <p style="font-weight: bold; font-size: 25px; " class="fontUbantu">Samsung Galaxy Note 20 <br/>
-                  <h5 style="font-weight: bold; font-size: 15px; color: #2abcfe !important; " class="fontUbantu">GET READY TO RUN SMARTER</h5>
-                  <br/>
-                  <h6 id="shopBtn" class="fontUbantu" style="  padding: 10px 20px 10px 27px !important;width: 149px !important;text-shadow: 1px 1px 5px white !important ; border: 1px black solid !important; color: #b30930 !important;  font-weight: 700 !important;">SHOP NOW</h6>
-                  </p>
-               </li>
-            </ul>
-         </div>
-         <div class="ws_bullets">
-            <div>
-               <a href="#" title="Shop Now"><span><img src="Slider/data1/tooltips/1350-x-376.png" alt="Shop Now"/>1</span></a>
-               <a href="#" title="Shop Now"><span><img src="Slider/data1/tooltips/1350-x-376-B.png" alt="Shop Now"/>2</span></a>
-               <a href="#" title="Shop Now"><span><img src="Slider/data1/tooltips/1350-x-376-A.png" alt="Shop Now"/>3</span></a>
-            </div>
-         </div>
-         <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html slider</a> by WOWSlider.com v8.8</div>
-         <div class="ws_shadow"></div>
-       
-      </div> -->
-
-
-<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page
-   
 
 
 
-<!-- 
-<div id="wowslider-container1">
-	<div class="ws_images"><ul>
-		<li><img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now" title="Shop Now" id="wows1_0"/></li>
-		<li><a href="http://wowslider.net"><img src="Slider/data1/images/1350-x-376-B.jpg" alt="jquery image carousel" title="Shop Now" id="wows1_1"/></a></li>
-		<li><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now" title="Shop Now" id="wows1_2"/></li>
-	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now"/>1</span></a>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376-B.jpg" alt="Shop Now"/>2</span></a>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now"/>3</span></a>
-	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html slider</a> by WOWSlider.com v8.8</div>
-	<div class="ws_shadow"></div>
-	</div>	 -->
+
+<div class="row">
+
+<div class="col-md-6">
+<img style="    width: 104.4%;"  src="{{ asset('storage/images/Mobile-Review.png') }}">
+</div>
+
+
+<div class="col-md-6">
+
+<div style="height:100%; width: 100%;">
+<div style="width:100%; height: 50%; "><img  src="{{ asset('storage/images/705x460-data-blogroll.png') }}"></div>
+<div style="width:100%; height: 50%;">
+
+
+<div style="height:100%; width: 100%;border-right: 0px white solid;" >
+<div style="width:50%; height: 100%;  float: left "><img  src="{{ asset('storage/images/iPhone-SE-2020-fb-1.png') }}"></div>
+<div style="width:50%; height: 100%;float: left"><img  src="{{ asset('storage/images/mobile-banner-img-copy.png') }}"></div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</div>
 
 
 
-      <!-- End WOWSlider.com BODY section -->
-      <!-- End WOWSlider.com BODY section -->
-      <br/>
+<h3 class="fontUbantu" style="text-align: center; color: black; margin-top: 10px ">Flicker Fone Blog</h3>
 
-     
+<hr style="background-color: #4a88c1;
+    width: 7%;
+    height: 1px;" />
+<div class="row">
+<div class="container">
+<div class="col-md-12">
+<p class="fontUbantu" style="color:black;   
+    text-align: justify;">
+The emergence and growth of blogs in the late 1990s coincided with the advent of web publishing tools that facilitated the posting of content by non-technical users who did not have much experience with HTML or computer programming. Previously, a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 websites, allowing visitors to leave online comments, and it is this interactivity that distinguishes them from other static websites.[2] In that sense, blogging can be seen as a form of social networking service. Indeed, bloggers not only produce content to post on their blogs but also often build social relations with their readers and other bloggers.[3] However, there are high-readership blogs which do not allow comments.
+</p>
 
-      <div class="container">
-         <div class="row" style="margin-bottom: 15px;">
-            <div class="col-md-9" style="color: gray;">
-               <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a>/ Mobiles
-            </div>
-             <div class="col-md-3">
-                  <a class="fontUbantu" href="{{ route('NewAccessories') }}" style="background-color: #4a88c1 !important; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Accessories</a>
-            </div>
-         </div>
+</div>
+</div>
+</div>
 
-        
-      </div>
-      <div class="container-fluid fontUbantu" style="background-color: #f7f7f7 !important;">
-         <div class="container" style="background-color: #f7f7f7 !important;">
-            <div class="row filterRow" style="background-color: #f7f7f7 !important;">
-               <div class="col-md-2" style="color: black; margin-top: 15px; " >
-                  <p style="font-weight: bold !important; margin-top: 9px "> FILTERS</p>
-               </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
-                  <div class="form-group">
-                     <select class="form-control" id="brand" style="font-weight: bold !important;">
-                        <option selected="" disabled="" style="font-weight: bold !important;">Brands</option>
-                        @if($brands->count()>0)
-                        @foreach($brands as $brand)
-                        <option value="{{ $brand->id }}">{{ ucwords($brand->name) }}</option>
-                        @endforeach
-                        @endif
-                     </select>
-                  </div>
-               </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
-                  <div class="form-group">
-                     <select class="form-control" id="price" style="font-weight: bold !important;">
-                        <option selected=""  disabled="" style="font-weight: bold !important;">Price</option>
-                        <option value="Less than 20,000">Less than 20,000 PKR</option>
-                        <option value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
-                        <option value="Between 30,000 and 60,000">Between 30,000 and 60,000 PKR</option>
-                        <option value="Between 60,000 and 1,00000">Between 60,000 and 1,00000 PKR</option>
-                        <option value="More Than 1,00000">More Than 1,00000 PKR</option>
-                     </select>
-                  </div>
-               </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
-                  <div class="form-group">
-                     <select class="form-control" id="view" style="font-weight: bold !important;">
-                        <option selected="" disabled="" style="font-weight: bold !important;">Select View</option>
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                     </select>
-                  </div>
-               </div>
-               <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px; background: #4a88c1!important; font-weight: bold;">Reset</button></div>
-            </div>
+
+
+
+
+
+
+
+
+<div class="row" style="margin-bottom:10px">
+   <div class="col-md-8">
+      <div style="width:100%; height: 100% ">
+         <div style="width:40%; height: 100%;  float:left "><img  src="{{ asset('storage/images/YhfduWZTr2.png') }}"></div>
+         <div style="width:60%; height: 100% ; float:left ">
+            <h3 style="color: black;font-size: 21px">Mobile Sales Up By 79% Year-On-Year Basis </h3>
+            <p style="text-align: justify; color: black;    text-align: justify; padding: 10px; ">
+               The Mobile sales in Pakistan have continued to see positive trends as
+               they are on a positive trajectory for the last few months. According 
+               to Pakistan Automotive
+               Manufacturing Association (PAMA)’s latest report,…
+            </p>
          </div>
       </div>
-      <div class="container fontUbantu">
-         <div class="row products" style=" padding: 0px 35px 0px 35px;   background-color: white;;">
-            @include('partials.shop_products_list')
+   </div>
+   <div class="col-md-4" style="color: blue">Google Ads Portion</div>
+</div>
+
+
+
+<div class="row" style="margin-bottom:10px">
+   <div class="col-md-8">
+      <div style="width:100%; height: 100% ">
+         <div style="width:40%; height: 100%;  float:left "><img  src="{{ asset('storage/images/sunqUW5Bxn.png') }}"></div>
+         <div style="width:60%; height: 100% ; float:left ">
+            <h3 style="color: black;font-size: 21px">Mobile Sales Up By 79% Year-On-Year Basis </h3>
+            <p style="text-align: justify; color: black;    text-align: justify; padding: 10px; ">
+               The Mobile sales in Pakistan have continued to see positive trends as
+               they are on a positive trajectory for the last few months. According 
+               to Pakistan Automotive
+               Manufacturing Association (PAMA)’s latest report,…
+            </p>
          </div>
       </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+   </div>
+   <div class="col-md-4" style="color: blue">Google Ads Portion</div>
+</div>
+
+
+
+
+<div class="row" style="margin-bottom:10px">
+   <div class="col-md-8">
+      <div style="width:100%; height: 100% ">
+         <div style="width:40%; height: 100%;  float:left "><img  src="{{ asset('storage/images/YyAJsB9dwu.png') }}"></div>
+         <div style="width:60%; height: 100% ; float:left ">
+            <h3 style="color: black;font-size: 21px">Mobile Sales Up By 79% Year-On-Year Basis </h3>
+            <p style="text-align: justify; color: black;    text-align: justify; padding: 10px; ">
+               The Mobile sales in Pakistan have continued to see positive trends as
+               they are on a positive trajectory for the last few months. According 
+               to Pakistan Automotive
+               Manufacturing Association (PAMA)’s latest report,…
+            </p>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-4" style="color: blue">Google Ads Portion</div>
+</div>
+
+  <br/>
       <footer style=" background-color: #dcdcdc;">
          <div class="row">
             <div class="col-md-5" style="    padding: 26px 10px 5px 26px !important;">

@@ -12,8 +12,56 @@
    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
    <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
    <style>
 
+
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-top: .5rem !important;
+   
+    padding-bottom: .2rem !important;
+}
+}
+.fontUbantu{
+   font-family: 'Ubuntu', sans-serif !important;
+}
+/* .slick-dots
+{
+    position: relative !important;
+      top: -118px !important;;
+
+  
+} */
+.slick-dots{
+       bottom: 184px !important;
+}
+
+@media (min-width: 1400px) and (max-width : 2000px){
+div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
+       top: 260px !important;
+}
+.heightImagesExtralg{
+       height: 267px !important;
+}
+
+}
+
+
+.slidesectionHome{
+  border-bottom: 1px #989292 solid;
+   border-bottom-right-radius: 10px;
+   border-bottom-left-radius: 10px;  height: 100%; width: 100%; border-right: 1px #989292 solid;
+   border-top-right-radius: 10px; border-top: 1px #989292 solid;  border-top-left-radius: 10px;
+}
+
+p[id="NewPhones"]{
+       color: white;
+    font-size: 1.1vw;
+    font-family: sans-serif;
+    text-align: center;
+}
       .img-thumbnail{
          border: none !important;
       }
@@ -25,13 +73,19 @@
          margin: 0px !important;
       }
       #myInput {
+
+
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
-      width: 50%;
+      width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
-      border: 1px solid #ddd;
+      border: 0px solid #ddd;
       margin-bottom: 12px;
       }
       #myUL {
@@ -40,16 +94,36 @@
       margin: 0;
       }
       #myUL li a {
-      margin-top: -1px; /* Prevent double borders */
+      margin-top: 16px; 
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
       display: block;
       font-weight: 600;
+
+
+       
+/*    
+    height: 24px;
+    margin-top: 16px; */
       }
-      /* #myUL li a:hover:not(.header) {
-      background-color: #eee;
-      } */
+
+
+            #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
+
+
+
+
+
    </style>
    <style>
       /* /////////////////////////////slick css//////////////////////////////////// */
@@ -74,21 +148,21 @@
       }
       div[class="autoplay slick-initialized slick-slider slick-dotted"] >  ul[class="slick-dots"]{
       position: absolute;
-      top: 174px;
+      top: 187px;
       height: 198px !important;
       width: 99%;
       margin-left: 20px;
-      border-bottom: 1px black solid;
-      border-right: 1px black solid;
-      border-left: 1px black solid;
+      /* border-bottom: 1px #989292 solid;
+      border-right: 1px #989292 solid;
+      border-left: 1px #989292 solid;
       border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
+      border-bottom-left-radius: 10px; */
       }
       div[class="autoplayFeatures slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
       display: none !important;
       }
       .slick-dotted.slick-slider{
-      margin-bottom: -10px !important;
+      margin-bottom: -10px ;
       }
       a[class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"]{
       background-color: #101115;
@@ -146,7 +220,7 @@
       content: none !important;
       } */
       #slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-prev slick-arrow"]{
-      margin-left: 2px !important;
+      margin-left: 1px !important;
       top: 81px;
       height: 67px !important;
       width: 22px !important;
@@ -158,7 +232,7 @@
       border-bottom-right-radius: 6px;
       }
       #slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
-      right: 1px !important;
+      right: -4px !important;
       top: 81px !important;
       height: 67px !important;
       width: 22px !important;
@@ -171,7 +245,7 @@
       }
       .slick-prev {
       left: 0px !important;
-      z-index: 10 !important;
+      z-index: 8 !important;
       margin-left: -30px !important;
       }
       ul[class="dropdown-menu fade-up"] >  li {
@@ -197,7 +271,7 @@
       content: none !important;
       }
       .navbar-nav > a{
-      background-color: #0071e3 !important;
+      background-color: #4a88c1 !important;
       padding: 5px 19px 5px 19px !important;
       margin-right: 21px !important;
       border-radius: 25px !important;   
@@ -236,7 +310,7 @@
       width: 100% !important;
       }
       input[id="myInput"]{
-      width: 333px !important;
+      width: 311px !important;
       }
       #prcCal{
       margin-left: -1px !important;
@@ -261,6 +335,8 @@
       width: 181px !important;
       margin-left: -17px !important;
       font-size: 58px;
+
+      
       }
       }
    </style>
@@ -276,12 +352,7 @@
       /* ============ desktop view .end// ============ */
    </style>
    <style>
-      img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
-      height: 57px !important;
-      /* top: -1px; */
-      margin-top: -8px;
-      margin-bottom: -8px;
-      }
+    
       div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
       margin-left: 3px;
       }
@@ -464,28 +535,28 @@
                
                </center>
                </div>
-               <div style="height: 30%; width: 100%;">
-                  <p id="NewPhones" style="padding: 0px 70px 0px 70px; color: white;">
+               <div style="height: 30%; width: 100%; padding: 0px 25px 0px 25px;">
+                  <!-- <p id="NewPhones" class="fontUbantu" style="padding: 0px 70px 0px 70px; color: white;"> -->
                      {{ ucfirst($row->detail) }}
-                  </p>
+                  <!-- </p> -->
                </div>
                @if($row->title=='buy')
                <a href="{{ route('BuyUsedMobilePhones') }}" style="text-decoration: none;" >
-                  <div style="height: 10%; width: 100%; background-color: #0071e3; ">
-                     <center style="    color: white;
+                  <div style="height: 10%; width: 100%; background-color: #4a88c1; ">
+                     <center class="fontUbantu" style="    color: white; 
                         font-size: 23px;">{{ ucwords($row->title) }}</center>
                   </div>
                </a>
                @elseif($row->title=='sell')
                <a href="{{ route('Sell') }}" style="text-decoration: none;" >
-                  <div style="height: 10%; width: 100%; background-color: #0071e3; ">
-                     <center style="    color: white;
+                  <div style="height: 10%; width: 100%; background-color: #4a88c1; ">
+                     <center class="fontUbantu" style="    color: white;
                         font-size: 23px;">{{ ucwords($row->title) }}</center>
                   </div>
                </a>
                @else
                <a href="{{ route('Shop') }}" style="text-decoration: none;" >
-                  <div style="height: 10%; width: 100%; background-color: #0071e3; ">
+                  <div style="height: 10%; width: 100%; background-color: #4a88c1; ">
                      <center style="    color: white;
                         font-size: 23px;">{{ ucwords($row->title) }}</center>
                   </div>
@@ -504,11 +575,11 @@
       <section>
          <div class="pricecalculatorbackground pcback" >
             <div class="pc">
-               <h1 align="center">Price Calculator</h1>
+               <h1 align="center" id="pricecal" class="fontUbantu">Price Calculator</h1>
                <div class="pq">
-                  <h3>Get an estimate for your device</h3>
+                  <h3 class="fontUbantu">Get an estimate for your device</h3>
                   <a href="{{route('PriceEstimateCalculator')}}">
-                  <button class="btn pc-btn">Try it Now!</button>
+                  <button class="btn pc-btn fontUbantu">Try it Now!</button>
                   </a>
                </div>
             </div>
@@ -516,93 +587,112 @@
       </section>
       <section  style="padding-top: 70px; padding-bottom:70px ;background-color: #f4f4f4;     margin-left: 5px;">
          <div class="row" style="">
-            <div class="col-md-3 col-lg-3 col-sm-3" id="slickBtnFortopBlog" style=" ">
-               @if($blogslider->count()>0)
-               <div class="autoplay" data-dots="true">
-                  @foreach($blogslider as $row)
-                  @php $img = 'storage/'.$row->img @endphp
-                  <div class="item" style="">
-                     <div id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
-                        <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset($img) }}"
-                           class="img-responsive img-fullwidth" style=" width: 100% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
-                        </div>
-                        <br/>
-                        <p style="color: black !important;    padding: 0px 10px 50px 24px;">
-                           {{ ucfirst($row->detail) }}
-                        </p>
-                     </div>
-                  </div>
-                  @endforeach
-               </div>
-               @endif
-            </div>
+                  <div class="col-md-3 col-lg-3 col-sm-3 slidesectionHome fontUbantu" id="slickBtnFortopBlog"  style="padding-right: 2px !important;
+    padding-left: 3px !important;">
+@if($blogslider->count()>0)
+    <div class="autoplay fontUbantu" data-dots="true">
+   @foreach($blogslider as $row)
+   @php $img = 'storage/'.$row->img @endphp
+   <div class="item fontUbantu" id="ExtraLargeScren" style="">
+      <div id="blogImagesExtraLarge" style="  ">
+         <img src="{{ asset($img) }}" class="heightImagesExtralg" style=" text-align: center ;max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+      
+      
+      </div>
+      <div style="height: 10% ; width: 100% ;">
+         <center style="padding: 5px 5px 17px 5px;">&nbsp;</center>
+      </div>
+      <div id="bloghr" class="fontUbantu" style="height: 50% ; width: 100% ;    padding: 0px 18px 0px 18px; ; text-align: justify; color: black !important;     color: black !important;
+    font-family: sans-serif;">
+           {{ ucfirst($row->detail) }}
+      </div>
+
+          <div style="height: 10% ; width: 100% ;">
+         <center style="padding: 5px 5px 17px 5px;">&nbsp;</center>
+      </div>
+
+   </div>
+  @endforeach
+
+
+
+</div>
+   @endif
+</div>
             <div class="col-md-3 col-lg-3 col-sm-3" id="" style=" ">
                <div  id="ExtraLargeScren" style="">
-                  <div id="blogImagesExtraLarge" style="    height: 55%; width: 100%; border-right: 1px black solid;
-                     border-top-right-radius: 10px; border-top: 1px black solid;  border-top-left-radius: 10px; ">
-                     <img src="{{ asset('storage/images/headerimg/M446a60bd89737523d078b714e635b9a81598079779540.png') }}" style="width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+                  <div id="blogImagesExtraLarge" style="  text-align: center ;  height: 55%; width: 100%; border-right: 1px #989292 solid;
+                     border-top-right-radius: 10px; border-top: 1px #989292 solid;  border-top-left-radius: 10px;  ">
+                   <img class="heightImagesExtralg" src="{{ asset('storage/images/headerimg/1.png') }}" style="max-width:100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+                  
+                  
+
+                
                   </div>
-                  <div id="blogImagesExtraLarge" style="height: 45% ; width: 100% ;border-right: 1px black solid;
-                     border-bottom: 1px black solid;  
+                  <div id="blogImagesExtraLarge" style="height: 45% ;text-align: center ; width: 100% ;border-right: 1px #989292 solid;
+                     border-bottom: 1px #989292 solid;  
                      border-bottom-right-radius: 10px;
-                     border-left: 1px black solid;
+                     border-left: 1px #989292 solid;
                      border-bottom-left-radius: 10px; ">
-                     <div id="bloghr" style="height: 75% ; width: 100% ;    padding: 18px 18px 0px 18px; ; text-align: justify; color: black !important; ">
-                        The Blogger mobile app allows you to post, edit, save, and view your blog posts save, and view your blog posts.
+                     <div id="bloghr"  class="fontUbantu" style="height: 75% ; width: 100% ;    padding: 18px 18px 0px 18px; ; text-align: justify;     color: black !important;
+    font-family: sans-serif; ">
+                        The Blogger mobile app allows you to post, edit, save, and view your blog posts save, and view your blog posts,and view your blog posts.
                         <hr style="    background-color: black;    width: 94%;"/>
                      </div>
                      <div style="height: 25% ; width: 100% ;">
-                        <center style="padding: 5px 5px 17px 5px;"><a href="#" style="color: #1d81e5 !important; font-weight: bold;" >Read More</a></center>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-3 col-lg-3 col-sm-3" id="" style=" ">
-               <div  id="ExtraLargeScren" style="">
-                  <div id="blogImagesExtraLarge" style="    height: 55%; width: 100%; border-right: 1px black solid;
-                     border-top-right-radius: 10px; border-top: 1px black solid;  border-top-left-radius: 10px; ">
-                     <img src="{{ asset('storage/images/headerimg/Mfd476483534612a50a4d74adabc1313f1598079486580.png') }}" style="width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
-                  </div>
-                  <div id="blogImagesExtraLarge" style="height: 45% ; width: 100% ;border-right: 1px black solid;
-                     border-bottom: 1px black solid;  
-                     border-bottom-right-radius: 10px;
-                     border-left: 1px black solid;
-                     border-bottom-left-radius: 10px; ">
-                     <div id="bloghr" style="height: 75% ; width: 100% ;    padding: 18px 18px 0px 18px; ; text-align: justify; color: black !important; ">
-                        The Blogger mobile app allows you to post, edit, save, and view your blog posts save, and view your blog posts.
-                        <hr style="    background-color: black;    width: 94%;"/>
-                     </div>
-                     <div style="height: 25% ; width: 100% ;">
-                        <center style="padding: 5px 5px 17px 5px;"><a href="#" style="color: #1d81e5 !important; font-weight: bold;" >Read More</a></center>
+                        <center style="padding: 5px 5px 13px 5px;"><a href="#" style="color: #4a88c1 !important; font-weight: bold;" >Read More</a></center>
                      </div>
                   </div>
                </div>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-3" id="" style=" ">
                <div  id="ExtraLargeScren" style="">
-                  <div id="blogImagesExtraLarge" style="    height: 55%; width: 100%; border-right: 1px black solid;
-                     border-top-right-radius: 10px; border-top: 1px black solid;  border-top-left-radius: 10px; ">
-                     <img src="{{ asset('storage/images/headerimg/Mca3196a823a09c135570d23e4f84b80c1598080020599.png') }}" style="width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+                  <div id="blogImagesExtraLarge" style=" text-align: center ;   height: 55%; width: 100%; border-right: 1px #989292 solid;
+                     border-top-right-radius: 10px; border-top: 1px #989292 solid;  border-top-left-radius: 10px; ">
+                     <img class="heightImagesExtralg" src="{{ asset('storage/images/headerimg/3.png') }}" style="max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
                   </div>
-                  <div id="blogImagesExtraLarge" style="height: 45% ; width: 100% ;border-right: 1px black solid;
-                     border-bottom: 1px black solid;  
+                  <div id="blogImagesExtraLarge" style="height: 45% ; width: 100% ;border-right: 1px #989292 solid;
+                     border-bottom: 1px #989292 solid;  
                      border-bottom-right-radius: 10px;
-                     border-left: 1px black solid;
+                     border-left: 1px #989292 solid;
                      border-bottom-left-radius: 10px; ">
-                     <div id="bloghr" style="height: 75% ; width: 100% ;    padding: 18px 18px 0px 18px; ; text-align: justify; color: black !important; ">
-                        The Blogger mobile app allows you to post, edit, save, and view your blog posts save, and view your blog posts.
+                     <div id="bloghr" class="fontUbantu" style="height: 75% ; width: 100% ;    padding: 18px 18px 0px 18px; ; text-align: justify;    color: black !important;
+    font-family: sans-serif;">
+                        The Blogger mobile app allows you to post, edit, save, and view your blog posts save, and view your blog posts,and view your blog posts.
                         <hr style="    background-color: black;    width: 94%;"/>
                      </div>
                      <div style="height: 25% ; width: 100% ;">
-                        <center style="padding: 5px 5px 17px 5px;"><a href="#" style="color: #1d81e5 !important; font-weight: bold;" >Read More</a></center>
+                        <center style="padding: 5px 5px 13px 5px;"><a href="#" style="color: #4a88c1 !important; font-weight: bold;" >Read More</a></center>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-3" id="" style=" ">
+               <div  id="ExtraLargeScren" style="">
+                  <div id="blogImagesExtraLarge" style="  text-align: center ;  height: 55%; width: 100%; border-right: 1px #989292 solid;
+                     border-top-right-radius: 10px; border-top: 1px #989292 solid;  border-top-left-radius: 10px; ">
+                     <img class="heightImagesExtralg" src="{{ asset('storage/images/headerimg/2.png') }}" style="max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+                  </div>
+                  <div id="blogImagesExtraLarge" style="height: 45% ; text-align: center ;width: 100% ;border-right: 1px #989292 solid;
+                     border-bottom: 1px #989292 solid;  
+                     border-bottom-right-radius: 10px;
+                     border-left: 1px #989292 solid;
+                     border-bottom-left-radius: 10px; ">
+                     <div id="bloghr" class="fontUbantu" style="height: 75% ; width: 100% ;    padding: 18px 18px 0px 18px; ; text-align: justify;     color: black !important;
+    font-family: sans-serif;">
+                      The Blogger mobile app allows you to post, edit, save, and view your blog posts save, and view your blog posts,and view your blog posts.
+                        <hr style="    background-color: black;    width: 94%;"/>
+                     </div>
+                     <div style="height: 25% ; width: 100% ;">
+                        <center style="padding: 5px 5px 13px 5px;"><a href="#" style="color: #4a88c1 !important; font-weight: bold;" >Read More</a></center>
                      </div>
                   </div>
                </div>
             </div>
          </div>
          <hr id="resphrOnmob" style="width: 43%;
-         background-color: black;
-         />
+         background-color: black;    margin-top: 26px !important;
+         "/>
          </div>
          <p >
          <center style="color: black;
@@ -616,10 +706,10 @@
       </section>
       @if($products->count()>0)
       <center>
-         <h3 style="margin-top: 45px; color: black !important; ">Meet the new handsets</h3>
+         <h3 class="fontUbantu" style="margin-top: 45px; color: black !important; ">Meet the new handsets</h3>
       </center>
       <center>
-         <hr style="width: 10%; height: 2px; background-color: #0a6cd1;"/>
+         <hr style="width: 10%; height: 2px; background-color: #4a88c1;"/>
       </center>
       <section id="NewBrandsMob"  style="padding-top: 100px; background-color: white;">
          <div class="container">
@@ -638,10 +728,10 @@
                                     <figcaption>
                                        <div class="rightbox" style="height: 75px;margin-top: 19px;">
                                           <center>
-                                             <p style="font-size: 15px;   font-variant: all-small-caps;color: #000000; ">{{ $product->name }}</p>
+                                             <p class="fontUbantu" style="font-size: 15px;   font-variant: all-small-caps;color: #000000; ">{{ $product->name }}</p>
                                           </center>
                                           <center>
-                                             <div class="shortdesc" style=" color: #959595 ;  font-size: 11px;   ">It is in your pocket</div>
+                                             <div class="shortdesc fontUbantu" style=" color: #959595 ;  font-size: 11px;   ">It is in your pocket</div>
                                           </center>
                                        </div>
 

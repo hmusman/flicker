@@ -114,8 +114,8 @@
                   <div class="col-lg-6 col-sm-12 innerdivs">
                     <div>
                     <h5 style="padding:3px;margin-top: 25px;height: 40px;"><b>Honor</b></h5>
-                    <select style="max-width: 110px;
-                    height: 36px;
+                   
+                    <select style="max-width: 110px;height: 36px;
                     border: 2px green solid;
                     border-radius: 5px; " onchange="updatedProductLoad('58',this.value)" class="dropdown btnprim" tabindex="0">
                         <option selected="" disabled="">Model</option><option value="541">Honor 10</option><option value="542">Honor 10 Lite</option><option value="543">Honor 20 pro</option><option value="529">Honor 7A</option><option value="530">Honor 7C</option><option value="531">Honor 7S</option><option value="532">Honor 7X</option><option value="533">Honor 8 pro</option><option value="549">Honor 8A (2019)</option><option value="534">Honor 8A pro (2019)</option><option value="535">Honor 8C</option><option value="536">Honor 8S</option><option value="537">Honor 8X</option><option value="538">Honor 9</option><option value="539">Honor 9 Lite</option><option value="540">Honor 9X 2019</option><option value="544">Honor Magic 2 (2018)</option><option value="545">Honor Magic 2 3D (2019)</option><option value="546">Honor Note  10 (2018)</option><option value="548">Honor Play</option><option value="550">Honor View 10 (2017)</option><option value="551">Honor View 20 (2018)</option></select>

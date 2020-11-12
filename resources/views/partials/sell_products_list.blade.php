@@ -1,6 +1,24 @@
 <style>
 
+@media (max-width: 550px){
 
+ul[class="ulatMob"]{
+  margin-top: 0px !important;
+}
+.paddAtMob{
+  padding: 5px 5px 5px 5px !important;
+}
+.paadOnMob2{
+      padding: 5px 10px 5px 10px !important;
+}
+.mobNameResp{
+  margin-left:10px !important;
+}
+.form-control {
+    
+    width: 97% !important;
+}
+}
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -71,26 +89,41 @@
   background-color: #004488;
   color: white;
 }
+
+.one{
+      width: auto !important;
+}
 </style>
+<div class="col-md-12">
+        
+        {!! $products->links() !!}
+
+    </div>
+
 @if($products->count()>0)
     @foreach($products as $row)
       @php $img1 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img1 @endphp
       @php $img2 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img2 @endphp
       @php $img3 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img3 @endphp
       <div style="width: 100%; margin-top: 30px; float: left;">
-          <div style="width: 30%; float: left;">
+          <div style="width: 30%; float: left;" > 
 
-              <div class="autoplayFeatures">
-                  <img src="{{ asset($img1) }}" alt="Trulli" >
-                  <img src="{{ asset($img2) }}" alt="Trulli">
-                  <img src="{{ asset($img3) }}" alt="Trulli">
+              <div class="autoplayFeatures" style="text-align: center;" >
+                  <img src="{{ asset($img1) }}" class="one" alt="Trulli" >
+                  <img src="{{ asset($img2) }}" class="one" alt="Trulli">
+                  <img src="{{ asset($img3) }}" class="one" alt="Trulli">
+
+
+
+  <!-- <img src="{{ asset('storage/images/headerimg/1.png') }}"  class="one" alt="Trulli" > -->
+
               </div>
             
             </div>
-            <div style="width: 70%; float: left;border-bottom: 1px #d8d5d5 solid;" >
+            <div style="width: 70%; float: left;" >
             
             
-              <h4 style="color: black">{{ ucwords($row->model) }}</h4>
+              <h4 class="mobNameResp" style="color: black ; margin-top: 0px !important ">{{ ucwords($row->model) }}</h4>
               <!-- <p style="color: #969494;">&#x2713;Collisimo&#x2713;2-4 Jours&#x2713;Guarntie 2 ans&#x2713; FR Plug</p> -->
             
 
@@ -100,12 +133,12 @@
                 <div class="col-md-6">
 
                     @if($row->device_status=="Fair")
-                        <font style="background-color:  #d5d3cd;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #f6ba10;    padding: 5px 30px 5px 30px;">Fair</font>
+                        <font class="paddAtMob" style="background-color:  #d5d3cd;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font class="paadOnMob2" style="   background-color: #f6ba10;    padding: 5px 30px 5px 30px;">Fair</font>
 
                     @elseif($row->device_status=="Good")
-                        <font style="background-color:#d5d3cd ;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color:#f6ba10; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+                        <font class="paddAtMob" style="background-color:#d5d3cd ;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color:#f6ba10; padding: 5px 20px 5px 20px;">Good</font><font  class="paadOnMob2" style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
                     @elseif($row->device_status=="Excellent")
-                        <font style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
+                        <font class="paddAtMob" style="background-color: #f6ba10;  padding: 5px 10px 5px 10px;margin-right: 5px;">Excellent</font><font style="  margin-right: 5px;  background-color: #d5d3cd; padding: 5px 20px 5px 20px;">Good</font><font class="paadOnMob2" style="    background-color: #d5d3cd;    padding: 5px 30px 5px 30px;">Fair</font>
 
                     @endif
 
@@ -119,13 +152,13 @@
               <div class="row">
                 <div class="col-md-6">
                <p style="    position: relative;
-                  top: 43px;
+                  top: 16px;
                   left: 25px;
-                  font-weight: 600; color: blue;
+                  font-weight: 600; color: #4a88c1;
               ">  PKR</p>
-              <p style="    color: blue;
-                  font-size: 34px;
-                  padding: 20px;
+              <p style="    color: #4a88c1;
+                  font-size: 34px;margin-top: -10px !important;
+                 padding-left: 22px;
                   font-weight: 700;"> {{ $row->price }}</p>
                 </div>
 
@@ -147,20 +180,22 @@
                 </div>
               </div>
 
-              <ul>
+              <ul class="ulatMob" style="margin-top: -27px ; position: relative;
+    margin-bottom: -11px !important;padding-left: 19px;;">
                 <li>
-                    <a href="{{ route('SellProductDetail',$row->id) }}" style="background-color: blue;width: 120px;  border-radius: 3px  ; padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;text-decoration: none;">Detail</a>
+                    <a href="{{ route('SellProductDetail',$row->id) }}" style="    background-color: #4a88c1; color: white ; width: 120px;  border-radius: 3px  ;    padding: 5px 25px 5px 25px;text-align: center;cursor: pointer;text-decoration: none;">Detail</a>
 
                 </li>
                 <li>
-                    <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 120px;  border-radius: 3px  ; padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
+                  <a style="text-decoration: none;
+    color: white;" href="{{ route('personcontact') }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 20px 2.2px 20px;text-align: center;cursor: pointer;">Contact</p></a> 
 
                 </li>
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
               </ul>
               
 
-              
+              <hr style="" />
             </div>
 
 

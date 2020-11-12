@@ -56,10 +56,15 @@ ul[id="myUL"]{
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
     #myInput {
+   
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
-      width: 50%;
+      width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
@@ -70,19 +75,15 @@ ul[id="myUL"]{
       list-style-type: none;
       padding: 0;
       margin: 0;
-   
-    }
-    
-    #myUL li a {
-      
-      margin-top: -1px; /* Prevent double borders */
-      
+      }
+      #myUL li a {
+      margin-top: -1px; 
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
-    display: block;
-    font-weight: 600;
-    }
+      display: block;
+      font-weight: 600;
+      }
     
     /* #myUL li a:hover:not(.header) {
       background-color: #eee;
@@ -129,12 +130,10 @@ ul[class="dropdown-menu fade-up"] > li::after{
   } */
   @media (min-width:500px){
 
-/* #TableHeadFontSizeOnDesk{
-  font-size: 17px !important;
-} */
+/* 
 #MainHeightOnDesktop{
   height: 1906px !important;
-}
+} */
 
 .colblue{
 
@@ -175,7 +174,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
 
         height: 37px !important;
     padding-top: 11px !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
 }
 
 
@@ -185,7 +184,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
 .cradslotOnMob{
       height: 65px;
     font-weight: 600;
-    text-shadow: 0px 0px 0.1px black;
+    text-shadow: 0px 0px 0.1px #cac7c7;
   
     padding: 5px;
 }
@@ -204,14 +203,14 @@ ul[class="dropdown-menu fade-up"] > li::after{
 .CameraFeaturesOnMob{
       height: 67px ;
 
-    text-shadow: 0px 0px 0.1px black;
+    text-shadow: 0px 0px 0.1px #cac7c7;
     font-size: 15px ;
   
 }
 .SeliecamFatureMob{
       height: 67px ;
 
-    text-shadow: 0px 0px 0.1px black;
+    text-shadow: 0px 0px 0.1px #cac7c7;
     font-size: 15px ;
   
 }
@@ -219,7 +218,7 @@ ul[class="dropdown-menu fade-up"] > li::after{
 .battryTlkTime{
      height: 67px ;
 
-    text-shadow: 0px 0px 0.1px black;
+    text-shadow: 0px 0px 0.1px #cac7c7;
     font-size: 15px ;
 }
 
@@ -342,7 +341,7 @@ height: 113px !important;
 .cradslotOnMob{
       height: 65px;
     font-weight: 600;
-    text-shadow: 0px 0px 0.1px black;
+    text-shadow: 0px 0px 0.1px #cac7c7;
     font-size: 13px;
     padding: 5px;
 }
@@ -464,22 +463,22 @@ padding-top: 9px !important;
 }
 .BuildSts1{
  font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 10px !important;
      height: 65px !important;
  
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
       padding-top: 28px !important;
     padding-left: 16px !important;
 }
 
 .SIMSts1{
  font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 10px !important;
      height: 65px !important;
  
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
       padding-top: 28px !important;
     padding-left: 16px !important;
 }
@@ -502,18 +501,18 @@ padding-top: 9px !important;
 
 .BodySts1{
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 10px !important;
      height: 65px !important;
  
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
       padding-top: 28px !important;
     padding-left: 16px !important;
 }
 
 .BuildSts1{
  font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 10px !important;
     
     padding-left: 16px !important;
@@ -521,7 +520,7 @@ padding-top: 9px !important;
 
 .ResoltiondSts1{
    font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 10px !important;
     height: 65px !important;
     padding-left: 5px !important;
@@ -529,7 +528,7 @@ padding-top: 9px !important;
 
 .SIMSts1{
  font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 10px !important;
     
     padding-left: 16px !important;
@@ -538,7 +537,7 @@ padding-top: 9px !important;
     font-weight: 600 !important;
     height: 65px !important;
  
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
       padding-top: 28px !important;
     font-size: 9px !important;
 }
@@ -612,6 +611,12 @@ padding-top: 9px !important;
     font-size: 10px !important;
     text-shadow: 0px 0px 0.7px blue !important;
 }
+.tdBlockOnMobhead2{
+   display: block !important;
+    font-size: 10px !important;
+    text-shadow: 0px 0px 0.7px blue !important;
+}
+
 .tdBlockOnMobSubhead{
   display: block !important;
 font-size: 9px !important;
@@ -657,9 +662,7 @@ input[id="myInput"]{
 #prcCal{
   margin-left: -1px !important;
 }
-ul[id="myUL"]{
-  width: 87% !important;
-}
+
 
 
 ul[class="dropdown-menu fade-up show"] > li{
@@ -758,6 +761,10 @@ ol > li{
   @media (min-width:500px){
   
     .tdBlockOnMobhead {
+      width: 44%;
+    }
+
+    .tdBlockOnMobhead2 {
       width: 46%;
     }
 .LaunchWidthOnlyOnDesk{
@@ -1058,91 +1065,90 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
 }
 
   #myInputone {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-   height: 45px;
-    border: 1px black solid;
+  
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
   }
  #myInputtwo {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-        height: 45px;
+  
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
   }
    #myInputthree {
-    background-image: url('/css/searchicon.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    /* padding: 12px 20px 12px 40px; */
-    border: 1px solid black;
-    margin-bottom: 12px;
-        height: 45px;
+   
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
   }
   #myULone {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
+   list-style-type: none;
+      padding: 0;
+      margin: 0;
   }
 
   #myULtwo {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
+   list-style-type: none;
+      padding: 0;
+      margin: 0;
   }
   #myULthree {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 50%;
+  list-style-type: none;
+      padding: 0;
+      margin: 0;
   }
   #myULone li a {
-    border: 1px solid #ddd;
-    margin-top: -1px;
-    /* Prevent double borders */
-    background-color: #f6f6f6;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
+  margin-top: -1px; 
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+      display: block;
+      font-weight: 600;
   }
  #myULtwo li a {
-    border: 1px solid #ddd;
-    margin-top: -1px;
-    /* Prevent double borders */
-    background-color: #f6f6f6;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
+    margin-top: -1px; 
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+      display: block;
+      font-weight: 600;
   }
 
    #myULthree li a {
-    border: 1px solid #ddd;
-    margin-top: -1px;
-    /* Prevent double borders */
-    background-color: #f6f6f6;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
+   margin-top: -1px; 
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+      display: block;
+      font-weight: 600;
   }
   #myULone li a:hover:not(.header) {
     background-color: #eee;
@@ -1202,7 +1208,7 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
 
 
 .colblue{
-  color: blue !important;
+  color: #0071e3 !important;
   font-weight: bold !important;
   text-transform: uppercase;
   font-size: 14px;
@@ -1221,7 +1227,7 @@ display: block;
 height: 65px;
 
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 16px !important;
   padding: 5px !important;
 
@@ -1233,7 +1239,7 @@ display: block;
 height: 65px;
 
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 16px !important;
   padding: 5px !important;
 
@@ -1244,7 +1250,7 @@ display: block;
 height: 65px;
 
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
    
   padding: 5px !important;
 
@@ -1255,7 +1261,7 @@ display: block;
 height: 65px;
 
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
   font-size: 11px !important;
   padding: 5px !important;
 
@@ -1266,7 +1272,7 @@ display: block;
 height: 100px;
 
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 16px;
   padding: 5px !important;
 
@@ -1277,7 +1283,7 @@ display: block;
 height: 70px;
 
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 16px;
   padding: 5px !important;
 
@@ -1289,7 +1295,7 @@ display: block;
 height: 75px;
 
     font-weight: 600 !important;
-    text-shadow: 0px 0px 0.1px black !important;
+    text-shadow: 0px 0px 0.1px #cac7c7 !important;
     font-size: 16px;
   padding: 5px !important;
 
@@ -1362,7 +1368,7 @@ height: 75px;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 46px;border-bottom: 5px #eeeeee solid;
+    height: 40px;border-bottom: 5px #eeeeee solid;
   }
 
   .BodyDimension{
@@ -1373,7 +1379,7 @@ height: 75px;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 43px;border-bottom: 1px #eeeeee solid;
+    height: 39px;border-bottom: 1px #eeeeee solid;
 
   }
 
@@ -1385,7 +1391,7 @@ height: 75px;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 42px;border-bottom: 1px #eeeeee solid;
+    height: 38px;border-bottom: 1px #eeeeee solid;
 
   }
 
@@ -1398,7 +1404,7 @@ width: 100%;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 42px;border-bottom: 1px #eeeeee solid;
+    height: 38px;border-bottom: 1px #eeeeee solid;
 
   }
 
@@ -1410,7 +1416,7 @@ width: 100%;
     border: 1px #ededed solid;
     padding-top: 8px;
    padding-left: 5px;
-    height: 46px;border-bottom: 5px #eeeeee solid;
+    height: 42px;border-bottom: 5px #eeeeee solid;
   }
 
 
@@ -1789,7 +1795,7 @@ width: 100%;
         border: 1px #ededed solid;
         padding-top: 8px;
        padding-left: 5px;
-        height: 74px;border-bottom: 5px #eeeeee solid;
+        height: 73.9px;border-bottom: 5px #eeeeee solid;
   
 }
 

@@ -9,7 +9,7 @@ border-right: none !important;
 
 
 .addComp:hover{
-  color: blue !important;
+  color: #0071e3 !important
   
 }
  </style>

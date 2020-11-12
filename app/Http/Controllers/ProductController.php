@@ -633,7 +633,7 @@ class ProductController extends Controller
             $total = $data->count();
             $output = '
                 <div>
-         <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 269px;
+         <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 321px;
           background-color: #f8f7f7;
           color: black;
        
@@ -649,7 +649,7 @@ class ProductController extends Controller
                     $output.='
                         <li>
                           <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-2" id="redCol">
                               <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
                                 <img src="'.asset($image).'" style="  padding-left: 7px;  height: 91px;  ">
                                  </div>

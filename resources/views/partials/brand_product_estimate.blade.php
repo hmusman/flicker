@@ -1,14 +1,30 @@
+ 
+ <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
  <style type="text/css"> .myLabel{ cursor: pointer !important;  } </style>
- <div class="row">
+
+ <style>
+   .btn-primary {
+    color: #fff;
+    background-color: #4a88c1 !important;
+    border-color: #4a88c1 !important;
+}
+
+primary:focus {
+    box-shadow: 0 0 0 0.2rem #4a88c1 !important;
+}
+ </style>
+
+ <div class="row fontUbantu">
     @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/190_'.$csproduct->image @endphp
     <div class="col-md-2" style=""><img src="{{ asset($img) }}" style="width: 100%;" /></div>
-    <div class="col-md-6" style="background-color: white">
+    <div class="col-md-6 fontUbantu" style="background-color: white">
     
           <input type="hidden" id="estimated_advice_price" value="{{ $csproduct->price }}">
           <p style="width: 100%;width: 100%;
           font-size: 20px;
           color: black;
-          font-weight: 700;">{{ ucwords($csproduct->name) }} ({{ $csproduct->color }} , {{ $csproduct->storage }})</p>
+          font-weight: 700;" class="fontUbantu">{{ ucwords($csproduct->name) }} ({{ $csproduct->color }} , {{ $csproduct->storage }})</p>
 
 
           <img style="height: 13px; margin-left: 10px; filter: invert(0.5);" src="{{ asset('storage/images/IphoneDetails/ic_mode_edit_black_18dp.png')}}">
@@ -33,11 +49,12 @@
 
 
           <div>
-            <input id="minor-on" class="minor" name="minor" type="radio" value="{{ $csproduct->minor_dent_scratch }}">
+            <input id="minor-on" class="minor" name="minor" required="required" type="radio" value="{{ $csproduct->minor_dent_scratch }}">
           <label for="minor-on" class="myLabel">Yes</label>
-          <input id="minor-off" class="minor" name="minor" type="radio" value="0">
+          <input id="minor-off" class="minor" name="minor" required="required" type="radio" value="0">
           <label for="minor-off" class="myLabel">No</label>
 
+<p class="minor_error" style="display:none;color: red;">*Must Filled Estimate Form</p>
           </div>
 
           <p style="width: 100%;width: 100%;
@@ -46,11 +63,12 @@
 
 
           <div>
-            <input id="major-on" class="major" name="major" type="radio" value="{{ $csproduct->major_dent_scratch }}">
+            <input id="major-on" class="major" name="major" required="required" type="radio" value="{{ $csproduct->major_dent_scratch }}">
           <label for="major-on" class="myLabel">Yes</label>
-          <input id="major-off" class="major" name="major" type="radio" value="0">
+          <input id="major-off" class="major" name="major" required="required" type="radio" value="0">
           <label for="major-off" class="myLabel">No</label>
 
+<p class="major_error" style="display:none;color: red;">*Must Filled Estimate Form</p>
           </div>
 
 
@@ -60,11 +78,12 @@
 
 
           <div>
-            <input id="accessory-on" class="accessory" name="accessory" type="radio" value="0">
+            <input id="accessory-on" class="accessory" required="required" name="accessory" type="radio" value="0">
           <label for="accessory-on" class="myLabel">Yes</label>
-          <input id="accessory-off" class="accessory" name="accessory" type="radio" value="{{ $csproduct->original_accessories_available }}">
+          <input id="accessory-off" class="accessory" name="accessory" required="required" type="radio" value="{{ $csproduct->original_accessories_available }}">
           <label for="accessory-off" class="myLabel">No</label>
 
+<p class="acc_error" style="display:none;color: red;">*Must Filled Estimate Form</p>
           </div>
 
 
@@ -74,11 +93,12 @@
 
 
           <div>
-            <input id="screen-on" class="screen" name="screen" type="radio" value="{{ $csproduct->screen_is_cracked }}">
+            <input id="screen-on" class="screen" name="screen" required="required" type="radio" value="{{ $csproduct->screen_is_cracked }}">
           <label for="screen-on" class="myLabel">Yes</label>
-          <input id="screen-off" class="screen" name="screen" type="radio" value="0">
+          <input id="screen-off" class="screen" name="screen" required="required" type="radio" value="0">
           <label for="screen-off" class="myLabel">No</label>
 
+<p class="screen_error" style="display:none;color: red;">*Must Filled Estimate Form</p>
           </div>
 
 
@@ -90,11 +110,12 @@
 
 
           <div>
-            <input id="device-on" class="device" name="device" type="radio" value="0">
+            <input id="device-on" class="device" name="device" required="required" type="radio" value="0">
           <label for="device-on" class="myLabel">Yes</label>
-          <input id="device-off" name="device" class="device" type="radio" value="{{ $csproduct->device_box_available }}">
+          <input id="device-off" name="device" class="device" required="required" type="radio" value="{{ $csproduct->device_box_available }}">
           <label for="device-off" class="myLabel">No</label>
 
+<p class="box_error" style="display:none;color: red;">*Must Filled Estimate Form</p>
           </div>
 
 
@@ -104,9 +125,9 @@
           <p style="width: 100%;width: 100%; margin-top: 15px;
           font-size: 16px;
           color: black;">Battery Status?</p>
+<p class="batt_error" style="display:none;color: red;">*Must Filled Estimate Form</p>
 
-
-          <select class="form-control battery" name="battery" onchange='OtherPerc(this.value);'>
+          <select class="form-control battery" name="battery" required="required" onchange='OtherPerc(this.value);'>
             <option disabled="" selected="">Select Status</option>
             @for($i=5; $i<=10; $i++)
               <option value="{{ $i*10 }}" @if(old('battery')==$i*10) selected @endif >{{ $i*10 }} %</option>
@@ -178,7 +199,7 @@
       <div style="height: 70%; width: 100%; ">
       
         <div id="ourEstimateOnMob" style=" width: 98%; box-shadow:  0px 0px 5px black;">
-        <div style="height: 20%; width: 100%; background-color: #f3f1f2; color: blue;
+        <div style="height: 20%; width: 100%; background-color: #f3f1f2; color: #4a88c1;
         padding-top: 17px;
         font-weight: 500;
         font-size: 20px;
@@ -189,7 +210,7 @@
        " >
          <center style="color: black ;font-weight: 500; font-size: 20px;" id="grading"></center>
          <br/>
-      <center style="color: blue ;font-weight: 500; font-size: 20px;">  <sup>  PKR</sup><font style="font-size: 6vw;margin-left: 5px;" id="estimate_price"> 0</font>  </center>  </p>
+      <center style="color: #4a88c1 ;font-weight: 500; font-size: 20px;">  <sup>  PKR</sup><font style="font-size: 6vw;margin-left: 5px;" id="estimate_price"> 0</font>  </center>  </p>
         
         <input type="hidden" id="estimated_product_name" value="{{ $csproduct->name }}">
         <input type="hidden" id="estimated_product_color" value="{{ $csproduct->color }}">
@@ -246,6 +267,16 @@
 
     function estimate_fun()
     {
+    
+      checingbtn($('#minor-on'),$('#minor-off'),'.minor_error');
+
+       checingbtn($('#major-on'),$('#major-off'),'.major_error');
+        checingbtn($('#accessory-on'),$('#accessory-off'),'.acc_error');
+         checingbtn($('#screen-on'),$('#screen-off'),'.screen_error');
+          checingbtn($('#device-on'),$('#device-off'),'.box_error');
+           checingbtnBatt($('.battery'),'.batt_error');
+          
+
        var estimate_deduction =0;
        var grading = "";
        //Anything above or equal to 8
@@ -798,6 +829,41 @@
      element.style.display='none';
   }
 
+
+ 
+
+
+     function checingbtn(id1, id2, err_msg){
+
+  if(id1.is(':checked') || id2.is(':checked'))
+   { 
+    $(err_msg).css('display', 'none');
+    
+    } else
+    { 
+          $(err_msg).css('display', 'block');
+
+     }
+
+     }
+
+
+       function checingbtnBatt(bat_id , err_msg){
+
+  // if(bat_id.is(':checked') || bat_id.is(':checked'))
+
+  if(bat_id.children("option:selected") && bat_id.children("option:selected").val() !== 'Select Status')
+   { 
+    $(err_msg).css('display', 'none');
+    
+    } else
+    { 
+          $(err_msg).css('display', 'block');
+
+     }
+
+     }
+     
   </script>
 
 

@@ -16,6 +16,10 @@
       <link rel="stylesheet" href="js/ScrollJS2//style.css">
       <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css')}}"/>
       <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css')}}"/>
+
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+
    </head>
   
 <style>
@@ -35,11 +39,17 @@
       margin-top: -8px;
       margin-bottom: -8px;
       }
-      #myInput {
+     #myInput {
+
+
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
-      width: 50%;
+      width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
@@ -51,16 +61,13 @@
       margin: 0;
       }
       #myUL li a {
-      margin-top: -1px; /* Prevent double borders */
+      margin-top: -1px; 
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
       display: block;
       font-weight: 600;
       }
-      /* #myUL li a:hover:not(.header) {
-      background-color: #eee;
-      } */
 
 
 
@@ -396,10 +403,10 @@
             </div>
          </div>
       </div>
-      <div class="container-fluid" style="background-color: #f7f7f7 !important;">
+      <div class="container-fluid fontUbantu" style="background-color: #f7f7f7 !important;">
          <div class="container" style="background-color: #f7f7f7 !important;">
             <div class="row filterRow" style="background-color: #f7f7f7 !important;">
-               <div class="col-md-2" style="color: black; margin-top: 15px; " >
+               <div class="col-md-2 fontUbantu" style="color: black; margin-top: 15px; " >
                   <p style="font-weight: bold !important; margin-top: 9px "> FILTERS</p>
                </div>
             
@@ -426,7 +433,8 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px;">Reset</button></div>
+               <div class="col-md-1" style="color: black;;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px;background-color: #4a88c1 !important;
+    border-color: #4a88c1 !important;">Reset</button></div>
             </div>
          </div>
       </div>

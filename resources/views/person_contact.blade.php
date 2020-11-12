@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
      <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   
 	<meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Html slider" />
 	
       <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" >
@@ -100,11 +98,7 @@ a[class="ws_next"] {
    z-index: 1 !important;
 }
 
-.page-item.active .page-link {
-  
-    background-color: #4a88c1 !important;
-    border-color: #4a88c1 !important;
-}
+
 
             #myUL li:hover{
     background-color: #f9f9f9 !important;
@@ -253,7 +247,7 @@ border-left: 2px red solid !important;
       content: none !important;
       }
       .navbar-nav > a{
-      background-color: #4a88c1 !important;
+      background-color: #0071e3 !important;
       padding: 5px 19px 5px 19px !important;
       margin-right: 21px !important;
       border-radius: 25px !important;   
@@ -379,7 +373,7 @@ border-left: 2px red solid !important;
       outline: none !important;
       }
       .HoveStylAddComp:hover{
-      color: #4a88c1 !important;
+      color: #0071e3 !important;
       }
       .phoneBoxstyle{
       border-right: 1px #e1dfdf solid;
@@ -405,154 +399,101 @@ border-left: 2px red solid !important;
     padding-bottom: .2rem !important;
 }
 }
+
+.leftdiv{
+font-weight: 600;
+    font-size: 18px;margin-bottom: 0.5rem !important;
+    margin-top: 0.5rem !important;
+}
+.rightdiv{
+
+}
+
+button:focus{
+  outline: none !important;
+}
    </style>
 
 
 
 
    <body>
-      <a href='#' id="scroll" style="display: none;"><span></span></a>
+       <a href='#' id="scroll" style="display: none;"><span></span></a>
       @include('includes.header')
-      <!-- Start WOWSlider.com BODY section -->
-      <!-- Start WOWSlider.com BODY section -->
 
 
 
-      <div id="wowslider-container1">
-         <div class="ws_images fontUbantu">
-            <ul>
-               <li>
-                  <a href="#ShopPAge"> <img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now" title="Shop Now" id="wows1_0"/></a>
-                  <p style="font-weight: bold; font-size: 25px; " class="fontUbantu" >Latest Branded Phones <br/>
-                  <h5 style="font-weight: bold; font-size: 15px; color: #2abcfe !important; " class="fontUbantu">GET READY TO RUN SMARTER</h5>
-                  <br/>
-                  <h6 id="shopBtn" class="fontUbantu" style="  padding: 10px 20px 10px 27px !important;width: 149px !important; border: 1px black solid !important;  text-shadow: 1px 1px 5px white !important ;color: #b30930 !important;  font-weight: 700 !important;">SHOP NOW</h6>
-                  </p>
-               </li>
-               <li>
-                  <a href="#ShopPAge"><img src="Slider/data1/images/1350-x-376-B.jpg" alt="bootstrap image slider" title="Shop Now" id="wows1_1"/></a>
-                  <p style="font-weight: bold; font-size: 25px; " class="fontUbantu">Shop Your Desired Phone with Flicker Fone<br/>
-                  <h5 style="font-weight: bold; font-size: 15px; color: #2abcfe !important; " class="fontUbantu">GET READY TO RUN SMARTER</h5>
-                  <br/>
-                  <h6 id="shopBtn" class="fontUbantu" style="  padding: 10px 20px 10px 27px !important;width: 149px !important;text-shadow: 1px 1px 5px white !important ; border: 1px black solid !important; color: #b30930 !important;  font-weight: 700 !important;">SHOP NOW</h6>
-                  </p>
-               </li>
-               <li>
-                  <a href="#ShopPAge"><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now" title="Shop Now" id="wows1_2"/></a>
-                  <p style="font-weight: bold; font-size: 25px; " class="fontUbantu">Samsung Galaxy Note 20 <br/>
-                  <h5 style="font-weight: bold; font-size: 15px; color: #2abcfe !important; " class="fontUbantu">GET READY TO RUN SMARTER</h5>
-                  <br/>
-                  <h6 id="shopBtn" class="fontUbantu" style="  padding: 10px 20px 10px 27px !important;width: 149px !important;text-shadow: 1px 1px 5px white !important ; border: 1px black solid !important; color: #b30930 !important;  font-weight: 700 !important;">SHOP NOW</h6>
-                  </p>
-               </li>
-            </ul>
-         </div>
-         <div class="ws_bullets">
-            <div>
-               <a href="#" title="Shop Now"><span><img src="Slider/data1/tooltips/1350-x-376.png" alt="Shop Now"/>1</span></a>
-               <a href="#" title="Shop Now"><span><img src="Slider/data1/tooltips/1350-x-376-B.png" alt="Shop Now"/>2</span></a>
-               <a href="#" title="Shop Now"><span><img src="Slider/data1/tooltips/1350-x-376-A.png" alt="Shop Now"/>3</span></a>
-            </div>
-         </div>
-         <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html slider</a> by WOWSlider.com v8.8</div>
-         <div class="ws_shadow"></div>
-       
-      </div> -->
+
+ <h3 class="fontUbantu" style="color: #0b0c0c;
+    text-align: center;
+    font-weight: 500;
+    font-size: 35px;
+    margin-top: 51px;">Personal Contact</h3>
+
+<hr style="background: #0071e3;
+    width: 6%;
+    height: 1px;"/>
+<br/>>
+<div class="row">
+    <div class="col-md-4" style="text-align: center"> <img src="{{ asset('/storage/images/stj7r136SWCSMyLXaL44oeDEIMoihoqBheOF5XXR.jpeg') }}" alt="Trulli" /></div>
+     <div class="col-md-8" style="color: #0b0c0c">
+    
+    <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
+        <p class="leftdiv" style="" class="fontUbantu">NAME</p></div>
+         <div class="col-md-8" style=" background-color:#f8f7f7;">
+         <p class="fontUbantu leftdiv">MUHAMMAD ATIF</p>
+        </div>
+    </div>
 
 
-<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page
-   
+    <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; ">
+        <p class="leftdiv" style="" class="fontUbantu">CITY</p></div>
+         <div class="col-md-8" style=" ">
+         <p class="fontUbantu leftdiv">FAISALABAD</p>
+        </div>
+    </div>
 
 
 
-<!-- 
-<div id="wowslider-container1">
-	<div class="ws_images"><ul>
-		<li><img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now" title="Shop Now" id="wows1_0"/></li>
-		<li><a href="http://wowslider.net"><img src="Slider/data1/images/1350-x-376-B.jpg" alt="jquery image carousel" title="Shop Now" id="wows1_1"/></a></li>
-		<li><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now" title="Shop Now" id="wows1_2"/></li>
-	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376.jpg" alt="Shop Now"/>1</span></a>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376-B.jpg" alt="Shop Now"/>2</span></a>
-		<a href="#" title="Shop Now"><span><img src="Slider/data1/images/1350-x-376-A.jpg" alt="Shop Now"/>3</span></a>
-	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">html slider</a> by WOWSlider.com v8.8</div>
-	<div class="ws_shadow"></div>
-	</div>	 -->
+    <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
+        <p class="leftdiv" style="" class="fontUbantu">CELL</p></div>
+         <div class="col-md-8" style=" background-color:#f8f7f7;">
+         <p class="fontUbantu leftdiv">+92 335 6862429</p>
+        </div>
+    </div>
+
+
+      <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; ">
+        <p class="leftdiv" style="" class="fontUbantu">COUNTRY</p></div>
+         <div class="col-md-8" style=" ">
+         <p class="fontUbantu leftdiv">PAKISTAN</p>
+        </div>
+    </div>
 
 
 
-      <!-- End WOWSlider.com BODY section -->
-      <!-- End WOWSlider.com BODY section -->
-      <br/>
+    <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
+        <p class="leftdiv" style="" class="fontUbantu">ADDRESS</p></div>
+         <div class="col-md-8" style=" background-color:#f8f7f7;">
+         <p class="fontUbantu leftdiv">BATALA COLONY FAISALABAD</p>
+        </div>
+    </div>
 
-     
+<a href="{{ route('BuyUsedMobilePhones') }}"><button style="background: #4a88c1;
+    color: white;
+    border: none; cursor: pointer;
+    padding: 5px 20px 5px 20px;
+    margin-top: 28px;" >Go Back</button></a>
 
-      <div class="container">
-         <div class="row" style="margin-bottom: 15px;">
-            <div class="col-md-9" style="color: gray;">
-               <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a>/ Mobiles
-            </div>
-             <div class="col-md-3">
-                  <a class="fontUbantu" href="{{ route('NewAccessories') }}" style="background-color: #4a88c1 !important; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Accessories</a>
-            </div>
-         </div>
+    </div>
+</div>
 
-        
-      </div>
-      <div class="container-fluid fontUbantu" style="background-color: #f7f7f7 !important;">
-         <div class="container" style="background-color: #f7f7f7 !important;">
-            <div class="row filterRow" style="background-color: #f7f7f7 !important;">
-               <div class="col-md-2" style="color: black; margin-top: 15px; " >
-                  <p style="font-weight: bold !important; margin-top: 9px "> FILTERS</p>
-               </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
-                  <div class="form-group">
-                     <select class="form-control" id="brand" style="font-weight: bold !important;">
-                        <option selected="" disabled="" style="font-weight: bold !important;">Brands</option>
-                        @if($brands->count()>0)
-                        @foreach($brands as $brand)
-                        <option value="{{ $brand->id }}">{{ ucwords($brand->name) }}</option>
-                        @endforeach
-                        @endif
-                     </select>
-                  </div>
-               </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
-                  <div class="form-group">
-                     <select class="form-control" id="price" style="font-weight: bold !important;">
-                        <option selected=""  disabled="" style="font-weight: bold !important;">Price</option>
-                        <option value="Less than 20,000">Less than 20,000 PKR</option>
-                        <option value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
-                        <option value="Between 30,000 and 60,000">Between 30,000 and 60,000 PKR</option>
-                        <option value="Between 60,000 and 1,00000">Between 60,000 and 1,00000 PKR</option>
-                        <option value="More Than 1,00000">More Than 1,00000 PKR</option>
-                     </select>
-                  </div>
-               </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
-                  <div class="form-group">
-                     <select class="form-control" id="view" style="font-weight: bold !important;">
-                        <option selected="" disabled="" style="font-weight: bold !important;">Select View</option>
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                     </select>
-                  </div>
-               </div>
-               <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px; background: #4a88c1!important; font-weight: bold;">Reset</button></div>
-            </div>
-         </div>
-      </div>
-      <div class="container fontUbantu">
-         <div class="row products" style=" padding: 0px 35px 0px 35px;   background-color: white;;">
-            @include('partials.shop_products_list')
-         </div>
-      </div>
-      <br/>
-      <br/>
-      <br/>
+        <br/>
       <br/>
       <br/>
       <footer style=" background-color: #dcdcdc;">

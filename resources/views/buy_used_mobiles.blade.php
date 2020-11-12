@@ -17,43 +17,157 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
   
   <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+
+
+
+<style>
+
+@media (min-width: 1400px) and (max-width : 2000px){
+#mainright {
+    margin-left: 476px !important;
+}
+#sidenav{
+  height: 100% !important;
+}
+}
+
+/* #sidenav {
+   animation: fadeIn ease 1s;
+  position: fixed;
+  z-index: 1;
+  top: 564px;
+  left: 10px;
+ background: #ffffff;
+      height: 572px;
+    overflow: scroll;
+  padding: 8px 0;
+  z-index: 6;
+    padding-top: 0px;
+
+    animation: fadeIn ease 2s;
+} */
+
+
+
+.myMovingClass{
+  /* margin-top: 2000px;
+   animation: fadeIn ease 2s; */
+    /* top: 462px !important; */
+}
+/* .myMovingClassTwo{
+    top: 360px !important;
+}
+
+.myMovingClassThree{
+    top: 98px !important;
   
+}
+#mainright {
+     margin-left: 338px;
+    width: 70% !important;
+} */
+
+
+
+</style>
+
+
+
+<style>
+
+
+
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+
+
+/* The style below is just for the appearance of the example div */
+
+</style>
+
+
+
+
+
+
+
+
+
   <style>
- 
-    
-    #myInput {
+
+
+ /* font:nth-child(1) {
+   padding: 7px 20px 7px 20px !important;
+}
+ font:nth-child(2) {
+   padding: 7px 35px 7px 35px !important;
+}
+
+ font:nth-child(3) {
+   padding: 7px 45px 7px 45px !important;
+}
+     */
+
+
+
+
+
+
+
+
+
+
+
+
+
+       #myInput {
+
+
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
-      width: 50%;
+      width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
       margin-bottom: 12px;
-    }
-    
-    #myUL {
+      }
+      #myUL {
       list-style-type: none;
       padding: 0;
       margin: 0;
-   
-    }
-    
-    #myUL li a {
-      
-      margin-top: -1px; /* Prevent double borders */
-      
+      }
+      #myUL li a {
+      margin-top: -1px; 
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
-    display: block;
-    font-weight: 600;
-    }
+      display: block;
+      font-weight: 600;
+      
+   
+    height: 24px;
+    margin-top: 16px;
+      }
 
     #usedSearchList li a {
       
       margin-top: -1px; /* Prevent double borders */
-      
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
@@ -64,6 +178,22 @@
     /* #myUL li a:hover:not(.header) {
       background-color: #eee;
     } */
+
+    #prcCal{
+      margin-top: 1px !important;
+    }
+
+     #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
+
     </style>
 
 
@@ -236,7 +366,7 @@ button[id="slick-slide-control14"]::before{
 
 .slick-prev {
     left: 0px !important;
-    z-index: 10 !important;
+    z-index: 8 !important;
 }
 
 
@@ -274,7 +404,7 @@ content: none !important;
 }
 
 .navbar-nav > a{
-  background-color: #0071e3 !important;
+  background-color: #4a88c1 !important;
     padding: 5px 19px 5px 19px !important;
     margin-right: 21px !important;
     border-radius: 25px !important;   
@@ -315,9 +445,28 @@ ul[class="dropdown-menu fade-up"] > li::after{
 
 
   }
-
+.page-item.active .page-link {
+  
+    background-color: #4a88c1 !important;
+    border-color: #4a88c1 !important;
+}
 
   @media (max-width: 550px){
+
+.srchiconMob{
+  width: 164% !important;
+   
+    margin-left: -10px !important;
+}
+
+select[id="sell"], select[id="upperPrice"] {
+  margin-top: -7px !important;
+}
+
+    #TopFilterAtMob{
+          height: 47px !important;
+    border-top: 1px black solid !important;
+    }
 #navbarNavAltMarkup1{
   background-color: #e6e6e6 !important;
     z-index: 12 !important;
@@ -383,11 +532,11 @@ ul[class="dropdown-menu fade-up show"] > li{
 
 <style>
   .js .toggle-boxqasim .contentqasim {
-    display: none;
+    display: block;
   }
 
   .toggle-boxqasim {
-    border: 1px solid #999;
+      border: 1px solid #d5d3cd59;
     overflow-y: scroll;
   }
 
@@ -791,6 +940,20 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 #upperSearch:hover{
 cursor: pointer;
 }
+
+
+
+
+ul[class="pagination"] > .page-item{
+
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-top: .5rem !important;
+   
+    padding-bottom: .2rem !important;
+}
+}
 </style>
 
 
@@ -802,14 +965,18 @@ cursor: pointer;
 
 <body>
 
+
+
+<a href="#" id="myDivPaginaton" style="display: none;"><span></span></a>
   <a href="#" id="scroll" style="display: none;"><span></span></a>
   @include('includes.header')
+
 
 
  <div class="row" style="height: 400px;     background-image: linear-gradient(to top , #252525, #233444);">
   <div class="col-md-12">
 
-<p style="text-align: center;    text-align: center;
+<p class="fontUbantu" style="text-align: center;    text-align: center;
 font-size: 23px;
 margin-top: 30px;">Find Used Mobile Phones In Pakistan</p>
 
@@ -819,7 +986,7 @@ margin-top: 30px;">Find Used Mobile Phones In Pakistan</p>
 
 <div  style="     width: 100% ;    
 width: 100%;
-margin-top: 90px;">
+margin-top: 110px;">
 
   <div  style=" float: left;  height: 100%; width: 10% ;">&nbsp;&nbsp;&nbsp;</div>
   <div  style="   float: left;height: 100%; width: 80% ;background-color: #f7f7f7;">
@@ -827,9 +994,10 @@ margin-top: 90px;">
   
   
   <div class="row">
+    
     <!-- <div class="col-md-4" id="finfbymodl" ><p style="width: 100%; color: black;    text-align: center; font-size: 18px;  font-weight: 500;  padding-top: 19px;">Find by make or model</p></div> -->
       <div class="col-md-4" style="text-align: center;">
-        <input type="text" name="" id="upperInpt" class="form-control" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;    background-color: #f7f7f7;
+        <input type="text" name="" id="upperInpt" class="form-control fontUbantu" placeholder="Find By Make or Modal" style="    margin-left: 2%;margin-top: 3%;    background-color: #f7f7f7;
     border-color: transparent;">
         <ul onblur="hideagain()" id="usedSearchList" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 100%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px; margin-left:2%;margin-top: 5px;">
    
@@ -842,316 +1010,316 @@ margin-top: 90px;">
             </div>
         </ul>
      </div>
-    <div class="col-md-8" style="padding-right: 0px !important;">
+    <div class="col-md-8" style="padding-right: 0px !important;" id="TopFilterAtMob" >
     
     
       <div id="borderatmob"  style=" float: left;  height: 100%; width: 45% ;padding-top: 11px;     border-left: 1px black solid;
       border-right: 1px black solid;">
       
         <div class="form-group">
-          <select class="form-control" id="sell" style="font-weight: bold !important;background-color: #f7f7f7;
+          <select class="form-control fontUbantu" id="sell" style="font-weight: bold !important;background-color: #f7f7f7;
     border-color: transparent;">  
-              <option selected="" disabled="">Select City</option> 
-              <option class="option" value="Abbottabad">Abbottabad</option>
-              <option class="option" value="Adezai">Adezai</option>
-              <option class="option" value="Ali Bandar">Ali Bandar</option>
-              <option class="option" value="Amir Chah">Amir Chah</option>
-              <option class="option" value="Attock">Attock</option>
-              <option class="option" value="Ayubia">Ayubia</option>
-              <option class="option" value="Bahawalpur">Bahawalpur</option>
-              <option class="option" value="Baden">Baden</option>
-              <option class="option" value="Bagh">Bagh</option>
-              <option class="option" value="Bahawalnagar">Bahawalnagar</option>
-              <option class="option" value="Burewala">Burewala</option>
-              <option class="option" value="Banda Daud Shah">Banda Daud Shah</option>
-              <option class="option" value="Bannu district|Bannu">Bannu</option>
-              <option class="option" value="Batagram">Batagram</option>
-              <option class="option" value="Bazdar">Bazdar</option>
-              <option class="option" value="Bela">Bela</option>
-              <option class="option" value="Bellpat">Bellpat</option>
-              <option class="option" value="Bhag">Bhag</option>
-              <option class="option" value="Bhakkar">Bhakkar</option>
-              <option class="option" value="Bhalwal">Bhalwal</option>
-              <option class="option" value="Bhimber">Bhimber</option>
-              <option class="option" value="Birote">Birote</option>
-              <option class="option" value="Buner">Buner</option>
-              <option class="option" value="Burj">Burj</option>
-              <option class="option" value="Chiniot">Chiniot</option>
-              <option class="option" value="Chachro">Chachro</option>
-              <option class="option" value="Chagai">Chagai</option>
-              <option class="option" value="Chah Sandan">Chah Sandan</option>
-              <option class="option" value="Chailianwala">Chailianwala</option>
-              <option class="option" value="Chakdara">Chakdara</option>
-              <option class="option" value="Chakku">Chakku</option>
-              <option class="option" value="Chakwal">Chakwal</option>
-              <option class="option" value="Chaman">Chaman</option>
-              <option class="option" value="Charsadda">Charsadda</option>
-              <option class="option" value="Chhatr">Chhatr</option>
-              <option class="option" value="Chichawatni">Chichawatni</option>
-              <option class="option" value="Chitral">Chitral</option>
-              <option class="option" value="Dadu">Dadu</option>
-              <option class="option" value="Dera Ghazi Khan">Dera Ghazi Khan</option>
-              <option class="option" value="Dera Ismail Khan">Dera Ismail Khan</option>
-               <option class="option" value="Dalbandin">Dalbandin</option>
-              <option class="option" value="Dargai">Dargai</option>
-              <option class="option" value="Darya Khan">Darya Khan</option>
-              <option class="option" value="Daska">Daska</option>
-              <option class="option" value="Dera Bugti">Dera Bugti</option>
-              <option class="option" value="Dhana Sar">Dhana Sar</option>
-              <option class="option" value="Digri">Digri</option>
-              <option class="option" value="Dina City|Dina">Dina</option>
-              <option class="option" value="Dinga">Dinga</option>
-              <option class="option" value="Diplo, Pakistan|Diplo">Diplo</option>
-              <option class="option" value="Diwana">Diwana</option>
-              <option class="option" value="Dokri">Dokri</option>
-              <option class="option" value="Drosh">Drosh</option>
-              <option class="option" value="Duki">Duki</option>
-              <option class="option" value="Dushi">Dushi</option>
-              <option class="option" value="Duzab">Duzab</option>
-              <option class="option" value="Faisalabad">Faisalabad</option>
-              <option class="option" value="Fateh Jang">Fateh Jang</option>
-              <option class="option" value="Ghotki">Ghotki</option>
-              <option class="option" value="Gwadar">Gwadar</option>
-              <option class="option" value="Gujranwala">Gujranwala</option>
-              <option class="option" value="Gujrat">Gujrat</option>
-              <option class="option" value="Gadra">Gadra</option>
-              <option class="option" value="Gajar">Gajar</option>
-              <option class="option" value="Gandava">Gandava</option>
-              <option class="option" value="Garhi Khairo">Garhi Khairo</option>
-              <option class="option" value="Garruck">Garruck</option>
-              <option class="option" value="Ghakhar Mandi">Ghakhar Mandi</option>
-              <option class="option" value="Ghanian">Ghanian</option>
-              <option class="option" value="Ghauspur">Ghauspur</option>
-              <option class="option" value="Ghazluna">Ghazluna</option>
-              <option class="option" value="Girdan">Girdan</option>
-              <option class="option" value="Gulistan">Gulistan</option>
-              <option class="option" value="Gwash">Gwash</option>
-              <option class="option" value="Hyderabad">Hyderabad</option>
-              <option class="option" value="Hala">Hala</option>
-              <option class="option" value="Haripur">Haripur</option>
-              <option class="option" value="Hab Chauki">Hab Chauki</option>
-              <option class="option" value="Hafizabad">Hafizabad</option>
-              <option class="option" value="Hameedabad">Hameedabad</option>
-              <option class="option" value="Hangu">Hangu</option>
-              <option class="option" value="Harnai">Harnai</option>
-              <option class="option" value="Hasilpur">Hasilpur</option>
-              <option class="option" value="Haveli Lakha">Haveli Lakha</option>
-              <option class="option" value="Hinglaj">Hinglaj</option>
-              <option class="option" value="Hoshab">Hoshab</option>
-              <option class="option" value="Islamabad">Islamabad</option>
-              <option class="option" value="Islamkot">Islamkot</option>
-              <option class="option" value="Ispikan">Ispikan</option>
-              <option class="option" value="Jacobabad">Jacobabad</option>
-              <option class="option" value="Jamshoro">Jamshoro</option>
-              <option class="option" value="Jhang">Jhang</option>
-              <option class="option" value="Jhelum">Jhelum</option>
-              <option class="option" value="Jamesabad">Jamesabad</option>
-              <option class="option" value="Jampur">Jampur</option>
-              <option class="option" value="Janghar">Janghar</option>
-              <option class="option" value="Jati, Jati(Mughalbhin)">Jati</option>
-              <option class="option" value="Jauharabad">Jauharabad</option>
-              <option class="option" value="Jhal">Jhal</option>
-              <option class="option" value="Jhal Jhao">Jhal Jhao</option>
-              <option class="option" value="Jhatpat">Jhatpat</option>
-              <option class="option" value="Jhudo">Jhudo</option>
-              <option class="option" value="Jiwani">Jiwani</option>
-              <option class="option" value="Jungshahi">Jungshahi</option>
-              <option class="option" value="Karachi">Karachi</option>
-              <option class="option" value="Kotri">Kotri</option>
-              <option class="option" value="Kalam">Kalam</option>
-              <option class="option" value="Kalandi">Kalandi</option>
-              <option class="option" value="Kalat">Kalat</option>
-              <option class="option" value="Kamalia">Kamalia</option>
-              <option class="option" value="Kamararod">Kamararod</option>
-              <option class="option" value="Kamber">Kamber</option>
-              <option class="option" value="Kamokey">Kamokey</option>
-              <option class="option" value="Kanak">Kanak</option>
-              <option class="option" value="Kandi">Kandi</option>
-              <option class="option" value="Kandiaro">Kandiaro</option>
-              <option class="option" value="Kanpur">Kanpur</option>
-              <option class="option" value="Kapip">Kapip</option>
-              <option class="option" value="Kappar">Kappar</option>
-              <option class="option" value="Karak City">Karak City</option>
-              <option class="option" value="Karodi">Karodi</option>
-              <option class="option" value="Kashmor">Kashmor</option>
-              <option class="option" value="Kasur">Kasur</option>
-              <option class="option" value="Katuri">Katuri</option>
-              <option class="option" value="Keti Bandar">Keti Bandar</option>
-              <option class="option" value="Khairpur">Khairpur</option>
-              <option class="option" value="Khanaspur">Khanaspur</option>
-              <option class="option" value="Khanewal">Khanewal</option>
-              <option class="option" value="Kharan">Kharan</option>
-              <option class="option" value="kharian">kharian</option>
-              <option class="option" value="Khokhropur">Khokhropur</option>
-              <option class="option" value="Khora">Khora</option>
-              <option class="option" value="Khushab">Khushab</option>
-              <option class="option" value="Khuzdar">Khuzdar</option>
-              <option class="option" value="Kikki">Kikki</option>
-              <option class="option" value="Klupro">Klupro</option>
-              <option class="option" value="Kohan">Kohan</option>
-              <option class="option" value="Kohat">Kohat</option>
-              <option class="option" value="Kohistan">Kohistan</option>
-              <option class="option" value="Kohlu">Kohlu</option>
-              <option class="option" value="Korak">Korak</option>
-              <option class="option" value="Korangi">Korangi</option>
-              <option class="option" value="Kot Sarae">Kot Sarae</option>
-              <option class="option" value="Kotli">Kotli</option>
-              <option class="option" value="Lahore">Lahore</option>
-              <option class="option" value="Larkana">Larkana</option>
-              <option class="option" value="Lahri">Lahri</option>
-              <option class="option" value="Lakki Marwat">Lakki Marwat</option>
-              <option class="option" value="Lasbela">Lasbela</option>
-              <option class="option" value="Latamber">Latamber</option>
-              <option class="option" value="Layyah">Layyah</option>
-              <option class="option" value="Leiah">Leiah</option>
-              <option class="option" value="Liari">Liari</option>
-              <option class="option" value="Lodhran">Lodhran</option>
-              <option class="option" value="Loralai">Loralai</option>
-              <option class="option" value="Lower Dir">Lower Dir</option>
-              <option class="option" value="Shadan Lund">Shadan Lund</option>
-              <option class="option" value="Multan">Multan</option>
-              <option class="option" value="Mandi Bahauddin">Mandi Bahauddin</option>
-              <option class="option" value="Mansehra">Mansehra</option>
-              <option class="option" value="Mian Chanu">Mian Chanu</option>
-              <option class="option" value="Mirpur">Mirpur</option>
-              <option class="option" value="Moro, Pakistan|Moro">Moro</option>
-              <option class="option" value="Mardan">Mardan</option>
-              <option class="option" value="Mach">Mach</option>
-              <option class="option" value="Madyan">Madyan</option>
-              <option class="option" value="Malakand">Malakand</option>
-              <option class="option" value="Mand">Mand</option>
-              <option class="option" value="Manguchar">Manguchar</option>
-              <option class="option" value="Mashki Chah">Mashki Chah</option>
-              <option class="option" value="Maslti">Maslti</option>
-              <option class="option" value="Mastuj">Mastuj</option>
-              <option class="option" value="Mastung">Mastung</option>
-              <option class="option" value="Mathi">Mathi</option>
-              <option class="option" value="Matiari">Matiari</option>
-              <option class="option" value="Mehar">Mehar</option>
-              <option class="option" value="Mekhtar">Mekhtar</option>
-              <option class="option" value="Merui">Merui</option>
-              <option class="option" value="Mianwali">Mianwali</option>
-              <option class="option" value="Mianez">Mianez</option>
-              <option class="option" value="Mirpur Batoro">Mirpur Batoro</option>
-              <option class="option" value="Mirpur Khas">Mirpur Khas</option>
-              <option class="option" value="Mirpur Sakro">Mirpur Sakro</option>
-              <option class="option" value="Mithi">Mithi</option>
-              <option class="option" value="Mongora">Mongora</option>
-              <option class="option" value="Murgha Kibzai">Murgha Kibzai</option>
-              <option class="option" value="Muridke">Muridke</option>
-              <option class="option" value="Musa Khel Bazar">Musa Khel Bazar</option>
-              <option class="option" value="Muzaffar Garh">Muzaffar Garh</option>
-              <option class="option" value="Muzaffarabad">Muzaffarabad</option>
-              <option class="option" value="Nawabshah">Nawabshah</option>
-              <option class="option" value="Nazimabad">Nazimabad</option>
-              <option class="option" value="Nowshera">Nowshera</option>
-              <option class="option" value="Nagar Parkar">Nagar Parkar</option>
-              <option class="option" value="Nagha Kalat">Nagha Kalat</option>
-              <option class="option" value="Nal">Nal</option>
-              <option class="option" value="Naokot">Naokot</option>
-              <option class="option" value="Nasirabad">Nasirabad</option>
-              <option class="option" value="Nauroz Kalat">Nauroz Kalat</option>
-              <option class="option" value="Naushara">Naushara</option>
-              <option class="option" value="Nur Gamma">Nur Gamma</option>
-              <option class="option" value="Nushki">Nushki</option>
-              <option class="option" value="Nuttal">Nuttal</option>
-              <option class="option" value="Okara">Okara</option>
-              <option class="option" value="Ormara">Ormara</option>
-              <option class="option" value="Peshawar">Peshawar</option>
-              <option class="option" value="Panjgur">Panjgur</option>
-              <option class="option" value="Pasni City">Pasni City</option>
-              <option class="option" value="Paharpur">Paharpur</option>
-              <option class="option" value="Palantuk">Palantuk</option>
-              <option class="option" value="Pendoo">Pendoo</option>
-              <option class="option" value="Piharak">Piharak</option>
-              <option class="option" value="Pirmahal">Pirmahal</option>
-              <option class="option" value="Pishin">Pishin</option>
-              <option class="option" value="Plandri">Plandri</option>
-              <option class="option" value="Pokran">Pokran</option>
-              <option class="option" value="Pounch">Pounch</option>
-              <option class="option" value="Quetta">Quetta</option>
-              <option class="option" value="Qambar">Qambar</option>
-              <option class="option" value="Qamruddin Karez">Qamruddin Karez</option>
-              <option class="option" value="Qazi Ahmad">Qazi Ahmad</option>
-              <option class="option" value="Qila Abdullah">Qila Abdullah</option>
-              <option class="option" value="Qila Ladgasht">Qila Ladgasht</option>
-              <option class="option" value="Qila Safed">Qila Safed</option>
-              <option class="option" value="Qila Saifullah">Qila Saifullah</option>
-              <option class="option" value="Rawalpindi">Rawalpindi</option>
-              <option class="option" value="Rabwah">Rabwah</option>
-              <option class="option" value="Rahim Yar Khan">Rahim Yar Khan</option>
-              <option class="option" value="Rajan Pur">Rajan Pur</option>
-              <option class="option" value="Rakhni">Rakhni</option>
-              <option class="option" value="Ranipur">Ranipur</option>
-              <option class="option" value="Ratodero">Ratodero</option>
-              <option class="option" value="Rawalakot">Rawalakot</option>
-              <option class="option" value="Renala Khurd">Renala Khurd</option>
-              <option class="option" value="Robat Thana">Robat Thana</option>
-              <option class="option" value="Rodkhan">Rodkhan</option>
-              <option class="option" value="Rohri">Rohri</option>
-              <option class="option" value="Sialkot">Sialkot</option>
-              <option class="option" value="Sadiqabad">Sadiqabad</option>
-              <option class="option" value="Safdar Abad- (Dhaban Singh)">Safdar Abad</option>
-              <option class="option" value="Sahiwal">Sahiwal</option>
-              <option class="option" value="Saidu Sharif">Saidu Sharif</option>
-              <option class="option" value="Saindak">Saindak</option>
-              <option class="option" value="Sakrand">Sakrand</option>
-              <option class="option" value="Sanjawi">Sanjawi</option>
-              <option class="option" value="Sargodha">Sargodha</option>
-              <option class="option" value="Saruna">Saruna</option>
-              <option class="option" value="Shabaz Kalat">Shabaz Kalat</option>
-              <option class="option" value="Shadadkhot">Shadadkhot</option>
-              <option class="option" value="Shahbandar">Shahbandar</option>
-              <option class="option" value="Shahpur">Shahpur</option>
-              <option class="option" value="Shahpur Chakar">Shahpur Chakar</option>
-              <option class="option" value="Shakargarh">Shakargarh</option>
-              <option class="option" value="Shangla">Shangla</option>
-              <option class="option" value="Sharam Jogizai">Sharam Jogizai</option>
-              <option class="option" value="Sheikhupura">Sheikhupura</option>
-              <option class="option" value="Shikarpur">Shikarpur</option>
-              <option class="option" value="Shingar">Shingar</option>
-              <option class="option" value="Shorap">Shorap</option>
-              <option class="option" value="Sibi">Sibi</option>
-              <option class="option" value="Sohawa">Sohawa</option>
-              <option class="option" value="Sonmiani">Sonmiani</option>
-              <option class="option" value="Sooianwala">Sooianwala</option>
-              <option class="option" value="Spezand">Spezand</option>
-              <option class="option" value="Spintangi">Spintangi</option>
-              <option class="option" value="Sui">Sui</option>
-              <option class="option" value="Sujawal">Sujawal</option>
-              <option class="option" value="Sukkur">Sukkur</option>
-              <option class="option" value="Suntsar">Suntsar</option>
-              <option class="option" value="Surab">Surab</option>
-              <option class="option" value="Swabi">Swabi</option>
-              <option class="option" value="Swat">Swat</option>
-              <option class="option" value="Tando Adam">Tando Adam</option>
-              <option class="option" value="Tando Bago">Tando Bago</option>
-              <option class="option" value="Tangi">Tangi</option>
-              <option class="option" value="Tank City">Tank City</option>
-              <option class="option" value="Tar Ahamd Rind">Tar Ahamd Rind</option>
-              <option class="option" value="Thalo">Thalo</option>
-              <option class="option" value="Thatta">Thatta</option>
-              <option class="option" value="Toba Tek Singh">Toba Tek Singh</option>
-              <option class="option" value="Tordher">Tordher</option>
-              <option class="option" value="Tujal">Tujal</option>
-              <option class="option" value="Tump">Tump</option>
-              <option class="option" value="Turbat">Turbat</option>
-              <option class="option" value="Umarao">Umarao</option>
-              <option class="option" value="Umarkot">Umarkot</option>
-              <option class="option" value="Upper Dir">Upper Dir</option>
-              <option class="option" value="Uthal">Uthal</option>
-              <option class="option" value="Vehari">Vehari</option>
-              <option class="option" value="Veirwaro">Veirwaro</option>
-              <option class="option" value="Vitakri">Vitakri</option>
-              <option class="option" value="Wadh">Wadh</option>
-              <option class="option" value="Wah Cantt">Wah Cantt</option>
-              <option class="option" value="Warah">Warah</option>
-              <option class="option" value="Washap">Washap</option>
-              <option class="option" value="Wasjuk">Wasjuk</option>
-              <option class="option" value="Wazirabad">Wazirabad</option>
-              <option class="option" value="Yakmach">Yakmach</option>
-              <option class="option" value="Zhob">Zhob</option>
-              <option class="option" value="Other">Other</option>                                       
+              <option selected="" disabled="" class="fontUbantu">Select City</option> 
+              <option class="option fontUbantu" value="Abbottabad">Abbottabad</option>
+              <option class="option fontUbantu" value="Adezai">Adezai</option>
+              <option class="option fontUbantu" value="Ali Bandar">Ali Bandar</option>
+              <option class="option fontUbantu" value="Amir Chah">Amir Chah</option>
+              <option class="option fontUbantu" value="Attock">Attock</option>
+              <option class="option fontUbantu" value="Ayubia">Ayubia</option>
+              <option class="option fontUbantu" value="Bahawalpur">Bahawalpur</option>
+              <option class="option fontUbantu" value="Baden">Baden</option>
+              <option class="option fontUbantu" value="Bagh">Bagh</option>
+              <option class="option fontUbantu" value="Bahawalnagar">Bahawalnagar</option>
+              <option class="option fontUbantu" value="Burewala">Burewala</option>
+              <option class="option fontUbantu" value="Banda Daud Shah">Banda Daud Shah</option>
+              <option class="option fontUbantu" value="Bannu district|Bannu">Bannu</option>
+              <option class="option fontUbantu" value="Batagram">Batagram</option>
+              <option class="option fontUbantu" value="Bazdar">Bazdar</option>
+              <option class="option fontUbantu" value="Bela">Bela</option>
+              <option class="option fontUbantu" value="Bellpat">Bellpat</option>
+              <option class="option fontUbantu" value="Bhag">Bhag</option>
+              <option class="option fontUbantu" value="Bhakkar">Bhakkar</option>
+              <option class="option fontUbantu" value="Bhalwal">Bhalwal</option>
+              <option class="option fontUbantu" value="Bhimber">Bhimber</option>
+              <option class="option fontUbantu" value="Birote">Birote</option>
+              <option class="option fontUbantu" value="Buner">Buner</option>
+              <option class="option fontUbantu" value="Burj">Burj</option>
+              <option class="option fontUbantu" value="Chiniot">Chiniot</option>
+              <option class="option fontUbantu" value="Chachro">Chachro</option>
+              <option class="option fontUbantu" value="Chagai">Chagai</option>
+              <option class="option fontUbantu" value="Chah Sandan">Chah Sandan</option>
+              <option class="option fontUbantu" value="Chailianwala">Chailianwala</option>
+              <option class="option fontUbantu" value="Chakdara">Chakdara</option>
+              <option class="option fontUbantu" value="Chakku">Chakku</option>
+              <option class="option fontUbantu" value="Chakwal">Chakwal</option>
+              <option class="option fontUbantu" value="Chaman">Chaman</option>
+              <option class="option fontUbantu" value="Charsadda">Charsadda</option>
+              <option class="option fontUbantu" value="Chhatr">Chhatr</option>
+              <option class="option fontUbantu" value="Chichawatni">Chichawatni</option>
+              <option class="option fontUbantu" value="Chitral">Chitral</option>
+              <option class="option fontUbantu" value="Dadu">Dadu</option>
+              <option class="option fontUbantu" value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+              <option class="option fontUbantu" value="Dera Ismail Khan">Dera Ismail Khan</option>
+               <option class="option fontUbantu" value="Dalbandin">Dalbandin</option>
+              <option class="option fontUbantu" value="Dargai">Dargai</option>
+              <option class="option fontUbantu" value="Darya Khan">Darya Khan</option>
+              <option class="option fontUbantu" value="Daska">Daska</option>
+              <option class="option fontUbantu" value="Dera Bugti">Dera Bugti</option>
+              <option class="option fontUbantu" value="Dhana Sar">Dhana Sar</option>
+              <option class="option fontUbantu" value="Digri">Digri</option>
+              <option class="option fontUbantu" value="Dina City|Dina">Dina</option>
+              <option class="option fontUbantu" value="Dinga">Dinga</option>
+              <option class="option fontUbantu" value="Diplo, Pakistan|Diplo">Diplo</option>
+              <option class="option fontUbantu" value="Diwana">Diwana</option>
+              <option class="option fontUbantu" value="Dokri">Dokri</option>
+              <option class="option fontUbantu" value="Drosh">Drosh</option>
+              <option class="option fontUbantu" value="Duki">Duki</option>
+              <option class="option fontUbantu" value="Dushi">Dushi</option>
+              <option class="option fontUbantu" value="Duzab">Duzab</option>
+              <option class="option fontUbantu" value="Faisalabad">Faisalabad</option>
+              <option class="option fontUbantu" value="Fateh Jang">Fateh Jang</option>
+              <option class="option fontUbantu" value="Ghotki">Ghotki</option>
+              <option class="option fontUbantu" value="Gwadar">Gwadar</option>
+              <option class="option fontUbantu" value="Gujranwala">Gujranwala</option>
+              <option class="option fontUbantu" value="Gujrat">Gujrat</option>
+              <option class="option fontUbantu" value="Gadra">Gadra</option>
+              <option class="option fontUbantu" value="Gajar">Gajar</option>
+              <option class="option fontUbantu" value="Gandava">Gandava</option>
+              <option class="option fontUbantu" value="Garhi Khairo">Garhi Khairo</option>
+              <option class="option fontUbantu" value="Garruck">Garruck</option>
+              <option class="option fontUbantu" value="Ghakhar Mandi">Ghakhar Mandi</option>
+              <option class="option fontUbantu" value="Ghanian">Ghanian</option>
+              <option class="option fontUbantu" value="Ghauspur">Ghauspur</option>
+              <option class="option fontUbantu" value="Ghazluna">Ghazluna</option>
+              <option class="option fontUbantu" value="Girdan">Girdan</option>
+              <option class="option fontUbantu" value="Gulistan">Gulistan</option>
+              <option class="option fontUbantu" value="Gwash">Gwash</option>
+              <option class="option fontUbantu" value="Hyderabad">Hyderabad</option>
+              <option class="option fontUbantu" value="Hala">Hala</option>
+              <option class="option fontUbantu" value="Haripur">Haripur</option>
+              <option class="option fontUbantu" value="Hab Chauki">Hab Chauki</option>
+              <option class="option fontUbantu" value="Hafizabad">Hafizabad</option>
+              <option class="option fontUbantu" value="Hameedabad">Hameedabad</option>
+              <option class="option fontUbantu" value="Hangu">Hangu</option>
+              <option class="option fontUbantu" value="Harnai">Harnai</option>
+              <option class="option fontUbantu" value="Hasilpur">Hasilpur</option>
+              <option class="option fontUbantu" value="Haveli Lakha">Haveli Lakha</option>
+              <option class="option fontUbantu" value="Hinglaj">Hinglaj</option>
+              <option class="option fontUbantu" value="Hoshab">Hoshab</option>
+              <option class="option fontUbantu" value="Islamabad">Islamabad</option>
+              <option class="option fontUbantu" value="Islamkot">Islamkot</option>
+              <option class="option fontUbantu" value="Ispikan">Ispikan</option>
+              <option class="option fontUbantu" value="Jacobabad">Jacobabad</option>
+              <option class="option fontUbantu" value="Jamshoro">Jamshoro</option>
+              <option class="option fontUbantu" value="Jhang">Jhang</option>
+              <option class="option fontUbantu" value="Jhelum">Jhelum</option>
+              <option class="option fontUbantu" value="Jamesabad">Jamesabad</option>
+              <option class="option fontUbantu" value="Jampur">Jampur</option>
+              <option class="option fontUbantu" value="Janghar">Janghar</option>
+              <option class="option fontUbantu" value="Jati, Jati(Mughalbhin)">Jati</option>
+              <option class="option fontUbantu" value="Jauharabad">Jauharabad</option>
+              <option class="option fontUbantu" value="Jhal">Jhal</option>
+              <option class="option fontUbantu" value="Jhal Jhao">Jhal Jhao</option>
+              <option class="option fontUbantu" value="Jhatpat">Jhatpat</option>
+              <option class="option fontUbantu" value="Jhudo">Jhudo</option>
+              <option class="option fontUbantu" value="Jiwani">Jiwani</option>
+              <option class="option fontUbantu" value="Jungshahi">Jungshahi</option>
+              <option class="option fontUbantu" value="Karachi">Karachi</option>
+              <option class="option fontUbantu" value="Kotri">Kotri</option>
+              <option class="option fontUbantu" value="Kalam">Kalam</option>
+              <option class="option fontUbantu" value="Kalandi">Kalandi</option>
+              <option class="option fontUbantu" value="Kalat">Kalat</option>
+              <option class="option fontUbantu" value="Kamalia">Kamalia</option>
+              <option class="option fontUbantu" value="Kamararod">Kamararod</option>
+              <option class="option fontUbantu" value="Kamber">Kamber</option>
+              <option class="option fontUbantu" value="Kamokey">Kamokey</option>
+              <option class="option fontUbantu" value="Kanak">Kanak</option>
+              <option class="option fontUbantu" value="Kandi">Kandi</option>
+              <option class="option fontUbantu" value="Kandiaro">Kandiaro</option>
+              <option class="option fontUbantu" value="Kanpur">Kanpur</option>
+              <option class="option fontUbantu" value="Kapip">Kapip</option>
+              <option class="option fontUbantu" value="Kappar">Kappar</option>
+              <option class="option fontUbantu" value="Karak City">Karak City</option>
+              <option class="option fontUbantu" value="Karodi">Karodi</option>
+              <option class="option fontUbantu" value="Kashmor">Kashmor</option>
+              <option class="option fontUbantu" value="Kasur">Kasur</option>
+              <option class="option fontUbantu" value="Katuri">Katuri</option>
+              <option class="option fontUbantu" value="Keti Bandar">Keti Bandar</option>
+              <option class="option fontUbantu" value="Khairpur">Khairpur</option>
+              <option class="option fontUbantu" value="Khanaspur">Khanaspur</option>
+              <option class="option fontUbantu" value="Khanewal">Khanewal</option>
+              <option class="option fontUbantu" value="Kharan">Kharan</option>
+              <option class="option fontUbantu" value="kharian">kharian</option>
+              <option class="option fontUbantu" value="Khokhropur">Khokhropur</option>
+              <option class="option fontUbantu" value="Khora">Khora</option>
+              <option class="option fontUbantu" value="Khushab">Khushab</option>
+              <option class="option fontUbantu" value="Khuzdar">Khuzdar</option>
+              <option class="option fontUbantu" value="Kikki">Kikki</option>
+              <option class="option fontUbantu" value="Klupro">Klupro</option>
+              <option class="option fontUbantu" value="Kohan">Kohan</option>
+              <option class="option fontUbantu" value="Kohat">Kohat</option>
+              <option class="option fontUbantu" value="Kohistan">Kohistan</option>
+              <option class="option fontUbantu" value="Kohlu">Kohlu</option>
+              <option class="option fontUbantu" value="Korak">Korak</option>
+              <option class="option fontUbantu" value="Korangi">Korangi</option>
+              <option class="option fontUbantu" value="Kot Sarae">Kot Sarae</option>
+              <option class="option fontUbantu" value="Kotli">Kotli</option>
+              <option class="option fontUbantu" value="Lahore">Lahore</option>
+              <option class="option fontUbantu" value="Larkana">Larkana</option>
+              <option class="option fontUbantu" value="Lahri">Lahri</option>
+              <option class="option fontUbantu" value="Lakki Marwat">Lakki Marwat</option>
+              <option class="option fontUbantu" value="Lasbela">Lasbela</option>
+              <option class="option fontUbantu" value="Latamber">Latamber</option>
+              <option class="option fontUbantu" value="Layyah">Layyah</option>
+              <option class="option fontUbantu" value="Leiah">Leiah</option>
+              <option class="option fontUbantu" value="Liari">Liari</option>
+              <option class="option fontUbantu" value="Lodhran">Lodhran</option>
+              <option class="option fontUbantu" value="Loralai">Loralai</option>
+              <option class="option fontUbantu" value="Lower Dir">Lower Dir</option>
+              <option class="option fontUbantu" value="Shadan Lund">Shadan Lund</option>
+              <option class="option fontUbantu" value="Multan">Multan</option>
+              <option class="option fontUbantu" value="Mandi Bahauddin">Mandi Bahauddin</option>
+              <option class="option fontUbantu" value="Mansehra">Mansehra</option>
+              <option class="option fontUbantu" value="Mian Chanu">Mian Chanu</option>
+              <option class="option fontUbantu" value="Mirpur">Mirpur</option>
+              <option class="option fontUbantu" value="Moro, Pakistan|Moro">Moro</option>
+              <option class="option fontUbantu" value="Mardan">Mardan</option>
+              <option class="option fontUbantu" value="Mach">Mach</option>
+              <option class="option fontUbantu" value="Madyan">Madyan</option>
+              <option class="option fontUbantu" value="Malakand">Malakand</option>
+              <option class="option fontUbantu" value="Mand">Mand</option>
+              <option class="option fontUbantu" value="Manguchar">Manguchar</option>
+              <option class="option fontUbantu" value="Mashki Chah">Mashki Chah</option>
+              <option class="option fontUbantu" value="Maslti">Maslti</option>
+              <option class="option fontUbantu" value="Mastuj">Mastuj</option>
+              <option class="option fontUbantu" value="Mastung">Mastung</option>
+              <option class="option fontUbantu" value="Mathi">Mathi</option>
+              <option class="option fontUbantu" value="Matiari">Matiari</option>
+              <option class="option fontUbantu" value="Mehar">Mehar</option>
+              <option class="option fontUbantu" value="Mekhtar">Mekhtar</option>
+              <option class="option fontUbantu" value="Merui">Merui</option>
+              <option class="option fontUbantu" value="Mianwali">Mianwali</option>
+              <option class="option fontUbantu" value="Mianez">Mianez</option>
+              <option class="option fontUbantu" value="Mirpur Batoro">Mirpur Batoro</option>
+              <option class="option fontUbantu" value="Mirpur Khas">Mirpur Khas</option>
+              <option class="option fontUbantu" value="Mirpur Sakro">Mirpur Sakro</option>
+              <option class="option fontUbantu" value="Mithi">Mithi</option>
+              <option class="option fontUbantu" value="Mongora">Mongora</option>
+              <option class="option fontUbantu" value="Murgha Kibzai">Murgha Kibzai</option>
+              <option class="option fontUbantu" value="Muridke">Muridke</option>
+              <option class="option fontUbantu" value="Musa Khel Bazar">Musa Khel Bazar</option>
+              <option class="option fontUbantu" value="Muzaffar Garh">Muzaffar Garh</option>
+              <option class="option fontUbantu" value="Muzaffarabad">Muzaffarabad</option>
+              <option class="option fontUbantu" value="Nawabshah">Nawabshah</option>
+              <option class="option fontUbantu" value="Nazimabad">Nazimabad</option>
+              <option class="option fontUbantu" value="Nowshera">Nowshera</option>
+              <option class="option fontUbantu" value="Nagar Parkar">Nagar Parkar</option>
+              <option class="option fontUbantu" value="Nagha Kalat">Nagha Kalat</option>
+              <option class="option fontUbantu" value="Nal">Nal</option>
+              <option class="option fontUbantu" value="Naokot">Naokot</option>
+              <option class="option fontUbantu" value="Nasirabad">Nasirabad</option>
+              <option class="option fontUbantu" value="Nauroz Kalat">Nauroz Kalat</option>
+              <option class="option fontUbantu" value="Naushara">Naushara</option>
+              <option class="option fontUbantu" value="Nur Gamma">Nur Gamma</option>
+              <option class="option fontUbantu" value="Nushki">Nushki</option>
+              <option class="option fontUbantu" value="Nuttal">Nuttal</option>
+              <option class="option fontUbantu" value="Okara">Okara</option>
+              <option class="option fontUbantu" value="Ormara">Ormara</option>
+              <option class="option fontUbantu" value="Peshawar">Peshawar</option>
+              <option class="option fontUbantu" value="Panjgur">Panjgur</option>
+              <option class="option fontUbantu" value="Pasni City">Pasni City</option>
+              <option class="option fontUbantu" value="Paharpur">Paharpur</option>
+              <option class="option fontUbantu" value="Palantuk">Palantuk</option>
+              <option class="option fontUbantu" value="Pendoo">Pendoo</option>
+              <option class="option fontUbantu" value="Piharak">Piharak</option>
+              <option class="option fontUbantu" value="Pirmahal">Pirmahal</option>
+              <option class="option fontUbantu" value="Pishin">Pishin</option>
+              <option class="option fontUbantu" value="Plandri">Plandri</option>
+              <option class="option fontUbantu" value="Pokran">Pokran</option>
+              <option class="option fontUbantu" value="Pounch">Pounch</option>
+              <option class="option fontUbantu" value="Quetta">Quetta</option>
+              <option class="option fontUbantu" value="Qambar">Qambar</option>
+              <option class="option fontUbantu" value="Qamruddin Karez">Qamruddin Karez</option>
+              <option class="option fontUbantu" value="Qazi Ahmad">Qazi Ahmad</option>
+              <option class="option fontUbantu" value="Qila Abdullah">Qila Abdullah</option>
+              <option class="option fontUbantu" value="Qila Ladgasht">Qila Ladgasht</option>
+              <option class="option fontUbantu" value="Qila Safed">Qila Safed</option>
+              <option class="option fontUbantu" value="Qila Saifullah">Qila Saifullah</option>
+              <option class="option fontUbantu" value="Rawalpindi">Rawalpindi</option>
+              <option class="option fontUbantu" value="Rabwah">Rabwah</option>
+              <option class="option fontUbantu" value="Rahim Yar Khan">Rahim Yar Khan</option>
+              <option class="option fontUbantu" value="Rajan Pur">Rajan Pur</option>
+              <option class="option fontUbantu" value="Rakhni">Rakhni</option>
+              <option class="option fontUbantu" value="Ranipur">Ranipur</option>
+              <option class="option fontUbantu" value="Ratodero">Ratodero</option>
+              <option class="option fontUbantu" value="Rawalakot">Rawalakot</option>
+              <option class="option fontUbantu" value="Renala Khurd">Renala Khurd</option>
+              <option class="option fontUbantu" value="Robat Thana">Robat Thana</option>
+              <option class="option fontUbantu" value="Rodkhan">Rodkhan</option>
+              <option class="option fontUbantu" value="Rohri">Rohri</option>
+              <option class="option fontUbantu" value="Sialkot">Sialkot</option>
+              <option class="option fontUbantu" value="Sadiqabad">Sadiqabad</option>
+              <option class="option fontUbantu" value="Safdar Abad- (Dhaban Singh)">Safdar Abad</option>
+              <option class="option fontUbantu" value="Sahiwal">Sahiwal</option>
+              <option class="option fontUbantu" value="Saidu Sharif">Saidu Sharif</option>
+              <option class="option fontUbantu" value="Saindak">Saindak</option>
+              <option class="option fontUbantu" value="Sakrand">Sakrand</option>
+              <option class="option fontUbantu" value="Sanjawi">Sanjawi</option>
+              <option class="option fontUbantu" value="Sargodha">Sargodha</option>
+              <option class="option fontUbantu" value="Saruna">Saruna</option>
+              <option class="option fontUbantu" value="Shabaz Kalat">Shabaz Kalat</option>
+              <option class="option fontUbantu" value="Shadadkhot">Shadadkhot</option>
+              <option class="option fontUbantu" value="Shahbandar">Shahbandar</option>
+              <option class="option fontUbantu" value="Shahpur">Shahpur</option>
+              <option class="option fontUbantu" value="Shahpur Chakar">Shahpur Chakar</option>
+              <option class="option fontUbantu" value="Shakargarh">Shakargarh</option>
+              <option class="option fontUbantu" value="Shangla">Shangla</option>
+              <option class="option fontUbantu" value="Sharam Jogizai">Sharam Jogizai</option>
+              <option class="option fontUbantu" value="Sheikhupura">Sheikhupura</option>
+              <option class="option fontUbantu" value="Shikarpur">Shikarpur</option>
+              <option class="option fontUbantu" value="Shingar">Shingar</option>
+              <option class="option fontUbantu" value="Shorap">Shorap</option>
+              <option class="option fontUbantu" value="Sibi">Sibi</option>
+              <option class="option fontUbantu" value="Sohawa">Sohawa</option>
+              <option class="option fontUbantu" value="Sonmiani">Sonmiani</option>
+              <option class="option fontUbantu" value="Sooianwala">Sooianwala</option>
+              <option class="option fontUbantu" value="Spezand">Spezand</option>
+              <option class="option fontUbantu" value="Spintangi">Spintangi</option>
+              <option class="option fontUbantu" value="Sui">Sui</option>
+              <option class="option fontUbantu" value="Sujawal">Sujawal</option>
+              <option class="option fontUbantu" value="Sukkur">Sukkur</option>
+              <option class="option fontUbantu" value="Suntsar">Suntsar</option>
+              <option class="option fontUbantu" value="Surab">Surab</option>
+              <option class="option fontUbantu" value="Swabi">Swabi</option>
+              <option class="option fontUbantu" value="Swat">Swat</option>
+              <option class="option fontUbantu" value="Tando Adam">Tando Adam</option>
+              <option class="option fontUbantu" value="Tando Bago">Tando Bago</option>
+              <option class="option fontUbantu" value="Tangi">Tangi</option>
+              <option class="option fontUbantu" value="Tank City">Tank City</option>
+              <option class="option fontUbantu" value="Tar Ahamd Rind">Tar Ahamd Rind</option>
+              <option class="option fontUbantu" value="Thalo">Thalo</option>
+              <option class="option fontUbantu" value="Thatta">Thatta</option>
+              <option class="option fontUbantu" value="Toba Tek Singh">Toba Tek Singh</option>
+              <option class="option fontUbantu" value="Tordher">Tordher</option>
+              <option class="option fontUbantu" value="Tujal">Tujal</option>
+              <option class="option fontUbantu" value="Tump">Tump</option>
+              <option class="option fontUbantu" value="Turbat">Turbat</option>
+              <option class="option fontUbantu" value="Umarao">Umarao</option>
+              <option class="option fontUbantu" value="Umarkot">Umarkot</option>
+              <option class="option fontUbantu" value="Upper Dir">Upper Dir</option>
+              <option class="option fontUbantu" value="Uthal">Uthal</option>
+              <option class="option fontUbantu" value="Vehari">Vehari</option>
+              <option class="option fontUbantu" value="Veirwaro">Veirwaro</option>
+              <option class="option fontUbantu" value="Vitakri">Vitakri</option>
+              <option class="option fontUbantu" value="Wadh">Wadh</option>
+              <option class="option fontUbantu" value="Wah Cantt">Wah Cantt</option>
+              <option class="option fontUbantu" value="Warah">Warah</option>
+              <option class="option fontUbantu" value="Washap">Washap</option>
+              <option class="option fontUbantu" value="Wasjuk">Wasjuk</option>
+              <option class="option fontUbantu" value="Wazirabad">Wazirabad</option>
+              <option class="option fontUbantu" value="Yakmach">Yakmach</option>
+              <option class="option fontUbantu" value="Zhob">Zhob</option>
+              <option class="option fontUbantu" value="Other">Other</option>                                       
           </select>
 
 
@@ -1162,20 +1330,20 @@ margin-top: 90px;">
       
         <div class="form-group">
        
-          <select class="form-control" id="upperPrice" style="font-weight: bold !important;background-color: #f7f7f7;
+          <select class="form-control fontUbantu" id="upperPrice" style="font-weight: bold !important;background-color: #f7f7f7;
     border-color: transparent;">
-             <option selected=""  disabled="" style="font-weight: bold !important;">Select Price</option>
-              <option value="Less than 20,000">Less than 20,000 PKR</option>
-              <option value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
-              <option value="Between 30,000 and 60,000">Between 30,000 and 60,000 PKR</option>
-              <option value="Between 60,000 and 1,00000">Between 60,000 and 1,00000 PKR</option>
-              <option value="More Than 1,00000">More Than 1,00000 PKR</option>
+             <option selected="" class="fontUbantu"  disabled="" style="font-weight: bold !important;">Select Price</option>
+              <option class="fontUbantu" value="Less than 20,000">Less than 20,000 PKR</option>
+              <option class="fontUbantu" value="Between 20,000 and 30,000">Between 20,000 and 30,000 PKR</option>
+              <option class="fontUbantu" value="Between 30,000 and 60,000">Between 30,000 and 60,000 PKR</option>
+              <option class="fontUbantu" value="Between 60,000 and 1,00000">Between 60,000 and 1,00000 PKR</option>
+              <option class="fontUbantu" value="More Than 1,00000">More Than 1,00000 PKR</option>
            
           </select>
         </div>
       
       </div>
-      <div id="upperSearch" style=" float: left;  height: 100%; width: 10% ;background-color: #0071e3;    padding: 14px 0px 0px 14px;"><img style="width: 70%; height: auto;cursor: pointer;" src="{{ asset('storage/images/ic_search_white_18dp.png')}}"></div>
+      <div id="upperSearch" style=" float: left;  height: 100%; width: 10% ;background-color: #4a88c1;    padding: 14px 0px 0px 14px;"><img class="srchiconMob" style="width: 70%; height: auto;cursor: pointer;" src="{{ asset('storage/images/ic_search_white_18dp.png')}}"></div>
     
     
     </div>
@@ -1198,23 +1366,24 @@ margin-top: 90px;">
 
 <br/>
 
-<div class="row" style="    margin-left: 15px;margin-bottom: 15px;">
-  <a href="{{ route('BuyUsedAccessories') }}"  style="background-color: #0071e3; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;">Buy Used Accessories</a>
+<div class="row fontUbantu" style="    margin-left: 15px;margin-bottom: 15px;">
+  <a class="fontUbantu" href="{{ route('BuyUsedAccessories') }}"  style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;">Buy Used Accessories</a>
 </div>
 
-<div class="row" style="margin-bottom:30px;">
-  <div class="col-md-3" >
+<div class="row" style="margin-bottom:60px;">
 
-<p style="background-color: #0071e3; padding: 10px; margin-bottom: 0px;text-align: center; font-weight: 500;">SHOW RESULTS BY:</p>
+  <div class="col-md-3" id="sidenav" >
+
+<p class="fontUbantu" style="background-color: #4a88c1; padding: 10px; margin-bottom: 0px;text-align: center; border-radius: 1px ; font-weight: 500;">SHOW RESULTS BY:</p>
 
 
 
   <div class="toggle-boxqasim">
     <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
-      margin-left: 6px; " class="toggleqasim headerqasim">Make
+      margin-left: 6px; font-weight: bold " class="toggleqasim headerqasim fontUbantu">Make
     </h6>
   
-    <div class="contentqasim">
+    <div class="contentqasim fontUbantu">
   
       <ul>
 
@@ -1223,7 +1392,7 @@ margin-top: 90px;">
             <div style="width: 87%; height: 30px;  ">
               <div style="width: 80%; float: left;">
       
-                <label for="{{ $brand->id }}" style="color: #101115;">{{ ucwords($brand->name) }}</label>
+                <label class="fontUbantu" for="{{ $brand->id }}" style="color: #101115;">{{ ucwords($brand->name) }}</label>
               </div>
               <div style="width: 20%; float: left;">
                 <input type="checkbox" id="{{ $brand->id }}" class="brands_check" name="brands[]" value="{{ $brand->id }}">
@@ -1250,7 +1419,7 @@ margin-top: 90px;">
         
         <input type="search" name="srch" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g Samsung in Lahore" style="    background-position: left;
 background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-repeat;   width: 90%;
-    margin-left: -25px;" /><a  style="background-color: #0071e3; color: white;  padding: 4.8px; text-decoration: none; " href="#">Go</a>
+    margin-left: -25px;" /><a  style="background-color: #4a88c1; color: white;  padding: 4.8px; text-decoration: none; " href="#">Go</a>
         
         </li>
        
@@ -1267,7 +1436,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 <div class="toggle-boxqasim">
 <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
-    margin-left: 6px; " class="toggleqasim headerqasim">PRICE RANGE
+    margin-left: 6px; font-weight: bold; " class="toggleqasim headerqasim fontUbantu">PRICE RANGE
 </h6>
 
   <div class="contentqasim"><strong>Product Features:</strong><br />
@@ -1283,7 +1452,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 <input type="number" placeholder="To" id="to_price" style="width: 100%;" /></div>
 <div style="width: 10%;float: left;  ">
 
-<button type="button" style="background-color: #0071e3;color: white;padding: 3px 3px 3px 5px;width: 117%;border: none;outline: none;" id="go_price">Go</button>
+<button type="button" style="background-color: #4a88c1;color: white;padding: 3px 3px 3px 5px;width: 117%;border: none;outline: none;" id="go_price">Go</button>
 </div>
 </div>
 
@@ -1301,7 +1470,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 <div class="toggle-boxqasim">
 <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
-    margin-left: 6px; " class="toggleqasim headerqasim">CITY
+    margin-left: 6px; font-weight: bold " class="toggleqasim headerqasim fontUbantu">CITY
 </h6>
 
   <div class="contentqasim">
@@ -1313,7 +1482,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
         <div style="width: 87%; height: 30px;  ">
           <div style="width: 80%; float: left;">
           <input type="checkbox" id="{{ $city->city }}" value="{{ $city->city }}" name="cities[]" class="city_check" >
-          <label for="{{ $city->city }}"  style="color: #101115;">{{ ucwords($city->city)}}</label>
+          <label for="{{ $city->city }}" class="fontUbantu" style="color: #101115;">{{ ucwords($city->city)}}</label>
           </div>
             <div style="width: 20%; float: left;">
             <!-- <p style="    background-color: #fafafa;
@@ -1418,7 +1587,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 <div class="toggle-boxqasim">
   <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
-    margin-left: 6px; " class="toggleqasim headerqasim">MOBILES CONDITION
+    margin-left: 6px; font-weight: bold; " class="toggleqasim headerqasim fontUbantu">MOBILES CONDITION
   </h6>
 
   <div class="contentqasim">
@@ -1427,7 +1596,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
       <div style="width: 87%; height: 30px;  ">
         <div style="width: 80%; float: left;">
         
-          <label for="Excellent" style="color: #101115;"> Excellent</label>
+          <label for="Excellent" class="fontUbantu" style="color: #101115;"> Excellent</label>
         </div>
         <div style="width: 20%; float: left;">
         <input type="checkbox" id="Excellent" name="statuses[]" class="device_status_check" value="Excellent">
@@ -1436,7 +1605,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
     <div style="width: 87%; height: 30px;  ">
       <div style="width: 80%; float: left;">
-        <label for="Good1" style="color: #101115;"> Good</label>
+        <label for="Good1" class="fontUbantu" style="color: #101115;"> Good</label>
       </div>
       <div style="width: 20%; float: left;">
         <input type="checkbox" id="Good1" name="statuses[]" class="device_status_check" value="Good">
@@ -1446,7 +1615,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
     <div style="width: 87%; height: 30px;  ">
       <div style="width: 80%; float: left;">
     
-        <label for="Fairyy" style="color: #101115;"> Fair</label>
+        <label for="Fairyy" class="fontUbantu" style="color: #101115;"> Fair</label>
       </div>
       <div style="width: 20%; float: left;">
         <input type="checkbox" id="Fairyy" name="statuses[]" class="device_status_check" value="Fair">
@@ -1464,7 +1633,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
   </div>
-    <div class="col-md-9">
+    <div class="col-md-9" >
     
     
     
@@ -1505,16 +1674,17 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 
 <p style="  color: #898889;;"><!-- 1-48 of 126,978 Results --></p>
-      <div style="width: 100%;" class="row" id="sellProducts">
-         @include('partials.sell_products_list',$products)e
+      <div style="width: 100%;" class="row fontUbantu" id="sellProducts">
+         @include('partials.sell_products_list',$products)
       </div>
     </div>
 </div>
 
 
 
-
 @include('includes.footer')
+
+
 
 
 </body>
@@ -2081,7 +2251,11 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
     FetchUpperSearchSellProducts(0,$('#upperInpt').val(),options); usedHideAgain(); 
   }
 
-  function ContactShow(id){$('#contact'+id).toggle()}
+  function ContactShow(id){
+    // $('#contact'+id).toggle();
+  
+  }
+
 
   $('#upperSearch').click(function(){
       $(".brands_check"). prop("checked", false);
@@ -2383,6 +2557,7 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
   });
 
   $(document).on('click', '.pagination a', function(event){
+       jQuery('html, body').animate({ scrollTop: 500 }, 'fast');
       event.preventDefault();
       var page = $(this).attr('href').split('page=')[1];
       var brands = $('.brands_check:checked').map(function(){ return $(this).val();}).get();
@@ -2557,8 +2732,30 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
 
 <script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>>
 <script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
+
+
+
+
+
 <script type="text/javascript">
-  
+  // jQuery(this).prev("li").attr("id","newId");
+  // $('.page-link').attr("id","scrollfirPagination");
+
+
+
+// $('.page-item:nth-child(2)').click(function() {
+// jQuery('html, body').animate({ scrollTop: 0 }, 'fast');
+// });
+
+
+// $(".page-item").click(function() {
+    // $('html, body').animate({
+    //     scrollTop: $("#myDivPaginaton").offset().top
+    // }, 2000);
+//     jQuery('html, body').animate({ scrollTop: 0 }, 'fast');
+// });
+
+
   $(document).ready(function(){
       $('.autoplayFeatures').slick({
            slidesToShow: 1,
@@ -2598,5 +2795,57 @@ background-image: url('images/ic_search_black_18dp.png'); background-repeat: no-
           document.getElementById('usedSearchList').style.display = 'none';
       }
    </script>
+
+
+
+
+<script>
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 50) {
+       $('#sidenav').addClass('myMovingClass');
+      
+    }
+    else if($(this).scrollTop() > 200) {
+       $('#sidenav').addClass('myMovingClasstwo');
+      
+    } 
+    else {
+       $('#sidenav').removeClass('myMovingClass');
+         $('#sidenav').removeClass('myMovingClass2');
+    }
+});
+</script>
+
+
+<script>
+// $(window).scroll(function() {
+
+//     var scroll = $(window).scrollTop();
+
+// console.log('scrool is at: ' + scroll);
+
+//        if (scroll >=100) {
+//         $('#sidenav').removeClass('myMovingClass');
+//           $('#sidenav').removeClass('myMovingClassTwo');
+//          $('#sidenav').addClass('myMovingClassThree');
+//         // alert('okl');
+       
+//     }
+//     else{
+//       $('#sidenav').removeClass('myMovingClass');
+//         $('#sidenav').removeClass('myMovingClassTwo');
+//         $('#sidenav').removeClass('myMovingClassThree');
+//     }
+  
+// });
+
+</script>
+
+
+
+
+
+
+
 
 </html>

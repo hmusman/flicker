@@ -39,18 +39,18 @@ div[class="slider-handle max-slider-handle round"],
 
 
 /* Track */
-::-webkit-scrollbar-track {
-box-shadow: inset 0 0 3px #202b3536;
-}
+/* ::-webkit-scrollbar-track {
+box-shadow: inset 0 0 2px red;
+} */
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #9e9da2;
+  background: #d5d3cd;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background:#002245;
+  background:#d5d3cd;
 }
 @media (max-width: 767px){
     .video{
@@ -721,10 +721,10 @@ h2{
 {
     float: right;
 }
-.slick-slide img
+/* .slick-slide img
 {
     display: block;
-}
+} */
 .slick-slide.slick-loading img
 {
     display: none;

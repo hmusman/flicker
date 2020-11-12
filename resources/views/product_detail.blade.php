@@ -39,6 +39,7 @@
   
   <link href="{{ asset('css/pagination.css') }}" rel="stylesheet" type="text/css">
 
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
 
 <!-- 
@@ -47,12 +48,86 @@
    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
   
 
+
+
+
 </head>
 
 
 <style>
+
+
+a[id="prcCal"]{
+  height: 36px !important;
+}
+
+  .logoFlickerflone{
+        margin-top: -18px !important;
+  }
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #0071e3 !important;
+    border-color: #0071e3 !important;
+}
+
+
+@media (max-width: 2000px) and (min-width: 1399px){
+#myUL {
+  width: 100% !important;
+}
+}
+
+
+li[class="nav-item dropdown"] > a{
+      height: 36px;
+}
+
+
+
+@media (min-width: 1400px) and (max-width : 2000px){
+.tdBlockOnMobhead {
+       width: 18% !important;
+}
+}
+
+
+
+
+
+button[class="interior"]{
+      outline: none !important;
+}
+
+.selectPhone{
+  border: 2px red solid !important;
+}
+
+
+#clickopinon{
+  cursor: pointer !important;
+}
+@media (min-width: 768px){
+.navbar-nav>li>a {
+        padding-top: 9px !important;
+    padding-bottom: 7px!important;
+}
+}
+
+
+
+
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-top: 0.9rem !important
+   
+   
+}
+}
+
+
 footer{
-      margin-top: 370px !important;
+      margin-top: 70px !important;
 
 }
 #aug20onmob, #zeroCpOnMobile{
@@ -62,9 +137,7 @@ footer{
        color: #727178 !important;
 }
 
-.img-thumbnail{
-       border: 1px solid #fff !important;
-}
+
 
 
 /* @media (min-width: 1200px){
@@ -172,6 +245,10 @@ a[class="nav-link  dropdown-toggle"]{
     background-color: transparent !important;
 }
 
+
+img[class="cloudzoom-gallery img-thumbnail cloudzoom-gallery-active"]{
+  border: 1px #0000008a solid !important;
+}
 
 </style>
 
@@ -288,10 +365,13 @@ small {
             <div class="form-group">
                 <label class="info-title">Password</label>
                 <input type="password" id="password" name="login_password" class="form-control unicase-form-control text-input" placeholder="Password" value="">
-            </div>  
+                      <br/>
+                      <input id="passy" type="checkbox" onclick="myShowPassFunction()">&nbsp;&nbsp;&nbsp;<label style="    font-weight: 500 !important;" for="passy">Show Password</label>
+              </div>  
 
-            <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
-            <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+            <button style="background-color: #4a88c1 !important;" type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
+            <a href="{{url('/')}}/Login" > <button type="button" class="btn-upper btn" >SignUp</button></a>
+            <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;     margin-left: 72px;">Forget Password</a>
           </form>
                          
                      
@@ -303,10 +383,10 @@ small {
    
 
 <br/>
-<div class="container">
+<div class="container fontUbantu">
 <div class="row">
   <div class="col-md-12 text-uppercase" style="color: gray;">
-    <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a> /  <a href="{{ route('BrandProductsList',$product->Productbrand->id) }}" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">{{ $product->Productbrand->name }} </a> / {{ $product->name }}
+    <a class="fontUbantu" href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a> /  <a href="{{ route('BrandProductsList',$product->Productbrand->id) }}" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">{{ $product->Productbrand->name }} </a> / {{ $product->name }}
   </div>
 </div>
 
@@ -377,7 +457,7 @@ small {
 
 
                                 @if(!empty($img1))
-                                <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail'
+                                <li style=""><img class='cloudzoom-gallery img-thumbnail'
                                         src="{{ asset($img1_500)}}"
                                         data-cloudzoom="useZoom:'.cloudzoom', image:'{{ asset($img1_500)}}'  "
                                         style='max-width:90px;max-height:100px;'>
@@ -542,7 +622,7 @@ small {
 
          </div>
         
-<div class="col-md-6" style="  color: black !important;">
+<div class="col-md-6 fontUbantu" style="  color: black !important;">
    <h4 style="font-size: 18px !important;">{{ ucwords($product->name) }}</h4>
    <p>{{ $product->storage }}</p>
    @if($product->detail_check==1)
@@ -586,7 +666,8 @@ small {
    @endif
    <input type="hidden" value="{{ $product->id }}" id="product_id">
    <style type="text/css">
-      .color_active{ background: #42bd41 !important; color: white !important; }
+      .color_active{ background-image: linear-gradient(to bottom right, #ffffff, #ae256d);
+ color: white !important; }
    </style>
    <hr style="width: 80%;" />
    @if($product->variation_colors->count()>0)
@@ -617,7 +698,7 @@ small {
       <div class="col-md-2">
       </div>
       <div class="col-md-3">
-         <a style="position: absolute ;text-decoration: none ;  border: 2px #d0c6c6 solid;padding: 2px 20px 7px 20px;color: white !important; background-color: #42bd41; border-radius: 6px; height: 35px !important;cursor: pointer; " href="{{ route('AdviceComparison',$product->id) }}">COMPARE</a>
+         <a style="position: absolute ;text-decoration: none ;  border: 2px #d0c6c6 solid;padding: 5px 20px 7px 20px;color: white !important; background-color: #4a88c1; border-radius: 6px; height: 35px !important;cursor: pointer; " href="{{ route('AdviceComparison',$product->id) }}">COMPARE</a>
       </div>
       <div class="col-md-4" id="comparebtm">
       </div>
@@ -625,9 +706,9 @@ small {
    <hr style="width: 80%;" />
    <div class="row">
       <div class="col-md-4">
-         <h3> <sup>*</sup> <font style="color: #0188cc !important" > PKR</font><br/>
+         <h3> <sup>*</sup> <font style="color: #4a88c1 !important" > PKR</font><br/>
             <font class="StoragePrice" style="    font-size: 40px;
-               color: #0188cc;
+               color: #4a88c1;
                margin-left: 15px;">{{ $product->price }}</font>
          </h3>
       </div>
@@ -650,13 +731,13 @@ small {
 
 
 <div class="row">
-   <div class="col-md-12">
+   <div class="col-md-12 fontUbantu">
       <div style=" margin: 0 auto; padding: 120px 0 40px;">
-         <ul class="tabs" data-persist="true" style="text-align: initial; padding: 11px !important;">
-            <li><a href="#view1">TECHNICLE SPECS</a></li>
-            <li><a href="#view2">OPINIONS</a></li>
-            <li><a href="#view3">VEDIOS</a></li>
-            <li><a href="#view4">REVIEWS</a></li>
+         <ul class="tabs fontUbantu" data-persist="true" style="text-align: initial; padding: 11px !important;">
+            <li><a href="#view1" class="fontUbantu" style="font-size: 15px;">TECHNICLE SPECS</a></li>
+            <li><a href="#view2" class="fontUbantu" style="font-size: 15px;">OPINIONS</a></li>
+            <li><a href="#view3" class="fontUbantu" style="font-size: 15px;">VEDIOS</a></li>
+            <li><a href="#view4" class="fontUbantu" style="font-size: 15px;">REVIEWS</a></li>
          </ul>
          <div class="tabcontents">
              <div id="view1">
@@ -673,23 +754,23 @@ small {
 
 <div style="width: 19%;  float: left;">
 
-  <div   id="MainHeightOnDesktop">
+  <div class="fontUbantu"   id="MainHeightOnDesktop">
 
-    <table id="customers">
+    <table id="customers" class="fontUbantu">
         <tr>
             <td class="colblue tdBlockOnMobhead ">Network</td>
-            <td class="tdBlockOnMobSubhead TechOnDeskTop" style="border-bottom: 4px #eee solid; "> Technology</td>
+            <td class="tdBlockOnMobSubhead TechOnDeskTop fontUbantu" style="border-bottom: 4px #eee solid; "> Technology</td>
         </tr>
     </table>
 
-    <table id="customers">
+    <table id="customers" class="fontUbantu">
         <tr>
-            <td class="colblue tdBlockOnMobhead LaunchWidthOnlyOnDesk" >LAUNCH</td>
+            <td class="colblue  tdBlockOnMobhead2 LaunchWidthOnlyOnDesk fontUbantu" >LAUNCH</td>
               @if($product->launch_announced !='')
-                <td class="tdBlockOnMobSubhead" style="display: block;"> Announced</td>
+                <td class="tdBlockOnMobSubhead fontUbantu" style="display: block; "> Announced</td>
               @endif
             @if($product->launch_status !='')
-            <td class="StatheadOnMob" style="display: block;     border-bottom: 5px #eeeeee solid; font-weight: 600; "> Status</td>
+            <td class="StatheadOnMob fontUbantu" style="display: block;  text-shadow: 0px 0px 0.1px #cac7c7 !important;   border-bottom: 5px #eeeeee solid; font-weight: 600; "> Status</td>
             @endif
         
         </tr>
@@ -698,25 +779,25 @@ small {
     <table id="customers">
         <tr>
           @if($product->body_dimensions !='' || $product->body_weight !='' || $product->body_build !='' || $product->body_sim !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Body</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Body</td>
           @endif
           
 
           @if($product->body_dimensions !='')
-            <td class="DimnOnMobSubhead" style="display: block;font-weight: 600;"> Dimensions</td>
+            <td class="DimnOnMobSubhead fontUbantu" style="display: block;font-weight: 600;"> Dimensions</td>
           @endif
 
           @if($product->body_weight !='')
-            <td class="BodySts1" style="display: block;font-weight: 600;"> Weight</td>
+            <td class="BodySts1 fontUbantu" style="display: block;font-weight: 600;"> Weight</td>
           @endif
 
           @if($product->body_build !='')
-          <td class="BuildSts1" style="display: block;font-weight: 600;"> Build</td>
+          <td class="BuildSts1 fontUbantu "  style="display: block;font-weight: 600;"> Build</td>
           @endif
 
 
           @if($product->body_sim !='')
-            <td class="SIMSts1" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
+            <td class="SIMSts1 fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> SIM</td>
           @endif
         </tr>
     </table>
@@ -724,48 +805,48 @@ small {
     <table id="customers">
       <tr>
         @if($product->display_type !='' || $product->display_size !='' || $product->display_resolution !='' || $product->protection !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Display
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Display
               </td>
         @endif
 
         @if($product->display_type !='')
-          <td class="DType" style=""> Type</td>
+          <td class="DType fontUbantu" style=""> Type</td>
         @endif
         
         @if($product->display_size !='')
-          <td class="Dsize" style="display: block;font-weight: 600;"> Size</td>
+          <td class="Dsize fontUbantu" style="display: block;font-weight: 600;"> Size</td>
         @endif
         
         @if($product->display_resolution !='')
-          <td class="Dresolution" style="display: block;font-weight: 600;"> Resolution</td>
+          <td class="Dresolution fontUbantu" style="display: block;font-weight: 600;"> Resolution</td>
         @endif
 
         @if($product->display_protection !='')
-          <td class="Dprotect" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
+          <td class="Dprotect fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Protection</td>
         @endif
       </tr>
     </table>
 
-    <table id="customers">
+    <table id="customers" class="fontUbantu">
       <tr>
         @if($product->platform_os !='' || $product->platform_chipset !='' || $product->cput !='' || $product->gpu !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Plate-<br/>Form</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Plate-<br/>Form</td>
         @endif
 
         @if($product->platform_os !='')
-          <td class="DType" style=""> OS</td>
+          <td class="DType fontUbantu" style=""> OS</td>
         @endif
 
         @if($product->platform_chipset !='')
-          <td class="Dsize" style="display: block;font-weight: 600;"> Chipset</td>
+          <td class="Dsize fontUbantu" style="display: block;font-weight: 600;"> Chipset</td>
         @endif
         
         @if($product->platform_cpu !='')
-          <td class="Dresolution" style="display: block;font-weight: 600;"> CPU</td>
+          <td class="Dresolution fontUbantu" style="display: block;font-weight: 600;"> CPU</td>
         @endif
         
         @if($product->platform_gpu !='')
-         <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
+         <td class="plateGpu fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> GPU</td>
         @endif
 
       </tr>
@@ -774,15 +855,15 @@ small {
     <table id="customers">
       <tr>
         @if($product->memory_card_slot !='' || $product->memory_ram !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Memory</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Memory</td>
         @endif
 
         @if($product->memory_card_slot !='')
-          <td class="cradslotOnMob" style="display: block;font-weight: 600;"> Card slot</td>
+          <td class="cradslotOnMob fontUbantu" style="display: block;font-weight: 600; "> Card slot</td>
         @endif
 
         @if($product->memory_ram !='')
-          <td class="Dresolution" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> RAM</td>
+          <td class="Dresolution fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> RAM</td>
         @endif
 
       </tr>
@@ -791,18 +872,18 @@ small {
     <table id="customers">
       <tr>
         @if($product->main_type !='' || $product->main_feature !='' || $product->main_video !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Main-<br/>Camera</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Main-<br/>Camera</td>
         @endif
         @if($product->main_type !='' && $product->main_type_value !='')
-          <td class="Cameratriple" style="display: block;font-weight: 600;"> {{ ucwords($product->main_type) }}</td>
+          <td class="Cameratriple fontUbantu" style="display: block;font-weight: 600; text-shadow: 0px 0px 0.1px #cac7c7 !important;"> {{ ucwords($product->main_type) }}</td>
         @endif
 
         @if($product->main_feature !='')
-          <td class="CameraFeaturesOnMob" style="display: block;font-weight: 600;"> Features</td>
+          <td class="CameraFeaturesOnMob fontUbantu" style="display: block;font-weight: 600;"> Features</td>
         @endif
 
         @if($product->main_video !='')
-          <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
+          <td class="CameraVedios fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
         @endif
 
 
@@ -812,21 +893,21 @@ small {
     <table id="customers">
       <tr>
         @if($product->selfie_type !='' || $product->selfie_feature !='' || $product->selfie_video !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Selfie-<br />Camera</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Selfie-<br />Camera</td>
         @endif
 
 
           @if($product->selfie_type !='' && $product->selfie_type_value !='')
-        <td class="SelfieSingle" style="display: block;font-weight: 600;"> Single</td>
+        <td class="SelfieSingle fontUbantu" style="display: block;font-weight: 600;"> Single</td>
         @endif
 
 
           @if($product->selfie_feature !='')
-        <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> Features</td>
+        <td class="SeliecamFatureMob fontUbantu"  style="display: block;font-weight: 600;"> Features</td>
         @endif
 
           @if($product->selfie_video !='')
-        <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
+        <td class="CameraVedios fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Video</td>
         @endif
 
 
@@ -836,21 +917,21 @@ small {
     <table id="customers">
       <tr>
         @if($product->sound_loudspeaker !='' || $product->sound_jack !='' || $product->sound_mic !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Sound</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Sound</td>
         @endif
 
         @if($product->sound_loudspeaker !='')
-          <td class="SelfieSingle" style="display: block;font-weight: 600;"> Loud-<br/>speaker</td>
+          <td class="SelfieSingle fontUbantu" style="display: block;font-weight: 600;text-shadow: 0px 0px 0.1px #cac7c7 !important;"> Loud-<br/>speaker</td>
         @endif
 
 
         @if($product->sound_jack !='')
-          <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> 3.5mm jack</td>
+          <td class="SeliecamFatureMob fontUbantu" style="display: block;font-weight: 600;"> 3.5mm jack</td>
         @endif
 
 
         @if($product->sound_mic!='')
-          <td class="CameraVedios" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
+          <td class="CameraVedios fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;"> Mic</td>
         @endif
       </tr>
     </table>
@@ -858,23 +939,23 @@ small {
     <table id="customers">
       <tr>
         @if($product->comms_wlan !='' || $product->comms_bluetooth !='' || $product->comms_gps !='' || $product->comms_nfc !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Comms</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Comms</td>
         @endif
 
         @if($product->comms_wlan !='')
-          <td class="DType" style=""> WLAN</td>
+          <td class="DType fontUbantu" style=""> WLAN</td>
         @endif
 
         @if($product->comms_bluetooth !='')
-        <td class="Commsblutoth" style="display: block;font-weight: 600;"> Bluetooth</td>
+        <td class="Commsblutoth fontUbantu" style="display: block;font-weight: 600;"> Bluetooth</td>
         @endif
 
         @if($product->comms_gps!='')
-          <td class="Dresolution" style="display: block;font-weight: 600;"> GPS</td>
+          <td class="Dresolution fontUbantu" style="display: block;font-weight: 600;"> GPS</td>
         @endif
 
         @if($product->comms_nfc!='')
-            <td class="plateGpu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> NFC</td>
+            <td class="plateGpu fontUbantu" style="display: block; text-shadow: 0px 0px 0.1px #cac7c7 !important;border-bottom: 5px #eeeeee solid;font-weight: 600; "> NFC</td>
         @endif
       </tr>
     </table>
@@ -882,11 +963,11 @@ small {
     <table id="customers">
       <tr>
         @if($product->feature_sensor !='')
-              <td class="colblue BodyHeadMob widthOnDesk">Features</td>
+              <td class="colblue BodyHeadMob widthOnDesk fontUbantu">Features</td>
         @endif
 
         @if($product->feature_sensor !='')
-          <td class="FeatureSensor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Sensors</td>
+          <td class="FeatureSensor fontUbantu" style="display: block; text-shadow: 0px 0px 0.1px #cac7c7 !important;border-bottom: 5px #eeeeee solid;font-weight: 600; "> Sensors</td>
         @endif
       </tr>
     </table>
@@ -894,19 +975,19 @@ small {
     <table id="customers">
       <tr>
         @if($product->battery_status !='' || $product->batttery_talk_time !='' || $product->battery_music !='')
-              <td class="colblue BatteryOneMob widthOnDesk">Battery</td>
+              <td class="colblue BatteryOneMob widthOnDesk fontUbantu">Battery</td>
         @endif
 
         @if($product->battery_status !='')
-          <td class="SeliecamFatureMob" style="display: block;font-weight: 600;"> status </td>
+          <td class="SeliecamFatureMob fontUbantu" style="display: block;font-weight: 600;"> status </td>
         @endif
 
         @if($product->battery_talk_time !='')
-          <td class="battryTlkTime" style="display: block;font-weight: 600;"> talk Time</td>
+          <td class="battryTlkTime fontUbantu" style="display: block;font-weight: 600;"> talk Time</td>
         @endif
 
         @if($product->battery_music!='')
-          <td class="MusicPlayOnMob" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 75px;"> Music</td>
+          <td class="MusicPlayOnMob fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600;height: 75px;text-shadow: 0px 0px 0.1px #cac7c7 !important;"> Music</td>
         @endif
 
       </tr>
@@ -916,11 +997,11 @@ small {
     <table id="customers">
       <tr>
         @if($product->variation_colors->count()>0)
-          <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk">MISC</td>
+          <td class="colblue BodyHeadMobForFeatureSensor widthOnDesk fontUbantu">MISC</td>
         @endif
         
         @if($product->variation_colors->count()>0)
-          <td class="MiscColor" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; "> Colors</td>
+          <td class="MiscColor fontUbantu" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; text-shadow: 0px 0px 0.1px #cac7c7 !important;"> Colors</td>
         @endif
       </tr>
     </table>
@@ -933,7 +1014,7 @@ small {
         @endif
         
         @if($product->variation_colors->count()>0 && $product->price !='')
-          <td class="" style="display: block; border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
+          <td class="fontUbantu" style="display: block; text-shadow: 0px 0px 0.1px #cac7c7 !important;border-bottom: 5px #eeeeee solid;font-weight: 600; height: 73px; "> Price & Storage</td>
         @endif
       </tr>
     </table>
@@ -969,10 +1050,10 @@ small {
 
 
 
-      <div class="Net1OnMob NTone" style=" ">GSM / HSPA / LTE1
+      <div class="Net1OnMob NTone fontUbantu" style=" ">GSM / HSPA / LTE1
       </div>
 
-      <div class="lanchSpcOn" style="height: 0px; width: 100%;"></div>
+      <div class="lanchSpcOn fontUbantu" style="height: 0px; width: 100%;"></div>
 
 
         @if($product->launch_announced !='')
@@ -1435,7 +1516,7 @@ Up to 20 h (multimedia)
                      <div class="container" id="OpinonrowOne">
                         <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
                            <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
-                              <a id="clickopinon"  style="  background-color: #4a88c2; 
+                              <a id="clickopinon"  style="  background-color: #4a88c1; 
                                  color: white;
                                  padding: 10px 18px 10px 18px; text-decoration: none;
                                  border-radius: 4px;">POST YOUR OPINIONS </a>
@@ -1459,7 +1540,7 @@ Up to 20 h (multimedia)
                                  <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
                                  <input type="hidden" name="product_id" value="{{ $product->id }}">
                                  <label>Your nickname (optional)</label><br/>
-                                 <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
+                                 <input  type="text" id="uname" name="nick_name"  maxlength="20" autocomplete="off" style="width:100%">
                                  <br/>
                                  <br/>
                                  <!-- <div class="row"> 
@@ -1791,8 +1872,7 @@ Up to 20 h (multimedia)
 
 
 
-<br/>
-      <br/>
+
       @include('includes.footer')
 
 
@@ -2164,7 +2244,18 @@ $(document).ready(function(){
   });
 });
 </script>
-
+ <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+      }
+      
+      
+      
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+      }
+   </script>
 <script>
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -2233,6 +2324,21 @@ window.onclick = function(event) {
 
 
 
+
+$('.cloudzoom-gallery').click(function(){
+  $(this).css('border', '1px red solid !important');
+});
+
+</script>
+<script>
+function myShowPassFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 </script>
 
 

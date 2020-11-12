@@ -23,45 +23,70 @@
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
   <style>
  html {
   scroll-behavior: smooth !important;
 }
 
     
-    #myInput {
-      background-image: url('/css/searchicon.png');
+   #myInput {
+      /* background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
       width: 50%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
+      margin-bottom: 12px; */
+
+
+      
+             height: 20px;
+    position: relative;
+    top: 5px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 0px solid #ddd;
       margin-bottom: 12px;
-    }
-    
-    #myUL {
+      }
+        #myUL {
       list-style-type: none;
       padding: 0;
       margin: 0;
-   
-    }
-    
-    #myUL li a {
-      
-      margin-top: -1px; /* Prevent double borders */
-      
+      }
+      #myUL li a {
+     
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
-    display: block;
-    font-weight: 600;
-    }
-    
-    /* #myUL li a:hover:not(.header) {
-      background-color: #eee;
-    } */
+      display: block;
+      font-weight: 600;
+
+        height: 24px;
+    margin-top: 16px;
+      }
+
+
+
+     #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
+
+      
     </style>
 
 
@@ -336,7 +361,13 @@ select {
   color: gray
 }
 
-
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-top: .5rem !important;
+   
+    padding-bottom: .2rem !important;
+}
+}
 
 
 @media (min-width: 320px) and (max-width: 359px) {
@@ -738,7 +769,7 @@ input[type="radio"]:checked + label {
         <figure style="padding-top: 80px;">
             <center> <img src="{{ asset($img) }}" alt="Trulli" ></center>
             <a data-id="{{ $brand->id }}" class="brandsBtn" style="text-decoration: none;cursor: pointer;"> 
-            <figcaption id="topfigurecap"  style="background-color: #4a88c2;
+            <figcaption class="fontUbantu" id="topfigurecap"  style="background-color: #4a88c2;
              text-align: center;
              padding: 10px; color: white !important;
              border-radius: 5px;
@@ -758,7 +789,7 @@ input[type="radio"]:checked + label {
 
   <center>
     
-    <div id="panel"  style="background-color: #dad9de;">
+    <div id="panel" class="fontUbantu"  style="background-color: #dad9de;">
 
 
       <p style="color: #4a88c2; text-align: left;   margin-bottom: 0rem !important;">Select > Get Estimate</p>
@@ -774,7 +805,7 @@ input[type="radio"]:checked + label {
   </center>
          
 
-<div id="apple1div"  style="background-color: white;margin-top: 15px;">
+<div id="apple1div" class="fontUbantu" style="background-color: white;margin-top: 15px;">
 
 </div>
 

@@ -1,7 +1,13 @@
 <?php
 
 Route::get('/', 'FrontEndController@index')->name('home');
+Route::view('/blog', 'blog')->name('blog');;
+
+Route::view('/forum','forum')->name('forum');
 Route::get('/mobile', 'FrontEndController@indexmobile')->name('homemobile');
+
+Route::view('/personcontact', 'person_contact')->name('personcontact');
+
 Route::get('Login', 'LoginAndRegisterController@index')->name('Login');
 Route::get('AdminLogin', 'LoginAndRegisterController@adminIndex');
 Route::post('AdminSession', 'LoginAndRegisterController@adminLogin')->name('AdminSession');

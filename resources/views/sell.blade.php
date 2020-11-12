@@ -5,58 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
   </head>
-  <script src="{{ asset('js/jquery-2.1.3.min.js') }}" ></script>
-  <script src="{{ asset('js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+	
+      <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}" >
 
 
+      <!-- Start WOWSlider.com HEAD section -->
+      <link rel="stylesheet" type="text/css" href="{{asset('Slider/engine1/style.css')}}" />
+      <script type="text/javascript" src="{{asset('Slider/engine1/jquery.js')}}"></script>
+      <!-- End WOWSlider.com HEAD section -->
 
-  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/style.css') }}" rel='stylesheet' type='text/css' media="all">
-  <link href="{{ asset('css/mystyle.css') }}" rel='stylesheet' type='text/css' media="all">
+      <script src="{{ asset('js/jquery-2.1.3.min.js')}}" ></script>
+      <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+      <link href="{{ asset('css/font-awesome.min.css')}}" rel="stylesheet">
+      <link href="{{ asset('css/style.css')}}" rel='stylesheet' type='text/css' media="all">
+      <link href="{{ asset('css/mystyle.css')}}" rel='stylesheet' type='text/css' media="all">
+      <link rel="stylesheet" href="js/ScrollJS2//style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
-  <link href="{{ asset('css/dropzone.css') }}" rel='stylesheet' type='text/css' media="all">
-
-  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-
-  <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-  
-  <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
-  
   <style>
+    @media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-top: .5rem !important;
+   
+    padding-bottom: .2rem !important;
+}
+}
+.btn-primary {
+    color: #fff;
+    background-color: #4a88c1 !important;
+    border-color: #4a88c1 !important;
+}
+@media (min-width: 992px) and (max-width : 2000px){
+footer{
+      width: 172% !important;
+    position: relative !important;
+    left: -400px !important;
+}
+}
+
+
+@media (min-width:500px) and (max-width: 1400px){
+  footer{
+         width: 122%  !important;
+    position: relative !important;;
+    left: -122px !important;;
+}
+    }
+
+ @media (min-width: 500px){
+.qasimnavigatin {
+   
+    padding: 10px 10px 1px 10px !important;
+  
+}
+ }
  
-    
-    #myInput {
-      background-image: url('/css/searchicon.png');
+ #prcCal{
+   margin-top: 0px !important;
+ }
+
+     #myInput {
+      /* background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
       width: 50%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
+      margin-bottom: 12px; */
+
+
+      
+             height: 20px;
+    position: relative;
+    top: 5px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 0px solid #ddd;
       margin-bottom: 12px;
-    }
-    
-    #myUL {
+      }
+        #myUL {
       list-style-type: none;
       padding: 0;
       margin: 0;
-   
-    }
-    
-    #myUL li a {
-      
-      margin-top: -1px; /* Prevent double borders */
-      
+      }
+      #myUL li a {
+     
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
-    display: block;
-    font-weight: 600;
-    }
-    
-    /* #myUL li a:hover:not(.header) {
-      background-color: #eee;
-    } */
+      display: block;
+      font-weight: 600;
+        height: 24px;
+    margin-top: 16px;
+
+      }
+
+
+      
+     #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
     </style>
 
 
@@ -652,7 +713,7 @@ color: black;
   @include('includes.header');
 
   <div class="container">
-      <div class="card">
+      <div class="card fontUbantu">
           <div class="card-body">
             <style type="text/css">
               label{ color: black; }
@@ -1385,7 +1446,7 @@ color: black;
                               @if(!empty(Session::get('user')->id))
                                 <button type="submit" onclick="estimate_fun();" disabled="" class="btn btn-primary waves-effect waves-light save_btn">Save</button>
                               @else
-                                  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary waves-effect waves-light">Login</button>
+                                  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary waves-effect waves-light fontUbantu">Login</button>
                               @endif
                               
                                
@@ -1443,12 +1504,12 @@ color: black;
   
   </div>
 
-@include('includes.footer')
+
 
 
 </body>
 
-
+@include('includes.footer')
 <!-- 
 <script src="js/jquery-slim.min.js" ></script>
 <script src="js/popper.min.js" ></script>
@@ -2228,20 +2289,13 @@ function OtherPerc(val){
 </script>
 
   
-<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-        
-<script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js') }}"></script>
-  
-<script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>
- 
 
-  
-<!-- <script type="text/javascript" src="{{ asset('js/dropzone.js') }}"></script> -->
+   <script type="text/javascript" src="{{ asset('Slider/engine1/wowslider.js')}}"></script>
+   <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>
 
 
-<!-- <script  src="js/jquery-2.1.3.min.js"></script> -->
-
-<script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>  -->
+   <script  src="{{ asset('js/ScrollJS2/script.js')}}"></script>
 
 
 

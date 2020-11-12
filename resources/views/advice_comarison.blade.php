@@ -29,28 +29,39 @@
   <style>
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
-    #myInput {
+   #myInput {
+
+
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
-      width: 50%;
+      width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
       margin-bottom: 12px;
-    }
-    
-    #myUL {
+      }
+      #myUL {
       list-style-type: none;
       padding: 0;
       margin: 0;
-   
-    }
-    
-    #myUL li a {
+      }
+      #myUL li a {
+      margin-top: -1px; 
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+      display: block;
+      font-weight: 600;
+      }
+
+    #usedSearchList li a {
       
       margin-top: -1px; /* Prevent double borders */
-      
       padding: 12px;
       text-decoration: none;
       color: #605d5d;
@@ -61,7 +72,6 @@
     /* #myUL li a:hover:not(.header) {
       background-color: #eee;
     } */
-
 
     .dropdown-toggle::after {
 content: none !important;
@@ -1139,6 +1149,65 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
 </style>
 
 <style>
+    #myInput {
+                 height: 28px;
+    position: relative;
+    top: 4px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 0px solid #ddd;
+      margin-bottom: 12px;
+      }
+        #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      }
+      #myUL li a {
+      margin-top: -1px; 
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+      display: block;
+      font-weight: 600;
+
+      
+    height: 24px;
+    margin-top: 16px;
+      }
+
+
+
+      .ws_shadow{
+         display: none !important;
+      }
+
+      #prcCal{
+             margin-top: 2px !important;
+      }
+
+a[class="ws_prev"],
+a[class="ws_next"] {
+   z-index: 1 !important;
+}
+
+
+
+            #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
   #myInputone {
     background-image: url('/css/searchicon.png');
     background-position: 10px 12px;
@@ -1498,15 +1567,13 @@ height: 65px;
 
 
    <a href="#" id="scroll" style="display: none;"><span></span></a>
-   @include('includes.header');
+   @include('includes.header')
 
+ 
+
+
+    <img src="{{ asset('storage/images/Compare.png') }}" style="width: 100%;" />
   <br/>
-
-<div class="row">
-  <div class="col-md-12">
-    <img src="{{ asset('storage/images/new_size.jpg') }}" style="width: 100%;" />
-  </div>
-</div>
 
 <div class="row">
 <!-- <div  style="width: 16%; float: left;  background-color: rgb(227, 231, 231); "></div>
@@ -2213,7 +2280,7 @@ height: 65px;
       border: 1px #ededed solid;
       padding-top: 8px;
       padding-left: 5px;
-      height: px;border-bottom: 5px #eeeeee solid;
+      height: 72px;border-bottom: 5px #eeeeee solid;
       " class="pricesotageTextOnMob">
       @if($product->variation_colors->count()>0)
       @php $colorName = ''; $count = $product->variation_colors->count(); $i=1; @endphp
@@ -2795,7 +2862,18 @@ $(function(){
     document.getElementById('myULtwo').style.display = 'none';
   }
 </script>
-
+ <script>
+      function shoediv(){
+         
+          document.getElementById('myUL').style.display = 'block';
+      }
+      
+      
+      
+      function hideagain(){
+          document.getElementById('myUL').style.display = 'none';
+      }
+   </script>
 <script>
   function showdivthree() {
 

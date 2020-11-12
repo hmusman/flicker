@@ -1,6 +1,76 @@
 @extends('layouts.app')
 <style type="text/css">
     footer{ margin-top: 100px !important; }
+
+
+
+
+
+
+       #myInput {
+
+
+             height: 18px;
+    position: relative;
+    top: 6px;
+             background: #f8f7f7;
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+      }
+      #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      }
+      #myUL li a {
+      margin-top: -1px; 
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+      display: block;
+      font-weight: 600;
+      
+   
+    height: 24px;
+    margin-top: 16px;
+      }
+
+    #usedSearchList li a {
+      
+      margin-top: -1px; /* Prevent double borders */
+      padding: 12px;
+      text-decoration: none;
+      color: #605d5d;
+    display: block;
+    font-weight: 600;
+    }
+    
+    /* #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    } */
+
+    #prcCal{
+      margin-top: 1px !important;
+    }
+
+     #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
+
+
 </style>
 @section('content')
 <div class="container">
