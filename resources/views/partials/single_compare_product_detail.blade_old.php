@@ -4,7 +4,7 @@
         <div class="col-md-12">
           <p style="font-size: 22px;color: #868585;font-weight: bolder;">{{ ucwords($product->name) }}</p>
           <center> <img style="width: 64%; height: 337px;" src="{{ asset($img) }}" /></center>
-          <p style="background-color: #6464e7;color: white;text-align: center;width: 100%;margin-top: 11px; ">PKR {{ $product->price }}</p>
+          <p style="background-color: #4a88c1;color: white;text-align: center;width: 100%;margin-top: 11px; ">PKR {{ $product->price }}</p>
         </div>
       </div>
     </div>

@@ -1851,14 +1851,14 @@ height: 65px;
         <div class="col-md-12">
 
           <p class="mobTitleOnMob" style="    font-size: 22px;
-              color: #868585;
+              color: #4a88c1;
               font-weight: bolder;">{{ ucwords($product->name) }}</p>
 
 
                  <center> <img id="imgOneMob" src="{{ asset($img) }}" style="height: 200px;" /></center>
 
 
-          <p style="background-color: #6464e7;
+          <p style="background-color: #4a88c1;
               color: white;
               text-align: center;
               width: 100%;

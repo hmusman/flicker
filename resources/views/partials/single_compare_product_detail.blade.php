@@ -36,7 +36,7 @@
                  <center> <img id="imgOneMob" src="{{ asset($img) }}" style="height: 200px;" /></center>
 
 
-          <p style="background-color: #6464e7;
+          <p style="background-color: #4a88c1;
               color: white;
               text-align: center;
               width: 100%;
