@@ -18,7 +18,9 @@
 }
 
 
-
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(103 99 99) !important;
+}
 
 
 li[class="nav-item dropdown"] > a{
