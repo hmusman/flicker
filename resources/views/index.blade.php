@@ -592,11 +592,11 @@ border-left: 2px red solid !important;
                   <div class="col-md-3 col-lg-3 col-sm-3 slidesectionHome fontUbantu" id="slickBtnFortopBlog"  style="padding-right: 2px !important;
     padding-left: 3px !important;">
 @if($blogslider->count()>0)
-    <div class="autoplay fontUbantu" data-dots="true">
+    <div class="autoplay" data-dots="true">
    @foreach($blogslider as $row)
    @php $img = 'storage/'.$row->img @endphp
-   <div class="item fontUbantu" id="ExtraLargeScren" style="">
-      <div id="blogImagesExtraLarge" style="  ">
+   <div class="item fontUbantu" id="ExtraLargeScren" >
+      <div id="blogImagesExtraLarge" >
          <img src="{{ asset($img) }}" class="heightImagesExtralg" style=" text-align: center ;max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
       
       
@@ -621,6 +621,26 @@ border-left: 2px red solid !important;
 </div>
    @endif
 </div>
+ <!-- <div class="col-md-3 col-lg-3 col-sm-3" id="slickBtnFortopBlog" style=" ">
+               @if($blogslider->count()>0)
+               <div class="autoplay" data-dots="true">
+                  @foreach($blogslider as $row)
+                  @php $img = 'storage/'.$row->img @endphp
+                  <div class="item" style="">
+                     <div id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
+                        <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset($img) }}"
+                           class="img-responsive img-fullwidth" style=" width: 100% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
+                        </div>
+                        <br/>
+                        <p style="color: black !important;    padding: 0px 10px 50px 24px;">
+                           {{ ucfirst($row->detail) }}
+                        </p>
+                     </div>
+                  </div>
+                  @endforeach
+               </div>
+               @endif
+            </div> -->
             <div class="col-md-3 col-lg-3 col-sm-3" id="" style=" ">
                <div  id="ExtraLargeScren" style="">
                   <div id="blogImagesExtraLarge" style="  text-align: center ;  height: 55%; width: 100%; border-right: 1px #989292 solid;
