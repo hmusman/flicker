@@ -224,24 +224,26 @@ border-left: 2px red solid !important;
       top: 81px;
       height: 67px !important;
       width: 22px !important;
-      background-color: #5f5b54;
+      background-color: #5f5b54 !important;
       background-image: url('{{ asset("storage/images/headerimg/ic_keyboard_arrow_left_white_18dp.png")}}') !important;
       background-position: center !important;
       background-repeat: no-repeat;
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
+      display: block !important;
       }
       #slickBtnFortopBlog > div[class="autoplay slick-initialized slick-slider slick-dotted"] > button[class="slick-next slick-arrow"]{
       right: -4px !important;
       top: 81px !important;
       height: 67px !important;
       width: 22px !important;
-      background-color: #5f5b54;
+      background-color: #5f5b54 !important;
       background-image: url('{{ asset("storage/images/headerimg/ic_keyboard_arrow_right_white_18dp.png")}}') !important;
       background-position: center !important;
       background-repeat: no-repeat;
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
+           display: block !important;
       }
       .slick-prev {
       left: 0px !important;

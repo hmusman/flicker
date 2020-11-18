@@ -190,8 +190,8 @@ cursor: pointer;
     <div style="width: 100%; ">
 
       <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;background-color: #0071e3; color: white;padding: 10px;font-weight: 700;">Description</div>
-      <div style="width: 20%; float: left;background-color: #0071e3; color: white;padding: 10px;font-weight: 700;">Details</div>
+      <div style="width: 60%; float: left;background-color: #4a88c1; color: white;padding: 10px;font-weight: 700;">Description</div>
+      <div style="width: 20%; float: left;background-color: #4a88c1; color: white;padding: 10px;font-weight: 700;">Details</div>
       <div style="width: 10%; float: left;"></div>
     </div>
 
@@ -321,10 +321,10 @@ cursor: pointer;
 
   </div>
   <ul style="margin-top: 549px; list-style: none;width: 100%;">
-    <li style="width: 50%;float: left;cursor: pointer;"><div onclick="ContactShow('{{ $product->id }}')" align="" style="width: 186px; text-align: center; background-color: #0071e3 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
-    Contact
+    <li style="width: 50%;float: left;cursor: pointer;"><div onclick="ContactShow('{{ $product->id }}')" align="" style="width: 186px; text-align: center; background-color: #4a88c1 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
+    <a style="text-decoration: none;color: white;" href="{{ route('personcontact') }}"> Contact </a>
     </div></li>
-    <li style="width: 50%; float: left;display:none;" id="contact{{ $product->id }}"><div align="" style="width: 186px; text-align: center;background-color: blue ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
+    <li style="width: 50%; float: left;display:none;" id="contact{{ $product->id }}"><div align="" style="width: 186px; text-align: center;background-color: #4a88c1 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
     {{ $product->phone }}
     </div></li>
     
@@ -332,7 +332,7 @@ cursor: pointer;
   <div 
     style="width: 186px; 
       font-size: 34px;
-  text-align: center;margin-top: 41px; ;color: blue;padding: 6px;font-weight: 500; ">
+  text-align: center;margin-top: 41px; ;color: #4a88c1;padding: 6px;font-weight: 500; ">
   <sup>  PKR</sup> {{ $product->price }}
   </div>
 
