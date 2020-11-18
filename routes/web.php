@@ -6,7 +6,7 @@ Route::view('/blog', 'blog')->name('blog');;
 Route::view('/forum','forum')->name('forum');
 Route::get('/mobile', 'FrontEndController@indexmobile')->name('homemobile');
 
-Route::view('/personcontact', 'person_contact')->name('personcontact');
+Route::get('/personcontact/{id}', 'SellProductController@person_contact')->name('personcontact');
 
 Route::get('Login', 'LoginAndRegisterController@index')->name('Login');
 Route::get('AdminLogin', 'LoginAndRegisterController@adminIndex');

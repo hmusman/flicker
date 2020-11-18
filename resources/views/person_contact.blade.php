@@ -435,14 +435,14 @@ button:focus{
     height: 1px;"/>
 <br/>>
 <div class="row">
-    <div class="col-md-4" style="text-align: center"> <img src="{{ asset('/storage/images/stj7r136SWCSMyLXaL44oeDEIMoihoqBheOF5XXR.jpeg') }}" alt="Trulli" /></div>
+    <div class="col-md-4" style="text-align: center"> <img style="width: 60%;height: 250px;" src="{{ asset('/storage/images/person_contact.jpg') }}" alt="Trulli" /></div>
      <div class="col-md-8" style="color: #0b0c0c">
     
     <div class="row">
         <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
         <p class="leftdiv" style="" class="fontUbantu">NAME</p></div>
          <div class="col-md-8" style=" background-color:#f8f7f7;">
-         <p class="fontUbantu leftdiv">MUHAMMAD ATIF</p>
+         <p class="fontUbantu leftdiv">{{ $product->user->name }}</p>
         </div>
     </div>
 
@@ -451,7 +451,7 @@ button:focus{
         <div class="col-md-4 " style="color: #0b0c0c; ">
         <p class="leftdiv" style="" class="fontUbantu">CITY</p></div>
          <div class="col-md-8" style=" ">
-         <p class="fontUbantu leftdiv">FAISALABAD</p>
+         <p class="fontUbantu leftdiv">{{ $product->city }}</p>
         </div>
     </div>
 
@@ -461,7 +461,7 @@ button:focus{
         <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
         <p class="leftdiv" style="" class="fontUbantu">CELL</p></div>
          <div class="col-md-8" style=" background-color:#f8f7f7;">
-         <p class="fontUbantu leftdiv">+92 335 6862429</p>
+         <p class="fontUbantu leftdiv">{{ $product->phone }}</p>
         </div>
     </div>
 
@@ -476,13 +476,13 @@ button:focus{
 
 
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
         <p class="leftdiv" style="" class="fontUbantu">ADDRESS</p></div>
          <div class="col-md-8" style=" background-color:#f8f7f7;">
          <p class="fontUbantu leftdiv">BATALA COLONY FAISALABAD</p>
         </div>
-    </div>
+    </div> -->
 
 <a href="{{ route('BuyUsedMobilePhones') }}"><button style="background: #4a88c1;
     color: white;

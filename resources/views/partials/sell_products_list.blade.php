@@ -188,7 +188,7 @@ ul[class="ulatMob"]{
                 </li>
                 <li>
                   <a style="text-decoration: none;
-    color: white;" href="{{ route('personcontact') }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 20px 2.2px 20px;text-align: center;cursor: pointer;">Contact</p></a> 
+    color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 20px 2.2px 20px;text-align: center;cursor: pointer;">Contact</p></a> 
 
                 </li>
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
