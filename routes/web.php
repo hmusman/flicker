@@ -127,6 +127,9 @@ Route::get('SellAccessory','SellAccessoryController@create')->name('SellAccessor
 // Route::get('pricesearch/{min?}/{max?}','ProductController@priceSearch')->name('pricesearch');
 Route::prefix('admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::get('/','AdminController@index');
+	Route::get('/adminuser','AdminController@adminuser')->name('adminuser');
+	Route::post('/adminuserupdate','AdminController@adminupdate')->name('admin.updateadmin');
+	Route::delete('/adminuserdelete/{id}','AdminController@admindelete')->name('admin.deleteadmin');
 	Route::resource('products','ProductController');
 	Route::resource('/PriceCalculatorProduct','pricecalculatorproducts\PriceCalculatorProductController');
 	Route::resource('/Category','CategoryController');

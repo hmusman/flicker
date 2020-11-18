@@ -72,6 +72,7 @@
                                                            <table>
                                                                <tr>
                                                                    <td><a href="{{ route('Accessory.edit',$row->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
+                                                                    @if(Session::get('admintype')=='superadmin')
                                                                    <td>
                                                                        <form method="post" action="{{ route('Accessory.destroy',$row->id) }}">
                                                                             @csrf
@@ -79,6 +80,7 @@
                                                                            <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
                                                                        </form>
                                                                    </td>
+                                                                   @endif
                                                                </tr>
                                                             </table>
                                                        </td>

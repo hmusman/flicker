@@ -202,6 +202,9 @@ class LoginAndRegisterController extends Controller
                 if(Hash::check($request->login_password,$user->password))
                 {
                    $request->session()->put('admin',$user->email);
+                   $request->session()->put('admintype',$user->type);
+                   $request->session()->put('admindata',$user);
+
                     return redirect('admin');
                 }
                 else
@@ -215,6 +218,8 @@ class LoginAndRegisterController extends Controller
     public function adminLogout(Request $request)
     {
         $request->session()->put('admin','');
+        $request->session()->put('admintype','');
+        $request->session()->put('admindata','');
         return redirect('/AdminLogin');
     }
     public function logout(Request $request)

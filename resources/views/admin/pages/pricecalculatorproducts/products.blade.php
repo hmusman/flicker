@@ -77,6 +77,7 @@
                                                            <table>
                                                                <tr>
                                                                    <td><a href="{{ route('PriceCalculatorProduct.edit',$product->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
+                                                                   @if(Session::get('admintype')=='superadmin')
                                                                    <td>
                                                                        <form method="post" action="{{ route('PriceCalculatorProduct.destroy',$product->id) }}">
                                                                             @csrf
@@ -84,6 +85,7 @@
                                                                            <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
                                                                        </form>
                                                                    </td>
+                                                                   @endif
                                                                </tr>
                                                            </table>
                                                        </td>
