@@ -322,7 +322,7 @@ cursor: pointer;
   </div>
   <ul style="margin-top: 549px; list-style: none;width: 100%;">
     <li style="width: 50%;float: left;cursor: pointer;"><div onclick="ContactShow('{{ $product->id }}')" align="" style="width: 186px; text-align: center; background-color: #4a88c1 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
-    <a style="text-decoration: none;color: white;" href="{{ route('personcontact') }}"> Contact </a>
+    <a style="text-decoration: none;color: white;" href="{{ route('personcontact',$product->id) }}"> Contact </a>
     </div></li>
     <li style="width: 50%; float: left;display:none;" id="contact{{ $product->id }}"><div align="" style="width: 186px; text-align: center;background-color: #4a88c1 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
     {{ $product->phone }}
