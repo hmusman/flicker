@@ -3,6 +3,7 @@
 namespace App;
 use App\Category;
 use App\Brand;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class SellProduct extends Model
@@ -15,5 +16,10 @@ class SellProduct extends Model
     public function Productbrand()
     {
     	return $this->belongsTo(Brand::class,'brand_id','id');
+    }
+
+    public function user()
+    {
+    	return $this->belongsTo(User::class,'user_id','id');
     }
 }

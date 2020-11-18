@@ -638,4 +638,10 @@ class SellProductController extends Controller
     {
         //
     }
+
+    public function person_contact($id)
+    {
+        $product =SellProduct::where('id',$id)->first();
+        return view('person_contact',compact('product'));
+    }
 }
