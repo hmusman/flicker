@@ -45,6 +45,26 @@
 
 
  <style>
+@media (max-width: 550px){
+
+.fontAtMob{
+  font-size: 9px !important;
+}
+
+
+}
+
+
+.tblbordstylast{
+  border-right: 1px #acacac solid;
+   border-left: 1px #acacac solid;
+      border-bottom: 1px #acacac solid;
+}
+.tblbordsty{
+  border-right: 1px #acacac solid;
+   border-left: 1px #acacac solid;
+}
+
 
 ul[class="tabs"]{
 text-align: initial !important;
@@ -60,7 +80,7 @@ cursor: pointer;
 
 
   <a href="#" id="scroll" style="display: none;"><span></span></a>
-  @include('includes.header');
+  @include('includes.header')
 
 <br/>
 <div class="container">
@@ -187,140 +207,127 @@ cursor: pointer;
 <div class="col-md-6">
   
 
-    <div style="width: 100%; ">
+    <div class="row" style="width: 100%;  ">
+<div class="container">
 
-      <div style="width: 10%; float: left;"></div>
       <div style="width: 60%; float: left;background-color: #4a88c1; color: white;padding: 10px;font-weight: 700;">Description</div>
-      <div style="width: 20%; float: left;background-color: #4a88c1; color: white;padding: 10px;font-weight: 700;">Details</div>
-      <div style="width: 10%; float: left;"></div>
+      <div style="width: 40%; float: left;background-color: #4a88c1; color: white;padding: 10px;font-weight: 700;">Details</div>
+     
     </div>
 
-    <!-- <div style="width: 100%; ">
+</div>
+<div class="container">
+    <div class="row tblbordsty" style="width: 100%;">
 
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
-        Price Negotiateable</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
-        No</div>
-      <div style="width: 10%; float: left;"></div>
-
-
-    </div> -->
-
-
-    <div style="width: 100%; ">
-
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+      <!-- <div style="width: 10%; float: left;"></div> -->
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
         City</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
         {{ ucfirst($product->city) }}</div>
-      <div style="width: 10%; float: left;"></div>
+      <!-- <div style="width: 10%; float: left;"></div> -->
 
 
     </div>
 
+</div>
+<div class="container">
+    <div class="row tblbordsty" style="width: 100%; ">
 
-
-    <div style="width: 100%; ">
-
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+      
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
         Model</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
          {{ ucfirst($product->model) }}</div>
-      <div style="width: 10%; float: left;"></div>
+    
 
-
+ </div>
     </div>
+<div class="container">
+    <div class="row tblbordsty" style="width: 100%; ">
 
-    <div style="width: 100%; ">
 
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
         PTA Status</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
          {{ ucfirst($product->pta) }}</div>
-      <div style="width: 10%; float: left;"></div>
 
-
+</div>
     </div>
+<div class="container">
+    <div class="row tblbordsty" style="width: 100%; ">
 
-    <div style="width: 100%; ">
 
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
         Battery / Health /  Status</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
         {{ $product->device_battery_status }}%</div>
-      <div style="width: 10%; float: left;"></div>
 
 
+</div>
     </div>
+<div class="container">
+    <div  class="row tblbordsty"  style="width: 100%; ">
 
-    <div style="width: 100%; ">
-
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+    
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
       Original Accessories</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
          {{ ucfirst($product->original_accessories_available) }}</div>
-      <div style="width: 10%; float: left;"></div>
+     
 
-
+</div>
     </div>
 
-  
-    <div style="width: 100%; ">
+<div class="container">
+    <div class="row tblbordsty" style="width: 100%; ">
 
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+     
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
         Screen Cracked</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
         {{ ucfirst($product->screen_is_cracked) }}</div>
-      <div style="width: 10%; float: left;"></div>
 
 
+</div>
     </div>
 
+<div class="container">
+    <div class="row tblbordsty" style="width: 100%; ">
 
-    <div style="width: 100%; ">
-
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+    
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
        Minor Scratches / Dents</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
          {{ ucfirst($product->minor_dent_scratch) }}</div>
-      <div style="width: 10%; float: left;"></div>
-
+   
+</div>
 
     </div>
 
+<div class="container">
+  <div class="row tblbordsty" style="width: 100%; ">
 
-  <div style="width: 100%; ">
-
-    <div style="width: 10%; float: left;"></div>
-    <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;">
+    <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; ">
       Major Scratches / Dents</div>
-    <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;">
+    <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;">
       {{ ucfirst($product->major_dent_scratch) }}</div>
-    <div style="width: 10%; float: left;"></div>
 
 
+</div>
   </div>
+<div class="container">
+   <div class="row tblbordstylast" style="width: 100%; ">
 
-   <div style="width: 100%; ">
-
-      <div style="width: 10%; float: left;"></div>
-      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500; border-left: 1px black solid;    border-bottom: 1px solid black;">
+   
+      <div style="width: 60%; float: left;color: black;padding: 6px;font-weight: 500;     ">
         Device Box Available</div>
-      <div style="width: 20%; float: left; color: black;padding: 6px;font-weight: 500;border-right: 1px black solid;    border-bottom: 1px solid black;">
+      <div style="width: 40%; float: left; color: black;padding: 6px;font-weight: 500;    ">
         {{ ucfirst($product->device_box_available) }}</div>
-      <div style="width: 10%; float: left;"></div>
-
-
+     
+</div>
   </div>
-  <ul style="margin-top: 410px; list-style: none;width: 100%;">
+  <br/>
+  <ul style=" list-style: none;width: 100%;">
     <li style="width: 50%;float: left;cursor: pointer;"><div onclick="ContactShow('{{ $product->id }}')" align="" style="width: 186px; text-align: center; background-color: #4a88c1 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
     <a style="text-decoration: none;color: white;" href="{{ route('personcontact',$product->id) }}"> Contact </a>
     </div></li>
@@ -350,8 +357,8 @@ cursor: pointer;
 
       <div style=" margin: 0 auto; ">
         <ul class="tabs" data-persist="true">
-            <li><a href="#view1">ABOUT THIS PRODUCT</a></li>
-            <li><a href="#view2">ASK SELLER A QUESTION</a></li>
+            <li><a  class="fontAtMob" href="#view1">ABOUT THIS PRODUCT</a></li>
+            <li><a class="fontAtMob" href="#view2">ASK SELLER A QUESTION</a></li>
          
         </ul>
         <div class="tabcontents">
