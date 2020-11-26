@@ -666,7 +666,7 @@ small {
    @endif
    <input type="hidden" value="{{ $product->id }}" id="product_id">
    <style type="text/css">
-      .color_active{ background-image: linear-gradient(to bottom right, #ffffff, #ae256d);
+      .color_active{ background:  #4a88c1 !important;
  color: white !important; }
    </style>
    <hr style="width: 80%;" />
@@ -678,8 +678,8 @@ small {
       @foreach($product->variation_colors as $color)
       @if($productColor != $color->color)
       <div class="@if($i==1) color_active @endif productColorClass" id="mobviebtnsabove" style="width: 20%;  border: 2px #d3d3d3 solid ; cursor: pointer;float: left; text-align: center;    padding: 5px 10px 5px 10px;margin-right: 6px;
-         border-radius: 6px;">
-         <button id="mobviebtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: black;  font-weight: 500;">{{ ucwords($color->color) }}</button>
+         border-radius: 6px; background: {{ $color->color }}; ">
+         <button id="mobviebtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: white;  font-weight: 500;">{{ ucwords($color->color) }}</button>
       </div>
       @endif
       @php $productColor = $color->color; $i++; @endphp

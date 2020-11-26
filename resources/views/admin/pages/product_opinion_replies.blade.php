@@ -65,14 +65,16 @@
                                         <td>
                                             <table>
                                                <tr>
-                                                   <td>
-                                                       <form id="{{ $reply->id }}" method="post" action="{{ route('Reply.destroy',$reply->id) }}">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
-                                                       </form>
-                                                       
-                                                   </td>
+                                                    @if(Session::get('admintype')=='superadmin')
+                                                       <td>
+                                                           <form id="{{ $reply->id }}" method="post" action="{{ route('Reply.destroy',$reply->id) }}">
+                                                                @csrf
+                                                                @method('delete')
+                                                                <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
+                                                           </form>
+                                                           
+                                                       </td>
+                                                    @endif
                                                </tr>
                                             </table>
                                         </td>

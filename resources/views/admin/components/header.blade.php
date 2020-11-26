@@ -142,6 +142,17 @@
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Admin User</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('adminuser') }}">View Admin User</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
                                     <span>User</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">

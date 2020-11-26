@@ -838,7 +838,7 @@
                                                 <div class="form-group row " id="other_detail_div">
                                                     <label for="example-text-input" class="col-md-2 col-form-label">Other Detail Content</label>
                                                     <div class="col-md-10">
-                                                        <textarea id="textarea" class="form-control" rows="5" name="other_detail" placeholder="Please Type Detail...">{{ $product->other_detail }}</textarea>
+                                                        <textarea id="textarea" class="form-control tinymce-classic" rows="5" name="other_detail" placeholder="Please Type Detail...">{{ $product->other_detail }}</textarea>
                                                         @error('other_detail')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror

@@ -84,6 +84,7 @@
                                             <table>
                                                <tr>
                                                    <td><a href="{{ route('User.edit',$user->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
+                                                    @if(Session::get('admintype')=='superadmin')
                                                    <td>
                                                        <form id="{{ $user->id }}" method="post" action="{{ route('User.destroy',$user->id) }}">
                                                             @csrf
@@ -91,6 +92,7 @@
                                                        </form>
                                                        <button type="button" onclick="user_delete('{{ $user->id }}');" class="user_delete" data-id="{{ $user->id }}" style="border: none;"><i class="fas fa-trash"></i></button>
                                                    </td>
+                                                   @endif
                                                </tr>
                                             </table>
                                         </td>

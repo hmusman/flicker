@@ -83,15 +83,15 @@ class ProductController extends Controller
             'quantity'=>'bail | required | numeric',
             'description'=>'required',
             'image1'=>'required|mimes:png,jpg,jpeg',
-            'image2'=>'required|mimes:png,jpg,jpeg',
-            'image3'=>'required|mimes:png,jpg,jpeg',
-            'image4'=>'required|mimes:png,jpg,jpeg',
-            'image5'=>'required|mimes:png,jpg,jpeg',
-            'image6'=>'required|mimes:png,jpg,jpeg',
-            'image7'=>'required|mimes:png,jpg,jpeg',
-            'image8'=>'required|mimes:png,jpg,jpeg',
-            'image9'=>'required|mimes:png,jpg,jpeg',
-            'image10'=>'required|mimes:png,jpg,jpeg',
+            'image2'=>'mimes:png,jpg,jpeg',
+            'image3'=>'mimes:png,jpg,jpeg',
+            'image4'=>'mimes:png,jpg,jpeg',
+            'image5'=>'mimes:png,jpg,jpeg',
+            'image6'=>'mimes:png,jpg,jpeg',
+            'image7'=>'mimes:png,jpg,jpeg',
+            'image8'=>'mimes:png,jpg,jpeg',
+            'image9'=>'mimes:png,jpg,jpeg',
+            'image10'=>'mimes:png,jpg,jpeg',
         ]);
 
         if($validations->fails())
@@ -367,7 +367,14 @@ class ProductController extends Controller
             'description'=>'required',
             'image1'=>'mimes:png,jpg,jpeg',
             'image2'=>'mimes:png,jpg,jpeg',
-            'image3'=>'mimes:png,jpg,jpeg'
+            'image3'=>'mimes:png,jpg,jpeg',
+            'image4'=>'mimes:png,jpg,jpeg',
+            'image5'=>'mimes:png,jpg,jpeg',
+            'image6'=>'mimes:png,jpg,jpeg',
+            'image7'=>'mimes:png,jpg,jpeg',
+            'image8'=>'mimes:png,jpg,jpeg',
+            'image9'=>'mimes:png,jpg,jpeg',
+            'image10'=>'mimes:png,jpg,jpeg',
         ]);
 
         if($validations->fails())
