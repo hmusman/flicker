@@ -320,9 +320,9 @@ cursor: pointer;
 
 
   </div>
-  <ul style="margin-top: 549px; list-style: none;width: 100%;">
+  <ul style="margin-top: 410px; list-style: none;width: 100%;">
     <li style="width: 50%;float: left;cursor: pointer;"><div onclick="ContactShow('{{ $product->id }}')" align="" style="width: 186px; text-align: center; background-color: #4a88c1 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
-    <a style="text-decoration: none;color: white;" href="{{ route('personcontact') }}"> Contact </a>
+    <a style="text-decoration: none;color: white;" href="{{ route('personcontact',$product->id) }}"> Contact </a>
     </div></li>
     <li style="width: 50%; float: left;display:none;" id="contact{{ $product->id }}"><div align="" style="width: 186px; text-align: center;background-color: #4a88c1 ;color: rgb(253, 245, 245);padding: 6px;font-weight: 500;float: left; ">
     {{ $product->phone }}
@@ -348,7 +348,7 @@ cursor: pointer;
   <div class="row">
     <div class="col-md-12">
 
-      <div style=" margin: 0 auto; padding: 120px 0 40px;">
+      <div style=" margin: 0 auto; ">
         <ul class="tabs" data-persist="true">
             <li><a href="#view1">ABOUT THIS PRODUCT</a></li>
             <li><a href="#view2">ASK SELLER A QUESTION</a></li>

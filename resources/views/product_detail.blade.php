@@ -371,7 +371,7 @@ small {
 
             <button style="background-color: #4a88c1 !important;" type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
             <a href="{{url('/')}}/Login" > <button type="button" class="btn-upper btn" >SignUp</button></a>
-            <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;     margin-left: 72px;">Forget Password</a>
+            <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;     margin-left: 72px;">Forgot Password</a>
           </form>
                          
                      
@@ -734,9 +734,9 @@ small {
    <div class="col-md-12 fontUbantu">
       <div style=" margin: 0 auto; padding: 120px 0 40px;">
          <ul class="tabs fontUbantu" data-persist="true" style="text-align: initial; padding: 11px !important;">
-            <li><a href="#view1" class="fontUbantu" style="font-size: 15px;">TECHNICLE SPECS</a></li>
+            <li><a href="#view1" class="fontUbantu" style="font-size: 15px;">TECHNICAL SPECS</a></li>
             <li><a href="#view2" class="fontUbantu" style="font-size: 15px;">OPINIONS</a></li>
-            <li><a href="#view3" class="fontUbantu" style="font-size: 15px;">VEDIOS</a></li>
+            <li><a href="#view3" class="fontUbantu" style="font-size: 15px;">VIDEOS</a></li>
             <li><a href="#view4" class="fontUbantu" style="font-size: 15px;">REVIEWS</a></li>
          </ul>
          <div class="tabcontents">
@@ -1854,14 +1854,14 @@ Up to 20 h (multimedia)
           </div>
 
 
-            <div id="view3">
+            <div id="view3" style="padding-left:30px">
                @if($product->video_link !='')
                {!! $product->video_link !!}
                @else
                <h5>No Video Available</h5>
                @endif
             </div>
-            <div id="view4">
+            <div id="view4" style="padding-left:30px">
                <h5>No Reviws Availabla</h5>
             </div>
          </div>

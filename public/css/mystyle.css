@@ -1922,7 +1922,9 @@ border-color: white !important;
 }
 
 #myUL li a:hover:not(.header) {
-	background-color: white !important;
+  background-color: white !important;
+  color: green !important
+  ;
 }
 
 .img-hover-zoom {

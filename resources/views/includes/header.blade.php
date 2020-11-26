@@ -353,8 +353,8 @@ padding: 11px 10px 0px 10px;
          font-weight: bold;
          background-color: #4a88c1 !important;
          color: white !important;
-         height: 35px;
-         margin-top: 0px;
+         height: 35.1px;
+         margin-top: 0.5px;
          "> Price Calculator  </a>
    </li>
 </ul>

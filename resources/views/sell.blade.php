@@ -1482,7 +1482,7 @@ color: black;
                           </div>  
 
                           <button type="button" class="btn-upper btn subbtn checkout-page-button modal_login">Login</button>
-                          <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forget Password</a>
+                          <a href="/password/reset" class=" col-md-offset-2 btn-upper btn subbtn checkout-page-button" style="background: #e30070;">Forgot Password</a>
 
 
                         </form>

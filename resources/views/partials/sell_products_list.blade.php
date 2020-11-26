@@ -91,7 +91,9 @@ ul[class="ulatMob"]{
 }
 
 .one{
-      width: auto !important;
+      /* width: auto !important; */
+      height: 50% !important;
+      width: 50% !important;
 }
 </style>
 <div class="col-md-12">
@@ -106,8 +108,21 @@ ul[class="ulatMob"]{
       @php $img2 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img2 @endphp
       @php $img3 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img3 @endphp
       <div style="width: 100%; margin-top: 30px; float: left;">
-          <div style="width: 30%; float: left;" > 
+          <div style="width: 25%; float: left; height: 100% ; " > 
 
+         
+         <div style="height: 100%">
+<div class="autoplayFeatures" style="text-align: center;" >
+                  <img src="{{ asset($img1) }}" class="one" alt="Trulli" >
+                  <img src="{{ asset($img2) }}" class="one" alt="Trulli">
+                  <img src="{{ asset($img3) }}" class="one" alt="Trulli">
+
+
+
+              </div>
+         
+         </div>
+<!-- 
               <div class="autoplayFeatures" style="text-align: center;" >
                   <img src="{{ asset($img1) }}" class="one" alt="Trulli" >
                   <img src="{{ asset($img2) }}" class="one" alt="Trulli">
@@ -115,15 +130,13 @@ ul[class="ulatMob"]{
 
 
 
-  <!-- <img src="{{ asset('storage/images/headerimg/1.png') }}"  class="one" alt="Trulli" > -->
-
-              </div>
+              </div> -->
             
             </div>
-            <div style="width: 70%; float: left;" >
+            <div style="width: 75%; float: left;" >
             
             
-              <h4 class="mobNameResp" style="color: black ; margin-top: 0px !important ">{{ ucwords($row->model) }}</h4>
+              <h4 class="mobNameResp" style="color: black ; margin-top: 0px !important ;font-size: 19px;">{{ ucwords($row->model) }}</h4>
               <!-- <p style="color: #969494;">&#x2713;Collisimo&#x2713;2-4 Jours&#x2713;Guarntie 2 ans&#x2713; FR Plug</p> -->
             
 
@@ -152,25 +165,27 @@ ul[class="ulatMob"]{
               <div class="row">
                 <div class="col-md-6">
                <p style="    position: relative;
-                  top: 16px;
+                  top: 3px;
                   left: 25px;
                   font-weight: 600; color: #4a88c1;
               ">  PKR</p>
               <p style="    color: #4a88c1;
-                  font-size: 34px;margin-top: -10px !important;
-                 padding-left: 22px;
-                  font-weight: 700;"> {{ $row->price }}</p>
+    font-size: 24px;
+    margin-top: -22px !important;
+    padding-left: 19px;
+    font-weight: 700;
+"> {{ $row->price }}</p>
                 </div>
 
 
                 <div class="col-md-6">
 
-                  <div style="width: 50%; float: left; color: black;">
+                  <div style="width: 50%; float: left; color: black;     color: #0b0c0c;  font-size: 13px; font-weight: 600;">
                   <p>City:</p>
                       <p>PTA STATUS:</p>
                           <p>Date Posted:</p>
                   </div>
-                  <div style="width: 50%; float: left; color: black;">
+                  <div style="width: 50%; float: left; color: black;  color: #0b0c0c;  font-size: 13px; font-weight: 600;">
                   
                     <p>{{ ucfirst($row->city) }}</p>
                     <p>{{ ucfirst($row->pta) }}</p>
@@ -180,15 +195,15 @@ ul[class="ulatMob"]{
                 </div>
               </div>
 
-              <ul class="ulatMob" style="margin-top: -27px ; position: relative;
+              <ul class="ulatMob" style="margin-top: -51px ; position: relative;
     margin-bottom: -11px !important;padding-left: 19px;;">
                 <li>
-                    <a href="{{ route('SellProductDetail',$row->id) }}" style="    background-color: #4a88c1; color: white ; width: 120px;  border-radius: 3px  ;    padding: 5px 25px 5px 25px;text-align: center;cursor: pointer;text-decoration: none;">Detail</a>
+                    <a href="{{ route('SellProductDetail',$row->id) }}" style="    background-color: #4a88c1; color: white ; width: 120px;  border-radius: 3px  ;    padding: 5px 21px 5px 21px;text-align: center;cursor: pointer;text-decoration: none;">Detail</a>
 
                 </li>
                 <li>
                   <a style="text-decoration: none;
-    color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 20px 2.2px 20px;text-align: center;cursor: pointer;">Contact</p></a> 
+    color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a> 
 
                 </li>
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>

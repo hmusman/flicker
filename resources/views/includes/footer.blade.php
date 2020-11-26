@@ -31,7 +31,7 @@
  
  
      <p class="fontUbantu" style="color:#4f4a4b !important ; text-transform: uppercase;font-weight: 600;     margin-right: 42px;    font-size: 13px;    text-align: right; ">
-      IN SUPPORT OF <font style="    font-size: 33px;color: #c6ccd2;"> &empty;</font> <font style="margin-left: -35px;     "> SPAM </font>CONTRACT 
+      IN SUPPORT OF <font style="    font-size: 33px;color: #c6ccd2;position: relative; left: 11px; z-index: 0;"> &empty;</font> <font style="margin-left: -17px;     position: relative;    "> SPAM </font>CONTRACT 
        
      </p>
    

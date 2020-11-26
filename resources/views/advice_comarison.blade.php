@@ -1791,7 +1791,7 @@ height: 65px;
     <div class="container" style="padding-right: 1px !important;
     padding-left: 0px !important;">
       <div class="row">
-        <div class="col-md-12" style="background-color: #f3f3f3">
+        <div class="col-md-12" style="background-color: #f3f3f3; border-right: 6px #fafafa solid;">
 
           <p style="width: 100%;font-weight: 500;
     font-size: 13px;
@@ -1850,7 +1850,7 @@ height: 65px;
       <div class="row">
         <div class="col-md-12">
 
-          <p class="mobTitleOnMob" style="    font-size: 22px;
+          <p class="mobTitleOnMob" style="    font-size: 22px;height: 66px;
               color: #4a88c1;
               font-weight: bolder;">{{ ucwords($product->name) }}</p>
 
@@ -2311,7 +2311,7 @@ height: 65px;
     <div class="container" style="padding-right: 1px !important;
       padding-left: 0px !important;">
       <div class="row">
-        <div class="col-md-12" style="background-color: #f3f3f3">
+        <div class="col-md-12" style="background-color: #f3f3f3;border-right: 6px #fafafa solid;">
   
           <p style="width: 100%;font-weight: 500;
       font-size: 13px;
@@ -2399,7 +2399,7 @@ height: 65px;
     <div class="container" style="padding-right: 1px !important;
       padding-left: 0px !important;">
       <div class="row">
-        <div class="col-md-12" style="background-color: #f3f3f3">
+        <div class="col-md-12" style="background-color: #f3f3f3; border-right: 6px #fafafa solid;">
   
           <p style="width: 100%;font-weight: 500;
       font-size: 13px;
