@@ -139,8 +139,9 @@ padding: 11px 10px 0px 10px;
            <span id="reglogin" onclick="reglogin();" class="reglogin" style="cursor: pointer;position: absolute;
         right: 46px;
         bottom: 25px;color: white !important; border-bottom: 1px white solid  " align="right"    >
-          <i class="fa fa-user fontUbantu" style="margin-top: 6px ; color: white; "></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
+          <i class="fontUbantu" style="margin-top: 6px ; color: white;     position: relative;top: -1px;left: 1px;  height: 15px;">  <img   src="{{ asset('storage/images/headerimg/ic_account_circle_white_18dp.png') }}"></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
 
+        
         @endif
       </div>
     </div>

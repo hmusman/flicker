@@ -53,14 +53,20 @@ input[type=number] {
    border-right: none;
     border-left: none;
     border-top: none;  border-bottom: none;
-   background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #fff;
-
+   /* background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #fff; */
+background-image: url('{{ asset("storage/images/headerimg/image_2020_11_27T06_10_54_587Z.png")}}');
+background-position: right;
+    background-size: 21px;
+    background-position-y: 10px;
 }
 #sort_by_order{
       border-right: none;
     border-left: none;
     border-top: none;  border-bottom: none;
-   background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #fff;
+ background-image: url('{{ asset("storage/images/headerimg/image_2020_11_27T06_10_54_587Z.png")}}');
+background-position: right;
+    background-size: 21px;
+    background-position-y: 10px;
 }
 
 
@@ -78,14 +84,15 @@ select{
   background: transparent;
   /* background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
 
-  background-image: url({{asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}});
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 5px;
-  border: 1px solid #dfdfdf;
-  border-radius: 2px;
-  margin-right: 2rem;
-  padding: 1rem;
+  background-image: url({{asset('storage/images/headerimg/ero-icon.png')}});
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 13px;
+    
+
+    margin-right: 2rem;
+    padding: 1rem;
+    background-size: 14px;
 
 }
 @media (min-width: 1400px) and (max-width : 2000px){

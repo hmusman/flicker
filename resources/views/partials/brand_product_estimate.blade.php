@@ -18,7 +18,7 @@ select{
   background: transparent;
   /* background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
 
-  background-image: url({{asset('storage/images/headerimg/ic_keyboard_arrow_down_black_18dp.png')}});
+  background-image: url({{asset('storage/images/headerimg/ero-icon.png')}});
   background-repeat: no-repeat;
   background-position-x: 100%;
   background-position-y: 5px;
@@ -26,7 +26,11 @@ select{
   border-radius: 2px;
   margin-right: 2rem;
   padding: 1rem;
-
+background-size: 12px;
+    background-position-x: right;
+    background-position-y: 6px;
+   
+    background-origin: content-box;
 }
 
    .btn-primary {
