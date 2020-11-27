@@ -48,11 +48,11 @@ class SellProductController extends Controller
         $filename1 = $time.'_'.md5($filename).'.'.$ext1;
         $img->storeAs('public/admin/images/sellproduct', $filename1);
         $img->storeAs('public/admin/images/sellproduct/thumbnail', $filename1);
-        $thumbnailpath = public_path('storage\admin\images\sellproduct\thumbnail\\'.$filename1);
+        $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
         Image::make($img->getRealPath())->resize(175,214)->save(public_path('storage/admin/images/sellproduct/thumbnail/175_'.$filename1));
         Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
         Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($img->getRealPath())->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
 
@@ -65,10 +65,10 @@ class SellProductController extends Controller
         $filename1 = $time.'_'.md5($filename).'.'.$ext1;
         $img->storeAs('public/admin/images/sellproduct', $filename1);
         $img->storeAs('public/admin/images/sellproduct/thumbnail', $filename1);
-       $thumbnailpath = public_path('storage\admin\images\sellproduct\thumbnail\\'.$filename1);
+        $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
         Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
         Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($img->getRealPath())->resize(400,400)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
     public function store(Request $request)
@@ -612,6 +612,7 @@ class SellProductController extends Controller
     public function SortByOrderPriceSellProducts(Request $request)
     {
         $products = SellProduct::orderBy('id',$request->val)->orderBy('price',$request->price)->paginate(10);
+        
         return view('partials.sell_products_list',compact('products'));
     }
 

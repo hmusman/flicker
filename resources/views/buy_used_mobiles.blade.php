@@ -1595,7 +1595,7 @@ ul[class="pagination"] > .page-item{
                <div style="width:30%; float:left; background-color:#ffffff;     color: #999999;    font-weight: 500;    padding: 10px 0px 0px 0px; ">ORDER</div>
                <div style="width:70%; float:left;  ">
                   <select class="form-control" id="sort_by_order" style="color: #0b0c0c;font-weight: 600">
-                     <option selected="" disabled="" style="color: black;  font-weight: 600 !important;" >Please Choose</option>
+                     <option selected="" disabled="" style="color: black;  font-weight: 600 !important;" hidden="">Please Choose</option>
                      <option value="desc" >Recent First</option>
                      <option value="asc" >Recent Last</option>
                   </select>
@@ -1608,7 +1608,7 @@ ul[class="pagination"] > .page-item{
                <div style="width:30%; float:left; background-color:#ffffff;     color: #999999;     font-weight: 500;  padding: 10px 0px 0px 0px; ">PRICE</div>
                <div style="width:70%; float:left;  ">
                   <select class="form-control" id="sort_by_price" style="color: #0b0c0c;font-weight: 600">
-                     <option selected="" disabled="">Please Choose</option>
+                     <option selected="" disabled="" hidden="">Please Choose</option>
                      <option value="asc">Low to High</option>
                      <option value="desc">High to Low</option>
                   </select>
@@ -2119,12 +2119,12 @@ ul[class="pagination"] > .page-item{
       $('#upperInpt').val(''); 
       var val = $('#sort_by_order option:selected').val();
       var price = $('#sort_by_price option:selected').val();
-      if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() =="Price")
+      if($('#sort_by_order option:selected').val()!="Please Choose" && $('#sort_by_price option:selected').val() =="Please Choose")
       {
          FetchSortByOrderSellProducts(0,val,options);
       }
 
-      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      else if($('#sort_by_order option:selected').val()!="Please Choose" && $('#sort_by_price option:selected').val() !="Please Choose")
       {
          FetchSortByOrderPriceSellProducts(0,val,price,options);
       }
@@ -2144,12 +2144,12 @@ ul[class="pagination"] > .page-item{
       $('#upperInpt').val('');
       var val = $('#sort_by_order option:selected').val();
       var price = $('#sort_by_price option:selected').val();
-      if($('#sort_by_order option:selected').val()=="Order" && $('#sort_by_price option:selected').val() !="Price")
+      if($('#sort_by_order option:selected').val()=="Please Choose" && $('#sort_by_price option:selected').val() !="Please Choose")
       {
          FetchSortByPriceSellProducts(0,price,options);
       }
 
-      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      else if($('#sort_by_order option:selected').val()!="Please Choose" && $('#sort_by_price option:selected').val() !="Please Choose")
       {
          FetchSortByOrderPriceSellProducts(0,val,price,options);
       }
@@ -2185,8 +2185,8 @@ ul[class="pagination"] > .page-item{
     $(".brands_check"). prop("checked", false);
     $('#from_price').val('');
     $('#to_price').val(''); 
-    $('#sort_by_order').val('Order');
-    $('#sort_by_price').val('Price');
+    $('#sort_by_order').val('Please Choose');
+    $('#sort_by_price').val('Please Choose');
     FetchUpperSearchSellProducts(0,$('#upperInpt').val(),options); usedHideAgain(); 
   }
 
@@ -2293,8 +2293,8 @@ ul[class="pagination"] > .page-item{
       $("#sell").val("Select City");
       $("#upperInpt").val("");
       $("#upperPrice").val("Select Price");
-      $("#sort_by_order").val("Order");
-      $("#sort_by_price").val("Price");
+      $("#sort_by_order").val("Please Choose");
+      $("#sort_by_price").val("Please Choose");
       $("#upperInpt").val("");
       if($('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
@@ -2334,6 +2334,11 @@ ul[class="pagination"] > .page-item{
         FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
       } 
 
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchData(0,options);
+      }
+
   });
 
   $('.city_check').change(function(){
@@ -2344,8 +2349,8 @@ ul[class="pagination"] > .page-item{
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
-      $("#sort_by_order").val("Order");
-      $("#sort_by_price").val("Price");
+      $("#sort_by_order").val("Please Choose");
+      $("#sort_by_price").val("Please Choose");
       $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
@@ -2386,6 +2391,11 @@ ul[class="pagination"] > .page-item{
         FetchPriceCityStatusProducts(0,from,to,cities,statuses,options);
       } 
 
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchData(0,options);
+      }
+
   });
 
    $('.device_status_check').change(function(){
@@ -2396,15 +2406,15 @@ ul[class="pagination"] > .page-item{
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
-      $("#sort_by_order").val("Order");
-      $("#sort_by_price").val("Price");
+      $("#sort_by_order").val("Please Choose");
+      $("#sort_by_price").val("Please Choose");
       $("#upperInpt").val("");
       if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
       {
         FetchStatusProducts(0,statuses,options);
       } 
 
-       else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      else if(!$('.brands_check').is(":checked") && $('.city_check').is(":checked") && $('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
        {
         FetchCityStatusProducts(0,cities,statuses,options);
       } 
@@ -2439,6 +2449,11 @@ ul[class="pagination"] > .page-item{
         FetchBrandsPriceCityStatusProducts(0,brands,from,to,cities,statuses,options);
       } 
 
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchData(0,options);
+      }
+
   });
 
   $('#go_price').click(function(){
@@ -2449,8 +2464,8 @@ ul[class="pagination"] > .page-item{
       var to = $('#to_price').val();
       $("#sell").val("Select City");
       $("#upperPrice").val("Select Price");
-      $("#sort_by_order").val("Order");
-      $("#sort_by_price").val("Price");
+      $("#sort_by_order").val("Please Choose");
+      $("#sort_by_price").val("Please Choose");
       $("#upperInpt").val("");
 
       if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
@@ -2491,6 +2506,11 @@ ul[class="pagination"] > .page-item{
       else if($('.brands_check').is(":checked") && $('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()!='' && $('#to_price').val()!='')
       {
         FetchBrandsPriceCityProducts(0,brands,from,to,cities,options);
+      }
+
+      else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='')
+      {
+        FetchData(0,options);
       }
 
   });
@@ -2619,27 +2639,26 @@ ul[class="pagination"] > .page-item{
         FetchUpperSearchCityPriceSellProducts(page,inptVal,city,price,options);
       }
 
-      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() =="Price")
+      else if($('#sort_by_order option:selected').val()!="Please Choose" && $('#sort_by_price option:selected').val() =="Please Choose")
       {
          FetchSortByOrderSellProducts(page,val,options);
       }
 
-      else if($('#sort_by_order option:selected').val()=="Order" && $('#sort_by_price option:selected').val() !="Price")
+      else if($('#sort_by_order option:selected').val()=="Please Choose" && $('#sort_by_price option:selected').val() !="Please Choose")
       {
          FetchSortByPriceSellProducts(page,Orderprice,options);
       }
 
-      else if($('#sort_by_order option:selected').val()!="Order" && $('#sort_by_price option:selected').val() !="Price")
+      else if($('#sort_by_order option:selected').val()!="Please Choose" && $('#sort_by_price option:selected').val() !="Please Choose")
       {
          FetchSortByOrderPriceSellProducts(page,val,Orderprice,options);
       }
 
       else if(!$('.brands_check').is(":checked") && !$('.city_check').is(":checked") && !$('.device_status_check').is(":checked") && $('#from_price').val()=='' && $('#to_price').val()=='' && $('#sell').children('option:selected').val()=='Select City' && $('#upperPrice').children('option:selected').val()=='Select Price')
       {
-        FetchData(page)
+        FetchData(page,options);
       } 
   });
-
 </script>
   
 
