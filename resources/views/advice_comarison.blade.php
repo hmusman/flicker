@@ -1584,7 +1584,9 @@ height: 65px;
 
  <div style="width: 19%;  float: left;">
 
-<div class="LeftColheightOnMob" style="height: 476px; background-color: #fafafa"></div>
+<div class="LeftColheightOnMob" style="height: 476px; background-color: #fafafa">
+<img src="{{ asset('storage/images/headerimg/posterss.png') }}"  style="height: 100%; width: 100%"/>
+</div>
 <div style="height: 3700px; "  id="MainHeightOnDesktop">
 
     <table id="customers">

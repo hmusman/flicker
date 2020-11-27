@@ -46,7 +46,9 @@
 
  <style>
 @media (max-width: 550px){
-
+div[id="view1"]{
+  height: 30px !important;
+}
 .fontAtMob{
   font-size: 9px !important;
 }
@@ -367,15 +369,14 @@ cursor: pointer;
             @if($product->detail !='')
             <p>{{ ucfirst($product->detail) }}</p>
             @else
-            <p>No Detail is Available</p>
+              <p>AssalamoAlaikum Helo I want to sale Phone..............................</p>
             @endif
           </div>
 
 
           <div id="view2">
-              No QUESTION Available
-            <!-- <h4 style="background-color: #dcdcdc38;
-                padding: 10px;">Question About this product (884) </h4>
+            
+            <h4 style="background-color: #dcdcdc38;padding: 10px;">Question About this product (884) </h4>
             <p> <a href="#">Login</a> or <a href="#">Register</a> to Ask a Question</p>
 
 
@@ -383,58 +384,34 @@ cursor: pointer;
             <p>Other Question askes by vivo Electronic Pvt Ltd.</p>
 
             <hr />
-
-            <p style="font-weight: 500;"><font style="background-color: #8cbce5;
-                padding: 10px;
-                color: white;" > Q</font> Mezan Bank holder bi ei mobile purchase kar sakta?</p>
+<br/>
+            <p style="font-weight: 500;"><font style="background-color: #8cbce5; padding: 10px; color: white;" > Q</font> Mezan Bank holder bi ei mobile purchase kar sakta?</p>
             <p style="color: #beb4b4; margin-left: 48px;">Muhammad Ali 4 days ago</p>
 
 
 
-            <p style="font-weight: 500;">
-              <font style="background-color: #c2bebe;
-                padding: 10px;
-                color: white;"> A</font>You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.
-            </p>
+            <p style="font-weight: 500;"> <font style="background-color: #c2bebe; padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.</font> </p>
             <p style="color: #beb4b4; margin-left: 48px;">Vivi Electric Pvt Ltd, Awnsered within 2 hours</p>
 
 
 
-            <p style="font-weight: 500;">
-              <font style="background-color: #8cbce5;
-                padding: 10px;
-                color: white;"> Q</font> Mezan Bank holder bi ei mobile purchase kar sakta?
-            </p>
+            <p style="font-weight: 500;"> <font style="background-color: #8cbce5; padding: 10px; color: white;"> Q</font> Mezan Bank holder bi ei mobile purchase kar sakta? </p>
             <p style="color: #beb4b4; margin-left: 48px;">Muhammad Ali 4 days ago</p>
 
 
 
-            <p style="font-weight: 500;">
-              <font style="background-color: #c2bebe;
-                padding: 10px;
-                color: white;"> A</font>You can make payment both with Credit Card/Debit, However Installments only available on
-              Credit Card.
-            </p>
+            <p style="font-weight: 500;"> <font style="background-color: #c2bebe; padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.</font> </p>
             <p style="color: #beb4b4; margin-left: 48px;">Vivi Electric Pvt Ltd, Awnsered within 2 hours</p>
 
 
-            <p style="font-weight: 500;">
-              <font style="background-color: #8cbce5;
-                padding: 10px;
-                color: white;"> Q</font> Mezan Bank holder bi ei mobile purchase kar sakta?
-            </p>
+            <p style="font-weight: 500;"> <font style="background-color: #8cbce5; padding: 10px;  color: white;"> Q</font> Mezan Bank holder bi ei mobile purchase kar sakta? </p>
             <p style="color: #beb4b4; margin-left: 48px;">Muhammad Ali 4 days ago</p>
 
 
 
-            <p style="font-weight: 500;">
-              <font style="background-color: #c2bebe;
-                padding: 10px;
-                color: white;"> A</font>You can make payment both with Credit Card/Debit, However Installments only available on
-              Credit Card.
-            </p>
+            <p style="font-weight: 500;"> <font style="background-color: #c2bebe;padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.</font> </p>
             <p style="color: #beb4b4; margin-left: 48px;">Vivi Electric Pvt Ltd, Awnsered within 2 hours</p>
- -->
+
           </div>
 
           </div>
