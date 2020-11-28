@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use App\ProductOpinion;
 use App\OpinionReply;
 use App\SellProduct;
-
+use App\SellerQuestion;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
@@ -48,6 +48,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function opinions()
     {
         return $this->hasMany(ProductOpinion::class,'user_id','id');
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(SellerQuestion::class,'user_id','id');
     }
 
     public function sellproducts()

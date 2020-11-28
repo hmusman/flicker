@@ -100,12 +100,14 @@ Route::view('NewMobilePhonePrices','new_mobile_phone_prices');
 Route::view('PriceCalculator','price_calculator');
 Route::get('ProductDetail/{id}','ProductController@show')->name('ProductDetail');
 Route::get('SellProductDetail/{id}','SellProductController@show')->name('SellProductDetail');
+Route::post('SellProductQuestion','SellerQuestionController@store')->name('SellProductQuestion');
 
 Route::post('ProductOpinion','ProductOpinionsController@store')->name('ProductOpinion');
 Route::get('ProductOpinionData','ProductOpinionsController@ProductOpinionData')->name('ProductOpinionData');
 Route::get('ProductOpinionDataAscDesc','ProductOpinionsController@ProductOpinionDataAscDesc')->name('ProductOpinionDataAscDesc');
 Route::get('ProductOpinionSearchData','ProductOpinionsController@ProductOpinionSearchData')->name('ProductOpinionSearchData');
 Route::post('OpinionReply','OpinionReplyController@store')->name('OpinionReply');
+Route::post('QuestionReply','SellerQuestionReplyController@store')->name('QuestionReply');
 
 Route::get('ProductDetailTwo/{id}','ProductController@showTwo')->name('ProductDetailTwo');
 

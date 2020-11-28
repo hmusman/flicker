@@ -1405,6 +1405,8 @@ ul[class="pagination"] > .page-item{
 
 <div class="row fontUbantu" style="    margin-left: 15px;margin-bottom: 15px;">
    <a class="fontUbantu" href="{{ route('BuyUsedAccessories') }}"  style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;">Buy Used Accessories</a>
+
+   <button class="fontUbantu" style="background-color: #4a88c1; color: white;padding: 6px 7px 10px 7px; text-decoration: none;border-radius: 4px; font-weight: bold;margin-left: 5px;border:none;cursor: pointer;" onclick="reset_all_filters();">Reset Filter</button>
 </div>
 
 <div class="row" style="margin-bottom:60px;">
@@ -1663,7 +1665,21 @@ ul[class="pagination"] > .page-item{
              ]
         };
   
-  
+  function reset_all_filters()
+  {
+    $(".brands_check"). prop("checked", false);
+    $(".device_status_check"). prop("checked", false);
+    $(".city_check"). prop("checked", false);
+    $(".brands_check"). prop("checked", false);
+    $('#from_price').val('');
+    $('#to_price').val('');
+    $('#sell').val('Select City');
+    $('#upperPrice').val('Select Price');
+    $('#upperInpt').val(''); 
+    $('#sort_by_order').val('Please Choose');
+    $('#sort_by_price').val('Please Choose');
+    FetchData(0,options);
+  }
 
   function FetchBrandProducts(page,brands,options)
   {

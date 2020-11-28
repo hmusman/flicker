@@ -9,6 +9,7 @@ use App\Category;
 use App\Brand;
 use Image;
 use DB;
+use App\SellerQuestion;
 class SellProductController extends Controller
 {
     
@@ -52,7 +53,7 @@ class SellProductController extends Controller
         Image::make($img->getRealPath())->resize(175,214)->save(public_path('storage/admin/images/sellproduct/thumbnail/175_'.$filename1));
         Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
         Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(500,500)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
 
@@ -68,7 +69,7 @@ class SellProductController extends Controller
         $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
         Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
         Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(500,500)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
     public function store(Request $request)
@@ -616,10 +617,12 @@ class SellProductController extends Controller
         return view('partials.sell_products_list',compact('products'));
     }
 
-    public function show($id)
+    public function show($id,Request $request)
     {
+
         $product = SellProduct::where('id',$id)->first();
-        return view('sell_product_detail',compact(['product']));
+        $questions = $product->questions()->paginate(1);
+        return view('sell_product_detail',compact(['product','questions']));
     }
 
     

@@ -71,6 +71,12 @@ border-left: 2px red solid !important;
       }
 
 
+footer{
+        top: 143px !important;
+    position: relative !important;
+
+}
+
 </style>
 @section('content')
 <div class="container">

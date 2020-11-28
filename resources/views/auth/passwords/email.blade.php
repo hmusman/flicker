@@ -46,6 +46,11 @@
       }
 
 
+footer{
+        top: 143px !important;
+    position: relative !important;
+
+}
 
       .ws_shadow{
          display: none !important;

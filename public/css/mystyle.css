@@ -3,8 +3,27 @@
 }
 
 
-
-
+.question-block{ width: 100%; margin-top: 15px; }
+.question-content-block{ box-sizing: border-box; width: 66%;display: inline-block;padding: 30px; }
+.question-reply-block{ width: 33%;display: inline-block; position: absolute; }
+.question-reply-block button
+{ 
+  position: relative; 
+  left: 55%;
+  cursor: pointer; 
+  background-color: #4a88c1;
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+.seller-reply-block{
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 30px !important;
+}
 .slider-track-high{
   background-image: linear-gradient(to bottom right, #028f63, #2c562d) !important;
   border-left: 12px white solid !important;

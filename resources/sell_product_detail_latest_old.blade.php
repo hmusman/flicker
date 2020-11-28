@@ -410,7 +410,7 @@ cursor: pointer;
                               <style>
                                  .pagination{ margin-top: 10px !important; }
                               </style>
-                              <div class="col-md-2" id="pages" style="padding-top: 11px;"  >{{ $questions->links() }} </div>
+                              <div class="col-md-2" id="pages" style="padding-top: 11px;"  >123 </div>
                            </div>
                            <div class="row" id="OpinonBox" style="display: none">
                               <div class="col-md-12" style="background-color: #f0f0f0;  " >
@@ -476,83 +476,99 @@ cursor: pointer;
                               </div>
                            </div>
                            </div> -->
-                       
+                        <div class="container opinions_data" id="OpinonrowThree">
+                           @if($product->questions->count() > 0)
+                              @foreach($product->questions as $row)
+                                <div class="row">
+                                  @if($row->replies->count() >0)
+                                    @foreach($row->replies as $opinion)
+                                      
+                                    @endforeach
+                                    @endif 
+                                  <div class="row" id="ReplyBox{{ $row->id }}" style="display: none;    margin: 0px auto;margin-top: 20px;width: 80%;">
+                                     <div class="col-md-12" style="background-color: #f0f0f0; border: 1px #81818133 solid; " >
+                                        <h5 style="margin-top: 9px;">Post Your Reply</h5>
+                                        <!-- <div class="row"> 
+                                           <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
+                                            <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
+                                           </div> -->
+                                        <hr/>
+                                        <form action="{{ route('OpinionReply') }}" method="post">
+                                           @csrf
+                                           <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
+                                           <input type="hidden" name="opinion_id" value="{{ $row->id }}">
+                                           <label>Your nickname (optional)</label><br/>
+                                           <input type="text" id="uname" name="nick_name" tabindex="101" maxlength="20" autocomplete="off" style="width:100%">
+                                           <br/>
+                                           <br/>
+                                           <!-- <div class="row"> 
+                                              <div class="col-md-6" ><p style="text-align:left">&nbsp;</p></div>
+                                               <div class="col-md-6" ><p  style="text-align:right"><button>SignUp</button></p></div>
+                                              </div> -->
+                                           <label>Your Reply</label><br/>
+                                           <textarea name="reply" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
+                                           <div class="row">
+                                              <div class="col-md-6" >
+                                                 <p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p>
+                                              </div>
+                                              <div class="col-md-6" >
+                                                 <p  style="text-align:right" class="submit_area">
+                                                    @if(!empty(Session::get('user')->id))
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                                                    @else
+                                                    <!-- <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button> -->
+                                                    <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
+                                                    <!-- <button type="button" id="mybtnNext" class="btn btn-primary">Login</button> -->
+                                                    <button class="interior" style="border-color: transparent;">
+                                                    <a  href="#open-modal"   class="btn btn-primary">Login</a>
+                                                    </button>
+                                                    @endif
+                                                 </p>
+                                              </div>
+                                           </div>
+                                        </form>
+                                     </div>
+                                  </div>
+                                </div>
+                              @endforeach
+                           @else
+                           no opinion available
+                           @endif
+                        </div>
                      </div>
                      <!-- <div id="view2MobileZero" style="width:20%; float:left " ></div> -->
                   </div>
                <br/>
 
-                @if($questions->count() > 0)
-                  @foreach($questions as $row)
-                      @php
-                        $date = Carbon\Carbon::parse($row->created_at);
-                        $now = Carbon\Carbon::now();
-                        $diff = $date->diffInDays($now);
-                      @endphp
-                      <div class="question-block">
-                        <div class="question-content-block">
+                @if($product->questions->count() > 0)
+                  @foreach($product->questions as $row)
+                      <p style="font-weight: 500;"><font style="background-color: #8cbce5; padding: 10px; color: white;" > Q</font> Mezan Bank holder bi ei mobile purchase kar sakta?</p>
+                      <p style="color: #beb4b4; margin-left: 48px;">Muhammad Ali 4 days ago</p>
+
+                      @if($row->replies->count() > 0)
+                        @foreach($row->replies as $reply)
+                            <p style="font-weight: 500;"> <font style="background-color: #c2bebe; padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.</font> </p>
+                        @endforeach
+                      @endif 
                           
-                          <p style="font-weight: 500; text-align: justify;"><font style="background-color: #8cbce5; padding: 10px; color: white;" > Q</font> {{ucfirst($row->question)}} </p>
-                          <p style="color: #beb4b4; margin-left: 48px;">{{ $row->user->name }} {{ $diff }} days ago</p>
-
-                        </div>
-
-                        <div class="question-reply-block">
-                          @if(!empty(Session::get('user')->id))
-                            @if(Session::get('user')->id == $product->user_id)
-                              <button onclick="replybox('{{ $row->id }}');">Reply</button>
-
-                            @endif
-                          @endif
-                        </div>
-
-
-                        <div class="row" id="ReplyBox{{ $row->id }}" style="display: none;  margin: 0px auto;margin-top: 20px;width: 80%;">
-                           <div class="col-md-12" style="background-color: #f0f0f0; border: 1px #81818133 solid; " >
-                              
-                              <form action="{{ route('QuestionReply') }}" method="post">
-                                 @csrf
-                                 <input type="hidden" name="question_id" value="{{ $row->id }}">
-
-                                 <label>Your Reply</label><br/>
-                                 <textarea name="reply" rows="4" cols="50" style="width:100%; border-color:#dfdfdf "  spellcheck="false"></textarea>
-                                 <div class="row">
-                                    <div class="col-md-6" >
-                                       <p style="text-align:left" class="login_status">@if(empty(Session::get('user')->id)) You are not login please login first @endif</p>
-                                    </div>
-                                    <div class="col-md-6" >
-                                       <p  style="text-align:right" class="submit_area">
-                                          @if(!empty(Session::get('user')->id))
-                                          <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
-                                          @else
-                                          <!-- <button type="button" id="sample" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Login</button> -->
-                                          <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
-                                          <!-- <button type="button" id="mybtnNext" class="btn btn-primary">Login</button> -->
-                                          <button class="interior" style="border-color: transparent;">
-                                          <a  href="#open-modal"   class="btn btn-primary">Login</a>
-                                          </button>
-                                          @endif
-                                       </p>
-                                    </div>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
-
-                        @if($row->replies->count() > 0)
-                          @foreach($row->replies as $reply)
-                            <div class="seller-reply-block">
-                                <p style="font-weight: 500;"> <font style="background-color: #c2bebe; padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">{{ ucfirst($reply->reply) }}</font> </p>
-                            </div>
-                
-                          @endforeach
-                        @endif 
-
-                      </div>   
                   @endforeach
                @else
                 no question available
                @endif
+
+
+               <p style="font-weight: 500;"><font style="background-color: #8cbce5; padding: 10px; color: white;" > Q</font> Mezan Bank holder bi ei mobile purchase kar sakta?</p>
+               <p style="color: #beb4b4; margin-left: 48px;">Muhammad Ali 4 days ago</p>
+               <p style="font-weight: 500;"> <font style="background-color: #c2bebe; padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.</font> </p>
+               <p style="color: #beb4b4; margin-left: 48px;">Vivi Electric Pvt Ltd, Awnsered within 2 hours</p>
+               <p style="font-weight: 500;"> <font style="background-color: #8cbce5; padding: 10px; color: white;"> Q</font> Mezan Bank holder bi ei mobile purchase kar sakta? </p>
+               <p style="color: #beb4b4; margin-left: 48px;">Muhammad Ali 4 days ago</p>
+               <p style="font-weight: 500;"> <font style="background-color: #c2bebe; padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.</font> </p>
+               <p style="color: #beb4b4; margin-left: 48px;">Vivi Electric Pvt Ltd, Awnsered within 2 hours</p>
+               <p style="font-weight: 500;"> <font style="background-color: #8cbce5; padding: 10px;  color: white;"> Q</font> Mezan Bank holder bi ei mobile purchase kar sakta? </p>
+               <p style="color: #beb4b4; margin-left: 48px;">Muhammad Ali 4 days ago</p>
+               <p style="font-weight: 500;"> <font style="background-color: #c2bebe;padding: 10px; color: white;"> A</font><font style="margin-left: 5px;">You can make payment both with Credit Card/Debit, However Installments only available on Credit Card.</font> </p>
+               <p style="color: #beb4b4; margin-left: 48px;">Vivi Electric Pvt Ltd, Awnsered within 2 hours</p>
             
              
             </div>
@@ -702,10 +718,7 @@ function submitRating(msg) {
 
 
 <script type="text/javascript">
-function replybox(id)
-{
-  $('#ReplyBox'+id).toggle();
-}
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
 CloudZoom.quickStart();
@@ -947,20 +960,20 @@ $('.multi-item-carousel .item').each(function(){
     });
   }
 
-  // $(document).on('click', '.pagination a', function(event){
-  //     event.preventDefault();
-  //     var page = $(this).attr('href').split('page=')[1]; 
-  //     if($('#asc_desc option:selected').val()!='Select View')
-  //     {
-  //       var val = $('#asc_desc option:selected').val();
-  //       var id = '{{ $product->id }}';
-  //       FetchDataAscDesc(page,val,id);
-  //     }
-  //     else if($('#opinion_search').val() !=''){
-  //       FetchOpinionSearchData(page,$('#opinion_search').val(),'{{ $product->id }}');
-  //     }
-  //     else{FetchData(page,'{{ $product->id }}')};
-  //   });
+  $(document).on('click', '.pagination a', function(event){
+      event.preventDefault();
+      var page = $(this).attr('href').split('page=')[1]; 
+      if($('#asc_desc option:selected').val()!='Select View')
+      {
+        var val = $('#asc_desc option:selected').val();
+        var id = '{{ $product->id }}';
+        FetchDataAscDesc(page,val,id);
+      }
+      else if($('#opinion_search').val() !=''){
+        FetchOpinionSearchData(page,$('#opinion_search').val(),'{{ $product->id }}');
+      }
+      else{FetchData(page,'{{ $product->id }}')};
+    });
 
   $(document).ready(function(){
     if($('.productColorClass').hasClass('color_active'))

@@ -116,15 +116,17 @@ class ProductController extends Controller
             // { $filename3= $request->file('image3')->store('admin/images/product','public'); }
             // else{ return back()->withErrors(['invalidImage3'=>"Please Select (.png,.jpg,.jpeg) Image"])->withInput(); }
             $filename1 = $this->ResizeImage($request->file('image1'));
-            $filename2 = $this->ResizeImageOther($request->file('image2'));
-            $filename3 = $this->ResizeImageOther($request->file('image3'));
-            if($request->hasFile('image4')){$filename4 = $this->ResizeImageOther($request->file('image4'));}
-            if($request->hasFile('image5')){$filename5 = $this->ResizeImageOther($request->file('image5'));}
-            if($request->hasFile('image6')){$filename6 = $this->ResizeImageOther($request->file('image6'));}
-            if($request->hasFile('image7')){$filename7 = $this->ResizeImageOther($request->file('image7'));}
-            if($request->hasFile('image8')){$filename8 = $this->ResizeImageOther($request->file('image8'));}
-            if($request->hasFile('image9')){$filename9 = $this->ResizeImageOther($request->file('image9'));}
-            if($request->hasFile('image10')){$filename10 = $this->ResizeImageOther($request->file('image10'));}
+            // $filename2 = $this->ResizeImageOther($request->file('image2'));
+            // $filename3 = $this->ResizeImageOther($request->file('image3'));
+            if($request->hasFile('image2')){$filename2 = $this->ResizeImageOther($request->file('image2'));}else{ $filename2 = ''; }
+            if($request->hasFile('image3')){$filename3 = $this->ResizeImageOther($request->file('image3'));}else{ $filename3 = ''; }
+            if($request->hasFile('image4')){$filename4 = $this->ResizeImageOther($request->file('image4'));}else{ $filename4 = ''; }
+            if($request->hasFile('image5')){$filename5 = $this->ResizeImageOther($request->file('image5'));}else{ $filename5 = ''; }
+            if($request->hasFile('image6')){$filename6 = $this->ResizeImageOther($request->file('image6'));}else{ $filename6 = ''; }
+            if($request->hasFile('image7')){$filename7 = $this->ResizeImageOther($request->file('image7'));}else{ $filename7 = ''; }
+            if($request->hasFile('image8')){$filename8 = $this->ResizeImageOther($request->file('image8'));}else{ $filename8 = ''; }
+            if($request->hasFile('image9')){$filename9 = $this->ResizeImageOther($request->file('image9'));}else{ $filename9 = ''; }
+            if($request->hasFile('image10')){$filename10 = $this->ResizeImageOther($request->file('image10'));}else{ $filename10 = ''; }
             if(Product::where('code',$request->code)->orWhere('name',$request->name)->count() > 0)
             {
                 

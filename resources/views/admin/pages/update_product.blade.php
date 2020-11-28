@@ -83,7 +83,7 @@
                                             <div class="tab-pane active" id="detail">
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
+                                                    <label for="" class="col-md-2 col-form-label">Category</label>
                                                     <div class="col-md-10">
                                                         <select class="form-control" name="category">
                                                             <option selected="" disabled="">Select Category</option>
@@ -95,7 +95,7 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Brand</label>
+                                                    <label for="" class="col-md-2 col-form-label">Brand</label>
                                                     <div class="col-md-10">
                                                         <select class="form-control" name="brand">
                                                             <option selected="" disabled="">Select Brand</option>
@@ -110,9 +110,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Code</label>
+                                                    <label for="" class="col-md-2 col-form-label">Code</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ $product->code }}" name="code" placeholder="Enter Code" id="example-text-input">
+                                                        <input class="form-control" type="text" value="{{ $product->code }}" name="code" placeholder="Enter Code" id="">
                                                         @error('code')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -120,9 +120,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
+                                                    <label for="" class="col-md-2 col-form-label">Name</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ str_replace(' ','_',$product->name) }}" name="name" placeholder="Enter Name" id="example-text-input">
+                                                        <input class="form-control" type="text" value="{{ str_replace(' ','_',$product->name) }}" name="name" placeholder="Enter Name" id="">
                                                         @error('name')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -130,9 +130,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Color</label>
+                                                    <label for="" class="col-md-2 col-form-label">Color</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ $product->color }}" name="color" placeholder="Enter Color" id="example-text-input">
+                                                        <input class="form-control" type="text" value="{{ $product->color }}" name="color" placeholder="Enter Color" id="">
                                                         @error('color')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -140,9 +140,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Price</label>
+                                                    <label for="" class="col-md-2 col-form-label">Price</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="number" value="{{ $product->price }}" name="price" placeholder="Enter Price" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->price }}" name="price" placeholder="Enter Price" id="">
                                                         @error('price')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -150,9 +150,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Quantity</label>
+                                                    <label for="" class="col-md-2 col-form-label">Quantity</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="number" value="{{ $product->quantity }}" name="quantity" placeholder="Enter Quantity" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->quantity }}" name="quantity" placeholder="Enter Quantity" id="">
                                                         @error('quantity')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -160,7 +160,7 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Detail</label>
+                                                    <label for="" class="col-md-2 col-form-label">Detail</label>
                                                     <div class="col-md-10">
                                                         <textarea id="textarea" class="form-control" rows="5" name="description" placeholder="Please Type Detail...">{{ $product->description }}</textarea>
                                                         @error('description')
@@ -345,7 +345,7 @@
                                                 </div>
 
                                                  <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 1</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 1</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image1" type="file">
@@ -365,21 +365,22 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-5 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
 
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 2</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 2</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image2" type="file">
                                                             <input type="hidden" name="oldImage2" value="{{ $product->dimage }}">
-                                                             @php $image2 = 'storage/admin/images/product/thumbnail/100_'.$product->dimage  @endphp
-                                                            
-                                                            <img src='{{ asset($image2) }}' style="width: 100px; height: 100px;">
+                                                            @php $img2 = 'storage/admin/images/product/thumbnail/100_'.$product->dimage  @endphp
+                                                            @if($product->dimage !='')
+                                                                <img src='{{ asset($img2) }}' style="width: 100px; height: 100px;">
+                                                            @endif
                                                             @error('image2')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
@@ -391,20 +392,23 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-5 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
 
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 3</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 3</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image3" type="file">
                                                             <input type="hidden" name="oldImage3" value="{{ $product->dimage1 }}">
-                                                             @php $image3 = 'storage/admin/images/product/thumbnail/100_'.$product->dimage1  @endphp
-                                                            <img src='{{ asset($image3) }}' style="width: 100px; height: 100px;">
+                                                             @php $img3 = 'storage/admin/images/product/thumbnail/100_'.$product->dimage1  @endphp
+                                                            @if($product->dimage1 !='')
+                                                                <img src='{{ asset($img3) }}' style="width: 100px; height: 100px;">
+                                                             @endif
+                                                        
                                                             @error('image3')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
@@ -416,14 +420,14 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-5 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
 
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 4</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 4</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image4" type="file">
@@ -441,13 +445,13 @@
                                                     </div>
 
                                                     <!-- <div class="col-md-7 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 5</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 5</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image5" type="file">
@@ -464,13 +468,13 @@
                                                     </div>
 
                                                     <!-- <div class="col-md-7 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 6</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 6</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image6" type="file">
@@ -486,13 +490,13 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-7 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 7</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 7</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image7" type="file">
@@ -508,13 +512,13 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-7 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 8</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 8</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image8" type="file">
@@ -530,13 +534,13 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-7 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
                                                 </div>
 
                                                  <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 9</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 9</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image9" type="file">
@@ -552,14 +556,14 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-7 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
                                                 </div>
 
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label"> Image 10</label>
+                                                    <label for="" class="col-md-2 col-form-label"> Image 10</label>
                                                     <div class="col-md-5"> 
                                                         <div class="fallback">
                                                             <input name="image10" type="file">
@@ -575,7 +579,7 @@
                                                     </div>
 
                                                    <!--  <div class="col-md-7 row"> 
-                                                        <label for="example-text-input" class="col-md-2 col-form-label">Title</label>
+                                                        <label for="" class="col-md-2 col-form-label">Title</label>
                                                         <div class="col-md-10"><input type="text" class="form-control" name="" placeholder="Please Enter Title"></div>
                                                     </div> -->
                                                 </div>
@@ -641,7 +645,7 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Video</label>
+                                                    <label for="" class="col-md-2 col-form-label">Video</label>
                                                     <div class="col-md-10"> 
                                                         <div class="fallback">
                                                             <input name="video" type="file">
@@ -665,9 +669,9 @@
                                                 </div>
 
                                                 <!-- <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent Deduction</label>
+                                                    <label for="" class="col-md-4 col-form-label">Minor Dent Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ $product->minor_dent_scratch }}" name="minor_dent" placeholder="Enter Minor Dent Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->minor_dent_scratch }}" name="minor_dent" placeholder="Enter Minor Dent Deduction" id="">
                                                         @error('minor_dent')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -675,9 +679,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-4 col-form-label">Major Dent Deduction</label>
+                                                    <label for="" class="col-md-4 col-form-label">Major Dent Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ $product->major_dent_scratch }}" name="major_dent" placeholder="Enter Major Dent Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->major_dent_scratch }}" name="major_dent" placeholder="Enter Major Dent Deduction" id="">
                                                         @error('major_dent')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -686,9 +690,9 @@
 
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-4 col-form-label">Original Accessories Available Deduction</label>
+                                                    <label for="" class="col-md-4 col-form-label">Original Accessories Available Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ $product->original_accessories_available }}" name="original_accessories_available" placeholder="Enter Original Accessories Available Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->original_accessories_available }}" name="original_accessories_available" placeholder="Enter Original Accessories Available Deduction" id="">
                                                         @error('original_accessories_avaliable')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -697,9 +701,9 @@
 
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-4 col-form-label">Screen Is Cracked Deduction</label>
+                                                    <label for="" class="col-md-4 col-form-label">Screen Is Cracked Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ $product->screen_is_cracked }}" name="screen_is_cracked" placeholder="Enter Screen Is Cracked Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->screen_is_cracked }}" name="screen_is_cracked" placeholder="Enter Screen Is Cracked Deduction" id="">
                                                         @error('screen_is_cracked')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -707,9 +711,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-4 col-form-label">Device Box Available Deduction</label>
+                                                    <label for="" class="col-md-4 col-form-label">Device Box Available Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ $product->device_box_available }}" name="device_box_available" placeholder="Enter Device Box Available Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->device_box_available }}" name="device_box_available" placeholder="Enter Device Box Available Deduction" id="">
                                                         @error('device_box_available')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -717,9 +721,9 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label for="example-text-input" class="col-md-4 col-form-label">Device Battery Status Deduction</label>
+                                                    <label for="" class="col-md-4 col-form-label">Device Battery Status Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ $product->device_battery_status }}" name="device_battery_status" placeholder="Enter Device Battery Status Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ $product->device_battery_status }}" name="device_battery_status" placeholder="Enter Device Battery Status Deduction" id="">
                                                         @error('device_battery_status')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -836,7 +840,7 @@
                                                 </div>
 
                                                 <div class="form-group row " id="other_detail_div">
-                                                    <label for="example-text-input" class="col-md-2 col-form-label">Other Detail Content</label>
+                                                    <label for="" class="col-md-2 col-form-label">Other Detail Content</label>
                                                     <div class="col-md-10">
                                                         <textarea id="textarea" class="form-control tinymce-classic" rows="5" name="other_detail" placeholder="Please Type Detail...">{{ $product->other_detail }}</textarea>
                                                         @error('other_detail')
