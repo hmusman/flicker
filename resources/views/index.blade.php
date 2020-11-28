@@ -148,7 +148,7 @@ border-left: 2px red solid !important;
       }
       div[class="autoplay slick-initialized slick-slider slick-dotted"] >  ul[class="slick-dots"]{
       position: absolute;
-      top: 187px;
+      top: 156px;
       height: 198px !important;
       width: 99%;
       margin-left: 20px;
@@ -162,7 +162,7 @@ border-left: 2px red solid !important;
       display: none !important;
       }
       .slick-dotted.slick-slider{
-      margin-bottom: -10px ;
+      margin-bottom: 7px ;
       }
       a[class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"]{
       background-color: #101115;
@@ -518,6 +518,11 @@ border-left: 2px red solid !important;
 
       @include('includes.header')
       @if($buynewsell->count()>0)
+
+
+<div class="container">
+
+
       <section>
          <div class="row">
             @foreach($buynewsell as $row)
@@ -712,19 +717,16 @@ border-left: 2px red solid !important;
                </div>
             </div>
          </div>
-         <hr id="resphrOnmob" style="width: 43%;
-         background-color: black;    margin-top: 26px !important;
-         "/>
-         </div>
-         <p >
+         <hr id="resphrOnmob" style="width: 43%; background-color: black;    margin-top: 26px !important; "/>
+        <hr id="resphrOnmob" style="width: 43%; background-color: black;    margin-top: 26px !important; "/>   
+      </div>
+         <!-- <p >
          <center style="color: black;
             font-size: 49px;
             margin-top: -59px;
             "> ...</center>
-         </p>
-         <hr style="width: 43%;
-            background-color: black;
-            margin-top: -24px;" />
+         </p> -->
+         <!-- <hr style="width: 43%;  background-color: black;margin-top: -24px;" /> -->
       </section>
       @if($products->count()>0)
       <center>
@@ -766,6 +768,8 @@ border-left: 2px red solid !important;
             </div>
          </div>
       </section>
+
+      </div>
       @endif
       <br/>
       <br/>

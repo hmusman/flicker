@@ -172,6 +172,7 @@ cursor: pointer;
 </div>
 <br/>
 <br/>
+<div class="container">
 <div class="row" style="margin-top: 31px;">
    <div class="col-sm-6 ">
       @php $img1 = $product->image @endphp
@@ -560,6 +561,7 @@ cursor: pointer;
          </div>
       </div>
    </div>
+</div>
 </div>
 </div>
 </div>

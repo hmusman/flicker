@@ -381,6 +381,7 @@ small {
        
       @include('includes.header')
    
+      <div class="container"
 
 <br/>
 <div class="container fontUbantu">
@@ -1513,7 +1514,7 @@ Up to 20 h (multimedia)
                <div class="row">
                   <!-- <div id="view2zeroAtMobile"  style="width:20%; float:left "></div> -->
                   <div id="view2FullAtMobile"  style="width:100%;  " >
-                     <div class="container" id="OpinonrowOne">
+                     <div class="container" id="OpinonrowOne" style="width:100% !Important">
                         <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
                            <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
                               <a id="clickopinon"  style="  background-color: #4a88c1; 
@@ -1613,7 +1614,7 @@ Up to 20 h (multimedia)
                            </div>
                         </div>
                      </div>
-                     <div class="container" id="OpinonrowTwo">
+                     <div class="container" id="OpinonrowTwo" style="width:100% !important">
                         <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
                            <div class="col-md-6" style="height: 81px;padding-top: 27px;" >
                               <div style="float: left; width: 50%; height: 100%;  "><input id="opinion_search" type="search" name="srch" style="height: 42px;width: 97%; outline: none; border-color:transparent " /></div>
@@ -1638,7 +1639,7 @@ Up to 20 h (multimedia)
                            </div>
                         </div>
                      </div>
-                     <div class="container opinions_data" id="OpinonrowThree">
+                     <div class="container opinions_data" id="OpinonrowThree" style="width: 100% !important">
                         @if($opinions->count())
                         @foreach($opinions as $row)
                         <div class="row">
@@ -1871,7 +1872,7 @@ Up to 20 h (multimedia)
 </div>
 
 
-
+></div>
 
       @include('includes.footer')
 

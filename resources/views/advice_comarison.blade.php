@@ -839,7 +839,7 @@ div[class="img-zoom-container"]{
 
 
 .mobTitleOnMob{
-  margin-top: -24px !important;
+  margin-top: -8px !important;
 }
 
 
@@ -1570,8 +1570,7 @@ height: 65px;
    @include('includes.header')
 
  
-
-
+<div class="container">
     <img src="{{ asset('storage/images/Compare.png') }}" style="width: 100%;" />
   <br/>
 
@@ -1817,7 +1816,8 @@ height: 65px;
           text-align: center;
           text-transform: uppercase;
           font-weight: 700; cursor: pointer;height: 45px;
-    padding-top: 10px; ">
+    padding-top: 13px;
+    font-size: 13px; ">
               Search
             </div>
 
@@ -1852,7 +1852,7 @@ height: 65px;
       <div class="row">
         <div class="col-md-12">
 
-          <p class="mobTitleOnMob" style="    font-size: 22px;height: 66px;
+          <p class="mobTitleOnMob" style="    font-size: 22px;height: 58px;
               color: #4a88c1;
               font-weight: bolder;">{{ ucwords($product->name) }}</p>
 
@@ -2340,7 +2340,8 @@ height: 65px;
             text-align: center;
             text-transform: uppercase;
             font-weight: 700; cursor: pointer;height: 45px;
-      padding-top: 10px; ">
+      padding-top: 13px;
+    font-size: 13px;">
               Search
             </div>
   
@@ -2432,7 +2433,8 @@ height: 65px;
             text-align: center;
             text-transform: uppercase;
             font-weight: 700; cursor: pointer;height: 45px;
-      padding-top: 10px; ">
+    padding-top: 13px;
+    font-size: 13px; ">
               Search
             </div>
   
@@ -2486,6 +2488,7 @@ height: 65px;
 
 </div>
 
+</div>
 
 <br/>
 
