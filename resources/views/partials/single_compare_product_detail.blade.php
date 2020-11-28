@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-md-12">
 
-          <p class="mobTitleOnMob" style="    font-size: 22px;    height: 66px;
+          <p class="mobTitleOnMob" style="    font-size: 22px;    height: 58px;
               color: #868585;
               font-weight: bolder;">{{ ucwords($product->name) }}</p>
 

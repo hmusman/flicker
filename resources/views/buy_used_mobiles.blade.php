@@ -1045,6 +1045,10 @@ ul[class="pagination"] > .page-item{
   <a href="#" id="scroll" style="display: none;"><span></span></a>
   @include('includes.header')
 
+
+
+  <div class="container" >
+
 <div class="row" style="height: 400px;     background-image: linear-gradient(to top , #252525, #233444);">
    <div class="col-md-12">
       <p class="fontUbantu" style="text-align: center;    text-align: center;
@@ -1404,9 +1408,9 @@ ul[class="pagination"] > .page-item{
 <br/>
 
 <div class="row fontUbantu" style="    margin-left: 15px;margin-bottom: 15px;">
-   <a class="fontUbantu" href="{{ route('BuyUsedAccessories') }}"  style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;">Buy Used Accessories</a>
+   <a class="fontUbantu" href="{{ route('BuyUsedAccessories') }}"  style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;width: 11%;  font-size: 13px; text-align: center;">Buy Used Accessories</a>
 
-   <button class="fontUbantu" style="background-color: #4a88c1; color: white;padding: 6px 7px 10px 7px; text-decoration: none;border-radius: 4px; font-weight: bold;margin-left: 5px;border:none;cursor: pointer;" onclick="reset_all_filters();">Reset Filter</button>
+   <button class="fontUbantu" style="background-color: #4a88c1; color: white;padding: 6px 7px 10px 7px; text-decoration: none;border-radius: 4px; font-weight: bold;margin-left: 5px;border:none;cursor: pointer;    width: 11%;  font-size: 13px; text-align: center;" onclick="reset_all_filters();">Reset Filter</button>
 </div>
 
 <div class="row" style="margin-bottom:60px;">
@@ -1467,7 +1471,7 @@ ul[class="pagination"] > .page-item{
                         <input type="number" placeholder="To" id="to_price" style="width: 100%;" />
                      </div>
                      <div style="width: 10%;float: left;  ">
-                        <button type="button" style="background-color: #4a88c1;color: white;padding: 3px 7px 3px 5px;width: 117%;border: none;outline: none;" id="go_price">Go</button>
+                        <button type="button" style="background-color: #4a88c1;color: white;padding: 3px 7px 3px 1px;width: 117%;border: none;outline: none;" id="go_price">Go</button>
                      </div>
                   </div>
                </li>
@@ -1595,11 +1599,11 @@ ul[class="pagination"] > .page-item{
    </div>
    <div class="col-md-9" >
       <div class="row" style="">
-         <div class="col-md-5">
+         <div class="col-md-3">
             <p style="    color: #a8a1a1;
                padding: 12px 0px 0px 12px;">Sort by:</p>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-4">
             <div  style="padding-top: 9px;  border-bottom: 1px #b0b0b0 solid; height: 53px;  ">
                <div style="width:30%; float:left; background-color:#ffffff;     color: #999999;    font-weight: 500;    padding: 10px 0px 0px 0px; ">ORDER</div>
                <div style="width:70%; float:left;  ">
@@ -1612,7 +1616,7 @@ ul[class="pagination"] > .page-item{
             </div>
          </div>
          <div class="col-md-1"></div>
-         <div class="col-md-3">
+         <div class="col-md-4">
             <div  style="padding-top: 9px;  border-bottom: 1px #b0b0b0 solid; height: 53px;  ">
                <div style="width:30%; float:left; background-color:#ffffff;     color: #999999;     font-weight: 500;  padding: 10px 0px 0px 0px; ">PRICE</div>
                <div style="width:70%; float:left;  ">
@@ -1633,7 +1637,7 @@ ul[class="pagination"] > .page-item{
       </div>
    </div>
 </div>
-
+</div>
 
 @include('includes.footer')
 

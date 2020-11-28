@@ -32,6 +32,7 @@
  @if($product->variation_colors->count()>0)
     <div id="SingleProductBlock" style="width: 60%; float: left;"> 
 
+
         @foreach($product->variation_colors as $row)
             @php $img = 'storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$product->image @endphp
             <div id="changecolorseletidOnMobile" style="width: 33%; height: 100%; background-color: White;  float: left;  ">
@@ -46,7 +47,7 @@
                   
                   <div >
                   <a    href="#getEstimatedmobile" style="text-decoration: none;">   <figcaption  id=""  style="background-color: #4a88c2;
-                 text-align: center; width: 50%;
+                 text-align: center; width: 53%;
                  padding: 10px; color: white !important;
                  border-radius: 5px;
                  margin-top: 10px;  ">Get Estimate</figcaption></a>
