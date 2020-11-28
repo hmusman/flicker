@@ -331,7 +331,21 @@ small {
   color: #aaa;
 }
 
+select{
+     -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  
+  background-image: url({{asset('storage/images/headerimg/ero-icon.png')}});
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 13px;
+    
 
+    margin-right: 2rem;
+    padding: 1rem;
+    background-size: 14px;
+}
 
 </style>
 
@@ -1571,40 +1585,7 @@ Up to 20 h (multimedia)
 
                                           <a  href="#open-modal"   class="btn btn-primary">Login</a>
                                           </button>
- <!-- <div class="interior">
-    <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
-  </div> -->
-                                      <!-- Trigger/Open The Modal -->
-<!-- <button id="myBtn">Open Modal</button> -->
 
-<!-- The Modal -->
-<!-- <div id="myModal" class="modal">
-
-
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Modal Header</h2>
-    </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
-</div> -->
- <!-- Modal -->
-        
-
-
-          
-                  <!-- End Modal --> 
-
-
-                                          <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
                                           @endif
                                        </p>
                                     </div>
