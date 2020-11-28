@@ -282,7 +282,7 @@ background-color: #8080807a;
   pointer-events: auto;
 }
 .modal-window > div {
-  width: 400px;
+  width: 410px;
   position: absolute;
   top: 50%;
   left: 50%;
