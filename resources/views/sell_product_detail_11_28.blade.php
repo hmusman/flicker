@@ -172,7 +172,6 @@ cursor: pointer;
 </div>
 <br/>
 <br/>
-<div class="container">
 <div class="row" style="margin-top: 31px;">
    <div class="col-sm-6 ">
       @php $img1 = $product->image @endphp
@@ -392,8 +391,8 @@ cursor: pointer;
                @endif
             </div>
             <div id="view2">
-               <h4 style="background-color: #dcdcdc38;padding: 10px;">Question About this product ({{ $questions->count() }}) </h4>
-               <!-- <p> <a href="#">Login</a> or <a href="#">Register</a> to Ask a Question</p> -->
+               <h4 style="background-color: #dcdcdc38;padding: 10px;">Question About this product (884) </h4>
+               <p> <a href="#">Login</a> or <a href="#">Register</a> to Ask a Question</p>
                <hr />
                 
                   <div class="row">
@@ -561,7 +560,6 @@ cursor: pointer;
          </div>
       </div>
    </div>
-</div>
 </div>
 </div>
 </div>

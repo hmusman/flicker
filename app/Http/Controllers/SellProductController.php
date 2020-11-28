@@ -621,7 +621,7 @@ class SellProductController extends Controller
     {
 
         $product = SellProduct::where('id',$id)->first();
-        $questions = $product->questions()->paginate(1);
+        $questions = $product->questions()->paginate(30);
         return view('sell_product_detail',compact(['product','questions']));
     }
 
