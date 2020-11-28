@@ -1,6 +1,12 @@
 @extends('layouts.app')
 <style type="text/css">
-    footer{ margin-top: 100px !important; }
+  
+    
+footer{
+        top: 143px !important;
+    position: relative !important;
+
+}
 </style>
 @section('content')
 <div class="container">

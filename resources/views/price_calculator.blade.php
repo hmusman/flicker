@@ -827,7 +827,7 @@ input[type="radio"]:checked + label {
  
 
 </div>
-<style> footer{margin-top: 100px !important;} </style>
+<style> footer{margin-top: 150px !important;} </style>
 @include('includes.footer')
  
 </body>
