@@ -282,7 +282,7 @@ background-color: #8080807a;
   pointer-events: auto;
 }
 .modal-window > div {
-  width: 400px;
+  width: 410px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -331,7 +331,21 @@ small {
   color: #aaa;
 }
 
+select{
+     -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  
+  background-image: url({{asset('storage/images/headerimg/ero-icon.png')}});
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 13px;
+    
 
+    margin-right: 2rem;
+    padding: 1rem;
+    background-size: 14px;
+}
 
 </style>
 
@@ -339,6 +353,7 @@ small {
 
 
        <a href="#" id="scroll" style="display: none;"><span></span></a>
+
 
       <div id="open-modal" class="modal-window">
         <div>
@@ -383,6 +398,8 @@ small {
    
 
 <br/>
+
+<div class="container">
 <div class="container fontUbantu">
 <div class="row">
   <div class="col-md-12 text-uppercase" style="color: gray;">
@@ -1514,7 +1531,7 @@ Up to 20 h (multimedia)
                   <!-- <div id="view2zeroAtMobile"  style="width:20%; float:left "></div> -->
                   <div id="view2FullAtMobile"  style="width:100%;  " >
                      <div class="container" id="OpinonrowOne">
-                        <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
+                        <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;     width: 97.2% !important; ">
                            <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
                               <a id="clickopinon"  style="  background-color: #4a88c1; 
                                  color: white;
@@ -1527,7 +1544,7 @@ Up to 20 h (multimedia)
                            </style>
                            <div class="col-md-2" id="pages" style="padding-top: 11px;"  >{{ $opinions->links() }} </div>
                         </div>
-                        <div class="row" id="OpinonBox" style="display: none">
+                        <div class="row" id="OpinonBox" style="display: none;   width: 97.2% !important;">
                            <div class="col-md-12" style="background-color: #f0f0f0;  " >
                               <h5>Post Your Opinion</h5>
                               <!-- <div class="row"> 
@@ -1571,40 +1588,7 @@ Up to 20 h (multimedia)
 
                                           <a  href="#open-modal"   class="btn btn-primary">Login</a>
                                           </button>
- <!-- <div class="interior">
-    <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
-  </div> -->
-                                      <!-- Trigger/Open The Modal -->
-<!-- <button id="myBtn">Open Modal</button> -->
 
-<!-- The Modal -->
-<!-- <div id="myModal" class="modal">
-
-
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Modal Header</h2>
-    </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
-</div> -->
- <!-- Modal -->
-        
-
-
-          
-                  <!-- End Modal --> 
-
-
-                                          <!--  <a href="/Login" class="btn btn-primary">Sign Up</a> -->
                                           @endif
                                        </p>
                                     </div>
@@ -1613,7 +1597,7 @@ Up to 20 h (multimedia)
                            </div>
                         </div>
                      </div>
-                     <div class="container" id="OpinonrowTwo">
+                     <div class="container" id="OpinonrowTwo" style="width: 100% !important;">
                         <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 5px #efefef solid; border-bottom: 1px #e3e2db solid;  ">
                            <div class="col-md-6" style="height: 81px;padding-top: 27px;" >
                               <div style="float: left; width: 50%; height: 100%;  "><input id="opinion_search" type="search" name="srch" style="height: 42px;width: 97%; outline: none; border-color:transparent " /></div>
@@ -1638,7 +1622,7 @@ Up to 20 h (multimedia)
                            </div>
                         </div>
                      </div>
-                     <div class="container opinions_data" id="OpinonrowThree">
+                     <div class="container opinions_data" id="OpinonrowThree" style="width: 100% !important">
                         @if($opinions->count())
                         @foreach($opinions as $row)
                         <div class="row">
@@ -1871,7 +1855,7 @@ Up to 20 h (multimedia)
 </div>
 
 
-
+</div>
 
       @include('includes.footer')
 
