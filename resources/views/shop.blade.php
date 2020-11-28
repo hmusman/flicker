@@ -447,7 +447,7 @@ border-left: 2px red solid !important;
       <!-- Start WOWSlider.com BODY section -->
       <!-- Start WOWSlider.com BODY section -->
 
-<div class="container">
+
 
       <div id="wowslider-container1">
          <div class="ws_images fontUbantu">
@@ -580,8 +580,6 @@ border-left: 2px red solid !important;
          <div class="row products" style=" padding: 0px 35px 0px 35px;   background-color: white;;">
             @include('partials.shop_products_list')
          </div>
-      </div>
-
       </div>
       <br/>
       <br/>

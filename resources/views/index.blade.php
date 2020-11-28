@@ -148,7 +148,7 @@ border-left: 2px red solid !important;
       }
       div[class="autoplay slick-initialized slick-slider slick-dotted"] >  ul[class="slick-dots"]{
       position: absolute;
-      top: 159px;
+      top: 187px;
       height: 198px !important;
       width: 99%;
       margin-left: 20px;
@@ -162,7 +162,7 @@ border-left: 2px red solid !important;
       display: none !important;
       }
       .slick-dotted.slick-slider{
-      margin-bottom: 5px ;
+      margin-bottom: -10px ;
       }
       a[class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"]{
       background-color: #101115;
@@ -518,9 +518,6 @@ border-left: 2px red solid !important;
 
       @include('includes.header')
       @if($buynewsell->count()>0)
-
-
-      <div class="container">
       <section>
          <div class="row">
             @foreach($buynewsell as $row)
@@ -624,7 +621,26 @@ border-left: 2px red solid !important;
 </div>
    @endif
 </div>
-
+ <!-- <div class="col-md-3 col-lg-3 col-sm-3" id="slickBtnFortopBlog" style=" ">
+               @if($blogslider->count()>0)
+               <div class="autoplay" data-dots="true">
+                  @foreach($blogslider as $row)
+                  @php $img = 'storage/'.$row->img @endphp
+                  <div class="item" style="">
+                     <div id="extlrgwid" style=" padding: 0px 0px 18px 0px;  border-radius: 6px;   ;    ">
+                        <div class="thumb"> <img alt="featured project" id="slickblogimg" src="{{ asset($img) }}"
+                           class="img-responsive img-fullwidth" style=" width: 100% !important;    border-top: 1px black solid;  border-right: 1px black solid; border-top-right-radius: 10px; border-top-left-radius: 10px;">
+                        </div>
+                        <br/>
+                        <p style="color: black !important;    padding: 0px 10px 50px 24px;">
+                           {{ ucfirst($row->detail) }}
+                        </p>
+                     </div>
+                  </div>
+                  @endforeach
+               </div>
+               @endif
+            </div> -->
             <div class="col-md-3 col-lg-3 col-sm-3" id="" style=" ">
                <div  id="ExtraLargeScren" style="">
                   <div id="blogImagesExtraLarge" style="  text-align: center ;  height: 55%; width: 100%; border-right: 1px #989292 solid;
@@ -750,15 +766,6 @@ border-left: 2px red solid !important;
             </div>
          </div>
       </section>
-
-
-
-   </div>
-
-
-
-
-      
       @endif
       <br/>
       <br/>
@@ -767,7 +774,10 @@ border-left: 2px red solid !important;
       <br/>
       @include('includes.footer')
    </body>
-   
+   <!-- 
+      <script src="js/jquery-slim.min.js" ></script>
+      <script src="js/popper.min.js" ></script>
+      <script src="js/bootstrap.min.js" ></script> -->
    <script>
       function myFunction() {
           shoediv();
@@ -827,6 +837,10 @@ border-left: 2px red solid !important;
       });
       
       
+      
+      
+      
+      
       $(document).ready(function(){
               $('.autoplay').slick({
         slidesToShow: 1,
@@ -843,10 +857,18 @@ border-left: 2px red solid !important;
       
       
       
+      
+      
+      
+      
+      
+      
+      
+      
    </script>
    <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
    <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js') }}"></script>
    <script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>
-   
+   <!-- <script  src="js/jquery-2.1.3.min.js"></script> -->
    <script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
 </html>
