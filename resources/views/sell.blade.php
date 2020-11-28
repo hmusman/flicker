@@ -23,6 +23,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
   <style>
+
+    select{
+     -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  /* background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
+
+  background-image: url({{asset('storage/images/headerimg/ero-icon.png')}}) !important;
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 13px;
+    
+
+    margin-right: 2rem;
+    padding: 1rem;
+    background-size: 14px;
+
+}
     @media (min-width: 992px){
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-top: .5rem !important;
