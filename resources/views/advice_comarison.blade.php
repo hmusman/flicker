@@ -1570,8 +1570,7 @@ height: 65px;
    @include('includes.header')
 
  
-
-
+<div class="container">
     <img src="{{ asset('storage/images/Compare.png') }}" style="width: 100%;" />
   <br/>
 
@@ -2484,6 +2483,7 @@ height: 65px;
 </div>
 
 
+</div>
 </div>
 
 
