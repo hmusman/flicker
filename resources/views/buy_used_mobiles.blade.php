@@ -82,8 +82,7 @@ select{
      -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
-  /* background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
-
+  
   background-image: url({{asset('storage/images/headerimg/ero-icon.png')}});
     background-repeat: no-repeat;
     background-position-x: 97%;
@@ -1045,6 +1044,8 @@ ul[class="pagination"] > .page-item{
   <a href="#" id="scroll" style="display: none;"><span></span></a>
   @include('includes.header')
 
+  <div class="container">
+
 <div class="row" style="height: 400px;     background-image: linear-gradient(to top , #252525, #233444);">
    <div class="col-md-12">
       <p class="fontUbantu" style="text-align: center;    text-align: center;
@@ -1633,7 +1634,7 @@ ul[class="pagination"] > .page-item{
       </div>
    </div>
 </div>
-
+</div>
 
 @include('includes.footer')
 
