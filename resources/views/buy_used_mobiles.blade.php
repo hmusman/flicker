@@ -2140,6 +2140,7 @@ ul[class="pagination"] > .page-item{
       $('#sell').val('Select City');
       $('#upperPrice').val('Select Price');
       $('#upperInpt').val(''); 
+    $('#sort_by_price').val('Please Choose');
       var val = $('#sort_by_order option:selected').val();
       var price = $('#sort_by_price option:selected').val();
       if($('#sort_by_order option:selected').val()!="Please Choose" && $('#sort_by_price option:selected').val() =="Please Choose")
@@ -2165,6 +2166,7 @@ ul[class="pagination"] > .page-item{
       $('#sell').val('Select City');
       $('#upperPrice').val('Select Price');
       $('#upperInpt').val('');
+      $('#sort_by_order').val('Please Choose');
       var val = $('#sort_by_order option:selected').val();
       var price = $('#sort_by_price option:selected').val();
       if($('#sort_by_order option:selected').val()=="Please Choose" && $('#sort_by_price option:selected').val() !="Please Choose")
