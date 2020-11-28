@@ -751,7 +751,8 @@ input[type="radio"]:checked + label {
   @include('includes.header')
 
 
-<div class="container">
+
+
   <div  id="brandswidthatMob" style=" background-color: #546788 ;width:100%; height: 300px;  ">
 
 
@@ -826,11 +827,6 @@ input[type="radio"]:checked + label {
  
 
 </div>
-
-
-</div>
-
-
 <style> footer{margin-top: 150px !important;} </style>
 @include('includes.footer')
  
