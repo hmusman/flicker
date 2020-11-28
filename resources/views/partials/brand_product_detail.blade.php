@@ -46,7 +46,7 @@
                   
                   <div >
                   <a    href="#getEstimatedmobile" style="text-decoration: none;">   <figcaption  id=""  style="background-color: #4a88c2;
-                 text-align: center; width: 55%;
+                 text-align: center; width: 50%;
                  padding: 10px; color: white !important;
                  border-radius: 5px;
                  margin-top: 10px;  ">Get Estimate</figcaption></a>
