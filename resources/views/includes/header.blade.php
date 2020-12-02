@@ -25,7 +25,7 @@
 
 li[class="nav-item dropdown"] > a{
       text-decoration: none;
-    color: #4f4a4bdb !important;
+   
     font-weight: bold;
 }
 
@@ -72,7 +72,7 @@ a[id="prcCal"]{
  }
 .qasimnavigatin{
       color: rgb(124 123 123);
-    border-right: 1px #0b0c0c52 solid;
+    
 padding: 11px 10px 0px 10px;
             text-align: center;
           
@@ -84,7 +84,12 @@ padding: 11px 10px 0px 10px;
 
 
 
-
+.droplinks{
+  position: relative;
+    left: 20px;
+    bottom: 3px;
+    color: #676363c9 !important;
+}
 
 
 
@@ -147,7 +152,7 @@ padding: 11px 10px 0px 10px;
     </div>
   </nav>
   
-
+ 
 <!-- 
   <nav class="navbar navbar-expand-lg navbar-light bg-light" id="seconNav" style="    background-color: #f8f7f7 !important; height: 35px; border-top: 1px #4c4a575c solid !important; border-bottom: 1px #4c4a575c solid !important;">
    
@@ -294,9 +299,10 @@ padding: 11px 10px 0px 10px;
          </a>
       
       </li> -->
-   <li  class="nav-item dropdown" style="width:10%; float: left; height: 100%">
-      <a class="nav-link  dropdown-toggle qasimnavigatin mobBrand fontUbantu" href="#" data-toggle="dropdown" style="    border-left: 1px #0b0c0c52 solid;" > BRANDS  </a>
-      @php $brands = App\Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct()->get() @endphp
+            @php $brands = App\Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct()->get() @endphp
+   <li  class="nav-item dropdown" style="width:10%; float: left; height: 100%;  border-left: 1px #0b0c0c52 solid; border-right: 1px #0b0c0c52 solid;">
+      <a class="nav-link  dropdown-toggle qasimnavigatin mobBrand fontUbantu"  data-toggle="dropdown" style="   " ><a href="{{ route('BrandProductsList',$brands[0]->id) }}" class="droplinks" > BRANDS</a> </a>
+
       <ul class="dropdown-menu fade-up">
          @foreach($brands as $brand)
          <li>
@@ -307,9 +313,11 @@ padding: 11px 10px 0px 10px;
          @endforeach
       </ul>
    </li>
-   <li class="nav-item dropdown" style="width:15%; float: left; height: 100%">
-      <a class="nav-link  dropdown-toggle qasimnavigatin fontUbantu" href="#" data-toggle="dropdown" > ACCESSORIES  </a>
-      @php $accessories = App\AccessoryCategory::select('accessory_categories.title','accessory_categories.id')->join('accessories','accessory_categories.id','=','accessories.accessory_category_id')->distinct()->get() @endphp
+
+     @php $accessories = App\AccessoryCategory::select('accessory_categories.title','accessory_categories.id')->join('accessories','accessory_categories.id','=','accessories.accessory_category_id')->distinct()->get() @endphp
+   <li class="nav-item dropdown" style="width:15%; float: left; height: 100%;border-right: 1px #0b0c0c52 solid;">
+      <a class="nav-link  dropdown-toggle qasimnavigatin fontUbantu" style="" href="#" data-toggle="dropdown" ><a href="{{ route('NewCategoryAccessories',$accessories[0]->id) }}" class="droplinks" >  ACCESSORIES </a> </a>
+    
       <ul class="dropdown-menu fade-up">
          @foreach($accessories as $accessory)
          <li>
@@ -321,11 +329,11 @@ padding: 11px 10px 0px 10px;
       </ul>
    </li>
    <li class="nav-item" style="width:10%; float: left; height: 100%">
-      <a class="nav-link   qasimnavigatin fontUbantu" href="{{ route('blog') }}" 
+      <a class="nav-link   qasimnavigatin fontUbantu" style="border-right: 1px #0b0c0c52 solid;" href="{{ route('blog') }}" 
          >BLOG </a>
    </li>
    <li class="nav-item" style="width:10%; float: left; height: 100%">
-      <a class="nav-link   qasimnavigatin fontUbantu" href="{{ route('forum') }}" 
+      <a class="nav-link   qasimnavigatin fontUbantu" style="border-right: 1px #0b0c0c52 solid;" href="{{ route('forum') }}" 
          > FORUMS  </a>
    </li>
    <li style="width:40%; float: left; height: 100%">
