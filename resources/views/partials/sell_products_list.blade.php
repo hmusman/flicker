@@ -101,15 +101,15 @@ ul[class="ulatMob"]{
         {!! $products->links() !!}
 
     </div>
-<div class="col-md-12" style="color: black">
-  Showing 
+<div class="col-md-12"  style="position: relative !important;color: black;top: -48px; !important">
+  Showing <font style="color: Blue !important;  ">
   {{ ($products->currentpage() - 1) * $products ->perpage() + 1 }} To 
     @if($products->lastPage() == $products->currentpage())
       {{  $products ->total()  }}
     @else
       {{ $products->currentpage() * $products ->perpage() }}
-    @endif
-   Of {{  $products ->total()  }} Records
+    @endif</font>
+   Of <font style="color: Blue !important;  ">{{  $products ->total()  }}  Records </font>
 
   {{-- ($products->currentpage() -1) * $products ->perpage() + $products->count() }} of {{  $products ->total()  --}}
 </div>
