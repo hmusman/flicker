@@ -101,8 +101,8 @@ ul[class="ulatMob"]{
         {!! $products->links() !!}
 
     </div>
-<div class="col-md-12"  style="position: relative !important;color: black;top: -48px; !important">
-  Showing <font style="color: Blue !important;  ">
+<div  style="position: relative !important;color: black;top: -48px; !important">
+  <p>Showing <font style="color: Blue !important;  ">
   {{ ($products->currentpage() - 1) * $products ->perpage() + 1 }} To 
     @if($products->lastPage() == $products->currentpage())
       {{  $products ->total()  }}
@@ -112,6 +112,7 @@ ul[class="ulatMob"]{
    Of <font style="color: Blue !important;  ">{{  $products ->total()  }}  Records </font>
 
   {{-- ($products->currentpage() -1) * $products ->perpage() + $products->count() }} of {{  $products ->total()  --}}
+  </p>
 </div>
 @if($products->count()>0)
     @foreach($products as $row)
