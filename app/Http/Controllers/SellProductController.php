@@ -69,7 +69,7 @@ class SellProductController extends Controller
         $thumbnailpath = public_path('storage/admin/images/sellproduct/thumbnail/'.$filename1);
         Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
         Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($img->getRealPath())->resize(500,500)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
     public function store(Request $request)
