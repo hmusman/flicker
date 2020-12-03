@@ -156,6 +156,12 @@ text-align: initial !important;
    #clickopinon{
 cursor: pointer;
    }
+
+
+   div[id="surround"] > img{
+      height: 480px !important;
+    width: 480px !important;
+   }
  </style>
 
 <body>

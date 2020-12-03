@@ -93,12 +93,19 @@ a[id="prcCal"]{
   width: 100% !important;
 }
 }
-
-
+a[class="nav-link  dropdown-toggle qasimnavigatin fontUbantu"],
+a[class="nav-link  dropdown-toggle qasimnavigatin mobBrand fontUbantu"]{
+  margin-top: -16px !important;
+}
 li[class="nav-item dropdown"] > a{
       height: 36px;
+      margin-top: -18px ;
 }
 
+a[id="prcCal"]{
+      margin-top: 0px !important;
+
+}
 
 
 @media (min-width: 1400px) and (max-width : 2000px){
@@ -776,7 +783,7 @@ small {
     <table id="customers" class="fontUbantu">
         <tr>
             <td class="colblue tdBlockOnMobhead ">Network</td>
-            <td class="tdBlockOnMobSubhead TechOnDeskTop fontUbantu" style="border-bottom: 4px #eee solid; "> Technology</td>
+            <td class="tdBlockOnMobSubhead TechOnDeskTop fontUbantu" style="border-bottom: 4px #eee solid;width: 23% !important;"> Technology</td>
         </tr>
     </table>
 
