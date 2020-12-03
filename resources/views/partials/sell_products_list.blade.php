@@ -101,7 +101,18 @@ ul[class="ulatMob"]{
         {!! $products->links() !!}
 
     </div>
+<div class="col-md-12" style="color: black">
+  Showing 
+  {{ ($products->currentpage() - 1) * $products ->perpage() + 1 }} To 
+    @if($products->lastPage() == $products->currentpage())
+      {{  $products ->total()  }}
+    @else
+      {{ $products->currentpage() * $products ->perpage() }}
+    @endif
+   Of {{  $products ->total()  }} Records
 
+  {{-- ($products->currentpage() -1) * $products ->perpage() + $products->count() }} of {{  $products ->total()  --}}
+</div>
 @if($products->count()>0)
     @foreach($products as $row)
       @php $img1 = 'storage/admin/images/sellproduct/thumbnail/215_'.$row->img1 @endphp
