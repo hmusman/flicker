@@ -53,7 +53,7 @@ class SellProductController extends Controller
         Image::make($img->getRealPath())->resize(175,214)->save(public_path('storage/admin/images/sellproduct/thumbnail/175_'.$filename1));
         Image::make($img->getRealPath())->resize(100,100)->save(public_path('storage/admin/images/sellproduct/thumbnail/100_'.$filename1));
         Image::make($img->getRealPath())->resize(215,215)->save(public_path('storage/admin/images/sellproduct/thumbnail/215_'.$filename1));
-        Image::make($img->getRealPath())->resize(500,500)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
+        Image::make($img->getRealPath())->resize(700,700)->save(public_path('storage/admin/images/sellproduct/thumbnail/400_'.$filename1));
         return $filename1;
    }
 
