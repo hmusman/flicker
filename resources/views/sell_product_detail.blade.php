@@ -43,6 +43,9 @@
 </head>
 
 <style>
+
+
+
   .modal-window {
   position: fixed;
 
@@ -203,7 +206,7 @@ cursor: pointer;
             <ul class="ClousSlicker">
                @if(!empty($img1))
                <li style="border:1px red solid;"><img class='cloudzoom-gallery img-thumbnail' src="{{ asset($img1_400)}}"
-                  data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}'  " style='max-width:90px;max-height:100px;'>
+               data-cloudzoom ="useZoom:'.cloudzoom', image:'{{ asset($img1_400)}}' "  style='max-width:90px;max-height:100px;'>
                </li>
                @endif
                @if(!empty($img2))
@@ -714,13 +717,13 @@ function replybox(id)
 }
 document.addEventListener("DOMContentLoaded", function(event) {
 
-CloudZoom.quickStart();
-$(function(){
-    $('#slider1').Thumbelina({
-        $bwdBut:$('#slider1 .left'),
-        $fwdBut:$('#slider1 .right')
-    });
-});
+// CloudZoom.quickStart();
+// $(function(){
+//     $('#slider1').Thumbelina({
+//         $bwdBut:$('#slider1 .left'),
+//         $fwdBut:$('#slider1 .right')
+//     });
+// });
 
 
 
@@ -1109,6 +1112,7 @@ window.onclick = function(event) {
 
 <script>
 // Get the modal
+
 
 
 function modalTwoagain() {

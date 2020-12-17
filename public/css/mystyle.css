@@ -1917,6 +1917,8 @@ border-color: white !important;
 }
 
 
+body{
+  background: #f8f7f7 !important;
 }
 
 #myUL {
@@ -1942,7 +1944,7 @@ border-color: white !important;
 
 #myUL li a:hover:not(.header) {
   background-color: white !important;
-  color: green !important
+  color: #4a88c1 !important
   ;
 }
 
@@ -2015,6 +2017,11 @@ ul[class="menu mt-2"]>li {
   font-family: Libre_Baskerville !important;
 } */
 
+@media (min-width: 1200px){
+.container {
+    max-width: 1220px !important;
+}
+}
 
 
 

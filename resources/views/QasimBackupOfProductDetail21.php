@@ -36,7 +36,7 @@
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
     #myInput {
-      background-image: url('/css/searchicon.png')}}');
+      background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
       background-repeat: no-repeat;
       width: 50%;
@@ -44,6 +44,7 @@
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
       margin-bottom: 12px;
+           color: black;
     }
     
     #myUL {

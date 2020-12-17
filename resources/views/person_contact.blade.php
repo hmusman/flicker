@@ -51,7 +51,7 @@
       margin-bottom: 12px; */
 
 
-      
+           color: black;
                  height: 28px;
     position: relative;
     top: 4px;

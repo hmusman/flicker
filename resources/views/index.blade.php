@@ -46,6 +46,8 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
        height: 267px !important;
 }
 
+
+
 }
 
 
@@ -74,10 +76,10 @@ p[id="NewPhones"]{
       }
       #myInput {
 
-
+            color: black;
              height: 18px;
     position: relative;
-    top: 6px;
+    top: 5px;
              background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
@@ -87,6 +89,7 @@ p[id="NewPhones"]{
       padding: 12px 20px 12px 40px;
       border: 0px solid #ddd;
       margin-bottom: 12px;
+      font-weight: 500 !important;
       }
       #myUL {
       list-style-type: none;
@@ -162,7 +165,7 @@ border-left: 2px red solid !important;
       display: none !important;
       }
       .slick-dotted.slick-slider{
-      margin-bottom: 7px ;
+      margin-bottom: -14px ;
       }
       a[class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10"]{
       background-color: #101115;
@@ -501,6 +504,10 @@ border-left: 2px red solid !important;
       width: 93% !important;
       }
       } */
+
+      div[class="pc"]{
+         border-right: 2px white solid !important;
+      }
    </style>
    <style>
       @media (max-width: 550px){
@@ -512,12 +519,26 @@ border-left: 2px red solid !important;
    <body>
 
 
+
+
+
+
+
+
+
+
+
+
       <a href="#" id="scroll" style="display: none;"><span></span></a>
 
 
 
       @include('includes.header')
       @if($buynewsell->count()>0)
+
+
+
+
 
 
 <div class="container">
@@ -551,21 +572,21 @@ border-left: 2px red solid !important;
                <a href="{{ route('BuyUsedMobilePhones') }}" style="text-decoration: none;" >
                   <div style="height: 10%; width: 100%; background-color: #4a88c1; ">
                      <center class="fontUbantu" style="    color: white; 
-                        font-size: 23px;">{{ ucwords($row->title) }}</center>
+                        font-size: 25px;">{{ ucwords($row->title) }}</center>
                   </div>
                </a>
                @elseif($row->title=='sell')
                <a href="{{ route('Sell') }}" style="text-decoration: none;" >
                   <div style="height: 10%; width: 100%; background-color: #4a88c1; ">
                      <center class="fontUbantu" style="    color: white;
-                        font-size: 23px;">{{ ucwords($row->title) }}</center>
+                        font-size: 25px;">{{ ucwords($row->title) }}</center>
                   </div>
                </a>
                @else
                <a href="{{ route('Shop') }}" style="text-decoration: none;" >
                   <div style="height: 10%; width: 100%; background-color: #4a88c1; ">
-                     <center style="    color: white;
-                        font-size: 23px;">{{ ucwords($row->title) }}</center>
+                     <center style="    color: #f9fffbeb;
+                        font-size: 25px;">{{ ucwords($row->title) }}</center>
                   </div>
                </a>
                @endif
@@ -735,7 +756,7 @@ border-left: 2px red solid !important;
       <center>
          <hr style="width: 10%; height: 2px; background-color: #4a88c1;"/>
       </center>
-      <section id="NewBrandsMob"  style="padding-top: 100px; background-color: white;">
+      <section id="NewBrandsMob"  style="padding-top: 100px; background-color: #f8f7f7;">
          <div class="container">
             <div class="row" >
                <div class="col-md-12 col-lg-12 col-sm-12" id="slickBtnFor">
@@ -747,7 +768,7 @@ border-left: 2px red solid !important;
 
                         <figure>
                               <a href="{{ route('ProductDetail',$product->id) }}" style="outline: none;">
-                                    <img src="{{ asset($img) }}" class="img-thumbnail" style="height: 214px;" alt="Trulli">
+                                    <img src="{{ asset($img) }}" class="img-thumbnail" style="height: 214px; border-right: 1px #989292d1 solid !important ; background-color: #f8f7f7 !important; " alt="Trulli">
 
                                     <figcaption>
                                        <div class="rightbox" style="height: 75px;margin-top: 19px;">
@@ -875,4 +896,26 @@ border-left: 2px red solid !important;
    <script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>
    <!-- <script  src="js/jquery-2.1.3.min.js"></script> -->
    <script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
+
+
+
+
+
+<script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+});
+</script>
+
+
+
+
+
 </html>

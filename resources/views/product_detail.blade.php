@@ -458,14 +458,14 @@ small {
                     @php $img9_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img9 @endphp
                     @php $img10_500 = '/storage/admin/images/product/thumbnail/700_'.$product->img10 @endphp
 
-                    @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
+                    <!-- @php $img1_700 = '/storage/admin/images/product/thumbnail/700_'.$product->image @endphp
                     @php $img2 = $product->dimage @endphp
                     @php $img3 = $product->dimage1 @endphp
 
                     @php $img1_100 = '/storage/admin/images/product/thumbnail/100_'.$product->image @endphp
                     @php $img2_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage @endphp
                     @php $img3_100 = '/storage/admin/images/product/thumbnail/100_'.$product->dimage1 @endphp
-
+ -->
 
 
 
@@ -2364,6 +2364,17 @@ function myShowPassFunction() {
   }
 }
 </script>
+<script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
 
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+});
+</script>
 
 </html>

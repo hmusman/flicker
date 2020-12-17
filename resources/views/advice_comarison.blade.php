@@ -35,6 +35,7 @@
              height: 18px;
     position: relative;
     top: 6px;
+         color: black;
              background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
