@@ -17,6 +17,9 @@
    <style>
 
 
+
+
+
 @media (min-width: 992px){
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-top: .5rem !important;
@@ -524,11 +527,31 @@ border-left: 2px red solid !important;
 
 
       <section>
+
          <div class="row">
-            @foreach($buynewsell as $row)
+            @php $counter=1; @endphp
+            @php 
+             
+            $color = '';      
+            @endphp
+            @foreach($buynewsell as $key => $row)
             @php $img = 'storage/'.$row->img @endphp
             @if($row->title=='buy') @php $url = "Shop" @endphp @else @php $url = "#" @endphp  @endif
-            <div class="col-md-4" style="background-color: #0b0c0c; border-right: 2px white solid;   height: 400px;" >
+            
+            @php 
+            if($counter==1){
+               $color =" #0b0c0c";
+            }
+            if($counter==2){
+               $color ="gray";
+            }
+            if($counter==3){
+               $color ="#80808073";
+            }
+            @endphp
+            
+            <div class="col-md-4" style="background-color: @php echo $color; @endphp; border-right: 2px white solid;   height: 400px;" >
+              
                <div style="height: 60%; width: 100%;">
                   <center>
                      
@@ -570,6 +593,12 @@ border-left: 2px red solid !important;
                </a>
                @endif
             </div>
+            <?php
+            $counter++;
+            if($counter==4){
+               $counter=1;
+            }
+            ?>
             @endforeach
          </div>
       </section>
