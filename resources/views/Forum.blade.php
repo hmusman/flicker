@@ -52,7 +52,7 @@
       border: 1px solid #ddd;
       margin-bottom: 12px; */
 
-
+     color: black;
       
                  height: 28px;
     position: relative;

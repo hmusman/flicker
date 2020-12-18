@@ -62,7 +62,7 @@ select{
 
 @media (min-width: 500px){
 .qasimnavigatin {
- padding: 13px 10px 0px 10px !important;
+ padding: 3px 10px 0px 10px !important;
 }
 }
 
@@ -84,7 +84,7 @@ select{
       margin-bottom: 12px; */
 
 
-      
+           color: black;
                  height: 28px;
     position: relative;
     top: 4px;
@@ -97,6 +97,7 @@ select{
       padding: 12px 20px 12px 40px;
       border: 0px solid #ddd;
       margin-bottom: 12px;
+        font-weight: 500 !important;
       }
         #myUL {
       list-style-type: none;
@@ -908,4 +909,16 @@ border-left: 2px red solid !important;
 
     <!-- <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>  -->
    <script  src="{{ asset('js/ScrollJS2/script.js')}}"></script>
+   <script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+});
+</script>
 </html>

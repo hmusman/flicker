@@ -204,10 +204,10 @@ select{
 
        #myInput {
 
-
-             height: 18px;
+     height: 18px;
     position: relative;
-    top: 6px;
+    top: 5px;
+         color: black;
              background: #f8f7f7;
       background-image: url('/css/searchicon.png');
       background-position: 10px 12px;
@@ -215,8 +215,9 @@ select{
       width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
-      border: 1px solid #ddd;
+      border: 0px solid #ddd;
       margin-bottom: 12px;
+      font-weight: 500 !important;
       }
       #myUL {
       list-style-type: none;
@@ -1459,7 +1460,7 @@ ul[class="pagination"] > .page-item{
          <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
             margin-left: 6px; font-weight: bold; " class="toggleqasim headerqasim fontUbantu">PRICE RANGE</h6>
          <div class="contentqasim">
-            <strong>Product Features:</strong><br />
+            <strong style="color: #f8f7f7">Product Features:</strong><br />
             <ul>
                <li style="color: black;     width: 100%;
                   margin-left: -24px;  ">
@@ -1605,7 +1606,7 @@ ul[class="pagination"] > .page-item{
          </div>
          <div class="col-md-4">
             <div  style="padding-top: 9px;  border-bottom: 1px #b0b0b0 solid; height: 53px;  ">
-               <div style="width:30%; float:left; background-color:#ffffff;     color: #999999;    font-weight: 500;    padding: 10px 0px 0px 0px; ">ORDER</div>
+               <div style="width:30%; float:left;     color: #999999;    font-weight: 500;    padding: 10px 0px 0px 0px; ">ORDER</div>
                <div style="width:70%; float:left;  ">
                   <select class="form-control" id="sort_by_order" style="color: #0b0c0c;font-weight: 600">
                      <option selected="" disabled="" style="color: black;  font-weight: 600 !important;" hidden="">Please Choose</option>
@@ -1618,7 +1619,7 @@ ul[class="pagination"] > .page-item{
          <div class="col-md-1"></div>
          <div class="col-md-4">
             <div  style="padding-top: 9px;  border-bottom: 1px #b0b0b0 solid; height: 53px;  ">
-               <div style="width:30%; float:left; background-color:#ffffff;     color: #999999;     font-weight: 500;  padding: 10px 0px 0px 0px; ">PRICE</div>
+               <div style="width:30%; float:left;   color: #999999;     font-weight: 500;  padding: 10px 0px 0px 0px; ">PRICE</div>
                <div style="width:70%; float:left;  ">
                   <select class="form-control" id="sort_by_price" style="color: #0b0c0c;font-weight: 600">
                      <option selected="" disabled="" hidden="">Please Choose</option>
@@ -2833,6 +2834,18 @@ $(window).scroll(function(){
 
 
 
+<script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+});
+</script>
 
 
 

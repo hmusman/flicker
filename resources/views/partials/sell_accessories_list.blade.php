@@ -1,6 +1,8 @@
 @if($accessories->count()>0)
     @foreach($accessories as $row)
       @php $img1 = 'storage/admin/images/sellaccessory/thumbnail/215_'.$row->img @endphp
+
+      
       <div style="width: 100%; margin-top: 30px; float: left;">
           <div style="width: 30%; float: left;">
 
@@ -47,9 +49,10 @@
               <ul>
                 <li>
                     <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 180px;padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
-
+  <!-- <p class="myBtn"  style="background-color: blue;width: 180px;padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p> -->
                 </li>
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
+            
               </ul>
 
 

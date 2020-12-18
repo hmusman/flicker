@@ -42,7 +42,7 @@
       margin-bottom: 12px; */
 
 
-      
+           color: black;
              height: 20px;
     position: relative;
     top: 5px;
@@ -55,6 +55,7 @@
       padding: 12px 20px 12px 40px;
       border: 0px solid #ddd;
       margin-bottom: 12px;
+            font-weight: 500 !important;
       }
         #myUL {
       list-style-type: none;
@@ -1254,5 +1255,20 @@ function scrollWin() {
 
 
 
+</script>
+
+
+
+<script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+});
 </script>
 </html>

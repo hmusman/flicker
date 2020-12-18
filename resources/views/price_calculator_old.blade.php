@@ -39,6 +39,7 @@
       padding: 12px 20px 12px 40px;
       border: 1px solid #ddd;
       margin-bottom: 12px;
+           color: black;
     }
     
     #myUL {
