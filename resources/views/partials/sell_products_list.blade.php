@@ -96,6 +96,130 @@ ul[class="ulatMob"]{
       width: 50% !important;
 }
 </style>
+
+
+
+
+
+
+<style>
+  .modal-window {
+  position: fixed;
+
+
+
+background-color: #8080807a;
+
+
+
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/* Demo Styles */
+html,
+body {
+  height: 100%;
+}
+
+
+
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+small {
+  color: #aaa;
+}
+
+
+
+</style>
+
+
+  <div id="open-modal" class="modal-window">
+        <div>
+
+
+
+
+          <a href="#" title="Close" class="modal-close">
+          
+           <img  src="{{ asset('storage/images/download__3_-removebg-preview (2) (1).png')}}"  />
+          </a>
+
+
+
+
+          <h1 style="color: black">Person Contact Information</h1>
+          <div class="row">
+          <!-- <p class="alert alert-warning ErrorMsg"></p> -->
+          </div>
+          <form method="post">
+            @csrf
+          
+         <p style="color: black"> PLease Enter Backend Data Here</p>
+          </form>
+                         
+                     
+                      
+        </div>
+      </div>
+       
+
+
+
+
+
+
+
 <div class="col-md-12">
         
         {!! $products->links() !!}
@@ -213,11 +337,13 @@ ul[class="ulatMob"]{
                     <a href="{{ route('SellProductDetail',$row->id) }}" style="    background-color: #4a88c1; color: white ; width: 120px;  border-radius: 3px  ;    padding: 5px 21px 5px 21px;text-align: center;cursor: pointer;text-decoration: none;">Detail</a>
 
                 </li>
-                <li>
+
+
+                <!-- <li>
                   <a style="text-decoration: none;
     color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
 
-                </li>
+                </li> -->
 
 
 
@@ -226,6 +352,14 @@ ul[class="ulatMob"]{
                    <p id="myBtn"  style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
 
                 </li> -->
+
+                 <li>
+                  <a style="text-decoration: none;  color: white;" href="#open-modal"    >
+                   <p   style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
+
+                </li>
+
+ 
 
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
               </ul>

@@ -355,7 +355,7 @@ border-left: 2px red solid !important;
       .navbar .nav-item:hover .nav-link{ color:  rgba(0,0,0,.5) }
       .navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
       .navbar .dropdown-menu.fade-up{ top:180%;  }
-      .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+      .navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:102%; transform: rotateX(0deg); }
       }	
       /* ============ desktop view .end// ============ */
    </style>
@@ -851,8 +851,16 @@ border-left: 2px red solid !important;
               }
           }
       
-          
+                moveFocusOther();
+
+
       }
+       function  moveFocusOther(){
+      
+            document.getElementById("myUL").focus(); 
+            
+      }
+     
    </script>
    <script>
       function shoediv(){
@@ -940,6 +948,7 @@ border-left: 2px red solid !important;
         $('#myUL').hide();
      //   container.removeClass('search');
     }
+    document.getElementById('myInput').value = ''
 });
 </script>
 

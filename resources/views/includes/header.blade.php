@@ -90,6 +90,10 @@ padding: 11px 10px 0px 10px;
     color: #706e6e !important
 }
 
+ul[class="dropdown-menu"] > li{
+  width: 100% !important;
+}
+
 
 
     .navbar-fixed-top {
@@ -299,10 +303,10 @@ padding: 11px 10px 0px 10px;
       
       </li> -->
             @php $brands = App\Brand::select('brands.name','brands.id')->join('sma_products','brands.id','=','sma_products.brand_id')->distinct()->get() @endphp
-   <li  class="nav-item dropdown" style="width:10%; float: left; height: 100%;  border-left: 1px #0b0c0c52 solid; border-right: 1px #0b0c0c52 solid;">
+   <li  class="nav-item dropdown" style="width:10%; float: left;    padding-left: 9px;height: 100%;  border-left: 1px #0b0c0c52 solid; border-right: 1px #0b0c0c52 solid;">
       <a class="nav-link  dropdown-toggle qasimnavigatin mobBrand fontUbantu"  data-toggle="dropdown" style="   " ><a href="{{ route('BrandProductsList',$brands[0]->id) }}" class="droplinks" > BRANDS</a> </a>
 
-      <ul class="dropdown-menu fade-up">
+      <ul class="dropdown-menu">
          @foreach($brands as $brand)
          <li>
             <a class="dropdown-item" href="{{ route('BrandProductsList',$brand->id) }}">
@@ -314,10 +318,10 @@ padding: 11px 10px 0px 10px;
    </li>
 
      @php $accessories = App\AccessoryCategory::select('accessory_categories.title','accessory_categories.id')->join('accessories','accessory_categories.id','=','accessories.accessory_category_id')->distinct()->get() @endphp
-   <li class="nav-item dropdown" style="width:15%; float: left; height: 100%;border-right: 1px #0b0c0c52 solid;">
+   <li class="nav-item dropdown" style="width:15%; float: left; padding-left: 20px ;height: 100%;border-right: 1px #0b0c0c52 solid;">
       <a class="nav-link  dropdown-toggle qasimnavigatin fontUbantu" style="" href="#" data-toggle="dropdown" ><a href="{{ route('NewCategoryAccessories',$accessories[0]->id) }}" class="droplinks" >  ACCESSORIES </a> </a>
     
-      <ul class="dropdown-menu fade-up">
+      <ul class="dropdown-menu">
          @foreach($accessories as $accessory)
          <li>
             <a class="dropdown-item" href="{{ route('NewCategoryAccessories',$accessory->id) }}">
@@ -337,13 +341,13 @@ padding: 11px 10px 0px 10px;
    </li>
    <li style="width:40%; float: left; height: 100%">
       <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm qasimnavigatin fontUbantu" placeholder="Search our Store" >
-      <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 33% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+      <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 35% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
          <div>
          
             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none; ">DEVICES  
             
             
-            <button id="srchbtnid" onclick="hideagain();" style="margin-left: 325px;
+            <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;
                background-color: #f8f7f7;
                color: black;
                font-weight: 600;
