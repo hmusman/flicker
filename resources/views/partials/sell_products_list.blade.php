@@ -181,7 +181,7 @@ small {
 
 
 
-  <div id="open-modal" class="modal-window">
+<!--   <div id="open-modal" class="modal-window">
         <div>
 
 
@@ -197,7 +197,7 @@ small {
 
           <h1 style="color: black">Person Contact Information</h1>
           <div class="row">
-          <!-- <p class="alert alert-warning ErrorMsg"></p> -->
+       
           </div>
           <form method="post">
             @csrf
@@ -208,7 +208,7 @@ small {
                      
                       
         </div>
-      </div>
+      </div> -->
        
 
 
@@ -337,6 +337,7 @@ small {
                 </li>
 
 
+
                 <!-- <li>
                   <a style="text-decoration: none;
     color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px;padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
@@ -345,30 +346,18 @@ small {
 
 <!-- 
 New Correct PopUp -->
-  <!--  <li>
+   <li>
                   <a style="text-decoration: none;  color: white;" href="#open-modal"    >
-                   <p id="myBtn" class="myBtn" data-id="{{ $row->id }}" onclick="ContactShow('{{ $row->id }}')"  style="background-color: #4a88c1;border-radius: 3px;padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
-
-                </li> -->
-
-
-
-<!-- <div id="open-modal" class="modal-window">
-        <div> -->
-
-
-
-                 <li>
-                  <a style="text-decoration: none;  color: white;" href="#open-modal"    >
-                   <p   style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
+                   <p id="myBtn" class="myBtn" data-id="{{ $row->id }}" onclick="ContactShow('{{ $row->id }}')"  style="background-color: #4a88c1;border-radius: 3px;padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contacts</p></a>
 
                 </li>
-
  
 
-                <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
-              </ul>
-              
+
+<div id="open-modal" class="modal-window">
+        <div>
+
+
 
 
 
