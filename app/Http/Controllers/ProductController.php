@@ -81,6 +81,7 @@ class ProductController extends Controller
             'color'=>'required',
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
+            'pocket'=>'bail | required | alpha_dash',
             'description'=>'required',
             'image1'=>'required|mimes:png,jpg,jpeg',
             'image2'=>'mimes:png,jpg,jpeg',
@@ -143,6 +144,7 @@ class ProductController extends Controller
                 'color' => $request->color,
                 'price' => $request->price,
                 'quantity' => $request->quantity,
+                'pocket' => $request->pocket,
                 'launch_announced' => $request->announced,
                 'launch_status' => $request->status,
                 'body_dimensions' => $request->dimension,
@@ -458,6 +460,7 @@ class ProductController extends Controller
             $product->color = $request->color;
             $product->price = $request->price;
             $product->quantity = $request->quantity;
+            $product->pocket = $request->pocket;
             $product->launch_announced = $request->announced;
             $product->launch_status = $request->status;
             $product->body_dimensions = $request->dimension;

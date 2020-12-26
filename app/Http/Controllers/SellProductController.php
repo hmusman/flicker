@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Category;
 use App\Brand;
+use App\User;
 use Image;
 use DB;
 use App\SellerQuestion;
@@ -21,15 +22,24 @@ class SellProductController extends Controller
     public function frontEndProducts()
     {
         $products = SellProduct::orderBy('id','desc')->paginate(10);
+        
+
         $brands = Brand::select('brands.name','brands.id')->join('sell_products','brands.id','=','sell_products.brand_id')->distinct()->get();
+         // $user = User::select('user.name','user.id')->join('sell_products','user.id','=','sell_products.user_id')->distinct()->get();
+
         $cities = DB::select('SELECT city,COUNT(city) total FROM `sell_products` GROUP by city');
         $colors = SellProduct::select('color')->distinct()->get();
+        
+        // dd($products);
         return view('buy_used_mobiles',compact(['products','brands','colors','cities']));
     }
     
     public function SellProductsData(Request $request)
     {
         $products = SellProduct::orderBy('id','desc')->paginate(10);
+
+       
+        // dd($products);
         return view('partials.sell_products_list',compact('products'));
     }
 
@@ -646,6 +656,23 @@ class SellProductController extends Controller
     public function person_contact($id)
     {
         $product =SellProduct::where('id',$id)->first();
+        
         return view('person_contact',compact('product'));
     }
+//////////////////////////////////////////////////////////////////////////////
+
+     ///update ajax code/////
+    public function getDataByid($id){
+        $products=SellProduct::where('id',$id)->first();
+        return response()->json($products->user);
+    }
+    // public function updateStudent($id,Request $Request){
+    //     // dd($id);
+        
+    //     $product=SellProduct::find($id);
+    //     $product->user_id=$Request->user_id;
+    //     $product->update();
+    //     return response()->json($product);
+    // }
+    
 }

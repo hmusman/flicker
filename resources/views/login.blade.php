@@ -385,31 +385,31 @@ button[id="srchbtnid"]{
                     </form>     
                   
                     
-					<!-- <br/>
+					<br/>
 					<br/><br/>
                   
                       <form action="/action_page.php">
                         <div class="row">
-                          <h4 >Login with Social Media </h4>
-                          <p class="">Hello, Welcome to your account.</p>
+                          <!-- <h4 >Login with Social Media </h4>
+                          <p class="">Hello, Welcome to your account.</p> -->
                     <br/><br/>
                           <div class="col">
-                            <a href="#" class="fb btn" onmouseover="this.style.backgroundColor = '#2b4375'" ; >
+                            <a href="{{route('social.login',['provider' => 'facebook'])}}" class="fb btn" onmouseover="this.style.backgroundColor = '#2b4375'" ; >
                               <i class="fa fa-facebook fa-fw"></i> Login with Facebook
                              </a>
-                            <a href="#" class="twitter btn" onmouseover="this.style.backgroundColor = '#4c8cbd'" ;>
+                            <!-- <a href="#" class="twitter btn" onmouseover="this.style.backgroundColor = '#4c8cbd'" ;>
                               <i class="fa fa-twitter fa-fw"></i> Login with Twitter
                             </a>
                             <a href="#" class="google btn" onmouseover="this.style.backgroundColor = '#ca4e3e'" ;>
                               <i class="fa fa-google fa-fw">
                               </i> Login with Google+
-                            </a>
+                            </a> -->
                           </div>
                     
                          
                           
                         </div>
-                      </form> -->
+                      </form>
                  
                   
                   

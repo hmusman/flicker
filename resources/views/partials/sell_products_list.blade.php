@@ -96,6 +96,87 @@ ul[class="ulatMob"]{
       width: 50% !important;
 }
 </style>
+
+<style>
+  .modal-window {
+  position: fixed;
+
+
+
+background-color: #8080807a;
+
+
+
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
+}
+
+/ Demo Styles /
+html,
+body {
+  height: 100%;
+}
+
+
+
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+small {
+  color: #aaa;
+}
+
+
+
+</style>
 <div class="col-md-12">
         
         {!! $products->links() !!}
@@ -209,23 +290,140 @@ ul[class="ulatMob"]{
 
               <ul class="ulatMob" style="margin-top: -51px ; position: relative;
     margin-bottom: -11px !important;padding-left: 19px;;">
+                
                 <li>
-                    <a href="{{ route('SellProductDetail',$row->id) }}" style="    background-color: #4a88c1; color: white ; width: 120px;  border-radius: 3px  ;    padding: 5px 21px 5px 21px;text-align: center;cursor: pointer;text-decoration: none;">Detail</a>
+                    <a href="{{ route('SellProductDetail',$row->id) }}" 
+                      style="background-color: #4a88c1; color: white ; width: 120px;  border-radius: 3px;padding: 5px 21px 5px 21px;text-align: center;cursor: pointer;text-decoration: none;">Detail</a>
 
                 </li>
-                <li>
+
+<!-- code for new page open ..coment below same code to open new page -->
+                <!-- <li>
                   <a style="text-decoration: none;
-    color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
+    color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px;padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
+                </li> -->
+
+
+<!-- 
+New Correct PopUp -->
+   <li>
+                  <a style="text-decoration: none;  color: white;" href="#open-modal"    >
+                   <p id="myBtn" class="myBtn" data-id="{{ $row->id }}" onclick="ContactShow('{{ $row->id }}')"  style="background-color: #4a88c1;border-radius: 3px;padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
 
                 </li>
 
 
 
-                                <!-- <li>
-                  <a style="text-decoration: none;  color: white;" >
-                   <p id="myBtn"  style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
+<div id="open-modal" class="modal-window">
+        <div>
 
-                </li> -->
+
+
+
+          <a href="#" title="Close" class="modal-close">
+          
+           <img  src="{{ asset('storage/images/download__3_-removebg-preview (2) (1).png')}}"  />
+          </a>
+
+
+
+
+          <h1 style="color: black">Person Contact Information</h1>
+          <div class="row">
+<div class="container">
+ <h3 class="fontUbantu" style="color: #0b0c0c;
+    text-align: center;
+    font-weight: 500;
+    font-size: 35px;
+    margin-top: 51px;">Personal Contact</h3>
+
+<hr style="background: #0071e3;
+    width: 6%;
+    height: 1px;"/>
+<br/>
+<div class="row">
+    <div class="col-md-4" style="text-align: center"> <img style="width: 60%;height: 250px;" src="{{ asset('/storage/images/person_contact.jpg') }}" alt="Trulli" /></div>
+     <div class="col-md-8" style="color: #0b0c0c">
+   
+    <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
+        <p class="leftdiv" style="" class="fontUbantu">NAME</p></div>
+         <div class="col-md-8" style=" background-color:#f8f7f7;">
+         <p class="fontUbantu leftdiv" id="user_name">{{$row->user_name}}</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; ">
+        <p class="leftdiv" style="" class="fontUbantu">CITY</p></div>
+         <div class="col-md-8" style=" ">
+         <p class="fontUbantu leftdiv">{{ $row->city }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
+        <p class="leftdiv" style="" class="fontUbantu">CELL</p></div>
+         <div class="col-md-8" style=" background-color:#f8f7f7;">
+         <p class="fontUbantu leftdiv" id="phone">{{$row->phone}}</p>
+        </div>
+    </div>
+
+
+      <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; ">
+        <p class="leftdiv" style="" class="fontUbantu">COUNTRY</p></div>
+         <div class="col-md-8" style=" ">
+         <p class="fontUbantu leftdiv">PAKISTAN</p>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="row">
+        <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
+        <p class="leftdiv" style="" class="fontUbantu">ADDRESS</p></div>
+         <div class="col-md-8" style=" background-color:#f8f7f7;">
+         <p class="fontUbantu leftdiv">BATALA COLONY FAISALABAD</p>
+        </div>
+    </div> -->
+
+
+
+
+    </div>
+</div>
+
+</div>
+
+         
+          </div>
+          <form method="post">
+            @csrf
+          
+         <p style="color: black"> PLease Enter Backend Data Here</p>
+          </form>
+                         
+                     
+                      
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Model Start -->
+
+ 
+<!-- Model End -->
+                </li>
 
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
               </ul>
@@ -236,33 +434,6 @@ ul[class="ulatMob"]{
 
 
 <!-- <button id="myBtn">Open Modal</button> -->
-
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-       <h2>Modal Header</h2>
-      <span class="close">&times;</span>
-     
-    </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
-</div>
-
-
-
-
-
-
-
 
       </div>
     @endforeach
@@ -307,4 +478,20 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+</script>
+
+<script>
+   $(document).ready(function() {
+        $("#myBtn").click(function() { 
+          let id = $(this).data('id');
+         $.ajax({  //create an ajax request to display.php
+          type: "GET",
+          url: "/students/"+id,   
+          success: function (data) {
+           $('#user_name').text(data.name);
+            
+          }
+        });
+      });
+      });  
 </script>

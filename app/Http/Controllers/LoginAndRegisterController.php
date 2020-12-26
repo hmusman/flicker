@@ -184,6 +184,7 @@ class LoginAndRegisterController extends Controller
 
      public function adminLogin(Request $request)
     {
+        
         $validation = Validator::make($request->all(),[
             'login_email'=>'bail | required | email',
             'login_password'=>'bail | required'

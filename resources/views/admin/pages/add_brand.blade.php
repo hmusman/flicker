@@ -54,7 +54,16 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">PTA</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name="pta" type="text" value="{{ old('pta') }}" placeholder="Enter pta " id="example-text-input">
+                                                @error('pta')
+                                                    <p class="text-danger">{{ $message }}</p>
+                                                @enderror
+                                            </div>
                                         </div>
 
                                         <div class="card">

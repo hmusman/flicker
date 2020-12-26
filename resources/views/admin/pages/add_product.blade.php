@@ -164,6 +164,16 @@
                                                     </div>
                                                 </div>
 
+                                                 <div class="form-group row">
+                                                    <label for="" class="col-md-2 col-form-label">Pocket</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="text" value="{{ old('pocket') }}" name="pocket" placeholder="It is in your pocket" id="pocket">
+                                                        @error('pocket')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
                                                 <div class="form-group row">
                                                     <label for="" class="col-md-2 col-form-label">Detail</label>
                                                     <div class="col-md-10">

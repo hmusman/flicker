@@ -25,4 +25,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function login()
+    {
+        if(Auth::check()){
+            return redirect()->route('user');
+        }
+        return view('home');
+    }
+
+  
+   
 }

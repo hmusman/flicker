@@ -827,12 +827,15 @@ color: black;
                                   @enderror
                               </div>
                           </div>
+                          <!-- ....................... -->
+                         
+                          <!-- ........................................... -->
 
                           <div class="form-group row hide_some_block">
                               <label for="example-text-input" class="col-md-4 col-form-label">PTA</label>
                               <div class="col-md-8">
-                                 <select class="form-control " name="pta">
-                                        <option disabled="" selected="">Select Status</option>
+                                 <select class="form-control " name="pta" id="pta" value="">
+                                        <option disabled="" selected="" >Select Status</option>
                                         <option value="approved">Approved</option>
                                         <option value="unapproved">Un Approved</option>
                                   </select>
@@ -841,6 +844,8 @@ color: black;
                                   @enderror
                               </div>
                           </div>
+
+                           <!-- ........................................... -->
 
                           <div class="form-group row">
                               <label for="example-text-input" class="col-md-4 col-form-label">City</label>
@@ -1489,7 +1494,7 @@ color: black;
                     </div>
                       <div class="modal-body">
                         <div class="row"><p class="alert alert-warning ErrorMsg"></p></div>
-                        <form method="post">
+                        <form method="post" >
                           @csrf
                           <div class="form-group">
                               <label class="info-title">Email</label>
@@ -1672,8 +1677,7 @@ color: black;
       {
         $('#imgInput'+num)[0].click();
       }
-      
-
+    
     function estimate_fun()
     {
        var estimate_deduction =0;

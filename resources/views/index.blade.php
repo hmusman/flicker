@@ -805,7 +805,7 @@ border-left: 2px red solid !important;
                                              <p class="fontUbantu" style="font-size: 15px;   font-variant: all-small-caps;color: #000000; ">{{ $product->name }}</p>
                                           </center>
                                           <center>
-                                             <div class="shortdesc fontUbantu" style=" color: #959595 ;  font-size: 11px;   ">It is in your pocket</div>
+                                             <div class="shortdesc fontUbantu" style=" color: #959595 ;  font-size: 11px;   ">{{$product->pocket}}</div>
                                           </center>
                                        </div>
 

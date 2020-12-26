@@ -5,10 +5,17 @@ Route::view('/blog', 'blog')->name('blog');;
 
 Route::view('/forum','forum')->name('forum');
 Route::get('/mobile', 'FrontEndController@indexmobile')->name('homemobile');
-
 Route::get('/personcontact/{id}', 'SellProductController@person_contact')->name('personcontact');
+Route::get('/students/{id}','SellProductController@getDataByid');//<-show data/////
+// Route::post('/student/update/{id}','SellProductController@updateStudent')->name('student.update');
 
 Route::get('Login', 'LoginAndRegisterController@index')->name('Login');
+// add social Button
+Route::get('/social-login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')->name('social.login');
+Route::get('/social-login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
+Route::get('/users/login', 'HomeController@login')->name('user.login');
+
+
 Route::get('AdminLogin', 'LoginAndRegisterController@adminIndex');
 Route::post('AdminSession', 'LoginAndRegisterController@adminLogin')->name('AdminSession');
 Route::get('Admin/Logout', 'LoginAndRegisterController@adminLogout')->name('AdminLogout');
@@ -20,6 +27,8 @@ Route::get('SingleCompareProductDetail','ProductController@singleCompareProductD
 Route::get('AdviceComparison3','ProductController@adviceComparison2')->name('AdviceComparison2');
 Route::get('Logout', 'LoginAndRegisterController@logout');
 Route::post('LoginSession', 'LoginAndRegisterController@login');
+
+
 Route::post('UserModalLogin', 'LoginAndRegisterController@UserModalLogin')->name('UserModalLogin');
 Route::post('Register/Buyer', 'LoginAndRegisterController@buyer');
 Route::post('Register/Seller', 'LoginAndRegisterController@seller');
@@ -39,12 +48,14 @@ Route::get('/NewShopBrandPriceAccessories','AccessoryCategoryController@ShopBran
 Route::get('/NewShopViewAccessories','AccessoryCategoryController@ShopViewAccessories')->name('NewShopViewAccessories');
 
 Route::get('pagination/fetch_data', 'ProductController@fetch_data');
-Route::get('pagination/accessory_fetch_data', 'AccessoryController@fetch_data');
+Route::get('pagination/accessory_fetch_data', 'AccBuyUsedMobilePhonesessoryController@fetch_data');
 Route::get('pagination/accessory_category_fetch_data', 'AccessoryCategoryController@fetch_data');
 Route::get('ShopViewProducts','ProductController@ShopViewProducts')->name('ShopViewProducts');
 Route::get('BuyUsedAccessories','SellAccessoryController@frontEndAccessories')->name('BuyUsedAccessories');
 Route::get('BuyUsedAccessoriesData','SellAccessoryController@BuyUsedAccessoriesData')->name('BuyUsedAccessoriesData');
+
 Route::get('BuyUsedMobilePhones','SellProductController@frontEndProducts')->name('BuyUsedMobilePhones');
+
 Route::get('BrandsSellProducts','SellProductController@BrandsSellProducts')->name('BrandsSellProducts');
 Route::get('BrandsSellAccessories','SellAccessoryController@BrandsSellAccessories')->name('BrandsSellAccessories');
 Route::get('BrandsPriceSellAccessories','SellAccessoryController@BrandsPriceSellAccessories')->name('BrandsPriceSellAccessories');
