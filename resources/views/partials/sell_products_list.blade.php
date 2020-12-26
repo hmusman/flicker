@@ -97,6 +97,7 @@ ul[class="ulatMob"]{
 }
 </style>
 
+
 <style>
   .modal-window {
   position: fixed;
@@ -157,7 +158,7 @@ background-color: #8080807a;
   color: black;
 }
 
-/ Demo Styles /
+
 html,
 body {
   height: 100%;
@@ -177,6 +178,44 @@ small {
 
 
 </style>
+
+
+
+  <div id="open-modal" class="modal-window">
+        <div>
+
+
+
+
+          <a href="#" title="Close" class="modal-close">
+          
+           <img  src="{{ asset('storage/images/download__3_-removebg-preview (2) (1).png')}}"  />
+          </a>
+
+
+
+
+          <h1 style="color: black">Person Contact Information</h1>
+          <div class="row">
+          <!-- <p class="alert alert-warning ErrorMsg"></p> -->
+          </div>
+          <form method="post">
+            @csrf
+          
+         <p style="color: black"> PLease Enter Backend Data Here</p>
+          </form>
+                         
+                     
+                      
+        </div>
+      </div>
+       
+
+
+
+
+
+
 <div class="col-md-12">
         
         {!! $products->links() !!}
@@ -297,7 +336,7 @@ small {
 
                 </li>
 
-<!-- code for new page open ..coment below same code to open new page -->
+
                 <!-- <li>
                   <a style="text-decoration: none;
     color: white;" href="{{ route('personcontact',$row->id) }}"> <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;  border-radius: 3px;padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
@@ -306,17 +345,30 @@ small {
 
 <!-- 
 New Correct PopUp -->
-   <li>
+  <!--  <li>
                   <a style="text-decoration: none;  color: white;" href="#open-modal"    >
                    <p id="myBtn" class="myBtn" data-id="{{ $row->id }}" onclick="ContactShow('{{ $row->id }}')"  style="background-color: #4a88c1;border-radius: 3px;padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
 
+                </li> -->
+
+
+
+<!-- <div id="open-modal" class="modal-window">
+        <div> -->
+
+
+
+                 <li>
+                  <a style="text-decoration: none;  color: white;" href="#open-modal"    >
+                   <p   style="background-color: #4a88c1;  border-radius: 3px  ;    padding: 2.2px 12px 2.2px 12px;text-align: center;cursor: pointer;">Contact</p></a>
+
                 </li>
 
+ 
 
-
-<div id="open-modal" class="modal-window">
-        <div>
-
+                <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
+              </ul>
+              
 
 
 

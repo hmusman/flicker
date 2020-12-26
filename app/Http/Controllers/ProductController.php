@@ -645,7 +645,7 @@ class ProductController extends Controller
             $total = $data->count();
             $output = '
                 <div>
-         <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 321px;
+         <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 356px;
           background-color: #f8f7f7;
           color: black;
        
@@ -660,13 +660,13 @@ class ProductController extends Controller
                     $image = 'storage/admin/images/product/thumbnail/100_'.$row->image;
                     $output.='
                         <li>
-                          <div class="row">
-                            <div class="col-md-2" id="redCol">
+                          <div class="row" tabindex="1">
+                            <div class="col-md-2" tabindex="2" id="redCol">
                               <div id="setwidth" style="    height: 115px; width:100%;      margin-right: 115px;">
                                 <img src="'.asset($image).'" style="  padding-left: 7px;  height: 91px;  ">
                                  </div>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-10" tabindex="3">
                               <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
                                 <a href="'.route("ProductDetail",$row->id).'">'. ucwords($row->name) .'         
                                 </a>
