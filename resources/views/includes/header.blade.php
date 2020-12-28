@@ -12,7 +12,7 @@
  
  <style type="text/css">
 
- 
+   
 .fontUbantu{
    font-family: 'Ubuntu', sans-serif !important;
 }
@@ -360,7 +360,7 @@ ul[class="dropdown-menu"] > li{
    <li class="nav-item dropdown" style="width:15%; float: left; height: 100%">
       <a class="nav-link qasimnavigatin fontUbantu" id="prcCal" href="{{ route('PriceEstimateCalculator') }}" 
          style="padding: 4px 6px 6px 13px !important;
-        border-right: 2px #f8f7f7 solid !important;
+     
          border-left: 1px #4c4a575c solid !important;
          font-weight: bold;
          background-color: #4a88c1 !important;

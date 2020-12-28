@@ -95,6 +95,11 @@ ul[class="ulatMob"]{
       height: 50% !important;
       width: 50% !important;
 }
+
+#open-modal > div{
+      box-shadow: 0px 0px 40px black !important;
+    border-radius: 15px !important;
+}
 </style>
 
 
@@ -126,7 +131,7 @@ background-color: #8080807a;
   pointer-events: auto;
 }
 .modal-window > div {
-  width: 400px;
+  width: 544px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -167,9 +172,7 @@ body {
 
 
 
-.modal-window div:not(:last-of-type) {
-  margin-bottom: 15px;
-}
+
 
 small {
   color: #aaa;
@@ -369,14 +372,14 @@ New Correct PopUp -->
 
 
 
-          <h1 style="color: black">Person Contact Information</h1>
+          <!-- <h1 style="color: black">Person Contact Information</h1> -->
           <div class="row">
 <div class="container">
  <h3 class="fontUbantu" style="color: #0b0c0c;
     text-align: center;
     font-weight: 500;
     font-size: 35px;
-    margin-top: 51px;">Personal Contact</h3>
+   ">Personal Contact</h3>
 
 <hr style="background: #0071e3;
     width: 6%;
@@ -439,11 +442,11 @@ New Correct PopUp -->
 
          
           </div>
-          <form method="post">
+          <!-- <form method="post">
             @csrf
           
          <p style="color: black"> PLease Enter Backend Data Here</p>
-          </form>
+          </form> -->
                          
                      
                       

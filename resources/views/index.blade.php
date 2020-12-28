@@ -310,6 +310,10 @@ border-left: 2px red solid !important;
       background-color: rgb(238, 237, 237) !important;
       }
       }
+       #prcCal{
+    
+      border-right: 2px #f8f7f7 solid !important;
+    }
       @media (max-width: 550px){
       #navbarNavAltMarkup1{
       background-color: #e6e6e6 !important;
