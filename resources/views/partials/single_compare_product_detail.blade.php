@@ -398,7 +398,7 @@
       font-size: 13px;
       background-color: #fafafa;
       border: 1px #ededed solid;
-      padding-top: 8px;
+     overflow: scroll;
       padding-left: 5px;
       height: 42px;border-bottom: 1px #eeeeee solid;
       " class="batteryTalkTime2">
@@ -478,3 +478,18 @@
 
 
 </div>
+
+
+<script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+    document.getElementById('myInput').value = ''
+});
+</script>
