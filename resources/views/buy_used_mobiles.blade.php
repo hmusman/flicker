@@ -253,6 +253,7 @@ select{
 
     #prcCal{
       margin-top: 1px !important;
+      border-right: 0px #f8f7f7 solid !important;
     }
 
      #myUL li:hover{

@@ -27,6 +27,8 @@
 
  
   <style>
+
+  
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
    #myInput {
@@ -2227,8 +2229,8 @@ height: 65px;
       font-size: 13px;
       background-color: #fafafa;
       border: 1px #ededed solid;
-      padding-top: 8px;
-      padding-left: 5px;
+      
+      padding-left: 5px;overflow: scroll !important;
       height: 42px;border-bottom: 1px #eeeeee solid;
       " class="batteryTalkTime2">
       {{ $product->battery_status }}
@@ -2899,4 +2901,19 @@ $(function(){
   }
 
 </script>
+<script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+    document.getElementById('myInput').value = ''
+});
+</script>
+
+
 </html>
