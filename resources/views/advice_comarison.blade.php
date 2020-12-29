@@ -2904,15 +2904,16 @@ $(function(){
 <script>
    $(document).click(function (e)
 {
-    var container = $("#myUL");
+    var container = $("#myULone");
 
     if (!container.is(e.target))
     {
-        $('#myUL').hide();
+        $('#myULone').hide();
      //   container.removeClass('search');
     }
-    document.getElementById('myInput').value = ''
+    document.getElementById('myInputone').value = ''
 });
+
 </script>
 
 
