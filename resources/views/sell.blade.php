@@ -836,8 +836,8 @@ color: black;
                               <div class="col-md-8">
                                  <select class="form-control " name="pta" id="pta" value="">
                                         <option disabled="" selected="" >Select Status</option>
-                                        <option value="approved">Approved</option>
-                                        <option value="unapproved">Un Approved</option>
+                                        <option @if(old('pta')=='approved') selected="" @endif value="approved">Approved</option>
+                                        <option @if(old('pta')=='unapproved') selected="" @endif value="unapproved">Un Approved</option>
                                   </select>
                                   @error('pta')
                                       <p class="text-danger mt-3">{{ $message }}</p>
@@ -852,306 +852,307 @@ color: black;
                               <div class="col-md-8">
                                   <select class="form-control" name="city">  
                                       <option selected="" disabled="">Select City</option> 
-                                      <option class="option" value="Abbottabad">Abbottabad</option>
-                                      <option class="option" value="Adezai">Adezai</option>
-                                      <option class="option" value="Ali Bandar">Ali Bandar</option>
-                                      <option class="option" value="Amir Chah">Amir Chah</option>
-                                      <option class="option" value="Attock">Attock</option>
-                                      <option class="option" value="Ayubia">Ayubia</option>
-                                      <option class="option" value="Bahawalpur">Bahawalpur</option>
-                                      <option class="option" value="Baden">Baden</option>
-                                      <option class="option" value="Bagh">Bagh</option>
-                                      <option class="option" value="Bahawalnagar">Bahawalnagar</option>
-                                      <option class="option" value="Burewala">Burewala</option>
-                                      <option class="option" value="Banda Daud Shah">Banda Daud Shah</option>
-                                      <option class="option" value="Bannu district|Bannu">Bannu</option>
-                                      <option class="option" value="Batagram">Batagram</option>
-                                      <option class="option" value="Bazdar">Bazdar</option>
-                                      <option class="option" value="Bela">Bela</option>
-                                      <option class="option" value="Bellpat">Bellpat</option>
-                                      <option class="option" value="Bhag">Bhag</option>
-                                      <option class="option" value="Bhakkar">Bhakkar</option>
-                                      <option class="option" value="Bhalwal">Bhalwal</option>
-                                      <option class="option" value="Bhimber">Bhimber</option>
-                                      <option class="option" value="Birote">Birote</option>
-                                      <option class="option" value="Buner">Buner</option>
-                                      <option class="option" value="Burj">Burj</option>
-                                      <option class="option" value="Chiniot">Chiniot</option>
-                                      <option class="option" value="Chachro">Chachro</option>
-                                      <option class="option" value="Chagai">Chagai</option>
-                                      <option class="option" value="Chah Sandan">Chah Sandan</option>
-                                      <option class="option" value="Chailianwala">Chailianwala</option>
-                                      <option class="option" value="Chakdara">Chakdara</option>
-                                      <option class="option" value="Chakku">Chakku</option>
-                                      <option class="option" value="Chakwal">Chakwal</option>
-                                      <option class="option" value="Chaman">Chaman</option>
-                                      <option class="option" value="Charsadda">Charsadda</option>
-                                      <option class="option" value="Chhatr">Chhatr</option>
-                                      <option class="option" value="Chichawatni">Chichawatni</option>
-                                      <option class="option" value="Chitral">Chitral</option>
-                                      <option class="option" value="Dadu">Dadu</option>
-                                      <option class="option" value="Dera Ghazi Khan">Dera Ghazi Khan</option>
-                                      <option class="option" value="Dera Ismail Khan">Dera Ismail Khan</option>
-                                       <option class="option" value="Dalbandin">Dalbandin</option>
-                                      <option class="option" value="Dargai">Dargai</option>
-                                      <option class="option" value="Darya Khan">Darya Khan</option>
-                                      <option class="option" value="Daska">Daska</option>
-                                      <option class="option" value="Dera Bugti">Dera Bugti</option>
-                                      <option class="option" value="Dhana Sar">Dhana Sar</option>
-                                      <option class="option" value="Digri">Digri</option>
-                                      <option class="option" value="Dina City|Dina">Dina</option>
-                                      <option class="option" value="Dinga">Dinga</option>
-                                      <option class="option" value="Diplo, Pakistan|Diplo">Diplo</option>
-                                      <option class="option" value="Diwana">Diwana</option>
-                                      <option class="option" value="Dokri">Dokri</option>
-                                      <option class="option" value="Drosh">Drosh</option>
-                                      <option class="option" value="Duki">Duki</option>
-                                      <option class="option" value="Dushi">Dushi</option>
-                                      <option class="option" value="Duzab">Duzab</option>
-                                      <option class="option" value="Faisalabad">Faisalabad</option>
-                                      <option class="option" value="Fateh Jang">Fateh Jang</option>
-                                      <option class="option" value="Ghotki">Ghotki</option>
-                                      <option class="option" value="Gwadar">Gwadar</option>
-                                      <option class="option" value="Gujranwala">Gujranwala</option>
-                                      <option class="option" value="Gujrat">Gujrat</option>
-                                      <option class="option" value="Gadra">Gadra</option>
-                                      <option class="option" value="Gajar">Gajar</option>
-                                      <option class="option" value="Gandava">Gandava</option>
-                                      <option class="option" value="Garhi Khairo">Garhi Khairo</option>
-                                      <option class="option" value="Garruck">Garruck</option>
-                                      <option class="option" value="Ghakhar Mandi">Ghakhar Mandi</option>
-                                      <option class="option" value="Ghanian">Ghanian</option>
-                                      <option class="option" value="Ghauspur">Ghauspur</option>
-                                      <option class="option" value="Ghazluna">Ghazluna</option>
-                                      <option class="option" value="Girdan">Girdan</option>
-                                      <option class="option" value="Gulistan">Gulistan</option>
-                                      <option class="option" value="Gwash">Gwash</option>
-                                      <option class="option" value="Hyderabad">Hyderabad</option>
-                                      <option class="option" value="Hala">Hala</option>
-                                      <option class="option" value="Haripur">Haripur</option>
-                                      <option class="option" value="Hab Chauki">Hab Chauki</option>
-                                      <option class="option" value="Hafizabad">Hafizabad</option>
-                                      <option class="option" value="Hameedabad">Hameedabad</option>
-                                      <option class="option" value="Hangu">Hangu</option>
-                                      <option class="option" value="Harnai">Harnai</option>
-                                      <option class="option" value="Hasilpur">Hasilpur</option>
-                                      <option class="option" value="Haveli Lakha">Haveli Lakha</option>
-                                      <option class="option" value="Hinglaj">Hinglaj</option>
-                                      <option class="option" value="Hoshab">Hoshab</option>
-                                      <option class="option" value="Islamabad">Islamabad</option>
-                                      <option class="option" value="Islamkot">Islamkot</option>
-                                      <option class="option" value="Ispikan">Ispikan</option>
-                                      <option class="option" value="Jacobabad">Jacobabad</option>
-                                      <option class="option" value="Jamshoro">Jamshoro</option>
-                                      <option class="option" value="Jhang">Jhang</option>
-                                      <option class="option" value="Jhelum">Jhelum</option>
-                                      <option class="option" value="Jamesabad">Jamesabad</option>
-                                      <option class="option" value="Jampur">Jampur</option>
-                                      <option class="option" value="Janghar">Janghar</option>
-                                      <option class="option" value="Jati, Jati(Mughalbhin)">Jati</option>
-                                      <option class="option" value="Jauharabad">Jauharabad</option>
-                                      <option class="option" value="Jhal">Jhal</option>
-                                      <option class="option" value="Jhal Jhao">Jhal Jhao</option>
-                                      <option class="option" value="Jhatpat">Jhatpat</option>
-                                      <option class="option" value="Jhudo">Jhudo</option>
-                                      <option class="option" value="Jiwani">Jiwani</option>
-                                      <option class="option" value="Jungshahi">Jungshahi</option>
-                                      <option class="option" value="Karachi">Karachi</option>
-                                      <option class="option" value="Kotri">Kotri</option>
-                                      <option class="option" value="Kalam">Kalam</option>
-                                      <option class="option" value="Kalandi">Kalandi</option>
-                                      <option class="option" value="Kalat">Kalat</option>
-                                      <option class="option" value="Kamalia">Kamalia</option>
-                                      <option class="option" value="Kamararod">Kamararod</option>
-                                      <option class="option" value="Kamber">Kamber</option>
-                                      <option class="option" value="Kamokey">Kamokey</option>
-                                      <option class="option" value="Kanak">Kanak</option>
-                                      <option class="option" value="Kandi">Kandi</option>
-                                      <option class="option" value="Kandiaro">Kandiaro</option>
-                                      <option class="option" value="Kanpur">Kanpur</option>
-                                      <option class="option" value="Kapip">Kapip</option>
-                                      <option class="option" value="Kappar">Kappar</option>
-                                      <option class="option" value="Karak City">Karak City</option>
-                                      <option class="option" value="Karodi">Karodi</option>
-                                      <option class="option" value="Kashmor">Kashmor</option>
-                                      <option class="option" value="Kasur">Kasur</option>
-                                      <option class="option" value="Katuri">Katuri</option>
-                                      <option class="option" value="Keti Bandar">Keti Bandar</option>
-                                      <option class="option" value="Khairpur">Khairpur</option>
-                                      <option class="option" value="Khanaspur">Khanaspur</option>
-                                      <option class="option" value="Khanewal">Khanewal</option>
-                                      <option class="option" value="Kharan">Kharan</option>
-                                      <option class="option" value="kharian">kharian</option>
-                                      <option class="option" value="Khokhropur">Khokhropur</option>
-                                      <option class="option" value="Khora">Khora</option>
-                                      <option class="option" value="Khushab">Khushab</option>
-                                      <option class="option" value="Khuzdar">Khuzdar</option>
-                                      <option class="option" value="Kikki">Kikki</option>
-                                      <option class="option" value="Klupro">Klupro</option>
-                                      <option class="option" value="Kohan">Kohan</option>
-                                      <option class="option" value="Kohat">Kohat</option>
-                                      <option class="option" value="Kohistan">Kohistan</option>
-                                      <option class="option" value="Kohlu">Kohlu</option>
-                                      <option class="option" value="Korak">Korak</option>
-                                      <option class="option" value="Korangi">Korangi</option>
-                                      <option class="option" value="Kot Sarae">Kot Sarae</option>
-                                      <option class="option" value="Kotli">Kotli</option>
-                                      <option class="option" value="Lahore">Lahore</option>
-                                      <option class="option" value="Larkana">Larkana</option>
-                                      <option class="option" value="Lahri">Lahri</option>
-                                      <option class="option" value="Lakki Marwat">Lakki Marwat</option>
-                                      <option class="option" value="Lasbela">Lasbela</option>
-                                      <option class="option" value="Latamber">Latamber</option>
-                                      <option class="option" value="Layyah">Layyah</option>
-                                      <option class="option" value="Leiah">Leiah</option>
-                                      <option class="option" value="Liari">Liari</option>
-                                      <option class="option" value="Lodhran">Lodhran</option>
-                                      <option class="option" value="Loralai">Loralai</option>
-                                      <option class="option" value="Lower Dir">Lower Dir</option>
-                                      <option class="option" value="Shadan Lund">Shadan Lund</option>
-                                      <option class="option" value="Multan">Multan</option>
-                                      <option class="option" value="Mandi Bahauddin">Mandi Bahauddin</option>
-                                      <option class="option" value="Mansehra">Mansehra</option>
-                                      <option class="option" value="Mian Chanu">Mian Chanu</option>
-                                      <option class="option" value="Mirpur">Mirpur</option>
-                                      <option class="option" value="Moro, Pakistan|Moro">Moro</option>
-                                      <option class="option" value="Mardan">Mardan</option>
-                                      <option class="option" value="Mach">Mach</option>
-                                      <option class="option" value="Madyan">Madyan</option>
-                                      <option class="option" value="Malakand">Malakand</option>
-                                      <option class="option" value="Mand">Mand</option>
-                                      <option class="option" value="Manguchar">Manguchar</option>
-                                      <option class="option" value="Mashki Chah">Mashki Chah</option>
-                                      <option class="option" value="Maslti">Maslti</option>
-                                      <option class="option" value="Mastuj">Mastuj</option>
-                                      <option class="option" value="Mastung">Mastung</option>
-                                      <option class="option" value="Mathi">Mathi</option>
-                                      <option class="option" value="Matiari">Matiari</option>
-                                      <option class="option" value="Mehar">Mehar</option>
-                                      <option class="option" value="Mekhtar">Mekhtar</option>
-                                      <option class="option" value="Merui">Merui</option>
-                                      <option class="option" value="Mianwali">Mianwali</option>
-                                      <option class="option" value="Mianez">Mianez</option>
-                                      <option class="option" value="Mirpur Batoro">Mirpur Batoro</option>
-                                      <option class="option" value="Mirpur Khas">Mirpur Khas</option>
-                                      <option class="option" value="Mirpur Sakro">Mirpur Sakro</option>
-                                      <option class="option" value="Mithi">Mithi</option>
-                                      <option class="option" value="Mongora">Mongora</option>
-                                      <option class="option" value="Murgha Kibzai">Murgha Kibzai</option>
-                                      <option class="option" value="Muridke">Muridke</option>
-                                      <option class="option" value="Musa Khel Bazar">Musa Khel Bazar</option>
-                                      <option class="option" value="Muzaffar Garh">Muzaffar Garh</option>
-                                      <option class="option" value="Muzaffarabad">Muzaffarabad</option>
-                                      <option class="option" value="Nawabshah">Nawabshah</option>
-                                      <option class="option" value="Nazimabad">Nazimabad</option>
-                                      <option class="option" value="Nowshera">Nowshera</option>
-                                      <option class="option" value="Nagar Parkar">Nagar Parkar</option>
-                                      <option class="option" value="Nagha Kalat">Nagha Kalat</option>
-                                      <option class="option" value="Nal">Nal</option>
-                                      <option class="option" value="Naokot">Naokot</option>
-                                      <option class="option" value="Nasirabad">Nasirabad</option>
-                                      <option class="option" value="Nauroz Kalat">Nauroz Kalat</option>
-                                      <option class="option" value="Naushara">Naushara</option>
-                                      <option class="option" value="Nur Gamma">Nur Gamma</option>
-                                      <option class="option" value="Nushki">Nushki</option>
-                                      <option class="option" value="Nuttal">Nuttal</option>
-                                      <option class="option" value="Okara">Okara</option>
-                                      <option class="option" value="Ormara">Ormara</option>
-                                      <option class="option" value="Peshawar">Peshawar</option>
-                                      <option class="option" value="Panjgur">Panjgur</option>
-                                      <option class="option" value="Pasni City">Pasni City</option>
-                                      <option class="option" value="Paharpur">Paharpur</option>
-                                      <option class="option" value="Palantuk">Palantuk</option>
-                                      <option class="option" value="Pendoo">Pendoo</option>
-                                      <option class="option" value="Piharak">Piharak</option>
-                                      <option class="option" value="Pirmahal">Pirmahal</option>
-                                      <option class="option" value="Pishin">Pishin</option>
-                                      <option class="option" value="Plandri">Plandri</option>
-                                      <option class="option" value="Pokran">Pokran</option>
-                                      <option class="option" value="Pounch">Pounch</option>
-                                      <option class="option" value="Quetta">Quetta</option>
-                                      <option class="option" value="Qambar">Qambar</option>
-                                      <option class="option" value="Qamruddin Karez">Qamruddin Karez</option>
-                                      <option class="option" value="Qazi Ahmad">Qazi Ahmad</option>
-                                      <option class="option" value="Qila Abdullah">Qila Abdullah</option>
-                                      <option class="option" value="Qila Ladgasht">Qila Ladgasht</option>
-                                      <option class="option" value="Qila Safed">Qila Safed</option>
-                                      <option class="option" value="Qila Saifullah">Qila Saifullah</option>
-                                      <option class="option" value="Rawalpindi">Rawalpindi</option>
-                                      <option class="option" value="Rabwah">Rabwah</option>
-                                      <option class="option" value="Rahim Yar Khan">Rahim Yar Khan</option>
-                                      <option class="option" value="Rajan Pur">Rajan Pur</option>
-                                      <option class="option" value="Rakhni">Rakhni</option>
-                                      <option class="option" value="Ranipur">Ranipur</option>
-                                      <option class="option" value="Ratodero">Ratodero</option>
-                                      <option class="option" value="Rawalakot">Rawalakot</option>
-                                      <option class="option" value="Renala Khurd">Renala Khurd</option>
-                                      <option class="option" value="Robat Thana">Robat Thana</option>
-                                      <option class="option" value="Rodkhan">Rodkhan</option>
-                                      <option class="option" value="Rohri">Rohri</option>
-                                      <option class="option" value="Sialkot">Sialkot</option>
-                                      <option class="option" value="Sadiqabad">Sadiqabad</option>
-                                      <option class="option" value="Safdar Abad- (Dhaban Singh)">Safdar Abad</option>
-                                      <option class="option" value="Sahiwal">Sahiwal</option>
-                                      <option class="option" value="Saidu Sharif">Saidu Sharif</option>
-                                      <option class="option" value="Saindak">Saindak</option>
-                                      <option class="option" value="Sakrand">Sakrand</option>
-                                      <option class="option" value="Sanjawi">Sanjawi</option>
-                                      <option class="option" value="Sargodha">Sargodha</option>
-                                      <option class="option" value="Saruna">Saruna</option>
-                                      <option class="option" value="Shabaz Kalat">Shabaz Kalat</option>
-                                      <option class="option" value="Shadadkhot">Shadadkhot</option>
-                                      <option class="option" value="Shahbandar">Shahbandar</option>
-                                      <option class="option" value="Shahpur">Shahpur</option>
-                                      <option class="option" value="Shahpur Chakar">Shahpur Chakar</option>
-                                      <option class="option" value="Shakargarh">Shakargarh</option>
-                                      <option class="option" value="Shangla">Shangla</option>
-                                      <option class="option" value="Sharam Jogizai">Sharam Jogizai</option>
-                                      <option class="option" value="Sheikhupura">Sheikhupura</option>
-                                      <option class="option" value="Shikarpur">Shikarpur</option>
-                                      <option class="option" value="Shingar">Shingar</option>
-                                      <option class="option" value="Shorap">Shorap</option>
-                                      <option class="option" value="Sibi">Sibi</option>
-                                      <option class="option" value="Sohawa">Sohawa</option>
-                                      <option class="option" value="Sonmiani">Sonmiani</option>
-                                      <option class="option" value="Sooianwala">Sooianwala</option>
-                                      <option class="option" value="Spezand">Spezand</option>
-                                      <option class="option" value="Spintangi">Spintangi</option>
-                                      <option class="option" value="Sui">Sui</option>
-                                      <option class="option" value="Sujawal">Sujawal</option>
-                                      <option class="option" value="Sukkur">Sukkur</option>
-                                      <option class="option" value="Suntsar">Suntsar</option>
-                                      <option class="option" value="Surab">Surab</option>
-                                      <option class="option" value="Swabi">Swabi</option>
-                                      <option class="option" value="Swat">Swat</option>
-                                      <option class="option" value="Tando Adam">Tando Adam</option>
-                                      <option class="option" value="Tando Bago">Tando Bago</option>
-                                      <option class="option" value="Tangi">Tangi</option>
-                                      <option class="option" value="Tank City">Tank City</option>
-                                      <option class="option" value="Tar Ahamd Rind">Tar Ahamd Rind</option>
-                                      <option class="option" value="Thalo">Thalo</option>
-                                      <option class="option" value="Thatta">Thatta</option>
-                                      <option class="option" value="Toba Tek Singh">Toba Tek Singh</option>
-                                      <option class="option" value="Tordher">Tordher</option>
-                                      <option class="option" value="Tujal">Tujal</option>
-                                      <option class="option" value="Tump">Tump</option>
-                                      <option class="option" value="Turbat">Turbat</option>
-                                      <option class="option" value="Umarao">Umarao</option>
-                                      <option class="option" value="Umarkot">Umarkot</option>
-                                      <option class="option" value="Upper Dir">Upper Dir</option>
-                                      <option class="option" value="Uthal">Uthal</option>
-                                      <option class="option" value="Vehari">Vehari</option>
-                                      <option class="option" value="Veirwaro">Veirwaro</option>
-                                      <option class="option" value="Vitakri">Vitakri</option>
-                                      <option class="option" value="Wadh">Wadh</option>
-                                      <option class="option" value="Wah Cantt">Wah Cantt</option>
-                                      <option class="option" value="Warah">Warah</option>
-                                      <option class="option" value="Washap">Washap</option>
-                                      <option class="option" value="Wasjuk">Wasjuk</option>
-                                      <option class="option" value="Wazirabad">Wazirabad</option>
-                                      <option class="option" value="Yakmach">Yakmach</option>
-                                      <option class="option" value="Zhob">Zhob</option>
-                                      <option class="option" value="Other">Other</option>                                       
+                                      <option class="option"  @if(old('city')=='Abbottabad') selected="" @endif  value="Abbottabad">Abbottabad</option>
+                                      <option class="option" @if(old('city')=='Adezai') selected="" @endif value="Adezai">Adezai</option>
+                                      <option class="option"@if(old('city')=='Ali Bandar') selected="" @endif value="Ali Bandar">Ali Bandar</option>
+                                      <option class="option"@if(old('city')=='Amir Chah') selected="" @endif value="Amir Chah">Amir Chah</option>
+                                      <option class="option"@if(old('city')=='Attock') selected="" @endif value="Attock">Attock</option>
+                                      <option class="option"@if(old('city')=='Ayubia') selected="" @endif value="Ayubia">Ayubia</option>
+                                      <option class="option"@if(old('city')=='Bahawalpur') selected="" @endif value="Bahawalpur">Bahawalpur</option>
+                                      <option class="option"@if(old('city')=='Baden') selected="" @endif value="Baden">Baden</option>
+                                      <option class="option"@if(old('city')=='Bagh') selected="" @endif value="Bagh">Bagh</option>
+                                      <option class="option"@if(old('city')=='Bahawalnagar') selected="" @endif value="Bahawalnagar">Bahawalnagar</option>
+                                      <option class="option"@if(old('city')=='Burewala') selected="" @endif value="Burewala">Burewala</option>
+                                      <option class="option"@if(old('city')=='Banda Daud Shah') selected="" @endif value="Banda Daud Shah">Banda Daud Shah</option>
+                                      <option class="option"@if(old('city')=='Bannu district|Bannu') selected="" @endif value="Bannu district|Bannu">Bannu</option>
+                                      <option class="option"@if(old('city')=='Batagram') selected="" @endif value="Batagram">Batagram</option>
+                                      <option class="option"@if(old('city')=='Bazdar') selected="" @endif value="Bazdar">Bazdar</option>
+                                      <option class="option"@if(old('city')=='Bela') selected="" @endif value="Bela">Bela</option>
+                                      <option class="option"@if(old('city')=='Bellpat') selected="" @endif value="Bellpat">Bellpat</option>
+                                      <option class="option"@if(old('city')=='Bhag') selected="" @endif value="Bhag">Bhag</option>
+                                      <option class="option"@if(old('city')=='Bhakkar') selected="" @endif value="Bhakkar">Bhakkar</option>
+                                      <option class="option"@if(old('city')=='Bhalwal') selected="" @endif value="Bhalwal">Bhalwal</option>
+                                      <option class="option"@if(old('city')=='Bhimber') selected="" @endif value="Bhimber">Bhimber</option>
+                                      <option class="option"@if(old('city')=='Birote') selected="" @endif value="Birote">Birote</option>
+                                      <option class="option"@if(old('city')=='Buner') selected="" @endif value="Buner">Buner</option>
+                                      <option class="option"@if(old('city')=='Burj') selected="" @endif value="Burj">Burj</option>
+                                      <option class="option"@if(old('city')=='Chiniot') selected="" @endif value="Chiniot">Chiniot</option>
+                                      <option class="option"@if(old('city')=='Chachro') selected="" @endif value="Chachro">Chachro</option>
+                                      <option class="option"@if(old('city')=='Chagai') selected="" @endif value="Chagai">Chagai</option>
+                                      <option class="option"@if(old('city')=='Chah Sandan') selected="" @endif value="Chah Sandan">Chah Sandan</option>
+                                      <option class="option"@if(old('city')=='Chailianwala') selected="" @endif value="Chailianwala">Chailianwala</option>
+                                      <option class="option"@if(old('city')=='Chakdara') selected="" @endif value="Chakdara">Chakdara</option>
+                                      <option class="option"@if(old('city')=='Chakku') selected="" @endif value="Chakku">Chakku</option>
+                                      <option class="option"@if(old('city')=='Chakwal') selected="" @endif value="Chakwal">Chakwal</option>
+                                      <option class="option"@if(old('city')=='Chaman') selected="" @endif value="Chaman">Chaman</option>
+                                      <option class="option"@if(old('city')=='Charsadda') selected="" @endif value="Charsadda">Charsadda</option>
+                                      <option class="option"@if(old('city')=='Chhatr') selected="" @endif value="Chhatr">Chhatr</option>
+                                      <option class="option"@if(old('city')=='Chichawatni') selected="" @endif value="Chichawatni">Chichawatni</option>
+                                      <option class="option"@if(old('city')=='Chitral') selected="" @endif value="Chitral">Chitral</option>
+                                      <option class="option"@if(old('city')=='Dadu') selected="" @endif value="Dadu">Dadu</option>
+                                      <option class="option"@if(old('city')=='Dera Ghazi Khan') selected="" @endif value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+                                      <option class="option"@if(old('city')=='Dera Ismail Khan') selected="" @endif value="Dera Ismail Khan">Dera Ismail Khan</option>
+                                       <option class="option"@if(old('city')=='Dalbandin') selected="" @endif value="Dalbandin">Dalbandin</option>
+                                      <option class="option"@if(old('city')=='Dargai') selected="" @endif value="Dargai">Dargai</option>
+                                      <option class="option"@if(old('city')=='Darya Khan') selected="" @endif value="Darya Khan">Darya Khan</option>
+                                      <option class="option"@if(old('city')=='Daska') selected="" @endif value="Daska">Daska</option>
+                                      <option class="option"@if(old('city')=='Dera Bugti') selected="" @endif value="Dera Bugti">Dera Bugti</option>
+                                      <option class="option"@if(old('city')=='Dhana Sar') selected="" @endif value="Dhana Sar">Dhana Sar</option>
+                                      
+                                      <option class="option"@if(old('city')=='Digri') selected="" @endif value="Digri">Digri</option>
+                                      <option class="option"@if(old('city')=='Dina City|Dina') selected="" @endif value="Dina City|Dina">Dina</option>
+                                      <option class="option"@if(old('city')=='Dinga') selected="" @endif value="Dinga">Dinga</option>
+                                      <option class="option"@if(old('city')=='Diplo, Pakistan|Diplo') selected="" @endif value="Diplo, Pakistan|Diplo">Diplo</option>
+                                      <option class="option"@if(old('city')=='Diwana') selected="" @endif value="Diwana">Diwana</option>
+                                      <option class="option"@if(old('city')=='Dokri') selected="" @endif value="Dokri">Dokri</option>
+                                      <option class="option"@if(old('city')=='Drosh') selected="" @endif value="Drosh">Drosh</option>
+                                      <option class="option"@if(old('city')=='Duki') selected="" @endif value="Duki">Duki</option>
+                                      <option class="option"@if(old('city')=='Dushi') selected="" @endif value="Dushi">Dushi</option>
+                                      <option class="option"@if(old('city')=='Duzab') selected="" @endif value="Duzab">Duzab</option>
+                                      <option class="option"@if(old('city')=='Faisalabad') selected="" @endif value="Faisalabad">Faisalabad</option>
+                                      <option class="option"@if(old('city')=='Fateh Jang') selected="" @endif value="Fateh Jang">Fateh Jang</option>
+                                      <option class="option"@if(old('city')=='Ghotki') selected="" @endif" value="Ghotki">Ghotki</option>
+                                      <option class="option"@if(old('city')=='Gwadar') selected="" @endif value="Gwadar">Gwadar</option>
+                                      <option class="option"@if(old('city')=='Gujranwala') selected="" @endif value="Gujranwala">Gujranwala</option>
+                                      <option class="option"@if(old('city')=='Gujrat') selected="" @endif value="Gujrat">Gujrat</option>
+                                      <option class="option"@if(old('city')=='Gadra') selected="" @endif value="Gadra">Gadra</option>
+                                      <option class="option"@if(old('city')=='Gajar') selected="" @endif value="Gajar">Gajar</option>
+                                      <option class="option"@if(old('city')=='Gandava') selected="" @endif value="Gandava">Gandava</option>
+                                      <option class="option"@if(old('city')=='Garhi Khairo') selected="" @endif value="Garhi Khairo">Garhi Khairo</option>
+                                      <option class="option"@if(old('city')=='Garruck') selected="" @endif value="Garruck">Garruck</option>
+                                      <option class="option"@if(old('city')=='Ghakhar Mandi') selected="" @endif value="Ghakhar Mandi">Ghakhar Mandi</option>
+                                      <option class="option"@if(old('city')=='Ghanian') selected="" @endif value="Ghanian">Ghanian</option>
+                                      <option class="option"@if(old('city')=='Ghauspur') selected="" @endif value="Ghauspur">Ghauspur</option>
+                                      <option class="option"@if(old('city')=='Ghazluna') selected="" @endif value="Ghazluna">Ghazluna</option>
+                                      <option class="option"@if(old('city')=='Girdan') selected="" @endif value="Girdan">Girdan</option>
+                                      <option class="option"@if(old('city')=='Gulistan') selected="" @endif value="Gulistan">Gulistan</option>
+                                      <option class="option"@if(old('city')=='Gwash') selected="" @endif value="Gwash">Gwash</option>
+                                      <option class="option"@if(old('city')=='Hyderabad') selected="" @endif value="Hyderabad">Hyderabad</option>
+                                      <option class="option"@if(old('city')=='Hala') selected="" @endif value="Hala">Hala</option>
+                                      <option class="option"@if(old('city')=='Haripur') selected="" @endif value="Haripur">Haripur</option>
+                                      <option class="option"@if(old('city')=='Hab Chauki') selected="" @endif value="Hab Chauki">Hab Chauki</option>
+                                      <option class="option"@if(old('city')=='Hafizabad') selected="" @endif value="Hafizabad">Hafizabad</option>
+                                      <option class="option"@if(old('city')=='Hameedabad') selected="" @endif value="Hameedabad">Hameedabad</option>
+                                      <option class="option"@if(old('city')=='Hangu') selected="" @endif value="Hangu">Hangu</option>
+                                      <option class="option"@if(old('city')=='Harnai') selected="" @endif value="Harnai">Harnai</option>
+                                      <option class="option"@if(old('city')=='Hasilpur') selected="" @endif value="Hasilpur">Hasilpur</option>
+                                      <option class="option"@if(old('city')=='Haveli Lakha') selected="" @endif value="Haveli Lakha">Haveli Lakha</option>
+                                      <option class="option"@if(old('city')=='Hinglaj') selected="" @endif value="Hinglaj">Hinglaj</option>
+                                      <option class="option"@if(old('city')=='Hoshab') selected="" @endif value="Hoshab">Hoshab</option>
+                                      <option class="option"@if(old('city')=='Islamabad') selected="" @endif value="Islamabad">Islamabad</option>
+                                      <option class="option"@if(old('city')=='Islamkot') selected="" @endif value="Islamkot">Islamkot</option>
+                                      <option class="option"@if(old('city')=='Ispikan') selected="" @endif value="Ispikan">Ispikan</option>
+                                      <option class="option"@if(old('city')=='Jacobabad') selected="" @endif value="Jacobabad">Jacobabad</option>
+                                      <option class="option"@if(old('city')=='Jamshoro') selected="" @endif value="Jamshoro">Jamshoro</option>
+                                      <option class="option"@if(old('city')=='Jhang') selected="" @endif value="Jhang">Jhang</option>
+                                      <option class="option"@if(old('city')=='Jhelum') selected="" @endif value="Jhelum">Jhelum</option>
+                                      <option class="option"@if(old('city')=='Jamesabad') selected="" @endif value="Jamesabad">Jamesabad</option>
+                                      <option class="option"@if(old('city')=='Jampur') selected="" @endif value="Jampur">Jampur</option>
+                                      <option class="option"@if(old('city')=='Janghar') selected="" @endif value="Janghar">Janghar</option>
+                                      <option class="option"@if(old('city')=='Jati, Jati(Mughalbhin)') selected="" @endif value="Jati, Jati(Mughalbhin)">Jati</option>
+                                      <option class="option"@if(old('city')=='Jauharabad') selected="" @endif value="Jauharabad">Jauharabad</option>
+                                      <option class="option"@if(old('city')=='Jhal') selected="" @endif value="Jhal">Jhal</option>
+                                      <option class="option"@if(old('city')=='Jhal Jhao') selected="" @endif value="Jhal Jhao">Jhal Jhao</option>
+                                      <option class="option"@if(old('city')=='Jhatpat') selected="" @endif value="Jhatpat">Jhatpat</option>
+                                      <option class="option"@if(old('city')=='Jhudo') selected="" @endif value="Jhudo">Jhudo</option>
+                                      <option class="option"@if(old('city')=='Jiwani') selected="" @endif value="Jiwani">Jiwani</option>
+                                      <option class="option"@if(old('city')=='Jungshahi') selected="" @endif value="Jungshahi">Jungshahi</option>
+                                      <option class="option"@if(old('city')=='Karachi') selected="" @endif value="Karachi">Karachi</option>
+                                      <option class="option"@if(old('city')=='Kotri') selected="" @endif value="Kotri">Kotri</option>
+                                      <option class="option"@if(old('city')=='Kalam') selected="" @endif value="Kalam">Kalam</option>
+                                      <option class="option" @if(old('city')=='Kalandi') selected="" @endif value="Kalandi">Kalandi</option>
+                                      <option class="option"@if(old('city')=='Kalat') selected="" @endif value="Kalat">Kalat</option>
+                                      <option class="option"@if(old('city')=='Kamalia') selected="" @endif value="Kamalia">Kamalia</option>
+                                      <option class="option"@if(old('city')=='Kamararod') selected="" @endif value="Kamararod">Kamararod</option>
+                                      <option class="option"@if(old('city')=='Kamber') selected="" @endif value="Kamber">Kamber</option>
+                                      <option class="option"@if(old('city')=='Kamokey') selected="" @endif value="Kamokey">Kamokey</option>
+                                      <option class="option"@if(old('city')=='Kanak') selected="" @endif value="Kanak">Kanak</option>
+                                      <option class="option"@if(old('city')=='Kandi') selected="" @endif value="Kandi">Kandi</option>
+                                      <option class="option"@if(old('city')=='Kandiaro') selected="" @endif value="Kandiaro">Kandiaro</option>
+                                      <option class="option"@if(old('city')=='Kanpur') selected="" @endif value="Kanpur">Kanpur</option>
+                                      <option class="option"@if(old('city')=='Kapip') selected="" @endif value="Kapip">Kapip</option>
+                                      <option class="option"@if(old('city')=='Kappar') selected="" @endif value="Kappar">Kappar</option>
+                                      <option class="option"@if(old('city')=='Karak City') selected="" @endif value="Karak City">Karak City</option>
+                                      <option class="option"@if(old('city')=='Karodi') selected="" @endif value="Karodi">Karodi</option>
+                                      <option class="option"@if(old('city')=='Kashmor') selected="" @endif value="Kashmor">Kashmor</option>
+                                      <option class="option"@if(old('city')=='Kasur') selected="" @endif value="Kasur">Kasur</option>
+                                      <option class="option"@if(old('city')=='Katuri') selected="" @endif value="Katuri">Katuri</option>
+                                      <option class="option"@if(old('city')=='Keti Bandar') selected="" @endif value="Keti Bandar">Keti Bandar</option>
+                                      <option class="option"@if(old('city')=='Khairpur') selected="" @endif value="Khairpur">Khairpur</option>
+                                      <option class="option"@if(old('city')=='Khanaspur') selected="" @endif value="Khanaspur">Khanaspur</option>
+                                      <option class="option"@if(old('city')=='Khanewal') selected="" @endif value="Khanewal">Khanewal</option>
+                                      <option class="option"@if(old('city')=='Kharan') selected="" @endif value="Kharan">Kharan</option>
+                                      <option class="option"@if(old('city')=='kharian') selected="" @endif value="kharian">kharian</option>
+                                      <option class="option"@if(old('city')=='Khokhropur') selected="" @endif value="Khokhropur">Khokhropur</option>
+                                      <option class="option"@if(old('city')=='Khora') selected="" @endif value="Khora">Khora</option>
+                                      <option class="option"@if(old('city')=='Khushab') selected="" @endif value="Khushab">Khushab</option>
+                                      <option class="option"@if(old('city')=='Khuzdar') selected="" @endif value="Khuzdar">Khuzdar</option>
+                                      <option class="option"@if(old('city')=='Kikki') selected="" @endif value="Kikki">Kikki</option>
+                                      <option class="option"@if(old('city')=='Klupro') selected="" @endif value="Klupro">Klupro</option>
+                                      <option class="option"@if(old('city')=='Kohan') selected="" @endif value="Kohan">Kohan</option>
+                                      <option class="option"@if(old('city')=='Kohat') selected="" @endif value="Kohat">Kohat</option>
+                                      <option class="option"@if(old('city')=='Kohistan') selected="" @endif value="Kohistan">Kohistan</option>
+                                      <option class="option"@if(old('city')=='Kohlu') selected="" @endif value="Kohlu">Kohlu</option>
+                                      <option class="option"@if(old('city')=='Korak') selected="" @endif value="Korak">Korak</option>
+                                      <option class="option"@if(old('city')=='Korangi') selected="" @endif value="Korangi">Korangi</option>
+                                      <option class="option"@if(old('city')=='Kot Sarae') selected="" @endif value="Kot Sarae">Kot Sarae</option>
+                                      <option class="option"@if(old('city')=='Kotli') selected="" @endif value="Kotli">Kotli</option>
+                                      <option class="option"@if(old('city')=='Lahore') selected="" @endif value="Lahore">Lahore</option>
+                                      <option class="option"@if(old('city')=='Larkana') selected="" @endif value="Larkana">Larkana</option>
+                                      <option class="option"@if(old('city')=='Lahri') selected="" @endif value="Lahri">Lahri</option>
+                                      <option class="option"@if(old('city')=='Lakki Marwat') selected="" @endif value="Lakki Marwat">Lakki Marwat</option>
+                                      <option class="option"@if(old('city')=='Lasbela') selected="" @endif value="Lasbela">Lasbela</option>
+                                      <option class="option"@if(old('city')=='Latamber') selected="" @endif value="Latamber">Latamber</option>
+                                      <option class="option"@if(old('city')=='Layyah') selected="" @endif value="Layyah">Layyah</option>
+                                      <option class="option"@if(old('city')=='Leiah') selected="" @endif value="Leiah">Leiah</option>
+                                      <option class="option"@if(old('city')=='Liari') selected="" @endif value="Liari">Liari</option>
+                                      <option class="option"@if(old('city')=='Lodhran') selected="" @endif value="Lodhran">Lodhran</option>
+                                      <option class="option"@if(old('city')=='Loralai') selected="" @endif value="Loralai">Loralai</option>
+                                      <option class="option"@if(old('city')=='Lower Dir') selected="" @endif value="Lower Dir">Lower Dir</option>
+                                      <option class="option"@if(old('city')=='Shadan Lund') selected="" @endif value="Shadan Lund">Shadan Lund</option>
+                                      <option class="option"@if(old('city')=='Multan') selected="" @endif value="Multan">Multan</option>
+                                      <option class="option"@if(old('city')=='Mandi Bahauddin') selected="" @endif value="Mandi Bahauddin">Mandi Bahauddin</option>
+                                      <option class="option"@if(old('city')=='Mansehra') selected="" @endif value="Mansehra">Mansehra</option>
+                                      <option class="option"@if(old('city')=='Mian Chanu') selected="" @endif value="Mian Chanu">Mian Chanu</option>
+                                      <option class="option"@if(old('city')=='Mirpur') selected="" @endif value="Mirpur">Mirpur</option>
+                                      <option class="option"@if(old('city')=='Moro, Pakistan|Moro') selected="" @endif value="Moro, Pakistan|Moro">Moro</option>
+                                      <option class="option"@if(old('city')=='Mardan') selected="" @endif value="Mardan">Mardan</option>
+                                      <option class="option"@if(old('city')=='Mach') selected="" @endif value="Mach">Mach</option>
+                                      <option class="option"@if(old('city')=='Madyan') selected="" @endif value="Madyan">Madyan</option>
+                                      <option class="option"@if(old('city')=='Malakand') selected="" @endif value="Malakand">Malakand</option>
+                                      <option class="option"@if(old('city')=='Mand') selected="" @endif value="Mand">Mand</option>
+                                      <option class="option"@if(old('city')=='Manguchar') selected="" @endif value="Manguchar">Manguchar</option>
+                                      <option class="option"@if(old('city')=='Mashki Chah') selected="" @endif value="Mashki Chah">Mashki Chah</option>
+                                      <option class="option"@if(old('city')=='Maslti') selected="" @endif value="Maslti">Maslti</option>
+                                      <option class="option"@if(old('city')=='Mastuj') selected="" @endif value="Mastuj">Mastuj</option>
+                                      <option class="option"@if(old('city')=='Mastung') selected="" @endif value="Mastung">Mastung</option>
+                                      <option class="option"@if(old('city')=='Mathi') selected="" @endif value="Mathi">Mathi</option>
+                                      <option class="option"@if(old('city')=='Matiari') selected="" @endif value="Matiari">Matiari</option>
+                                      <option class="option"@if(old('city')=='Mehar') selected="" @endif value="Mehar">Mehar</option>
+                                      <option class="option"@if(old('city')=='Mekhtar') selected="" @endif value="Mekhtar">Mekhtar</option>
+                                      <option class="option"@if(old('city')=='Merui') selected="" @endif value="Merui">Merui</option>
+                                      <option class="option"@if(old('city')=='Mianwali') selected="" @endif value="Mianwali">Mianwali</option>
+                                      <option class="option" @if(old('city')=='Mianez') selected="" @endif value="Mianez">Mianez</option>
+                                      <option class="option"@if(old('city')=='Mirpur Batoro') selected="" @endif value="Mirpur Batoro">Mirpur Batoro</option>
+                                      <option class="option"@if(old('city')=='Mirpur Khas') selected="" @endif value="Mirpur Khas">Mirpur Khas</option>
+                                      <option class="option" @if(old('city')=='Mirpur Sakro') selected="" @endif value="Mirpur Sakro">Mirpur Sakro</option>
+                                      <option class="option"@if(old('city')=='Mithi') selected="" @endif value="Mithi">Mithi</option>
+                                      <option class="option" @if(old('city')=='Mongora') selected="" @endif value="Mongora">Mongora</option>
+                                      <option class="option"@if(old('city')=='Murgha Kibzai') selected="" @endif value="Murgha Kibzai">Murgha Kibzai</option>
+                                      <option class="option"@if(old('city')=='Muridke') selected="" @endif value="Muridke">Muridke</option>
+                                      <option class="option"@if(old('city')=='Musa Khel Bazar') selected="" @endif value="Musa Khel Bazar">Musa Khel Bazar</option>
+                                      <option class="option"@if(old('city')=='Muzaffar Garh') selected="" @endif value="Muzaffar Garh">Muzaffar Garh</option>
+                                      <option class="option"@if(old('city')=='Muzaffarabad') selected="" @endif value="Muzaffarabad">Muzaffarabad</option>
+                                      <option class="option"@if(old('city')=='Nawabshah') selected="" @endif value="Nawabshah">Nawabshah</option>
+                                      <option class="option"@if(old('city')=='Nazimabad') selected="" @endif value="Nazimabad">Nazimabad</option>
+                                      <option class="option"@if(old('city')=='Nowshera') selected="" @endif value="Nowshera">Nowshera</option>
+                                      <option class="option"@if(old('city')=='Nagar Parkar') selected="" @endif value="Nagar Parkar">Nagar Parkar</option>
+                                      <option class="option"@if(old('city')=='Nagha Kalat') selected="" @endif value="Nagha Kalat">Nagha Kalat</option>
+                                      <option class="option"@if(old('city')=='Nal') selected="" @endif value="Nal">Nal</option>
+                                      <option class="option"@if(old('city')=='Naokot') selected="" @endif value="Naokot">Naokot</option>
+                                      <option class="option"@if(old('city')=='Nasirabad') selected="" @endif value="Nasirabad">Nasirabad</option>
+                                      <option class="option"@if(old('city')=='Nauroz Kalat') selected="" @endif value="Nauroz Kalat">Nauroz Kalat</option>
+                                      <option class="option"@if(old('city')=='Naushara') selected="" @endif value="Naushara">Naushara</option>
+                                      <option class="option"@if(old('city')=='Nur Gamma') selected="" @endif value="Nur Gamma">Nur Gamma</option>
+                                      <option class="option"@if(old('city')=='Nushki') selected="" @endif value="Nushki">Nushki</option>
+                                      <option class="option"@if(old('city')=='Nuttal') selected="" @endif value="Nuttal">Nuttal</option>
+                                      <option class="option"@if(old('city')=='Okara') selected="" @endif value="Okara">Okara</option>
+                                      <option class="option"@if(old('city')=='Ormara') selected="" @endif value="Ormara">Ormara</option>
+                                      <option class="option"@if(old('city')=='Peshawar') selected="" @endif value="Peshawar">Peshawar</option>
+                                      <option class="option"@if(old('city')=='Panjgur') selected="" @endif value="Panjgur">Panjgur</option>
+                                      <option class="option"@if(old('city')=='Pasni City') selected="" @endif value="Pasni City">Pasni City</option>
+                                      <option class="option"@if(old('city')=='Paharpur') selected="" @endif value="Paharpur">Paharpur</option>
+                                      <option class="option"@if(old('city')=='Palantuk') selected="" @endif value="Palantuk">Palantuk</option>
+                                      <option class="option"@if(old('city')=='Pendoo') selected="" @endif value="Pendoo">Pendoo</option>
+                                      <option class="option"@if(old('city')=='Piharak') selected="" @endif value="Piharak">Piharak</option>
+                                      <option class="option"@if(old('city')=='Pirmahal') selected="" @endif value="Pirmahal">Pirmahal</option>
+                                      <option class="option"@if(old('city')=='Pishin') selected="" @endif value="Pishin">Pishin</option>
+                                      <option class="option"@if(old('city')=='Plandri') selected="" @endif value="Plandri">Plandri</option>
+                                      <option class="option"@if(old('city')=='Pokran') selected="" @endif value="Pokran">Pokran</option>
+                                      <option class="option"@if(old('city')=='Pounch') selected="" @endif value="Pounch">Pounch</option>
+                                      <option class="option"@if(old('city')=='Quetta') selected="" @endif value="Quetta">Quetta</option>
+                                      <option class="option"@if(old('city')=='Qambar') selected="" @endif value="Qambar">Qambar</option>
+                                      <option class="option"@if(old('city')=='Qamruddin Karez') selected="" @endif value="Qamruddin Karez">Qamruddin Karez</option>
+                                      <option class="option"@if(old('city')=='Qazi Ahmad') selected="" @endif value="Qazi Ahmad">Qazi Ahmad</option>
+                                      <option class="option"@if(old('city')=='Qila Abdullah') selected="" @endif value="Qila Abdullah">Qila Abdullah</option>
+                                      <option class="option"@if(old('city')=='Qila Ladgasht') selected="" @endif value="Qila Ladgasht">Qila Ladgasht</option>
+                                      <option class="option"@if(old('city')=='Qila Safed') selected="" @endif value="Qila Safed">Qila Safed</option>
+                                      <option class="option"@if(old('city')=='Qila Saifullah') selected="" @endif value="Qila Saifullah">Qila Saifullah</option>
+                                      <option class="option"@if(old('city')=='Rawalpindi') selected="" @endif value="Rawalpindi">Rawalpindi</option>
+                                      <option class="option"@if(old('city')=='Rabwah') selected="" @endif value="Rabwah">Rabwah</option>
+                                      <option class="option"@if(old('city')=='Rahim Yar Khan') selected="" @endif value="Rahim Yar Khan">Rahim Yar Khan</option>
+                                      <option class="option"@if(old('city')=='Rajan Pur') selected="" @endif value="Rajan Pur">Rajan Pur</option>
+                                      <option class="option"@if(old('city')=='Rakhni') selected="" @endif value="Rakhni">Rakhni</option>
+                                      <option class="option"@if(old('city')=='Ranipur') selected="" @endif value="Ranipur">Ranipur</option>
+                                      <option class="option"@if(old('city')=='Ratodero') selected="" @endif value="Ratodero">Ratodero</option>
+                                      <option class="option"@if(old('city')=='Rawalakot') selected="" @endif value="Rawalakot">Rawalakot</option>
+                                      <option class="option"@if(old('city')=='Renala Khurd') selected="" @endif value="Renala Khurd">Renala Khurd</option>
+                                      <option class="option"@if(old('city')=='Robat Thana') selected="" @endif value="Robat Thana">Robat Thana</option>
+                                      <option class="option"@if(old('city')=='Rodkhan') selected="" @endif value="Rodkhan">Rodkhan</option>
+                                      <option class="option"@if(old('city')=='Rohri') selected="" @endif value="Rohri">Rohri</option>
+                                      <option class="option"@if(old('city')=='Sialkot') selected="" @endif value="Sialkot">Sialkot</option>
+                                      <option class="option"@if(old('city')=='Sadiqabad') selected="" @endif value="Sadiqabad">Sadiqabad</option>
+                                      <option class="option"@if(old('city')=='Safdar Abad- (Dhaban Singh)') selected="" @endif value="Safdar Abad- (Dhaban Singh)">Safdar Abad</option>
+                                      <option class="option"@if(old('city')=='Sahiwal') selected="" @endif value="Sahiwal">Sahiwal</option>
+                                      <option class="option"@if(old('city')=='Saidu Sharif') selected="" @endif value="Saidu Sharif">Saidu Sharif</option>
+                                      <option class="option"@if(old('city')=='Saindak') selected="" @endif value="Saindak">Saindak</option>
+                                      <option class="option"@if(old('city')=='Sakrand') selected="" @endif value="Sakrand">Sakrand</option>
+                                      <option class="option"@if(old('city')=='Sanjawi') selected="" @endif value="Sanjawi">Sanjawi</option>
+                                      <option class="option"@if(old('city')=='Sargodha') selected="" @endif value="Sargodha">Sargodha</option>
+                                      <option class="option"@if(old('city')=='Saruna') selected="" @endif value="Saruna">Saruna</option>
+                                      <option class="option"@if(old('city')=='Shabaz Kalat') selected="" @endif value="Shabaz Kalat">Shabaz Kalat</option>
+                                      <option class="option"@if(old('city')=='Shadadkhot') selected="" @endif value="Shadadkhot">Shadadkhot</option>
+                                      <option class="option"@if(old('city')=='Shahbandar') selected="" @endif value="Shahbandar">Shahbandar</option>
+                                      <option class="option"@if(old('city')=='Shahpur') selected="" @endif value="Shahpur">Shahpur</option>
+                                      <option class="option"@if(old('city')=='Shahpur Chakar') selected="" @endif value="Shahpur Chakar">Shahpur Chakar</option>
+                                      <option class="option"@if(old('city')=='Shakargarh') selected="" @endif value="Shakargarh">Shakargarh</option>
+                                      <option class="option"@if(old('city')=='Shangla') selected="" @endif value="Shangla">Shangla</option>
+                                      <option class="option" @if(old('city')=='Sharam Jogizai') selected="" @endif value="Sharam Jogizai">Sharam Jogizai</option>
+                                      <option class="option"@if(old('city')=='Sheikhupura') selected="" @endif value="Sheikhupura">Sheikhupura</option>
+                                      <option class="option"@if(old('city')=='Shikarpur') selected="" @endif value="Shikarpur">Shikarpur</option>
+                                      <option class="option"@if(old('city')=='Shingar') selected="" @endif value="Shingar">Shingar</option>
+                                      <option class="option"@if(old('city')=='Shorap') selected="" @endif value="Shorap">Shorap</option>
+                                      <option class="option"@if(old('city')=='Sibi') selected="" @endif value="Sibi">Sibi</option>
+                                      <option class="option"@if(old('city')=='Sohawa') selected="" @endif value="Sohawa">Sohawa</option>
+                                      <option class="option"@if(old('city')=='Sonmiani') selected="" @endif value="Sonmiani">Sonmiani</option>
+                                      <option class="option"@if(old('city')=='Sooianwala') selected="" @endif value="Sooianwala">Sooianwala</option>
+                                      <option class="option"@if(old('city')=='Spezand') selected="" @endif value="Spezand">Spezand</option>
+                                      <option class="option"@if(old('city')=='Spintangi') selected="" @endif value="Spintangi">Spintangi</option>
+                                      <option class="option"@if(old('city')=='Sui') selected="" @endif value="Sui">Sui</option>
+                                      <option class="option"@if(old('city')=='Sujawal') selected="" @endif value="Sujawal">Sujawal</option>
+                                      <option class="option"@if(old('city')=='Sukkur') selected="" @endif value="Sukkur">Sukkur</option>
+                                      <option class="option"@if(old('city')=='Suntsar') selected="" @endif value="Suntsar">Suntsar</option>
+                                      <option class="option"@if(old('city')=='Surab') selected="" @endif value="Surab">Surab</option>
+                                      <option class="option"@if(old('city')=='Swabi') selected="" @endif value="Swabi">Swabi</option>
+                                      <option class="option"@if(old('city')=='Swat') selected="" @endif value="Swat">Swat</option>
+                                      <option class="option"@if(old('city')=='Tando Adam') selected="" @endif value="Tando Adam">Tando Adam</option>
+                                      <option class="option"@if(old('city')=='Tando Bago') selected="" @endif value="Tando Bago">Tando Bago</option>
+                                      <option class="option"@if(old('city')=='Tangi') selected="" @endif value="Tangi">Tangi</option>
+                                      <option class="option"@if(old('city')=='Tank City') selected="" @endif value="Tank City">Tank City</option>
+                                      <option class="option"@if(old('city')=='Tar Ahamd Rind') selected="" @endif value="Tar Ahamd Rind">Tar Ahamd Rind</option>
+                                      <option class="option"@if(old('city')=='Thalo') selected="" @endif value="Thalo">Thalo</option>
+                                      <option class="option"@if(old('city')=='Thatta') selected="" @endif value="Thatta">Thatta</option>
+                                      <option class="option"@if(old('city')=='Toba Tek Singh') selected="" @endif value="Toba Tek Singh">Toba Tek Singh</option>
+                                      <option class="option"@if(old('city')=='Tordher') selected="" @endif value="Tordher">Tordher</option>
+                                      <option class="option"@if(old('city')=='Tujal') selected="" @endif value="Tujal">Tujal</option>
+                                      <option class="option"@if(old('city')=='Tump') selected="" @endif value="Tump">Tump</option>
+                                      <option class="option"@if(old('city')=='Turbat') selected="" @endif value="Turbat">Turbat</option>
+                                      <option class="option"@if(old('city')=='Umarao') selected="" @endif value="Umarao">Umarao</option>
+                                      <option class="option"@if(old('city')=='Umarkot') selected="" @endif value="Umarkot">Umarkot</option>
+                                      <option class="option" @if(old('city')=='Upper Dir') selected="" @endif value="Upper Dir">Upper Dir</option>
+                                      <option class="option"@if(old('city')=='Uthal') selected="" @endif value="Uthal">Uthal</option>
+                                      <option class="option"@if(old('city')=='Vehari') selected="" @endif value="Vehari">Vehari</option>
+                                      <option class="option"@if(old('city')=='Veirwaro') selected="" @endif value="Veirwaro">Veirwaro</option>
+                                      <option class="option"@if(old('city')=='Vitakri') selected="" @endif value="Vitakri">Vitakri</option>
+                                      <option class="option"@if(old('city')=='Wadh') selected="" @endif value="Wadh">Wadh</option>
+                                      <option class="option"@if(old('city')=='Wah Cantt') selected="" @endif value="Wah Cantt">Wah Cantt</option>
+                                      <option class="option" @if(old('city')=='Warah') selected="" @endif value="Warah">Warah</option>
+                                      <option class="option"@if(old('city')=='Washap') selected="" @endif value="Washap">Washap</option>
+                                      <option class="option"@if(old('city')=='Wasjuk') selected="" @endif value="Wasjuk">Wasjuk</option>
+                                      <option class="option"@if(old('city')=='Wazirabad') selected="" @endif value="Wazirabad">Wazirabad</option>
+                                      <option class="option"@if(old('city')=='Yakmach') selected="" @endif value="Yakmach">Yakmach</option>
+                                      <option class="option"@if(old('city')=='Zhob') selected="" @endif value="Zhob">Zhob</option>
+                                      <option class="option"@if(old('city')=='Other') selected="" @endif value="Other">Other</option>                                       
                                   </select>
                                   @error('city')
                                       <p class="text-danger mt-3">{{ $message }}</p>
