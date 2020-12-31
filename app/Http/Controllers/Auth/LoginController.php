@@ -66,7 +66,7 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback(Request $request, $provider)
+  public function handleProviderCallback(Request $request, $provider)
     {
         try {
             if($provider == 'facebook'){

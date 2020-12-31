@@ -500,11 +500,7 @@ border-left: 2px red solid !important;
       }
       }
 
-       @media (min-width: 1200px)  and (max-width: 1347px){
-          ul[id="myUL"]{
-             width: 40% !important;
-          }
-       }
+     
       /* @media (max-width: 411px){
       ul[class="slick-dots"]{
       margin-top: 9px !important;

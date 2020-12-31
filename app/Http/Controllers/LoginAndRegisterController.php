@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\SendWelcomeEmail;
 use App\Role;
 use App\User;
+use Socialite;
 use DB;
 use PDF;
 class LoginAndRegisterController extends Controller
