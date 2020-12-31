@@ -225,14 +225,14 @@ small {
 
     </div>
 <div  style="position: relative !important;color: black;top: -48px; !important">
-  <p>Showing <font style="color: Blue !important;  ">
+  <p>Showing <font style="color: #4a88c1 !important;  ">
   {{ ($products->currentpage() - 1) * $products ->perpage() + 1 }} To 
     @if($products->lastPage() == $products->currentpage())
       {{  $products ->total()  }}
     @else
       {{ $products->currentpage() * $products ->perpage() }}
     @endif</font>
-   Of <font style="color: Blue !important;  ">{{  $products ->total()  }}  Records </font>
+   Of <font style="color: #4a88c1 !important;  ">{{  $products ->total()  }}  Records </font>
 
   {{-- ($products->currentpage() -1) * $products ->perpage() + $products->count() }} of {{  $products ->total()  --}}
   </p>

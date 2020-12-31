@@ -30,6 +30,10 @@
   scroll-behavior: smooth !important;
 }
 
+select[id="phoneColors"]{
+  width: 13% !important;
+  border: none !important;
+}
     
    #myInput {
       /* background-image: url('/css/searchicon.png');

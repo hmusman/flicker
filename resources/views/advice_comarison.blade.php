@@ -1221,7 +1221,7 @@ border-left: 2px red solid !important;
     border: 1px solid #ddd;
     margin-bottom: 12px;
    height: 45px;
-    border: 1px black solid;
+   
   }
  #myInputtwo {
     background-image: url('/css/searchicon.png');
@@ -1234,14 +1234,19 @@ border-left: 2px red solid !important;
     margin-bottom: 12px;
         height: 45px;
   }
+
+   #myInputthree:focus{
+     border: none !important;
+   }
    #myInputthree {
     background-image: url('/css/searchicon.png');
     background-position: 10px 12px;
     background-repeat: no-repeat;
     width: 100%;
     font-size: 16px;
+    border: none !important;
     /* padding: 12px 20px 12px 40px; */
-    border: 1px solid black;
+   
     margin-bottom: 12px;
         height: 45px;
   }
@@ -1356,7 +1361,7 @@ border-left: 2px red solid !important;
 
 
 .colblue{
-  color: blue !important;
+  color: #4a88c1 !important;
   font-weight: bold !important;
   text-transform: uppercase;
   font-size: 14px;
@@ -1801,7 +1806,7 @@ height: 65px;
     <div class="container" style="padding-right: 1px !important;
     padding-left: 0px !important;">
       <div class="row">
-        <div class="col-md-12" style="background-color: #f3f3f3; border-right: 6px #fafafa solid;">
+        <div class="col-md-12" style="background-color: #e3e3e3; border-right: 6px #fafafa solid;">
 
           <p style="width: 100%;font-weight: 500;
     font-size: 13px;
@@ -1819,14 +1824,18 @@ height: 65px;
 
             </div>
 
-            <div class="col-md-3 srcgBtnOnMob" style="   background-color: rgb(248 247 247);
-          border: 1px black solid;
-          padding: 2px;
-          text-align: center;
-          text-transform: uppercase;
-          font-weight: 700; cursor: pointer;height: 45px;
-    padding-top: 13px;
-    font-size: 13px; ">
+            <div class="col-md-3 srcgBtnOnMob" style="     
+            
+                    background-color: rgb(74 136 193);
+                    border: 1px #4a88c1 solid;
+                    color: white;
+                      border-radius: 4px;
+                    padding: 2px;
+                      text-align: center;
+                      text-transform: uppercase;
+                font-weight: 500; cursor: pointer;height: 45px;
+                    padding-top: 13px;
+             font-size: 13px; ">
               Search
             </div>
 
@@ -1836,7 +1845,7 @@ height: 65px;
 
 
           <p style="font-style: italic; margin-top: 10px;">
-            <font style="    background-color: #bebbbb;
+            <font style="    background-color: #4a88c1;
         color: white;
         padding: 0px 6px 0px 6px;
         border-radius: 50%;
@@ -2322,7 +2331,7 @@ height: 65px;
     <div class="container" style="padding-right: 1px !important;
       padding-left: 0px !important;">
       <div class="row">
-        <div class="col-md-12" style="background-color: #f3f3f3;border-right: 6px #fafafa solid;">
+        <div class="col-md-12" style="background-color: #e3e3e3;border-right: 6px #fafafa solid;">
   
           <p style="width: 100%;font-weight: 500;
       font-size: 13px;
@@ -2343,14 +2352,16 @@ height: 65px;
   
             </div>
   
-            <div class="col-md-3 srcgBtnOnMob" style="   background-color: rgb(248 247 247);
-            border: 1px black solid;
-            padding: 2px;
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: 700; cursor: pointer;height: 45px;
-      padding-top: 13px;
-    font-size: 13px;">
+            <div class="col-md-3 srcgBtnOnMob" style="    background-color: rgb(74 136 193);
+                    border: 1px #4a88c1 solid;
+                    color: white;
+                      border-radius: 4px;
+                    padding: 2px;
+                      text-align: center;
+                      text-transform: uppercase;
+                font-weight: 500; cursor: pointer;height: 45px;
+                    padding-top: 13px;
+             font-size: 13px;">
               Search
             </div>
   
@@ -2360,7 +2371,7 @@ height: 65px;
   
   
           <p style="font-style: italic; margin-top: 10px;">
-            <font style="    background-color: #bebbbb;
+            <font style="    background-color: #4a88c1;
           color: white;
           padding: 0px 6px 0px 6px;
           border-radius: 50%;
@@ -2411,7 +2422,7 @@ height: 65px;
     <div class="container" style="padding-right: 1px !important;
       padding-left: 0px !important;">
       <div class="row">
-        <div class="col-md-12" style="background-color: #f3f3f3; border-right: 6px #fafafa solid;">
+        <div class="col-md-12" style="background-color: #e3e3e3; border-right: 6px #fafafa solid;">
   
           <p style="width: 100%;font-weight: 500;
       font-size: 13px;
@@ -2436,14 +2447,16 @@ height: 65px;
   
             </div>
   
-            <div class="col-md-3 srcgBtnOnMob" style="   background-color: rgb(248 247 247);
-            border: 1px black solid;
-            padding: 2px;
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: 700; cursor: pointer;height: 45px;
-    padding-top: 13px;
-    font-size: 13px; ">
+            <div class="col-md-3 srcgBtnOnMob" style="       background-color: rgb(74 136 193);
+                    border: 1px #4a88c1 solid;
+                    color: white;
+                      border-radius: 4px;
+                    padding: 2px;
+                      text-align: center;
+                      text-transform: uppercase;
+                font-weight: 500; cursor: pointer;height: 45px;
+                    padding-top: 13px;
+             font-size: 13px; ">
               Search
             </div>
   
@@ -2453,7 +2466,7 @@ height: 65px;
   
   
           <p style="font-style: italic; margin-top: 10px;">
-            <font style="    background-color: #bebbbb;
+            <font style="    background-color: #4a88c1;
           color: white;
           padding: 0px 6px 0px 6px;
           border-radius: 50%;
@@ -2904,15 +2917,16 @@ $(function(){
 <script>
    $(document).click(function (e)
 {
-    var container = $("#myUL");
+    var container = $("#myULone");
 
     if (!container.is(e.target))
     {
-        $('#myUL').hide();
+        $('#myULone').hide();
      //   container.removeClass('search');
     }
-    document.getElementById('myInput').value = ''
+    document.getElementById('myInputone').value = ''
 });
+
 </script>
 
 

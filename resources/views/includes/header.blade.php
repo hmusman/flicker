@@ -340,6 +340,9 @@ ul[class="dropdown-menu"] > li{
          > FORUMS  </a>
    </li>
    <li style="width:40%; float: left; height: 100%">
+
+
+
       <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm qasimnavigatin fontUbantu" placeholder="Search our Store" >
       <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 35% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
          <div>
@@ -380,7 +383,48 @@ ul[class="dropdown-menu"] > li{
 
 
 
+<script>
+//   var myInput = document.getElementById('myInput');
+//   myInput.addEventListener('keyup',
+//   function()
+//   {
+//   /
+// document.getElementById('myUL').style.backgroundColor = "red";
 
+//  });
+
+
+document.getElementById('myInput').onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        alert('up arrow');
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+//document.getElementById('myUL').style.backgroundColor = "red";
+      //  $("#myUL li").css("background-color", "yellow");
+      //  $("#myUL").next().focus();
+
+    }
+    else if (e.keyCode == '37') {
+       // left 
+        alert('left arrow');
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+        alert('right arrow');
+    }
+
+}
+
+
+
+</script>
 
 
 

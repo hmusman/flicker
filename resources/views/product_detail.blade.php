@@ -56,6 +56,12 @@
 
 <style>
 
+
+input[id="uname"]{
+  border: none !important;
+}
+
+
 select{
      -webkit-appearance: none;
   -moz-appearance: none;
@@ -83,8 +89,8 @@ a[id="prcCal"]{
 
 .btn-primary {
     color: #fff !important;
-    background-color: #0071e3 !important;
-    border-color: #0071e3 !important;
+    background-color: #4a88c1 !important;
+    border-color: #4a88c1 !important;
 }
 
 
@@ -1460,7 +1466,7 @@ Up to 20 h (multimedia)
                   <!-- <div id="view2zeroAtMobile"  style="width:20%; float:left "></div> -->
                   <div id="view2FullAtMobile"  style="width:100%;  " >
                      <div class="container" id="OpinonrowOne" style="width:100% !Important">
-                        <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 2px #c4c0c0 solid;  ">
+                        <div class="row"  style="    background-color: #f0f0f0;   border-bottom: 1px #bab9bd solid;  ">
                            <div class="col-md-5" style="height: 81px;padding-top: 27px;" >
                               <a id="clickopinon"  style="  background-color: #4a88c1; 
                                  color: white;
@@ -1480,7 +1486,7 @@ Up to 20 h (multimedia)
                                  <div class="col-md-6" ><p style="text-align:left">Not Logged In</p></div>
                                   <div class="col-md-6" ><p  style="text-align:right"><button>LOGIN</button></p></div>
                                  </div> -->
-                              <hr/>
+                          
                               <form action="{{ route('ProductOpinion') }}" method="post">
                                  @csrf
                                  <input type="hidden" class="user_id" name="user_id" value="@if(!empty(Session::get('user')->id)) {{Session::get('user')->id}} @endif">
@@ -1567,8 +1573,8 @@ Up to 20 h (multimedia)
                                  <button id="opinion_search_btn" style="border: none; outline: none;cursor: pointer;">
                                     <p id="srchoption" style="  
                                        height: 43px;
-                                       font-size: .9vw;
-                                       text-align: center;  background-color: #f9f9f9;   color: #848388;  padding: 13px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 700; border: 1px #c4c0c0 solid;">SEARCH OPINIONS </p>
+                                       font-size: 1vw;
+                                       text-align: center;  background-color: #f9f9f9;     background-color: #4a88c1;  color: #ffffff;  padding: 13px 18px 10px 18px; text-decoration: none; border-radius: 4px;   font-weight: 500; border: 1px #c4c0c0 solid;">SEARCH OPINIONS </p>
                                  </button>
                               </div>
                            </div>
