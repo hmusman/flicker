@@ -425,7 +425,7 @@ small {
 
 
 
-
+@csrf
 
 <section>
   <div class="container">
@@ -470,6 +470,7 @@ small {
 
 
                     <div id="surround" align="center">
+                      
                         <img class="cloudzoom img-responsive" alt="Small image" id="zoom1" src="{{ ($img1_500) }}"
                             data-cloudzoom='  zoomSizeMode:"image",     autoInside: 500 '>
 
@@ -478,7 +479,6 @@ small {
                                 <img src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_left_black_18dp.png')}}">
                             </div>
                             <ul class="ClousSlicker">
-
 
                                 @if(!empty($img1))
                                 <li style=""><img class='cloudzoom-gallery img-thumbnail'
@@ -615,6 +615,7 @@ small {
  color: white !important; }
    </style>
    <hr style="width: 80%;" />
+
    @if($product->variation_colors->count()>0)
    <p style="font-weight: bold;">Color <font style="" class="colr"> *</font></p>
    <div style="height: 100px; width: 100%;">
@@ -624,7 +625,7 @@ small {
       @if($productColor != $color->color)
       <div class="@if($i==1) color_active @endif productColorClass" id="mobviebtnsabove" style="width: 20%;  border: 2px #d3d3d3 solid ; cursor: pointer;float: left; text-align: center;    padding: 5px 10px 5px 10px;margin-right: 6px;
          border-radius: 6px; background: {{ $color->color }}; ">
-         <button id="mobviebtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: white;  font-weight: 500;">{{ ucwords($color->color) }}</button>
+         <button id="mobviebtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: white;  font-weight: 500;">{{ $color->color }}</button>
       </div>
       @endif
       @php $productColor = $color->color; $i++; @endphp
@@ -1834,8 +1835,27 @@ Up to 20 h (multimedia)
 
 
 
+<!-- click on buton and open same color image -->
+<script>
+  $('#mobviebtns').click(function(){
+    // alert('helloooo');
+   var color=$('#mobviebtns').text();
+   var product_id=$('#product_id').val();
+   var token = $("input[name=_token]").val();
+    
+    $.ajax({
+      url:"{{ route('Changecolorbtn') }}",
+      type:"post",
+      data:{product_id:product_id,color:color,_token:token},
+      success:function(data){
+        
+        $('#zoom1').attr('src', '{{asset("/storage/admin/images/product/thumbnail")}}/'+data);
+      }
+    });
 
-
+    });
+  
+</script>
 <script type="text/javascript">
 
 document.addEventListener("DOMContentLoaded", function(event) {

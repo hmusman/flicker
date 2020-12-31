@@ -127,6 +127,9 @@ Route::get('brandsearch','ProductController@brandSearch')->name('brandsearch');
 Route::get('colorsearch','ProductController@colorSearch')->name('colorsearch');
 Route::get('citysearch','ProductController@citySearch')->name('citysearch');
 Route::get('ColorFilterStorage','ProductController@colorFilterStorage')->name('ColorFilterStorage');
+// change color of buton and image
+Route::post('Changecolorbtn','ProductController@Changecolorbtn')->name('Changecolorbtn');
+
 Route::get('ColorFilterImg','ProductController@colorFilterImg')->name('ColorFilterImg');
 Route::get('StorageFilterPrice','ProductController@StorageFilterPrice')->name('StorageFilterPrice');
 Route::get('PriceEstimateCalculator','BrandController@PriceEstimateCalculator')->name('PriceEstimateCalculator');

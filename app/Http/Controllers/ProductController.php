@@ -81,7 +81,7 @@ class ProductController extends Controller
             'color'=>'required',
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
-            'pocket'=>'bail | required | alpha_dash',
+            'pocket'=>'required',
             'description'=>'required',
             'image1'=>'required|mimes:png,jpg,jpeg',
             'image2'=>'mimes:png,jpg,jpeg',
@@ -214,9 +214,11 @@ class ProductController extends Controller
                
                 if ($product)
                 {
-                    if(count($request->variation_color)>0)
+                    if ($request->variation_color) {
+                    
+                    if(count((array)$request->variation_color)>0)
                     {
-                        for($i=0; $i<count($request->variation_color); $i++)
+                        for($i=0; $i<count((array)$request->variation_color); $i++)
                         {
                             if($request->variation_color[$i] !='')
                             {
@@ -245,6 +247,7 @@ class ProductController extends Controller
                     $request->session()->flash('msg',"Product has been added successfully");
                     return redirect()->route('products.index');
                 }
+             }
             }
         }
     }
@@ -368,6 +371,7 @@ class ProductController extends Controller
             'color'=>'required',
             'price'=>'bail | required | numeric',
             'quantity'=>'bail | required | numeric',
+            'pocket'=>'required',
             'description'=>'required',
             'image1'=>'mimes:png,jpg,jpeg',
             'image2'=>'mimes:png,jpg,jpeg',
@@ -897,6 +901,12 @@ class ProductController extends Controller
         }
 
         return view('partials.shop_products_list',compact('products'));
+    }
+    public function Changecolorbtn(Request $request){
+
+         $storage = ColorVariation::where([['product_id',$request->product_id],['color',$request->color]])->first();
+         echo $storage->img;
+        
     }
 
 }
