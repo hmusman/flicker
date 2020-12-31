@@ -116,6 +116,22 @@ ul[class="dropdown-menu"] > li{
       margin-top: -8px;
       margin-bottom: -8px;
       }
+
+       @media (min-width: 992px)  and (max-width: 1140px){
+          ul[id="myUL"]{
+             width: 38% !important;
+          }
+       }
+       @media (min-width: 1200px)  and (max-width: 1300px){
+          ul[id="myUL"]{
+             width: 38% !important;
+          }
+       }
+        @media (min-width: 1303px){
+          ul[id="myUL"]{
+             width: 36% !important;
+          }
+       }
  </style>
 
 <Header class="navbar-fixed-top cbp-af-header">
@@ -344,7 +360,7 @@ ul[class="dropdown-menu"] > li{
 
 
       <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm qasimnavigatin fontUbantu" placeholder="Search our Store" >
-      <ul onblur="hideagain()" id="myUL" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 35% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+      <ul onblur="hideagain()" id="myUL" style="overflow-x: hidden !important;  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 35% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
          <div>
          
             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none; ">DEVICES  
