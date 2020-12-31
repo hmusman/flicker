@@ -407,8 +407,8 @@ function checkKey(e) {
     else if (e.keyCode == '40') {
         // down arrow
 //document.getElementById('myUL').style.backgroundColor = "red";
-       $("#myUL li").css("background-color", "yellow");
-       $("#myUL").next().focus();
+      //  $("#myUL li").css("background-color", "yellow");
+      //  $("#myUL").next().focus();
 
     }
     else if (e.keyCode == '37') {
