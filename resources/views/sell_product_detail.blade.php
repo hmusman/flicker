@@ -43,7 +43,9 @@
 </head>
 
 <style>
-
+ul[id="myUL"] {
+    width: 35% !important;
+}
 
    #myUL > li:hover  #setwidth2 a{
     background-color: #f9f9f9 !important;
