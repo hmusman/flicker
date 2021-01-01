@@ -18,7 +18,9 @@
   <link rel="stylesheet" href="{{ asset('js/ScrollJS2//style.css') }}">
   
   <style>
- 
+    #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
     
     #myInput {
       background-image: url('/css/searchicon.png');

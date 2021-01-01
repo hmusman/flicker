@@ -144,7 +144,9 @@ a[class="ws_next"] {
          #myUL > li:hover  #setwidth a{
     background-color: #f9f9f9 !important;
       }
-         
+      #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }      
      #myUL li:hover #redCol{
 border-left: 2px red solid !important;
       }
@@ -909,7 +911,8 @@ border-left: 2px red solid !important;
 
     <!-- <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>  -->
    <script  src="{{ asset('js/ScrollJS2/script.js')}}"></script>
-   <script>
+
+<script>
    $(document).click(function (e)
 {
     var container = $("#myUL");
@@ -919,6 +922,8 @@ border-left: 2px red solid !important;
         $('#myUL').hide();
      //   container.removeClass('search');
     }
+    document.getElementById('myInput').value = ''
 });
 </script>
+
 </html>

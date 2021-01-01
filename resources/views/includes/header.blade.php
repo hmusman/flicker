@@ -12,6 +12,16 @@
  
  <style type="text/css">
 
+#srchBorrightText:focus{
+   outline: none !important;
+}
+
+div[id="setwidth"]:focus{
+  outline: none !important;
+}
+#redCol:focus{
+  outline: none !important;
+}
    
 .fontUbantu{
    font-family: 'Ubuntu', sans-serif !important;

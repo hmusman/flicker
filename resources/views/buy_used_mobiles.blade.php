@@ -267,7 +267,9 @@ select{
 border-left: 2px red solid !important;
 
       }
-     
+   #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
       
 
     </style>

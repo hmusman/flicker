@@ -133,7 +133,9 @@ footer{
          #myUL > li:hover  #setwidth a{
     background-color: #f9f9f9 !important;
       }
-         
+            #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
      #myUL li:hover #redCol{
 border-left: 2px red solid !important;
       }
@@ -2420,6 +2422,8 @@ function hidePhonedet() {
         $('#myUL').hide();
      //   container.removeClass('search');
     }
+    document.getElementById('myInput').value = ''
 });
 </script>
+
 </html>

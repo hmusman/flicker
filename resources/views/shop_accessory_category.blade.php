@@ -110,7 +110,9 @@ a[class="ws_next"] {
          #myUL > li:hover  #setwidth a{
     background-color: #f9f9f9 !important;
       }
-         
+            #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
      #myUL li:hover #redCol{
 border-left: 2px red solid !important;
       }
