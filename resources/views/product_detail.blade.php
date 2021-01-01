@@ -2311,6 +2311,9 @@ function myShowPassFunction() {
   }
 }
 </script>
+
+
+
 <script>
    $(document).click(function (e)
 {
@@ -2321,7 +2324,10 @@ function myShowPassFunction() {
         $('#myUL').hide();
      //   container.removeClass('search');
     }
+    document.getElementById('myInput').value = ''
 });
 </script>
+
+
 
 </html>

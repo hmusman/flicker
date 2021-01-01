@@ -435,8 +435,8 @@ button:focus{
     height: 1px;"/>
 <br/>>
 <div class="row">
-    <div class="col-md-4" style="text-align: center"> <img style="width: 60%;height: 250px;" src="{{ asset('/storage/images/person_contact.jpg') }}" alt="Trulli" /></div>
-     <div class="col-md-8" style="color: #0b0c0c">
+    <!-- <div class="col-md-4" style="text-align: center"> <img style="width: 60%;height: 250px;" src="{{ asset('/storage/images/person_contact.jpg') }}" alt="Trulli" /></div> -->
+     <div class="col-md-12" style="color: #0b0c0c">
     
     <div class="row">
         <div class="col-md-4 " style="color: #0b0c0c; background-color:#f8f7f7;">
