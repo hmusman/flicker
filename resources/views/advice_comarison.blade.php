@@ -1199,7 +1199,9 @@ a[class="ws_next"] {
    z-index: 1 !important;
 }
 
-
+   #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
 
             #myUL li:hover{
     background-color: #f9f9f9 !important;

@@ -121,6 +121,11 @@ p[id="NewPhones"]{
          #myUL > li:hover  #setwidth a{
     background-color: #f9f9f9 !important;
       }
+
+        #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
+         
          
      #myUL li:hover #redCol{
 border-left: 2px red solid !important;
@@ -523,6 +528,23 @@ border-left: 2px red solid !important;
       margin-top: 10px !important;
       }
       }
+
+
+         @media (min-width: 992px)  and (max-width: 1140px){
+          ul[id="myUL"]{
+             width: 38% !important;
+          }
+       }
+       @media (min-width: 1200px)  and (max-width: 1300px){
+          ul[id="myUL"]{
+             width: 38% !important;
+          }
+       }
+        @media (min-width: 1303px){
+          ul[id="myUL"]{
+             width: 36% !important;
+          }
+       }
    </style>
    <body>
 

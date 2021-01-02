@@ -57,19 +57,25 @@
     margin-top: 16px; */
       }
 
-
+#setwidth2{
+  margin-top: 0px !important;
+}
             #myUL li:hover{
     background-color: #f9f9f9 !important;
       }
          #myUL > li:hover  #setwidth a{
     background-color: #f9f9f9 !important;
       }
+
+      
          
      #myUL li:hover #redCol{
 border-left: 2px red solid !important;
       }
 
-
+   #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
 
     </style>
 
@@ -1012,5 +1018,20 @@ $(document).ready(function(){
             });
         });
     </script>
+
+    <script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+    document.getElementById('myInput').value = ''
+});
+</script>
+
 </body>
 </html>

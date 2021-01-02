@@ -43,6 +43,30 @@
 </head>
 
 <style>
+ul[id="myUL"] {
+    width: 35% !important;
+}
+
+  
+
+#setwidth2{
+  margin-top: 0px !important;
+}
+     #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+
+        #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
+         
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
 
 
 
@@ -1161,6 +1185,20 @@ function myShowPassFunction() {
     x.type = "password";
   }
 }
+</script>
+
+<script>
+   $(document).click(function (e)
+{
+    var container = $("#myUL");
+
+    if (!container.is(e.target))
+    {
+        $('#myUL').hide();
+     //   container.removeClass('search');
+    }
+    document.getElementById('myInput').value = ''
+});
 </script>
 
 </html>

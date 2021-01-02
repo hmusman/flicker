@@ -670,8 +670,8 @@ class ProductController extends Controller
                                 <img src="'.asset($image).'" style="  padding-left: 7px;  height: 91px;  ">
                                  </div>
                             </div>
-                            <div class="col-md-10" tabindex="3">
-                              <div id="setwidth" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
+                            <div class="col-md-10" id="srchBorrightText" tabindex="3">
+                              <div id="setwidth2" style="    height: 115px; width:100%;       margin-top: -15px; margin-left: 24px; margin-right: 115px;">  
                                 <a href="'.route("ProductDetail",$row->id).'">'. ucwords($row->name) .'         
                                 </a>
                               </div>

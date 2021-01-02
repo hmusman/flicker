@@ -348,9 +348,35 @@ html,
 body {
   height: 100%;
 }
+#setwidth2{
+  margin-top: 0px !important;
+}
+#setwidth{
+      height: 115px;
+    width: 100%;
+    margin-top: 13px !important;
+    /* margin-left: 24px; */
+    margin-right: 115px;
+}
 
-
-
+    #myUL > li:hover  #setwidth2 a{
+    background-color: #f9f9f9 !important;
+      }
+         
+.row {
+  
+    margin-left: 0px !important;
+}
+            #myUL li:hover{
+    background-color: #f9f9f9 !important;
+      }
+         #myUL > li:hover  #setwidth a{
+    background-color: #f9f9f9 !important;
+      }
+         
+     #myUL li:hover #redCol{
+border-left: 2px red solid !important;
+      }
 
 .modal-window div:not(:last-of-type) {
   margin-bottom: 15px;
@@ -2312,6 +2338,9 @@ function myShowPassFunction() {
   }
 }
 </script>
+
+
+
 <script>
    $(document).click(function (e)
 {
@@ -2322,7 +2351,10 @@ function myShowPassFunction() {
         $('#myUL').hide();
      //   container.removeClass('search');
     }
+    document.getElementById('myInput').value = ''
 });
 </script>
+
+
 
 </html>
