@@ -403,13 +403,15 @@ button[id="srchbtnid"]{
                             <a href="{{route('social.login',['provider' => 'facebook'])}}" class="fb btn" onmouseover="this.style.backgroundColor = '#2b4375'" ; >
                               <i class="fa fa-facebook fa-fw"></i> Login with Facebook
                              </a>
-                            <!-- <a href="#" class="twitter btn" onmouseover="this.style.backgroundColor = '#4c8cbd'" ;>
-                              <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                            </a>
-                            <a href="#" class="google btn" onmouseover="this.style.backgroundColor = '#ca4e3e'" ;>
+
+                           <!--  <a href="#" class="instagram btn" onmouseover="this.style.backgroundColor = '#4c8cbd'" ;>
+                              <i class="fa fa-instagram fa-fw"></i> Login with Instagram
+                            </a> -->
+
+                            <a href="{{route('social.login_g',['provider' => 'google'])}}" class="google btn" onmouseover="this.style.backgroundColor = '#ca4e3e'" ;>
                               <i class="fa fa-google fa-fw">
                               </i> Login with Google+
-                            </a> -->
+                            </a>
                           </div>
                     
                          

@@ -10,9 +10,17 @@ Route::get('/students/{id}','SellProductController@getDataByid');//<-show data//
 // Route::post('/student/update/{id}','SellProductController@updateStudent')->name('student.update');
 
 Route::get('Login', 'LoginAndRegisterController@index')->name('Login');
-// add social Button
+// add facbook social Button
 Route::get('/social-login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')->name('social.login');
 Route::get('/social-login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
+// add google social Button
+Route::get('/social-login_g/redirect/{provider}', 'Auth\LoginController@redirectToProvidergoogle')->name('social.login_g');
+Route::get('/social-login_g/{provider}/callback', 'Auth\LoginController@handleProviderCallbackgoogle')->name('social.callback');
+// add Instagrame social Button
+// Route::get('/social-login_insta/redirect/{provider}', 'Auth\LoginController@redirectToProviderInstagram')->name('social.login_insta');
+// Route::get('/social-loging_insta/{provider}/callback', 'Auth\LoginController@handleProviderCallbackInstagram')->name('social.callback');
+
+
 Route::get('/users/login', 'HomeController@login')->name('user.login');
 
 

@@ -902,6 +902,7 @@ class ProductController extends Controller
 
         return view('partials.shop_products_list',compact('products'));
     }
+    // change img on click on button
     public function Changecolorbtn(Request $request){
 
          $storage = ColorVariation::where([['product_id',$request->product_id],['color',$request->color]])->first();

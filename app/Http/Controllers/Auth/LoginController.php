@@ -55,11 +55,21 @@ class LoginController extends Controller
             $this->redirectTo = '/';
         }
     }
-    
+    // social facebook
    public function redirectToProvider($provider)
     {
         return Socialite::driver($provider)->redirect();
     }
+    // social gooogle
+     public function redirectToProvidergoogle($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+    // social Instagram
+    //  public function redirectToProviderInstagram($provider)
+    // {
+    //     return Socialite::driver($provider)->redirect();
+    // }
 
     /**
      * Obtain the user information from Google.
@@ -75,7 +85,9 @@ class LoginController extends Controller
             else{
                 $user = Socialite::driver($provider)->stateless()->user();
             }
-        } catch (\Exception $e) {
+        } 
+        
+        catch (\Exception $e) {
             flash("Something Went wrong. Please try again.")->error();
             return redirect()->route('user.Login');
         }
@@ -116,6 +128,113 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         }
     }
+      public function handleProviderCallbackgoogle(Request $request, $provider)
+    {
+        try {
+            if($provider == 'google'){
+                $user = Socialite::driver('google')->user();
+            }
+            else{
+                $user = Socialite::driver($provider)->stateless()->user();
+            }
+        } 
+        
+        catch (\Exception $e) {
+            flash("Something Went wrong. Please try again.")->error();
+            return redirect()->route('user.Login');
+        }
+
+        // check if they're an existing user
+        $existingUser = User::where('provider_id', $user->id)->orWhere('email', $user->email)->first();
+
+        if($existingUser){
+            // log them in
+            auth()->login($existingUser, true);
+        } else {
+            // create a new user
+            $newUser                  = new User;
+            $newUser->name            = $user->name;
+            $newUser->email           = $user->email;
+            $newUser->email_verified_at = date('Y-m-d H:m:s');
+            $newUser->provider_id     = $user->id;
+
+            // $extension = pathinfo($user->avatar_original, PATHINFO_EXTENSION);
+            // $filename = 'uploads/users/'.Str::random(5).'-'.$user->id.'.'.$extension;
+            // $fullpath = 'public/'.$filename;
+            // $file = file_get_contents($user->avatar_original);
+            // file_put_contents($fullpath, $file);
+            //
+            // $newUser->avatar_original = $filename;
+            $newUser->save();
+
+            $customer = new Customer;
+            $customer->user_id = $newUser->id;
+            $customer->save();
+
+            auth()->login($newUser, true);
+        }
+        if(session('link') != null){
+            return redirect(session('link'));
+        }
+        else{
+            return redirect()->route('dashboard');
+        }
+    }
+ // 
+// public function handleProviderCallbackInstagram(Request $request, $provider)
+ //    {
+ //        try {
+ //            if($provider == 'instagram'){
+ //                $user = Socialite::driver('instagram')->user();
+ //            }
+ //            else{
+ //                $user = Socialite::driver($provider)->stateless()->user();
+ //            }
+ //        } 
+        
+ //        catch (\Exception $e) {
+ //            flash("Something Went wrong. Please try again.")->error();
+ //            return redirect()->route('user.Login');
+ //        }
+
+ //        // check if they're an existing user
+ //        $existingUser = User::where('provider_id', $user->id)->orWhere('email', $user->email)->first();
+
+ //        if($existingUser){
+ //            // log them in
+ //            auth()->login($existingUser, true);
+ //        } else {
+ //            // create a new user
+ //            $newUser                  = new User;
+ //            $newUser->name            = $user->name;
+ //            $newUser->email           = $user->email;
+ //            $newUser->email_verified_at = date('Y-m-d H:m:s');
+ //            $newUser->provider_id     = $user->id;
+
+ //            // $extension = pathinfo($user->avatar_original, PATHINFO_EXTENSION);
+ //            // $filename = 'uploads/users/'.Str::random(5).'-'.$user->id.'.'.$extension;
+ //            // $fullpath = 'public/'.$filename;
+ //            // $file = file_get_contents($user->avatar_original);
+ //            // file_put_contents($fullpath, $file);
+ //            //
+ //            // $newUser->avatar_original = $filename;
+ //            $newUser->save();
+
+ //            $customer = new Customer;
+ //            $customer->user_id = $newUser->id;
+ //            $customer->save();
+
+ //            auth()->login($newUser, true);
+ //        }
+ //        if(session('link') != null){
+ //            return redirect(session('link'));
+ //        }
+ //        else{
+ //            return redirect()->route('dashboard');
+ //        }
+ //    }
+
+
 
     /**
         * Get the needed authorization credentials from the request.
