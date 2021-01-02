@@ -2,12 +2,20 @@
     @foreach($accessories as $row)
       @php $img1 = 'storage/admin/images/sellaccessory/thumbnail/215_'.$row->img @endphp
 
-      
+
+
+<style>
+div[class="slick-slide slick-current slick-active"]{
+    width: 164px !important;
+
+}
+</style>
+
       <div style="width: 100%; margin-top: 30px; float: left;">
           <div style="width: 30%; float: left;">
 
               <div class="autoplayFeatures">
-                  <img src="{{ asset($img1) }}" alt="Trulli" >
+                  <img style="margin-left: 84px;" src="{{ asset($img1) }}" alt="Trulli" >
               </div>
             
             </div>
@@ -21,12 +29,12 @@
                <p style="    position: relative;
                   top: 43px;
                   left: 25px;
-                  font-weight: 600; color: blue;
+                  font-weight: 600; color: #4a88c1;
               ">  PKR</p>
-              <p style="    color: blue;
+              <p style="    color: #4a88c1;
                   font-size: 48px;
                   padding: 20px;
-                  font-weight: 700;"> {{ $row->price }}</p>
+                  font-weight: 500;"> {{ $row->price }}</p>
                 </div>
 
 
@@ -48,8 +56,8 @@
              
               <ul>
                 <li>
-                    <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: blue;width: 180px;padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p>
-  <!-- <p class="myBtn"  style="background-color: blue;width: 180px;padding: 9px;text-align: center;font-weight: 700;font-size: larger;cursor: pointer;">Contact</p> -->
+                    <p class="myBtn" onclick="ContactShow('{{ $row->id }}')" style="background-color: #4a88c1;width: 180px;padding: 9px;text-align: center;font-weight: 500;font-size: larger;cursor: pointer;">Contact</p>
+  <!-- <p class="myBtn"  style="background-color: #4a88c1;width: 180px;padding: 9px;text-align: center;font-weight: 500;font-size: larger;cursor: pointer;">Contact</p> -->
                 </li>
                 <li><p id="contact{{ $row->id }}" style="color: black; display: none;border: 1px solid #ccc;padding: 10px;margin-left: 10px;font-size: 16px;font-weight: bold;">{{ $row->phone }}</p></li>
             
