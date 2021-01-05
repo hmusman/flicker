@@ -47,7 +47,7 @@ li[class="nav-item dropdown"] > a{
 
 @media (min-width: 1399px) and (max-width : 2000px){
 #myUL{
-    width: 23% !important;
+    width: 34% !important;
 }
 }
 

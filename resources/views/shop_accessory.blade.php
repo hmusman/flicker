@@ -306,12 +306,17 @@ ul[class="dropdown-menu fade-up"] >  li {
 
 
 <style>
+
+div[class="slick-slide slick-current slick-active"] > img{
+      width: 297px !important;
+}
+
 .dropdown-toggle::after {
 content: none !important;
 }
 
 .navbar-nav > a{
-  background-color: #0071e3 !important;
+  background-color: #4a88c1 !important;
     padding: 5px 19px 5px 19px !important;
     margin-right: 21px !important;
     border-radius: 25px !important;   
@@ -499,7 +504,7 @@ div[class="ws-title"] > span{
 }
 
 .HoveStylAddComp:hover{
-color: #0071e3 !important;
+color: #4a88c1 !important;
 }
 
 
@@ -520,7 +525,7 @@ color: #0071e3 !important;
      <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'"  target="_blank">HOME </a> / ACCESSORIES
   </div>
  <div class="col-md-3">
-      <a href="{{ route('Shop') }}" style="background-color: #0071e3; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Mobiles</a>
+      <a href="{{ route('Shop') }}" style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Mobiles</a>
 </div>
 </div>
 
@@ -579,7 +584,7 @@ color: #0071e3 !important;
         
         </div>
 
-        <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="background: #0071e3 !important; font-weight: bold; margin-top: 20px;">Reset</button></div>
+        <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="background: #4a88c1 !important; font-weight: bold; margin-top: 20px;">Reset</button></div>
       </div>
     </div>
   </div>
@@ -656,356 +661,113 @@ color: #0071e3 !important;
 <script src="js/popper.min.js" ></script>
 <script src="js/bootstrap.min.js" ></script> -->
 
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#ResetFilter').click(function(){
-          $('#brand').val("Brands");
-          $('#price').val("Price");
-          $('#view').val("Select View");
-          FetchData(0);
-      });
-
-      function BrandPriceAccessories()
-      {
-          if($('#brand').children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price')
-          {
-            if($('#view').children('option:selected').val() =="Select View")
-            {
-              var brand = $('#brand').children("option:selected").val();
-              var price = $('#price').children("option:selected").val();
-              var nView = 9;
-              FetchBrandPriceAccessories(0,brand,price,nView);
-            }
-            else
-            {
-              var view = $('#view').children('option:selected').val();
-              var brand = $('#brand').children("option:selected").val();
-              var price = $('#price').children("option:selected").val();
-              FetchBrandPriceAccessories(0,brand,price,view);
-            }
-            
-          }  
-      }
-
-      function fetch_products(query)
-      {
-        $.ajax({
-            url:"{{ route('live_search.action') }}",
-            type:"GET",
-            data:{query:query},
-            dataType:"json",
-            success:function(data)
-            {
-              document.getElementById('myUL').style.display = 'block';
-              $('#myUL').html(data.product_data);
-            }
-        });
-      }
-
-      $('#myInput').keyup(function(){
-          var query = $(this).val();
-          fetch_products(query);
-      });
-
-      $('#brand').change(function(){
-          if($('#price'). children("option:selected").val() =='Price')
-          {
-
-            if($('#view').children('option:selected').val() =="Select View")
-            { 
-              var id = $('#brand').children("option:selected").val();
-              FetchBrandAccessories(0,id,9);
-            }
-            else
-            {
-              var nView = $('#view').children('option:selected').val();
-              var id = $('#brand').children("option:selected").val();
-              FetchBrandAccessories(0,id,nView);
-            }
-            
-          }
-          else
-          {
-            BrandPriceAccessories();
-          }
-          
-      });
-
-      $('#view').change(function(){
-          if($('#brand').children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price')
-          {
-              var nView = $('#view').children('option:selected').val();
-              FetchNViewAccessories(0,nView);
-          }
-          else if($('#brand').children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price')
-          {
-            var brand = $('#brand').children("option:selected").val();
-            var nView = $('#view').children("option:selected").val();
-            FetchBrandAccessories(0,brand,nView);
-          }
-          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
-          {
-            var price = $('#price').children("option:selected").val();
-            var view = $('#view').children("option:selected").val();
-            FetchPriceAccessories(0,price,view);         
-          }
-          else
-          {BrandPriceAccessories()};  
-      });
-
-      $('#price').change(function(){
-          if($('#brand').children("option:selected").val() =='Brands')
-          {
-
-            if($('#view').children('option:selected').val() =="Select View")
-            {
-              var price = $('#price').children("option:selected").val();
-              FetchPriceAccessories(0,price,9);
-            }
-            else
-            {
-              var nView = $('#view').children('option:selected').val();
-              var price = $('#price').children("option:selected").val();
-              FetchPriceAccessories(0,price,nView);
-            }
-
-          }
-          else
-          {
-            BrandPriceAccessories();
-          }
-          
-      });
-
-
-      $(document).on('click', '.pagination a', function(event){
-          event.preventDefault(); 
-          var page = $(this).attr('href').split('page=')[1];
-          if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
-          {
-            var brand = $('#brand').children("option:selected").val();
-            FetchBrandAccessories(page,brand,9);
-          }
-
-          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
-          {
-            var price = $('#price').children("option:selected").val();
-            FetchPriceAccessories(page,price,9);
-          }
-
-          else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() =="Select View")
-          {
-            var brand = $('#brand').children("option:selected").val();
-            var price = $('#price').children("option:selected").val();
-            FetchBrandPriceAccessories(page,brand,price,9);         
-          }
-
-          else if($('#brand'). children("option:selected").val() !='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
-          {
-            var brand = $('#brand').children("option:selected").val();
-            var price = $('#price').children("option:selected").val();
-            var view = $('#view').children("option:selected").val();
-            FetchBrandPriceAccessories(page,brand,price,9);         
-          }
-
-          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() !='Price' && $('#view').children('option:selected').val() !="Select View")
-          {
-            var brand = $('#brand').children("option:selected").val();
-            var price = $('#price').children("option:selected").val();
-            var view = $('#view').children("option:selected").val();
-            FetchBrandPriceAccessories(page,price,view);         
-          }
-
-          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() !="Select View")
-          {
-            var view = $('#view').children("option:selected").val();
-            FetchNViewAccessories(page,view);         
-          }
-
-          else if($('#brand'). children("option:selected").val() =='Brands' && $('#price'). children("option:selected").val() =='Price' && $('#view').children('option:selected').val() =="Select View")
-          {
-            FetchData(page);            
-          }
-         });
-
-         function FetchData(page)
-         {
-          $.ajax({
-           url:"/pagination/accessory_fetch_data?page="+page,
-           type:"get",
-           success:function(data)
-           {
-            $('.products').html(data);
-           }
-          });
-         }
-
-         function FetchBrandAccessories(page,id,nView)
-         {
-          $.ajax({
-           url:"ShopBrandAccessories?page="+page,
-           type:"get",
-           data:{id:id,nView:nView},
-           success:function(data)
-           {
-            $('.products').html(data);
-           }
-          });
-         }
-
-         function FetchNViewAccessories(page,nView)
-         {
-          $.ajax({
-           url:"ShopViewAccessories?page="+page,
-           type:"get",
-           data:{nView:nView},
-           success:function(data)
-           {
-            $('.products').html(data);
-           }
-          });
-         }
-
-         function FetchPriceAccessories(page,price,nView)
-         {
-            $.ajax({
-             url:"ShopPriceAccessories?page="+page,
-             type:"get",
-             data:{price:price,nView:nView},
-             success:function(data)
-             {
-              $('.products').html(data);
-             }
-            });
-         }
-
-         function FetchBrandPriceAccessories(page,id,price,nView)
-         {
-          $.ajax({
-           url:"ShopBrandPriceAccessories?page="+page,
-           type:"get",
-           data:{brand:id,price:price,nView:nView},
-           success:function(data)
-           {
-            $('.products').html(data);
-           }
-          });
-         }
-  });
-</script>
-<script>
-  function myFunction() {
-      shoediv();
-  
-      var input, filter, ul, li, a, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myUL");
-      li = ul.getElementsByTagName("li");
-      for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              li[i].style.display = "";
-          } else {
-              li[i].style.display = "none";
-          }
-      }
-  
+   <script>
+      function myFunction() {
+          shoediv();
       
-  }
-    function shoediv(){
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName("li");
+          for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+              } else {
+                  li[i].style.display = "none";
+              }
+          }
+      
+                moveFocusOther();
+
+
+      }
+       function  moveFocusOther(){
+      
+            document.getElementById("myUL").focus(); 
+            
+      }
+     
+   </script>
+   <script>
+      function shoediv(){
          
           document.getElementById('myUL').style.display = 'block';
       }
-  
-  
-  
+      
+      
+      
       function hideagain(){
           document.getElementById('myUL').style.display = 'none';
       }
-  </script>
-    
+   </script>
+   <script>
+      $(document).ready(function(){
+             $('.autoplayFeatures').slick({
+       slidesToShow: 5,
+       slidesToScroll: 5,
+      //   autoplay: true,
+       autoplaySpeed: 3000,
+      
+      
+      
+       dots: true,
+       responsive: [
+           {
+             breakpoint: 500,
+             settings: {
+             slidesToShow: 2,
+             slidesToScroll: 2,
+             }
+           }
+         ]  
+       // variableWidth: true
+      });
+      });
+      
+      
+      
+      
+      
+      
+      $(document).ready(function(){
+              $('.autoplay').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        // autoplay: true,
+        autoplaySpeed: 3000,
+      
+      
+        dots: true,
+       
+        // variableWidth: true
+      });
+      });
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   </script>
+   <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+   <script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js') }}"></script>
+   <script type="text/javascript" src="{{ asset('slick/slick.js') }}"></script>
+   <!-- <script  src="js/jquery-2.1.3.min.js"></script> -->
+   <script  src="{{ asset('js/ScrollJS2/script.js') }}"></script>
+
+
+
+
+
 <script>
-
-
-
-
-
-
-
-$(document).ready(function(){
-       $('.autoplayFeatures').slick({
- slidesToShow: 5,
- slidesToScroll: 1,
-  autoplay: true,
- autoplaySpeed: 3000,
-
-
- dots: true,
- responsive: [
-     {
-       breakpoint: 500,
-       settings: {
-       slidesToShow: 2,
-       slidesToScroll: 1,
-       }
-     }
-   ]  
- // variableWidth: true
-});
-});
-
-
-
-
-
-
-$(document).ready(function(){
-        $('.autoplay').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  // autoplay: true,
-  autoplaySpeed: 3000,
-
-
-  dots: true,
- 
-  // variableWidth: true
-});
-});
-
-
-
-
-
-
-
-$(function(){
-   $('#shopBtn').attr('href','#scrollTo');
-});
-
-
-
-</script>
-
-  
-<script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
-        
-<script type="text/javascript" src="{{ asset('slick/jquery3.2.1.js')}}"></script>
-  
-<script type="text/javascript" src="{{ asset('slick/slick.js')}}"></script>
- 
-
-
-
-
-
-<script type="text/javascript" src="{{ asset('Slider/engine1/wowslider.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('Slider/engine1/script.js')}}"></script>
-  <script  src="{{ asset('js/ScrollJS2/script.js')}}"></script>
-
-  <script>
    $(document).click(function (e)
 {
     var container = $("#myUL");
@@ -1018,6 +780,9 @@ $(function(){
     document.getElementById('myInput').value = ''
 });
 </script>
+
+
+
 
 </html>
 
