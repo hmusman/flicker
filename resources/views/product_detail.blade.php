@@ -657,7 +657,7 @@ small {
       @if($productColor != $color->color)
       <div class="@if($i==1) color_active @endif productColorClass" id="mobviebtnsabove" style="width: 20%;  border: 2px #d3d3d3 solid ; cursor: pointer;float: left; text-align: center;    padding: 5px 10px 5px 10px;margin-right: 6px;
          border-radius: 6px; background: {{ $color->color }}; ">
-         <button id="colorBtns" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: white;  font-weight: 500;">{{ $color->color }}</button>
+         <button id="mobviebtn{{$i}}" onclick="getvariantpicture(this.id)" class="colorBtns" type="button" data-id="{{ $color->color }}" style="text-decoration: none; outline: none;background: none; border:none; cursor: pointer;    color: white;  font-weight: 500;">{{ $color->color }}</button>
       </div>
       @endif
       @php $productColor = $color->color; $i++; @endphp
@@ -1869,24 +1869,50 @@ Up to 20 h (multimedia)
 
 <!-- click on buton and open same color image -->
 <script>
-  $('.colorBtns').click('.color_active',function(){
-    // alert('helloooo');
-   var color=$('.color_active').text();
-   // var color_activ=$('.color_active').val();
-   var product_id=$('#product_id').val();
-   var token = $("input[name=_token]").val();
+//   $(".colorBtns").click(function () {
+//     $(".colorBtns").removeClass("active");
+//     // $(".tab").addClass("active"); // instead of this do the below 
+//     $(this).addClass("active");   
+// });
+  // $(".colorBtns").click(function () {
+  //   // alert('helloooo');
+  //   $(".colorBtns").removeClass("color_active");
+  //   // $(".tab").addClass("active"); // instead of this do the below 
+  //   $(this).addClass("color_active");
+  //  alert(color);
+  //  // var color_activ=$('.color_active').val();
+  //  var product_id=$('#product_id').val();
+  //  var token = $("input[name=_token]").val();
     
-    $.ajax({
-      url:"{{ route('Changecolorbtn') }}",
-      type:"post",
-      data:{product_id:product_id,color:color,_token:token},
-      success:function(data){
+  //   // $.ajax({
+  //   //   url:"{{ route('Changecolorbtn') }}",
+  //   //   type:"post",
+  //   //   data:{product_id:product_id,color:color,_token:token},
+  //   //   success:function(data){
         
-        $('#zoom1').attr('src', '{{asset("/storage/admin/images/product/thumbnail")}}/'+data);
-      }
-    });
+  //   //     $('#zoom1').attr('src', '{{asset("/storage/admin/images/product/thumbnail")}}/'+data);
+  //   //   }
+  //   // });
 
-    });
+  //   });
+  function getvariantpicture(colorId){
+
+
+       var color=$('#'+colorId).text();
+       // alert(colorId);
+       var product_id=$('#product_id').val();
+       var token = $("input[name=_token]").val();
+        
+        $.ajax({
+          url:"{{ route('Changecolorbtn') }}",
+          type:"post",
+          data:{product_id:product_id,color:color,_token:token},
+          success:function(data){
+            
+            $('#zoom1').attr('src', '{{asset("/storage/admin/images/product/thumbnail/")}}/700_'+data);
+          }
+        });
+  }
   
 </script>
 <script type="text/javascript">

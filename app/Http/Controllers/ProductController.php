@@ -906,7 +906,9 @@ class ProductController extends Controller
     public function Changecolorbtn(Request $request){
 
          $storage = ColorVariation::where([['product_id',$request->product_id],['color',$request->color]])->first();
+         // dd($storage);
          echo $storage->img;
+        // echo $request->color;
         
     }
 
