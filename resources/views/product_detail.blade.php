@@ -1879,7 +1879,7 @@ Up to 20 h (multimedia)
 
 
 <!-- click on buton and open same color image -->
-<!-- <script>
+<script>
   function getvariantpicture(colorId){
 
 
@@ -1899,7 +1899,7 @@ Up to 20 h (multimedia)
         });
   }
   
-</script> -->
+</script> 
 <script type="text/javascript">
 
 document.addEventListener("DOMContentLoaded", function(event) {

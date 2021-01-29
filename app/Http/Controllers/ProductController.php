@@ -8,6 +8,7 @@ use App\Product;
 use App\Category;
 use App\Brand;
 use App\PriceColorVariation;
+use App\ColorVariation;
 use Session;
 use DB;
 use Image;
