@@ -54,7 +54,7 @@ class UserController extends Controller
                 // 'password_confirm'=>'bail | required | min:8 ',
                 'city'=>'bail | required',
                 'phone'=>'bail | required | numeric',
-                'shop'=>'bail | required | alpha',
+                'shop'=>'required',
 
             ]);
         }
