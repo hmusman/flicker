@@ -117,7 +117,7 @@
                                                 <div class="form-group row">
                                                     <label for="code" class="col-md-2 col-form-label">Code</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ old('code') }}" name="code" placeholder="Enter Code" id="code" required="">
+                                                        <input class="form-control" type="number" value="{{ old('code') }}" name="code" placeholder="Enter Code" id="code" required="">
                                                         @error('code')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror

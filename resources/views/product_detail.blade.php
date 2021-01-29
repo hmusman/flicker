@@ -583,6 +583,22 @@ small {
                                         style='max-width:90px;max-height:100px;'>
                                 </li>
                                 @endif
+                                {{--         @php
+                                    $variant = (App\ColorVariation::where('product_id',$product->id)->select('color','img')->distinct('color')->get());
+                                    // dd($variant);
+                                      
+                                @endphp
+                                @if(!empty($variant))
+                                  @foreach($variant as $variantData)
+                                    @if(!empty($variantData->img))
+                                      <li><img class='cloudzoom-gallery img-thumbnail {{$variantData->color}}' src="{{ asset('/storage/admin/images/product/thumbnail/700_'.$variantData->img)}}"
+                                        data-cloudzoom='useZoom:".cloudzoom", image:"{{ asset('/storage/admin/images/product/thumbnail/700_'.$variantData->img)}}"  '
+                                        style='max-width:90px;max-height:100px;'>
+                                      </li>
+                                    @endif
+                                  @endforeach
+                                @endif
+                    --}}
 
 
                    
@@ -2365,6 +2381,33 @@ function myShowPassFunction() {
     document.getElementById('myInput').value = ''
 });
 </script>
+{{-- <script>
+  function getvariantpicture(colorId){
+
+     var color =$('#'+colorId).text();
+       console.log(colorId);
+var abc=$('#'+colorId).text();
+     
+       console.log(abc);
+
+       $('.brown').css("background-color", "brown");
+        var src =  $('.brown').attr('src');
+          console.log(src);
+
+    $('#zoom1').attr('src', src);
+
+
+                $("."+abc).addClass("cloudzoom-gallery-active");
+
+
+ $(".cloudzoom-gallery").removeClass("cloudzoom-gallery-active");
+
+
+}
+
+</script> --}}
+ 
+ \
 
 
 
