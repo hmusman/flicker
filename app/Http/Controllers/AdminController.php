@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function adminuser()
     {
-    	$admins = admin::all();
+    	$admins = Admin::all();
         return view('admin.pages.admins',compact('admins'));
     }
 
@@ -26,6 +26,8 @@ class AdminController extends Controller
     	$admin = Admin::find($req->id);
     	$admin->email = $req->email;
     	$admin->name = $req->name;
+       // dd($admins);
+        print_r($admin);
     	if($admin->save()){
     		$req->session()->put('admindata',$admin);
     		return 'Admin User data updated successfully!';
@@ -37,6 +39,7 @@ class AdminController extends Controller
     	if(session::get('admintype')=='superadmin')
     	{
     		Admin::where('id',$id)->delete();
+
     		return back();
     	}
     }

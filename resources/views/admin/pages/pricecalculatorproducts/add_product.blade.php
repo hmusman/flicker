@@ -17,7 +17,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h4 class="page-title mb-1">Add FlickerFone Product</h4>
+                            <h4 class="page-title mb-1">Add FlickerFone Product calculator</h4>
                         </div>
                         <div class="col-md-4">
                             <div class="float-right d-none d-md-block">
@@ -68,8 +68,8 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
                                                     <div class="col-md-10">
-                                                        <select class="form-control" name="category">
-                                                            <option selected="" disabled="">Select Category</option>
+                                                        <select class="form-control" name="category" required>
+                                                            <option value="" >Select Category</option>
                                                             @foreach($categories as $category)
                                                                  <option <?php if(old('category')==$category->id){ echo "selected=''"; } ?>  value="{{ $category->id }}">{{ ucfirst($category->title) }}</option>
                                                             @endforeach
@@ -83,8 +83,8 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-2 col-form-label">Brand</label>
                                                     <div class="col-md-10">
-                                                        <select class="form-control" name="brand">
-                                                            <option selected="" disabled="">Select Brand</option>
+                                                        <select class="form-control" name="brand" required>
+                                                            <option value="">Select Brand</option>
                                                             @foreach($brands as $brand)
                                                                  <option <?php if(old('brand')==$brand->id){ echo "selected=''"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>
                                                             @endforeach
@@ -108,7 +108,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ old('name') }}" name="name" placeholder="Enter Name" id="example-text-input">
+                                                        <input class="form-control" type="text" value="{{ old('name') }}" name="name" placeholder="Enter Name" id="example-text-input" required="">
                                                         @error('name')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -119,9 +119,9 @@
                                                     <label for="example-text-input" class="col-md-2 col-form-label"> Image 1</label>
                                                     <div class="col-md-3"> 
                                                         <div class="fallback">
-                                                            <input name="image1" type="file">
+                                                            <input name="image1" type="file" required="">
                                                             @error('image1')
-                                                                <p class="text-danger mt-3">{{ $message }}</p>
+                                                                <p class="text-danger mt-3" >{{ $message }}</p>
                                                             @enderror
 
                                                             @error('invalidImage1')
@@ -134,7 +134,7 @@
 
                                         
                                                 <div class="form-group row">
-                                                    <label class="col-md-2 col-form-label">Variotion</label>
+                                                    <label class="col-md-2 col-form-label">Variation</label>
                                                     <div class="col-md-10">
                                                         <div class="row">
                                                             <div class="col-md-3"><label>Color</label></div>
@@ -145,9 +145,9 @@
                                                     
                                                         <div class="color_variation">
                                                             <div class="row color0">
-                                                                <div class="col-md-3"><input type="text" class="form-control"  name="variation_color[]"></div>
-                                                                <div class="col-md-3"><input type="text" class="form-control" name="variation_storage[0][]"></div>
-                                                                <div class="col-md-3"><input type="text" class="form-control" name="variation_price[0][]"></div>
+                                                                <div class="col-md-3"><input type="text" class="form-control"  name="variation_color[]" required=""></div>
+                                                                <div class="col-md-3"><input type="text" class="form-control" name="variation_storage[0][]" required=""></div>
+                                                                <div class="col-md-3"><input type="text" class="form-control" name="variation_price[0][]" required=""></div>
                                                                 <div class="col-md-1"><button type="button" class="btn-primary btn add_more_storage_price"  onclick="add_more_storage_price(0)">More</button></div>
                                                             </div>
                                                         </div>
@@ -159,7 +159,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Minor Dent Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ old('minor_dent') }}" name="minor_dent" placeholder="Enter Minor Dent Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ old('minor_dent') }}" name="minor_dent" placeholder="Enter Minor Dent Deduction" id="example-text-input" required="">
                                                         @error('minor_dent')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -169,7 +169,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Major Dent Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ old('major_dent') }}" name="major_dent" placeholder="Enter Major Dent Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ old('major_dent') }}" name="major_dent" placeholder="Enter Major Dent Deduction" id="example-text-input" required="">
                                                         @error('major_dent')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -180,7 +180,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Original Accessories Available Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ old('original_accessories_avaliable') }}" name="original_accessories_available" placeholder="Enter Original Accessories Available Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ old('original_accessories_avaliable') }}" name="original_accessories_available" placeholder="Enter Original Accessories Available Deduction" id="example-text-input" required="">
                                                         @error('original_accessories_avaliable')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -191,7 +191,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Screen Is Cracked Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ old('screen_is_cracked') }}" name="screen_is_cracked" placeholder="Enter Screen Is Cracked Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ old('screen_is_cracked') }}" name="screen_is_cracked" placeholder="Enter Screen Is Cracked Deduction" id="example-text-input" required="">
                                                         @error('screen_is_cracked')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -201,7 +201,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Device Box Available Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ old('device_box_available') }}" name="device_box_available" placeholder="Enter Device Box Available Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ old('device_box_available') }}" name="device_box_available" placeholder="Enter Device Box Available Deduction" id="example-text-input" required="">
                                                         @error('device_box_available')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -211,7 +211,7 @@
                                                 <div class="form-group row">
                                                     <label for="example-text-input" class="col-md-4 col-form-label">Device Battery Status Deduction</label>
                                                     <div class="col-md-8">
-                                                        <input class="form-control" type="number" value="{{ old('device_battery_status') }}" name="device_battery_status" placeholder="Enter Device Battery Status Deduction" id="example-text-input">
+                                                        <input class="form-control" type="number" value="{{ old('device_battery_status') }}" name="device_battery_status" placeholder="Enter Device Battery Status Deduction" id="example-text-input" required="">
                                                         @error('device_battery_status')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -221,7 +221,7 @@
                                         <div class="card">
                                             <div class="card-body row">
                                                 <div class="text-center mt-4">
-                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">Save</button>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="submit">Save</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -340,6 +340,14 @@
     {
         $(elem).parent('div').remove();
         start--;
+    }
+</script>
+<script>
+   
+    $('#submit').onclick(function()){
+
+            alert('slect value........');
+        
     }
 </script>
 @endsection

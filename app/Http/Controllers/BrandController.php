@@ -25,7 +25,7 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $validations = Validator::make($request->all(),[
-            'name'=>'bail | required | min:4 | max:25',
+            'name'=>'required | min:4 | max:25',
         ]);
 
         if($validations->fails())
@@ -60,6 +60,7 @@ class BrandController extends Controller
     public function edit($id)
     {
         $brand = Brand::where('id',$id)->first();
+        // dd($brand);
         return view('admin.pages.update_brand',compact('brand'));
     }
 

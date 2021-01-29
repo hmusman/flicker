@@ -49,7 +49,7 @@
                                         <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Category</label>
                                             <div class="col-md-10">
-                                                <select class="form-control" name="category">
+                                                <select class="form-control" name="category" >
                                                     <option selected="" disabled="">Select Category</option>
                                                     @foreach($categories as $category)
                                                          <option <?php if(old('category')==$category->id){ echo "selected=''"; } ?>  value="{{ $category->id }}">{{ ucfirst($category->title) }}</option>
@@ -64,8 +64,8 @@
                                         <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Brand</label>
                                             <div class="col-md-10">
-                                                <select class="form-control" name="brand">
-                                                    <option selected="" disabled="">Select Brand</option>
+                                                <select class="form-control" name="brand" >
+                                                    <option selected="" disabled="" required="">Select Brand</option>
                                                     @foreach($brands as $brand)
                                                          <option <?php if(old('brand')==$brand->id){ echo "selected=''"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>
                                                     @endforeach
@@ -79,7 +79,7 @@
                                          <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" name="name" value="{{ old('name') }}" type="text" value="" placeholder="Enter Name" id="example-text-input">
+                                                <input class="form-control" name="name" type="text" value="" placeholder="Enter Name" id="example-text-input" required="">
                                                 @error('name')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
@@ -90,7 +90,7 @@
                                         <div class="form-group row">
                                             <label for="example-text-input" class="col-md-2 col-form-label">Price</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" name="price" type="text"  value="{{ old('price') }}" placeholder="Enter Price" id="example-text-input">
+                                                <input class="form-control" name="price" type="text"  value="{{ old('price') }}" placeholder="Enter Price" id="example-text-input" required="">
                                                 @error('price')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
@@ -101,7 +101,7 @@
                                             <label for="example-text-input" class="col-md-2 col-form-label">Image</label>
                                             <div class="col-md-5"> 
                                                 <div class="fallback">
-                                                    <input name="img" type="file">
+                                                    <input name="img" type="file"  required="">
                                                     @error('img')
                                                         <p class="text-danger mt-3">{{ $message }}</p>
                                                     @enderror

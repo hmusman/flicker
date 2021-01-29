@@ -60,12 +60,13 @@
                                            </tr>
                                        </thead>
                                        <tbody>
-                                            @php $i=1 @endphp
+                                            
                                             @if($products->count() > 0)
-                                                 @foreach($products as $product)
+                                                 @foreach($products as $key=> $product)
+                                                 
                                                     @php $image = 'storage/admin/images/pricecalculatorproduct/thumbnail/100_'.$product->image  @endphp
                                                     <tr>
-                                                       <td>{{ $i }}</td>
+                                                       <td>{{ $key+1 }}</td>
                                                        <td>{{ ucfirst($product->category->title) }}</td>
                                                        <td>{{ ucfirst($product->Productbrand->name) }}</td>
                                                        <td><img src="{{ asset($image) }}" style="width: 100px; height: 100px;"></td>
@@ -90,7 +91,6 @@
                                                            </table>
                                                        </td>
                                                     </tr>
-                                                     @php $i++ @endphp
                                                 @endforeach
                                             @else
                                                 <tr>

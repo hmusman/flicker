@@ -87,8 +87,8 @@
                                                 <div class="form-group row">
                                                     <label for="" class="col-md-2 col-form-label">Category</label>
                                                     <div class="col-md-10">
-                                                        <select class="form-control" name="category">
-                                                            <option selected="" disabled="">Select Category</option>
+                                                        <select class="form-control" name="category" id="category" required>
+                                                            <option value="">Select Category</option>
                                                             @foreach($categories as $category)
                                                                  <option <?php if(old('category')==$category->id){ echo "selected=''"; } ?>  value="{{ $category->id }}">{{ ucfirst($category->title) }}</option>
                                                             @endforeach
@@ -102,8 +102,8 @@
                                                 <div class="form-group row">
                                                     <label for="" class="col-md-2 col-form-label">Brand</label>
                                                     <div class="col-md-10">
-                                                        <select class="form-control" name="brand">
-                                                            <option selected="" disabled="">Select Brand</option>
+                                                        <select class="form-control" name="brand" required>
+                                                            <option value="">Select Brand</option>
                                                             @foreach($brands as $brand)
                                                                  <option <?php if(old('brand')==$brand->id){ echo "selected=''"; } ?>  value="{{ $brand->id }}">{{ ucfirst($brand->name) }}</option>
                                                             @endforeach
@@ -117,7 +117,7 @@
                                                 <div class="form-group row">
                                                     <label for="code" class="col-md-2 col-form-label">Code</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ old('code') }}" name="code" placeholder="Enter Code" id="code">
+                                                        <input class="form-control" type="text" value="{{ old('code') }}" name="code" placeholder="Enter Code" id="code" required="">
                                                         @error('code')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -127,7 +127,7 @@
                                                 <div class="form-group row">
                                                     <label for="name" class="col-md-2 col-form-label">Name</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ old('name') }}" name="name" placeholder="Enter Name" id="name">
+                                                        <input class="form-control" type="text" value="{{ old('name') }}" name="name" placeholder="Enter Name" id="name" required="">
                                                         @error('name')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -137,7 +137,7 @@
                                                 <div class="form-group row">
                                                     <label for="txtcolor" class="col-md-2 col-form-label">Color</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="txtcolor">
+                                                        <input class="form-control" type="text" value="{{ old('color') }}" name="color" placeholder="Enter Color" id="txtcolor" required="">
                                                         @error('color')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -147,7 +147,7 @@
                                                 <div class="form-group row">
                                                     <label for="price" class="col-md-2 col-form-label">Price</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="number" value="{{ old('price') }}" name="price" placeholder="Enter Price" id="price">
+                                                        <input class="form-control" type="number" value="{{ old('price') }}" name="price" placeholder="Enter Price" id="price" required="">
                                                         @error('price')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -157,7 +157,7 @@
                                                 <div class="form-group row">
                                                     <label for="quantity" class="col-md-2 col-form-label">Quantity</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="number" value="{{ old('quantity') }}" name="quantity" placeholder="Enter Quantity" id="quantity">
+                                                        <input class="form-control" type="number" value="{{ old('quantity') }}" name="quantity" placeholder="Enter Quantity" id="quantity" required="">
                                                         @error('quantity')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -167,7 +167,7 @@
                                                  <div class="form-group row">
                                                     <label for="" class="col-md-2 col-form-label">Pocket</label>
                                                     <div class="col-md-10">
-                                                        <input class="form-control" type="text" value="{{ old('pocket') }}" name="pocket" placeholder="It is in your pocket" id="pocket">
+                                                        <input class="form-control" type="text" value="{{ old('pocket') }}" name="pocket" placeholder="It is in your pocket" id="pocket" required="">
                                                         @error('pocket')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -177,7 +177,7 @@
                                                 <div class="form-group row">
                                                     <label for="" class="col-md-2 col-form-label">Detail</label>
                                                     <div class="col-md-10">
-                                                        <textarea id="textarea" class="form-control" rows="5" name="description" placeholder="Please Type Detail...">{{ old('description') }}</textarea>
+                                                        <textarea id="textarea" class="form-control" rows="5" name="description" placeholder="Please Type Detail..." required="">{{ old('description') }}</textarea>
                                                         @error('description')
                                                             <p class="text-danger mt-3">{{ $message }}</p>
                                                         @enderror
@@ -188,10 +188,10 @@
                                                     <label id="launched" class="col-md-2 col-form-label" style="cursor: pointer">Launched</label>
                                                     <div class="col-md-10 launched">
                                                        <label>Announced</label>
-                                                       <input type="date" name="announced" value="{{ old('announced') }}" class="form-control">
+                                                       <input type="date" name="announced" value="{{ old('announced') }}" class="form-control" required="">
 
                                                        <label class="mt-2">Status</label>
-                                                       <input type="text" name="status" class="form-control" value="{{ old('status') }}" placeholder="Enter Status">
+                                                       <input type="text" name="status" class="form-control" value="{{ old('status') }}" placeholder="Enter Status" required="">
 
                                                     </div>
                                                 </div>
@@ -200,16 +200,16 @@
                                                     <label id="body" class="col-md-2 col-form-label" style="cursor: pointer">Body</label>
                                                     <div class="col-md-10 body">
                                                        <label>Dimensions</label>
-                                                       <input type="text" name="dimension" value="{{ old('dimension') }}" class="form-control" placeholder="5.44 x 2.64 x 0.27">
+                                                       <input type="text" name="dimension" value="{{ old('dimension') }}" class="form-control" placeholder="5.44 x 2.64 x 0.27" required="">
 
                                                        <label class="mt-2">Weight</label>
-                                                       <input type="text" name="weight" value="{{ old('weight') }}" class="form-control" placeholder="Enter Weight In Gram">
+                                                       <input type="text" name="weight" value="{{ old('weight') }}" class="form-control" placeholder="Enter Weight In Gram" required="">
 
                                                        <label class="mt-2">Build</label>
-                                                       <input type="text" name="build" value="{{ old('build') }}" class="form-control" placeholder="Enter Build Type">
+                                                       <input type="text" name="build" value="{{ old('build') }}" class="form-control" placeholder="Enter Build Type" required="">
 
                                                        <label class="mt-2">SIM</label>
-                                                       <input type="text" name="sim" value="{{ old('sim') }}" class="form-control" placeholder="Enter Sim Size">
+                                                       <input type="text" name="sim" value="{{ old('sim') }}" class="form-control" placeholder="Enter Sim Size" required="">
                                                     </div>
                                                 </div>
 
@@ -218,15 +218,15 @@
                                                     <label id="display" class="col-md-2 col-form-label" style="cursor: pointer">Display</label>
                                                     <div class="col-md-10 display">
                                                        <label>Type</label>
-                                                       <input type="text" name="type" value="{{ old('type') }}" class="form-control" placeholder="Enter Display Type">
+                                                       <input type="text" name="type" value="{{ old('type') }}" class="form-control" placeholder="Enter Display Type" required="">
 
                                                        <label class="mt-2">Size</label>
-                                                       <input type="text" name="size" value="{{ old('size') }}" class="form-control" placeholder="Enter Display Size">
+                                                       <input type="text" name="size" value="{{ old('size') }}" class="form-control" placeholder="Enter Display Size" required="">
 
                                                        <label class="mt-2">Resolution</label>
-                                                       <input type="text" name="resolution" value="{{ old('resolution') }}" class="form-control" placeholder="Enter Display Resolution">
+                                                       <input type="text" name="resolution" value="{{ old('resolution') }}" class="form-control" placeholder="Enter Display Resolution" required="">
                                                        <label class="mt-2">Protection</label>
-                                                       <input type="text" name="protection" value="{{ old('protection') }}" class="form-control" placeholder="Enter Display Protection">
+                                                       <input type="text" name="protection" value="{{ old('protection') }}" class="form-control" placeholder="Enter Display Protection" required="">
                                                     </div>
                                                 </div>
 
@@ -234,16 +234,16 @@
                                                     <label id="platform" class="col-md-2 col-form-label" style="cursor: pointer">Platform</label>
                                                     <div class="col-md-10 platform">
                                                        <label>OS</label>
-                                                       <input type="text" name="os" value="{{ old('os') }}" class="form-control" placeholder="Enter OS">
+                                                       <input type="text" name="os" value="{{ old('os') }}" class="form-control" placeholder="Enter OS" required="">
 
                                                        <label class="mt-2">Chipset</label>
-                                                       <input type="text" name="chipset" value="{{ old('chipset') }}" class="form-control" placeholder="Enter Chipset">
+                                                       <input type="text" name="chipset" value="{{ old('chipset') }}" class="form-control" placeholder="Enter Chipset" required="">
 
                                                        <label  class="mt-2">CPU</label>
-                                                       <input type="text" name="cpu" value="{{ old('cpu') }}" class="form-control" placeholder="Enter CPU">
+                                                       <input type="text" name="cpu" value="{{ old('cpu') }}" class="form-control" placeholder="Enter CPU" required="">
 
                                                        <label class="mt-2">GPU</label>
-                                                       <input type="text" name="gpu" value="{{ old('gpu') }}" class="form-control" placeholder="Enter GPU">
+                                                       <input type="text" name="gpu" value="{{ old('gpu') }}" class="form-control" placeholder="Enter GPU" required="">
                                                     </div>
                                                 </div>
 
@@ -255,10 +255,10 @@
                                                          &nbsp;Yes&nbsp;<input type="radio" name="card_slot" <?php if(old('card_slot')=='yes'){ echo "checked"; }?> value="yes">
                                                         <br>
                                                        <label class="mt-2">Ram</label>
-                                                       <input type="text" name="ram" value="{{ old('ram') }}" class="form-control" placeholder="Enter Ram">
+                                                       <input type="text" name="ram" value="{{ old('ram') }}" class="form-control" placeholder="Enter Ram" required="">
 
                                                        <label class="mt-2">Storage</label>
-                                                       <input type="text" name="storage" value="{{ old('storage') }}" class="form-control" placeholder="Enter Storage">
+                                                       <input type="text" name="storage" value="{{ old('storage') }}" class="form-control" placeholder="Enter Storage" required="">
                                                     </div>
                                                 </div>
 
@@ -268,14 +268,14 @@
                                                     <div class="col-md-10 main_camera">
 
                                                         <label>Type</label>
-                                                        <input type="text" name="main_type" value="{{ old('main_type') }}" class="form-control mt-3" placeholder="Enter Type ">
+                                                        <input type="text" name="main_type" value="{{ old('main_type') }}" class="form-control mt-3" placeholder="Enter Type " required="">
                                                         <input type="text" name="main_type_value" value="{{ old('main_type_value') }}" class="form-control mt-3" placeholder="Enter Type Value">
 
                                                        <label class="mt-2">Features</label>
-                                                       <input type="text" name="main_feature" value="{{ old('main_feature') }}" class="form-control" placeholder="Enter Feature">
+                                                       <input type="text" name="main_feature" value="{{ old('main_feature') }}" class="form-control" placeholder="Enter Feature" required="">
 
                                                        <label class="mt-2">Video</label>
-                                                       <input type="text" name="main_video" value="{{ old('main_video') }}" class="form-control" placeholder="Enter Video">
+                                                       <input type="text" name="main_video" value="{{ old('main_video') }}" class="form-control" placeholder="Enter Video" required="">
                                                     </div>
                                                 </div>
 
@@ -283,13 +283,13 @@
                                                     <label id="selfie_camera" class="col-md-2 col-form-label" style="cursor: pointer">Selfie Camer</label>
                                                     <div class="col-md-10 selfie_camera">
                                                        <label>Single</label>
-                                                       <input type="text" name="selfie_single" value="{{ old('selfie_single') }}" class="form-control" placeholder="Enter Single">
+                                                       <input type="text" name="selfie_single" value="{{ old('selfie_single') }}" class="form-control" placeholder="Enter Single" required="">
 
                                                        <label class="mt-2">Features</label>
-                                                       <input type="text" name="selfie_feature" value="{{ old('selfie_feature') }}" class="form-control" placeholder="Enter Feature">
+                                                       <input type="text" name="selfie_feature" value="{{ old('selfie_feature') }}" class="form-control" placeholder="Enter Feature" required="">
 
                                                        <label class="mt-2">Video</label>
-                                                       <input type="text" name="selfie_video" value="{{ old('selfie_video') }}" class="form-control" placeholder="Enter Video">
+                                                       <input type="text" name="selfie_video" value="{{ old('selfie_video') }}" class="form-control" placeholder="Enter Video" required="">
                                                     </div>
                                                 </div>
 
@@ -305,7 +305,7 @@
                                                          &nbsp;Yes&nbsp;<input type="radio" name="jack" <?php if(old('jack')=='yes'){ echo "checked"; }?> value="yes">
                                                         <br>
                                                        <labe class="mt-2" class="mt-2"l>Mic</label>
-                                                       <input type="text" name="mic" class="form-control" placeholder="Enter MIC">
+                                                       <input type="text" name="mic" class="form-control" placeholder="Enter MIC" required="">
                                                     </div>
                                                 </div>
 
@@ -314,23 +314,23 @@
                                                     <label id="comms" class="col-md-2 col-form-label" style="cursor: pointer">Comms</label>
                                                     <div class="col-md-10 comms">
                                                        <label>WLAN</label>
-                                                       <input type="text" name="wlan" value="{{ old('wlan') }}" class="form-control" placeholder="Enter WLAN">
+                                                       <input type="text" name="wlan" value="{{ old('wlan') }}" class="form-control" placeholder="Enter WLAN" required="">
 
                                                        <label class="mt-2">Bluetooth</label>
-                                                       <input type="text" name="bluetooth" value="{{ old('bluetooth') }}" class="form-control" placeholder="Enter Bluetooth">
+                                                       <input type="text" name="bluetooth" value="{{ old('bluetooth') }}" class="form-control" placeholder="Enter Bluetooth" required="">
 
                                                         <label class="mt-2">GPS</label>
-                                                       <input type="text" name="gps" value="{{ old('gps') }}" class="form-control" placeholder="Enter GPS">
+                                                       <input type="text" name="gps" value="{{ old('gps') }}" class="form-control" placeholder="Enter GPS" required="">
 
                                                        <label class="mt-2">NFC</label>
-                                                       <input type="text" name="nfc" value="{{ old('nfc') }}" class="form-control" placeholder="Enter NFC">
+                                                       <input type="text" name="nfc" value="{{ old('nfc') }}" class="form-control" placeholder="Enter NFC" required="">
 
                                                        <label class="mt-2">Radio</label>
-                                                       &nbsp; &nbsp;No &nbsp;<input type="radio" name="radio" <?php if(old('radio')=='no'){ echo "checked"; }?> value="no">
+                                                       &nbsp; &nbsp;No &nbsp;<input type="radio" name="radio" <?php if(old('radio')=='no'){ echo "checked"; }?> value="no" >
                                                          &nbsp;Yes&nbsp;<input type="radio" name="radio" value="yes" <?php if(old('radio')=='yes'){ echo "checked"; }?>>
                                                          <br>
                                                        <label>USB</label>
-                                                       <input type="text" name="usb" value="{{ old('usb') }}" class="form-control" placeholder="Enter USB">
+                                                       <input type="text" name="usb" value="{{ old('usb') }}" class="form-control" placeholder="Enter USB" required="">
                                                     </div>
                                                 </div>
 
@@ -338,7 +338,7 @@
                                                     <label id="feature" class="col-md-2 col-form-label" style="cursor: pointer">Feature</label>
                                                     <div class="col-md-10 feature">
                                                        <label>Sensor</label>
-                                                       <input type="text" name="sensor" value="{{ old('sensor') }}" class="form-control" placeholder="Enter Sensor">
+                                                       <input type="text" name="sensor" value="{{ old('sensor') }}" class="form-control" placeholder="Enter Sensor" required="">
 
                                                      
                                                     </div>
@@ -348,13 +348,13 @@
                                                     <label id="battery" class="col-md-2 col-form-label" style="cursor: pointer">Battery</label>
                                                     <div class="col-md-10 battery">
                                                        <label>Type</label>
-                                                       <input type="text" name="battery_type" value="{{ old('battery_type') }}" class="form-control" placeholder="Enter Type">
+                                                       <input type="text" name="battery_type" value="{{ old('battery_type') }}" class="form-control" placeholder="Enter Type" required="">
 
                                                        <label class="mt-2">Talk Time</label>
-                                                       <input type="text" name="talk_time" value="{{ old('talk_time') }}" class="form-control" placeholder="Enter Talk Time ">
+                                                       <input type="text" name="talk_time" value="{{ old('talk_time') }}" class="form-control" placeholder="Enter Talk Time " required="">
 
                                                        <label class="mt-2">Music</label>
-                                                       <input type="text" name="music" value="{{ old('music') }}" class="form-control" placeholder="Enter Music Time">
+                                                       <input type="text" name="music" value="{{ old('music') }}" class="form-control" placeholder="Enter Music Time" required="">
                                                     </div>
                                                 </div>
 
@@ -362,7 +362,7 @@
                                                     <label for="" class="col-md-2 col-form-label"> Image 1</label>
                                                     <div class="col-md-3"> 
                                                         <div class="fallback">
-                                                            <input name="image1" type="file">
+                                                            <input name="image1" type="file"  value="{{ old('image1') }}" required="">
                                                             @error('image1')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
@@ -383,7 +383,7 @@
                                                     <label for="" class="col-md-2 col-form-label"> Image 2</label>
                                                     <div class="col-md-3"> 
                                                         <div class="fallback">
-                                                            <input name="image2" type="file">
+                                                            <input name="image2" type="file" required="">
                                                             @error('image2')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
@@ -405,7 +405,7 @@
                                                     <label for="" class="col-md-2 col-form-label"> Image 3</label>
                                                     <div class="col-md-3"> 
                                                         <div class="fallback">
-                                                            <input name="image3" type="file">
+                                                            <input name="image3" type="file" required="">
                                                             @error('image3')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
@@ -444,7 +444,7 @@
                                                     <label for="" class="col-md-2 col-form-label"> Image 5</label>
                                                     <div class="col-md-3"> 
                                                         <div class="fallback">
-                                                            <input name="image5" type="file">
+                                                            <input name="image5" type="file" >
                                                             @error('image5')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
@@ -531,7 +531,7 @@
                                                     <label for="" class="col-md-2 col-form-label"> Image 10</label>
                                                     <div class="col-md-3"> 
                                                         <div class="fallback">
-                                                            <input name="image10" type="file">
+                                                            <input name="image10" type="file" >
                                                             @error('image10')
                                                                 <p class="text-danger mt-3">{{ $message }}</p>
                                                             @enderror
@@ -545,7 +545,7 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="col-md-2 col-form-label">Variotion</label>
+                                                    <label class="col-md-2 col-form-label">Variation</label>
                                                     <div class="col-md-10">
                                                         <div class="row">
                                                             <div class="col-md-3"><label>Color</label></div>
@@ -556,11 +556,11 @@
                                                     
                                                         <div class="color_variation">
                                                             <div class="row color0">
-                                                                <div class="col-md-3"><input type="text" class="form-control"  name="variation_color[]"></div>
-                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_storage[0][]"></div>
-                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_price[0][]"></div>
-                                                                <div class="col-md-1"><button type="button" class="btn-primary btn add_more_storage_price"  onclick="add_more_storage_price(0)">More</button></div>
-                                                                <div class="col-md-4"><input type="file" name="variation_image[]" /></div>
+                                                                <div class="col-md-3"><input type="text" class="form-control"  name="variation_color[]" required=""></div>
+                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_storage[0][]" required=""></div>
+                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_price[0][]" required=""></div>
+                                                                <div class="col-md-1" required=""><button type="button" class="btn-primary btn add_more_storage_price"  onclick="add_more_storage_price(0)">More</button></div>
+                                                                <div class="col-md-4"><input type="file" name="variation_image[]" required=""/></div>
                                                             </div>
                                                         </div>
 

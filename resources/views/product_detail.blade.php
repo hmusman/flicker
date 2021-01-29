@@ -585,11 +585,22 @@ small {
                                 @endif
 
 
-
-
                    
                                 
                             </ul>
+                           {{--  @php
+                                $variant = (App\ColorVariation::where('product_id',$product->id)->get());
+                                  
+                            @endphp
+                            @foreach($variant as $variants)
+                                 {{($variants->color)}}
+                                
+                                 
+                             
+                              @endforeach --}}
+                          
+                             
+
                             <div class="thumbelina-but horiz right">
                                 <img
                                     src="{{ asset('OriginalZoomer/ZoomerImg/ic_keyboard_arrow_right_black_18dp.png')}}">
@@ -1868,33 +1879,7 @@ Up to 20 h (multimedia)
 
 
 <!-- click on buton and open same color image -->
-<script>
-//   $(".colorBtns").click(function () {
-//     $(".colorBtns").removeClass("active");
-//     // $(".tab").addClass("active"); // instead of this do the below 
-//     $(this).addClass("active");   
-// });
-  // $(".colorBtns").click(function () {
-  //   // alert('helloooo');
-  //   $(".colorBtns").removeClass("color_active");
-  //   // $(".tab").addClass("active"); // instead of this do the below 
-  //   $(this).addClass("color_active");
-  //  alert(color);
-  //  // var color_activ=$('.color_active').val();
-  //  var product_id=$('#product_id').val();
-  //  var token = $("input[name=_token]").val();
-    
-  //   // $.ajax({
-  //   //   url:"{{ route('Changecolorbtn') }}",
-  //   //   type:"post",
-  //   //   data:{product_id:product_id,color:color,_token:token},
-  //   //   success:function(data){
-        
-  //   //     $('#zoom1').attr('src', '{{asset("/storage/admin/images/product/thumbnail")}}/'+data);
-  //   //   }
-  //   // });
-
-  //   });
+<!-- <script>
   function getvariantpicture(colorId){
 
 
@@ -1914,7 +1899,7 @@ Up to 20 h (multimedia)
         });
   }
   
-</script>
+</script> -->
 <script type="text/javascript">
 
 document.addEventListener("DOMContentLoaded", function(event) {

@@ -8,6 +8,7 @@ use App\Models\pricecalculatorproduct\PriceCalculatorProduct;
 use App\Category;
 use App\Brand;
 use App\PriceColorVariation;
+use App\Product;
 use Session;
 use DB;
 use Image;
@@ -17,6 +18,7 @@ class PriceCalculatorProductController extends Controller
     public function index()
     {
         $products = PriceCalculatorProduct::all();
+        // dd($products);
         return view('admin.pages.pricecalculatorproducts.products',compact('products'));
     }
     
@@ -231,6 +233,7 @@ class PriceCalculatorProductController extends Controller
     public function BrandProductColorItem(Request $request)
     {
         $products = PriceCalculatorProduct::join('price_variations','price_calculator_products.id','=','price_variations.product_id')->where('price_variations.product_id',$request->id)->where('price_variations.color',$request->color)->select('price_calculator_products.id','price_calculator_products.name','price_calculator_products.image','price_variations.product_id','price_variations.color','price_variations.storage','price_variations.price')->get();
+        // dd($products);
         return view('partials.brand_single_color_product',compact('products'));
     }
 

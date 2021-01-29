@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Product;
 use App\Category;
 use App\Brand;
-use App\ColorVariation;
+use App\PriceColorVariation;
 use Session;
 use DB;
 use Image;
@@ -76,11 +76,11 @@ class ProductController extends Controller
         $validations = Validator::make($request->all(),[
             'category'=>'required',
             'brand'=>'required',
-            'code'=>'bail | required | numeric',
-            'name'=>'bail | required | alpha_dash',
+            'code'=>'required | numeric',
+            'name'=>'required',
             'color'=>'required',
-            'price'=>'bail | required | numeric',
-            'quantity'=>'bail | required | numeric',
+            'price'=>'required | numeric',
+            'quantity'=>'required | numeric',
             'pocket'=>'required',
             'description'=>'required',
             'image1'=>'required|mimes:png,jpg,jpeg',

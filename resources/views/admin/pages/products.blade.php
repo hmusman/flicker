@@ -62,50 +62,50 @@
                                                <th>Action</th>
                                            </tr>
                                        </thead>
-                                       <tbody>
-                                            @php $i=1 @endphp
-                                            @if($products->count() > 0)
-                                                 @foreach($products as $product)
-                                                    @php $image = 'storage/admin/images/product/thumbnail/100_'.$product->image  @endphp
-                                                    <tr>
-                                                       <td>{{ $i }}</td>
-                                                       <td>{{ ucfirst($product->category->title) }}</td>
-                                                       <td>{{ ucfirst($product->Productbrand->name) }}</td>
-                                                       <td><img src="{{ asset($image) }}"></td>
-                                                       <td>{{ $product->code }}</td>
-                                                       <td>{{ ucfirst($product->name) }}</td>
-                                                       <td>{{ $product->price }}</td>
-                                                       <td>{{ $product->quantity }}</td>
-                                                       <td><a href="{{ route('Admin.ProductOpinions',$product->id) }}">{{ $product->opinions->count() }}</a></td>
-                                                      <!--  <td>{{ $product->description }}</td> -->
-                                                       <td>
-                                                           <table>
-                                                               <tr>
-                                                                   <td><a href="{{ route('products.edit',$product->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
-                                                                    @if(Session::get('admintype')=='superadmin')
-                                                                     <td>
-                                                                         <form method="post" action="{{ route('products.destroy',$product->id) }}">
-                                                                              @csrf
-                                                                              @method('delete')
-                                                                             <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
-                                                                         </form>
-                                                                     </td>
-                                                                    @endif
-                                                               </tr>
-                                                           </table>
-                                                       </td>
-                                                    </tr>
-                                                     @php $i++ @endphp
-                                                @endforeach
-                                            @else
-                                                <tr>
-                                                   <td colspan="8" class="text-center">No Product Is Available</td>
-                                                   
-                                                </tr>
-                                            @endif
-                                           
-                                           
-                                        </tbody>
+           <tbody>
+                @php $i=1 @endphp
+                @if($products->count() > 0)
+                     @foreach($products as $product)
+                        @php $image = 'storage/admin/images/product/thumbnail/100_'.$product->image  @endphp
+                        <tr>
+                           <td>{{ $i }}</td>
+                           <td>{{ ucfirst($product->category->title) }}</td>
+                           <td>{{ ucfirst($product->Productbrand->name) }}</td>
+                           <td><img src="{{ asset($image) }}"></td>
+                           <td>{{ $product->code }}</td>
+                           <td>{{ ucfirst($product->name) }}</td>
+                           <td>{{ $product->price }}</td>
+                           <td>{{ $product->quantity }}</td>
+                           <td><a href="{{ route('Admin.ProductOpinions',$product->id) }}">{{ $product->opinions->count() }}</a></td>
+                          <!--  <td>{{ $product->description }}</td> -->
+                           <td>
+                               <table>
+                                   <tr>
+                                       <td><a href="{{ route('products.edit',$product->id) }}" style="color: #000000;"><i class="fas fa-edit"></i></a></td>
+                                        @if(Session::get('admintype')=='superadmin')
+                                         <td>
+                                             <form method="post" action="{{ route('products.destroy',$product->id) }}">
+                                                  @csrf
+                                                  @method('delete')
+                                                 <button type="submit" style="border: none;"><i class="fas fa-trash"></i></button>
+                                             </form>
+                                         </td>
+                                        @endif
+                                   </tr>
+                               </table>
+                           </td>
+                        </tr>
+                         @php $i++ @endphp
+                    @endforeach
+                @else
+                    <tr>
+                       <td colspan="8" class="text-center">No Product Is Available</td>
+                       
+                    </tr>
+                @endif
+               
+               
+            </tbody>
                                     </table>
                                 </div>
                             </div>

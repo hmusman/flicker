@@ -32,14 +32,14 @@ class UserController extends Controller
         {
            $email = $request->buyer_email;
            $validation  = Validator::make($request->all(),[
-                'buyer_username'=>'bail | required | alpha_num',
-                'buyer_name'=>'bail | required | alpha',
+                'buyer_username'=>'required ',
+                'buyer_name'=>'required ',
                 'buyer_email'=>'bail | required | email',
                 'buyer_password'=>'bail | required | min:8 | confirmed',
                 // 'buyer_password_confirm'=>'bail | required | min:8 ',
                 'buyer_city'=>'bail | required',
                 'buyer_phone'=>'bail | required | numeric',
-                'buyer_company'=>'bail | required | alpha',
+                'buyer_company'=>'required ',
 
             ]);
         }
@@ -47,8 +47,8 @@ class UserController extends Controller
         {
             $email = $request->email;
             $validation  = Validator::make($request->all(),[
-                'username'=>'bail | required | alpha_num',
-                'name'=>'bail | required | alpha',
+                'username'=>'required',
+                'name'=>'required',
                 'email'=>'bail | required | email',
                 'password'=>'bail | required | min:8 | confirmed',
                 // 'password_confirm'=>'bail | required | min:8 ',
@@ -126,12 +126,12 @@ class UserController extends Controller
         {
            $email = $request->buyer_email;
            $validation  = Validator::make($request->all(),[
-                'buyer_username'=>'bail | required | alpha_num',
-                'buyer_name'=>'bail | required | alpha',
+                'buyer_username'=>'required',
+                'buyer_name'=>'required',
                 'buyer_email'=>'bail | required | email',
                 'buyer_city'=>'bail | required',
                 'buyer_phone'=>'bail | required | numeric',
-                'buyer_company'=>'bail | required | alpha',
+                'buyer_company'=>'required',
 
             ]);
         }
@@ -139,12 +139,12 @@ class UserController extends Controller
         {
             $email = $request->email;
             $validation  = Validator::make($request->all(),[
-                'username'=>'bail | required | alpha_num',
-                'name'=>'bail | required | alpha',
+                'username'=>'required',
+                'name'=>'required',
                 'email'=>'bail | required | email',
                 'city'=>'bail | required',
                 'phone'=>'bail | required | numeric',
-                'shop'=>'bail | required | alpha',
+                'shop'=>'required',
 
             ]);
         }
