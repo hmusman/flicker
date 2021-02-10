@@ -212,6 +212,8 @@ class ProductController extends Controller
                 'detail_check'=>$request->detail_check,
                 'other_detail'=>$request->other_detail
                 ]);
+                // dd($request->pocket);
+                // dd($product);
                
                 if ($product)
                 {
@@ -367,11 +369,11 @@ class ProductController extends Controller
         $validations = Validator::make($request->all(),[
             'category'=>'required',
             'brand'=>'required',
-            'code'=>'bail | required | numeric',
-            'name'=>'bail | required | alpha_dash',
+            'code'=>'required | numeric',
+            'name'=>'required',
             'color'=>'required',
-            'price'=>'bail | required | numeric',
-            'quantity'=>'bail | required | numeric',
+            'price'=>'required | numeric',
+            'quantity'=>'required | numeric',
             'pocket'=>'required',
             'description'=>'required',
             'image1'=>'mimes:png,jpg,jpeg',

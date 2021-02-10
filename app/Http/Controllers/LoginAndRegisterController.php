@@ -28,14 +28,14 @@ class LoginAndRegisterController extends Controller
     public function buyer(Request $request)
     {
     	$buyer_validation  = Validator::make($request->all(),[
-    		'buyer_username'=>'bail | required | alpha_num',
-    		'buyer_name'=>'bail | required',
-    		'buyer_email'=>'bail | required | email',
-    		'buyer_password'=>'bail | required | min:8 | confirmed',
-    		// 'buyer_password_confirm'=>'bail | required | min:8 ',
-    		'buyer_city'=>'bail | required',
-    		'buyer_phone'=>'bail | required | numeric',
-    		'buyer_company'=>'bail | required',
+    		'buyer_username'=>'required',
+    		'buyer_name'=>'required',
+    		'buyer_email'=>'required | email',
+    		'buyer_password'=>'required | min:4 | confirmed',
+    		// 'buyer_password_confirm'=>'bail | required | min:4 ',
+    		'buyer_city'=>'required',
+    		'buyer_phone'=>'required | numeric',
+    		'buyer_company'=>'required',
 
     	]);
     	if ($buyer_validation->fails())
@@ -62,8 +62,8 @@ class LoginAndRegisterController extends Controller
 		    	$user->city = $request->buyer_city;
 		    	if($user->save())
 		    	{
-                    Mail::to($request->buyer_email)->send(new SendWelcomeEmail());
-		    		return back()->withErrors(['success'=>'You Have Been Registered Successfully']);
+                    // Mail::to($request->buyer_email)->send(new SendWelcomeEmail());
+                    return back()->withErrors(['success'=>'You Have Been Registered Successfully']);
 		    	}
 	    	}
     		
@@ -71,27 +71,32 @@ class LoginAndRegisterController extends Controller
     	
 
     }
-
     public function seller(Request $request)
     {
-    	$seller_validation  = Validator::make($request->all(),[
-    		'username'=>'bail | required | alpha_num',
-    		'name'=>'bail | required',
-    		'email'=>'bail | required | email',
-    		'password'=>'bail | required | min:8 | confirmed',
-    		// 'password_confirm'=>'bail | required | min:8 ',
-    		'city'=>'bail | required',
-    		'phone'=>'bail | required | numeric',
-    		'shop'=>'bail | required',
-
-    	]);
+        // dd($request->all());
+        $seller_validation  = Validator::make($request->all(),[
+            'username'=>'required',
+            'name'=>'required',
+            'email'=>'required | email',
+            'password'=>'required | min:4 | confirmed',
+            // 'password_confirm'=>'bail | required | min:4 ',
+            'city'=>'required',
+            'phone'=>'required | numeric',
+            'shop'=>'required',
+        ]);
+    	
+        // dd($seller_validation);
+        // dd($request->all());
     	if ($seller_validation->fails())
     	{
-    		return back()->withErrors($seller_validation)->withInput();
-	    }
+            // dd($seller_validation);
+            // dd($request->all());
+            return back()->withErrors($seller_validation)->withInput();
+    	}
 	    else
 	    {
-	    	if( User::select('*')->where([['email','=',$request->email],['role_name','=',$request->type]])->first())
+	    	// dd('heloooooo');
+            if( User::select('*')->where([['email','=',$request->email],['role_name','=',$request->type]])->first())    
 	    	{
 	    		return back()->withErrors(['success'=>'Sorry '.$request->email. ' Is Already Registered'])->withInput();
 	    	}
@@ -106,14 +111,17 @@ class LoginAndRegisterController extends Controller
 		    	$user->password =Hash::make($request->password);
 		    	$user->phone = $request->phone;
 		    	$user->city = $request->city;
+                // dd($user);
+               // print_r($request->name);
 		    	if($user->save())
-		    	{
-                    Mail::to($request->email)->send(new SendWelcomeEmail());
+	    	{
+                  
+                    // Mail::to($request->email)->send(new SendWelcomeEmail());
 		    		return back()->withErrors(['success'=>'You Have Been Registered Successfully']);
 		    	}
 	    	}
     	}
-    }
+   }
 
 
     public function login(Request $request)

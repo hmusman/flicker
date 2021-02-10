@@ -17,6 +17,7 @@ class Product extends Model
                 'name',
                 'color' ,
                 'price',
+                'pocket',
                 'quantity',
                 'launch_announced',
                 'launch_status',

@@ -39,7 +39,7 @@ Route::post('LoginSession', 'LoginAndRegisterController@login');
 
 Route::post('UserModalLogin', 'LoginAndRegisterController@UserModalLogin')->name('UserModalLogin');
 Route::post('Register/Buyer', 'LoginAndRegisterController@buyer');
-Route::post('Register/Seller', 'LoginAndRegisterController@seller');
+Route::post('Register/Seller','LoginAndRegisterController@seller');
 Route::get('NewMobilePhones','ProductController@ShopPage')->name('Shop');
 Route::get('NewAccessories','AccessoryController@ShopPage')->name('NewAccessories');
 Route::get('NewCategoryAccessories/{id}','AccessoryCategoryController@NewCategoryAccessories')->name('NewCategoryAccessories');

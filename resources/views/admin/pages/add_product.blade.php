@@ -164,8 +164,8 @@
                                                     </div>
                                                 </div>
 
-                                                 <div class="form-group row">
-                                                    <label for="" class="col-md-2 col-form-label">Pocket</label>
+                                                <div class="form-group row">
+                                                    <label for="pocket" class="col-md-2 col-form-label">Pocket</label>
                                                     <div class="col-md-10">
                                                         <input class="form-control" type="text" value="{{ old('pocket') }}" name="pocket" placeholder="It is in your pocket" id="pocket" required="">
                                                         @error('pocket')
@@ -174,6 +174,16 @@
                                                     </div>
                                                 </div>
 
+                                                 {{-- <div class="form-group row">
+                                                    <label for="" class="col-md-2 col-form-label">Pocket</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="text" value="{{ old('pocket') }}" name="pocket" placeholder="It is in your pocket" id="pocket" required="">
+                                                        @error('pocket')
+                                                            <p class="text-danger mt-3">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+ --}}
                                                 <div class="form-group row">
                                                     <label for="" class="col-md-2 col-form-label">Detail</label>
                                                     <div class="col-md-10">
@@ -305,7 +315,7 @@
                                                          &nbsp;Yes&nbsp;<input type="radio" name="jack" <?php if(old('jack')=='yes'){ echo "checked"; }?> value="yes">
                                                         <br>
                                                        <labe class="mt-2" class="mt-2"l>Mic</label>
-                                                       <input type="text" name="mic" class="form-control" placeholder="Enter MIC" required="">
+                                                       <input type="text" name="mic" value="{{ old('mic') }}" class="form-control" placeholder="Enter MIC" required="">
                                                     </div>
                                                 </div>
 
@@ -548,7 +558,7 @@
                                                     <label class="col-md-2 col-form-label">Variation</label>
                                                     <div class="col-md-10">
                                                         <div class="row">
-                                                            <div class="col-md-3"><label>Color</label></div>
+                                                            <div class="col-md-3" ><label>Color</label></div>
                                                             <div class="col-md-2"><label>Storage</label></div>
                                                             <div class="col-md-2"><label>Price</label></div>
                                                         </div>
@@ -556,9 +566,9 @@
                                                     
                                                         <div class="color_variation">
                                                             <div class="row color0">
-                                                                <div class="col-md-3"><input type="text" class="form-control"  name="variation_color[]" required=""></div>
-                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_storage[0][]" required=""></div>
-                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_price[0][]" required=""></div>
+                                                                <div class="col-md-3"><input type="text" class="form-control"  name="variation_color[]" value="{{ old('variation_color[]') }}" required=""></div>
+                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_storage[0][]" required="" value="{{ old('variation_storage[0][]') }}"></div>
+                                                                <div class="col-md-2"><input type="text" class="form-control" name="variation_price[0][]" required="" value="{{ old('variation_price[0][]') }}"></div>
                                                                 <div class="col-md-1" required=""><button type="button" class="btn-primary btn add_more_storage_price"  onclick="add_more_storage_price(0)">More</button></div>
                                                                 <div class="col-md-4"><input type="file" name="variation_image[]" required=""/></div>
                                                             </div>
