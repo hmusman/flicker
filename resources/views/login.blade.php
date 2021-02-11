@@ -671,6 +671,7 @@ button[id="srchbtnid"]{
 
 
                     <div class="create-new-account business_form" style="display: none;">
+                        
                         <form action="/Register/Seller" class="register-form outer-top-xs" role="form" method="post" accept-charset="utf-8">
                         	@csrf
                             <input type="hidden" value="seller" name="type" />
@@ -865,8 +866,10 @@ button[id="srchbtnid"]{
                             </div>
                             
 
-                        	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" >Sign Up</button>
-                        </form>                            
+                        	 <button type="submit" class="btn-upper btn btn-primary checkout-page-button" >Sign Up</button>
+                          
+                        </form>  
+                                                
                     </div>
 
 
