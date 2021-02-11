@@ -564,12 +564,9 @@ class ProductController extends Controller
             $total = $data->count();
             $output = '
                 <div>
-         <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideagain();" style="margin-left: 356px;
-          background-color: #f8f7f7;
-          color: black;
-       
-          font-weight: 600;
-          border-style: none;">X</button></p>
+         <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES 
+         
+          </p>
         </div>
             ';
             if ($total>0)

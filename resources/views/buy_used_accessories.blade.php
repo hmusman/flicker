@@ -139,7 +139,7 @@ p[id="NewPhones"]{
          
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
 
@@ -591,11 +591,15 @@ margin-top: 90px;">
         <ul onblur="hideagain()" id="usedSearchList" style="  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute  ;width: 100%;  overflow: scroll ; z-index: 20; ;display: none ;  height: 500px; margin-left:2%;margin-top: 5px;">
    
             <div>
-             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;"><button id="srchbtnid" onclick="usedHideAgain();" style="margin-left: 269px;
+             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">
+             
+             <!-- <button id="srchbtnid" onclick="usedHideAgain();" style="margin-left: 269px;
               background-color: #f8f7f7;
               color: black;
               font-weight: 600;
-              border-style: none; outline: none; cursor: pointer;">X</button></p>
+              border-style: none; outline: none; cursor: pointer;">X</button> -->
+              
+              </p>
             </div>
         </ul>
      </div>

@@ -41,14 +41,16 @@
        bottom: 184px !important;
 }
 
-@media (min-width: 1400px) and (max-width : 2000px){
+@media (min-width: 1600px) and (max-width : 2000px){
 div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="slick-dots"]{
        top: 260px !important;
 }
 .heightImagesExtralg{
        height: 267px !important;
 }
-
+  ul[id="myUL"]{
+             width: 30% !important;
+          }
 
 
 }
@@ -128,7 +130,7 @@ p[id="NewPhones"]{
          
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
 
@@ -540,11 +542,14 @@ border-left: 2px red solid !important;
              width: 38% !important;
           }
        }
-        @media (min-width: 1303px){
+        @media (min-width: 1303px) and (max-width: 1399px){
           ul[id="myUL"]{
-             width: 36% !important;
+             width: 35% !important;
           }
        }
+
+
+
    </style>
    <body>
 
@@ -588,13 +593,13 @@ border-left: 2px red solid !important;
             
             @php 
             if($counter==1){
-               $color =" #0b0c0c";
+               $color ="#000000";
             }
             if($counter==2){
-               $color ="gray";
+               $color ="#424242";
             }
             if($counter==3){
-               $color ="#80808073";
+               $color ="#bdbdbd";
             }
             @endphp
             
@@ -966,16 +971,31 @@ border-left: 2px red solid !important;
 
 
 <script>
-   $(document).click(function (e)
+//    $(document).click(function (e)
+// {
+   
+//     var container = $("#myUL");
+
+//     if (!container.is(e.target))
+//     {
+//        container.hide();
+   
+   
+//     }
+//     document.getElementById('myInput').value = ''
+// });
+
+
+$(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
-    document.getElementById('myInput').value = ''
+     document.getElementById('myInput').value = ''
 });
 </script>
 

@@ -55,6 +55,13 @@
 
 
 <style>
+.navbar-fixed-top {
+    position: fixed !important;
+}
+.droplinks{
+
+    color: #8c8989 !important
+}
 
 
 input[id="uname"]{
@@ -70,13 +77,13 @@ select{
 
   background-image: url({{asset('storage/images/headerimg/ero-icon.png')}}) !important;
     background-repeat: no-repeat;
-    background-position-x: 97%;
-    background-position-y: 13px;
+    background-position-x: 92%;
+    background-position-y: 11px;
     
 
     margin-right: 2rem;
     padding: 1rem;
-    background-size: 14px;
+    background-size: 12px;
 
 }
 a[id="prcCal"]{
@@ -138,13 +145,17 @@ button[class="interior"]{
 }
 @media (min-width: 768px){
 .navbar-nav>li>a {
-        padding-top: 9px !important;
+           padding-top: 11px !important;
     padding-bottom: 7px!important;
+    font-size: 15px !important;
 }
 }
 
 
-
+iframe{
+      position: relative !important;
+    left: 180px !important;
+}
 
 @media (min-width: 992px){
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -375,7 +386,7 @@ body {
       }
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
 .modal-window div:not(:last-of-type) {
@@ -386,11 +397,17 @@ small {
   color: #aaa;
 }
 
+p[class="prccal"]{
+      top: -2px !important;
+}
 
 
+ul[id="myUL"]{
+  width: 98.5% !important;
+}
 </style>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden;" class="pageid101">
 
 
        <a href="#" id="scroll" style="display: none;"><span></span></a>
@@ -436,8 +453,7 @@ small {
        
       @include('includes.header')
    
-      <div class="container"
-
+      <div class="container" style="margin-top: 111px;">
 <br/>
 <div class="container fontUbantu">
 <div class="row">
@@ -742,7 +758,7 @@ small {
             <li><a href="#view1" class="fontUbantu" style="font-size: 15px;">TECHNICAL SPECS</a></li>
             <li><a href="#view2" class="fontUbantu" style="font-size: 15px;">OPINIONS</a></li>
             <li><a href="#view3" class="fontUbantu" style="font-size: 15px;">VIDEOS</a></li>
-            <li><a href="#view4" class="fontUbantu" style="font-size: 15px;">REVIEWS</a></li>
+            <!-- <li><a href="#view4" class="fontUbantu" style="font-size: 15px;">REVIEWS</a></li> -->
          </ul>
          <div class="tabcontents">
              <div id="view1">
@@ -1566,7 +1582,8 @@ Up to 20 h (multimedia)
 
 
 
-
+<div class="g-recaptcha" id="rcaptcha"  data-sitekey="site key" style="width:100%"></div>
+<span id="captcha" style="color:red;" ></span> <!-- this will show captcha errors -->
                                           <button class="interior" style="border-color: transparent;">
 
 
@@ -1866,9 +1883,9 @@ Up to 20 h (multimedia)
                <h5>No Video Available</h5>
                @endif
             </div>
-            <div id="view4" style="padding-left:30px">
+            <!-- <div id="view4" style="padding-left:30px">
                <h5>No Reviws Availabla</h5>
-            </div>
+            </div> -->
          </div>
       </div>
    </div>
@@ -2366,19 +2383,37 @@ function myShowPassFunction() {
 }
 </script>
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
 
+function get_action(form) 
+{
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    else
+    {
+         document.getElementById('captcha').innerHTML="Captcha completed";
+        return true; 
+    }
+}
+
+</script>
 
 <script>
-   $(document).click(function (e)
+$(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
-    document.getElementById('myInput').value = ''
+     document.getElementById('myInput').value = ''
 });
 </script>
 {{-- <script>

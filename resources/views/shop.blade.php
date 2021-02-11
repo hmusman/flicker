@@ -148,7 +148,7 @@ a[class="ws_next"] {
     background-color: #f9f9f9 !important;
       }      
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
    </style>
@@ -368,6 +368,20 @@ border-left: 2px red solid !important;
    </style>
   
    <style>
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #4a88c1 !important;
+}
+
+.btn-primary:focus {
+    box-shadow:none !important;
+}
+
+
       .ws_bullets{
       z-index: 1 !important;
       }
@@ -438,6 +452,10 @@ border-left: 2px red solid !important;
    
     padding-bottom: .2rem !important;
 }
+}
+
+ul[id="myUL"]{
+  width: 34.9% !important;
 }
    </style>
 
@@ -523,11 +541,11 @@ border-left: 2px red solid !important;
 
       <div class="container">
          <div class="row" style="margin-bottom: 15px;">
-            <div class="col-md-9" style="color: gray;">
+            <div class="col-md-10" style="color: gray;">
                <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'" target="_blank">HOME </a>/ Mobiles
             </div>
-             <div class="col-md-3">
-                  <a class="fontUbantu" href="{{ route('NewAccessories') }}" style="background-color: #4a88c1 !important; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Accessories</a>
+             <div class="col-md-2">
+                  <!-- <a class="fontUbantu" href="{{ route('NewAccessories') }}" style="background-color: #4a88c1 !important; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Accessories</a> -->
             </div>
          </div>
 
@@ -536,10 +554,12 @@ border-left: 2px red solid !important;
       <div class="container-fluid fontUbantu" style="background-color: #f7f7f7 !important;">
          <div class="container" style="background-color: #f7f7f7 !important;">
             <div class="row filterRow" style="background-color: #f7f7f7 !important;">
+
+           
                <div class="col-md-2" style="color: black; margin-top: 15px; " >
                   <p style="font-weight: bold !important; margin-top: 9px "> FILTERS</p>
                </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
+               <div class="col-md-2" style="color: black; margin-top: 15px; ">
                   <div class="form-group">
                      <select class="form-control" id="brand" style="font-weight: bold !important;">
                         <option selected="" disabled="" style="font-weight: bold !important;">Brands</option>
@@ -551,7 +571,7 @@ border-left: 2px red solid !important;
                      </select>
                   </div>
                </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
+               <div class="col-md-2" style="color: black; margin-top: 15px; ">
                   <div class="form-group">
                      <select class="form-control" id="price" style="font-weight: bold !important;">
                         <option selected=""  disabled="" style="font-weight: bold !important;">Price</option>
@@ -563,7 +583,7 @@ border-left: 2px red solid !important;
                      </select>
                   </div>
                </div>
-               <div class="col-md-3" style="color: black; margin-top: 15px; ">
+               <div class="col-md-2" style="color: black; margin-top: 15px; ">
                   <div class="form-group">
                      <select class="form-control" id="view" style="font-weight: bold !important;">
                         <option selected="" disabled="" style="font-weight: bold !important;">Select View</option>
@@ -574,7 +594,17 @@ border-left: 2px red solid !important;
                      </select>
                   </div>
                </div>
-               <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px; background: #4a88c1!important; font-weight: bold;">Reset</button></div>
+               <div class="col-md-2" style="color: black;text-align: end; ">
+               <button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px; background: #4a88c1!important; font-weight: bold;">
+               Reset</button>
+               </div>
+                  <div class="col-md-2" style="color: black; margin-top: 0px;text-align: initial; " >
+                   <!-- <a class="fontUbantu" href="{{ route('NewAccessories') }}" style="background-color: #4a88c1 !important; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Accessories</a>
+                   -->
+                  
+                 <a class="fontUbantu" href="{{ route('NewAccessories') }}"> <button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px; background: #4a88c1!important; font-weight: bold;">
+               New Accessories</button></a>
+                  </div>
             </div>
          </div>
       </div>
@@ -913,16 +943,16 @@ border-left: 2px red solid !important;
    <script  src="{{ asset('js/ScrollJS2/script.js')}}"></script>
 
 <script>
-   $(document).click(function (e)
+$(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
-    document.getElementById('myInput').value = ''
+     document.getElementById('myInput').value = ''
 });
 </script>
 

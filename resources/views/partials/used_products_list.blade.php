@@ -1,5 +1,8 @@
 <div>
-  <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES <button
+  <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES 
+  
+  
+  <!-- <button
      class="ButtonSearchOnMob"    id="srchbtnid" onclick="usedHideAgain();" style="margin-left: 200px;
 
 
@@ -7,7 +10,8 @@
     color: black;
  
     font-weight: 600;
-    border-style: none; outline: none; cursor: pointer;">X</button></p>
+    border-style: none; outline: none; cursor: pointer;">X</button> -->
+    </p>
 </div>
 
 <style>

@@ -1211,7 +1211,7 @@ a[class="ws_next"] {
       }
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
   #myInputone {
     background-image: url('/css/searchicon.png');
@@ -1606,7 +1606,7 @@ height: 65px;
 
     <table id="customers">
         <tr>
-            <td class="colblue tdBlockOnMobhead ">Network</td>
+            <td class="colblue tdBlockOnMobhead " style="padding-right: 21px !important;">Network</td>
             <td class="tdBlockOnMobSubhead TechOnDeskTop" style="border-bottom: 4px #eee solid; "> Technology</td>
         </tr>
     </table>

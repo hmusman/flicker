@@ -79,7 +79,7 @@ a[class="ws_next"] {
       }
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 </style>
 

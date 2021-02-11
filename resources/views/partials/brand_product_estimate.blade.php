@@ -225,7 +225,7 @@ primary:focus {
     
       <div style="height: 20%; width: 100%; "></div>
 
-      <div style="height: 70%; width: 100%; ">
+      <div style="height: 70%; width: 100%; padding-left: 30px ">
       
         <div id="ourEstimateOnMob" style=" width: 98%; box-shadow:  0px 0px 5px black;">
         <div style="height: 20%; width: 100%; background-color: #f3f1f2; color: #4a88c1;

@@ -54,20 +54,20 @@
     border-color: #4a88c1 !important;
 }
 @media (min-width: 992px) and (max-width : 2000px){
-footer{
+/* footer{
       width: 172% !important;
     position: relative !important;
     left: -400px !important;
-}
+} */
 }
 
 
 @media (min-width:500px) and (max-width: 1400px){
-  footer{
+  /* footer{
          width: 122%  !important;
     position: relative !important;;
     left: -122px !important;;
-}
+} */
     }
 
  @media (min-width: 500px){
@@ -137,7 +137,7 @@ footer{
     background-color: #f9f9f9 !important;
       }
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
     </style>
 
@@ -1476,8 +1476,13 @@ color: black;
                                   <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary waves-effect waves-light fontUbantu">Login</button>
                               @endif
                               
-                               
-
+                                 <a href="{{ route('Login') }}" class="droplinks" > 
+                                   <button type="button"  class="btn  waves-effect waves-light fontUbantu" style="    position: relative;
+    top: 3px;
+    left: -14px;">SignUp
+                                
+                                   </button>
+</a>
                           </div>
                       </div>
                   </div>
@@ -1531,12 +1536,15 @@ color: black;
   
   </div>
 
+</div>
 
 
+
+      @include('includes.footer')
 
 </body>
 
-@include('includes.footer')
+
 <!-- 
 <script src="js/jquery-slim.min.js" ></script>
 <script src="js/popper.min.js" ></script>
@@ -2413,16 +2421,16 @@ function hidePhonedet() {
 </script>
  
 <script>
-   $(document).click(function (e)
+$(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
-    document.getElementById('myInput').value = ''
+     document.getElementById('myInput').value = ''
 });
 </script>
 

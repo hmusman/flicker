@@ -841,12 +841,16 @@ img[src="{{ asset('storage/images/headerimg/download__1_-removebg-preview (2).pn
     </div> -->
 
     <div>
-     <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  <button id="srchbtnid" onclick="hideDiv();" style="margin-left: 280px;
+     <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none;">DEVICES  
+     
+     <!-- <button id="srchbtnid" onclick="hideDiv();" style="margin-left: 280px;
       background-color: #f8f7f7;
       color: black;
    
       font-weight: 600;
-      border-style: none;">X</button></p>
+      border-style: none;">X</button> -->
+      
+      </p>
     </div>
 
 

@@ -70,7 +70,7 @@
       
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
    #myUL > li:hover  #setwidth2 a{
@@ -252,8 +252,11 @@ ul[class="dropdown-menu fade-up show"] > li{
 
 }
 
-  }
 
+  }
+.setphai{
+      font-size: 26px !important;
+}
 </style>
 <style type="text/css">
 
@@ -268,7 +271,7 @@ ul[class="dropdown-menu fade-up show"] > li{
   /* ============ desktop view .end// ============ */
   
   
-  </style>
+</style>
 
 
 
@@ -299,7 +302,10 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 }
 
 
-
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+}
 
 @media (min-width: 280px) and (max-width: 319px) {
 
@@ -341,10 +347,6 @@ button[id="srchbtnid"]{
   }
 
 
-</style>
-
-
-<style>
   @media (max-width: 550px){
 
     #resphrOnmob{
@@ -395,12 +397,17 @@ button[id="srchbtnid"]{
 					<br/><br/>
                   
                       <form action="/action_page.php">
-                        <div class="row">
+                        <div class="row" style="    text-align: start; position: relative; left: -13px;">
                           <!-- <h4 >Login with Social Media </h4>
                           <p class="">Hello, Welcome to your account.</p> -->
                     <br/><br/>
-                          <div class="col">
-                            <a href="{{route('social.login',['provider' => 'facebook'])}}" class="fb btn" onmouseover="this.style.backgroundColor = '#2b4375'" ; >
+                          <div class="row">
+
+                          <div class="col-md-12">
+                            <a href="{{route('social.login',['provider' => 'facebook'])}}" class="fb btn"; style="    background-color: rgb(61 99 179);
+    margin-bottom: 3px;
+    color: white;
+    width: 56%;" >
                               <i class="fa fa-facebook fa-fw"></i> Login with Facebook
                              </a>
 
@@ -408,12 +415,16 @@ button[id="srchbtnid"]{
                               <i class="fa fa-instagram fa-fw"></i> Login with Instagram
                             </a> -->
 
-                            <a href="{{route('social.login_g',['provider' => 'google'])}}" class="google btn" onmouseover="this.style.backgroundColor = '#ca4e3e'" ;>
+                            <a href="{{route('social.login_g',['provider' => 'google'])}}" class="google btn" style="    background-color: rgb(202, 78, 62);
+    /* background-color: rgb(61 99 179); */
+    margin-bottom: 3px;
+    color: white;
+    width: 56%;" ;>
                               <i class="fa fa-google fa-fw">
                               </i> Login with Google+
                             </a>
                           </div>
-                    
+                    </div>
                          
                           
                         </div>
@@ -648,7 +659,13 @@ button[id="srchbtnid"]{
                             	</div>
                             </div>
 
-                        	<button type="submit" class="btn-upper btn subbtn checkout-page-button" style="background-color: #4a88c1 !important;">Sign Up</button>
+
+                            <div class="row">
+                            <div class="col-md-12" style="text-align: left">
+                             	<button type="submit" class="btn-upper btn subbtn checkout-page-button" style="background-color: #4a88c1 !important;">Sign Up</button>
+                               </div>
+                            </div>
+                       
                         </form>                            
                     </div>
 
@@ -1020,16 +1037,16 @@ $(document).ready(function(){
     </script>
 
     <script>
-   $(document).click(function (e)
+  $(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
-    document.getElementById('myInput').value = ''
+     document.getElementById('myInput').value = ''
 });
 </script>
 

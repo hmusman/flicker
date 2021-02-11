@@ -72,18 +72,21 @@ background-position: right;
 
 .form-control:focus {
     color: #495057;
-    background-color: #fff;
+    background-color: #f8f7f7;
     border-color: #80bdff;
     outline: 0;
     box-shadow: none !important;
 }
-
+.form-control{
+   background-color: #f8f7f7 !important;
+}
 select{
+
+  background-blend-mode: multiply;
      -webkit-appearance: none;
   -moz-appearance: none;
   background: transparent;
-  /* background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
-
+  
   background-image: url({{asset('storage/images/headerimg/ero-icon.png')}});
     background-repeat: no-repeat;
     background-position-x: 97%;
@@ -264,7 +267,7 @@ select{
       }
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
 
       }
    #myUL > li:hover  #setwidth2 a{
@@ -695,6 +698,11 @@ div[class="ws-title"] > span{
 
 <style>
 
+.prcfiltsty{
+      background: #f8f7f7;
+    border: 1px #b0b0b0 solid;
+}
+
 img[src="{{ asset('storage/images/logo Black-01.jpg') }}"]{
   height: 57px !important;
     /* top: -1px; */
@@ -1082,7 +1090,7 @@ ul[class="pagination"] > .page-item{
                   <div id="borderatmob"  style=" float: left;  height: 100%; width: 45% ;padding-top: 11px;     border-left: 1px black solid;
                      border-right: 1px black solid;">
                      <div class="form-group">
-                        <select class="form-control fontUbantu" id="sell" style="font-weight: bold !important;background-color: #f7f7f7;
+                        <select class="form-control fontUbantu"  id="sell" style="font-weight: bold !important;background-color: #f7f7f7;
                            border-color: transparent;">
                            <option selected="" disabled="" class="fontUbantu">Select City</option>
                            <option class="option fontUbantu" value="Abbottabad">Abbottabad</option>
@@ -1411,19 +1419,24 @@ ul[class="pagination"] > .page-item{
 </div>
 <br/>
 
-<div class="row fontUbantu" style="    margin-left: 15px;margin-bottom: 15px;">
-   <a class="fontUbantu" href="{{ route('BuyUsedAccessories') }}"  style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;width: 11%;  font-size: 13px; text-align: center;">Buy Used Accessories</a>
 
-   <button class="fontUbantu" style="background-color: #4a88c1; color: white;padding: 6px 7px 10px 7px; text-decoration: none;border-radius: 4px; font-weight: bold;margin-left: 5px;border:none;cursor: pointer;    width: 11%;  font-size: 13px; text-align: center;" onclick="reset_all_filters();">Reset Filter</button>
-</div>
 
 <div class="row" style="margin-bottom:60px;">
    <div class="col-md-3" id="sidenav" >
+
+
+<div class="row fontUbantu" style="   margin-bottom: 15px;">
+   <a class="fontUbantu" href="{{ route('BuyUsedAccessories') }}"  style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;width: 50%;  font-size: 13px; text-align: center;">Buy Used Accessories</a>
+
+   <button class="fontUbantu" style="background-color: #4a88c1; color: white;padding: 6px 7px 10px 7px; text-decoration: none;border-radius: 4px; font-weight: bold;margin-left: 5px;border:none;cursor: pointer;    width: 48%;  font-size: 13px; text-align: center;" onclick="reset_all_filters();">Reset Filter</button>
+</div>
+
+
       <p class="fontUbantu" style="background-color: #4a88c1; padding: 10px; margin-bottom: 0px;text-align: center; border-radius: 1px ; font-weight: 500;">SHOW RESULTS BY:</p>
       <div class="toggle-boxqasim">
-         <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
+         <h6 style="border-bottom: 1px #efeeee solid; background: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
             margin-left: 6px; font-weight: bold " class="toggleqasim headerqasim fontUbantu">Make
-         </h6>
+         </h6>                                                                      
          <div class="contentqasim fontUbantu">
             <ul>
                @if($brands->count()>0)
@@ -1460,8 +1473,7 @@ ul[class="pagination"] > .page-item{
          </div>
          </div> -->
       <div class="toggle-boxqasim">
-         <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
-            margin-left: 6px; font-weight: bold; " class="toggleqasim headerqasim fontUbantu">PRICE RANGE</h6>
+         <h6 style="    background-color: #4a88c1; color: white;  border: none;outline: none; height: 100%; padding-bottom: 3px; " class="toggleqasim headerqasim fontUbantu">PRICE RANGE</h6>
          <div class="contentqasim">
             <strong style="color: #f8f7f7">Product Features:</strong><br />
             <ul>
@@ -1469,10 +1481,10 @@ ul[class="pagination"] > .page-item{
                   margin-left: -24px;  ">
                   <div style="width: 100%; ">
                      <div style="width: 45%; float: left; ">
-                        <input type="number" placeholder="From" id="from_price" />
+                        <input type="number" placeholder="From" id="from_price" class="prcfiltsty" />
                      </div>
                      <div style="width: 45%; float: left; ">
-                        <input type="number" placeholder="To" id="to_price" style="width: 100%;" />
+                        <input type="number" placeholder="To" id="to_price" style="width: 100%;" class="prcfiltsty" />
                      </div>
                      <div style="width: 10%;float: left;  ">
                         <button type="button" style="background-color: #4a88c1;color: white;padding: 3px 7px 3px 1px;width: 117%;border: none;outline: none;" id="go_price">Go</button>
@@ -1483,7 +1495,7 @@ ul[class="pagination"] > .page-item{
          </div>
       </div>
       <div class="toggle-boxqasim">
-         <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
+         <h6 style="border-bottom: 1px #efeeee solid; background: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
             margin-left: 6px; font-weight: bold " class="toggleqasim headerqasim fontUbantu">CITY</h6>
          <div class="contentqasim">
             <ul>
@@ -1568,7 +1580,7 @@ ul[class="pagination"] > .page-item{
          </div>
       </div>
       <div class="toggle-boxqasim">
-         <h6 style="border-bottom: 1px #efeeee solid; background-image: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
+         <h6 style="border-bottom: 1px #efeeee solid; background: url({{ asset('storage/images/headerimg/ic_arrow_drop_down_black_18dp.png')}}); background-repeat: no-repeat; background-position: right;     width: 96%;
             margin-left: 6px; font-weight: bold; " class="toggleqasim headerqasim fontUbantu">MOBILES CONDITION
          </h6>
          <div class="contentqasim">
@@ -1605,7 +1617,8 @@ ul[class="pagination"] > .page-item{
       <div class="row" style="">
          <div class="col-md-3">
             <p style="    color: #a8a1a1;
-               padding: 12px 0px 0px 12px;">Sort by:</p>
+                padding: 19px 0px 0px 12px;
+    font-size: 20px;">Sort by:</p>
          </div>
          <div class="col-md-4">
             <div  style="padding-top: 9px;  border-bottom: 1px #b0b0b0 solid; height: 53px;  ">
@@ -2838,15 +2851,16 @@ $(window).scroll(function(){
 
 
 <script>
-   $(document).click(function (e)
+ $(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
+     document.getElementById('myInput').value = ''
 });
 </script>
 

@@ -90,7 +90,7 @@ select[id="phoneColors"]{
     background-color: #f9f9f9 !important;
       }
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
       
@@ -796,7 +796,7 @@ input[type="radio"]:checked + label {
 
   <center>
     
-    <div id="panel" class="fontUbantu"  style="background-color: #dad9de;">
+    <div id="panel" class="fontUbantu"  style="background-color: white;">
 
 
       <p style="color: #4a88c2; text-align: left;   margin-bottom: 0rem !important;">Select > Get Estimate</p>
@@ -1264,16 +1264,16 @@ function scrollWin() {
 </script>
 
 <script>
-   $(document).click(function (e)
+$(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
-    document.getElementById('myInput').value = ''
+     document.getElementById('myInput').value = ''
 });
 </script>
 

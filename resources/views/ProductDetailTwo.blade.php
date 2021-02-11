@@ -54,7 +54,9 @@
        border: 1px solid #fff !important;
 }
 
-
+.logoFlickerflone{
+      height: 55px !important;
+}
 /* @media (min-width: 1200px){
 #OpinonrowOne , #OpinonrowTwo , #OpinonrowThree{
     width: 724px !important;

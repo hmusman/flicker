@@ -329,8 +329,8 @@
       /* 
       /////////////////////////   filter /////////////// */
       .form-control {
-      background-color: #f7f7f7 !important;
-      border: 1px solid #f7f7f7 !important;
+ background-color: #ffffff !important;
+    border: 1px solid #e3e0e0 !important;
       }
       #sel1:focus{
       outline: none !important;
@@ -434,7 +434,7 @@
                      </select>
                   </div>
                </div>
-               <div class="col-md-1" style="color: black;;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 20px;background-color: #4a88c1 !important;
+               <div class="col-md-1" style="color: black;;  "><button id="ResetFilter" class="btn btn-primary" style="margin-top: 15px; padding: .35rem .75rem !important;background-color: #4a88c1 !important;
     border-color: #4a88c1 !important;">Reset</button></div>
             </div>
          </div>
