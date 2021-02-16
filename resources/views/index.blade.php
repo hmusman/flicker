@@ -604,11 +604,15 @@ border-left: 2px red solid !important;
                   <center>
                      
                   @if($row->title=='buy')
-                  <a href="{{ route('BuyUsedMobilePhones') }}"> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
+                 @php
+                 // dd($banners);
+                 // print_r($banners);
+                 @endphp
+                  <a href="{{ route('BuyUsedMobilePhones') }}"> <img src="{{ asset('storage/admin/images/banner/100_'.$banners->buy_image) }}" name="buy_image" style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
                   @elseif($row->title=='sell')
-                  <a href="{{ route('Sell') }}"> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
+                  <a href="{{ route('Sell') }}"> <img src="{{ asset('storage/admin/images/banner/100_'.$banners->new_image) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
                   @else
-                  <a href="{{ route('Shop') }}"> <img src="{{ asset($img) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
+                  <a href="{{ route('Shop') }}"> <img src="{{ asset('storage/admin/images/banner/100_'.$banners->sell_image) }}"  style="height: 200px;width: 150px;padding-top: 16px;" />  </a>
                   @endif
                
                </center>
@@ -679,7 +683,7 @@ border-left: 2px red solid !important;
    @php $img = 'storage/'.$row->img @endphp
    <div class="item fontUbantu" id="ExtraLargeScren" >
       <div id="blogImagesExtraLarge" >
-         <img src="{{ asset($img) }}" class="heightImagesExtralg" style=" text-align: center ;max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+         <img src="{{ asset('storage/admin/images/banner/100_'.$banners->carousel_image)}}" class="heightImagesExtralg" style=" text-align: center ;max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
       
       
       </div>
@@ -727,11 +731,9 @@ border-left: 2px red solid !important;
                <div  id="ExtraLargeScren" style="">
                   <div id="blogImagesExtraLarge" style="  text-align: center ;  height: 55%; width: 100%; border-right: 1px #989292 solid;
                      border-top-right-radius: 10px; border-top: 1px #989292 solid;  border-top-left-radius: 10px;  ">
-                   <img class="heightImagesExtralg" src="{{ asset('storage/images/headerimg/1.png') }}" style="max-width:100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+                   <img class="heightImagesExtralg" src="{{ asset('storage/admin/images/banner/100_'.$banners->static_image3) }}" style="max-width:100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
                   
-                  
-
-                
+                 
                   </div>
                   <div id="blogImagesExtraLarge" style="height: 45% ;text-align: center ; width: 100% ;border-right: 1px #989292 solid;
                      border-bottom: 1px #989292 solid;  
@@ -739,7 +741,7 @@ border-left: 2px red solid !important;
                      border-left: 1px #989292 solid;
                      border-bottom-left-radius: 10px; ">
                      <div id="bloghr"  class="fontUbantu" style="height: 75% ; width: 100% ;    padding: 18px 18px 0px 18px; ; text-align: justify;     color: black !important;
-    font-family: sans-serif; ">
+                     font-family: sans-serif; ">
                         The Blogger mobile app allows you to post, edit, save, and view your blog posts save, and view your blog posts,and view your blog posts.
                         <hr style="    background-color: black;    width: 94%;"/>
                      </div>
@@ -753,7 +755,7 @@ border-left: 2px red solid !important;
                <div  id="ExtraLargeScren" style="">
                   <div id="blogImagesExtraLarge" style=" text-align: center ;   height: 55%; width: 100%; border-right: 1px #989292 solid;
                      border-top-right-radius: 10px; border-top: 1px #989292 solid;  border-top-left-radius: 10px; ">
-                     <img class="heightImagesExtralg" src="{{ asset('storage/images/headerimg/3.png') }}" style="max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+                     <img class="heightImagesExtralg" src="{{asset('storage/admin/images/banner/100_'.$banners->static_image2) }}" style="max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
                   </div>
                   <div id="blogImagesExtraLarge" style="height: 45% ; width: 100% ;border-right: 1px #989292 solid;
                      border-bottom: 1px #989292 solid;  
@@ -775,7 +777,7 @@ border-left: 2px red solid !important;
                <div  id="ExtraLargeScren" style="">
                   <div id="blogImagesExtraLarge" style="  text-align: center ;  height: 55%; width: 100%; border-right: 1px #989292 solid;
                      border-top-right-radius: 10px; border-top: 1px #989292 solid;  border-top-left-radius: 10px; ">
-                     <img class="heightImagesExtralg" src="{{ asset('storage/images/headerimg/2.png') }}" style="max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
+                     <img class="heightImagesExtralg" src="{{ asset('storage/admin/images/banner/100_'.$banners->static_image1) }}" style="max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
                   </div>
                   <div id="blogImagesExtraLarge" style="height: 45% ; text-align: center ;width: 100% ;border-right: 1px #989292 solid;
                      border-bottom: 1px #989292 solid;  

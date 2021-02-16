@@ -160,6 +160,8 @@ Route::prefix('admin')->middleware('AdminLoginSessionCheck')->group(function(){
 	Route::resource('AccessoryCategory','AccessoryCategoryController');
 	Route::resource('Accessory','AccessoryController');
 	Route::resource('/Brand','BrandController');
+	// Banner ................
+	Route::resource('/Banner','BannerController');
 	Route::resource('/Meta','MetaController');
 	Route::resource('/Page','PageController');
 	Route::resource('IndexBuyNewSellSection','BuyNewSellController');

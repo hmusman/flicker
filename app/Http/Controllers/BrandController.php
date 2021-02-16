@@ -15,13 +15,11 @@ class BrandController extends Controller
         return view('admin.pages.brands')->with(compact('brands'));
     }
 
-   
     public function create()
     {
         return view('admin.pages.add_brand');
     }
 
-   
     public function store(Request $request)
     {
         $validations = Validator::make($request->all(),[
@@ -52,6 +50,7 @@ class BrandController extends Controller
 
      
     public function show($id)
+    
     {
         //
     }

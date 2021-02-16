@@ -177,6 +177,20 @@
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
+                                    <span>Banner</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('Banner.create') }}">Add Banner</a></li>
+                                    <li><a href="{{ route('Banner.index') }}">View Banner</a></li>
+                                    <!-- <li><a href="ViewTicker.html">View Ticker</a></li> -->
+                                </ul>
+                            </li>
+
+                            
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <div class="d-inline-block icons-sm mr-1"><i class="uim uim-scenery"></i></div>
                                     <span>Category</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
