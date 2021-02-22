@@ -629,7 +629,7 @@ class SellProductController extends Controller
 
     public function show($id,Request $request)
     {
-        // dd($id->$request->all());
+        // dd($request->all());
         $product = SellProduct::where('id',$id)->first();
         // dd($product);
         $questions = $product->questions()->paginate(30);

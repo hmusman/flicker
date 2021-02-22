@@ -22,6 +22,37 @@ Route::get('/social-login_g/{provider}/callback', 'Auth\LoginController@handlePr
 
 
 Route::get('/users/login', 'HomeController@login')->name('user.login');
+// Product Detail Routes
+
+// Route::get('live_search/action', 'ProductdetailAccessaryController@liveSearch')->name('live_search.action');
+// Route::get('AdviceComparison/{id}','ProductdetailAccessaryController@adviceComparison')->name('AdviceComparison');
+// Route::get('OldAdviceComparison','ProductdetailAccessaryController@oldadviceComparison')->name('OldAdviceComparison');
+// Route::get('AdviceComparisonAll','ProductdetailAccessaryController@adviceComparisonAll')->name('AdviceComparisonAll');
+// Route::get('SingleCompareProductDetail','ProductdetailAccessaryController@singleCompareProductDetail')->name('SingleCompareProductDetail');
+// Route::get('AdviceComparison3','ProductdetailAccessaryController@adviceComparison2')->name('AdviceComparison2');
+// Route::get('NewMobilePhones','ProductdetailAccessaryController@ShopPage')->name('Shop');
+// Route::get('ShopBrandProducts','ProductdetailAccessaryController@ShopBrandProducts')->name('ShopBrandProducts');
+// Route::get('ShopPriceProducts','ProductdetailAccessaryController@ShopPriceProducts')->name('ShopPriceProducts');
+// Route::get('ShopBrandPriceProducts','ProductdetailAccessaryController@ShopBrandPriceProducts')->name('ShopBrandPriceProducts');
+// Route::get('pagination/fetch_data', 'ProductdetailAccessaryController@fetch_data');
+// Route::get('ShopViewProducts','ProductdetailAccessaryController@ShopViewProducts')->name('ShopViewProducts');
+// Route::get('ProductDetail/{id}','ProductdetailAccessaryController@show')->name('ProductDetail');
+// Route::get('ProductDetailTwo/{id}','ProductdetailAccessaryController@showTwo')->name('ProductDetailTwo');
+// Route::get('pricesearch','ProductdetailAccessaryController@priceSearch')->name('pricesearch');
+// Route::get('brandsearch','ProductdetailAccessaryController@brandSearch')->name('brandsearch');
+// Route::get('colorsearch','ProductdetailAccessaryController@colorSearch')->name('colorsearch');
+// Route::get('citysearch','ProductdetailAccessaryController@citySearch')->name('citysearch');
+// Route::get('ColorFilterStorage','ProductdetailAccessaryController@colorFilterStorage')->name('ColorFilterStorage');
+// Route::post('Changecolorbtn','ProductdetailAccessaryController@Changecolorbtn')->name('Changecolorbtn');
+// Route::get('ColorFilterImg','ProductdetailAccessaryController@colorFilterImg')->name('ColorFilterImg');
+// Route::get('StorageFilterPrice','ProductdetailAccessaryController@StorageFilterPrice')->name('StorageFilterPrice');
+
+// Route::resource('ProductdetailAccessary','ProductdetailAccessaryController');
+// Route::get('ProductOpinions/{id}','ProductdetailAccessaryController@Opinions')->name('Admin.ProductOpinions');
+
+
+
+
 
 
 Route::get('AdminLogin', 'LoginAndRegisterController@adminIndex');

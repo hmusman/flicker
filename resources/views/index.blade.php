@@ -658,10 +658,9 @@ border-left: 2px red solid !important;
 
 
 
-
       
       <section>
-         <div class="pricecalculatorbackground pcback" >
+         <div class="pricecalculatorbackground pcback" style="background-image:url({{asset('storage/admin/images/banner/100_'.$banners->calculator_image)}}) ">
             <div class="pc">
                <h1 align="center" id="pricecal" class="fontUbantu">Price Calculator</h1>
                <div class="pq">
@@ -681,10 +680,11 @@ border-left: 2px red solid !important;
     <div class="autoplay" data-dots="true">
    @foreach($blogslider as $row)
    @php $img = 'storage/'.$row->img @endphp
+   
    <div class="item fontUbantu" id="ExtraLargeScren" >
       <div id="blogImagesExtraLarge" >
          <img src="{{ asset('storage/admin/images/banner/100_'.$banners->carousel_image)}}" class="heightImagesExtralg" style=" text-align: center ;max-width : 100% !important;border-top-right-radius: 10px;border-top-left-radius: 10px;" />
-      
+     
       
       </div>
       <div style="height: 10% ; width: 100% ;">
@@ -700,6 +700,7 @@ border-left: 2px red solid !important;
       </div>
 
    </div>
+   
   @endforeach
 
 
