@@ -45,11 +45,11 @@ li[class="nav-item dropdown"] > a{
  }
 
 
-@media (min-width: 1399px) and (max-width : 2000px){
+/* @media (min-width: 1399px) and (max-width : 2000px){
 #myUL{
     width: 34% !important;
 }
-}
+} */
 
 
 @media (max-width: 550px){
@@ -97,7 +97,7 @@ padding: 11px 10px 0px 10px;
   position: relative;
     left: 20px;
     bottom: 3px;
-    color: #706e6e !important
+    color: #706e6e;
 }
 
 ul[class="dropdown-menu"] > li{
@@ -156,10 +156,11 @@ ul[class="dropdown-menu"] > li{
                         @csrf
                     </form>
         @else
+        
            <span id="reglogin" onclick="reglogin();" class="reglogin" style="cursor: pointer;position: absolute;
         right: 46px;
-        bottom: 25px;color: white !important; border-bottom: 1px white solid  " align="right"    >
-          <i class="fontUbantu" style="margin-top: 6px ; color: white;     position: relative;top: -1px;left: 1px;  height: 15px;">  <img   src="{{ asset('storage/images/headerimg/ic_account_circle_white_18dp.png') }}"></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
+        bottom: 16px;color: white !important; border-bottom: 1px white solid  " align="right"    >
+          <i class="fontUbantu" style="margin-top: 6px ; color: white;     position: relative;top: -1px;left: 1px;  height: 15px;">  <img   src="{{ asset('storage/images/headerimg/ic_account_circle_white_24dp.png') }}"></i>&nbsp;&nbsp;REGISTER / LOGIN</span>
 
         
         @endif
@@ -356,17 +357,17 @@ ul[class="dropdown-menu"] > li{
 
 
       <input type="search" id="myInput"  autocomplete="off"  onkeyup="myFunction()"  title="Type in a name" name="q"  class="searchTerm qasimnavigatin fontUbantu" placeholder="Search our Store" >
-      <ul onblur="hideagain()" id="myUL" style="overflow-x: hidden !important;  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 35% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
+      <ul onblur="hideagain()" id="myUL" style="overflow-x: hidden !important;  background-color: white ;  box-shadow:  0 0 5px #000000;position:absolute ; width: 31.5% ;overflow: scroll ; z-index: 20; ;display: none ;  height: 500px;">
          <div>
          
             <p style="background-color: white;color: black;padding: 7px;font-weight: 600;border-style: none; ">DEVICES  
             
-            
+<!--             
             <button id="srchbtnid" onclick="hideagain();" style="margin-left: 350px;
                background-color: #f8f7f7;
                color: black;
                font-weight: 600;
-               border-style: none;">X</button>
+               border-style: none;">X</button> -->
                
                </p>
          </div>
@@ -374,15 +375,18 @@ ul[class="dropdown-menu"] > li{
    </li>
    <li class="nav-item dropdown" style="width:15%; float: left; height: 100%">
       <a class="nav-link qasimnavigatin fontUbantu" id="prcCal" href="{{ route('PriceEstimateCalculator') }}" 
-         style="padding: 4px 6px 6px 13px !important;
-     
+         style="
          border-left: 1px #4c4a575c solid !important;
          font-weight: bold;
          background-color: #4a88c1 !important;
          color: white !important;
-         height: 35.1px;
-         margin-top: 0.5px;
-         "> Price Calculator  </a>
+    height: 35px;
+        border-bottom: 1px #4a88c1 solid;
+         "> <p class="prccal" style="
+    position: relative;
+    top: -4px;    margin-top: 0;
+    margin-bottom: 0 !important;
+">Price Calculator</p> </a>
    </li>
 </ul>
 

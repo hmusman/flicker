@@ -43,14 +43,23 @@ img[src="http://127.0.0.1:8000/storage/images/logo Black-01.jpg"] {
 }
 .navbar{
     margin-bottom: 0px !important;
+    
 }
-
+.logoFlickerflone{
+      height: 56px !important;
+}
 a[class="nav-link  dropdown-toggle"]{
     position: relative !important;
     top: 6px !important;
 }
 
-
+@media (min-width: 768px){
+.navbar-nav>li>a {
+   
+      position: relative !important;
+    left: -3px !important;
+}
+}
 /*  
     /////////////////////////////////////////////     nav Bar search css//////////////////////// */
     #myInput {
@@ -65,7 +74,7 @@ a[class="nav-link  dropdown-toggle"]{
       width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
-      border: 1px solid #ddd;
+      border: none;
       margin-bottom: 12px;
     }
     
@@ -1074,7 +1083,7 @@ img[src="images/headerimg/download__1_-removebg-preview (2).png"]{
       width: 100%;
       font-size: 16px;
       padding: 12px 20px 12px 40px;
-      border: 1px solid #ddd;
+      border: none;
       margin-bottom: 12px;
   }
  #myInputtwo {

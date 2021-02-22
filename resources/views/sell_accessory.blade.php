@@ -588,6 +588,23 @@ div[class="autoplay slick-initialized slick-slider slick-dotted"] > ul[class="sl
 </style>
 
 <style>
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #4a88c1 !important;
+}
+
+.btn-primary:focus {
+    box-shadow:none !important;
+}
+
+
+
+
+
   input[type="radio"] {
   display: none;
 }
@@ -1832,6 +1849,19 @@ function myRemoveFun(id)
 // document.getElementById("uploadimg5").style.display="none"
 //     }, 5000);
 // }
+
+
+$(document).mouseup(function(e) 
+{
+    var container = $("#myUL");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        container.hide();
+    }
+     document.getElementById('myInput').value = ''
+});
 </script>
  
 

@@ -105,7 +105,7 @@ a[class="ws_next"] {
     background-color: #f9f9f9 !important;
       }
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
     </style>
@@ -294,6 +294,17 @@ ul[class="dropdown-menu fade-up"] >  li {
     margin-left: 67px;
     margin-top: 24px !important;
 }
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #4a88c1 !important;
+}
+
+.btn-primary:focus {
+    box-shadow:none !important;
+}
+
 </style>
 
 
@@ -493,9 +504,8 @@ div[class="ws-title"] > span{
 
   .form-control {
   
-    background-color: #f7f7f7 !important;
- 
-    border: 1px solid #f7f7f7 !important;
+       background-color: #ffffff !important;
+    border: 1px solid #e3e0e0 !important;
    
 }
 
@@ -525,7 +535,7 @@ color: #4a88c1 !important;
      <a href="/" style="color: gray;text-decoration: none;" onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='grey'"  target="_blank">HOME </a> / ACCESSORIES
   </div>
  <div class="col-md-3">
-      <a href="{{ route('Shop') }}" style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Mobiles</a>
+      <!-- <a href="{{ route('Shop') }}" style="background-color: #4a88c1; color: white;padding: 10px 18px 10px 18px; text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Mobiles</a> -->
 </div>
 </div>
 
@@ -537,10 +547,10 @@ color: #4a88c1 !important;
     <div class="container" style="background-color: #f7f7f7 !important;">
       <div class="row filterRow" style="background-color: #f7f7f7 !important;">
         <div class="col-md-2" style="color: black; margin-top: 15px; " >
-        <p style="font-weight: bold !important;"> FILTERS</p> 
+        <p style="font-weight: bold !important;"> FILTER</p> 
         </div>
 
-        <div class="col-md-3" style="color: black; margin-top: 15px; ">
+        <div class="col-md-2" style="color: black; margin-top: 15px; ">
           <div class="form-group">
            
             <select class="form-control" id="brand" style="font-weight: bold !important;">
@@ -554,7 +564,7 @@ color: #4a88c1 !important;
           </div>
          </div>
 
-         <div class="col-md-3" style="color: black; margin-top: 15px; ">
+         <div class="col-md-2" style="color: black; margin-top: 15px; ">
           <div class="form-group">
            
             <select class="form-control" id="price" style="font-weight: bold !important;">
@@ -568,7 +578,7 @@ color: #4a88c1 !important;
           </div>
          </div>
 
-         <div class="col-md-3" style="color: black; margin-top: 15px; ">
+         <div class="col-md-2" style="color: black; margin-top: 15px; ">
          
           <div class="form-group">
            
@@ -584,7 +594,20 @@ color: #4a88c1 !important;
         
         </div>
 
-        <div class="col-md-1" style="color: black;  "><button id="ResetFilter" class="btn btn-primary" style="background: #4a88c1 !important; font-weight: bold; margin-top: 20px;">Reset</button></div>
+        <div class="col-md-2" style="color: black;  text-align: end;"><button id="ResetFilter" class="btn btn-primary" style="background: #4a88c1 !important; font-weight: bold; margin-top: 13px;">Reset</button></div>
+      
+       <div class="col-md-2" style="color: black;  ">
+       <a href="{{ route('Shop') }}"><button id="ResetFilter" class="btn btn-primary" style="background: #4a88c1 !important; font-weight: bold; margin-top: 13px;">
+       New Mobiles</button></a>
+       </div>
+      
+
+        <!-- <a href="{{ route('Shop') }}" style="background-color: #4a88c1; color: white;
+        padding: 10px 18px 10px 18px; 
+        text-decoration: none;border-radius: 4px; font-weight: bold;" target="_blank">New Mobiles</a> -->
+      </div>
+
+        
       </div>
     </div>
   </div>
@@ -768,16 +791,16 @@ color: #4a88c1 !important;
 
 
 <script>
-   $(document).click(function (e)
+$(document).mouseup(function(e) 
 {
     var container = $("#myUL");
 
-    if (!container.is(e.target))
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
-        $('#myUL').hide();
-     //   container.removeClass('search');
+        container.hide();
     }
-    document.getElementById('myInput').value = ''
+     document.getElementById('myInput').value = ''
 });
 </script>
 

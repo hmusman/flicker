@@ -117,7 +117,7 @@ a[class="ws_next"] {
       }
          
      #myUL li:hover #redCol{
-border-left: 2px red solid !important;
+border-left: 2px #4a88c1 solid !important
       }
 
    </style>
@@ -845,6 +845,19 @@ The emergence and growth of blogs in the late 1990s coincided with the advent of
           function hideagain(){
               document.getElementById('myUL').style.display = 'none';
           }
+
+
+          $(document).mouseup(function(e) 
+{
+    var container = $("#myUL");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) 
+    {
+        container.hide();
+    }
+     document.getElementById('myInput').value = ''
+});
    </script>
   
    <!-- <script type="text/javascript" src="{{ asset('slick/slick.min.js')}}"></script>
